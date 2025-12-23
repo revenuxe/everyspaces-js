@@ -30,7 +30,7 @@ const LocalitiesSection = () => {
   return (
     <section id="localities" className="py-16 md:py-24 bg-background">
       <div className="container px-4">
-        <h2 className="font-display text-3xl md:text-4xl text-primary text-center mb-2">
+        <h2 className="font-display text-3xl md:text-4xl text-primary text-center mb-2 tracking-[-0.025em]">
           Top Localities
         </h2>
         <p className="text-center text-muted-foreground mb-10 font-body">

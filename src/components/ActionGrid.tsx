@@ -31,7 +31,7 @@ const ActionGrid = () => {
   return (
     <section className="py-10 md:py-14 bg-background">
       <div className="container px-4">
-        <h3 className="font-display text-2xl md:text-3xl text-primary text-center mb-6">
+        <h3 className="font-display text-2xl md:text-3xl text-primary text-center mb-6 tracking-[-0.02em]">
           Quick Actions
         </h3>
 

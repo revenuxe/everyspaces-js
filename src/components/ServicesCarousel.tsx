@@ -99,7 +99,7 @@ const ServicesCarousel = () => {
   return (
     <section id="services" className="py-16 md:py-24 bg-muted/30">
       <div className="container px-4 mb-8">
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary text-center">
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary text-center tracking-[-0.025em]">
           Explore Services
         </h2>
         <p className="text-center text-muted-foreground mt-3 max-w-xl mx-auto font-body">
