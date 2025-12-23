@@ -1,4 +1,4 @@
-import { Calculator, Images, Palette, ArrowUpRight } from "lucide-react";
+import { Calculator, Images, Phone, ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import calculatorImage from "@/assets/action-calculator.webp";
@@ -21,9 +21,9 @@ const actionItems = [
     link: "/portfolio",
   },
   {
-    icon: Palette,
-    title: "Material Palette",
-    description: "Choose your premium finishes",
+    icon: Phone,
+    title: "Contact Us",
+    description: "Get free consultation today",
     image: materialsImage,
     link: "/contact",
   },
