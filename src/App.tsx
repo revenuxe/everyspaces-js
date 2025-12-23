@@ -10,6 +10,10 @@ import Bangalore from "./pages/Bangalore";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
 import Service2BHK from "./pages/services/Service2BHK";
+import Service3BHK from "./pages/services/Service3BHK";
+import ServiceVilla from "./pages/services/ServiceVilla";
+import ServiceFullHome from "./pages/services/ServiceFullHome";
+import ServiceModularKitchen from "./pages/services/ServiceModularKitchen";
 import PriceCalculator from "./pages/PriceCalculator";
 import Contact from "./pages/Contact";
 import ThankYou from "./pages/ThankYou";
@@ -34,7 +38,10 @@ const App = () => (
             <Route path="/bangalore" element={<Bangalore />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/2bhk-interiors" element={<Service2BHK />} />
-            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/services/3bhk-interiors" element={<Service3BHK />} />
+            <Route path="/services/villa-interiors" element={<ServiceVilla />} />
+            <Route path="/services/full-home-design" element={<ServiceFullHome />} />
+            <Route path="/services/modular-kitchen" element={<ServiceModularKitchen />} />
             <Route path="/price-calculator" element={<PriceCalculator />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/thank-you" element={<ThankYou />} />
