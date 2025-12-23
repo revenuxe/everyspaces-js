@@ -93,6 +93,62 @@ const services = [
     image: bedroomImage,
     link: "/contact",
   },
+  {
+    id: 13,
+    title: "Pooja Room",
+    description: "Sacred spaces with traditional craftsmanship.",
+    image: livingImage,
+    link: "/contact",
+  },
+  {
+    id: 14,
+    title: "Foyer & Entrance",
+    description: "Make stunning first impressions.",
+    image: kitchenImage,
+    link: "/contact",
+  },
+  {
+    id: 15,
+    title: "Balcony Design",
+    description: "Transform outdoor spaces into relaxing retreats.",
+    image: bedroomImage,
+    link: "/contact",
+  },
+  {
+    id: 16,
+    title: "TV Unit Design",
+    description: "Modern entertainment centers with smart storage.",
+    image: livingImage,
+    link: "/contact",
+  },
+  {
+    id: 17,
+    title: "False Ceiling",
+    description: "Artistic ceiling designs with ambient lighting.",
+    image: kitchenImage,
+    link: "/contact",
+  },
+  {
+    id: 18,
+    title: "Crockery Unit",
+    description: "Stylish display units for your precious collection.",
+    image: bedroomImage,
+    link: "/contact",
+  },
+  {
+    id: 19,
+    title: "Study Room",
+    description: "Focused learning environments for students.",
+    image: livingImage,
+    link: "/contact",
+  },
+  {
+    id: 20,
+    title: "Guest Room",
+    description: "Comfortable spaces for your visitors.",
+    image: kitchenImage,
+    link: "/contact",
+  },
 ];
 
 const Services = () => {
