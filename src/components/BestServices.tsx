@@ -81,7 +81,7 @@ const BestServices = () => {
   return (
     <section className="py-12 md:py-16 bg-background">
       <div className="container px-4 mb-6">
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary text-center">
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary text-center tracking-[-0.025em]">
           Best Services
         </h2>
         <p className="text-center text-muted-foreground mt-2 max-w-md mx-auto font-body">
