@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Bangalore from "./pages/Bangalore";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
+import Service2BHK from "./pages/services/Service2BHK";
 import PriceCalculator from "./pages/PriceCalculator";
 import Contact from "./pages/Contact";
 import ThankYou from "./pages/ThankYou";
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/bangalore" element={<Bangalore />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/2bhk-interiors" element={<Service2BHK />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/price-calculator" element={<PriceCalculator />} />
             <Route path="/contact" element={<Contact />} />
