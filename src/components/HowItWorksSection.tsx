@@ -6,30 +6,35 @@ const steps = [
     step: "01",
     title: "Free Consultation",
     description: "Share your vision with our experts. We discuss your style, budget, and timeline.",
+    payment: null,
   },
   {
     icon: Palette,
     step: "02",
     title: "Design Concept",
     description: "Our designers create personalized 3D renders and mood boards for your approval.",
+    payment: "5% Payment",
   },
   {
     icon: Ruler,
     step: "03",
     title: "Detailed Planning",
     description: "Precise measurements and material selection with transparent pricing.",
+    payment: null,
   },
   {
     icon: Truck,
     step: "04",
     title: "Execution",
     description: "Our skilled craftsmen bring your design to life with quality materials.",
+    payment: "60% Payment",
   },
   {
     icon: Home,
     step: "05",
     title: "Handover",
     description: "Final walkthrough, quality check, and your dream home is ready to enjoy.",
+    payment: "100% Full Payment",
   },
 ];
 
@@ -71,9 +76,17 @@ const HowItWorksSection = () => {
                 </div>
 
                 {/* Content */}
-                <h3 className="font-display text-lg text-primary mb-2 group-hover:text-secondary transition-colors duration-300">
+                <h3 className="font-display text-lg text-primary mb-1 group-hover:text-secondary transition-colors duration-300">
                   {step.title}
                 </h3>
+                
+                {/* Payment Badge */}
+                {step.payment && (
+                  <span className="inline-block px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full mb-2">
+                    {step.payment}
+                  </span>
+                )}
+                
                 <p className="text-sm text-muted-foreground font-body leading-relaxed max-w-[200px]">
                   {step.description}
                 </p>
