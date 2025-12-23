@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { X, ZoomIn } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -94,6 +95,14 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Portfolio | Intorza Interior Design Projects in Bangalore</title>
+        <meta
+          name="description"
+          content="Explore Intorza's stunning portfolio of completed interior projects – modular kitchens, wardrobes, living rooms, and more across Bangalore homes."
+        />
+        <link rel="canonical" href="https://intorza.com/portfolio" />
+      </Helmet>
       <Header />
       
       <main className="pt-24 md:pt-28 pb-12 md:pb-20">
