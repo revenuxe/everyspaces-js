@@ -1,27 +1,27 @@
 import { Calculator, Images, Palette, ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
-import kitchenImage from "@/assets/service-kitchen.jpg";
-import bedroomImage from "@/assets/service-bedroom.jpg";
-import livingImage from "@/assets/service-living.jpg";
+import calculatorImage from "@/assets/action-calculator.webp";
+import galleryImage from "@/assets/action-gallery.webp";
+import materialsImage from "@/assets/action-materials.webp";
 
 const actionItems = [
   {
     icon: Calculator,
     title: "Price Calculator",
     description: "Get instant estimates for your dream home",
-    image: kitchenImage,
+    image: calculatorImage,
   },
   {
     icon: Images,
     title: "Design Gallery",
     description: "Explore our stunning projects",
-    image: bedroomImage,
+    image: galleryImage,
   },
   {
     icon: Palette,
     title: "Material Palette",
     description: "Choose your premium finishes",
-    image: livingImage,
+    image: materialsImage,
   },
 ];
 
@@ -51,6 +51,7 @@ const ActionGrid = () => {
                 <img
                   src={item.image}
                   alt={item.title}
+                  loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {/* Dark Overlay */}
