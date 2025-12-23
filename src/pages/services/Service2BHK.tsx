@@ -238,7 +238,8 @@ const Service2BHK = () => {
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/20" />
+                  <div className="absolute inset-0 bg-foreground/80 mix-blend-multiply" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/80 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-4">
                     <h3 className="font-display text-base md:text-lg text-primary-foreground mb-1">
                       {item.title}

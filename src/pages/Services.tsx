@@ -207,21 +207,22 @@ const Services = () => {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/50 to-transparent" />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-foreground/60 mix-blend-multiply" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/70 to-transparent" />
                     
                     {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5">
+                    <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5 pr-14 md:pr-20 pb-10 md:pb-12">
                       <h3 className="font-display text-sm md:text-lg lg:text-xl text-primary-foreground mb-0.5 md:mb-1 line-clamp-2">
                         {service.title}
                       </h3>
-                      <p className="text-primary-foreground/80 text-xs md:text-sm font-body line-clamp-2 hidden md:block">
+                      <p className="text-primary-foreground/85 text-xs md:text-sm font-body line-clamp-2 hidden md:block">
                         {service.description}
                       </p>
                     </div>
                     
                     {/* Arrow Icon */}
-                    <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <div className="absolute bottom-4 right-3 md:bottom-5 md:right-5 z-10 w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                       <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5 text-secondary-foreground" />
                     </div>
                   </div>

@@ -205,15 +205,16 @@ const BestServices = () => {
                     }}
                     draggable={false}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+                  <div className="absolute inset-0 bg-foreground/60 mix-blend-multiply" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent" />
                 </div>
 
                 {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 pr-20 md:pr-24">
-                  <h3 className="font-display text-xl md:text-2xl text-primary-foreground mb-1">
+                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 pr-28 md:pr-32 pb-16 md:pb-20">
+                  <h3 className="font-display text-xl md:text-2xl text-primary-foreground mb-1 line-clamp-2">
                     {service.title}
                   </h3>
-                  <p className="text-primary-foreground/80 text-sm font-body line-clamp-2">
+                  <p className="text-primary-foreground/85 text-sm font-body line-clamp-2">
                     {service.description}
                   </p>
 
@@ -223,7 +224,7 @@ const BestServices = () => {
                 </div>
 
                 {/* Arrow Icon */}
-                <div className="absolute bottom-6 md:bottom-8 right-4 md:right-6 w-12 h-12 md:w-14 md:h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute bottom-5 md:bottom-6 right-4 md:right-6 z-10 w-12 h-12 md:w-14 md:h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-secondary-foreground" />
                 </div>
               </div>
