@@ -1,4 +1,4 @@
-import { Calculator, Images, Palette } from "lucide-react";
+import { Calculator, Images, Palette, ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 import kitchenImage from "@/assets/service-kitchen.jpg";
 import bedroomImage from "@/assets/service-bedroom.jpg";
@@ -67,6 +67,11 @@ const ActionGrid = () => {
                   <p className="text-sm text-primary-foreground/80 font-body">
                     {item.description}
                   </p>
+                </div>
+                
+                {/* Arrow Icon */}
+                <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <ArrowUpRight className="w-5 h-5 text-secondary-foreground" />
                 </div>
               </div>
             </div>
