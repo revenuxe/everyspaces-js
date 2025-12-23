@@ -109,145 +109,97 @@ const Contact = () => {
         <section className="py-16 md:py-24">
           <div className="container px-4">
             <div className="grid lg:grid-cols-2 gap-12">
-              {/* Contact Form */}
-              <div className="bg-card rounded-3xl p-8 shadow-soft border border-border/50">
-                <h2 className="font-display text-2xl text-primary mb-2">Get Free Consultation</h2>
-                <p className="text-muted-foreground font-body mb-8">
-                  Fill out the form below and our design expert will contact you within 24 hours.
+              {/* Contact Form - Same style as Hero Section */}
+              <div className="glass-card rounded-3xl p-5 md:p-8 shadow-elevated">
+                <h2 className="font-display text-lg md:text-xl text-foreground text-center mb-4 tracking-[-0.02em]">
+                  Get Your Free Design Consultation
+                </h2>
+
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+                  <div className="relative">
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      {...form.register("name")}
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                    />
+                    {form.formState.errors.name && (
+                      <p className="text-xs text-destructive mt-1">{form.formState.errors.name.message}</p>
+                    )}
+                  </div>
+
+                  <div className="relative">
+                    <input
+                      type="tel"
+                      placeholder="Mobile Number"
+                      {...form.register("phone")}
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                    />
+                    {form.formState.errors.phone && (
+                      <p className="text-xs text-destructive mt-1">{form.formState.errors.phone.message}</p>
+                    )}
+                  </div>
+
+                  <div className="relative">
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      {...form.register("email")}
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                    />
+                    {form.formState.errors.email && (
+                      <p className="text-xs text-destructive mt-1">{form.formState.errors.email.message}</p>
+                    )}
+                  </div>
+
+                  <div className="relative">
+                    <input
+                      type="text"
+                      placeholder="Project Type (e.g., 2BHK, Villa)"
+                      {...form.register("propertyType")}
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                    />
+                    {form.formState.errors.propertyType && (
+                      <p className="text-xs text-destructive mt-1">{form.formState.errors.propertyType.message}</p>
+                    )}
+                  </div>
+
+                  <div className="relative">
+                    <input
+                      type="text"
+                      placeholder="Budget Range (e.g., 10-15 Lakhs)"
+                      {...form.register("budget")}
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                    />
+                    {form.formState.errors.budget && (
+                      <p className="text-xs text-destructive mt-1">{form.formState.errors.budget.message}</p>
+                    )}
+                  </div>
+
+                  <div className="relative">
+                    <textarea
+                      placeholder="Tell us about your project..."
+                      {...form.register("message")}
+                      rows={3}
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm resize-none"
+                    />
+                    {form.formState.errors.message && (
+                      <p className="text-xs text-destructive mt-1">{form.formState.errors.message.message}</p>
+                    )}
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold font-body text-base shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? "Submitting..." : "Get My Free Design"}
+                  </button>
+                </form>
+
+                <p className="text-center text-xs text-muted-foreground mt-4 font-body">
+                  🔒 No spam. We respect your privacy.
                 </p>
-
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Full Name *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Your name" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="phone"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Phone Number *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="+91 98865 79923" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email Address *</FormLabel>
-                          <FormControl>
-                            <Input type="email" placeholder="your@email.com" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="propertyType"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Property Type *</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select property type" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                <SelectItem value="1bhk">1 BHK Apartment</SelectItem>
-                                <SelectItem value="2bhk">2 BHK Apartment</SelectItem>
-                                <SelectItem value="3bhk">3 BHK Apartment</SelectItem>
-                                <SelectItem value="4bhk">4 BHK Apartment</SelectItem>
-                                <SelectItem value="villa">Villa / Independent House</SelectItem>
-                                <SelectItem value="penthouse">Penthouse</SelectItem>
-                                <SelectItem value="commercial">Commercial Space</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="budget"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Budget Range *</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select budget" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                <SelectItem value="5-10">₹5 - 10 Lakhs</SelectItem>
-                                <SelectItem value="10-15">₹10 - 15 Lakhs</SelectItem>
-                                <SelectItem value="15-25">₹15 - 25 Lakhs</SelectItem>
-                                <SelectItem value="25-40">₹25 - 40 Lakhs</SelectItem>
-                                <SelectItem value="40+">₹40 Lakhs+</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Project Details *</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              placeholder="Tell us about your project requirements, preferred style, timeline, etc."
-                              className="min-h-[120px]"
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full btn-terracotta py-6 rounded-2xl font-semibold text-lg"
-                    >
-                      {isSubmitting ? (
-                        "Sending..."
-                      ) : (
-                        <>
-                          <Send className="w-5 h-5 mr-2" />
-                          Send Message
-                        </>
-                      )}
-                    </Button>
-                  </form>
-                </Form>
               </div>
 
               {/* Contact Info */}

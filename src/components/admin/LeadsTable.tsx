@@ -216,77 +216,77 @@ export function LeadsTable() {
       </Card>
 
       <Dialog open={!!selectedLead} onOpenChange={() => setSelectedLead(null)}>
-        <DialogContent className="max-w-lg bg-card border-border">
+        <DialogContent className="max-w-[95vw] sm:max-w-lg bg-card border-border max-h-[90vh] overflow-y-auto p-4 sm:p-6">
           <DialogHeader>
-            <DialogTitle className="text-foreground flex items-center gap-2">
-              <FileText className="h-5 w-5 text-primary" />
+            <DialogTitle className="text-foreground flex items-center gap-2 text-base sm:text-lg">
+              <FileText className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
               Lead Details
             </DialogTitle>
           </DialogHeader>
 
           {selectedLead && (
-            <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <Badge className={`${statusColors[selectedLead.status]} border`}>
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-center justify-between gap-2">
+                <Badge className={`${statusColors[selectedLead.status]} border text-xs`}>
                   {statusLabels[selectedLead.status]}
                 </Badge>
                 <Button
                   variant="destructive"
                   size="sm"
                   onClick={() => deleteLead(selectedLead.id)}
-                  className="gap-2"
+                  className="gap-1 sm:gap-2 text-xs sm:text-sm h-8"
                 >
-                  <Trash2 className="h-4 w-4" />
+                  <Trash2 className="h-3 w-3 sm:h-4 sm:w-4" />
                   Delete
                 </Button>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-2 sm:gap-4">
                 <Card className="bg-muted/50 border-border/50">
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-2 text-muted-foreground mb-1">
-                      <FileText className="h-4 w-4" />
-                      <span className="text-xs uppercase tracking-wide">Form</span>
+                  <CardContent className="p-2 sm:p-4">
+                    <div className="flex items-center gap-1 sm:gap-2 text-muted-foreground mb-1">
+                      <FileText className="h-3 w-3 sm:h-4 sm:w-4" />
+                      <span className="text-[10px] sm:text-xs uppercase tracking-wide">Form</span>
                     </div>
-                    <p className="font-medium text-foreground">{selectedLead.form_name}</p>
+                    <p className="font-medium text-foreground text-xs sm:text-sm">{selectedLead.form_name}</p>
                   </CardContent>
                 </Card>
 
                 <Card className="bg-muted/50 border-border/50">
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-2 text-muted-foreground mb-1">
-                      <Globe className="h-4 w-4" />
-                      <span className="text-xs uppercase tracking-wide">Source</span>
+                  <CardContent className="p-2 sm:p-4">
+                    <div className="flex items-center gap-1 sm:gap-2 text-muted-foreground mb-1">
+                      <Globe className="h-3 w-3 sm:h-4 sm:w-4" />
+                      <span className="text-[10px] sm:text-xs uppercase tracking-wide">Source</span>
                     </div>
-                    <p className="font-medium text-foreground">{selectedLead.source_page || "Direct"}</p>
+                    <p className="font-medium text-foreground text-xs sm:text-sm">{selectedLead.source_page || "Direct"}</p>
                   </CardContent>
                 </Card>
               </div>
 
               <Card className="bg-muted/50 border-border/50">
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-2 text-muted-foreground mb-3">
-                    <Calendar className="h-4 w-4" />
-                    <span className="text-xs uppercase tracking-wide">Submitted On</span>
+                <CardContent className="p-2 sm:p-4">
+                  <div className="flex items-center gap-1 sm:gap-2 text-muted-foreground mb-2">
+                    <Calendar className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="text-[10px] sm:text-xs uppercase tracking-wide">Submitted On</span>
                   </div>
-                  <p className="font-medium text-foreground">
-                    {format(new Date(selectedLead.created_at), "MMMM dd, yyyy 'at' hh:mm a")}
+                  <p className="font-medium text-foreground text-xs sm:text-sm">
+                    {format(new Date(selectedLead.created_at), "MMM dd, yyyy 'at' hh:mm a")}
                   </p>
                 </CardContent>
               </Card>
 
               <div>
-                <h4 className="text-sm font-medium text-muted-foreground mb-3 uppercase tracking-wide">
+                <h4 className="text-xs sm:text-sm font-medium text-muted-foreground mb-2 uppercase tracking-wide">
                   Form Data
                 </h4>
                 <Card className="bg-muted/50 border-border/50">
-                  <CardContent className="p-4 space-y-3">
+                  <CardContent className="p-2 sm:p-4 space-y-2 sm:space-y-3">
                     {Object.entries(selectedLead.data).map(([key, value]) => (
-                      <div key={key} className="flex justify-between items-start">
-                        <span className="text-muted-foreground capitalize">
+                      <div key={key} className="flex justify-between items-start gap-2">
+                        <span className="text-muted-foreground capitalize text-xs sm:text-sm">
                           {key.replace(/_/g, " ")}
                         </span>
-                        <span className="text-foreground font-medium text-right max-w-[60%]">
+                        <span className="text-foreground font-medium text-right max-w-[55%] sm:max-w-[60%] text-xs sm:text-sm break-words">
                           {String(value)}
                         </span>
                       </div>
@@ -296,7 +296,7 @@ export function LeadsTable() {
               </div>
 
               <div>
-                <h4 className="text-sm font-medium text-muted-foreground mb-3 uppercase tracking-wide">
+                <h4 className="text-xs sm:text-sm font-medium text-muted-foreground mb-2 uppercase tracking-wide">
                   Update Status
                 </h4>
                 <Select
@@ -306,7 +306,7 @@ export function LeadsTable() {
                     setSelectedLead({ ...selectedLead, status: value as LeadStatus });
                   }}
                 >
-                  <SelectTrigger className="w-full bg-card border-border">
+                  <SelectTrigger className="w-full bg-card border-border h-9 sm:h-10 text-xs sm:text-sm">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
