@@ -146,15 +146,15 @@ const ArticleDetail = () => {
     return (
       <>
         <Header />
-        <main className="pt-24 pb-16">
-          <div className="container max-w-4xl animate-pulse">
-            <div className="h-6 bg-muted rounded w-1/4 mb-8" />
-            <div className="h-10 bg-muted rounded mb-4" />
-            <div className="h-5 bg-muted rounded w-2/3 mb-8" />
-            <div className="h-72 bg-muted rounded-2xl mb-8" />
-            <div className="space-y-4">
+        <main className="pt-20 md:pt-24 pb-16">
+          <div className="container max-w-3xl px-4 animate-pulse">
+            <div className="h-5 bg-muted rounded w-1/3 mb-6" />
+            <div className="h-8 bg-muted rounded mb-3" />
+            <div className="h-4 bg-muted rounded w-2/3 mb-6" />
+            <div className="h-56 md:h-72 bg-muted rounded-xl mb-6" />
+            <div className="space-y-3">
               {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="h-4 bg-muted rounded" />
+                <div key={i} className="h-3 bg-muted rounded" />
               ))}
             </div>
           </div>
@@ -168,18 +168,18 @@ const ArticleDetail = () => {
     return (
       <>
         <Header />
-        <main className="pt-24 pb-16">
-          <div className="container text-center py-20">
-            <BookOpen className="w-20 h-20 mx-auto text-muted-foreground/50 mb-6" />
-            <h1 className="text-3xl font-bold text-primary mb-4">
+        <main className="pt-20 md:pt-24 pb-16">
+          <div className="container text-center py-16 px-4">
+            <BookOpen className="w-16 h-16 mx-auto text-muted-foreground/50 mb-5" />
+            <h1 className="text-2xl font-bold text-foreground mb-3">
               Article Not Found
             </h1>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-muted-foreground mb-6 text-sm">
               The article you're looking for doesn't exist or has been removed.
             </p>
             <Link
               to="/articles"
-              className="inline-flex items-center gap-2 text-secondary hover:underline"
+              className="inline-flex items-center gap-2 text-secondary hover:underline text-sm"
             >
               <ArrowLeft className="w-4 h-4" /> Back to Articles
             </Link>
@@ -225,148 +225,149 @@ const ArticleDetail = () => {
 
       <Header />
 
-      <main className="pt-24 pb-16 bg-background">
+      <main className="pt-20 md:pt-24 pb-20 md:pb-16 bg-background">
         {/* Hero Section */}
-        <div className="bg-gradient-to-b from-muted/50 to-background pb-10">
-          <div className="container max-w-4xl">
+        <div className="bg-gradient-to-b from-muted/40 to-background pb-5 md:pb-10">
+          <div className="container max-w-3xl px-4 md:px-6">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8 pt-4">
-              <Link to="/" className="hover:text-secondary transition-colors">
+            <nav className="flex items-center gap-1.5 text-xs text-muted-foreground mb-4 md:mb-8 pt-3 md:pt-4 overflow-x-auto whitespace-nowrap">
+              <Link to="/" className="hover:text-secondary transition-colors shrink-0">
                 Home
               </Link>
-              <ChevronRight className="w-3.5 h-3.5" />
-              <Link to="/articles" className="hover:text-secondary transition-colors">
+              <ChevronRight className="w-3 h-3 shrink-0" />
+              <Link to="/articles" className="hover:text-secondary transition-colors shrink-0">
                 Blog
               </Link>
-              <ChevronRight className="w-3.5 h-3.5" />
-              <span className="text-foreground/70 truncate max-w-[200px]">
+              <ChevronRight className="w-3 h-3 shrink-0" />
+              <span className="text-foreground/60 truncate max-w-[120px] md:max-w-[250px]">
                 {article.title}
               </span>
             </nav>
 
             {/* Category & Meta */}
-            <div className="flex flex-wrap items-center gap-3 mb-5">
+            <div className="flex flex-wrap items-center gap-2 mb-3 md:mb-4">
               {article.category && (
-                <Badge className="bg-secondary text-secondary-foreground font-medium px-3 py-1">
+                <Badge className="bg-secondary text-secondary-foreground font-medium text-[10px] md:text-xs px-2 py-0.5">
                   {article.category}
                 </Badge>
               )}
               {article.published_at && (
-                <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                  <Calendar className="w-4 h-4" />
-                  {format(new Date(article.published_at), "MMMM d, yyyy")}
+                <span className="flex items-center gap-1 text-[10px] md:text-xs text-muted-foreground">
+                  <Calendar className="w-3 h-3" />
+                  {format(new Date(article.published_at), "MMM d, yyyy")}
                 </span>
               )}
               {article.reading_time && (
-                <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                  <Clock className="w-4 h-4" />
-                  {article.reading_time} min read
+                <span className="flex items-center gap-1 text-[10px] md:text-xs text-muted-foreground">
+                  <Clock className="w-3 h-3" />
+                  {article.reading_time} min
                 </span>
               )}
             </div>
 
             {/* Title */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-5 leading-tight tracking-tight">
+            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-2.5 md:mb-4 leading-snug tracking-tight">
               {article.title}
             </h1>
 
             {/* Excerpt */}
             {article.excerpt && (
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl">
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4 md:mb-6">
                 {article.excerpt}
               </p>
             )}
 
             {/* Author & Share */}
-            <div className="flex items-center justify-between py-5 border-y border-border/40">
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-secondary to-secondary/70 flex items-center justify-center shadow-sm">
-                  <User className="w-5 h-5 text-secondary-foreground" />
+            <div className="flex items-center justify-between py-3 md:py-4 border-y border-border/40">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-secondary to-secondary/70 flex items-center justify-center shadow-sm">
+                  <User className="w-3.5 h-3.5 md:w-5 md:h-5 text-secondary-foreground" />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground text-sm">
+                  <p className="font-semibold text-foreground text-xs md:text-sm">
                     {article.author || "Intorza Team"}
                   </p>
-                  <p className="text-xs text-muted-foreground">Interior Design Expert</p>
+                  <p className="text-[10px] md:text-xs text-muted-foreground">Interior Expert</p>
                 </div>
               </div>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={handleShare}
-                className="gap-2 rounded-full px-4 hover:bg-secondary hover:text-secondary-foreground hover:border-secondary transition-all"
+                className="gap-1.5 rounded-full px-3 py-1 h-auto text-[10px] md:text-xs hover:bg-secondary hover:text-secondary-foreground hover:border-secondary transition-all"
               >
-                <Share2 className="w-4 h-4" /> Share
+                <Share2 className="w-3 h-3" /> Share
               </Button>
             </div>
           </div>
         </div>
 
-        <article className="container max-w-4xl">
+        <article className="container max-w-3xl px-4 md:px-6">
           {/* Featured Image */}
           {article.featured_image_url && (
-            <div className="relative rounded-2xl overflow-hidden mb-10 shadow-lg -mt-2">
+            <div className="relative rounded-lg md:rounded-2xl overflow-hidden mb-5 md:mb-10 shadow-md -mt-1">
               <img
                 src={article.featured_image_url}
                 alt={article.title}
-                className="w-full h-auto max-h-[480px] object-cover"
+                className="w-full h-auto max-h-[220px] md:max-h-[400px] object-cover"
               />
             </div>
           )}
 
-          {/* Table of Contents */}
+          {/* Table of Contents - Collapsible on Mobile */}
           {toc.length > 0 && (
-            <div className="mb-10 p-6 bg-muted/40 rounded-xl border border-border/50">
-              <div className="flex items-center gap-2 mb-4">
-                <List className="w-5 h-5 text-secondary" />
-                <h2 className="text-base font-semibold text-foreground">
+            <details className="mb-5 md:mb-10 group">
+              <summary className="flex items-center gap-2 p-3 md:p-4 bg-muted/40 rounded-lg md:rounded-xl border border-border/50 cursor-pointer list-none">
+                <List className="w-4 h-4 text-secondary" />
+                <span className="text-xs md:text-sm font-semibold text-foreground flex-1">
                   Table of Contents
-                </h2>
-              </div>
-              <nav className="space-y-1">
+                </span>
+                <ChevronRight className="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-90" />
+              </summary>
+              <nav className="mt-2 p-2.5 md:p-4 bg-muted/20 rounded-lg md:rounded-xl space-y-0.5">
                 {toc.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`block w-full text-left py-2 px-3 rounded-lg text-sm transition-all duration-200 ${
-                      item.level === 3 ? "pl-6" : ""
+                    className={`block w-full text-left py-1.5 px-2.5 rounded-lg text-xs transition-all duration-200 ${
+                      item.level === 3 ? "pl-5" : ""
                     } ${
                       activeSection === item.id
                         ? "bg-secondary/15 text-secondary font-medium"
                         : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
                     }`}
                   >
-                    <span className="flex items-center gap-2">
-                      <span className={`w-1.5 h-1.5 rounded-full ${
+                    <span className="flex items-start gap-2">
+                      <span className={`w-1 h-1 rounded-full shrink-0 mt-1.5 ${
                         activeSection === item.id ? "bg-secondary" : "bg-muted-foreground/40"
                       }`} />
-                      {item.text}
+                      <span className="line-clamp-2 leading-snug">{item.text}</span>
                     </span>
                   </button>
                 ))}
               </nav>
-            </div>
+            </details>
           )}
 
           {/* Article Content */}
           <div
-            className="article-content"
+            className="article-content-mobile md:article-content"
             dangerouslySetInnerHTML={{ __html: processedContent }}
           />
 
           {/* Tags */}
           {tags && tags.length > 0 && (
-            <div className="mt-12 pt-8 border-t border-border/50">
-              <p className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+            <div className="mt-8 md:mt-12 pt-5 md:pt-8 border-t border-border/50">
+              <p className="text-xs font-semibold text-foreground mb-2.5 flex items-center gap-2">
+                <span className="w-1 h-1 rounded-full bg-secondary" />
                 Related Topics
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {tags.map((tag) => (
                   <Badge
                     key={tag}
                     variant="outline"
-                    className="bg-muted/50 text-muted-foreground hover:bg-secondary/10 hover:text-secondary hover:border-secondary/30 transition-colors cursor-pointer px-3 py-1"
+                    className="bg-muted/50 text-muted-foreground hover:bg-secondary/10 hover:text-secondary hover:border-secondary/30 transition-colors cursor-pointer px-2 py-0.5 text-[10px] md:text-xs"
                   >
                     {tag}
                   </Badge>
@@ -376,26 +377,26 @@ const ArticleDetail = () => {
           )}
 
           {/* CTA Box */}
-          <div className="mt-14 p-8 md:p-10 bg-gradient-to-br from-primary via-primary to-primary/90 rounded-2xl text-center relative overflow-hidden">
+          <div className="mt-8 md:mt-14 p-5 md:p-8 bg-gradient-to-br from-secondary via-secondary to-secondary/90 rounded-xl md:rounded-2xl text-center relative overflow-hidden shadow-lg">
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxIDAgNiAyLjY5IDYgNnMtMi42OSA2LTYgNi02LTIuNjktNi02IDIuNjktNiA2LTZ6TTI0IDQ4YzMuMzEgMCA2IDIuNjkgNiA2cy0yLjY5IDYtNiA2LTYtMi42OS02LTYgMi42OS02IDYtNnoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjA1Ii8+PC9nPjwvc3ZnPg==')] opacity-50" />
             <div className="relative z-10">
-              <h3 className="text-xl md:text-2xl font-bold text-primary-foreground mb-3">
+              <h3 className="text-base md:text-xl lg:text-2xl font-bold text-white mb-2">
                 Ready to Transform Your Home?
               </h3>
-              <p className="text-primary-foreground/85 mb-6 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+              <p className="text-white/90 mb-4 md:mb-6 max-w-md mx-auto text-xs md:text-sm leading-relaxed">
                 Get a free consultation from Intorza's expert designers in Bangalore.
                 Let's bring your dream home to life!
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <div className="flex flex-col gap-2.5">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-full font-semibold hover:bg-secondary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-white text-secondary px-5 py-3 rounded-full font-semibold hover:bg-white/95 transition-all shadow-lg text-sm"
                 >
-                  Get Free Consultation <ArrowRight className="w-4 h-4" />
+                  Contact Intorza Today <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
                   href="tel:+919876543210"
-                  className="inline-flex items-center gap-2 bg-primary-foreground/15 text-primary-foreground px-6 py-3 rounded-full font-medium hover:bg-primary-foreground/25 transition-all text-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-white/20 text-white px-5 py-3 rounded-full font-medium hover:bg-white/30 transition-all text-sm"
                 >
                   <Phone className="w-4 h-4" /> Call Now
                 </a>
@@ -406,24 +407,24 @@ const ArticleDetail = () => {
 
         {/* Related Articles */}
         {relatedArticles && relatedArticles.length > 0 && (
-          <section className="mt-20 py-16 bg-muted/30">
-            <div className="container">
-              <div className="text-center mb-10">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+          <section className="mt-10 md:mt-20 py-8 md:py-16 bg-muted/30">
+            <div className="container px-4">
+              <div className="text-center mb-5 md:mb-10">
+                <h2 className="text-lg md:text-2xl lg:text-3xl font-bold text-foreground mb-1.5">
                   Continue Reading
                 </h2>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-xs md:text-sm">
                   More articles you might enjoy
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-6 max-w-4xl mx-auto">
                 {relatedArticles.map((related) => (
                   <Link
                     key={related.id}
                     to={`/articles/${related.slug}`}
-                    className="group bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-border/30"
+                    className="group flex md:flex-col bg-card rounded-lg md:rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-border/30"
                   >
-                    <div className="relative h-36 overflow-hidden">
+                    <div className="relative w-24 md:w-full h-24 md:h-36 overflow-hidden shrink-0">
                       {related.featured_image_url ? (
                         <img
                           src={related.featured_image_url}
@@ -432,17 +433,17 @@ const ArticleDetail = () => {
                         />
                       ) : (
                         <div className="w-full h-full bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
-                          <BookOpen className="w-8 h-8 text-muted-foreground/30" />
+                          <BookOpen className="w-6 h-6 text-muted-foreground/30" />
                         </div>
                       )}
                     </div>
-                    <div className="p-4">
-                      <h3 className="font-semibold text-foreground group-hover:text-secondary transition-colors line-clamp-2 text-sm leading-snug mb-2">
+                    <div className="p-3 md:p-4 flex flex-col justify-center">
+                      <h3 className="font-semibold text-foreground group-hover:text-secondary transition-colors line-clamp-2 text-xs md:text-sm leading-snug mb-1">
                         {related.title}
                       </h3>
                       {related.reading_time && (
-                        <span className="text-xs text-muted-foreground flex items-center gap-1">
-                          <Clock className="w-3 h-3" /> {related.reading_time} min read
+                        <span className="text-[10px] md:text-xs text-muted-foreground flex items-center gap-1">
+                          <Clock className="w-3 h-3" /> {related.reading_time} min
                         </span>
                       )}
                     </div>
