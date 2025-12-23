@@ -15,7 +15,7 @@ const BottomNav = () => {
     { icon: Wrench, label: "Service", href: "/services" },
     { icon: null, label: "WhatsApp", action: handleWhatsAppClick },
     { icon: Star, label: "Reviews", href: "/#testimonials" },
-    { icon: FileText, label: "Article", href: "/terms" },
+    { icon: FileText, label: "Articles", href: "/articles" },
   ];
 
   return (
