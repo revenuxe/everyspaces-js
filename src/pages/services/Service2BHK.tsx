@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
@@ -52,6 +55,45 @@ const galleryImages = [
 ];
 
 const Service2BHK = () => {
+  const navigate = useNavigate();
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    mobile: "",
+    projectType: "2 BHK",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.from("leads").insert({
+        form_name: "2BHK Interior Page Form",
+        source_page: "/services/2bhk-interiors",
+        data: {
+          name: formData.name,
+          mobile: formData.mobile,
+          projectType: formData.projectType,
+        },
+      });
+
+      if (error) throw error;
+
+      navigate("/thank-you");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "Failed to submit form. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -68,68 +110,88 @@ const Service2BHK = () => {
       </Helmet>
       <Header />
       
-      <main className="pt-20 pb-24">
-        {/* Hero Section */}
-        <section className="relative py-16 md:py-24 overflow-hidden">
+      <main className="pb-24">
+        {/* Hero Section - Same as Homepage */}
+        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
           <div className="absolute inset-0 z-0">
             <img
               src={bhk2Image}
               alt="2 BHK Interior Design Bangalore"
-              className="w-full h-full object-cover"
+              decoding="async"
+              fetchPriority="high"
+              className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
+            <div className="absolute inset-0 hero-overlay" />
           </div>
-          
-          <div className="container px-4 relative z-10">
-            <div className="max-w-2xl">
-              <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary rounded-full text-sm font-medium mb-4">
-                Most Popular Service
-              </span>
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary-foreground mb-4 tracking-[-0.025em]">
-                2 BHK Interior Design
-                <span className="block text-secondary">in Bangalore</span>
-              </h1>
-              <p className="text-primary-foreground/90 font-body text-base md:text-lg mb-6">
-                Transform your 2 BHK flat into a stunning home with our complete interior packages. 
-                Starting at just ₹3.5 Lakhs with 10-year warranty and 45-day delivery.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  to="/contact"
-                  className="btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg"
-                >
-                  Get Free Quote
-                </Link>
-                <Link
-                  to="/price-calculator"
-                  className="px-8 py-4 rounded-2xl bg-primary-foreground/10 text-primary-foreground font-semibold border border-primary-foreground/20 hover:bg-primary-foreground/20 transition-colors"
-                >
-                  Calculate Price
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Trust Badges */}
-        <section className="py-8 bg-muted/30 border-y border-border/50">
-          <div className="container px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-              <div className="p-3">
-                <p className="font-display text-2xl md:text-3xl text-secondary">200+</p>
-                <p className="text-xs md:text-sm text-muted-foreground">2BHK Projects Done</p>
-              </div>
-              <div className="p-3">
-                <p className="font-display text-2xl md:text-3xl text-secondary">₹3.5L</p>
-                <p className="text-xs md:text-sm text-muted-foreground">Starting Price</p>
-              </div>
-              <div className="p-3">
-                <p className="font-display text-2xl md:text-3xl text-secondary">45</p>
-                <p className="text-xs md:text-sm text-muted-foreground">Days Delivery</p>
-              </div>
-              <div className="p-3">
-                <p className="font-display text-2xl md:text-3xl text-secondary">10 Yr</p>
-                <p className="text-xs md:text-sm text-muted-foreground">Warranty</p>
+          <div className="relative z-10 container px-4">
+            <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
+              <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 md:mb-4 animate-fade-up tracking-[-0.03em] md:leading-[1.2]">
+                2 BHK Interior Design
+                <span className="block text-secondary tracking-[-0.02em] md:mt-2">in Bangalore</span>
+              </h1>
+              <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
+                Complete home interiors starting ₹3.5 Lakhs • 10-Year Warranty • 45-Day Delivery
+              </p>
+            </div>
+
+            {/* Floating Lead Card */}
+            <div className="max-w-sm mx-auto animate-fade-up delay-300">
+              <div className="glass-card rounded-3xl p-5 md:p-6 shadow-elevated">
+                <h2 className="font-display text-lg md:text-xl text-foreground text-center mb-4 tracking-[-0.02em]">
+                  Get Free Quote for Your 2 BHK
+                </h2>
+
+                <form onSubmit={handleSubmit} className="space-y-3">
+                  <div className="relative">
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                    />
+                  </div>
+
+                  <div className="relative">
+                    <input
+                      type="tel"
+                      placeholder="Mobile Number"
+                      value={formData.mobile}
+                      onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
+                      required
+                      pattern="[0-9]{10}"
+                      title="Please enter a 10-digit phone number"
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                    />
+                  </div>
+
+                  <div className="relative">
+                    <select
+                      value={formData.projectType}
+                      onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                    >
+                      <option value="2 BHK">2 BHK Apartment</option>
+                      <option value="2 BHK - Full Home">2 BHK Full Home Design</option>
+                      <option value="2 BHK - Kitchen Only">Kitchen Only</option>
+                      <option value="2 BHK - Bedroom Only">Bedroom Only</option>
+                    </select>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold font-body text-base shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? "Submitting..." : "Get Free Design Quote"}
+                  </button>
+                </form>
+
+                <p className="text-center text-xs text-muted-foreground mt-4 font-body">
+                  🔒 No spam. We respect your privacy.
+                </p>
               </div>
             </div>
           </div>
