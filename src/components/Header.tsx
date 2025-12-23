@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import intorzaLogo from "@/assets/intorza-logo.png";
+import intorzaLogo from "@/assets/intorza-logo-new.webp";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
