@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
+import Bangalore from "./pages/Bangalore";
 import Portfolio from "./pages/Portfolio";
 import PriceCalculator from "./pages/PriceCalculator";
 import Contact from "./pages/Contact";
@@ -28,6 +29,7 @@ const App = () => (
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/bangalore" element={<Bangalore />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/price-calculator" element={<PriceCalculator />} />
             <Route path="/contact" element={<Contact />} />

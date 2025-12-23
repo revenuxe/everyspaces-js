@@ -7,7 +7,7 @@ const ExploreBangaloreCTA = () => {
     <section className="py-12 md:py-16 bg-muted/30">
       <div className="container px-4">
         <Link
-          to="/portfolio"
+          to="/bangalore"
           className="group flex flex-col md:flex-row items-center gap-6 md:gap-10 bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-glow transition-all duration-500 border border-border/50"
         >
           {/* Image */}
