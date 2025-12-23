@@ -47,15 +47,15 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/70 font-body">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-secondary" />
-                <span>123 Design Street, Koramangala, Bengaluru 560034</span>
+                <span>HBR Layout, Bangalore 560045</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-secondary" />
-                <span>+91 98765 43210</span>
+                <a href="tel:+919886579923" className="hover:text-secondary transition-colors">+91 9886579923</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-secondary" />
-                <span>hello@intorza.com</span>
+                <a href="mailto:hello@intorza.com" className="hover:text-secondary transition-colors">hello@intorza.com</a>
               </li>
             </ul>
           </div>
