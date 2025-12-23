@@ -14,10 +14,13 @@ export default defineConfig(({ mode }) => ({
     react(),
     imagetools({
       defaultDirectives: (url) => {
-        if (url.searchParams.has('optimized')) {
+        if (url.searchParams.has("optimized")) {
+          // Global, safe optimization: convert to webp + cap dimensions to reduce decode cost.
+          // (1600px is enough for most full-width sections on mobile/desktop.)
           return new URLSearchParams({
-            format: 'webp',
-            quality: '80',
+            format: "webp",
+            quality: "78",
+            w: "1600",
           });
         }
         return new URLSearchParams();

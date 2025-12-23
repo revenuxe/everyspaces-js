@@ -69,13 +69,24 @@ const ServicesCarousel = () => {
     const container = containerRef.current;
     if (!container) return;
 
-    const handleScroll = () => {
+    let rafId = 0;
+
+    const updateFromScroll = () => {
+      rafId = 0;
       const scrollPos = container.scrollLeft;
       const containerWidth = container.clientWidth;
-      const itemWidth = containerWidth < 768 ? containerWidth * 0.75 : 
-                        containerWidth < 1024 ? containerWidth * 0.40 : containerWidth * 0.30;
+      const itemWidth =
+        containerWidth < 768
+          ? containerWidth * 0.75
+          : containerWidth < 1024
+            ? containerWidth * 0.4
+            : containerWidth * 0.3;
+
       const newIndex = Math.round(scrollPos / (itemWidth + 32));
-      setActiveIndex(Math.min(Math.max(newIndex, 0), services.length - 1));
+      setActiveIndex((prev) => {
+        const next = Math.min(Math.max(newIndex, 0), services.length - 1);
+        return prev === next ? prev : next;
+      });
 
       const offsets = services.map((_, index) => {
         const gap = 32;
@@ -85,12 +96,22 @@ const ServicesCarousel = () => {
         const distance = (itemCenter - containerCenter) / itemWidth;
         return distance * -20;
       });
+
       setParallaxOffsets(offsets);
     };
 
-    container.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => container.removeEventListener("scroll", handleScroll);
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = window.requestAnimationFrame(updateFromScroll);
+    };
+
+    container.addEventListener("scroll", onScroll, { passive: true });
+    updateFromScroll();
+
+    return () => {
+      if (rafId) window.cancelAnimationFrame(rafId);
+      container.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   // Drag to scroll handlers
@@ -182,7 +203,8 @@ const ServicesCarousel = () => {
                     src={service.image}
                     alt={service.title}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 will-change-transform"
                     style={{
                       transform: `translateX(${parallaxOffsets[index]}px) scale(1.15)`,
                     }}
