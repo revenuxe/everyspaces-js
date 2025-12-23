@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -90,6 +91,14 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Contact Intorza | Get Free Interior Design Consultation</title>
+        <meta
+          name="description"
+          content="Contact Intorza for a free interior design consultation in Bangalore. Call +91 9886579923 or submit our form for quick response."
+        />
+        <link rel="canonical" href="https://intorza.com/contact" />
+      </Helmet>
       <Header />
       
       <main className="pt-20">

@@ -1,16 +1,20 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 
 const Terms = () => {
-  useEffect(() => {
-    document.title = "Terms & Conditions | Intorza";
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Terms & Conditions | Intorza Interior Design</title>
+        <meta
+          name="description"
+          content="Read Intorza's terms and conditions governing website use and interior design services in Bangalore."
+        />
+        <link rel="canonical" href="https://intorza.com/terms" />
+      </Helmet>
       <Header />
 
       <main className="pt-20">
