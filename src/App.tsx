@@ -14,6 +14,13 @@ import Service3BHK from "./pages/services/Service3BHK";
 import ServiceVilla from "./pages/services/ServiceVilla";
 import ServiceFullHome from "./pages/services/ServiceFullHome";
 import ServiceModularKitchen from "./pages/services/ServiceModularKitchen";
+import ServiceBedroom from "./pages/services/ServiceBedroom";
+import ServiceLivingRoom from "./pages/services/ServiceLivingRoom";
+import ServiceWardrobe from "./pages/services/ServiceWardrobe";
+import ServiceHomeOffice from "./pages/services/ServiceHomeOffice";
+import ServiceKidsRoom from "./pages/services/ServiceKidsRoom";
+import ServiceDiningRoom from "./pages/services/ServiceDiningRoom";
+import ServiceBathroom from "./pages/services/ServiceBathroom";
 import PriceCalculator from "./pages/PriceCalculator";
 import Contact from "./pages/Contact";
 import ThankYou from "./pages/ThankYou";
@@ -44,6 +51,13 @@ const App = () => (
             <Route path="/services/villa-interiors" element={<ServiceVilla />} />
             <Route path="/services/full-home-design" element={<ServiceFullHome />} />
             <Route path="/services/modular-kitchen" element={<ServiceModularKitchen />} />
+            <Route path="/services/bedroom-design" element={<ServiceBedroom />} />
+            <Route path="/services/living-room" element={<ServiceLivingRoom />} />
+            <Route path="/services/wardrobe-design" element={<ServiceWardrobe />} />
+            <Route path="/services/home-office" element={<ServiceHomeOffice />} />
+            <Route path="/services/kids-room" element={<ServiceKidsRoom />} />
+            <Route path="/services/dining-room" element={<ServiceDiningRoom />} />
+            <Route path="/services/bathroom-design" element={<ServiceBathroom />} />
             <Route path="/price-calculator" element={<PriceCalculator />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/thank-you" element={<ThankYou />} />
@@ -53,7 +67,6 @@ const App = () => (
             <Route path="/articles/:slug" element={<ArticleDetail />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminDashboard />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -1,58 +1,19 @@
 import { useRef, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import kitchenImage from "@/assets/service-kitchen.jpg?optimized";
 import bedroomImage from "@/assets/service-bedroom.jpg?optimized";
 import livingImage from "@/assets/service-living.jpg?optimized";
 
 const services = [
-  {
-    id: 1,
-    title: "Modular Kitchens",
-    description: "Expertly crafted for Bengaluru's modern culinary lifestyle.",
-    image: kitchenImage,
-  },
-  {
-    id: 2,
-    title: "Luxury Bedrooms",
-    description: "Where serenity meets smart storage solutions.",
-    image: bedroomImage,
-  },
-  {
-    id: 3,
-    title: "Smart Living Rooms",
-    description: "Tech-integrated spaces designed for entertaining.",
-    image: livingImage,
-  },
-  {
-    id: 4,
-    title: "Elegant Bathrooms",
-    description: "Spa-inspired designs with premium fixtures.",
-    image: kitchenImage,
-  },
-  {
-    id: 5,
-    title: "Home Office",
-    description: "Productivity-focused workspaces for the modern professional.",
-    image: bedroomImage,
-  },
-  {
-    id: 6,
-    title: "Kids Room",
-    description: "Playful yet functional spaces for your little ones.",
-    image: livingImage,
-  },
-  {
-    id: 7,
-    title: "Dining Spaces",
-    description: "Elegant settings for memorable family gatherings.",
-    image: kitchenImage,
-  },
-  {
-    id: 8,
-    title: "Wardrobe Design",
-    description: "Custom storage solutions maximizing every inch.",
-    image: bedroomImage,
-  },
+  { id: 1, title: "Modular Kitchens", description: "Expertly crafted for Bengaluru's modern culinary lifestyle.", image: kitchenImage, href: "/services/modular-kitchen" },
+  { id: 2, title: "Luxury Bedrooms", description: "Where serenity meets smart storage solutions.", image: bedroomImage, href: "/services/bedroom-design" },
+  { id: 3, title: "Smart Living Rooms", description: "Tech-integrated spaces designed for entertaining.", image: livingImage, href: "/services/living-room" },
+  { id: 4, title: "Elegant Bathrooms", description: "Spa-inspired designs with premium fixtures.", image: kitchenImage, href: "/services/bathroom-design" },
+  { id: 5, title: "Home Office", description: "Productivity-focused workspaces for the modern professional.", image: bedroomImage, href: "/services/home-office" },
+  { id: 6, title: "Kids Room", description: "Playful yet functional spaces for your little ones.", image: livingImage, href: "/services/kids-room" },
+  { id: 7, title: "Dining Spaces", description: "Elegant settings for memorable family gatherings.", image: kitchenImage, href: "/services/dining-room" },
+  { id: 8, title: "Wardrobe Design", description: "Custom storage solutions maximizing every inch.", image: bedroomImage, href: "/services/wardrobe-design" },
 ];
 
 const ServicesCarousel = () => {
@@ -223,9 +184,9 @@ const ServicesCarousel = () => {
                     {service.description}
                   </p>
 
-                  <button className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-secondary/90 hover:bg-secondary rounded-2xl text-secondary-foreground text-sm font-medium transition-colors">
+                  <Link to={service.href} className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-secondary/90 hover:bg-secondary rounded-2xl text-secondary-foreground text-sm font-medium transition-colors">
                     View Projects
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Arrow Icon */}
