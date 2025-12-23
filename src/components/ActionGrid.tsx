@@ -1,24 +1,29 @@
 import { Calculator, Images, Palette, ArrowUpRight } from "lucide-react";
-import { useRef } from "react";
-import kitchenImage from "@/assets/service-kitchen.jpg";
-import bedroomImage from "@/assets/service-bedroom.jpg";
-import livingImage from "@/assets/service-living.jpg";
-const actionItems = [{
-  icon: Calculator,
-  title: "Price Calculator",
-  description: "Get instant estimates for your dream home",
-  image: kitchenImage
-}, {
-  icon: Images,
-  title: "Design Gallery",
-  description: "Explore our stunning projects",
-  image: bedroomImage
-}, {
-  icon: Palette,
-  title: "Material Palette",
-  description: "Choose your premium finishes",
-  image: livingImage
-}];
+import { useRef, useState } from "react";
+import calculatorImage from "@/assets/action-calculator.webp";
+import galleryImage from "@/assets/action-gallery.webp";
+import materialsImage from "@/assets/action-materials.webp";
+
+const actionItems = [
+  {
+    icon: Calculator,
+    title: "Price Calculator",
+    description: "Get instant estimates for your dream home",
+    image: calculatorImage,
+  },
+  {
+    icon: Images,
+    title: "Design Gallery",
+    description: "Explore our stunning projects",
+    image: galleryImage,
+  },
+  {
+    icon: Palette,
+    title: "Material Palette",
+    description: "Choose your premium finishes",
+    image: materialsImage,
+  },
+];
 const ActionGrid = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   return <section className="py-10 md:py-14 bg-background">
@@ -30,10 +35,17 @@ const ActionGrid = () => {
         scrollPaddingLeft: "1rem",
         scrollPaddingRight: "1rem"
       }}>
-          {actionItems.map((item, index) => <div key={index} className="flex-shrink-0 w-[75vw] sm:w-[60vw] md:w-auto snap-center first:ml-4 last:mr-4 md:first:ml-0 md:last:mr-0">
+          {actionItems.map((item, index) => (
+            <div key={index} className="flex-shrink-0 w-[75vw] sm:w-[60vw] md:w-auto snap-center first:ml-4 last:mr-4 md:first:ml-0 md:last:mr-0">
               <div className="relative overflow-hidden rounded-3xl h-[180px] md:h-[200px] hover-lift cursor-pointer group">
                 {/* Background Image */}
-                <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
                 {/* Dark Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/60 to-primary/30" />
 
@@ -55,7 +67,8 @@ const ActionGrid = () => {
                   <ArrowUpRight className="w-5 h-5 text-secondary-foreground" />
                 </div>
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
 
         {/* Scroll Indicator Dots (Mobile only) */}
