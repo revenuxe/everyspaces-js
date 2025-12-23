@@ -21,6 +21,14 @@ import ServiceHomeOffice from "./pages/services/ServiceHomeOffice";
 import ServiceKidsRoom from "./pages/services/ServiceKidsRoom";
 import ServiceDiningRoom from "./pages/services/ServiceDiningRoom";
 import ServiceBathroom from "./pages/services/ServiceBathroom";
+import ServicePoojaRoom from "./pages/services/ServicePoojaRoom";
+import ServiceFoyer from "./pages/services/ServiceFoyer";
+import ServiceTVUnit from "./pages/services/ServiceTVUnit";
+import ServiceFalseCeiling from "./pages/services/ServiceFalseCeiling";
+import ServiceCrockeryUnit from "./pages/services/ServiceCrockeryUnit";
+import ServiceStudyRoom from "./pages/services/ServiceStudyRoom";
+import ServiceGuestRoom from "./pages/services/ServiceGuestRoom";
+import ServiceBalcony from "./pages/services/ServiceBalcony";
 import PriceCalculator from "./pages/PriceCalculator";
 import Contact from "./pages/Contact";
 import ThankYou from "./pages/ThankYou";
@@ -58,6 +66,14 @@ const App = () => (
             <Route path="/services/kids-room" element={<ServiceKidsRoom />} />
             <Route path="/services/dining-room" element={<ServiceDiningRoom />} />
             <Route path="/services/bathroom-design" element={<ServiceBathroom />} />
+            <Route path="/services/pooja-room" element={<ServicePoojaRoom />} />
+            <Route path="/services/foyer-entrance" element={<ServiceFoyer />} />
+            <Route path="/services/tv-unit" element={<ServiceTVUnit />} />
+            <Route path="/services/false-ceiling" element={<ServiceFalseCeiling />} />
+            <Route path="/services/crockery-unit" element={<ServiceCrockeryUnit />} />
+            <Route path="/services/study-room" element={<ServiceStudyRoom />} />
+            <Route path="/services/guest-room" element={<ServiceGuestRoom />} />
+            <Route path="/services/balcony-design" element={<ServiceBalcony />} />
             <Route path="/price-calculator" element={<PriceCalculator />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/thank-you" element={<ThankYou />} />
