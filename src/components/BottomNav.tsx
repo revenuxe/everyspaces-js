@@ -12,7 +12,7 @@ const BottomNav = () => {
 
   const navItems = [
     { icon: Home, label: "Home", href: "/" },
-    { icon: Wrench, label: "Service", href: "/contact" },
+    { icon: Wrench, label: "Service", href: "/services" },
     { icon: null, label: "WhatsApp", action: handleWhatsAppClick },
     { icon: Star, label: "Reviews", href: "/#testimonials" },
     { icon: FileText, label: "Article", href: "/terms" },
