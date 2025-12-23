@@ -16,10 +16,9 @@ export default defineConfig(({ mode }) => ({
       defaultDirectives: (url) => {
         if (url.searchParams.has("optimized")) {
           // Global, safe optimization: convert to webp + cap dimensions to reduce decode cost.
-          // (1600px is enough for most full-width sections on mobile/desktop.)
           return new URLSearchParams({
             format: "webp",
-            quality: "78",
+            quality: "80",
             w: "1600",
           });
         }
