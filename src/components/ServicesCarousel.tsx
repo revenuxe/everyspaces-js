@@ -67,16 +67,21 @@ const ServicesCarousel = () => {
 
     const handleScroll = () => {
       const scrollLeft = container.scrollLeft;
-      const itemWidth = container.clientWidth * 0.75; // 75vw card width
-      const newIndex = Math.round(scrollLeft / itemWidth);
+      const containerWidth = container.clientWidth;
+      // Responsive card width calculation
+      const itemWidth = containerWidth < 768 ? containerWidth * 0.75 : 
+                        containerWidth < 1024 ? containerWidth * 0.40 : containerWidth * 0.30;
+      const newIndex = Math.round(scrollLeft / (itemWidth + 32)); // account for gap
       setActiveIndex(Math.min(Math.max(newIndex, 0), services.length - 1));
 
-      // Calculate parallax offsets
+      // Calculate parallax offsets with smoother transition
       const offsets = services.map((_, index) => {
-        const itemCenter = index * itemWidth + itemWidth / 2;
-        const containerCenter = scrollLeft + container.clientWidth / 2;
+        const gap = 32;
+        const totalItemWidth = itemWidth + gap;
+        const itemCenter = index * totalItemWidth + itemWidth / 2;
+        const containerCenter = scrollLeft + containerWidth / 2;
         const distance = (itemCenter - containerCenter) / itemWidth;
-        return distance * -25;
+        return distance * -20;
       });
       setParallaxOffsets(offsets);
     };
@@ -89,9 +94,12 @@ const ServicesCarousel = () => {
   const scrollToIndex = (index: number) => {
     const container = containerRef.current;
     if (!container) return;
-    const itemWidth = container.clientWidth * 0.75;
+    const containerWidth = container.clientWidth;
+    const itemWidth = containerWidth < 768 ? containerWidth * 0.75 : 
+                      containerWidth < 1024 ? containerWidth * 0.40 : containerWidth * 0.30;
+    const gap = 32;
     container.scrollTo({
-      left: index * itemWidth,
+      left: index * (itemWidth + gap),
       behavior: "smooth",
     });
   };
@@ -110,8 +118,12 @@ const ServicesCarousel = () => {
       {/* Carousel Container */}
       <div
         ref={containerRef}
-        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 md:gap-6 px-4 py-8"
-        style={{ scrollPaddingLeft: '1rem' }}
+        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-5 md:gap-8 px-4 md:px-8 py-8"
+        style={{ 
+          scrollPaddingLeft: '1rem',
+          scrollBehavior: 'smooth',
+          WebkitOverflowScrolling: 'touch'
+        }}
       >
         {services.map((service, index) => {
           const isActive = index === activeIndex;
@@ -119,8 +131,8 @@ const ServicesCarousel = () => {
             <div
               key={service.id}
               onClick={() => scrollToIndex(index)}
-              className={`flex-shrink-0 w-[75vw] md:w-[50vw] max-w-lg snap-center cursor-pointer transition-all duration-500 ease-smooth ${
-                isActive ? "scale-100 opacity-100" : "scale-[0.88] opacity-60"
+              className={`flex-shrink-0 w-[75vw] md:w-[40vw] lg:w-[30vw] max-w-md snap-center cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
+                isActive ? "scale-100 opacity-100" : "scale-[0.92] opacity-70"
               }`}
             >
               <div className="relative overflow-hidden rounded-3xl bg-card shadow-elevated h-[380px] md:h-[480px]">
