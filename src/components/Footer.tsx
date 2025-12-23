@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 import intorzaLogo from "@/assets/intorza-logo-new.webp";
 
 const Footer = () => {
@@ -38,6 +39,8 @@ const Footer = () => {
               <li><a href="#" className="hover:text-secondary transition-colors">Bedroom Interiors</a></li>
               <li><a href="#" className="hover:text-secondary transition-colors">Living Spaces</a></li>
               <li><a href="#" className="hover:text-secondary transition-colors">Home Office</a></li>
+              <li><Link to="/terms" className="hover:text-secondary transition-colors">Terms &amp; Conditions</Link></li>
+              <li><Link to="/privacy" className="hover:text-secondary transition-colors">Privacy Policy</Link></li>
             </ul>
           </div>
 
@@ -55,7 +58,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-secondary" />
-                <a href="mailto:hello@intorza.com" className="hover:text-secondary transition-colors">hello@intorza.com</a>
+                <a href="mailto:intorza.com@gmail.com" className="hover:text-secondary transition-colors">intorza.com@gmail.com</a>
               </li>
             </ul>
           </div>

@@ -51,8 +51,10 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Luxury Interior"
-          className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite]"
+          alt="Luxury interior design in Bangalore"
+          decoding="async"
+          fetchPriority="high"
+          className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
         />
         <div className="absolute inset-0 hero-overlay" />
       </div>
