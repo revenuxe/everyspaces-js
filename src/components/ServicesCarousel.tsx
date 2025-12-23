@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import { ArrowRight } from "lucide-react";
 import kitchenImage from "@/assets/service-kitchen.jpg";
 import bedroomImage from "@/assets/service-bedroom.jpg";
 import livingImage from "@/assets/service-living.jpg";
@@ -201,6 +202,11 @@ const ServicesCarousel = () => {
                   <button className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-secondary/90 hover:bg-secondary rounded-2xl text-secondary-foreground text-sm font-medium transition-colors">
                     View Projects
                   </button>
+                </div>
+
+                {/* Arrow Icon */}
+                <div className="absolute bottom-5 right-5 w-12 h-12 md:w-14 md:h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-secondary-foreground" />
                 </div>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import { ArrowRight } from "lucide-react";
 import kitchenImage from "@/assets/service-kitchen.jpg";
 import bedroomImage from "@/assets/service-bedroom.jpg";
 import livingImage from "@/assets/service-living.jpg";
@@ -183,6 +184,11 @@ const BestServices = () => {
                   <button className="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-secondary/90 hover:bg-secondary rounded-2xl text-secondary-foreground text-sm font-medium transition-colors">
                     Explore
                   </button>
+                </div>
+
+                {/* Arrow Icon */}
+                <div className="absolute bottom-4 right-4 w-12 h-12 md:w-14 md:h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-secondary-foreground" />
                 </div>
               </div>
             </div>
