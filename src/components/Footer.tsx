@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
-import intorzaLogo from "@/assets/intorza-logo.png";
+import intorzaLogo from "@/assets/intorza-logo-new.webp";
 
 const Footer = () => {
   return (
