@@ -1,59 +1,39 @@
 import { Calculator, Images, Palette, ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
-import calculatorImage from "@/assets/action-calculator.webp";
-import galleryImage from "@/assets/action-gallery.webp";
-import materialsImage from "@/assets/action-materials.webp";
-
-const actionItems = [
-  {
-    icon: Calculator,
-    title: "Price Calculator",
-    description: "Get instant estimates for your dream home",
-    image: calculatorImage,
-  },
-  {
-    icon: Images,
-    title: "Design Gallery",
-    description: "Explore our stunning projects",
-    image: galleryImage,
-  },
-  {
-    icon: Palette,
-    title: "Material Palette",
-    description: "Choose your premium finishes",
-    image: materialsImage,
-  },
-];
-
+import kitchenImage from "@/assets/service-kitchen.jpg";
+import bedroomImage from "@/assets/service-bedroom.jpg";
+import livingImage from "@/assets/service-living.jpg";
+const actionItems = [{
+  icon: Calculator,
+  title: "Price Calculator",
+  description: "Get instant estimates for your dream home",
+  image: kitchenImage
+}, {
+  icon: Images,
+  title: "Design Gallery",
+  description: "Explore our stunning projects",
+  image: bedroomImage
+}, {
+  icon: Palette,
+  title: "Material Palette",
+  description: "Choose your premium finishes",
+  image: livingImage
+}];
 const ActionGrid = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
-
-  return (
-    <section className="py-10 md:py-14 bg-background">
+  return <section className="py-10 md:py-14 bg-background">
       <div className="container px-4">
-        <h3 className="font-display text-2xl md:text-3xl text-primary text-center mb-6 tracking-[-0.02em]">
-          Quick Actions
-        </h3>
+        <h3 className="font-display text-2xl md:text-3xl text-primary text-center mb-6 tracking-[-0.02em]">Quick Actions</h3>
 
         {/* Mobile: Horizontal scroll with proper snap | Desktop: Grid */}
-        <div
-          ref={scrollRef}
-          className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 md:pb-0"
-          style={{ scrollPaddingLeft: "1rem", scrollPaddingRight: "1rem" }}
-        >
-          {actionItems.map((item, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-[75vw] sm:w-[60vw] md:w-auto snap-center first:ml-4 last:mr-4 md:first:ml-0 md:last:mr-0"
-            >
+        <div ref={scrollRef} className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 md:pb-0" style={{
+        scrollPaddingLeft: "1rem",
+        scrollPaddingRight: "1rem"
+      }}>
+          {actionItems.map((item, index) => <div key={index} className="flex-shrink-0 w-[75vw] sm:w-[60vw] md:w-auto snap-center first:ml-4 last:mr-4 md:first:ml-0 md:last:mr-0">
               <div className="relative overflow-hidden rounded-3xl h-[180px] md:h-[200px] hover-lift cursor-pointer group">
                 {/* Background Image */}
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 {/* Dark Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/60 to-primary/30" />
 
@@ -75,22 +55,14 @@ const ActionGrid = () => {
                   <ArrowUpRight className="w-5 h-5 text-secondary-foreground" />
                 </div>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         {/* Scroll Indicator Dots (Mobile only) */}
         <div className="flex justify-center gap-2 mt-4 md:hidden">
-          {actionItems.map((_, index) => (
-            <div
-              key={index}
-              className="w-2 h-2 rounded-full bg-primary/20"
-            />
-          ))}
+          {actionItems.map((_, index) => <div key={index} className="w-2 h-2 rounded-full bg-primary/20" />)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ActionGrid;
