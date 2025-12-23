@@ -1,80 +1,156 @@
-import { Home, ChefHat, Sofa, Bath, Briefcase, Baby, UtensilsCrossed, DoorOpen } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
+import kitchenImage from "@/assets/service-kitchen.jpg";
+import bedroomImage from "@/assets/service-bedroom.jpg";
+import livingImage from "@/assets/service-living.jpg";
 
 const bestServices = [
   {
-    icon: Home,
-    title: "2 BHK",
-    subtitle: "Complete Interiors",
+    id: 1,
+    title: "2 BHK Interiors",
+    description: "Complete home transformation with smart space planning.",
+    image: livingImage,
   },
   {
-    icon: Home,
-    title: "3 BHK",
-    subtitle: "Premium Design",
+    id: 2,
+    title: "3 BHK Interiors",
+    description: "Premium designs for spacious modern living.",
+    image: bedroomImage,
   },
   {
-    icon: ChefHat,
+    id: 3,
     title: "Modular Kitchen",
-    subtitle: "Smart Storage",
+    description: "Functional elegance for culinary enthusiasts.",
+    image: kitchenImage,
   },
   {
-    icon: Sofa,
-    title: "Living Room",
-    subtitle: "Elegant Spaces",
+    id: 4,
+    title: "Villa Interiors",
+    description: "Luxurious designs for your dream villa.",
+    image: livingImage,
   },
   {
-    icon: DoorOpen,
-    title: "Wardrobe",
-    subtitle: "Custom Built",
-  },
-  {
-    icon: Bath,
-    title: "Bathroom",
-    subtitle: "Spa Inspired",
-  },
-  {
-    icon: Briefcase,
-    title: "Home Office",
-    subtitle: "Work Ready",
-  },
-  {
-    icon: Baby,
-    title: "Kids Room",
-    subtitle: "Playful Design",
+    id: 5,
+    title: "Full Home Design",
+    description: "End-to-end interior solutions under one roof.",
+    image: bedroomImage,
   },
 ];
 
 const BestServices = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [parallaxOffsets, setParallaxOffsets] = useState<number[]>(
+    new Array(bestServices.length).fill(0)
+  );
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft;
+      const itemWidth = container.clientWidth * 0.75;
+      const newIndex = Math.round(scrollLeft / itemWidth);
+      setActiveIndex(Math.min(Math.max(newIndex, 0), bestServices.length - 1));
+
+      // Calculate parallax offsets
+      const offsets = bestServices.map((_, index) => {
+        const itemCenter = index * itemWidth + itemWidth / 2;
+        const containerCenter = scrollLeft + container.clientWidth / 2;
+        const distance = (itemCenter - containerCenter) / itemWidth;
+        return distance * -25;
+      });
+      setParallaxOffsets(offsets);
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToIndex = (index: number) => {
+    const container = containerRef.current;
+    if (!container) return;
+    const itemWidth = container.clientWidth * 0.75;
+    container.scrollTo({
+      left: index * itemWidth,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="py-12 md:py-16 bg-background">
-      <div className="container px-4">
-        <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-primary text-center mb-2">
+      <div className="container px-4 mb-6">
+        <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-primary text-center">
           Best Services
         </h2>
-        <p className="text-center text-muted-foreground mb-8 max-w-md mx-auto">
-          Tailored solutions for every room in your home
+        <p className="text-center text-muted-foreground mt-2 max-w-md mx-auto">
+          Tailored solutions for every home
         </p>
+      </div>
 
-        {/* Mobile: Horizontal scroll | Desktop: Grid */}
-        <div className="flex md:grid md:grid-cols-4 gap-3 md:gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 md:pb-0">
-          {bestServices.map((service, index) => (
+      {/* Carousel Container */}
+      <div
+        ref={containerRef}
+        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 px-4 py-4"
+        style={{ scrollPaddingLeft: '1rem' }}
+      >
+        {bestServices.map((service, index) => {
+          const isActive = index === activeIndex;
+          return (
             <div
-              key={index}
-              className="flex-shrink-0 w-[140px] md:w-auto snap-center first:ml-4 last:mr-4 md:first:ml-0 md:last:mr-0"
+              key={service.id}
+              onClick={() => scrollToIndex(index)}
+              className={`flex-shrink-0 w-[75vw] md:w-[50vw] max-w-lg snap-center cursor-pointer transition-all duration-500 ease-smooth ${
+                isActive ? "scale-100 opacity-100" : "scale-[0.88] opacity-60"
+              }`}
             >
-              <div className="bg-card border border-border/50 rounded-2xl p-4 md:p-5 hover-lift cursor-pointer group text-center h-full">
-                <div className="w-12 h-12 md:w-14 md:h-14 mx-auto rounded-2xl bg-secondary/10 flex items-center justify-center mb-3 group-hover:bg-secondary/20 transition-colors">
-                  <service.icon className="w-6 h-6 md:w-7 md:h-7 text-secondary" />
+              <div className="relative overflow-hidden rounded-3xl bg-card shadow-elevated h-[320px] md:h-[400px]">
+                {/* Parallax Image */}
+                <div className="absolute inset-0 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-300"
+                    style={{
+                      transform: `translateX(${parallaxOffsets[index]}px) scale(1.15)`,
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
                 </div>
-                <h3 className="font-semibold text-primary text-sm md:text-base">
-                  {service.title}
-                </h3>
-                <p className="text-xs text-muted-foreground mt-1">
-                  {service.subtitle}
-                </p>
+
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                  <h3 className="font-serif text-xl md:text-2xl font-bold text-primary-foreground mb-1">
+                    {service.title}
+                  </h3>
+                  <p className="text-primary-foreground/80 text-sm">
+                    {service.description}
+                  </p>
+
+                  <button className="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-secondary/90 hover:bg-secondary rounded-2xl text-secondary-foreground text-sm font-medium transition-colors">
+                    Explore
+                  </button>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
+      </div>
+
+      {/* Pagination Dots */}
+      <div className="flex justify-center gap-1.5 mt-4">
+        {bestServices.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => scrollToIndex(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === activeIndex
+                ? "w-6 bg-secondary"
+                : "w-2 bg-primary/20 hover:bg-primary/40"
+            }`}
+          />
+        ))}
       </div>
     </section>
   );
