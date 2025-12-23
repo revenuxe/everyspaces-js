@@ -209,11 +209,11 @@ const BestServices = () => {
                 </div>
 
                 {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 pr-20 md:pr-24">
                   <h3 className="font-display text-xl md:text-2xl text-primary-foreground mb-1">
                     {service.title}
                   </h3>
-                  <p className="text-primary-foreground/80 text-sm font-body">
+                  <p className="text-primary-foreground/80 text-sm font-body line-clamp-2">
                     {service.description}
                   </p>
 
@@ -223,7 +223,7 @@ const BestServices = () => {
                 </div>
 
                 {/* Arrow Icon */}
-                <div className="absolute bottom-4 right-4 w-12 h-12 md:w-14 md:h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute bottom-6 md:bottom-8 right-4 md:right-6 w-12 h-12 md:w-14 md:h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-secondary-foreground" />
                 </div>
               </div>
