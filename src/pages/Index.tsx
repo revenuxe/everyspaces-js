@@ -8,6 +8,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import GallerySection from "@/components/GallerySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
+import ExploreBangaloreCTA from "@/components/ExploreBangaloreCTA";
 import LocalitiesSection from "@/components/LocalitiesSection";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
@@ -33,6 +34,7 @@ const Index = () => {
         <GallerySection />
         <TestimonialsSection />
         <FAQSection />
+        <ExploreBangaloreCTA />
         <LocalitiesSection />
       </main>
       <Footer />
