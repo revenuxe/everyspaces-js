@@ -1,18 +1,47 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 import heroImage from "@/assets/hero-interior.jpg";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
-    whatsapp: "",
+    mobile: "",
     projectType: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Hi! I'm ${formData.name}. I'm interested in interior design for my ${formData.projectType}. Please contact me at ${formData.whatsapp}.`;
-    const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.from("leads").insert({
+        form_name: "Hero Contact Form",
+        source_page: "/",
+        data: {
+          name: formData.name,
+          mobile: formData.mobile,
+          projectType: formData.projectType,
+        },
+      });
+
+      if (error) throw error;
+
+      navigate("/thank-you");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "Failed to submit form. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -61,9 +90,9 @@ const HeroSection = () => {
               <div className="relative">
                 <input
                   type="tel"
-                  placeholder="WhatsApp Number"
-                  value={formData.whatsapp}
-                  onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
+                  placeholder="Mobile Number"
+                  value={formData.mobile}
+                  onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                   required
                   pattern="[0-9]{10}"
                   title="Please enter a 10-digit phone number"
@@ -84,9 +113,10 @@ const HeroSection = () => {
 
               <button
                 type="submit"
-                className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold font-body text-base shadow-lg hover:shadow-xl transition-all duration-300"
+                disabled={isSubmitting}
+                className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold font-body text-base shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Get My Free Design
+                {isSubmitting ? "Submitting..." : "Get My Free Design"}
               </button>
             </form>
 
