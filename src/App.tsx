@@ -7,6 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Portfolio from "./pages/Portfolio";
+import PriceCalculator from "./pages/PriceCalculator";
 import Contact from "./pages/Contact";
 import ThankYou from "./pages/ThankYou";
 import AdminLogin from "./pages/AdminLogin";
@@ -28,6 +29,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/price-calculator" element={<PriceCalculator />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/terms" element={<Terms />} />
