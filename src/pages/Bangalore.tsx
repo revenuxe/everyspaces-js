@@ -32,30 +32,6 @@ const Bangalore = () => {
         <BangaloreHeroSection />
         <ActionGrid />
         
-        {/* Bangalore-specific Trust Section */}
-        <section className="py-12 bg-muted/30">
-          <div className="container px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div className="p-4">
-                <p className="font-display text-3xl md:text-4xl text-secondary mb-1">500+</p>
-                <p className="text-sm text-muted-foreground font-body">Homes in Bangalore</p>
-              </div>
-              <div className="p-4">
-                <p className="font-display text-3xl md:text-4xl text-secondary mb-1">4.9★</p>
-                <p className="text-sm text-muted-foreground font-body">Google Rating</p>
-              </div>
-              <div className="p-4">
-                <p className="font-display text-3xl md:text-4xl text-secondary mb-1">10 Yr</p>
-                <p className="text-sm text-muted-foreground font-body">Warranty</p>
-              </div>
-              <div className="p-4">
-                <p className="font-display text-3xl md:text-4xl text-secondary mb-1">45</p>
-                <p className="text-sm text-muted-foreground font-body">Days Delivery</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        
         <BestServices />
         <ServicesCarousel />
         <HowItWorksSection />
