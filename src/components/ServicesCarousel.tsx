@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import kitchenImage from "@/assets/service-kitchen.jpg";
-import bedroomImage from "@/assets/service-bedroom.jpg";
-import livingImage from "@/assets/service-living.jpg";
+import kitchenImage from "@/assets/service-kitchen.jpg?optimized";
+import bedroomImage from "@/assets/service-bedroom.jpg?optimized";
+import livingImage from "@/assets/service-living.jpg?optimized";
 
 const services = [
   {
