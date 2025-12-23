@@ -47,49 +47,51 @@ const HeroSection = () => {
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-3">
-              <div>
+              <div className="relative">
                 <input
                   type="text"
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="w-full px-4 py-3 bg-background/50 border border-border rounded-2xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all font-body text-sm"
+                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
                 />
               </div>
 
-              <div>
+              <div className="relative">
                 <input
                   type="tel"
                   placeholder="WhatsApp Number"
                   value={formData.whatsapp}
                   onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
                   required
-                  className="w-full px-4 py-3 bg-background/50 border border-border rounded-2xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all font-body text-sm"
+                  pattern="[0-9]{10}"
+                  title="Please enter a 10-digit phone number"
+                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
                 />
               </div>
 
-              <div>
+              <div className="relative">
                 <input
                   type="text"
                   placeholder="Project Type (e.g., 2BHK, Villa)"
                   value={formData.projectType}
                   onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                   required
-                  className="w-full px-4 py-3 bg-background/50 border border-border rounded-2xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all font-body text-sm"
+                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full btn-terracotta py-3.5 rounded-2xl text-secondary-foreground font-semibold font-body"
+                className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold font-body text-base shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Get My Free Design
               </button>
             </form>
 
-            <p className="text-center text-xs text-muted-foreground mt-3 font-body">
-              No spam. We respect your privacy.
+            <p className="text-center text-xs text-muted-foreground mt-4 font-body">
+              🔒 No spam. We respect your privacy.
             </p>
           </div>
         </div>
