@@ -25,6 +25,7 @@ interface AdminSidebarProps {
 const menuItems = [
   { title: "Dashboard", icon: LayoutDashboard, id: "dashboard" },
   { title: "Leads", icon: Users, id: "leads" },
+  { title: "Articles", icon: FileText, id: "articles" },
 ];
 
 export function AdminSidebar({ activeView, setActiveView }: AdminSidebarProps) {
