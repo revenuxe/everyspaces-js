@@ -5,6 +5,7 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { LeadsTable } from "@/components/admin/LeadsTable";
 import { DashboardStats } from "@/components/admin/DashboardStats";
+import ArticlesManager from "@/components/admin/ArticlesManager";
 import { Loader2 } from "lucide-react";
 
 const AdminDashboard = () => {
@@ -71,6 +72,7 @@ const AdminDashboard = () => {
           <div className="p-6">
             {activeView === "dashboard" && <DashboardStats />}
             {activeView === "leads" && <LeadsTable />}
+            {activeView === "articles" && <ArticlesManager />}
           </div>
         </main>
       </div>
