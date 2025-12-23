@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 /* Intorza Interior Design - Premium Design System */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -124,12 +123,21 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'DM Sans', sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'DM Serif Display', Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+  
+  h1 {
+    letter-spacing: -0.03em;
+  }
+  
+  h2 {
+    letter-spacing: -0.025em;
   }
 }
 
@@ -208,11 +216,20 @@
 
 @layer utilities {
   .font-serif {
-    font-family: 'Playfair Display', serif;
+    font-family: 'DM Serif Display', Georgia, serif;
   }
   
   .font-sans {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  
+  .font-display {
+    font-family: 'DM Serif Display', Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+  
+  .font-body {
+    font-family: 'DM Sans', system-ui, sans-serif;
   }
 }
 

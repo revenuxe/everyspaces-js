@@ -99,10 +99,10 @@ const ServicesCarousel = () => {
   return (
     <section id="services" className="py-16 md:py-24 bg-muted/30">
       <div className="container px-4 mb-8">
-        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary text-center tracking-tight">
-          EXPLORE SERVICES
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary text-center">
+          Explore Services
         </h2>
-        <p className="text-center text-muted-foreground mt-3 max-w-xl mx-auto">
+        <p className="text-center text-muted-foreground mt-3 max-w-xl mx-auto font-body">
           Transform your space with our signature design solutions
         </p>
       </div>
@@ -139,10 +139,10 @@ const ServicesCarousel = () => {
 
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <h3 className="font-serif text-2xl md:text-3xl font-bold text-primary-foreground mb-2">
+                  <h3 className="font-display text-2xl md:text-3xl text-primary-foreground mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-primary-foreground/80 text-sm md:text-base">
+                  <p className="text-primary-foreground/80 text-sm md:text-base font-body">
                     {service.description}
                   </p>
 
