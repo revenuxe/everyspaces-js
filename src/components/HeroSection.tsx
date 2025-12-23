@@ -1,18 +1,16 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-interior.jpg";
 
 const HeroSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     whatsapp: "",
-    apartmentType: "",
+    projectType: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Construct WhatsApp message
-    const message = `Hi! I'm ${formData.name}. I'm interested in interior design for my ${formData.apartmentType}. Please contact me at ${formData.whatsapp}.`;
+    const message = `Hi! I'm ${formData.name}. I'm interested in interior design for my ${formData.projectType}. Please contact me at ${formData.whatsapp}.`;
     const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
@@ -32,11 +30,11 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container px-4 py-32 md:py-40">
         <div className="max-w-4xl mx-auto text-center mb-8 md:mb-12">
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-4 md:mb-6 animate-fade-up">
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-4 md:mb-6 animate-fade-up tracking-tight">
             Design Your Dream
             <span className="block text-secondary">Living Space</span>
           </h1>
-          <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-up delay-200">
+          <p className="font-body text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-up delay-200">
             Premium interior design solutions for Bengaluru's most discerning homeowners
           </p>
         </div>
@@ -44,10 +42,10 @@ const HeroSection = () => {
         {/* Floating Lead Card */}
         <div className="max-w-md mx-auto animate-fade-up delay-300">
           <div className="glass-card rounded-3xl p-6 md:p-8 shadow-elevated">
-            <h2 className="font-serif text-xl md:text-2xl font-semibold text-primary text-center mb-6">
+            <h2 className="font-display text-xl md:text-2xl font-semibold text-primary text-center mb-6">
               Get Your Free Design Consultation
             </h2>
-            
+
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <input
@@ -56,10 +54,10 @@ const HeroSection = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="w-full px-4 py-3.5 bg-background/50 border border-border rounded-2xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all"
+                  className="w-full px-4 py-3.5 bg-background/50 border border-border rounded-2xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all font-body"
                 />
               </div>
-              
+
               <div>
                 <input
                   type="tel"
@@ -67,40 +65,35 @@ const HeroSection = () => {
                   value={formData.whatsapp}
                   onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
                   required
-                  className="w-full px-4 py-3.5 bg-background/50 border border-border rounded-2xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all"
+                  className="w-full px-4 py-3.5 bg-background/50 border border-border rounded-2xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all font-body"
                 />
               </div>
-              
-              <div className="relative">
-                <select
-                  value={formData.apartmentType}
-                  onChange={(e) => setFormData({ ...formData, apartmentType: e.target.value })}
+
+              <div>
+                <input
+                  type="text"
+                  placeholder="Project Type (e.g., 2BHK, Villa, Kitchen)"
+                  value={formData.projectType}
+                  onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                   required
-                  className="w-full px-4 py-3.5 bg-background/50 border border-border rounded-2xl text-foreground appearance-none focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all"
-                >
-                  <option value="" disabled>Select Apartment Type</option>
-                  <option value="2BHK">2 BHK</option>
-                  <option value="3BHK">3 BHK</option>
-                  <option value="Villa">Villa</option>
-                </select>
-                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none" />
+                  className="w-full px-4 py-3.5 bg-background/50 border border-border rounded-2xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all font-body"
+                />
               </div>
-              
+
               <button
                 type="submit"
-                className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold text-lg"
+                className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold text-lg font-body"
               >
                 Get My Free Design
               </button>
             </form>
-            
-            <p className="text-center text-xs text-muted-foreground mt-4">
+
+            <p className="text-center text-xs text-muted-foreground mt-4 font-body">
               No spam. We respect your privacy.
             </p>
           </div>
         </div>
       </div>
-
     </section>
   );
 };
