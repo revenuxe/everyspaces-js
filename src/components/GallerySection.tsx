@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { X, ZoomIn } from "lucide-react";
 import { Link } from "react-router-dom";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import gallery6 from "@/assets/gallery-6.jpg";
-import gallery7 from "@/assets/gallery-7.jpg";
-import gallery8 from "@/assets/gallery-8.jpg";
+import gallery1 from "@/assets/gallery-1.jpg?optimized";
+import gallery2 from "@/assets/gallery-2.jpg?optimized";
+import gallery3 from "@/assets/gallery-3.jpg?optimized";
+import gallery4 from "@/assets/gallery-4.jpg?optimized";
+import gallery5 from "@/assets/gallery-5.jpg?optimized";
+import gallery6 from "@/assets/gallery-6.jpg?optimized";
+import gallery7 from "@/assets/gallery-7.jpg?optimized";
+import gallery8 from "@/assets/gallery-8.jpg?optimized";
 
 const galleryImages = [
   { id: 1, src: gallery1, title: "Modern Kitchen", category: "Kitchen" },
