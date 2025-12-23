@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ActionGrid from "@/components/ActionGrid";
+import BestServices from "@/components/BestServices";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import LocalitiesSection from "@/components/LocalitiesSection";
 import Footer from "@/components/Footer";
@@ -13,6 +14,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <ActionGrid />
+        <BestServices />
         <ServicesCarousel />
         <LocalitiesSection />
       </main>
