@@ -210,15 +210,16 @@ const ServicesCarousel = () => {
                     }}
                     draggable={false}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+                  <div className="absolute inset-0 bg-foreground/60 mix-blend-multiply" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent" />
                 </div>
 
                 {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <h3 className="font-display text-2xl md:text-3xl text-primary-foreground mb-2">
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 pr-28 md:pr-32 pb-16 md:pb-20">
+                  <h3 className="font-display text-2xl md:text-3xl text-primary-foreground mb-2 line-clamp-2">
                     {service.title}
                   </h3>
-                  <p className="text-primary-foreground/80 text-sm md:text-base font-body">
+                  <p className="text-primary-foreground/85 text-sm md:text-base font-body line-clamp-2">
                     {service.description}
                   </p>
 
@@ -228,7 +229,7 @@ const ServicesCarousel = () => {
                 </div>
 
                 {/* Arrow Icon */}
-                <div className="absolute bottom-5 right-5 w-12 h-12 md:w-14 md:h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute bottom-5 md:bottom-6 right-5 md:right-6 z-10 w-12 h-12 md:w-14 md:h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-secondary-foreground" />
                 </div>
               </div>

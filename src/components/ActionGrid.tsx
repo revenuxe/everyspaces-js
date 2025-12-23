@@ -63,23 +63,24 @@ const ActionGrid = () => {
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/60 to-primary/30" />
+                <div className="absolute inset-0 bg-foreground/60 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/70 to-primary/30" />
 
                 {/* Content */}
-                <div className="relative z-10 h-full flex flex-col justify-end p-5">
+                <div className="relative z-10 h-full flex flex-col justify-end p-5 pr-16 pb-8">
                   <div className="w-12 h-12 rounded-2xl bg-secondary/20 backdrop-blur-sm flex items-center justify-center mb-3 group-hover:bg-secondary/30 transition-colors">
                     <item.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
-                  <h3 className="font-display text-xl text-primary-foreground mb-1">
+                  <h3 className="font-display text-xl text-primary-foreground mb-1 line-clamp-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-primary-foreground/80 font-body">
+                  <p className="text-sm text-primary-foreground/85 font-body line-clamp-2">
                     {item.description}
                   </p>
                 </div>
 
                 {/* Arrow Icon */}
-                <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute bottom-4 right-4 z-10 w-10 h-10 rounded-full bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <ArrowUpRight className="w-5 h-5 text-secondary-foreground" />
                 </div>
               </div>
