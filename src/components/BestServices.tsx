@@ -42,26 +42,27 @@ const BestServices = () => {
   const [parallaxOffsets, setParallaxOffsets] = useState<number[]>(
     new Array(bestServices.length).fill(0)
   );
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
     const handleScroll = () => {
-      const scrollLeft = container.scrollLeft;
+      const scrollPos = container.scrollLeft;
       const containerWidth = container.clientWidth;
-      // Responsive card width calculation
       const itemWidth = containerWidth < 768 ? containerWidth * 0.75 : 
                         containerWidth < 1024 ? containerWidth * 0.40 : containerWidth * 0.30;
-      const newIndex = Math.round(scrollLeft / (itemWidth + 32)); // account for gap
+      const newIndex = Math.round(scrollPos / (itemWidth + 32));
       setActiveIndex(Math.min(Math.max(newIndex, 0), bestServices.length - 1));
 
-      // Calculate parallax offsets with smoother transition
       const offsets = bestServices.map((_, index) => {
         const gap = 32;
         const totalItemWidth = itemWidth + gap;
         const itemCenter = index * totalItemWidth + itemWidth / 2;
-        const containerCenter = scrollLeft + containerWidth / 2;
+        const containerCenter = scrollPos + containerWidth / 2;
         const distance = (itemCenter - containerCenter) / itemWidth;
         return distance * -20;
       });
@@ -72,6 +73,40 @@ const BestServices = () => {
     handleScroll();
     return () => container.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Drag to scroll handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    const container = containerRef.current;
+    if (!container) return;
+    setIsDragging(true);
+    setStartX(e.pageX - container.offsetLeft);
+    setScrollLeft(container.scrollLeft);
+    container.style.cursor = 'grabbing';
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    if (containerRef.current) {
+      containerRef.current.style.cursor = 'grab';
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const container = containerRef.current;
+    if (!container) return;
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    container.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+    if (containerRef.current) {
+      containerRef.current.style.cursor = 'grab';
+    }
+  };
 
   const scrollToIndex = (index: number) => {
     const container = containerRef.current;
@@ -100,10 +135,14 @@ const BestServices = () => {
       {/* Carousel Container */}
       <div
         ref={containerRef}
-        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-5 md:gap-8 px-4 md:px-8 py-4"
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-5 md:gap-8 px-4 md:px-8 py-4 cursor-grab select-none"
         style={{ 
           scrollPaddingLeft: '1rem',
-          scrollBehavior: 'smooth',
+          scrollBehavior: isDragging ? 'auto' : 'smooth',
           WebkitOverflowScrolling: 'touch'
         }}
       >
@@ -112,21 +151,22 @@ const BestServices = () => {
           return (
             <div
               key={service.id}
-              onClick={() => scrollToIndex(index)}
+              onClick={() => !isDragging && scrollToIndex(index)}
               className={`flex-shrink-0 w-[75vw] md:w-[40vw] lg:w-[30vw] max-w-md snap-center cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
-                isActive ? "scale-100 opacity-100" : "scale-[0.92] opacity-70"
+                isActive ? "scale-100" : "md:scale-100 scale-[0.92]"
               }`}
             >
-              <div className="relative overflow-hidden rounded-3xl bg-card shadow-elevated h-[320px] md:h-[400px]">
+              <div className="relative overflow-hidden rounded-3xl bg-card shadow-elevated h-[320px] md:h-[400px] group">
                 {/* Parallax Image */}
                 <div className="absolute inset-0 overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-300"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     style={{
                       transform: `translateX(${parallaxOffsets[index]}px) scale(1.15)`,
                     }}
+                    draggable={false}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
                 </div>
