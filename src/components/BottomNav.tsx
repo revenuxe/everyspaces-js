@@ -1,6 +1,9 @@
-import { Home, Briefcase, Star, User } from "lucide-react";
+import { Home, Wrench, Star, FileText } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const BottomNav = () => {
+  const location = useLocation();
+
   const handleWhatsAppClick = () => {
     const message = "Hi! I'm interested in interior design services from Intorza. Please share more details.";
     const whatsappUrl = `https://wa.me/919886579923?text=${encodeURIComponent(message)}`;
@@ -8,11 +11,11 @@ const BottomNav = () => {
   };
 
   const navItems = [
-    { icon: Home, label: "Home", href: "#" },
-    { icon: Briefcase, label: "Portfolio", href: "#services" },
-    { icon: null, label: "WhatsApp", action: handleWhatsAppClick }, // Center placeholder
-    { icon: Star, label: "Reviews", href: "#" },
-    { icon: User, label: "Account", href: "#" },
+    { icon: Home, label: "Home", href: "/" },
+    { icon: Wrench, label: "Service", href: "/contact" },
+    { icon: null, label: "WhatsApp", action: handleWhatsAppClick },
+    { icon: Star, label: "Reviews", href: "/#testimonials" },
+    { icon: FileText, label: "Article", href: "/terms" },
   ];
 
   return (
@@ -43,15 +46,18 @@ const BottomNav = () => {
             }
 
             const Icon = item.icon!;
+            const isActive = location.pathname === item.href;
             return (
-              <a
+              <Link
                 key={index}
-                href={item.href}
-                className="flex flex-col items-center gap-1 py-2 px-3 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                to={item.href}
+                className={`flex flex-col items-center gap-1 py-2 px-3 transition-colors ${
+                  isActive ? "text-secondary" : "text-primary-foreground/70 hover:text-primary-foreground"
+                }`}
               >
                 <Icon className="w-5 h-5" />
                 <span className="text-[10px] font-medium">{item.label}</span>
-              </a>
+              </Link>
             );
           })}
         </div>
