@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
@@ -14,44 +14,58 @@ import kitchenImage from "@/assets/service-modular-kitchen.jpg";
 import bedroomImage from "@/assets/service-bedroom.jpg";
 import livingImage from "@/assets/service-living-room.jpg";
 import wardrobeImage from "@/assets/service-wardrobe.jpg";
+import tvUnitImage from "@/assets/service-tv-unit.jpg";
 
-const inclusions = [
-  "Modular Kitchen with Chimney",
-  "2 Wardrobes with Loft",
-  "TV Unit with Back Panel",
-  "Shoe Rack & Foyer Unit",
-  "False Ceiling with Lights",
-  "Electrical & Plumbing Work",
-  "Complete Painting",
-  "Crockery Unit",
+const designElements = [
+  {
+    title: "Modular Kitchen",
+    description: "Space-saving L-shaped or U-shaped kitchen with premium finish",
+    image: kitchenImage,
+  },
+  {
+    title: "Master Bedroom",
+    description: "Elegant bed design with wardrobe and study area",
+    image: bedroomImage,
+  },
+  {
+    title: "Living Room",
+    description: "TV unit, sofa set arrangement and accent walls",
+    image: livingImage,
+  },
+  {
+    title: "Wardrobe Design",
+    description: "Sliding wardrobes with loft and smart storage",
+    image: wardrobeImage,
+  },
+  {
+    title: "TV Unit",
+    description: "Modern entertainment unit with display shelves",
+    image: tvUnitImage,
+  },
+  {
+    title: "Kids Room",
+    description: "Fun and functional space for your little ones",
+    image: bhk2Image,
+  },
 ];
 
-const packages = [
+const whyChooseUs = [
   {
-    name: "Essential",
-    price: "3.5",
-    features: ["Basic Modular Kitchen", "2 Wardrobes", "TV Unit", "Basic False Ceiling"],
+    title: "Expert Designers",
+    description: "Dedicated team of interior designers with 10+ years experience in 2BHK homes",
   },
   {
-    name: "Premium",
-    price: "5.5",
-    features: ["Premium Kitchen with Chimney", "3 Wardrobes with Loft", "TV Unit + Back Panel", "Designer False Ceiling", "Foyer Unit"],
-    popular: true,
+    title: "Premium Materials",
+    description: "BWR grade plywood, soft-close fittings, and branded hardware",
   },
   {
-    name: "Luxury",
-    price: "8+",
-    features: ["Luxury Kitchen with Appliances", "Walk-in Wardrobes", "Full Entertainment Unit", "Designer Ceilings All Rooms", "Complete Furnishing"],
+    title: "On-Time Delivery",
+    description: "We guarantee delivery within the committed timeline",
   },
-];
-
-const galleryImages = [
-  { src: bhk2Image, alt: "2BHK Living Room Interior Bangalore" },
-  { src: kitchenImage, alt: "2BHK Modular Kitchen Design" },
-  { src: bedroomImage, alt: "2BHK Bedroom Interior" },
-  { src: livingImage, alt: "2BHK Hall Interior Design" },
-  { src: wardrobeImage, alt: "2BHK Wardrobe Design" },
-  { src: bhk2Image, alt: "2BHK Complete Home Interior" },
+  {
+    title: "After-Sales Support",
+    description: "Dedicated support team for any post-installation needs",
+  },
 ];
 
 const Service2BHK = () => {
@@ -97,10 +111,10 @@ const Service2BHK = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>2 BHK Interior Design in Bangalore | Starting ₹3.5 Lakhs | Intorza</title>
+        <title>2 BHK Interior Design in Bangalore | Best Home Interiors | Intorza</title>
         <meta
           name="description"
-          content="Best 2 BHK interior designers in Bangalore. Complete home interiors starting ₹3.5 lakhs with modular kitchen, wardrobes, false ceiling. 10-year warranty. Get free quote!"
+          content="Best 2 BHK interior designers in Bangalore. Complete home interiors with modular kitchen, wardrobes, false ceiling. 10-year warranty. Get free quote!"
         />
         <meta
           name="keywords"
@@ -131,7 +145,7 @@ const Service2BHK = () => {
                 <span className="block text-secondary tracking-[-0.02em] md:mt-2">in Bangalore</span>
               </h1>
               <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Complete home interiors starting ₹3.5 Lakhs • 10-Year Warranty • 45-Day Delivery
+                Transform your 2 BHK into a stunning home with expert designers
               </p>
             </div>
 
@@ -139,7 +153,7 @@ const Service2BHK = () => {
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
               <div className="glass-card rounded-3xl p-5 md:p-6 shadow-elevated">
                 <h2 className="font-display text-lg md:text-xl text-foreground text-center mb-4 tracking-[-0.02em]">
-                  Get Free Quote for Your 2 BHK
+                  Get Free Design Consultation
                 </h2>
 
                 <form onSubmit={handleSubmit} className="space-y-3">
@@ -197,84 +211,71 @@ const Service2BHK = () => {
           </div>
         </section>
 
-        {/* What's Included */}
+        {/* Design Elements for 2BHK */}
         <section className="py-12 md:py-16">
           <div className="container px-4">
             <div className="text-center mb-10">
+              <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
+                Complete 2 BHK Solutions
+              </span>
               <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">
-                What's Included in 2 BHK Package
+                Design Elements for Your 2 BHK
               </h2>
-              <p className="text-muted-foreground font-body">
-                Complete home transformation with everything you need
+              <p className="text-muted-foreground font-body max-w-lg mx-auto">
+                Every corner of your home designed with precision and style
               </p>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {inclusions.map((item, index) => (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+              {designElements.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex items-center gap-3 p-4 bg-card rounded-xl border border-border/50"
+                  className="group relative overflow-hidden rounded-2xl aspect-[4/3]"
                 >
-                  <div className="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-4 h-4 text-secondary" />
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-display text-base md:text-lg text-primary-foreground mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-primary-foreground/80 text-xs md:text-sm font-body line-clamp-2">
+                      {item.description}
+                    </p>
                   </div>
-                  <span className="text-sm font-medium text-foreground">{item}</span>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Pricing Packages */}
+        {/* Why Choose Us */}
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4">
             <div className="text-center mb-10">
               <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">
-                2 BHK Interior Packages
+                Why Choose Intorza for Your 2 BHK?
               </h2>
               <p className="text-muted-foreground font-body">
-                Choose the package that fits your budget
+                Trusted by hundreds of homeowners in Bangalore
               </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {packages.map((pkg, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {whyChooseUs.map((item, index) => (
                 <div 
                   key={index}
-                  className={`relative p-6 rounded-2xl border-2 transition-all ${
-                    pkg.popular 
-                      ? "bg-card border-secondary shadow-glow" 
-                      : "bg-card border-border/50 hover:border-secondary/50"
-                  }`}
+                  className="bg-card p-6 rounded-2xl border border-border/50 hover:border-secondary/50 transition-colors"
                 >
-                  {pkg.popular && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-secondary text-secondary-foreground text-xs font-semibold rounded-full">
-                      Most Popular
-                    </span>
-                  )}
-                  <h3 className="font-display text-xl text-primary mb-2">{pkg.name}</h3>
-                  <div className="mb-4">
-                    <span className="font-display text-3xl text-secondary">₹{pkg.price}</span>
-                    <span className="text-muted-foreground text-sm"> Lakhs</span>
+                  <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+                    <span className="font-display text-xl text-secondary">{index + 1}</span>
                   </div>
-                  <ul className="space-y-2 mb-6">
-                    {pkg.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-foreground">
-                        <Check className="w-4 h-4 text-secondary" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    to="/contact"
-                    className={`block text-center py-3 rounded-xl font-semibold transition-colors ${
-                      pkg.popular
-                        ? "btn-terracotta text-secondary-foreground"
-                        : "bg-muted text-foreground hover:bg-secondary hover:text-secondary-foreground"
-                    }`}
-                  >
-                    Get Quote
-                  </Link>
+                  <h3 className="font-display text-lg text-primary mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm font-body">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -286,27 +287,37 @@ const Service2BHK = () => {
           <div className="container px-4">
             <div className="text-center mb-10">
               <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">
-                2 BHK Interior Design Gallery
+                Our 2 BHK Projects in Bangalore
               </h2>
               <p className="text-muted-foreground font-body">
-                Real projects delivered in Bangalore
+                Real homes transformed by our expert team
               </p>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {galleryImages.map((img, index) => (
+              {designElements.map((img, index) => (
                 <div 
                   key={index}
                   className="aspect-[4/3] rounded-2xl overflow-hidden group"
                 >
                   <img
-                    src={img.src}
-                    alt={img.alt}
+                    src={img.image}
+                    alt={img.title}
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
               ))}
+            </div>
+            
+            <div className="text-center mt-8">
+              <Link
+                to="/portfolio"
+                className="inline-flex items-center gap-2 text-secondary font-medium hover:underline"
+              >
+                View All Projects
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </section>
@@ -321,7 +332,7 @@ const Service2BHK = () => {
               Ready to Design Your 2 BHK?
             </h2>
             <p className="text-muted-foreground font-body max-w-md mx-auto mb-6">
-              Get a free consultation and detailed quote within 24 hours
+              Get a free consultation and personalized design ideas
             </p>
             <Link
               to="/contact"
