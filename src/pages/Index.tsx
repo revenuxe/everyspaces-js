@@ -5,6 +5,8 @@ import BestServices from "@/components/BestServices";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import GallerySection from "@/components/GallerySection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FAQSection from "@/components/FAQSection";
 import LocalitiesSection from "@/components/LocalitiesSection";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
@@ -20,6 +22,8 @@ const Index = () => {
         <ServicesCarousel />
         <HowItWorksSection />
         <GallerySection />
+        <TestimonialsSection />
+        <FAQSection />
         <LocalitiesSection />
       </main>
       <Footer />

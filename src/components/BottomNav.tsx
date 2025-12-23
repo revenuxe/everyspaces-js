@@ -2,8 +2,8 @@ import { Home, Briefcase, Star, User } from "lucide-react";
 
 const BottomNav = () => {
   const handleWhatsAppClick = () => {
-    const message = "Hi! I'm interested in interior design services from Intorza.";
-    const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+    const message = "Hi! I'm interested in interior design services from Intorza. Please share more details.";
+    const whatsappUrl = `https://wa.me/919886579923?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
