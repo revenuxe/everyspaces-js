@@ -1,39 +1,46 @@
 import { useRef, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import kitchenImage from "@/assets/service-kitchen.jpg?optimized";
-import bedroomImage from "@/assets/service-bedroom.jpg?optimized";
-import livingImage from "@/assets/service-living.jpg?optimized";
+import { Link } from "react-router-dom";
+import bhk2Image from "@/assets/service-2bhk.jpg";
+import villaImage from "@/assets/service-villa.jpg";
+import kitchenImage from "@/assets/service-modular-kitchen.jpg";
+import bedroomImage from "@/assets/service-bedroom.jpg";
 
 const bestServices = [
   {
     id: 1,
     title: "2 BHK Interiors",
     description: "Complete home transformation with smart space planning.",
-    image: livingImage,
+    image: bhk2Image,
+    link: "/services/2bhk-interiors",
   },
   {
     id: 2,
     title: "3 BHK Interiors",
     description: "Premium designs for spacious modern living.",
-    image: bedroomImage,
+    image: villaImage,
+    link: "/services/3bhk-interiors",
   },
   {
     id: 3,
     title: "Modular Kitchen",
     description: "Functional elegance for culinary enthusiasts.",
     image: kitchenImage,
+    link: "/services/modular-kitchen",
   },
   {
     id: 4,
     title: "Villa Interiors",
     description: "Luxurious designs for your dream villa.",
-    image: livingImage,
+    image: villaImage,
+    link: "/services/villa-interiors",
   },
   {
     id: 5,
     title: "Full Home Design",
     description: "End-to-end interior solutions under one roof.",
     image: bedroomImage,
+    link: "/services/full-home-design",
   },
 ];
 
@@ -171,9 +178,15 @@ const BestServices = () => {
         {bestServices.map((service, index) => {
           const isActive = index === activeIndex;
           return (
-            <div
+            <Link
               key={service.id}
-              onClick={() => !isDragging && scrollToIndex(index)}
+              to={service.link}
+              onClick={(e) => {
+                if (isDragging) {
+                  e.preventDefault();
+                  return;
+                }
+              }}
               className={`flex-shrink-0 w-[75vw] md:w-[40vw] lg:w-[30vw] max-w-md snap-center cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
                 isActive ? "scale-100" : "md:scale-100 scale-[0.92]"
               }`}
@@ -204,9 +217,9 @@ const BestServices = () => {
                     {service.description}
                   </p>
 
-                  <button className="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-secondary/90 hover:bg-secondary rounded-2xl text-secondary-foreground text-sm font-medium transition-colors">
+                  <span className="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-secondary/90 hover:bg-secondary rounded-2xl text-secondary-foreground text-sm font-medium transition-colors">
                     Explore
-                  </button>
+                  </span>
                 </div>
 
                 {/* Arrow Icon */}
@@ -214,7 +227,7 @@ const BestServices = () => {
                   <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-secondary-foreground" />
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>
