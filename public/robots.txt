@@ -1,3 +1,5 @@
+# robots.txt for intorza.com
+
 User-agent: Googlebot
 Allow: /
 
@@ -12,3 +14,14 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Block admin pages
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/login
+
+# Block thank you page (not useful for indexing)
+Disallow: /thank-you
+
+# Sitemap location
+Sitemap: https://intorza.com/sitemap.xml
