@@ -20,10 +20,16 @@ import gallery17 from "@/assets/gallery-17.jpg";
 import gallery18 from "@/assets/gallery-18.jpg";
 import gallery19 from "@/assets/gallery-19.jpg";
 import gallery20 from "@/assets/gallery-20.jpg";
+import gallery21 from "@/assets/gallery-21.jpg";
+import gallery22 from "@/assets/gallery-22.jpg";
+import gallery23 from "@/assets/gallery-23.jpg";
+import gallery24 from "@/assets/gallery-24.jpg";
+import gallery25 from "@/assets/gallery-25.jpg";
+import gallery26 from "@/assets/gallery-26.jpg";
 
 const galleryImages = [
   { id: 1, src: gallery1, title: "Modern Kitchen", category: "Kitchen" },
-  { id: 2, src: gallery2, title: "Premium Kitchen Design", category: "Kitchen" },
+  { id: 2, src: gallery2, title: "Premium Kitchen", category: "Kitchen" },
   { id: 3, src: gallery3, title: "Minimalist Kitchen", category: "Kitchen" },
   { id: 4, src: gallery4, title: "Spacious Kitchen", category: "Kitchen" },
   { id: 5, src: gallery5, title: "Luxury Kitchen", category: "Kitchen" },
@@ -42,15 +48,51 @@ const galleryImages = [
   { id: 18, src: gallery18, title: "Modern Wardrobe", category: "Bedroom" },
   { id: 19, src: gallery19, title: "Sliding Wardrobe", category: "Bedroom" },
   { id: 20, src: gallery20, title: "Teal Wardrobe", category: "Bedroom" },
+  { id: 21, src: gallery21, title: "Pattern Wardrobe", category: "Bedroom" },
+  { id: 22, src: gallery22, title: "Green Accent Bedroom", category: "Bedroom" },
+  { id: 23, src: gallery23, title: "Blue Wardrobe", category: "Bedroom" },
+  { id: 24, src: gallery24, title: "Mirror Wardrobe", category: "Bedroom" },
+  { id: 25, src: gallery25, title: "Study Wardrobe", category: "Bedroom" },
+  { id: 26, src: gallery26, title: "Classic Wardrobe", category: "Bedroom" },
 ];
+
+const categories = ["All", "Kitchen", "Living", "Bedroom", "Storage", "Decor"];
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const filteredImages = activeFilter === "All" 
+    ? galleryImages 
+    : galleryImages.filter(img => img.category === activeFilter);
+
+  // Grid item component
+  const GalleryItem = ({ image, className = "" }: { image: typeof galleryImages[0], className?: string }) => (
+    <div 
+      className={`relative group cursor-pointer overflow-hidden ${className}`}
+      onClick={() => setSelectedImage(image)}
+    >
+      <img 
+        src={image.src} 
+        alt={image.title}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <span className="text-[10px] md:text-xs text-secondary font-medium">{image.category}</span>
+        <h3 className="text-xs md:text-sm font-display text-primary-foreground truncate">{image.title}</h3>
+      </div>
+      <div className="absolute top-1.5 right-1.5 md:top-2 md:right-2 w-5 h-5 md:w-7 md:h-7 bg-secondary/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <ZoomIn className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 text-secondary-foreground" />
+      </div>
+    </div>
+  );
 
   return (
     <section id="gallery" className="py-12 md:py-20 bg-background">
       <div className="container px-2 md:px-4">
-        <div className="text-center mb-8 md:mb-12 px-2">
+        {/* Header */}
+        <div className="text-center mb-6 md:mb-8 px-2">
           <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-sm font-medium rounded-full mb-4">
             Our Portfolio
           </span>
@@ -62,163 +104,68 @@ const GallerySection = () => {
           </p>
         </div>
 
-        {/* Masonry Grid - No gaps */}
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0.5 auto-rows-[100px] md:auto-rows-[160px] lg:auto-rows-[200px]">
-          {/* Large item - spans 2 columns and 2 rows */}
-          <div 
-            className="col-span-2 row-span-2 relative group cursor-pointer overflow-hidden"
-            onClick={() => setSelectedImage(galleryImages[0])}
-          >
-            <img 
-              src={galleryImages[0].src} 
-              alt={galleryImages[0].title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-              <span className="text-[10px] md:text-xs text-secondary font-medium">{galleryImages[0].category}</span>
-              <h3 className="text-xs md:text-base font-display text-primary-foreground">{galleryImages[0].title}</h3>
-            </div>
-            <div className="absolute top-2 right-2 w-6 h-6 md:w-8 md:h-8 bg-secondary/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <ZoomIn className="w-3 h-3 md:w-4 md:h-4 text-secondary-foreground" />
-            </div>
-          </div>
-
-          {/* Regular items */}
-          {[1, 2].map((idx) => (
-            <div 
-              key={idx}
-              className="relative group cursor-pointer overflow-hidden"
-              onClick={() => setSelectedImage(galleryImages[idx])}
+        {/* Category Filters */}
+        <div className="flex flex-wrap justify-center gap-2 mb-6 md:mb-8 px-2">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveFilter(category)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeFilter === category
+                  ? "bg-secondary text-secondary-foreground shadow-md"
+                  : "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground"
+              }`}
             >
-              <img 
-                src={galleryImages[idx].src} 
-                alt={galleryImages[idx].title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
+              {category}
+            </button>
           ))}
+        </div>
 
-          {/* Tall item - spans 2 rows */}
-          <div 
-            className="row-span-2 relative group cursor-pointer overflow-hidden"
-            onClick={() => setSelectedImage(galleryImages[3])}
-          >
-            <img 
-              src={galleryImages[3].src} 
-              alt={galleryImages[3].title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="absolute top-2 right-2 w-6 h-6 bg-secondary/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <ZoomIn className="w-3 h-3 text-secondary-foreground" />
-            </div>
-          </div>
-
-          {/* Wide item - spans 2 columns */}
-          <div 
-            className="col-span-2 relative group cursor-pointer overflow-hidden"
-            onClick={() => setSelectedImage(galleryImages[4])}
-          >
-            <img 
-              src={galleryImages[4].src} 
-              alt={galleryImages[4].title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-
-          {/* More regular items */}
-          {[5, 6, 7, 8].map((idx) => (
-            <div 
-              key={idx}
-              className="relative group cursor-pointer overflow-hidden"
-              onClick={() => setSelectedImage(galleryImages[idx])}
-            >
-              <img 
-                src={galleryImages[idx].src} 
-                alt={galleryImages[idx].title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          ))}
-
-          {/* Large item */}
-          <div 
-            className="col-span-2 row-span-2 relative group cursor-pointer overflow-hidden"
-            onClick={() => setSelectedImage(galleryImages[9])}
-          >
-            <img 
-              src={galleryImages[9].src} 
-              alt={galleryImages[9].title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-              <span className="text-[10px] md:text-xs text-secondary font-medium">{galleryImages[9].category}</span>
-              <h3 className="text-xs md:text-base font-display text-primary-foreground">{galleryImages[9].title}</h3>
-            </div>
-          </div>
-
-          {/* Regular items */}
-          {[10, 11, 12].map((idx) => (
-            <div 
-              key={idx}
-              className="relative group cursor-pointer overflow-hidden"
-              onClick={() => setSelectedImage(galleryImages[idx])}
-            >
-              <img 
-                src={galleryImages[idx].src} 
-                alt={galleryImages[idx].title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          ))}
-
-          {/* Tall item */}
-          <div 
-            className="row-span-2 relative group cursor-pointer overflow-hidden"
-            onClick={() => setSelectedImage(galleryImages[13])}
-          >
-            <img 
-              src={galleryImages[13].src} 
-              alt={galleryImages[13].title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-
-          {/* Wide item */}
-          <div 
-            className="col-span-2 relative group cursor-pointer overflow-hidden"
-            onClick={() => setSelectedImage(galleryImages[14])}
-          >
-            <img 
-              src={galleryImages[14].src} 
-              alt={galleryImages[14].title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-
-          {/* More items */}
-          {[15, 16, 17, 18, 19].map((idx) => (
-            <div 
-              key={idx}
-              className="relative group cursor-pointer overflow-hidden"
-              onClick={() => setSelectedImage(galleryImages[idx])}
-            >
-              <img 
-                src={galleryImages[idx].src} 
-                alt={galleryImages[idx].title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          ))}
+        {/* Masonry Grid - Tight layout with no gaps */}
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-[2px] auto-rows-[80px] md:auto-rows-[120px] lg:auto-rows-[140px]">
+          {filteredImages.length > 0 && (
+            <>
+              {/* Row 1 */}
+              {filteredImages[0] && <GalleryItem image={filteredImages[0]} className="col-span-2 row-span-2" />}
+              {filteredImages[1] && <GalleryItem image={filteredImages[1]} />}
+              {filteredImages[2] && <GalleryItem image={filteredImages[2]} className="row-span-2" />}
+              {filteredImages[3] && <GalleryItem image={filteredImages[3]} />}
+              {filteredImages[4] && <GalleryItem image={filteredImages[4]} />}
+              
+              {/* Row 2 */}
+              {filteredImages[5] && <GalleryItem image={filteredImages[5]} />}
+              {filteredImages[6] && <GalleryItem image={filteredImages[6]} />}
+              {filteredImages[7] && <GalleryItem image={filteredImages[7]} />}
+              
+              {/* Row 3 */}
+              {filteredImages[8] && <GalleryItem image={filteredImages[8]} />}
+              {filteredImages[9] && <GalleryItem image={filteredImages[9]} className="col-span-2 row-span-2" />}
+              {filteredImages[10] && <GalleryItem image={filteredImages[10]} />}
+              {filteredImages[11] && <GalleryItem image={filteredImages[11]} className="row-span-2" />}
+              {filteredImages[12] && <GalleryItem image={filteredImages[12]} />}
+              
+              {/* Row 4 */}
+              {filteredImages[13] && <GalleryItem image={filteredImages[13]} />}
+              {filteredImages[14] && <GalleryItem image={filteredImages[14]} />}
+              {filteredImages[15] && <GalleryItem image={filteredImages[15]} />}
+              
+              {/* Row 5 */}
+              {filteredImages[16] && <GalleryItem image={filteredImages[16]} className="row-span-2" />}
+              {filteredImages[17] && <GalleryItem image={filteredImages[17]} />}
+              {filteredImages[18] && <GalleryItem image={filteredImages[18]} />}
+              {filteredImages[19] && <GalleryItem image={filteredImages[19]} className="col-span-2 row-span-2" />}
+              {filteredImages[20] && <GalleryItem image={filteredImages[20]} />}
+              
+              {/* Row 6 */}
+              {filteredImages[21] && <GalleryItem image={filteredImages[21]} />}
+              {filteredImages[22] && <GalleryItem image={filteredImages[22]} />}
+              {filteredImages[23] && <GalleryItem image={filteredImages[23]} />}
+              
+              {/* Row 7 */}
+              {filteredImages[24] && <GalleryItem image={filteredImages[24]} className="col-span-2" />}
+              {filteredImages[25] && <GalleryItem image={filteredImages[25]} className="col-span-2" />}
+            </>
+          )}
         </div>
 
         {/* CTA Button */}
