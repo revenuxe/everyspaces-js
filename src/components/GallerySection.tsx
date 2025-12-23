@@ -26,6 +26,7 @@ import gallery23 from "@/assets/gallery-23.jpg";
 import gallery24 from "@/assets/gallery-24.jpg";
 import gallery25 from "@/assets/gallery-25.jpg";
 import gallery26 from "@/assets/gallery-26.jpg";
+import gallery27 from "@/assets/gallery-27.jpg";
 
 const galleryImages = [
   { id: 1, src: gallery1, title: "Modern Kitchen", category: "Kitchen" },
@@ -54,6 +55,7 @@ const galleryImages = [
   { id: 24, src: gallery24, title: "Mirror Wardrobe", category: "Bedroom" },
   { id: 25, src: gallery25, title: "Study Wardrobe", category: "Bedroom" },
   { id: 26, src: gallery26, title: "Classic Wardrobe", category: "Bedroom" },
+  { id: 27, src: gallery27, title: "Green Modular Kitchen", category: "Kitchen" },
 ];
 
 const categories = ["All", "Kitchen", "Living", "Bedroom", "Storage", "Decor"];
@@ -163,7 +165,8 @@ const GallerySection = () => {
               
               {/* Row 7 */}
               {filteredImages[24] && <GalleryItem image={filteredImages[24]} className="col-span-2" />}
-              {filteredImages[25] && <GalleryItem image={filteredImages[25]} className="col-span-2" />}
+              {filteredImages[25] && <GalleryItem image={filteredImages[25]} />}
+              {filteredImages[26] && <GalleryItem image={filteredImages[26]} />}
             </>
           )}
         </div>
