@@ -15,6 +15,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Sparkles, FileText, Loader2, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
+import RichTextEditor from "./RichTextEditor";
 
 interface ArticleFormProps {
   article?: any;
@@ -422,14 +423,10 @@ const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="content">Content (HTML) *</Label>
-            <Textarea
-              id="content"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              placeholder="<h1>Title</h1><p>Content...</p>"
-              rows={12}
-              className="font-mono text-sm"
+            <Label>Content *</Label>
+            <RichTextEditor
+              content={content}
+              onChange={setContent}
             />
           </div>
 
