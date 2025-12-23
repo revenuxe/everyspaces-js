@@ -181,6 +181,7 @@ const ServicesCarousel = () => {
                   <img
                     src={service.image}
                     alt={service.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     style={{
                       transform: `translateX(${parallaxOffsets[index]}px) scale(1.15)`,

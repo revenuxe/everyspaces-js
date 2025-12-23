@@ -88,7 +88,7 @@ const LocalitiesSection = () => {
             {localities.map((locality, index) => <div key={index} className="flex-shrink-0 flex flex-col items-center group cursor-pointer">
                 {/* Circular Image */}
                 <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-3 border-secondary/20 group-hover:border-secondary transition-all duration-500 shadow-soft group-hover:shadow-glow">
-                  <img src={locality.image} alt={locality.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img src={locality.image} alt={locality.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300" />
                 </div>
                 
