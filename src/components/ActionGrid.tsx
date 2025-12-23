@@ -31,7 +31,7 @@ const ActionGrid = () => {
   return (
     <section className="py-10 md:py-14 bg-background">
       <div className="container px-4">
-        <h3 className="font-serif text-xl md:text-2xl font-semibold text-primary text-center mb-6">
+        <h3 className="font-display text-2xl md:text-3xl text-primary text-center mb-6">
           Quick Actions
         </h3>
 
@@ -61,10 +61,10 @@ const ActionGrid = () => {
                   <div className="w-12 h-12 rounded-2xl bg-secondary/20 backdrop-blur-sm flex items-center justify-center mb-3 group-hover:bg-secondary/30 transition-colors">
                     <item.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
-                  <h3 className="font-serif text-lg font-semibold text-primary-foreground mb-1">
+                  <h3 className="font-display text-xl text-primary-foreground mb-1">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-primary-foreground/80">
+                  <p className="text-sm text-primary-foreground/80 font-body">
                     {item.description}
                   </p>
                 </div>

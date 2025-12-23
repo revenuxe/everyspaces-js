@@ -81,10 +81,10 @@ const BestServices = () => {
   return (
     <section className="py-12 md:py-16 bg-background">
       <div className="container px-4 mb-6">
-        <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-primary text-center">
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary text-center">
           Best Services
         </h2>
-        <p className="text-center text-muted-foreground mt-2 max-w-md mx-auto">
+        <p className="text-center text-muted-foreground mt-2 max-w-md mx-auto font-body">
           Tailored solutions for every home
         </p>
       </div>
@@ -121,10 +121,10 @@ const BestServices = () => {
 
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                  <h3 className="font-serif text-xl md:text-2xl font-bold text-primary-foreground mb-1">
+                  <h3 className="font-display text-xl md:text-2xl text-primary-foreground mb-1">
                     {service.title}
                   </h3>
-                  <p className="text-primary-foreground/80 text-sm">
+                  <p className="text-primary-foreground/80 text-sm font-body">
                     {service.description}
                   </p>
 

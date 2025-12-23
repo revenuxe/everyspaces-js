@@ -13,7 +13,7 @@ const Footer = () => {
               alt="Intorza"
               className="h-10 w-auto mb-4 brightness-0 invert"
             />
-            <p className="text-primary-foreground/70 text-sm max-w-sm mb-6">
+            <p className="text-primary-foreground/70 text-sm max-w-sm mb-6 font-body">
               Transforming Bengaluru homes with contemporary design excellence. 
               Every space tells your story.
             </p>
@@ -32,8 +32,8 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-sm text-primary-foreground/70">
+            <h4 className="font-display text-lg mb-4">Services</h4>
+            <ul className="space-y-2 text-sm text-primary-foreground/70 font-body">
               <li><a href="#" className="hover:text-secondary transition-colors">Modular Kitchens</a></li>
               <li><a href="#" className="hover:text-secondary transition-colors">Bedroom Interiors</a></li>
               <li><a href="#" className="hover:text-secondary transition-colors">Living Spaces</a></li>
@@ -43,8 +43,8 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-3 text-sm text-primary-foreground/70">
+            <h4 className="font-display text-lg mb-4">Contact Us</h4>
+            <ul className="space-y-3 text-sm text-primary-foreground/70 font-body">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-secondary" />
                 <span>123 Design Street, Koramangala, Bengaluru 560034</span>
@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-sm text-primary-foreground/50">
+        <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-sm text-primary-foreground/50 font-body">
           <p>© 2024 Intorza Interior Design. All rights reserved.</p>
         </div>
       </div>

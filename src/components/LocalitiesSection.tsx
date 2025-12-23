@@ -30,10 +30,10 @@ const LocalitiesSection = () => {
   return (
     <section id="localities" className="py-16 md:py-24 bg-background">
       <div className="container px-4">
-        <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary text-center mb-2">
-          TOP LOCALITIES
+        <h2 className="font-display text-3xl md:text-4xl text-primary text-center mb-2">
+          Top Localities
         </h2>
-        <p className="text-center text-muted-foreground mb-10">
+        <p className="text-center text-muted-foreground mb-10 font-body">
           Serving Bengaluru's finest neighborhoods
         </p>
 
@@ -55,10 +55,10 @@ const LocalitiesSection = () => {
               </div>
               
               {/* Text */}
-              <h3 className="mt-3 font-semibold text-primary text-sm md:text-base">
+              <h3 className="mt-3 font-display text-primary text-sm md:text-base">
                 {locality.name}
               </h3>
-              <p className="text-xs text-muted-foreground">{locality.projects}</p>
+              <p className="text-xs text-muted-foreground font-body">{locality.projects}</p>
             </div>
           ))}
         </div>
