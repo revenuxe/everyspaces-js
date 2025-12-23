@@ -4,9 +4,16 @@ import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
-import kitchenImage from "@/assets/service-kitchen.jpg";
+
+// Service images
+import kitchenImage from "@/assets/service-modular-kitchen.jpg";
+import wardrobeImage from "@/assets/service-wardrobe.jpg";
+import livingImage from "@/assets/service-living-room.jpg";
 import bedroomImage from "@/assets/service-bedroom.jpg";
-import livingImage from "@/assets/service-living.jpg";
+import tvUnitImage from "@/assets/service-tv-unit.jpg";
+import poojaImage from "@/assets/service-pooja-room.jpg";
+import villaImage from "@/assets/service-villa.jpg";
+import bhk2Image from "@/assets/service-2bhk.jpg";
 
 const services = [
   {
@@ -14,140 +21,140 @@ const services = [
     title: "Modular Kitchen",
     description: "Smart storage & modern designs for your culinary space.",
     image: kitchenImage,
-    link: "/contact",
+    link: "/services/modular-kitchen",
   },
   {
     id: 2,
     title: "Wardrobe Design",
     description: "Custom wardrobes maximizing every inch of space.",
-    image: bedroomImage,
-    link: "/contact",
+    image: wardrobeImage,
+    link: "/services/wardrobe-design",
   },
   {
     id: 3,
     title: "Living Room",
     description: "Elegant designs for memorable family moments.",
     image: livingImage,
-    link: "/contact",
+    link: "/services/living-room",
   },
   {
     id: 4,
     title: "Bedroom Interiors",
     description: "Cozy retreats with smart storage solutions.",
     image: bedroomImage,
-    link: "/contact",
+    link: "/services/bedroom-interiors",
   },
   {
     id: 5,
     title: "2 BHK Interiors",
     description: "Complete transformation for compact homes.",
-    image: livingImage,
-    link: "/contact",
+    image: bhk2Image,
+    link: "/services/2bhk-interiors",
   },
   {
     id: 6,
     title: "3 BHK Interiors",
     description: "Premium designs for spacious living.",
-    image: kitchenImage,
-    link: "/contact",
+    image: villaImage,
+    link: "/services/3bhk-interiors",
   },
   {
     id: 7,
     title: "Villa Interiors",
     description: "Luxurious designs for your dream villa.",
-    image: livingImage,
-    link: "/contact",
+    image: villaImage,
+    link: "/services/villa-interiors",
   },
   {
     id: 8,
     title: "Full Home Design",
     description: "End-to-end interior solutions under one roof.",
-    image: bedroomImage,
-    link: "/contact",
+    image: bhk2Image,
+    link: "/services/full-home-design",
   },
   {
     id: 9,
     title: "Home Office",
     description: "Productivity-focused workspaces for professionals.",
-    image: kitchenImage,
-    link: "/contact",
+    image: bedroomImage,
+    link: "/services/home-office",
   },
   {
     id: 10,
     title: "Kids Room",
     description: "Playful yet functional spaces for little ones.",
-    image: livingImage,
-    link: "/contact",
+    image: wardrobeImage,
+    link: "/services/kids-room",
   },
   {
     id: 11,
     title: "Dining Space",
     description: "Elegant settings for family gatherings.",
-    image: kitchenImage,
-    link: "/contact",
+    image: livingImage,
+    link: "/services/dining-space",
   },
   {
     id: 12,
     title: "Bathroom Design",
     description: "Spa-inspired designs with premium fixtures.",
-    image: bedroomImage,
-    link: "/contact",
+    image: kitchenImage,
+    link: "/services/bathroom-design",
   },
   {
     id: 13,
     title: "Pooja Room",
     description: "Sacred spaces with traditional craftsmanship.",
-    image: livingImage,
-    link: "/contact",
+    image: poojaImage,
+    link: "/services/pooja-room",
   },
   {
     id: 14,
     title: "Foyer & Entrance",
     description: "Make stunning first impressions.",
-    image: kitchenImage,
-    link: "/contact",
+    image: villaImage,
+    link: "/services/foyer-entrance",
   },
   {
     id: 15,
-    title: "Balcony Design",
-    description: "Transform outdoor spaces into relaxing retreats.",
-    image: bedroomImage,
-    link: "/contact",
+    title: "TV Unit Design",
+    description: "Modern entertainment centers with smart storage.",
+    image: tvUnitImage,
+    link: "/services/tv-unit-design",
   },
   {
     id: 16,
-    title: "TV Unit Design",
-    description: "Modern entertainment centers with smart storage.",
+    title: "False Ceiling",
+    description: "Artistic ceiling designs with ambient lighting.",
     image: livingImage,
-    link: "/contact",
+    link: "/services/false-ceiling",
   },
   {
     id: 17,
-    title: "False Ceiling",
-    description: "Artistic ceiling designs with ambient lighting.",
+    title: "Crockery Unit",
+    description: "Stylish display units for your precious collection.",
     image: kitchenImage,
-    link: "/contact",
+    link: "/services/crockery-unit",
   },
   {
     id: 18,
-    title: "Crockery Unit",
-    description: "Stylish display units for your precious collection.",
+    title: "Study Room",
+    description: "Focused learning environments for students.",
     image: bedroomImage,
-    link: "/contact",
+    link: "/services/study-room",
   },
   {
     id: 19,
-    title: "Study Room",
-    description: "Focused learning environments for students.",
-    image: livingImage,
-    link: "/contact",
+    title: "Guest Room",
+    description: "Comfortable spaces for your visitors.",
+    image: wardrobeImage,
+    link: "/services/guest-room",
   },
   {
     id: 20,
-    title: "Guest Room",
-    description: "Comfortable spaces for your visitors.",
-    image: kitchenImage,
-    link: "/contact",
+    title: "Balcony Design",
+    description: "Transform outdoor spaces into relaxing retreats.",
+    image: bhk2Image,
+    link: "/services/balcony-design",
   },
 ];
 
