@@ -97,24 +97,6 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-8 bg-card rounded-2xl px-8 py-4 shadow-soft border border-border/50">
-            <div className="text-center">
-              <p className="font-display text-2xl md:text-3xl text-primary font-bold">500+</p>
-              <p className="text-xs text-muted-foreground font-body">Happy Clients</p>
-            </div>
-            <div className="w-px h-12 bg-border"></div>
-            <div className="text-center">
-              <p className="font-display text-2xl md:text-3xl text-primary font-bold">4.9/5</p>
-              <p className="text-xs text-muted-foreground font-body">Google Rating</p>
-            </div>
-            <div className="w-px h-12 bg-border"></div>
-            <div className="text-center">
-              <p className="font-display text-2xl md:text-3xl text-primary font-bold">10+</p>
-              <p className="text-xs text-muted-foreground font-body">Years Experience</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
