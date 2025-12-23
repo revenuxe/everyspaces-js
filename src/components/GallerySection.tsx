@@ -71,7 +71,7 @@ const GallerySection = () => {
   // Grid item component
   const GalleryItem = ({ image, className = "" }: { image: typeof galleryImages[0], className?: string }) => (
     <div 
-      className={`relative group cursor-pointer overflow-hidden rounded-lg md:rounded-xl ${className}`}
+      className={`relative group cursor-pointer overflow-hidden rounded-md md:rounded-lg ${className}`}
       onClick={() => setSelectedImage(image)}
     >
       <img 
@@ -79,7 +79,7 @@ const GallerySection = () => {
         alt={image.title}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg md:rounded-xl" />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md md:rounded-lg" />
       <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
         <span className="text-[10px] md:text-xs text-secondary font-medium">{image.category}</span>
         <h3 className="text-xs md:text-sm font-display text-primary-foreground truncate">{image.title}</h3>
