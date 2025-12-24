@@ -29,7 +29,7 @@ export type Database = {
           published_at: string | null
           reading_time: number | null
           slug: string
-          status: string | null
+          status: Database["public"]["Enums"]["article_status"]
           tags: string[] | null
           title: string
           updated_at: string
@@ -48,7 +48,7 @@ export type Database = {
           published_at?: string | null
           reading_time?: number | null
           slug: string
-          status?: string | null
+          status?: Database["public"]["Enums"]["article_status"]
           tags?: string[] | null
           title: string
           updated_at?: string
@@ -67,42 +67,9 @@ export type Database = {
           published_at?: string | null
           reading_time?: number | null
           slug?: string
-          status?: string | null
+          status?: Database["public"]["Enums"]["article_status"]
           tags?: string[] | null
           title?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      forms: {
-        Row: {
-          created_at: string
-          description: string | null
-          fields: Json
-          id: string
-          is_active: boolean
-          name: string
-          slug: string
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          description?: string | null
-          fields?: Json
-          id?: string
-          is_active?: boolean
-          name: string
-          slug: string
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          description?: string | null
-          fields?: Json
-          id?: string
-          is_active?: boolean
-          name?: string
-          slug?: string
           updated_at?: string
         }
         Relationships: []
@@ -111,7 +78,6 @@ export type Database = {
         Row: {
           created_at: string
           data: Json
-          form_id: string | null
           form_name: string
           id: string
           notes: string | null
@@ -122,7 +88,6 @@ export type Database = {
         Insert: {
           created_at?: string
           data?: Json
-          form_id?: string | null
           form_name: string
           id?: string
           notes?: string | null
@@ -133,7 +98,6 @@ export type Database = {
         Update: {
           created_at?: string
           data?: Json
-          form_id?: string | null
           form_name?: string
           id?: string
           notes?: string | null
@@ -141,15 +105,34 @@ export type Database = {
           status?: Database["public"]["Enums"]["lead_status"]
           updated_at?: string
         }
-        Relationships: [
-          {
-            foreignKeyName: "leads_form_id_fkey"
-            columns: ["form_id"]
-            isOneToOne: false
-            referencedRelation: "forms"
-            referencedColumns: ["id"]
-          },
-        ]
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
       }
       user_roles: {
         Row: {
@@ -161,7 +144,7 @@ export type Database = {
         Insert: {
           created_at?: string
           id?: string
-          role: Database["public"]["Enums"]["app_role"]
+          role?: Database["public"]["Enums"]["app_role"]
           user_id: string
         }
         Update: {
@@ -186,7 +169,8 @@ export type Database = {
       }
     }
     Enums: {
-      app_role: "admin" | "user"
+      app_role: "admin" | "moderator" | "user"
+      article_status: "draft" | "published" | "archived"
       lead_status:
         | "new"
         | "follow_up"
@@ -321,7 +305,8 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      app_role: ["admin", "user"],
+      app_role: ["admin", "moderator", "user"],
+      article_status: ["draft", "published", "archived"],
       lead_status: [
         "new",
         "follow_up",
