@@ -76,6 +76,15 @@ const QuotationPopup = () => {
         
         {/* Banner */}
         <div className="relative bg-gradient-to-r from-secondary via-secondary/95 to-secondary/90 p-4 md:p-6 text-center overflow-hidden">
+          {/* Close button */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-2 right-2 md:top-3 md:right-3 w-6 h-6 md:w-8 md:h-8 rounded-full bg-white/90 text-foreground flex items-center justify-center shadow-md hover:bg-white transition-colors z-20"
+            aria-label="Close"
+          >
+            <X className="w-3 h-3 md:w-4 md:h-4" />
+          </button>
+          
           {/* Decorative elements */}
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-2 left-4 w-8 h-8 border-2 border-white/30 rounded-full" />
@@ -151,14 +160,6 @@ const QuotationPopup = () => {
           </Button>
         </form>
 
-        {/* Close button */}
-        <button
-          onClick={() => setIsOpen(false)}
-          className="absolute top-2 right-2 md:top-3 md:right-3 w-6 h-6 md:w-8 md:h-8 rounded-full bg-white/90 text-foreground flex items-center justify-center shadow-md hover:bg-white transition-colors z-10"
-          aria-label="Close"
-        >
-          <X className="w-3 h-3 md:w-4 md:h-4" />
-        </button>
       </DialogContent>
     </Dialog>
   );
