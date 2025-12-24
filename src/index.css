@@ -414,24 +414,51 @@
   @apply my-8 border-0 h-px bg-gradient-to-r from-transparent via-border to-transparent;
 }
 
+/* Desktop Table - Clean Modern Design */
 .article-content table {
-  @apply w-full my-6 border-collapse overflow-hidden rounded-lg text-sm;
+  @apply w-full my-8 text-sm border border-border/60 rounded-xl overflow-hidden shadow-sm;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 .article-content thead {
-  @apply bg-muted;
+  @apply bg-gradient-to-r from-secondary/10 to-secondary/5;
 }
 
 .article-content th {
-  @apply py-2.5 px-3 text-left font-semibold text-foreground text-xs;
+  @apply py-3.5 px-4 text-left font-semibold text-foreground text-xs uppercase tracking-wide border-b-2 border-secondary/30;
+}
+
+.article-content th:first-child {
+  @apply rounded-tl-xl;
+}
+
+.article-content th:last-child {
+  @apply rounded-tr-xl;
 }
 
 .article-content td {
-  @apply py-2.5 px-3 border-t border-border/50 text-foreground/80 text-xs;
+  @apply py-3.5 px-4 border-b border-border/40 text-foreground/80 text-sm;
+}
+
+.article-content tbody tr {
+  @apply transition-all duration-200;
 }
 
 .article-content tbody tr:hover {
-  @apply bg-muted/30;
+  @apply bg-secondary/5;
+}
+
+.article-content tbody tr:last-child td {
+  @apply border-b-0;
+}
+
+.article-content tbody tr:last-child td:first-child {
+  @apply rounded-bl-xl;
+}
+
+.article-content tbody tr:last-child td:last-child {
+  @apply rounded-br-xl;
 }
 
 .article-content code {
@@ -541,24 +568,67 @@
   @apply my-6 border-0 h-px bg-gradient-to-r from-transparent via-border to-transparent;
 }
 
+/* Mobile Table - Card-based Stacked Layout */
 .article-content-mobile table {
-  @apply w-full my-5 border-collapse overflow-hidden rounded-lg text-xs;
+  @apply w-full my-6 border-0;
+  display: block;
 }
 
 .article-content-mobile thead {
-  @apply bg-muted;
+  @apply sr-only;
+  display: none;
 }
 
-.article-content-mobile th {
-  @apply py-2 px-2.5 text-left font-semibold text-foreground text-[10px];
+.article-content-mobile tbody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.article-content-mobile tbody tr {
+  display: flex;
+  flex-direction: column;
+  @apply bg-gradient-to-br from-card to-muted/30 rounded-xl p-4 shadow-sm border border-border/50;
+  transition: all 0.2s ease;
+}
+
+.article-content-mobile tbody tr:active {
+  @apply scale-[0.98];
 }
 
 .article-content-mobile td {
-  @apply py-2 px-2.5 border-t border-border/50 text-foreground/80 text-[10px];
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  @apply py-2 px-0 border-b border-border/30 text-foreground/80 text-sm;
 }
 
-.article-content-mobile tbody tr:hover {
-  @apply bg-muted/30;
+.article-content-mobile td:last-child {
+  @apply border-b-0 pb-0;
+}
+
+.article-content-mobile td:first-child {
+  @apply pt-0;
+}
+
+.article-content-mobile td::before {
+  content: attr(data-label);
+  @apply font-semibold text-foreground text-xs uppercase tracking-wide shrink-0 min-w-[100px];
+}
+
+/* When no data-label, style as feature row */
+.article-content-mobile td:not([data-label])::before {
+  content: none;
+}
+
+/* First cell styling - acts as card header */
+.article-content-mobile tbody tr td:first-child {
+  @apply text-secondary font-semibold text-base pb-2 mb-1 border-b-2 border-secondary/20;
+}
+
+.article-content-mobile tbody tr td:first-child::before {
+  content: none;
 }
 
 .article-content-mobile code {
