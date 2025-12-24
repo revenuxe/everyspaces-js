@@ -135,10 +135,18 @@ const ArticleDetail = () => {
     }
   };
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (e: React.MouseEvent | React.TouchEvent, id: string) => {
+    e.preventDefault();
+    e.stopPropagation();
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
 
@@ -236,7 +244,7 @@ const ArticleDetail = () => {
               </Link>
               <ChevronRight className="w-3 h-3 shrink-0" />
               <Link to="/articles" className="hover:text-secondary transition-colors shrink-0">
-                Blog
+                Articles
               </Link>
               <ChevronRight className="w-3 h-3 shrink-0" />
               <span className="text-foreground/60 truncate max-w-[120px] md:max-w-[250px]">
@@ -328,17 +336,19 @@ const ArticleDetail = () => {
                 {toc.map((item) => (
                   <button
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={`block w-full text-left py-1.5 px-2.5 rounded-lg text-xs transition-all duration-200 ${
-                      item.level === 3 ? "pl-5" : ""
+                    type="button"
+                    onClick={(e) => scrollToSection(e, item.id)}
+                    onTouchEnd={(e) => scrollToSection(e, item.id)}
+                    className={`block w-full text-left py-2.5 px-3 rounded-lg text-xs transition-all duration-200 touch-manipulation ${
+                      item.level === 3 ? "pl-6" : ""
                     } ${
                       activeSection === item.id
                         ? "bg-secondary/15 text-secondary font-medium"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted/60 active:bg-muted/80"
                     }`}
                   >
                     <span className="flex items-start gap-2">
-                      <span className={`w-1 h-1 rounded-full shrink-0 mt-1.5 ${
+                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 mt-1 ${
                         activeSection === item.id ? "bg-secondary" : "bg-muted-foreground/40"
                       }`} />
                       <span className="line-clamp-2 leading-snug">{item.text}</span>
