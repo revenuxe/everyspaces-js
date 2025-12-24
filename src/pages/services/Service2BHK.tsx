@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
+import RelatedServices from "@/components/RelatedServices";
 
 import bhk2Image from "@/assets/service-2bhk.jpg";
 import kitchenImage from "@/assets/service-modular-kitchen.jpg";
@@ -322,6 +323,8 @@ const Service2BHK = () => {
             </div>
           </div>
         </section>
+
+        <RelatedServices currentSlug="2bhk-interiors" />
 
         {/* FAQ */}
         <FAQSection />

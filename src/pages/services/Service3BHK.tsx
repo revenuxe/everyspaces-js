@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
+import RelatedServices from "@/components/RelatedServices";
 
 import villaImage from "@/assets/service-villa.jpg";
 import kitchenImage from "@/assets/service-modular-kitchen.jpg";
@@ -271,6 +272,8 @@ const Service3BHK = () => {
             </div>
           </div>
         </section>
+
+        <RelatedServices currentSlug="3bhk-interiors" />
 
         <FAQSection />
 

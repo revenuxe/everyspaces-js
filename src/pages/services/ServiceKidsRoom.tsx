@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
+import RelatedServices from "@/components/RelatedServices";
 
 import livingImage from "@/assets/service-living-room.jpg";
 import bedroomImage from "@/assets/service-bedroom.jpg";
@@ -138,6 +139,8 @@ const ServiceKidsRoom = () => {
             </div>
           </div>
         </section>
+
+        <RelatedServices currentSlug="kids-room" />
 
         <FAQSection />
 
