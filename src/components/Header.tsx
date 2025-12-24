@@ -52,6 +52,8 @@ const Header = () => {
           <img
             src={intorzaLogo}
             alt="Intorza Interior Design"
+            width={197}
+            height={40}
             className="h-8 md:h-10 w-auto object-contain"
           />
         </Link>
@@ -88,11 +90,13 @@ const Header = () => {
           <button 
             className="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-muted/50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? (
-              <X className="w-5 h-5 text-primary" />
+              <X className="w-5 h-5 text-primary" aria-hidden="true" />
             ) : (
-              <Menu className="w-5 h-5 text-primary" />
+              <Menu className="w-5 h-5 text-primary" aria-hidden="true" />
             )}
           </button>
         </div>

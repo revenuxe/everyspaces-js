@@ -11,7 +11,9 @@ const Footer = () => {
           <div className="md:col-span-2">
             <img
               src={intorzaLogo}
-              alt="Intorza"
+              alt="Intorza Interior Design"
+              width={197}
+              height={40}
               className="h-10 w-auto mb-4 brightness-0 invert"
             />
             <p className="text-primary-foreground/70 text-sm max-w-sm mb-6 font-body">
@@ -19,14 +21,14 @@ const Footer = () => {
               Every space tells your story.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                <Instagram className="w-5 h-5" />
+              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors" aria-label="Follow us on Instagram">
+                <Instagram className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                <Facebook className="w-5 h-5" />
+              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors" aria-label="Follow us on Facebook">
+                <Facebook className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                <Linkedin className="w-5 h-5" />
+              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary transition-colors" aria-label="Connect with us on LinkedIn">
+                <Linkedin className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
           </div>

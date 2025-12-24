@@ -43,7 +43,7 @@ const HowItWorksSection = () => {
     <section id="how-it-works" className="py-12 md:py-24 bg-muted/30">
       <div className="container px-4">
         <div className="text-center mb-8 md:mb-16">
-          <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-xs md:text-sm font-medium mb-3 md:mb-4">
+          <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary font-semibold rounded-full text-xs md:text-sm mb-3 md:mb-4">
             Our Process
           </span>
           <h2 className="font-display text-2xl md:text-4xl text-primary mb-2 md:mb-3">
@@ -74,7 +74,7 @@ const HowItWorksSection = () => {
                   <step.icon className="w-5 h-5 md:w-10 md:h-10 text-secondary transition-transform duration-300 md:group-hover:scale-110" />
                   
                   {/* Step Badge */}
-                  <span className="absolute -top-1.5 -right-1.5 md:-top-2 md:-right-2 w-5 h-5 md:w-7 md:h-7 bg-secondary text-secondary-foreground rounded-full text-[10px] md:text-xs font-bold flex items-center justify-center shadow-md">
+                  <span className="absolute -top-1.5 -right-1.5 md:-top-2 md:-right-2 w-5 h-5 md:w-7 md:h-7 bg-primary text-primary-foreground rounded-full text-[10px] md:text-xs font-bold flex items-center justify-center shadow-md">
                     {step.step}
                   </span>
                 </div>
@@ -86,7 +86,7 @@ const HowItWorksSection = () => {
                 
                 {/* Payment Badge */}
                 {step.payment && (
-                  <span className="inline-block px-2 py-0.5 md:px-3 md:py-1 bg-secondary/10 text-secondary text-[9px] md:text-xs font-semibold rounded-full mb-1 md:mb-2">
+                  <span className="inline-block px-2 py-0.5 md:px-3 md:py-1 bg-secondary/20 text-secondary text-[9px] md:text-xs font-bold rounded-full mb-1 md:mb-2">
                     {step.payment}
                   </span>
                 )}
