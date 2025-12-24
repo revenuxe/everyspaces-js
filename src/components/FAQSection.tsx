@@ -82,7 +82,7 @@ const FAQSection = () => {
       
       <div className="container px-4">
         <div className="text-center mb-12">
-          <span className="text-secondary font-medium text-sm tracking-wider uppercase mb-2 block">
+          <span className="text-secondary font-semibold text-sm tracking-wider uppercase mb-2 block">
             Frequently Asked Questions
           </span>
           <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">

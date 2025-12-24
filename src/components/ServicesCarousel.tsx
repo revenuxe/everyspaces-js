@@ -200,17 +200,26 @@ const ServicesCarousel = () => {
       </div>
 
       {/* Pagination Dots */}
-      <div className="flex justify-center gap-1.5 mt-6 flex-wrap max-w-xs mx-auto">
-        {services.map((_, index) => (
+      <div className="flex justify-center gap-2 mt-6 flex-wrap max-w-xs mx-auto" role="tablist" aria-label="Service carousel navigation">
+        {services.map((service, index) => (
           <button
             key={index}
             onClick={() => scrollToIndex(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
+            aria-label={`Go to ${service.title}`}
+            aria-selected={index === activeIndex}
+            role="tab"
+            className={`min-w-[24px] min-h-[24px] flex items-center justify-center rounded-full transition-all duration-300 ${
               index === activeIndex
-                ? "w-6 bg-secondary"
-                : "w-2 bg-primary/20 hover:bg-primary/40"
+                ? "bg-secondary"
+                : "bg-primary/30 hover:bg-primary/50"
             }`}
-          />
+          >
+            <span className={`rounded-full transition-all duration-300 ${
+              index === activeIndex
+                ? "w-4 h-1.5 bg-secondary-foreground"
+                : "w-1.5 h-1.5 bg-primary-foreground/70"
+            }`} />
+          </button>
         ))}
       </div>
     </section>

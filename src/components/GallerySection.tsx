@@ -52,7 +52,7 @@ const GallerySection = () => {
       <div className="container px-2 md:px-4">
         {/* Header */}
         <div className="text-center mb-6 md:mb-8 px-2">
-          <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-sm font-medium rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary font-semibold text-sm rounded-full mb-4">
             Our Portfolio
           </span>
           <h2 className="font-display text-2xl md:text-4xl lg:text-5xl text-primary tracking-[-0.025em]">

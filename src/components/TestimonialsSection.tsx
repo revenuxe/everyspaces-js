@@ -50,7 +50,7 @@ const TestimonialsSection = () => {
     <section id="testimonials" className="py-16 md:py-24 bg-muted/30">
       <div className="container px-4">
         <div className="text-center mb-12">
-          <span className="text-secondary font-medium text-sm tracking-wider uppercase mb-2 block">
+          <span className="text-secondary font-semibold text-sm tracking-wider uppercase mb-2 block">
             Customer Reviews
           </span>
           <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
@@ -89,7 +89,7 @@ const TestimonialsSection = () => {
                 <p className="text-xs text-muted-foreground font-body">
                   {testimonial.location}
                 </p>
-                <span className="inline-block mt-2 text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full">
+                <span className="inline-block mt-2 text-xs bg-secondary/20 text-secondary font-semibold px-2 py-1 rounded-full">
                   {testimonial.service}
                 </span>
               </div>

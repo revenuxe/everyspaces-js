@@ -71,7 +71,7 @@ const LocalitiesSection = () => {
   return <section id="localities" className="py-16 md:py-24 bg-background">
       <div className="container px-4">
         <div className="text-center mb-10">
-          <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary font-semibold rounded-full text-sm mb-4">
             Our Reach
           </span>
           <h2 className="font-display text-3xl md:text-4xl text-primary mb-2">
