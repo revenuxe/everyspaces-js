@@ -108,10 +108,10 @@ const ServiceModularKitchen = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Modular Kitchen Design in Bangalore | Best Kitchen Interiors | Intorza</title>
+        <title>Modular Kitchen Design Bangalore | L-Shape, U-Shape, Island | Intorza</title>
         <meta
           name="description"
-          content="Best modular kitchen designers in Bangalore. L-shaped, U-shaped, island kitchens with premium materials. 10-year warranty. Get free quote!"
+          content="Best modular kitchen designers in Bangalore. L-shaped, U-shaped & island kitchens with Hettich hardware. 10-year warranty, 45-day delivery!"
         />
         <meta
           name="keywords"

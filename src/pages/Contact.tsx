@@ -92,10 +92,10 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Contact Intorza | Get Free Interior Design Consultation</title>
+        <title>Contact Us | Free Interior Consultation in Bangalore | Intorza</title>
         <meta
           name="description"
-          content="Contact Intorza for a free interior design consultation in Bangalore. Call +91 9886579923 or submit our form for quick response."
+          content="Get a free interior design consultation from Intorza Bangalore. Call +91 9886579923 or fill our form. Response within 24 hours guaranteed!"
         />
         <link rel="canonical" href="https://intorza.com/contact" />
       </Helmet>

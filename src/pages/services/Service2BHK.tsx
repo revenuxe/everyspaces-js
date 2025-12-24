@@ -111,10 +111,10 @@ const Service2BHK = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>2 BHK Interior Design in Bangalore | Best Home Interiors | Intorza</title>
+        <title>2 BHK Interior Design Bangalore | Affordable Packages | Intorza</title>
         <meta
           name="description"
-          content="Best 2 BHK interior designers in Bangalore. Complete home interiors with modular kitchen, wardrobes, false ceiling. 10-year warranty. Get free quote!"
+          content="Transform your 2 BHK with Intorza's expert interior designers in Bangalore. Complete packages starting ₹4L. Kitchen, wardrobes & living room included!"
         />
         <meta
           name="keywords"

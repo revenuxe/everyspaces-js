@@ -56,8 +56,8 @@ const ServiceLivingRoom = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Living Room Interior Design Bangalore | TV Unit Design | Intorza</title>
-        <meta name="description" content="Best living room interior designers in Bangalore. Modern TV units, false ceiling, sofa design. Smart living room solutions. Get free quote!" />
+        <title>Living Room Interior Design Bangalore | TV Unit & False Ceiling | Intorza</title>
+        <meta name="description" content="Transform your living room with Intorza Bangalore. Modern TV units, false ceilings, feature walls & smart lighting. Get free design consultation!" />
         <meta name="keywords" content="living room interior design bangalore, TV unit design, living room false ceiling, modern living room, smart living room" />
         <link rel="canonical" href="https://intorza.com/services/living-room" />
       </Helmet>

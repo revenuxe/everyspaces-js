@@ -57,7 +57,7 @@ const ServiceWardrobe = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Wardrobe Design Bangalore | Sliding & Walk-in Closets | Intorza</title>
-        <meta name="description" content="Best wardrobe designers in Bangalore. Sliding wardrobes, walk-in closets, custom storage solutions. Premium materials. Get free quote!" />
+        <meta name="description" content="Custom wardrobe designs by Intorza Bangalore. Sliding wardrobes, walk-in closets & loft storage. Soft-close hardware, premium finishes. Free quote!" />
         <meta name="keywords" content="wardrobe design bangalore, sliding wardrobe, walk-in closet bangalore, custom wardrobe, modular wardrobe" />
         <link rel="canonical" href="https://intorza.com/services/wardrobe-design" />
       </Helmet>

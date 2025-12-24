@@ -56,8 +56,8 @@ const ServiceBathroom = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Bathroom Interior Design Bangalore | Modern Bathroom | Intorza</title>
-        <meta name="description" content="Best bathroom interior designers in Bangalore. Spa-inspired bathrooms, modern vanities, premium fixtures. Complete bathroom renovation. Get free quote!" />
+        <title>Bathroom Design Bangalore | Spa-Inspired Renovation | Intorza</title>
+        <meta name="description" content="Transform your bathroom into a spa-like retreat with Intorza Bangalore. Premium fixtures from Kohler & Grohe. Complete bathroom renovation services!" />
         <meta name="keywords" content="bathroom design bangalore, bathroom interior, modern bathroom design, bathroom renovation, spa bathroom" />
         <link rel="canonical" href="https://intorza.com/services/bathroom-design" />
       </Helmet>

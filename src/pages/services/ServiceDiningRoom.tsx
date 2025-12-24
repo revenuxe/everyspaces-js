@@ -56,8 +56,8 @@ const ServiceDiningRoom = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Dining Room Interior Design Bangalore | Dining Table Design | Intorza</title>
-        <meta name="description" content="Best dining room interior designers in Bangalore. Custom dining tables, crockery units, bar cabinets. Elegant dining space design. Get free quote!" />
+        <title>Dining Room Design Bangalore | Crockery Unit & Bar Cabinet | Intorza</title>
+        <meta name="description" content="Elegant dining room designs by Intorza Bangalore. Custom dining tables, crockery units, bar cabinets & statement lighting. Get free consultation!" />
         <meta name="keywords" content="dining room design bangalore, dining table design, crockery unit design, dining room interior, bar cabinet design" />
         <link rel="canonical" href="https://intorza.com/services/dining-room" />
       </Helmet>

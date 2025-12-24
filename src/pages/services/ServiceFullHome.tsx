@@ -110,10 +110,10 @@ const ServiceFullHome = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Full Home Interior Design in Bangalore | Complete Interiors | Intorza</title>
+        <title>Full Home Interior Design Bangalore | End-to-End Solutions | Intorza</title>
         <meta
           name="description"
-          content="Complete home interior design in Bangalore. End-to-end solutions for kitchen, bedrooms, living room, wardrobes. 10-year warranty. Get free quote!"
+          content="Complete home interior packages in Bangalore by Intorza. Kitchen, bedrooms, living room & wardrobes in one package. Faster delivery, better value!"
         />
         <meta
           name="keywords"

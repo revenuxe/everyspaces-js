@@ -70,10 +70,10 @@ const PriceCalculator = () => {
   return (
     <>
       <Helmet>
-        <title>Interior Design Price Calculator | Intorza Bangalore</title>
+        <title>Interior Design Cost Calculator | Get Instant Quote | Intorza Bangalore</title>
         <meta
           name="description"
-          content="Calculate your interior design cost instantly. Get 10% lower prices than competitors. Free estimates for 1BHK to Villa interiors in Bangalore."
+          content="Calculate your home interior design cost instantly. 10% lower than competitors! Free estimates for 1BHK, 2BHK, 3BHK & Villa interiors in Bangalore."
         />
         <link rel="canonical" href="https://intorza.com/price-calculator" />
       </Helmet>

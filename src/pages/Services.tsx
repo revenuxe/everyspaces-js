@@ -42,10 +42,10 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Interior Design Services in Bangalore | Intorza</title>
+        <title>All Interior Design Services in Bangalore | 20+ Categories | Intorza</title>
         <meta
           name="description"
-          content="Explore our complete range of interior design services - modular kitchens, wardrobes, living rooms, bedrooms, 2BHK, 3BHK, villa interiors & more. Get free quote!"
+          content="Browse 20+ interior design services by Intorza Bangalore. Modular kitchen, wardrobe, living room, bedroom, 2BHK, 3BHK, villa & more. Free quote!"
         />
         <link rel="canonical" href="https://intorza.com/services" />
       </Helmet>

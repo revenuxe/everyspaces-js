@@ -56,8 +56,8 @@ const ServiceKidsRoom = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Kids Room Interior Design Bangalore | Children Bedroom | Intorza</title>
-        <meta name="description" content="Best kids room interior designers in Bangalore. Safe, playful, and functional children bedroom designs. Theme rooms, bunk beds, study areas. Get free quote!" />
+        <title>Kids Room Design Bangalore | Fun & Safe Children Bedroom | Intorza</title>
+        <meta name="description" content="Design fun, safe & creative kids rooms with Intorza Bangalore. Theme rooms, bunk beds, study areas & playful storage. Get free consultation!" />
         <meta name="keywords" content="kids room design bangalore, children bedroom interior, kids room themes, bunk bed design, kids study room" />
         <link rel="canonical" href="https://intorza.com/services/kids-room" />
       </Helmet>
