@@ -1,9 +1,9 @@
 import { useRef, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import kitchenImage from "@/assets/service-kitchen.jpg?optimized";
-import bedroomImage from "@/assets/service-bedroom.jpg?optimized";
-import livingImage from "@/assets/service-living.jpg?optimized";
+import kitchenImage from "@/assets/service-kitchen.jpg?webp";
+import bedroomImage from "@/assets/service-bedroom.jpg?webp";
+import livingImage from "@/assets/service-living.jpg?webp";
 
 const services = [
   { id: 1, title: "Modular Kitchens", description: "Expertly crafted for Bengaluru's modern culinary lifestyle.", image: kitchenImage, href: "/services/modular-kitchen" },

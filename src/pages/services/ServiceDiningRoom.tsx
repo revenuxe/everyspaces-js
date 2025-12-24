@@ -10,9 +10,9 @@ import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
 
-import kitchenImage from "@/assets/service-modular-kitchen.jpg";
-import livingImage from "@/assets/service-living-room.jpg";
-import bedroomImage from "@/assets/service-bedroom.jpg";
+import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
+import livingImage from "@/assets/service-living-room.jpg?webp";
+import bedroomImage from "@/assets/service-bedroom.jpg?webp";
 
 const diningStyles = [
   { title: "Open Dining Area", description: "Seamlessly connected to living and kitchen", image: kitchenImage },

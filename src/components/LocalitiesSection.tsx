@@ -1,7 +1,7 @@
-import indiranagarImage from "@/assets/locality-indiranagar.jpg";
-import whitefieldImage from "@/assets/locality-whitefield.jpg";
-import hsrImage from "@/assets/locality-hsr.jpg";
-import koramangalaImage from "@/assets/locality-koramangala.jpg";
+import indiranagarImage from "@/assets/locality-indiranagar.jpg?webp";
+import whitefieldImage from "@/assets/locality-whitefield.jpg?webp";
+import hsrImage from "@/assets/locality-hsr.jpg?webp";
+import koramangalaImage from "@/assets/locality-koramangala.jpg?webp";
 const localities = [{
   name: "Indiranagar",
   projects: "45+ Projects",

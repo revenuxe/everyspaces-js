@@ -10,12 +10,12 @@ import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
 
-import villaImage from "@/assets/service-villa.jpg";
-import kitchenImage from "@/assets/service-modular-kitchen.jpg";
-import bedroomImage from "@/assets/service-bedroom.jpg";
-import livingImage from "@/assets/service-living-room.jpg";
-import wardrobeImage from "@/assets/service-wardrobe.jpg";
-import poojaImage from "@/assets/service-pooja-room.jpg";
+import villaImage from "@/assets/service-villa.jpg?webp";
+import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
+import bedroomImage from "@/assets/service-bedroom.jpg?webp";
+import livingImage from "@/assets/service-living-room.jpg?webp";
+import wardrobeImage from "@/assets/service-wardrobe.jpg?webp";
+import poojaImage from "@/assets/service-pooja-room.jpg?webp";
 
 const designElements = [
   {

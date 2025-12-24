@@ -10,9 +10,9 @@ import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
 
-import kitchenImage from "@/assets/service-modular-kitchen.jpg";
-import livingImage from "@/assets/service-living-room.jpg";
-import wardrobeImage from "@/assets/service-wardrobe.jpg";
+import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
+import livingImage from "@/assets/service-living-room.jpg?webp";
+import wardrobeImage from "@/assets/service-wardrobe.jpg?webp";
 
 const crockeryStyles = [
   { title: "Wall-Mounted Display", description: "Elegant glass-front cabinets", image: kitchenImage },

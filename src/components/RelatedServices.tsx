@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 // Service images
-import kitchenImage from "@/assets/service-modular-kitchen.jpg";
-import wardrobeImage from "@/assets/service-wardrobe.jpg";
-import livingImage from "@/assets/service-living-room.jpg";
-import bedroomImage from "@/assets/service-bedroom.jpg";
-import tvUnitImage from "@/assets/service-tv-unit.jpg";
-import poojaImage from "@/assets/service-pooja-room.jpg";
-import villaImage from "@/assets/service-villa.jpg";
-import bhk2Image from "@/assets/service-2bhk.jpg";
+import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
+import wardrobeImage from "@/assets/service-wardrobe.jpg?webp";
+import livingImage from "@/assets/service-living-room.jpg?webp";
+import bedroomImage from "@/assets/service-bedroom.jpg?webp";
+import tvUnitImage from "@/assets/service-tv-unit.jpg?webp";
+import poojaImage from "@/assets/service-pooja-room.jpg?webp";
+import villaImage from "@/assets/service-villa.jpg?webp";
+import bhk2Image from "@/assets/service-2bhk.jpg?webp";
 
 const allServices = [
   { slug: "modular-kitchen", title: "Modular Kitchen", image: kitchenImage },

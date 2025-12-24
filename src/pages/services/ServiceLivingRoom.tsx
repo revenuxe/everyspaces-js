@@ -10,9 +10,9 @@ import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
 
-import livingImage from "@/assets/service-living-room.jpg";
-import bedroomImage from "@/assets/service-bedroom.jpg";
-import wardrobeImage from "@/assets/service-wardrobe.jpg";
+import livingImage from "@/assets/service-living-room.jpg?webp";
+import bedroomImage from "@/assets/service-bedroom.jpg?webp";
+import wardrobeImage from "@/assets/service-wardrobe.jpg?webp";
 
 const livingStyles = [
   { title: "Modern Living Room", description: "Sleek furniture with smart home integration", image: livingImage },

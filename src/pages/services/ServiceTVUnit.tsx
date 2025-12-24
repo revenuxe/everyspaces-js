@@ -10,9 +10,9 @@ import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
 
-import tvUnitImage from "@/assets/service-tv-unit.jpg";
-import livingImage from "@/assets/service-living-room.jpg";
-import bedroomImage from "@/assets/service-bedroom.jpg";
+import tvUnitImage from "@/assets/service-tv-unit.jpg?webp";
+import livingImage from "@/assets/service-living-room.jpg?webp";
+import bedroomImage from "@/assets/service-bedroom.jpg?webp";
 
 const tvUnitStyles = [
   { title: "Floating TV Unit", description: "Wall-mounted with hidden storage", image: tvUnitImage },
