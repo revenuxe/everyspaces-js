@@ -56,8 +56,8 @@ const ServiceBedroom = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Luxury Bedroom Interior Design Bangalore | Master Bedroom | Intorza</title>
-        <meta name="description" content="Best bedroom interior designers in Bangalore. Master bedroom, guest room, kids room designs with custom wardrobes. Get free consultation!" />
+        <title>Bedroom Interior Design Bangalore | Master & Kids Room | Intorza</title>
+        <meta name="description" content="Create your dream bedroom with Intorza Bangalore. Master bedroom, kids room & guest room designs. Custom wardrobes & ambient lighting included!" />
         <meta name="keywords" content="bedroom interior design bangalore, master bedroom design, bedroom wardrobe design, luxury bedroom interiors" />
         <link rel="canonical" href="https://intorza.com/services/bedroom-design" />
       </Helmet>

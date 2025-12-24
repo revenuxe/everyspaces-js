@@ -17,10 +17,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Intorza | Best Interior Designers in Bangalore</title>
+        <title>Intorza | Best Interior Designers in Bangalore | Home Interiors</title>
         <meta
           name="description"
-          content="Transform your home with Intorza – Bangalore's trusted interior designers. Premium modular kitchens, wardrobes, and living spaces. Free consultation & 10-year warranty."
+          content="Intorza – Bangalore's #1 interior designers. Expert modular kitchen, wardrobe & full home interiors with 10-year warranty. Get free consultation today!"
         />
         <link rel="canonical" href="https://intorza.com/" />
       </Helmet>

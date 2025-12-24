@@ -16,10 +16,10 @@ const Bangalore = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Interior Designers in Bangalore | Best Home Interiors | Intorza</title>
+        <title>Interior Designers in Bangalore | Top-Rated Home Interiors | Intorza</title>
         <meta
           name="description"
-          content="Looking for interior designers in Bangalore? Intorza offers premium modular kitchens, wardrobes & home interiors with 10-year warranty, 45-day delivery & easy EMI. Get free quote!"
+          content="Looking for interior designers in Bangalore? Intorza offers premium modular kitchens, wardrobes & home interiors with 10-year warranty, 45-day delivery!"
         />
         <meta
           name="keywords"

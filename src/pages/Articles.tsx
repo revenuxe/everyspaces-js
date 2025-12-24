@@ -45,11 +45,12 @@ const Articles = () => {
   return (
     <>
       <Helmet>
-        <title>Interior Design Blog & Articles | Intorza Bangalore</title>
+        <title>Interior Design Tips & Ideas Blog | Home Decor Trends | Intorza</title>
         <meta
           name="description"
-          content="Explore expert interior design tips, home renovation guides, and inspiring ideas for your Bangalore home. Get the latest trends from Intorza."
+          content="Read expert interior design tips, renovation guides & trending home decor ideas. Get inspired with Intorza's blog for Bangalore homeowners."
         />
+        <link rel="canonical" href="https://intorza.com/articles" />
       </Helmet>
 
       <Header />

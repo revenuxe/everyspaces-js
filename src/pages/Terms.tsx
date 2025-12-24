@@ -8,10 +8,10 @@ const Terms = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Terms & Conditions | Intorza Interior Design</title>
+        <title>Terms & Conditions | Interior Design Services | Intorza Bangalore</title>
         <meta
           name="description"
-          content="Read Intorza's terms and conditions governing website use and interior design services in Bangalore."
+          content="Read Intorza's terms and conditions for interior design services in Bangalore. Understand our policies on quotes, payments, warranties & more."
         />
         <link rel="canonical" href="https://intorza.com/terms" />
       </Helmet>

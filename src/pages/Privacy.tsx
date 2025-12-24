@@ -8,10 +8,10 @@ const Privacy = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Privacy Policy | Intorza Interior Design</title>
+        <title>Privacy Policy | Data Protection & Security | Intorza Bangalore</title>
         <meta
           name="description"
-          content="Learn how Intorza collects, uses, and protects your personal information when you use our website and interior design services."
+          content="Learn how Intorza protects your personal information. Read our privacy policy covering data collection, usage, security measures & your rights."
         />
         <link rel="canonical" href="https://intorza.com/privacy" />
       </Helmet>

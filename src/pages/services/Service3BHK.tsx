@@ -110,10 +110,10 @@ const Service3BHK = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>3 BHK Interior Design in Bangalore | Premium Home Interiors | Intorza</title>
+        <title>3 BHK Interior Design Bangalore | Premium Home Packages | Intorza</title>
         <meta
           name="description"
-          content="Best 3 BHK interior designers in Bangalore. Spacious home interiors with modular kitchen, wardrobes, home theatre. 10-year warranty. Get free quote!"
+          content="Premium 3 BHK interior design in Bangalore by Intorza. Spacious layouts, luxury finishes & smart storage. Home theatre, walk-in closets & more!"
         />
         <meta
           name="keywords"

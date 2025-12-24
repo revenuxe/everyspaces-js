@@ -110,10 +110,10 @@ const ServiceVilla = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Villa Interior Design in Bangalore | Luxury Home Interiors | Intorza</title>
+        <title>Villa & Bungalow Interior Design Bangalore | Luxury Homes | Intorza</title>
         <meta
           name="description"
-          content="Best villa interior designers in Bangalore. Luxury home interiors with bespoke designs, premium materials. 10-year warranty. Get free consultation!"
+          content="Luxury villa interior design in Bangalore by Intorza. Bespoke designs for independent houses & bungalows. Grand living rooms, gourmet kitchens & more!"
         />
         <meta
           name="keywords"

@@ -56,8 +56,8 @@ const ServiceHomeOffice = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Home Office Design Bangalore | Study Room Interior | Intorza</title>
-        <meta name="description" content="Best home office interior designers in Bangalore. Study room, work from home setup, ergonomic workstation design. Get free consultation!" />
+        <title>Home Office Design Bangalore | Study Room & WFH Setup | Intorza</title>
+        <meta name="description" content="Boost productivity with Intorza's home office designs in Bangalore. Ergonomic workstations, study rooms & WFH setups. Free consultation!" />
         <meta name="keywords" content="home office design bangalore, study room interior, work from home setup, home workspace design, study table design" />
         <link rel="canonical" href="https://intorza.com/services/home-office" />
       </Helmet>
