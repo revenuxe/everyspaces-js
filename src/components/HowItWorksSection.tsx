@@ -64,7 +64,7 @@ const HowItWorksSection = () => {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="relative flex flex-col items-center text-center group bg-background rounded-xl p-3 md:p-0 md:bg-transparent border border-border/40 md:border-0 shadow-sm md:shadow-none"
+                className={`relative flex flex-col items-center text-center group bg-background rounded-xl p-3 md:p-0 md:bg-transparent border border-border/40 md:border-0 shadow-sm md:shadow-none ${index === 4 ? 'col-span-2 md:col-span-1 max-w-[160px] mx-auto md:max-w-none' : ''}`}
               >
                 {/* Milestone connector line - Mobile only */}
                 <div className="absolute -left-1.5 top-1/2 w-3 h-3 bg-secondary rounded-full hidden" />

@@ -71,7 +71,7 @@ const QuotationPopup = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="p-0 gap-0 max-w-[340px] md:max-w-md overflow-hidden rounded-2xl border-0">
+      <DialogContent className="p-0 gap-0 max-w-[340px] md:max-w-md overflow-hidden rounded-2xl border-0 [&>button]:hidden">
         <DialogTitle className="sr-only">Claim Free Quotation</DialogTitle>
         
         {/* Banner */}
@@ -154,7 +154,8 @@ const QuotationPopup = () => {
         {/* Close button */}
         <button
           onClick={() => setIsOpen(false)}
-          className="absolute top-2 right-2 md:top-3 md:right-3 w-6 h-6 md:w-8 md:h-8 rounded-full bg-white/90 text-foreground flex items-center justify-center shadow-md hover:bg-white transition-colors"
+          className="absolute top-2 right-2 md:top-3 md:right-3 w-6 h-6 md:w-8 md:h-8 rounded-full bg-white/90 text-foreground flex items-center justify-center shadow-md hover:bg-white transition-colors z-10"
+          aria-label="Close"
         >
           <X className="w-3 h-3 md:w-4 md:h-4" />
         </button>
