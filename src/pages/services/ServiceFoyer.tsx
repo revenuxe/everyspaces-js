@@ -10,9 +10,9 @@ import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
 
-import villaImage from "@/assets/service-villa.jpg";
-import livingImage from "@/assets/service-living-room.jpg";
-import bedroomImage from "@/assets/service-bedroom.jpg";
+import villaImage from "@/assets/service-villa.jpg?webp";
+import livingImage from "@/assets/service-living-room.jpg?webp";
+import bedroomImage from "@/assets/service-bedroom.jpg?webp";
 
 const foyerStyles = [
   { title: "Grand Entrance", description: "Statement foyer with double-height ceiling", image: villaImage },

@@ -10,9 +10,9 @@ import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
 
-import livingImage from "@/assets/service-living-room.jpg";
-import bedroomImage from "@/assets/service-bedroom.jpg";
-import wardrobeImage from "@/assets/service-wardrobe.jpg";
+import livingImage from "@/assets/service-living-room.jpg?webp";
+import bedroomImage from "@/assets/service-bedroom.jpg?webp";
+import wardrobeImage from "@/assets/service-wardrobe.jpg?webp";
 
 const kidsRoomStyles = [
   { title: "Adventure Theme", description: "Jungle, space, or ocean-themed rooms for explorers", image: livingImage },

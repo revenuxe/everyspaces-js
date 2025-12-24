@@ -10,9 +10,9 @@ import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
 
-import bhk2Image from "@/assets/service-2bhk.jpg";
-import livingImage from "@/assets/service-living-room.jpg";
-import bedroomImage from "@/assets/service-bedroom.jpg";
+import bhk2Image from "@/assets/service-2bhk.jpg?webp";
+import livingImage from "@/assets/service-living-room.jpg?webp";
+import bedroomImage from "@/assets/service-bedroom.jpg?webp";
 
 const balconyStyles = [
   { title: "Garden Retreat", description: "Lush plants and vertical gardens", image: bhk2Image },

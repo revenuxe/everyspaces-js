@@ -10,12 +10,12 @@ import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
 
-import bhk2Image from "@/assets/service-2bhk.jpg";
-import kitchenImage from "@/assets/service-modular-kitchen.jpg";
-import bedroomImage from "@/assets/service-bedroom.jpg";
-import livingImage from "@/assets/service-living-room.jpg";
-import wardrobeImage from "@/assets/service-wardrobe.jpg";
-import tvUnitImage from "@/assets/service-tv-unit.jpg";
+import bhk2Image from "@/assets/service-2bhk.jpg?webp";
+import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
+import bedroomImage from "@/assets/service-bedroom.jpg?webp";
+import livingImage from "@/assets/service-living-room.jpg?webp";
+import wardrobeImage from "@/assets/service-wardrobe.jpg?webp";
+import tvUnitImage from "@/assets/service-tv-unit.jpg?webp";
 
 const designElements = [
   {

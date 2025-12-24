@@ -10,9 +10,9 @@ import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
 
-import poojaImage from "@/assets/service-pooja-room.jpg";
-import bedroomImage from "@/assets/service-bedroom.jpg";
-import wardrobeImage from "@/assets/service-wardrobe.jpg";
+import poojaImage from "@/assets/service-pooja-room.jpg?webp";
+import bedroomImage from "@/assets/service-bedroom.jpg?webp";
+import wardrobeImage from "@/assets/service-wardrobe.jpg?webp";
 
 const poojaStyles = [
   { title: "Traditional Wooden", description: "Classic teak or rosewood with intricate carvings", image: poojaImage },

@@ -1,10 +1,10 @@
 import { useRef, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import bhk2Image from "@/assets/service-2bhk.jpg";
-import villaImage from "@/assets/service-villa.jpg";
-import kitchenImage from "@/assets/service-modular-kitchen.jpg";
-import bedroomImage from "@/assets/service-bedroom.jpg";
+import bhk2Image from "@/assets/service-2bhk.jpg?webp";
+import villaImage from "@/assets/service-villa.jpg?webp";
+import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
+import bedroomImage from "@/assets/service-bedroom.jpg?webp";
 
 const bestServices = [
   {
