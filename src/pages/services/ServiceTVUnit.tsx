@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
+import RelatedServices from "@/components/RelatedServices";
 
 import tvUnitImage from "@/assets/service-tv-unit.jpg";
 import livingImage from "@/assets/service-living-room.jpg";
@@ -134,6 +135,8 @@ const ServiceTVUnit = () => {
             </div>
           </div>
         </section>
+
+        <RelatedServices currentSlug="tv-unit" />
 
         <FAQSection />
 
