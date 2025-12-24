@@ -57,7 +57,7 @@ const HeroSection = () => {
           </span>
           </h1>
           <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-            Premium interior design solutions for Bengaluru's most discerning homeowners
+            End to End Interior Solutions, Best Interior Designers in Bangalore
           </p>
         </div>
 
