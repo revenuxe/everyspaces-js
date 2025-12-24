@@ -64,7 +64,7 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
           <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 md:mb-4 animate-fade-up tracking-[-0.03em] md:leading-[1.2]">
             Design Your Dream
-            <span className="block text-secondary tracking-[-0.02em] md:mt-2">Interior Designers in Bangalore</span>
+            <span className="block text-secondary tracking-[-0.02em] md:mt-2">Interior Designers in Bengaluru</span>
           </h1>
           <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
             Premium interior design solutions for Bengaluru's most discerning homeowners
