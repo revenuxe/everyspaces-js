@@ -20,7 +20,7 @@ const Index = () => {
         <title>Intorza | Best Interior Designers in Bangalore | Home Interiors</title>
         <meta
           name="description"
-          content="Intorza – Bangalore's #1 interior designers. Expert modular kitchen, wardrobe & full home interiors with 10-year warranty. Get free consultation today!"
+          content="Looking for Interior Designers in Bengaluru? Intorza delivers stunning modular kitchens, wardrobes & full home interiors with 10-year warranty. Book free consultation!"
         />
         <link rel="canonical" href="https://intorza.com/" />
       </Helmet>
