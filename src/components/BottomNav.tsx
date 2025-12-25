@@ -1,61 +1,16 @@
 import { Home, Wrench, MessageSquare, FileText } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import QuotationPopup from "./QuotationPopup";
 
 const BottomNav = () => {
   const location = useLocation();
-  const { toast } = useToast();
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    message: "",
-  });
 
   const handleWhatsAppClick = () => {
     const message = "Hi! I'm interested in interior design services from Intorza. Please share more details.";
     const whatsappUrl = `https://wa.me/919886579923?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
-  };
-
-  const handleContactSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const { error } = await supabase.from("leads").insert({
-        form_name: "mobile_contact_popup",
-        source_page: location.pathname,
-        data: formData,
-      });
-
-      if (error) throw error;
-
-      toast({
-        title: "Thank you!",
-        description: "We'll get back to you within 24 hours.",
-      });
-
-      setFormData({ name: "", phone: "", email: "", message: "" });
-      setIsContactOpen(false);
-    } catch (error) {
-      toast({
-        title: "Something went wrong",
-        description: "Please try again or call us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
   };
 
   const navItems = [
@@ -130,60 +85,11 @@ const BottomNav = () => {
         </div>
       </nav>
 
-      {/* Contact Popup Form */}
-      <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle className="font-display text-xl">Get Free Consultation</DialogTitle>
-          </DialogHeader>
-          <form onSubmit={handleContactSubmit} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="contact-name">Name *</Label>
-              <Input
-                id="contact-name"
-                placeholder="Your name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                required
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="contact-phone">Phone *</Label>
-              <Input
-                id="contact-phone"
-                type="tel"
-                placeholder="Your phone number"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                required
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="contact-email">Email</Label>
-              <Input
-                id="contact-email"
-                type="email"
-                placeholder="Your email (optional)"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="contact-message">Message</Label>
-              <Textarea
-                id="contact-message"
-                placeholder="Tell us about your project..."
-                rows={3}
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              />
-            </div>
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
-              {isSubmitting ? "Sending..." : "Get Free Quote"}
-            </Button>
-          </form>
-        </DialogContent>
-      </Dialog>
+      {/* Reuse the same QuotationPopup design */}
+      <QuotationPopup 
+        externalOpen={isContactOpen} 
+        onExternalOpenChange={setIsContactOpen} 
+      />
     </>
   );
 };

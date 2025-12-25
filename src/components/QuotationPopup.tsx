@@ -1,14 +1,19 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { X, Gift, Phone } from "lucide-react";
+import { X, Gift } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
-const QuotationPopup = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface QuotationPopupProps {
+  externalOpen?: boolean;
+  onExternalOpenChange?: (open: boolean) => void;
+}
+
+const QuotationPopup = ({ externalOpen, onExternalOpenChange }: QuotationPopupProps) => {
+  const [internalOpen, setInternalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -18,7 +23,14 @@ const QuotationPopup = () => {
     pincode: "",
   });
 
+  // Use external control if provided, otherwise use internal state
+  const isOpen = externalOpen !== undefined ? externalOpen : internalOpen;
+  const setIsOpen = onExternalOpenChange || setInternalOpen;
+
   useEffect(() => {
+    // Only auto-show if not externally controlled
+    if (externalOpen !== undefined) return;
+
     // Don't show on admin pages, thank-you page, or if already dismissed in session
     const isAdminPage = location.pathname.startsWith("/admin");
     const isThankYouPage = location.pathname === "/thank-you";
@@ -29,12 +41,12 @@ const QuotationPopup = () => {
     }
 
     const timer = setTimeout(() => {
-      setIsOpen(true);
+      setInternalOpen(true);
       sessionStorage.setItem("quotationPopupShown", "true");
     }, 5000);
 
     return () => clearTimeout(timer);
-  }, [location.pathname]);
+  }, [location.pathname, externalOpen]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,7 +60,7 @@ const QuotationPopup = () => {
 
     try {
       const { error } = await supabase.from("leads").insert({
-        form_name: "Quotation Popup",
+        form_name: externalOpen !== undefined ? "Mobile Contact Popup" : "Quotation Popup",
         source_page: location.pathname,
         data: {
           name: formData.name,
@@ -60,6 +72,7 @@ const QuotationPopup = () => {
       if (error) throw error;
 
       setIsOpen(false);
+      setFormData({ name: "", phone: "", pincode: "" });
       navigate("/thank-you");
     } catch (error) {
       console.error("Error submitting form:", error);
