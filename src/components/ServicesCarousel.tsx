@@ -150,9 +150,19 @@ const ServicesCarousel = () => {
         {services.map((service, index) => {
           const isActive = index === activeIndex;
           return (
-            <div
+            <Link
               key={service.id}
-              onClick={() => !isDragging && scrollToIndex(index)}
+              to={service.href}
+              onClick={(e) => {
+                if (isDragging) {
+                  e.preventDefault();
+                  return;
+                }
+                if (!isActive) {
+                  e.preventDefault();
+                  scrollToIndex(index);
+                }
+              }}
               className={`flex-shrink-0 w-[75vw] md:w-[40vw] lg:w-[30vw] max-w-md snap-center cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
                 isActive ? "scale-100" : "md:scale-100 scale-[0.92]"
               }`}
@@ -184,9 +194,9 @@ const ServicesCarousel = () => {
                     {service.description}
                   </p>
 
-                  <Link to={service.href} className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-secondary/90 hover:bg-secondary rounded-2xl text-secondary-foreground text-sm font-medium transition-colors">
+                  <span className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-secondary/90 group-hover:bg-secondary rounded-2xl text-secondary-foreground text-sm font-medium transition-colors">
                     View Projects
-                  </Link>
+                  </span>
                 </div>
 
                 {/* Arrow Icon */}
@@ -194,7 +204,7 @@ const ServicesCarousel = () => {
                   <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-secondary-foreground" />
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>
