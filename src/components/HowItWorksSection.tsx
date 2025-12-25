@@ -1,4 +1,5 @@
 import { ClipboardCheck, Palette, Ruler, Truck, Home } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -101,15 +102,15 @@ const HowItWorksSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-8 md:mt-16">
-          <a
-            href="#hero"
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-2 btn-terracotta px-6 py-3 md:px-8 md:py-4 rounded-2xl text-secondary-foreground font-semibold font-body text-sm md:text-base"
           >
             Start Your Project
             <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
