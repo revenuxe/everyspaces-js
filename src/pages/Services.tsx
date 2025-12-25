@@ -4,7 +4,12 @@ import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
-import { StructuredData, createBreadcrumbSchema } from "@/components/StructuredData";
+import { 
+  StructuredData, 
+  createBreadcrumbSchema,
+  professionalServiceSchema,
+  createFAQSchema
+} from "@/components/StructuredData";
 
 // Service images
 import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
@@ -42,8 +47,9 @@ const services = [
 const servicesListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Interior Design Services by Intorza",
-  "description": "Browse 20+ interior design services by Intorza Bangalore",
+  "@id": "https://intorza.com/services#itemlist",
+  "name": "Interior Design Services by Intorza Bangalore",
+  "description": "Comprehensive list of 20+ interior design services offered by Intorza in Bangalore including modular kitchens, wardrobes, living rooms, bedrooms, and complete home interiors.",
   "numberOfItems": services.length,
   "itemListElement": services.map((service, index) => ({
     "@type": "ListItem",
@@ -55,27 +61,60 @@ const servicesListSchema = {
       "url": `https://intorza.com${service.link}`,
       "provider": {
         "@type": "Organization",
-        "name": "Intorza"
+        "name": "Intorza",
+        "@id": "https://intorza.com/#organization"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Bangalore"
       }
     }
   }))
 };
 
+// AEO-optimized FAQs for services page
+const servicesFAQs = [
+  {
+    question: "What interior design services does Intorza offer in Bangalore?",
+    answer: "Intorza offers 20+ interior design services in Bangalore including modular kitchen design, wardrobe design, living room interiors, bedroom design, 2BHK/3BHK packages, villa interiors, TV units, false ceiling, pooja room, study room, kids room, home office, and complete full home interior solutions."
+  },
+  {
+    question: "Which interior design service is most popular in Bangalore?",
+    answer: "Modular kitchen design and complete home interior packages are the most popular services at Intorza Bangalore. 2BHK and 3BHK apartment interior packages are also in high demand, offering end-to-end solutions with 10-year warranty."
+  }
+];
+
 const Services = () => {
+  // Combine all AEO schemas
+  const aeoSchemas = [
+    servicesListSchema,
+    professionalServiceSchema,
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" }
+    ]),
+    createFAQSchema(servicesFAQs)
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>All Interior Design Services in Bangalore | 20+ Categories | Intorza</title>
         <meta
           name="description"
-          content="Browse 20+ interior design services by Intorza Bangalore. Modular kitchen, wardrobe, living room, bedroom, 2BHK, 3BHK, villa & more. Free quote!"
+          content="Explore 20+ interior design services by Intorza Bangalore. Modular kitchen, wardrobe, living room, bedroom, 2BHK, 3BHK, villa interiors & more. Free consultation!"
         />
+        <meta name="keywords" content="interior design services bangalore, home interior services, modular kitchen service, wardrobe design service, full home interior bangalore" />
         <link rel="canonical" href="https://intorza.com/services" />
+        
+        {/* AEO meta tags */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta property="og:title" content="20+ Interior Design Services in Bangalore - Intorza" />
+        <meta property="og:description" content="Complete interior design services: modular kitchen, wardrobe, living room, bedroom, 2BHK, 3BHK, villa. 10-year warranty, free consultation!" />
+        <meta property="og:url" content="https://intorza.com/services" />
+        <meta property="og:type" content="website" />
       </Helmet>
-      <StructuredData data={[servicesListSchema, createBreadcrumbSchema([
-        { name: "Home", url: "https://intorza.com" },
-        { name: "Services", url: "https://intorza.com/services" }
-      ])]} />
+      <StructuredData data={aeoSchemas} />
       <Header />
       
       <main className="pt-20 pb-24">

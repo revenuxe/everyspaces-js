@@ -9,7 +9,14 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
-import { StructuredData, createServiceSchema, createBreadcrumbSchema } from "@/components/StructuredData";
+import { 
+  StructuredData, 
+  createServiceSchema, 
+  createBreadcrumbSchema,
+  createFAQSchema,
+  createProductSchema,
+  createQASchema
+} from "@/components/StructuredData";
 
 import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
 import bedroomImage from "@/assets/service-bedroom.jpg?webp";
@@ -107,28 +114,83 @@ const ServiceModularKitchen = () => {
     }
   };
 
+  // AEO-optimized FAQs specific to modular kitchens
+  const modularKitchenFAQs = [
+    {
+      question: "What is the cost of modular kitchen in Bangalore?",
+      answer: "Modular kitchen cost in Bangalore ranges from ₹1.5 lakh to ₹8 lakh depending on size, materials, and finishes. At Intorza, L-shaped kitchens start from ₹2.5 lakh, U-shaped from ₹3.5 lakh, and island kitchens from ₹5 lakh. All prices include Hettich/Hafele hardware with 10-year warranty."
+    },
+    {
+      question: "How long does modular kitchen installation take?",
+      answer: "Modular kitchen installation at Intorza takes 15-20 working days from design approval. This includes manufacturing at our in-house facility and professional installation. Complex island kitchens may take 25-30 days."
+    },
+    {
+      question: "Which is the best modular kitchen brand in Bangalore?",
+      answer: "Intorza is rated among the best modular kitchen brands in Bangalore with 500+ installations, 4.8/5 rating, and 10-year warranty. We use premium materials like BWR plywood, acrylic/lacquer finishes, and Hettich/Hafele hardware for durability."
+    },
+    {
+      question: "What materials are used in Intorza modular kitchens?",
+      answer: "Intorza modular kitchens use BWR (Boiling Water Resistant) plywood from Century/Greenply, acrylic or laminate finishes, granite/quartz countertops, and Hettich/Hafele soft-close hardware. All materials come with manufacturer warranty."
+    }
+  ];
+
+  // AEO schemas for this page
+  const aeoSchemas = [
+    createServiceSchema(
+      "Modular Kitchen Design Bangalore",
+      "Best modular kitchen designers in Bangalore offering L-shaped, U-shaped, parallel, and island kitchens with Hettich hardware, 10-year warranty, and 45-day delivery.",
+      "https://intorza.com/services/modular-kitchen",
+      "https://intorza.com/service-modular-kitchen.jpg",
+      "150000-800000",
+      {
+        timeRequired: "P20D",
+        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        features: ["L-Shaped Kitchen", "U-Shaped Kitchen", "Island Kitchen", "Parallel Kitchen", "Soft-close hardware", "10-year warranty"]
+      }
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "Modular Kitchen", url: "https://intorza.com/services/modular-kitchen" }
+    ]),
+    createFAQSchema(modularKitchenFAQs),
+    createProductSchema({
+      name: "Modular Kitchen Design",
+      description: "Premium modular kitchen design and installation in Bangalore with L-shaped, U-shaped, and island layouts. Includes Hettich/Hafele hardware, granite countertops, and 10-year warranty.",
+      image: "https://intorza.com/service-modular-kitchen.jpg",
+      url: "https://intorza.com/services/modular-kitchen",
+      priceRange: "150000-800000",
+      category: "Home Improvement > Kitchen"
+    }),
+    createQASchema(
+      "What is the best modular kitchen design for small kitchen in Bangalore?",
+      "For small kitchens in Bangalore, L-shaped or straight modular kitchen designs work best. Intorza specializes in space-saving solutions with corner units, tall units, and pull-out storage. Starting from ₹2.5 lakh with 10-year warranty.",
+      "https://intorza.com/services/modular-kitchen"
+    )
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Modular Kitchen Design Bangalore | L-Shape, U-Shape, Island | Intorza</title>
         <meta
           name="description"
-          content="Best modular kitchen designers in Bangalore. L-shaped, U-shaped & island kitchens with Hettich hardware. 10-year warranty, 45-day delivery!"
+          content="Best modular kitchen designers in Bangalore. L-shaped, U-shaped & island kitchens with Hettich hardware. Starting ₹2.5 lakh. 10-year warranty, 45-day delivery!"
         />
         <meta
           name="keywords"
-          content="modular kitchen bangalore, modular kitchen design, kitchen interior design bangalore, l shaped kitchen, u shaped kitchen, island kitchen bangalore"
+          content="modular kitchen bangalore, modular kitchen design, kitchen interior design bangalore, l shaped kitchen, u shaped kitchen, island kitchen bangalore, modular kitchen cost bangalore"
         />
         <link rel="canonical" href="https://intorza.com/services/modular-kitchen" />
+        
+        {/* AEO meta tags */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta property="og:title" content="Best Modular Kitchen Design in Bangalore | L-Shape, U-Shape, Island - Intorza" />
+        <meta property="og:description" content="Premium modular kitchens from ₹2.5 lakh. Hettich hardware, 10-year warranty, 45-day delivery. 500+ kitchens installed in Bangalore." />
+        <meta property="og:url" content="https://intorza.com/services/modular-kitchen" />
+        <meta property="og:type" content="product" />
       </Helmet>
-      <StructuredData data={[
-        createServiceSchema("Modular Kitchen Design", "Best modular kitchen designers in Bangalore with L-shaped, U-shaped & island kitchens", "https://intorza.com/services/modular-kitchen"),
-        createBreadcrumbSchema([
-          { name: "Home", url: "https://intorza.com" },
-          { name: "Services", url: "https://intorza.com/services" },
-          { name: "Modular Kitchen", url: "https://intorza.com/services/modular-kitchen" }
-        ])
-      ]} />
+      <StructuredData data={aeoSchemas} />
       <Header />
       
       <main className="pb-24">

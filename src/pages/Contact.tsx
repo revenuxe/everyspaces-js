@@ -28,15 +28,40 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { StructuredData, localBusinessSchema, createBreadcrumbSchema } from "@/components/StructuredData";
+import { 
+  StructuredData, 
+  localBusinessSchema, 
+  createBreadcrumbSchema,
+  contactPageSchema,
+  createFAQSchema
+} from "@/components/StructuredData";
 
-const contactPageSchema = {
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "name": "Contact Intorza",
-  "description": "Get a free interior design consultation from Intorza Bangalore",
-  "url": "https://intorza.com/contact"
-};
+// AEO-optimized contact FAQs
+const contactFAQs = [
+  {
+    question: "How do I book a free interior design consultation in Bangalore?",
+    answer: "Book a free consultation with Intorza by calling +91-9886579923, sending a WhatsApp message, or filling the contact form on this page. Our design expert will schedule a site visit at your convenience within 24 hours."
+  },
+  {
+    question: "What information should I provide for an interior design quote?",
+    answer: "For an accurate quote, share your property type (apartment/villa), carpet area in sq ft, rooms requiring design (kitchen/bedroom/full home), preferred style, and budget range. Our team will provide a detailed estimate within 2-3 working days."
+  },
+  {
+    question: "Do you charge for the initial consultation?",
+    answer: "No, Intorza provides completely free initial consultation and site visit anywhere in Bangalore. There's no obligation to proceed after the consultation. We'll share design ideas and cost estimates during the visit."
+  }
+];
+
+// Enhanced AEO schemas for contact page
+const aeoSchemas = [
+  contactPageSchema,
+  localBusinessSchema,
+  createBreadcrumbSchema([
+    { name: "Home", url: "https://intorza.com" },
+    { name: "Contact", url: "https://intorza.com/contact" }
+  ]),
+  createFAQSchema(contactFAQs)
+];
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
@@ -101,14 +126,22 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Contact Us | Free Interior Consultation in Bangalore | Intorza</title>
+        <title>Contact Us | Free Interior Design Consultation Bangalore | Intorza</title>
         <meta
           name="description"
-          content="Get a free interior design consultation from Intorza Bangalore. Call +91 9886579923 or fill our form. Response within 24 hours guaranteed!"
+          content="Book free interior design consultation in Bangalore with Intorza. Call +91-9886579923, WhatsApp, or fill our form. Response within 24 hours guaranteed!"
         />
+        <meta name="keywords" content="contact interior designer bangalore, free consultation interior design, interior design quote bangalore" />
         <link rel="canonical" href="https://intorza.com/contact" />
+        
+        {/* AEO meta tags */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta property="og:title" content="Contact Intorza | Free Interior Design Consultation Bangalore" />
+        <meta property="og:description" content="Book a free site visit with Bangalore's top interior designers. Call +91-9886579923 or fill our form for a quick quote." />
+        <meta property="og:url" content="https://intorza.com/contact" />
+        <meta property="og:type" content="website" />
       </Helmet>
-      <StructuredData data={[contactPageSchema, localBusinessSchema]} />
+      <StructuredData data={aeoSchemas} />
       <Header />
       
       <main className="pt-20">
