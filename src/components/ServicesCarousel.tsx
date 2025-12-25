@@ -158,10 +158,13 @@ const ServicesCarousel = () => {
                   e.preventDefault();
                   return;
                 }
-                if (!isActive) {
+                // On mobile only, scroll to card first if not active
+                const isMobile = window.innerWidth < 768;
+                if (isMobile && !isActive) {
                   e.preventDefault();
                   scrollToIndex(index);
                 }
+                // On desktop, always navigate directly
               }}
               className={`flex-shrink-0 w-[75vw] md:w-[40vw] lg:w-[30vw] max-w-md snap-center cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
                 isActive ? "scale-100" : "md:scale-100 scale-[0.92]"
