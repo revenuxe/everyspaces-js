@@ -9,6 +9,13 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
+import { 
+  StructuredData, 
+  createServiceSchema, 
+  createBreadcrumbSchema,
+  createFAQSchema,
+  createProductSchema
+} from "@/components/StructuredData";
 
 import villaImage from "@/assets/service-villa.jpg?webp";
 import livingImage from "@/assets/service-living-room.jpg?webp";
@@ -28,6 +35,26 @@ const foyerFeatures = [
   { icon: Frame, title: "Feature Wall", description: "Statement walls with stone, wood paneling, or artwork" },
   { icon: Lamp, title: "Chandelier & Lighting", description: "Dramatic pendant lights and ambient wall sconces" },
   { icon: Sparkles, title: "Console & Mirror", description: "Designer consoles with decorative mirrors" },
+];
+
+// AEO-optimized FAQs
+const foyerFAQs = [
+  {
+    question: "What is the cost of foyer design in Bangalore?",
+    answer: "Foyer design in Bangalore costs ₹30,000 to ₹1.5 lakh depending on size and design. At Intorza, basic foyer setups start from ₹30,000, feature walls from ₹50,000, and grand entrances with chandelier from ₹1 lakh."
+  },
+  {
+    question: "What should be included in a foyer design?",
+    answer: "A well-designed foyer includes shoe cabinet, console table, mirror, feature wall or art, statement lighting, and a coat/umbrella stand. Intorza customizes foyer elements based on your entrance size and style."
+  },
+  {
+    question: "How to design a small apartment entrance?",
+    answer: "For small entrances, Intorza uses wall-mounted shoe cabinets, slim consoles, mirrors to create depth, and vertical storage. We maximize function without cluttering the space. Starting from ₹30,000."
+  },
+  {
+    question: "Can you design a Vastu-compliant entrance?",
+    answer: "Yes, Intorza designs Vastu-compliant entrances with proper placement of mirrors, lighting, and decor. We avoid sharp corners, use auspicious elements, and ensure positive energy flow."
+  }
 ];
 
 const ServiceFoyer = () => {
@@ -50,14 +77,48 @@ const ServiceFoyer = () => {
     }
   };
 
+  // AEO schemas
+  const aeoSchemas = [
+    createServiceSchema(
+      "Foyer & Entrance Design Bangalore",
+      "Make stunning first impressions with Intorza's foyer designs. Shoe cabinets, console tables, feature walls, and statement lighting in Bangalore.",
+      "https://intorza.com/services/foyer-entrance",
+      "https://intorza.com/service-foyer.jpg",
+      "30000-150000",
+      {
+        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        features: ["Shoe Cabinet", "Console Table", "Feature Wall", "Statement Lighting", "Mirror"]
+      }
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "Foyer & Entrance", url: "https://intorza.com/services/foyer-entrance" }
+    ]),
+    createFAQSchema(foyerFAQs),
+    createProductSchema({
+      name: "Foyer & Entrance Interior",
+      description: "Entrance and foyer design in Bangalore with shoe cabinets, consoles, feature walls, and chandeliers.",
+      image: "https://intorza.com/service-foyer.jpg",
+      url: "https://intorza.com/services/foyer-entrance",
+      priceRange: "30000-150000",
+      category: "Home Improvement > Entryway"
+    })
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Foyer & Entrance Design Bangalore | Entryway Interior | Intorza</title>
-        <meta name="description" content="Best foyer and entrance designers in Bangalore. Shoe cabinets, console tables, feature walls. Make stunning first impressions. Get free quote!" />
-        <meta name="keywords" content="foyer design bangalore, entrance interior, shoe cabinet design, console table, entryway design" />
+        <meta name="description" content="Best foyer designers in Bangalore. Shoe cabinets from ₹30K, console tables, feature walls. Make stunning first impressions. Free quote!" />
+        <meta name="keywords" content="foyer design bangalore, entrance interior, shoe cabinet design, console table, entryway design, entrance decor" />
         <link rel="canonical" href="https://intorza.com/services/foyer-entrance" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta property="og:title" content="Foyer & Entrance Design Bangalore - Intorza" />
+        <meta property="og:description" content="Entrance makeovers from ₹30K. Shoe cabinets, feature walls, chandeliers. Free consultation!" />
+        <meta property="og:url" content="https://intorza.com/services/foyer-entrance" />
       </Helmet>
+      <StructuredData data={aeoSchemas} />
       <Header />
       
       <main className="pb-24">

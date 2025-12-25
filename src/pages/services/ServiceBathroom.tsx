@@ -9,6 +9,13 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
+import { 
+  StructuredData, 
+  createServiceSchema, 
+  createBreadcrumbSchema,
+  createFAQSchema,
+  createProductSchema
+} from "@/components/StructuredData";
 
 import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
 import bedroomImage from "@/assets/service-bedroom.jpg?webp";
@@ -28,6 +35,26 @@ const bathroomFeatures = [
   { icon: Droplets, title: "Waterproofing", description: "Complete waterproofing solutions for long-lasting durability" },
   { icon: ShowerHead, title: "Smart Showers", description: "Rain showers, hand showers, and body jets for spa experience" },
   { icon: Sparkles, title: "Elegant Finishes", description: "Designer tiles, vanities, and mirrors for stunning aesthetics" },
+];
+
+// AEO-optimized FAQs
+const bathroomFAQs = [
+  {
+    question: "What is the cost of bathroom renovation in Bangalore?",
+    answer: "Bathroom renovation in Bangalore costs ₹1-3 lakh for complete makeover. At Intorza, basic renovations start from ₹80,000, premium from ₹1.5 lakh with Kohler/Grohe fixtures, and luxury spa bathrooms from ₹2.5 lakh."
+  },
+  {
+    question: "How long does bathroom renovation take?",
+    answer: "Complete bathroom renovation takes 10-15 working days including demolition, waterproofing, tiling, and fixture installation. Intorza provides dedicated project management for timely completion."
+  },
+  {
+    question: "Which bathroom fixtures are best for Bangalore?",
+    answer: "Intorza recommends Kohler, Grohe, American Standard, and Jaquar for durability and after-sales service. We help select fixtures based on your budget, style preference, and water pressure requirements."
+  },
+  {
+    question: "Do you provide waterproofing for bathrooms?",
+    answer: "Yes, Intorza provides complete waterproofing with Dr. Fixit or FOSROC products. We ensure waterproofing of walls up to 6 feet height and complete floor waterproofing with 10-year leakage warranty."
+  }
 ];
 
 const ServiceBathroom = () => {
@@ -54,14 +81,48 @@ const ServiceBathroom = () => {
     }
   };
 
+  // AEO schemas
+  const aeoSchemas = [
+    createServiceSchema(
+      "Bathroom Design Bangalore",
+      "Spa-inspired bathroom renovation in Bangalore with premium fixtures from Kohler, Grohe. Complete waterproofing and designer finishes.",
+      "https://intorza.com/services/bathroom-design",
+      "https://intorza.com/service-bathroom.jpg",
+      "80000-300000",
+      {
+        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        features: ["Premium Fixtures", "Waterproofing", "Rain Shower", "Designer Tiles", "Vanity Unit"]
+      }
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "Bathroom Design", url: "https://intorza.com/services/bathroom-design" }
+    ]),
+    createFAQSchema(bathroomFAQs),
+    createProductSchema({
+      name: "Bathroom Renovation",
+      description: "Complete bathroom renovation in Bangalore with Kohler/Grohe fixtures, designer tiles, and waterproofing. 10-15 day completion.",
+      image: "https://intorza.com/service-bathroom.jpg",
+      url: "https://intorza.com/services/bathroom-design",
+      priceRange: "80000-300000",
+      category: "Home Improvement > Bathroom"
+    })
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Bathroom Design Bangalore | Spa-Inspired Renovation | Intorza</title>
-        <meta name="description" content="Transform your bathroom into a spa-like retreat with Intorza Bangalore. Premium fixtures from Kohler & Grohe. Complete bathroom renovation services!" />
-        <meta name="keywords" content="bathroom design bangalore, bathroom interior, modern bathroom design, bathroom renovation, spa bathroom" />
+        <meta name="description" content="Best bathroom renovators in Bangalore. Spa-like bathrooms from ₹80K. Kohler, Grohe fixtures, complete waterproofing. 10-15 day completion!" />
+        <meta name="keywords" content="bathroom design bangalore, bathroom interior, modern bathroom design, bathroom renovation, spa bathroom, bathroom tiles" />
         <link rel="canonical" href="https://intorza.com/services/bathroom-design" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta property="og:title" content="Bathroom Renovation Bangalore | Spa Design - Intorza" />
+        <meta property="og:description" content="Bathroom makeovers from ₹80K. Premium fixtures, waterproofing, designer tiles. Free consultation!" />
+        <meta property="og:url" content="https://intorza.com/services/bathroom-design" />
       </Helmet>
+      <StructuredData data={aeoSchemas} />
       <Header />
       
       <main className="pb-24">

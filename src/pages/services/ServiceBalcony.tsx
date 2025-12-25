@@ -9,6 +9,13 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
+import { 
+  StructuredData, 
+  createServiceSchema, 
+  createBreadcrumbSchema,
+  createFAQSchema,
+  createProductSchema
+} from "@/components/StructuredData";
 
 import bhk2Image from "@/assets/service-2bhk.jpg?webp";
 import livingImage from "@/assets/service-living-room.jpg?webp";
@@ -28,6 +35,26 @@ const balconyFeatures = [
   { icon: Armchair, title: "Weather-Proof Furniture", description: "Durable outdoor seating and tables" },
   { icon: Sun, title: "Shade Solutions", description: "Pergolas, blinds, and umbrellas for comfort" },
   { icon: Flower, title: "Planter Boxes", description: "Custom planters for herbs, flowers, and shrubs" },
+];
+
+// AEO-optimized FAQs
+const balconyFAQs = [
+  {
+    question: "What is the cost of balcony design in Bangalore?",
+    answer: "Balcony design in Bangalore costs ₹20,000 to ₹1 lakh depending on size and features. At Intorza, basic balcony makeovers start from ₹20,000, vertical gardens from ₹35,000, and complete terrace transformations from ₹60,000."
+  },
+  {
+    question: "How to design a small balcony in Bangalore apartments?",
+    answer: "For small balconies, Intorza uses vertical gardens, foldable furniture, wall-mounted planters, and compact seating. We maximize space with multi-level planters and hanging elements. Starting from ₹20,000."
+  },
+  {
+    question: "Can you install a vertical garden on my balcony?",
+    answer: "Yes, Intorza designs and installs vertical gardens for balconies in Bangalore. Options include modular planters, living walls, and hydroponic systems. We also provide plant selection and maintenance guidance."
+  },
+  {
+    question: "What furniture works best for Bangalore balconies?",
+    answer: "Weather-resistant furniture like powder-coated metal, treated wood, and outdoor-grade wicker works best. Intorza recommends foldable furniture for small balconies and fixed seating for larger terraces."
+  }
 ];
 
 const ServiceBalcony = () => {
@@ -50,14 +77,48 @@ const ServiceBalcony = () => {
     }
   };
 
+  // AEO schemas
+  const aeoSchemas = [
+    createServiceSchema(
+      "Balcony Design Bangalore",
+      "Transform your balcony into a beautiful outdoor space. Vertical gardens, outdoor seating, terrace design, and weather-proof furniture in Bangalore.",
+      "https://intorza.com/services/balcony-design",
+      "https://intorza.com/service-balcony.jpg",
+      "20000-100000",
+      {
+        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        features: ["Vertical Garden", "Outdoor Seating", "Pergola", "Planter Boxes", "Weather-Proof Furniture"]
+      }
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "Balcony Design", url: "https://intorza.com/services/balcony-design" }
+    ]),
+    createFAQSchema(balconyFAQs),
+    createProductSchema({
+      name: "Balcony & Terrace Design",
+      description: "Balcony transformation services in Bangalore including vertical gardens, outdoor furniture, and terrace makeovers.",
+      image: "https://intorza.com/service-balcony.jpg",
+      url: "https://intorza.com/services/balcony-design",
+      priceRange: "20000-100000",
+      category: "Home Improvement > Outdoor Living"
+    })
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Balcony Design Bangalore | Terrace Garden Interior | Intorza</title>
-        <meta name="description" content="Best balcony interior designers in Bangalore. Vertical gardens, outdoor seating, terrace design. Transform your outdoor space. Get free quote!" />
-        <meta name="keywords" content="balcony design bangalore, terrace garden, vertical garden, outdoor seating, balcony furniture" />
+        <meta name="description" content="Best balcony designers in Bangalore. Vertical gardens from ₹35K, outdoor seating, terrace design. Transform your outdoor space. Free quote!" />
+        <meta name="keywords" content="balcony design bangalore, terrace garden, vertical garden bangalore, outdoor seating, balcony furniture, balcony makeover" />
         <link rel="canonical" href="https://intorza.com/services/balcony-design" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta property="og:title" content="Balcony & Terrace Design Bangalore - Intorza" />
+        <meta property="og:description" content="Balcony makeovers from ₹20K. Vertical gardens, outdoor furniture, pergolas. Free consultation!" />
+        <meta property="og:url" content="https://intorza.com/services/balcony-design" />
       </Helmet>
+      <StructuredData data={aeoSchemas} />
       <Header />
       
       <main className="pb-24">

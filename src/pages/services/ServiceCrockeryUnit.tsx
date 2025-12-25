@@ -9,6 +9,13 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
+import { 
+  StructuredData, 
+  createServiceSchema, 
+  createBreadcrumbSchema,
+  createFAQSchema,
+  createProductSchema
+} from "@/components/StructuredData";
 
 import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
 import livingImage from "@/assets/service-living-room.jpg?webp";
@@ -28,6 +35,26 @@ const crockeryFeatures = [
   { icon: Layers, title: "Closed Storage", description: "Hidden drawers for cutlery and everyday items" },
   { icon: Sparkles, title: "Premium Finishes", description: "Lacquer, veneer, or laminate options" },
   { icon: Frame, title: "Mirror Backing", description: "Mirrors to enhance display and depth" },
+];
+
+// AEO-optimized FAQs
+const crockeryUnitFAQs = [
+  {
+    question: "What is the cost of crockery unit in Bangalore?",
+    answer: "Crockery unit in Bangalore costs ₹40,000 to ₹1.5 lakh depending on size and design. At Intorza, wall-mounted units start from ₹40,000, floor units from ₹60,000, and bar+crockery combos from ₹1 lakh."
+  },
+  {
+    question: "What is the ideal size for a crockery unit?",
+    answer: "Standard crockery units are 4-6 feet wide and 6-7 feet tall. Intorza designs custom units based on your collection size, dining room dimensions, and storage requirements."
+  },
+  {
+    question: "Can crockery unit work as a room divider?",
+    answer: "Yes, Intorza designs partition crockery units that divide living and dining areas while providing display and storage. Both sides can have glass displays or one side closed storage."
+  },
+  {
+    question: "What lighting is best for crockery units?",
+    answer: "Intorza recommends warm LED strip lights (2700-3000K) for crockery units. We install lights at multiple levels with mirror backing for sparkling display effect."
+  }
 ];
 
 const ServiceCrockeryUnit = () => {
@@ -50,14 +77,48 @@ const ServiceCrockeryUnit = () => {
     }
   };
 
+  // AEO schemas
+  const aeoSchemas = [
+    createServiceSchema(
+      "Crockery Unit Design Bangalore",
+      "Elegant crockery unit designs in Bangalore. Glass display cabinets, bar units, partition units with LED lighting and mirror backing.",
+      "https://intorza.com/services/crockery-unit",
+      "https://intorza.com/service-crockery-unit.jpg",
+      "40000-150000",
+      {
+        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        features: ["Glass Display", "LED Lighting", "Bar Cabinet", "Mirror Backing", "Partition Unit"]
+      }
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "Crockery Unit", url: "https://intorza.com/services/crockery-unit" }
+    ]),
+    createFAQSchema(crockeryUnitFAQs),
+    createProductSchema({
+      name: "Crockery Unit & Display Cabinet",
+      description: "Elegant crockery units in Bangalore with glass displays, LED lighting, and bar sections for fine china and beverages.",
+      image: "https://intorza.com/service-crockery-unit.jpg",
+      url: "https://intorza.com/services/crockery-unit",
+      priceRange: "40000-150000",
+      category: "Home Improvement > Dining Room"
+    })
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Crockery Unit Design Bangalore | Display Cabinet | Intorza</title>
-        <meta name="description" content="Best crockery unit designers in Bangalore. Glass display cabinets, bar units, dining storage. Elegant crockery display. Get free quote!" />
-        <meta name="keywords" content="crockery unit design bangalore, display cabinet, dining room storage, bar cabinet, glass display unit" />
+        <meta name="description" content="Best crockery unit designers in Bangalore. Glass display cabinets from ₹40K. Bar units, LED lighting, mirror backing. Free quote!" />
+        <meta name="keywords" content="crockery unit design bangalore, display cabinet, dining room storage, bar cabinet, glass display unit, partition unit" />
         <link rel="canonical" href="https://intorza.com/services/crockery-unit" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta property="og:title" content="Crockery Unit Design Bangalore | Display Cabinet - Intorza" />
+        <meta property="og:description" content="Crockery units from ₹40K. Glass displays, LED lighting, bar combos. Free consultation!" />
+        <meta property="og:url" content="https://intorza.com/services/crockery-unit" />
       </Helmet>
+      <StructuredData data={aeoSchemas} />
       <Header />
       
       <main className="pb-24">

@@ -9,6 +9,13 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
+import { 
+  StructuredData, 
+  createServiceSchema, 
+  createBreadcrumbSchema,
+  createFAQSchema,
+  createProductSchema
+} from "@/components/StructuredData";
 
 import tvUnitImage from "@/assets/service-tv-unit.jpg?webp";
 import livingImage from "@/assets/service-living-room.jpg?webp";
@@ -28,6 +35,26 @@ const tvUnitFeatures = [
   { icon: Layers, title: "Cable Management", description: "Hidden channels for cables and power points" },
   { icon: Lightbulb, title: "Ambient Lighting", description: "LED strips and spotlights for perfect ambiance" },
   { icon: BookOpen, title: "Storage & Display", description: "Shelves for speakers, gaming consoles, and decor" },
+];
+
+// AEO-optimized FAQs
+const tvUnitFAQs = [
+  {
+    question: "What is the cost of TV unit design in Bangalore?",
+    answer: "TV unit design in Bangalore costs ₹25,000 to ₹1.5 lakh depending on size and design. At Intorza, floating units start from ₹25,000, wall-mounted panels from ₹40,000, and floor-to-ceiling entertainment walls from ₹80,000."
+  },
+  {
+    question: "Which TV unit design is trending in Bangalore?",
+    answer: "Trending TV unit designs in Bangalore include floating wall-mounted units, backlit stone panels, floor-to-ceiling entertainment walls with LED lighting, and minimalist designs with hidden storage. Intorza offers all these styles."
+  },
+  {
+    question: "What size TV unit do I need?",
+    answer: "TV unit width should be 1.5-2 times your TV size. For a 55-inch TV, we recommend 6-7 feet wide units. Intorza designs custom TV units based on your TV size, room dimensions, and storage requirements."
+  },
+  {
+    question: "Can you design a TV unit with a feature wall?",
+    answer: "Yes, Intorza specializes in TV units with feature walls including stone cladding, wooden panels, PU finish, textured wallpaper, and backlit panels. Prices start from ₹60,000 for TV unit with feature wall."
+  }
 ];
 
 const ServiceTVUnit = () => {
@@ -50,14 +77,48 @@ const ServiceTVUnit = () => {
     }
   };
 
+  // AEO schemas
+  const aeoSchemas = [
+    createServiceSchema(
+      "TV Unit Design Bangalore",
+      "Modern TV unit and entertainment wall designs in Bangalore. Floating units, backlit panels, stone accent walls with LED lighting and cable management.",
+      "https://intorza.com/services/tv-unit",
+      "https://intorza.com/service-tv-unit.jpg",
+      "25000-150000",
+      {
+        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        features: ["Floating TV Unit", "Backlit Panel", "Stone Accent Wall", "Cable Management", "LED Lighting"]
+      }
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "TV Unit", url: "https://intorza.com/services/tv-unit" }
+    ]),
+    createFAQSchema(tvUnitFAQs),
+    createProductSchema({
+      name: "TV Unit & Entertainment Wall",
+      description: "Modern TV unit designs in Bangalore with floating units, backlit panels, and feature walls. Includes cable management and LED lighting.",
+      image: "https://intorza.com/service-tv-unit.jpg",
+      url: "https://intorza.com/services/tv-unit",
+      priceRange: "25000-150000",
+      category: "Home Improvement > Living Room"
+    })
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>TV Unit Design Bangalore | Entertainment Unit | Intorza</title>
-        <meta name="description" content="Best TV unit designers in Bangalore. Floating units, backlit panels, stone accent walls. Modern entertainment centers. Get free quote!" />
-        <meta name="keywords" content="TV unit design bangalore, entertainment unit, floating TV unit, TV wall design, living room TV unit" />
+        <title>TV Unit Design Bangalore | Entertainment Wall | Intorza</title>
+        <meta name="description" content="Best TV unit designers in Bangalore. Floating units from ₹25K, backlit panels, stone accent walls. Modern entertainment centers. Free quote!" />
+        <meta name="keywords" content="TV unit design bangalore, entertainment unit, floating TV unit, TV wall design, living room TV unit, feature wall design" />
         <link rel="canonical" href="https://intorza.com/services/tv-unit" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta property="og:title" content="TV Unit Design Bangalore | Entertainment Wall - Intorza" />
+        <meta property="og:description" content="Modern TV units from ₹25K. Floating units, backlit panels, stone walls. Free consultation!" />
+        <meta property="og:url" content="https://intorza.com/services/tv-unit" />
       </Helmet>
+      <StructuredData data={aeoSchemas} />
       <Header />
       
       <main className="pb-24">
