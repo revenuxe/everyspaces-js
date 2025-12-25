@@ -9,6 +9,13 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
+import { 
+  StructuredData, 
+  createServiceSchema, 
+  createBreadcrumbSchema,
+  createFAQSchema,
+  createProductSchema
+} from "@/components/StructuredData";
 
 import bedroomImage from "@/assets/service-bedroom.jpg?webp";
 import wardrobeImage from "@/assets/service-wardrobe.jpg?webp";
@@ -28,6 +35,26 @@ const bedroomFeatures = [
   { icon: Shield, title: "Premium Wardrobes", description: "Sliding, hinged, or walk-in closets with smart organization" },
   { icon: Sparkles, title: "Ambient Lighting", description: "Layered lighting for perfect mood and functionality" },
   { icon: Palette, title: "Color Consultation", description: "Expert color schemes for restful sleep environment" },
+];
+
+// AEO-optimized FAQs
+const bedroomFAQs = [
+  {
+    question: "What is the cost of bedroom interior design in Bangalore?",
+    answer: "Bedroom interior design in Bangalore costs ₹1.5-3 lakh for a master bedroom including wardrobe, bed design, and false ceiling. At Intorza, bedroom packages start from ₹1.2 lakh with premium finishes and 10-year warranty."
+  },
+  {
+    question: "What is included in bedroom interior design?",
+    answer: "Intorza's bedroom interior includes custom bed design with headboard, wardrobe with smart storage, side tables, study table (optional), false ceiling with lights, wall treatments, and complete color consultation."
+  },
+  {
+    question: "How long does bedroom interior design take?",
+    answer: "Single bedroom interior design takes 20-25 working days from design approval. This includes manufacturing, painting, and installation. Multiple bedroom projects take 30-45 days."
+  },
+  {
+    question: "Can you design a small bedroom to look bigger?",
+    answer: "Yes, Intorza specializes in space optimization for small bedrooms. We use light colors, mirror wardrobes, wall-mounted furniture, and smart storage to maximize space and create an illusion of larger rooms."
+  }
 ];
 
 const ServiceBedroom = () => {
@@ -54,14 +81,48 @@ const ServiceBedroom = () => {
     }
   };
 
+  // AEO schemas
+  const aeoSchemas = [
+    createServiceSchema(
+      "Bedroom Interior Design Bangalore",
+      "Expert bedroom designers in Bangalore offering master bedroom, kids room, and guest room interiors with custom wardrobes and ambient lighting.",
+      "https://intorza.com/services/bedroom-design",
+      "https://intorza.com/service-bedroom.jpg",
+      "120000-400000",
+      {
+        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        features: ["Master Bedroom", "Kids Room", "Guest Room", "Custom Wardrobe", "False Ceiling", "Ambient Lighting"]
+      }
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "Bedroom Design", url: "https://intorza.com/services/bedroom-design" }
+    ]),
+    createFAQSchema(bedroomFAQs),
+    createProductSchema({
+      name: "Bedroom Interior Design",
+      description: "Complete bedroom interior design in Bangalore including bed design, wardrobe, false ceiling, and ambient lighting. 10-year warranty included.",
+      image: "https://intorza.com/service-bedroom.jpg",
+      url: "https://intorza.com/services/bedroom-design",
+      priceRange: "120000-400000",
+      category: "Home Improvement > Bedroom"
+    })
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Bedroom Interior Design Bangalore | Master & Kids Room | Intorza</title>
-        <meta name="description" content="Create your dream bedroom with Intorza Bangalore. Master bedroom, kids room & guest room designs. Custom wardrobes & ambient lighting included!" />
-        <meta name="keywords" content="bedroom interior design bangalore, master bedroom design, bedroom wardrobe design, luxury bedroom interiors" />
+        <meta name="description" content="Best bedroom designers in Bangalore. Master bedroom from ₹1.2L including wardrobe, bed design, false ceiling. 10-year warranty, free consultation!" />
+        <meta name="keywords" content="bedroom interior design bangalore, master bedroom design, bedroom wardrobe design, luxury bedroom interiors, kids room design bangalore" />
         <link rel="canonical" href="https://intorza.com/services/bedroom-design" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta property="og:title" content="Bedroom Interior Design Bangalore | Master & Kids Room - Intorza" />
+        <meta property="og:description" content="Premium bedroom interiors from ₹1.2L. Custom wardrobes, bed design, false ceiling. 10-year warranty!" />
+        <meta property="og:url" content="https://intorza.com/services/bedroom-design" />
       </Helmet>
+      <StructuredData data={aeoSchemas} />
       <Header />
       
       <main className="pb-24">

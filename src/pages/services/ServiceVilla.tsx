@@ -9,6 +9,13 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
+import { 
+  StructuredData, 
+  createServiceSchema, 
+  createBreadcrumbSchema,
+  createFAQSchema,
+  createProductSchema
+} from "@/components/StructuredData";
 
 import villaImage from "@/assets/service-villa.jpg?webp";
 import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
@@ -69,6 +76,26 @@ const whyChooseUs = [
   },
 ];
 
+// AEO-optimized FAQs
+const villaFAQs = [
+  {
+    question: "What is the cost of villa interior design in Bangalore?",
+    answer: "Villa interior design in Bangalore costs ₹25-75 lakh depending on size and luxury level. At Intorza, basic villa packages start from ₹25 lakh for 3000 sq ft, premium from ₹40 lakh, and luxury bespoke designs from ₹60 lakh."
+  },
+  {
+    question: "How long does villa interior design take?",
+    answer: "Complete villa interior design takes 90-120 working days. Large villas with extensive customization may take 4-5 months. Intorza assigns dedicated project managers for seamless execution."
+  },
+  {
+    question: "Do you design outdoor spaces for villas?",
+    answer: "Yes, Intorza designs complete villa interiors including outdoor living areas, pool decks, garden gazebos, and landscaping consultation. We create cohesive indoor-outdoor living experiences."
+  },
+  {
+    question: "What luxury finishes do you offer for villas?",
+    answer: "Intorza offers Italian marble, imported wooden flooring, designer wallpapers, motorized curtains, smart home integration, imported sanitaryware, and custom furniture for luxury villas in Bangalore."
+  }
+];
+
 const ServiceVilla = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -108,20 +135,54 @@ const ServiceVilla = () => {
     }
   };
 
+  // AEO schemas
+  const aeoSchemas = [
+    createServiceSchema(
+      "Villa Interior Design Bangalore",
+      "Luxury villa and bungalow interior design in Bangalore with bespoke designs, imported finishes, home theatre, and smart home integration.",
+      "https://intorza.com/services/villa-interiors",
+      "https://intorza.com/service-villa.jpg",
+      "2500000-7500000",
+      {
+        areaServed: ["Bangalore", "Whitefield", "Sarjapur Road", "Electronic City", "Yelahanka"],
+        features: ["Grand Living Room", "Walk-in Closet", "Home Theatre", "Island Kitchen", "Smart Home"]
+      }
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "Villa Interiors", url: "https://intorza.com/services/villa-interiors" }
+    ]),
+    createFAQSchema(villaFAQs),
+    createProductSchema({
+      name: "Luxury Villa Interior Design",
+      description: "Complete villa interior design in Bangalore with bespoke designs, imported finishes, and smart home integration. 90-120 day delivery.",
+      image: "https://intorza.com/service-villa.jpg",
+      url: "https://intorza.com/services/villa-interiors",
+      priceRange: "2500000-7500000",
+      category: "Home Improvement > Luxury Villa Interior"
+    })
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Villa & Bungalow Interior Design Bangalore | Luxury Homes | Intorza</title>
         <meta
           name="description"
-          content="Luxury villa interior design in Bangalore by Intorza. Bespoke designs for independent houses & bungalows. Grand living rooms, gourmet kitchens & more!"
+          content="Best villa interior designers in Bangalore. Luxury bespoke designs from ₹25L. Grand living rooms, gourmet kitchens, home theatre. 10-year warranty!"
         />
         <meta
           name="keywords"
           content="villa interior design bangalore, luxury villa interiors, villa interior designers, premium home interiors bangalore, bungalow interior design"
         />
         <link rel="canonical" href="https://intorza.com/services/villa-interiors" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta property="og:title" content="Luxury Villa Interior Design Bangalore - Intorza" />
+        <meta property="og:description" content="Bespoke villa interiors from ₹25L. Grand living rooms, island kitchens, home theatre. Premium finishes, 10-year warranty!" />
+        <meta property="og:url" content="https://intorza.com/services/villa-interiors" />
       </Helmet>
+      <StructuredData data={aeoSchemas} />
       <Header />
       
       <main className="pb-24">

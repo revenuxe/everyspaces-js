@@ -9,6 +9,13 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
+import { 
+  StructuredData, 
+  createServiceSchema, 
+  createBreadcrumbSchema,
+  createFAQSchema,
+  createProductSchema
+} from "@/components/StructuredData";
 
 import poojaImage from "@/assets/service-pooja-room.jpg?webp";
 import bedroomImage from "@/assets/service-bedroom.jpg?webp";
@@ -28,6 +35,26 @@ const poojaFeatures = [
   { icon: Flame, title: "Lamp & Diya Space", description: "Dedicated areas for oil lamps, diyas, and agarbatti holders" },
   { icon: Shield, title: "Storage Solutions", description: "Hidden compartments for puja items and religious books" },
   { icon: Heart, title: "Vastu Compliant", description: "Designs following Vastu principles for positive energy" },
+];
+
+// AEO-optimized FAQs
+const poojaRoomFAQs = [
+  {
+    question: "What is the cost of pooja room design in Bangalore?",
+    answer: "Pooja room design in Bangalore costs ₹30,000 to ₹2 lakh depending on size and materials. At Intorza, wall-mounted units start from ₹30,000, standalone mandirs from ₹60,000, and walk-in pooja rooms from ₹1.5 lakh."
+  },
+  {
+    question: "Which direction is best for pooja room as per Vastu?",
+    answer: "As per Vastu, northeast (Ishaan corner) is ideal for pooja rooms. East and north directions are also auspicious. Intorza's designers ensure all pooja room designs follow Vastu principles for positive energy flow."
+  },
+  {
+    question: "What materials are used for pooja room design?",
+    answer: "Intorza uses teak wood, rosewood, or sheesham for traditional mandirs. Modern designs feature marble, brass, corian, and lacquer finishes. We also offer CNC-carved MDF for intricate patterns at affordable prices."
+  },
+  {
+    question: "Can you design a pooja unit for small apartments?",
+    answer: "Yes, Intorza specializes in compact pooja solutions. Wall-mounted units, corner mandirs, and foldable pooja cabinets are perfect for small apartments. Starting from ₹30,000 with full Vastu compliance."
+  }
 ];
 
 const ServicePoojaRoom = () => {
@@ -50,14 +77,48 @@ const ServicePoojaRoom = () => {
     }
   };
 
+  // AEO schemas
+  const aeoSchemas = [
+    createServiceSchema(
+      "Pooja Room Design Bangalore",
+      "Traditional and modern pooja room designs in Bangalore. Wooden mandirs, wall-mounted units, and walk-in pooja rooms with Vastu compliance.",
+      "https://intorza.com/services/pooja-room",
+      "https://intorza.com/service-pooja-room.jpg",
+      "30000-200000",
+      {
+        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        features: ["Wooden Mandir", "Wall-Mounted Unit", "Vastu Compliant", "Traditional Carving", "Marble Finish"]
+      }
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "Pooja Room", url: "https://intorza.com/services/pooja-room" }
+    ]),
+    createFAQSchema(poojaRoomFAQs),
+    createProductSchema({
+      name: "Pooja Room Interior Design",
+      description: "Traditional and modern pooja room designs in Bangalore. Teak wood mandirs, brass accents, and Vastu-compliant layouts.",
+      image: "https://intorza.com/service-pooja-room.jpg",
+      url: "https://intorza.com/services/pooja-room",
+      priceRange: "30000-200000",
+      category: "Home Improvement > Pooja Room"
+    })
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pooja Room Design Bangalore | Mandir Interior | Intorza</title>
-        <meta name="description" content="Best pooja room interior designers in Bangalore. Traditional wooden mandirs, modern pooja units, vastu compliant designs. Get free quote!" />
-        <meta name="keywords" content="pooja room design bangalore, mandir design, pooja unit, wooden pooja room, vastu pooja room" />
+        <title>Pooja Room Design Bangalore | Mandir Interior | Vastu | Intorza</title>
+        <meta name="description" content="Best pooja room designers in Bangalore. Traditional wooden mandirs from ₹30K. Vastu-compliant designs, teak/rosewood options. Free design consultation!" />
+        <meta name="keywords" content="pooja room design bangalore, mandir design, pooja unit, wooden pooja room, vastu pooja room, temple design home" />
         <link rel="canonical" href="https://intorza.com/services/pooja-room" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta property="og:title" content="Pooja Room Design Bangalore | Vastu Compliant - Intorza" />
+        <meta property="og:description" content="Traditional mandirs from ₹30K. Teak, rosewood, Vastu-compliant designs. Free consultation!" />
+        <meta property="og:url" content="https://intorza.com/services/pooja-room" />
       </Helmet>
+      <StructuredData data={aeoSchemas} />
       <Header />
       
       <main className="pb-24">
