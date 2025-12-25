@@ -21,6 +21,7 @@ import {
 import { format } from "date-fns";
 import { toast } from "sonner";
 import { useEffect, useState } from "react";
+import { StructuredData, createArticleSchema, createBreadcrumbSchema } from "@/components/StructuredData";
 
 interface TOCItem {
   id: string;
@@ -230,6 +231,22 @@ const ArticleDetail = () => {
         <meta property="og:type" content="article" />
         <link rel="canonical" href={`https://intorza.com/articles/${slug}`} />
       </Helmet>
+      <StructuredData data={[
+        createArticleSchema({
+          title: article.title,
+          description: article.meta_description || article.excerpt || `Read about ${article.title} on Intorza blog`,
+          url: `https://intorza.com/articles/${slug}`,
+          image: article.featured_image_url || undefined,
+          datePublished: article.published_at || article.created_at,
+          dateModified: article.updated_at,
+          author: article.author || "Intorza Team"
+        }),
+        createBreadcrumbSchema([
+          { name: "Home", url: "https://intorza.com" },
+          { name: "Articles", url: "https://intorza.com/articles" },
+          { name: article.title, url: `https://intorza.com/articles/${slug}` }
+        ])
+      ]} />
 
       <Header />
 

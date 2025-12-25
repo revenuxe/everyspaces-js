@@ -11,6 +11,21 @@ import FAQSection from "@/components/FAQSection";
 import LocalitiesSection from "@/components/LocalitiesSection";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import { StructuredData, localBusinessSchema } from "@/components/StructuredData";
+
+const bangaloreLocalBusinessSchema = {
+  ...localBusinessSchema,
+  "@type": "InteriorDesignBusiness",
+  "name": "Intorza Interior Design - Bangalore",
+  "url": "https://intorza.com/bangalore",
+  "areaServed": [
+    { "@type": "City", "name": "Bangalore" },
+    { "@type": "Place", "name": "Koramangala" },
+    { "@type": "Place", "name": "Indiranagar" },
+    { "@type": "Place", "name": "HSR Layout" },
+    { "@type": "Place", "name": "Whitefield" }
+  ]
+};
 
 const Bangalore = () => {
   return (
@@ -27,6 +42,7 @@ const Bangalore = () => {
         />
         <link rel="canonical" href="https://intorza.com/bangalore" />
       </Helmet>
+      <StructuredData data={[bangaloreLocalBusinessSchema]} />
       <Header />
       <main>
         <BangaloreHeroSection />

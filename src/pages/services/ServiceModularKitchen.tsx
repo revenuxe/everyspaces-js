@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
+import { StructuredData, createServiceSchema, createBreadcrumbSchema } from "@/components/StructuredData";
 
 import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
 import bedroomImage from "@/assets/service-bedroom.jpg?webp";
@@ -120,6 +121,14 @@ const ServiceModularKitchen = () => {
         />
         <link rel="canonical" href="https://intorza.com/services/modular-kitchen" />
       </Helmet>
+      <StructuredData data={[
+        createServiceSchema("Modular Kitchen Design", "Best modular kitchen designers in Bangalore with L-shaped, U-shaped & island kitchens", "https://intorza.com/services/modular-kitchen"),
+        createBreadcrumbSchema([
+          { name: "Home", url: "https://intorza.com" },
+          { name: "Services", url: "https://intorza.com/services" },
+          { name: "Modular Kitchen", url: "https://intorza.com/services/modular-kitchen" }
+        ])
+      ]} />
       <Header />
       
       <main className="pb-24">

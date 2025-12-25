@@ -28,6 +28,15 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { StructuredData, localBusinessSchema, createBreadcrumbSchema } from "@/components/StructuredData";
+
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Intorza",
+  "description": "Get a free interior design consultation from Intorza Bangalore",
+  "url": "https://intorza.com/contact"
+};
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
@@ -99,6 +108,7 @@ const Contact = () => {
         />
         <link rel="canonical" href="https://intorza.com/contact" />
       </Helmet>
+      <StructuredData data={[contactPageSchema, localBusinessSchema]} />
       <Header />
       
       <main className="pt-20">
