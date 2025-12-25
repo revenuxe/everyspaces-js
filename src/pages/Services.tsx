@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import { StructuredData, createBreadcrumbSchema } from "@/components/StructuredData";
 
 // Service images
 import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
@@ -38,6 +39,28 @@ const services = [
   { id: 20, title: "Balcony Design", description: "Transform outdoor spaces into relaxing retreats.", image: bhk2Image, link: "/services/balcony-design" },
 ];
 
+const servicesListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Interior Design Services by Intorza",
+  "description": "Browse 20+ interior design services by Intorza Bangalore",
+  "numberOfItems": services.length,
+  "itemListElement": services.map((service, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": "Service",
+      "name": service.title,
+      "description": service.description,
+      "url": `https://intorza.com${service.link}`,
+      "provider": {
+        "@type": "Organization",
+        "name": "Intorza"
+      }
+    }
+  }))
+};
+
 const Services = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -49,6 +72,10 @@ const Services = () => {
         />
         <link rel="canonical" href="https://intorza.com/services" />
       </Helmet>
+      <StructuredData data={[servicesListSchema, createBreadcrumbSchema([
+        { name: "Home", url: "https://intorza.com" },
+        { name: "Services", url: "https://intorza.com/services" }
+      ])]} />
       <Header />
       
       <main className="pt-20 pb-24">

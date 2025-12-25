@@ -12,6 +12,7 @@ import ExploreBangaloreCTA from "@/components/ExploreBangaloreCTA";
 import LocalitiesSection from "@/components/LocalitiesSection";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import { StructuredData, organizationSchema, localBusinessSchema, websiteSchema } from "@/components/StructuredData";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
         />
         <link rel="canonical" href="https://intorza.com/" />
       </Helmet>
+      <StructuredData data={[organizationSchema, localBusinessSchema, websiteSchema]} />
       <Header />
       <main>
         <HeroSection />

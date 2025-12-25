@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import { StructuredData, createBreadcrumbSchema } from "@/components/StructuredData";
 
 const Terms = () => {
   return (
@@ -15,6 +16,16 @@ const Terms = () => {
         />
         <link rel="canonical" href="https://intorza.com/terms" />
       </Helmet>
+      <StructuredData data={[createBreadcrumbSchema([
+        { name: "Home", url: "https://intorza.com" },
+        { name: "Terms & Conditions", url: "https://intorza.com/terms" }
+      ]), {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Terms & Conditions",
+        "description": "Terms and conditions for Intorza interior design services",
+        "url": "https://intorza.com/terms"
+      }]} />
       <Header />
 
       <main className="pt-20">

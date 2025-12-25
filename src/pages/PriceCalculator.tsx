@@ -6,6 +6,26 @@ import BottomNav from "@/components/BottomNav";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, TrendingDown, Home, Building2, Castle } from "lucide-react";
+import { StructuredData, createBreadcrumbSchema } from "@/components/StructuredData";
+
+const calculatorSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Interior Design Cost Calculator",
+  "description": "Calculate your home interior design cost instantly with Intorza's free calculator",
+  "url": "https://intorza.com/price-calculator",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Intorza"
+  }
+};
 
 const propertyTypes = [
   { id: "1bhk", label: "1 BHK", icon: Home, basePrice: 250000 },
@@ -77,6 +97,10 @@ const PriceCalculator = () => {
         />
         <link rel="canonical" href="https://intorza.com/price-calculator" />
       </Helmet>
+      <StructuredData data={[calculatorSchema, createBreadcrumbSchema([
+        { name: "Home", url: "https://intorza.com" },
+        { name: "Price Calculator", url: "https://intorza.com/price-calculator" }
+      ])]} />
 
       <div className="min-h-screen bg-background">
         <Header />

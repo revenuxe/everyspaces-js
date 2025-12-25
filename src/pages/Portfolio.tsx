@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { X, ZoomIn } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { StructuredData, createBreadcrumbSchema } from "@/components/StructuredData";
 import gallery1 from "@/assets/gallery-1.jpg?webp";
 import gallery2 from "@/assets/gallery-2.jpg?webp";
 import gallery3 from "@/assets/gallery-3.jpg?webp";
@@ -103,6 +104,16 @@ const Portfolio = () => {
         />
         <link rel="canonical" href="https://intorza.com/portfolio" />
       </Helmet>
+      <StructuredData data={[createBreadcrumbSchema([
+        { name: "Home", url: "https://intorza.com" },
+        { name: "Portfolio", url: "https://intorza.com/portfolio" }
+      ]), {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Intorza Interior Design Portfolio",
+        "description": "Browse 100+ completed interior projects by Intorza in Bangalore",
+        "url": "https://intorza.com/portfolio"
+      }]} />
       <Header />
       
       <main className="pt-24 md:pt-28 pb-12 md:pb-20">

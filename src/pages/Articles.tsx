@@ -9,6 +9,23 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Clock, Calendar, Search, ArrowRight, BookOpen } from "lucide-react";
 import { format } from "date-fns";
+import { StructuredData, createBreadcrumbSchema } from "@/components/StructuredData";
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Intorza Interior Design Blog",
+  "description": "Expert interior design tips, renovation guides & trending home decor ideas for Bangalore homeowners",
+  "url": "https://intorza.com/articles",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Intorza",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://intorza.com/logo.png"
+    }
+  }
+};
 
 const Articles = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -52,6 +69,10 @@ const Articles = () => {
         />
         <link rel="canonical" href="https://intorza.com/articles" />
       </Helmet>
+      <StructuredData data={[blogSchema, createBreadcrumbSchema([
+        { name: "Home", url: "https://intorza.com" },
+        { name: "Articles", url: "https://intorza.com/articles" }
+      ])]} />
 
       <Header />
 
