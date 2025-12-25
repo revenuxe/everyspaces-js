@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -12,6 +13,14 @@ const ThankYou = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Helmet>
+        <title>Thank You | Request Submitted Successfully | Intorza</title>
+        <meta
+          name="description"
+          content="Thank you for contacting Intorza! Our interior design experts will reach out within 24 hours to discuss your dream home project."
+        />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <Header />
       <main className="flex-1 flex items-center justify-center px-4 py-20">
         <div className="max-w-md w-full text-center">
