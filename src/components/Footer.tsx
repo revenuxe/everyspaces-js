@@ -47,9 +47,9 @@ const Footer = () => {
             <h4 className="font-display text-lg mb-4">Services</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70 font-body">
               <li><Link to="/services/modular-kitchen" className="hover:text-secondary transition-colors">Modular Kitchens</Link></li>
-              <li><Link to="/services/bedroom" className="hover:text-secondary transition-colors">Bedroom Interiors</Link></li>
+              <li><Link to="/services/bedroom-design" className="hover:text-secondary transition-colors">Bedroom Interiors</Link></li>
               <li><Link to="/services/living-room" className="hover:text-secondary transition-colors">Living Room</Link></li>
-              <li><Link to="/services/wardrobe" className="hover:text-secondary transition-colors">Wardrobes</Link></li>
+              <li><Link to="/services/wardrobe-design" className="hover:text-secondary transition-colors">Wardrobes</Link></li>
               <li><Link to="/services/tv-unit" className="hover:text-secondary transition-colors">TV Units</Link></li>
               <li><Link to="/services" className="hover:text-secondary transition-colors font-medium">View All Services →</Link></li>
             </ul>
