@@ -9,6 +9,13 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
+import { 
+  StructuredData, 
+  createServiceSchema, 
+  createBreadcrumbSchema,
+  createFAQSchema,
+  createProductSchema
+} from "@/components/StructuredData";
 
 import bedroomImage from "@/assets/service-bedroom.jpg?webp";
 import livingImage from "@/assets/service-living-room.jpg?webp";
@@ -28,6 +35,26 @@ const studyFeatures = [
   { icon: Lightbulb, title: "Task Lighting", description: "Optimal lighting to reduce eye strain" },
   { icon: Layers, title: "Smart Storage", description: "Book shelves, file cabinets, and hidden storage" },
   { icon: Monitor, title: "Tech Ready", description: "Cable management and device charging stations" },
+];
+
+// AEO-optimized FAQs
+const studyRoomFAQs = [
+  {
+    question: "What is the cost of study table design in Bangalore?",
+    answer: "Study table design in Bangalore costs ₹15,000 to ₹60,000 depending on size and features. At Intorza, basic study tables start from ₹15,000, L-shaped units from ₹25,000, and complete study room setups from ₹50,000."
+  },
+  {
+    question: "What is the ideal study table height?",
+    answer: "Ideal study table height is 28-30 inches for adults and 22-26 inches for children. Intorza designs ergonomic study tables with adjustable heights for growing children and proper monitor placement for adults."
+  },
+  {
+    question: "How to design a study corner in bedroom?",
+    answer: "For bedroom study corners, Intorza uses wall-mounted desks, floating shelves, and integrated lighting. We ensure proper ventilation, natural light access, and minimal distractions. Starting from ₹15,000."
+  },
+  {
+    question: "What lighting is best for study room?",
+    answer: "Intorza recommends 4000-5000K neutral white LED lights for study rooms. We design layered lighting with overhead lights, focused task lamps, and ambient lighting to reduce eye strain and boost concentration."
+  }
 ];
 
 const ServiceStudyRoom = () => {
@@ -50,14 +77,48 @@ const ServiceStudyRoom = () => {
     }
   };
 
+  // AEO schemas
+  const aeoSchemas = [
+    createServiceSchema(
+      "Study Room Design Bangalore",
+      "Ergonomic study room and study table designs in Bangalore. Kids study stations, bookshelves, and focused learning spaces with proper lighting.",
+      "https://intorza.com/services/study-room",
+      "https://intorza.com/service-study-room.jpg",
+      "15000-100000",
+      {
+        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        features: ["Study Table", "Bookshelf", "Task Lighting", "Cable Management", "Ergonomic Design"]
+      }
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "Study Room", url: "https://intorza.com/services/study-room" }
+    ]),
+    createFAQSchema(studyRoomFAQs),
+    createProductSchema({
+      name: "Study Room & Table Design",
+      description: "Ergonomic study room designs in Bangalore with study tables, bookshelves, and proper lighting for focused learning.",
+      image: "https://intorza.com/service-study-room.jpg",
+      url: "https://intorza.com/services/study-room",
+      priceRange: "15000-100000",
+      category: "Home Improvement > Study Room"
+    })
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Study Room Design Bangalore | Study Table Interior | Intorza</title>
-        <meta name="description" content="Best study room interior designers in Bangalore. Kids study table, bookshelves, learning spaces. Focused study environments. Get free quote!" />
-        <meta name="keywords" content="study room design bangalore, study table design, kids study room, bookshelf design, learning space interior" />
+        <meta name="description" content="Best study room designers in Bangalore. Study tables from ₹15K. Kids study stations, bookshelves, ergonomic designs. Free consultation!" />
+        <meta name="keywords" content="study room design bangalore, study table design, kids study room, bookshelf design, learning space interior, study corner" />
         <link rel="canonical" href="https://intorza.com/services/study-room" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta property="og:title" content="Study Room Design Bangalore | Study Table - Intorza" />
+        <meta property="og:description" content="Study tables from ₹15K. Ergonomic designs, bookshelves, task lighting. Free consultation!" />
+        <meta property="og:url" content="https://intorza.com/services/study-room" />
       </Helmet>
+      <StructuredData data={aeoSchemas} />
       <Header />
       
       <main className="pb-24">

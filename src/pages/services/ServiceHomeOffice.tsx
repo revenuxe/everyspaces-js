@@ -9,6 +9,13 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
+import { 
+  StructuredData, 
+  createServiceSchema, 
+  createBreadcrumbSchema,
+  createFAQSchema,
+  createProductSchema
+} from "@/components/StructuredData";
 
 import bedroomImage from "@/assets/service-bedroom.jpg?webp";
 import livingImage from "@/assets/service-living-room.jpg?webp";
@@ -28,6 +35,26 @@ const officeFeatures = [
   { icon: Lightbulb, title: "Task Lighting", description: "Optimal lighting to reduce eye strain and boost productivity" },
   { icon: BookOpen, title: "Smart Storage", description: "Filing cabinets, bookshelves, and hidden storage solutions" },
   { icon: Wifi, title: "Tech Integration", description: "Cable management, charging stations, and connectivity solutions" },
+];
+
+// AEO-optimized FAQs
+const homeOfficeFAQs = [
+  {
+    question: "What is the cost of home office design in Bangalore?",
+    answer: "Home office design in Bangalore costs ₹30,000 to ₹2 lakh depending on size and features. At Intorza, compact workstations start from ₹30,000, dedicated rooms from ₹80,000, and executive studios from ₹1.5 lakh."
+  },
+  {
+    question: "How to set up a productive work from home space?",
+    answer: "Intorza creates productive WFH spaces with ergonomic desks at proper height, adjustable chairs, task lighting, soundproofing options, cable management, and dedicated storage. We ensure distraction-free environments."
+  },
+  {
+    question: "What is the ideal desk size for home office?",
+    answer: "For single monitor setups, 4x2 feet desks work well. For dual monitors, we recommend 5x2.5 feet. Intorza designs custom desks based on your equipment, work style, and available space."
+  },
+  {
+    question: "Can you design a home office in bedroom?",
+    answer: "Yes, Intorza specializes in bedroom-office combos with foldable desks, partition screens, and proper zoning. We create focused work areas that can be hidden during non-work hours."
+  }
 ];
 
 const ServiceHomeOffice = () => {
@@ -54,14 +81,48 @@ const ServiceHomeOffice = () => {
     }
   };
 
+  // AEO schemas
+  const aeoSchemas = [
+    createServiceSchema(
+      "Home Office Design Bangalore",
+      "Productivity-focused home office designs in Bangalore. Ergonomic workstations, study rooms, and WFH setups with proper lighting and storage.",
+      "https://intorza.com/services/home-office",
+      "https://intorza.com/service-home-office.jpg",
+      "30000-200000",
+      {
+        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        features: ["Ergonomic Desk", "Task Lighting", "Cable Management", "Standing Desk", "Bookshelves"]
+      }
+    ),
+    createBreadcrumbSchema([
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "Home Office", url: "https://intorza.com/services/home-office" }
+    ]),
+    createFAQSchema(homeOfficeFAQs),
+    createProductSchema({
+      name: "Home Office Interior Design",
+      description: "Professional home office designs in Bangalore with ergonomic furniture, task lighting, and tech integration for productive WFH.",
+      image: "https://intorza.com/service-home-office.jpg",
+      url: "https://intorza.com/services/home-office",
+      priceRange: "30000-200000",
+      category: "Home Improvement > Home Office"
+    })
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Home Office Design Bangalore | Study Room & WFH Setup | Intorza</title>
-        <meta name="description" content="Boost productivity with Intorza's home office designs in Bangalore. Ergonomic workstations, study rooms & WFH setups. Free consultation!" />
-        <meta name="keywords" content="home office design bangalore, study room interior, work from home setup, home workspace design, study table design" />
+        <meta name="description" content="Best home office designers in Bangalore. Ergonomic workstations from ₹30K. WFH setups, standing desks, executive studios. Free consultation!" />
+        <meta name="keywords" content="home office design bangalore, study room interior, work from home setup, home workspace design, study table design, WFH office" />
         <link rel="canonical" href="https://intorza.com/services/home-office" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta property="og:title" content="Home Office Design Bangalore | WFH Setup - Intorza" />
+        <meta property="og:description" content="Home offices from ₹30K. Ergonomic desks, task lighting, storage. Free consultation!" />
+        <meta property="og:url" content="https://intorza.com/services/home-office" />
       </Helmet>
+      <StructuredData data={aeoSchemas} />
       <Header />
       
       <main className="pb-24">
