@@ -9,13 +9,15 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <img
-              src={intorzaLogo}
-              alt="Intorza Interior Design"
-              width={197}
-              height={40}
-              className="h-10 w-auto mb-4 brightness-0 invert"
-            />
+            <Link to="/" aria-label="Intorza Home">
+              <img
+                src={intorzaLogo}
+                alt="Intorza Interior Design"
+                width={197}
+                height={40}
+                className="h-10 w-auto mb-4 brightness-0 invert"
+              />
+            </Link>
             <p className="text-primary-foreground/70 text-sm max-w-sm mb-6 font-body">
               Transforming Bengaluru homes with contemporary design excellence. 
               Every space tells your story.
