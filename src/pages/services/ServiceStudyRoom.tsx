@@ -95,7 +95,7 @@ const ServiceStudyRoom = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Study Room", url: "https://intorza.com/services/study-room" }
     ]),
-    createFAQSchema(studyRoomFAQs),
+    createFAQSchema(studyRoomFAQs, 'services/study-room'),
     createProductSchema({
       name: "Study Room & Table Design",
       description: "Ergonomic study room designs in Bangalore with study tables, bookshelves, and proper lighting for focused learning.",

@@ -95,7 +95,7 @@ const ServicePoojaRoom = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Pooja Room", url: "https://intorza.com/services/pooja-room" }
     ]),
-    createFAQSchema(poojaRoomFAQs),
+    createFAQSchema(poojaRoomFAQs, 'services/pooja-room'),
     createProductSchema({
       name: "Pooja Room Interior Design",
       description: "Traditional and modern pooja room designs in Bangalore. Teak wood mandirs, brass accents, and Vastu-compliant layouts.",

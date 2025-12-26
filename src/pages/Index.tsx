@@ -26,6 +26,7 @@ import {
 
 const Index = () => {
   // Combine all AEO-optimized schemas for maximum AI discoverability
+  // Only include FAQPage on home page to avoid duplicates across site
   const aeoSchemas = [
     organizationSchema,
     localBusinessSchema,
@@ -33,7 +34,7 @@ const Index = () => {
     homePageSchema,
     howToInteriorDesignSchema,
     professionalServiceSchema,
-    createFAQSchema(commonFAQs)
+    createFAQSchema(commonFAQs, 'home')
   ];
 
   return (

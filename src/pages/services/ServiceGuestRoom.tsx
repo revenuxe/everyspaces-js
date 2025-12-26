@@ -95,7 +95,7 @@ const ServiceGuestRoom = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Guest Room", url: "https://intorza.com/services/guest-room" }
     ]),
-    createFAQSchema(guestRoomFAQs),
+    createFAQSchema(guestRoomFAQs, 'services/guest-room'),
     createProductSchema({
       name: "Guest Room Interior Design",
       description: "Welcoming guest room designs in Bangalore with comfortable beds, compact wardrobes, and thoughtful amenities.",

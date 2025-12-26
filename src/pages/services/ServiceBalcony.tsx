@@ -95,7 +95,7 @@ const ServiceBalcony = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Balcony Design", url: "https://intorza.com/services/balcony-design" }
     ]),
-    createFAQSchema(balconyFAQs),
+    createFAQSchema(balconyFAQs, 'services/balcony-design'),
     createProductSchema({
       name: "Balcony & Terrace Design",
       description: "Balcony transformation services in Bangalore including vertical gardens, outdoor furniture, and terrace makeovers.",

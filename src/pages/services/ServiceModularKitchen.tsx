@@ -153,7 +153,7 @@ const ServiceModularKitchen = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Modular Kitchen", url: "https://intorza.com/services/modular-kitchen" }
     ]),
-    createFAQSchema(modularKitchenFAQs),
+    createFAQSchema(modularKitchenFAQs, 'services/modular-kitchen'),
     createProductSchema({
       name: "Modular Kitchen Design",
       description: "Premium modular kitchen design and installation in Bangalore with L-shaped, U-shaped, and island layouts. Includes Hettich/Hafele hardware, granite countertops, and 10-year warranty.",

@@ -99,7 +99,7 @@ const ServiceDiningRoom = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Dining Room", url: "https://intorza.com/services/dining-room" }
     ]),
-    createFAQSchema(diningRoomFAQs),
+    createFAQSchema(diningRoomFAQs, 'services/dining-room'),
     createProductSchema({
       name: "Dining Room Interior Design",
       description: "Elegant dining room designs in Bangalore with custom tables, crockery units, chandeliers, and bar cabinets.",
