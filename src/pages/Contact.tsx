@@ -35,6 +35,7 @@ import {
   contactPageSchema,
   createFAQSchema
 } from "@/components/StructuredData";
+import Breadcrumb from "@/components/Breadcrumb";
 
 // AEO-optimized contact FAQs
 const contactFAQs = [
@@ -143,8 +144,9 @@ const Contact = () => {
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
+      <Breadcrumb items={[{ label: "Contact" }]} />
       
-      <main className="pt-20">
+      <main className="pt-4">
         {/* Hero Section */}
         <section className="bg-primary py-16 md:py-24">
           <div className="container px-4 text-center">
