@@ -76,7 +76,7 @@ const RelatedServices = ({ currentSlug }: RelatedServicesProps) => {
                   {service.title}
                 </h3>
               </div>
-              <div className="absolute bottom-3 right-3 w-8 h-8 bg-secondary rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute bottom-3 right-3 w-8 h-8 bg-secondary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                 <ArrowRight className="w-4 h-4 text-secondary-foreground" />
               </div>
             </Link>
