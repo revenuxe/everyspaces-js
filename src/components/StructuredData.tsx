@@ -189,12 +189,44 @@ export const localBusinessSchema = {
         "@type": "Person",
         "name": "Priya Sharma"
       },
+      "datePublished": "2024-11-15",
       "reviewRating": {
         "@type": "Rating",
         "ratingValue": "5",
-        "bestRating": "5"
+        "bestRating": "5",
+        "worstRating": "1"
       },
       "reviewBody": "Excellent work on our 3BHK apartment. The modular kitchen design exceeded our expectations. Highly recommend Intorza for interior design in Bangalore."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Rahul Menon"
+      },
+      "datePublished": "2024-10-20",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Professional team and timely delivery. Our wardrobe and TV unit look amazing. Great value for money."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Sneha Reddy"
+      },
+      "datePublished": "2024-09-10",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Intorza transformed our 2BHK into a beautiful space. The false ceiling and lighting design are stunning."
     }
   ],
   "hasMap": "https://maps.google.com/?q=Intorza+HBR+Layout+Bangalore"
