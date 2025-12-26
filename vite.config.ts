@@ -3,43 +3,6 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { imagetools } from "vite-imagetools";
-import vitePrerender from "vite-plugin-prerender";
-
-// All static routes for prerendering
-const staticRoutes = [
-  "/",
-  "/bangalore",
-  "/portfolio",
-  "/services",
-  "/services/2bhk-interiors",
-  "/services/3bhk-interiors",
-  "/services/villa-interiors",
-  "/services/full-home-design",
-  "/services/modular-kitchen",
-  "/services/bedroom-design",
-  "/services/living-room",
-  "/services/wardrobe-design",
-  "/services/home-office",
-  "/services/kids-room",
-  "/services/dining-room",
-  "/services/bathroom-design",
-  "/services/pooja-room",
-  "/services/foyer-entrance",
-  "/services/tv-unit",
-  "/services/false-ceiling",
-  "/services/crockery-unit",
-  "/services/study-room",
-  "/services/guest-room",
-  "/services/balcony-design",
-  "/price-calculator",
-  "/contact",
-  "/thank-you",
-  "/terms",
-  "/privacy",
-  "/articles",
-];
-
-const Renderer = vitePrerender.PuppeteerRenderer;
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -66,22 +29,6 @@ export default defineConfig(({ mode }) => {
         },
       }),
       mode === "development" && componentTagger(),
-      mode === "production" && vitePrerender({
-        staticDir: path.join(__dirname, 'dist'),
-        routes: staticRoutes,
-        renderer: new Renderer({
-          maxConcurrentRoutes: 4,
-          renderAfterTime: 500,
-        }),
-        postProcess(renderedRoute) {
-          // Inject prerendered marker
-          renderedRoute.html = renderedRoute.html.replace(
-            'id="root"',
-            'id="root" data-server-rendered="true"'
-          );
-          return renderedRoute;
-        },
-      }),
     ].filter(Boolean),
     resolve: {
       alias: {
