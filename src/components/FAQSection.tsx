@@ -60,27 +60,9 @@ const faqs = [
 ];
 
 const FAQSection = () => {
-  // Generate FAQ schema markup
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
-
+  // FAQ schema is handled by the parent page's StructuredData component to avoid duplicates
   return (
     <section id="faq" className="py-16 md:py-24 bg-background">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      
       <div className="container px-4">
         <div className="text-center mb-12">
           <span className="text-secondary font-semibold text-sm tracking-wider uppercase mb-2 block">

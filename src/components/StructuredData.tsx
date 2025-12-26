@@ -696,27 +696,47 @@ export const contactPageSchema = {
   }
 };
 
-// Define common AEO-optimized FAQs for reuse
+// Define common AEO-optimized FAQs for home page - matches FAQSection content
 export const commonFAQs = [
   {
-    question: "Who is the best interior designer in Bangalore?",
-    answer: "Intorza is rated as one of the best interior designers in Bangalore with 4.8/5 rating, 500+ completed projects, and 10-year warranty. We specialize in modular kitchens, wardrobes, and complete home interiors with transparent pricing and dedicated project managers."
-  },
-  {
     question: "How much does interior design cost in Bangalore?",
-    answer: "Interior design in Bangalore costs between ₹1,500 to ₹3,500 per square foot. At Intorza, 2BHK interior packages start from ₹8 lakhs, 3BHK from ₹12 lakhs. Modular kitchen alone starts from ₹2.5 lakhs. Get a free consultation for accurate pricing."
+    answer: "Interior design costs in Bangalore typically range from ₹1,500 to ₹3,500 per square foot depending on the scope, materials, and finishes. At Intorza, we offer customized packages starting from ₹8 lakhs for a 2BHK apartment interior design. We provide detailed cost breakdowns and transparent pricing with no hidden charges. Contact us for a free consultation and accurate quote."
   },
   {
-    question: "How long does interior design take?",
-    answer: "Interior design project timelines: Modular kitchen takes 15-20 days, single room 20-30 days, 2BHK apartment 45-60 days, 3BHK apartment 60-75 days, and villa interiors 90-120 days. Intorza ensures timely delivery with dedicated project management."
+    question: "How long does it take to complete home interior design?",
+    answer: "A complete home interior design project typically takes 45-90 days depending on the size and complexity. Modular kitchen installation takes 15-20 days, while a full 3BHK apartment interior can take 60-75 days. We use advanced project management and quality materials to ensure timely delivery without compromising on craftsmanship."
   },
   {
-    question: "What is included in full home interior?",
-    answer: "Intorza's full home interior includes modular kitchen, all wardrobes, TV units, study tables, shoe racks, false ceiling, electrical work, painting, flooring consultation, and soft furnishings. We handle design to installation with 10-year warranty."
+    question: "Do you provide modular kitchen designs in Bangalore?",
+    answer: "Yes! Intorza specializes in premium modular kitchen designs in Bangalore. We offer L-shaped, U-shaped, parallel, and island kitchen layouts with soft-close mechanisms, durable finishes, and smart storage solutions. Our modular kitchens come with a 10-year warranty on hardware and are customized to fit your space and budget."
   },
   {
-    question: "Do you offer EMI for interior design?",
-    answer: "Yes, Intorza offers easy EMI options for interior design projects through partner banks and NBFCs. Zero-cost EMI available for up to 12 months on select projects. Contact us for financing options suited to your budget."
+    question: "What areas in Bangalore do you serve for interior design?",
+    answer: "We provide interior design services across all major areas in Bangalore including Koramangala, Indiranagar, HSR Layout, Whitefield, Electronic City, Marathahalli, Jayanagar, JP Nagar, HBR Layout, Hebbal, Yelahanka, and Sarjapur Road. Our team conducts free site visits for consultation anywhere in Bangalore."
+  },
+  {
+    question: "Do you offer 3D visualization before starting the project?",
+    answer: "Absolutely! We provide detailed 3D visualization and walkthrough for every project before execution. This helps you visualize the final look of your modular kitchen, bedroom interiors, living room design, and wardrobes. You can request changes and approve the design before we begin manufacturing and installation."
+  },
+  {
+    question: "What is included in your complete home interior package?",
+    answer: "Our complete home interior package includes modular kitchen, wardrobes, TV units, false ceiling, electrical work, painting, flooring consultation, furniture, and decorative elements. We handle everything from design to installation with dedicated project managers, ensuring a hassle-free experience."
+  },
+  {
+    question: "Do you provide warranty on interior work?",
+    answer: "Yes, we provide comprehensive warranty coverage: 10 years on modular kitchen and wardrobe hardware, 5 years on plywood and laminates, and 1 year on overall workmanship. Our after-sales service team ensures quick resolution of any issues post-installation."
+  },
+  {
+    question: "Can I get interior design for a single room or kitchen only?",
+    answer: "Yes! We offer flexible interior design services for individual spaces. Whether you need just a modular kitchen design, bedroom renovation, bathroom remodeling, or living room makeover, we can help. Our minimum project value starts from ₹2.5 lakhs for individual room designs."
+  },
+  {
+    question: "What makes Intorza different from other interior designers in Bangalore?",
+    answer: "Intorza stands out with 10+ years of experience, 500+ completed projects, in-house manufacturing facility, transparent pricing, dedicated project managers, and a strong focus on quality materials. We use premium brands like Hettich, Hafele, and Century for all our projects with proper documentation and warranty."
+  },
+  {
+    question: "How do I start my interior design project with Intorza?",
+    answer: "Starting is easy! Simply call us at +91 9886579923 or fill out our contact form for a free consultation. Our design expert will visit your site, understand your requirements, and provide a detailed proposal with 3D designs and cost estimate within 5 working days. No commitment required for the initial consultation."
   }
 ];
 
