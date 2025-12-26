@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumb from "@/components/Breadcrumb";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Clock, Calendar, Search, ArrowRight, BookOpen } from "lucide-react";
@@ -75,8 +76,9 @@ const Articles = () => {
       ])]} />
 
       <Header />
+      <Breadcrumb items={[{ label: "Articles" }]} />
 
-      <main className="pt-24 pb-16">
+      <main className="pt-4 pb-16">
         {/* Hero Section */}
         <section className="relative py-16 md:py-24 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/10">
           <div className="container">

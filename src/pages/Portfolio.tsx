@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { X, ZoomIn } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumb from "@/components/Breadcrumb";
 import { StructuredData, createBreadcrumbSchema } from "@/components/StructuredData";
 import gallery1 from "@/assets/gallery-1.jpg?webp";
 import gallery2 from "@/assets/gallery-2.jpg?webp";
@@ -115,8 +116,9 @@ const Portfolio = () => {
         "url": "https://intorza.com/portfolio"
       }]} />
       <Header />
+      <Breadcrumb items={[{ label: "Portfolio" }]} />
       
-      <main className="pt-24 md:pt-28 pb-12 md:pb-20">
+      <main className="pt-4 md:pt-8 pb-12 md:pb-20">
         <div className="container px-2 md:px-4">
           {/* Header */}
           <div className="text-center mb-6 md:mb-8 px-2">
