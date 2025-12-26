@@ -99,7 +99,7 @@ const ServiceHomeOffice = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Home Office", url: "https://intorza.com/services/home-office" }
     ]),
-    createFAQSchema(homeOfficeFAQs),
+    createFAQSchema(homeOfficeFAQs, 'services/home-office'),
     createProductSchema({
       name: "Home Office Interior Design",
       description: "Professional home office designs in Bangalore with ergonomic furniture, task lighting, and tech integration for productive WFH.",

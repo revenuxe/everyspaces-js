@@ -99,7 +99,7 @@ const ServiceLivingRoom = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Living Room", url: "https://intorza.com/services/living-room" }
     ]),
-    createFAQSchema(livingRoomFAQs),
+    createFAQSchema(livingRoomFAQs, 'services/living-room'),
     createProductSchema({
       name: "Living Room Interior Design",
       description: "Complete living room design in Bangalore including TV unit, false ceiling, feature wall, and lighting. 10-year warranty included.",

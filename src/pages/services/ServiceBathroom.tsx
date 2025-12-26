@@ -99,7 +99,7 @@ const ServiceBathroom = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Bathroom Design", url: "https://intorza.com/services/bathroom-design" }
     ]),
-    createFAQSchema(bathroomFAQs),
+    createFAQSchema(bathroomFAQs, 'services/bathroom-design'),
     createProductSchema({
       name: "Bathroom Renovation",
       description: "Complete bathroom renovation in Bangalore with Kohler/Grohe fixtures, designer tiles, and waterproofing. 10-15 day completion.",

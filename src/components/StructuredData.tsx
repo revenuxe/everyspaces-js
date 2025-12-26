@@ -409,11 +409,11 @@ export const createBreadcrumbSchema = (items: { name: string; url: string }[]) =
   }))
 });
 
-// FAQ schema generator (enhanced for AEO)
-export const createFAQSchema = (faqs: { question: string; answer: string }[]) => ({
+// FAQ schema generator (enhanced for AEO) - uses unique ID per page to avoid duplicates
+export const createFAQSchema = (faqs: { question: string; answer: string }[], pageId?: string) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": "https://intorza.com/#faqpage",
+  "@id": `https://intorza.com/${pageId || ''}#faqpage`,
   "mainEntity": faqs.map((faq) => ({
     "@type": "Question",
     "name": faq.question,
@@ -421,11 +421,7 @@ export const createFAQSchema = (faqs: { question: string; answer: string }[]) =>
       "@type": "Answer",
       "text": faq.answer
     }
-  })),
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [".faq-question", ".faq-answer"]
-  }
+  }))
 });
 
 // Image Gallery schema (enhanced for AEO)

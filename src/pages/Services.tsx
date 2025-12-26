@@ -93,7 +93,7 @@ const Services = () => {
       { name: "Home", url: "https://intorza.com" },
       { name: "Services", url: "https://intorza.com/services" }
     ]),
-    createFAQSchema(servicesFAQs)
+    createFAQSchema(servicesFAQs, 'services')
   ];
 
   return (

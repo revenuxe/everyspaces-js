@@ -95,7 +95,7 @@ const ServiceFalseCeiling = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "False Ceiling", url: "https://intorza.com/services/false-ceiling" }
     ]),
-    createFAQSchema(falseCeilingFAQs),
+    createFAQSchema(falseCeilingFAQs, 'services/false-ceiling'),
     createProductSchema({
       name: "False Ceiling Design",
       description: "Designer false ceilings in Bangalore with POP, gypsum, cove lighting, and AC integration. 3-7 day installation.",

@@ -99,7 +99,7 @@ const ServiceKidsRoom = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Kids Room", url: "https://intorza.com/services/kids-room" }
     ]),
-    createFAQSchema(kidsRoomFAQs),
+    createFAQSchema(kidsRoomFAQs, 'services/kids-room'),
     createProductSchema({
       name: "Kids Room Interior Design",
       description: "Safe and creative kids room designs in Bangalore with themed interiors, bunk beds, and study areas. Non-toxic materials.",

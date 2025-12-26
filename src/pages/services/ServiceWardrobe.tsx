@@ -99,7 +99,7 @@ const ServiceWardrobe = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Wardrobe Design", url: "https://intorza.com/services/wardrobe-design" }
     ]),
-    createFAQSchema(wardrobeFAQs),
+    createFAQSchema(wardrobeFAQs, 'services/wardrobe-design'),
     createProductSchema({
       name: "Custom Wardrobe Design",
       description: "Premium wardrobe design and installation in Bangalore with sliding, hinged, and walk-in options. Includes Hettich/Hafele hardware and 10-year warranty.",

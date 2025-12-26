@@ -154,7 +154,7 @@ const Service2BHK = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "2 BHK Interiors", url: "https://intorza.com/services/2bhk-interiors" }
     ]),
-    createFAQSchema(bhk2FAQs),
+    createFAQSchema(bhk2FAQs, 'services/2bhk-interiors'),
     createProductSchema({
       name: "2 BHK Complete Interior Package",
       description: "Complete 2 BHK interior design in Bangalore including kitchen, wardrobes, TV unit, and living room. 45-60 day delivery with 10-year warranty.",

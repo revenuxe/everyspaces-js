@@ -95,7 +95,7 @@ const ServiceCrockeryUnit = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Crockery Unit", url: "https://intorza.com/services/crockery-unit" }
     ]),
-    createFAQSchema(crockeryUnitFAQs),
+    createFAQSchema(crockeryUnitFAQs, 'services/crockery-unit'),
     createProductSchema({
       name: "Crockery Unit & Display Cabinet",
       description: "Elegant crockery units in Bangalore with glass displays, LED lighting, and bar sections for fine china and beverages.",

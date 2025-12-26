@@ -60,7 +60,7 @@ const aeoSchemas = [
     { name: "Home", url: "https://intorza.com" },
     { name: "Contact", url: "https://intorza.com/contact" }
   ]),
-  createFAQSchema(contactFAQs)
+  createFAQSchema(contactFAQs, 'contact')
 ];
 
 const contactSchema = z.object({

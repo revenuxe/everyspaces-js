@@ -99,7 +99,7 @@ const ServiceBedroom = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Bedroom Design", url: "https://intorza.com/services/bedroom-design" }
     ]),
-    createFAQSchema(bedroomFAQs),
+    createFAQSchema(bedroomFAQs, 'services/bedroom-design'),
     createProductSchema({
       name: "Bedroom Interior Design",
       description: "Complete bedroom interior design in Bangalore including bed design, wardrobe, false ceiling, and ambient lighting. 10-year warranty included.",

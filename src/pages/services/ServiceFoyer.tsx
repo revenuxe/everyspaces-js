@@ -95,7 +95,7 @@ const ServiceFoyer = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Foyer & Entrance", url: "https://intorza.com/services/foyer-entrance" }
     ]),
-    createFAQSchema(foyerFAQs),
+    createFAQSchema(foyerFAQs, 'services/foyer-entrance'),
     createProductSchema({
       name: "Foyer & Entrance Interior",
       description: "Entrance and foyer design in Bangalore with shoe cabinets, consoles, feature walls, and chandeliers.",

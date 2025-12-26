@@ -95,7 +95,7 @@ const ServiceTVUnit = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "TV Unit", url: "https://intorza.com/services/tv-unit" }
     ]),
-    createFAQSchema(tvUnitFAQs),
+    createFAQSchema(tvUnitFAQs, 'services/tv-unit'),
     createProductSchema({
       name: "TV Unit & Entertainment Wall",
       description: "Modern TV unit designs in Bangalore with floating units, backlit panels, and feature walls. Includes cable management and LED lighting.",

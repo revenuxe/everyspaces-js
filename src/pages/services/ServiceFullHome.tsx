@@ -153,7 +153,7 @@ const ServiceFullHome = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Full Home Design", url: "https://intorza.com/services/full-home-design" }
     ]),
-    createFAQSchema(fullHomeFAQs),
+    createFAQSchema(fullHomeFAQs, 'services/full-home-design'),
     createProductSchema({
       name: "Complete Home Interior Package",
       description: "End-to-end home interior design in Bangalore including kitchen, wardrobes, living room, and all bedrooms. 45-75 day delivery with 10-year warranty.",

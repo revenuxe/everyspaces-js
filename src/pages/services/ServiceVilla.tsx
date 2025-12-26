@@ -153,7 +153,7 @@ const ServiceVilla = () => {
       { name: "Services", url: "https://intorza.com/services" },
       { name: "Villa Interiors", url: "https://intorza.com/services/villa-interiors" }
     ]),
-    createFAQSchema(villaFAQs),
+    createFAQSchema(villaFAQs, 'services/villa-interiors'),
     createProductSchema({
       name: "Luxury Villa Interior Design",
       description: "Complete villa interior design in Bangalore with bespoke designs, imported finishes, and smart home integration. 90-120 day delivery.",
