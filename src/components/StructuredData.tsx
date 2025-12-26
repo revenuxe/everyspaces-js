@@ -28,9 +28,9 @@ export const organizationSchema = {
   "url": "https://intorza.com",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://intorza.com/logo.png",
-    "width": 200,
-    "height": 60
+    "url": "https://intorza.com/favicon.ico",
+    "width": 64,
+    "height": 64
   },
   "description": "Intorza is the best interior design company in Bangalore offering modular kitchens, wardrobes, and full home interiors with 10-year warranty. We have completed 500+ projects across Bangalore.",
   "foundingDate": "2014",
@@ -118,10 +118,7 @@ export const localBusinessSchema = {
   "@type": "InteriorDesignBusiness",
   "@id": "https://intorza.com/#localbusiness",
   "name": "Intorza Interior Design",
-  "image": [
-    "https://intorza.com/logo.png",
-    "https://intorza.com/og-image.jpg"
-  ],
+  "image": "https://intorza.com/favicon.ico",
   "url": "https://intorza.com",
   "telephone": "+91-9886579923",
   "email": "intorza.com@gmail.com",
@@ -216,12 +213,8 @@ export const websiteSchema = {
     "@id": "https://intorza.com/#organization"
   },
   "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://intorza.com/search?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
+    "@type": "ReadAction",
+    "target": "https://intorza.com"
   },
   "inLanguage": "en-IN"
 };
