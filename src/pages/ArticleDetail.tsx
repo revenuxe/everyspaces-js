@@ -203,32 +203,40 @@ const ArticleDetail = () => {
   const tags = article.tags as string[] | null;
   const processedContent = processContent(article.content);
 
+  const pageTitle = `${article.meta_title || article.title} | Intorza Interior Design`;
+  const pageDescription = article.meta_description || article.excerpt || `Read about ${article.title} on Intorza blog`;
+
   return (
     <>
-      <Helmet>
-        <title>
-          {article.meta_title || article.title} | Intorza Interior Design
-        </title>
-        <meta
-          name="description"
-          content={
-            article.meta_description ||
-            article.excerpt ||
-            `Read about ${article.title} on Intorza blog`
-          }
-        />
+      <Helmet key={slug}>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
         {keywords && keywords.length > 0 && (
           <meta name="keywords" content={keywords.join(", ")} />
         )}
-        <meta property="og:title" content={article.title} />
-        <meta
-          property="og:description"
-          content={article.excerpt || article.meta_description}
-        />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta name="author" content={article.author || "Intorza Team"} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={article.meta_title || article.title} />
+        <meta property="og:description" content={pageDescription} />
         {article.featured_image_url && (
           <meta property="og:image" content={article.featured_image_url} />
         )}
         <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://intorza.com/articles/${slug}`} />
+        <meta property="og:site_name" content="Intorza" />
+        <meta property="article:published_time" content={article.published_at || article.created_at} />
+        <meta property="article:modified_time" content={article.updated_at} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={article.meta_title || article.title} />
+        <meta name="twitter:description" content={pageDescription} />
+        {article.featured_image_url && (
+          <meta name="twitter:image" content={article.featured_image_url} />
+        )}
+        
         <link rel="canonical" href={`https://intorza.com/articles/${slug}`} />
       </Helmet>
       <StructuredData data={[
