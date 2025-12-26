@@ -34,6 +34,7 @@ const Header = () => {
   }, [location]);
 
   const navLinks = [
+    { href: "/", label: "Home", isRoute: true },
     { href: "/services", label: "Services", isRoute: true },
     { href: "/portfolio", label: "Portfolio", isRoute: true },
     { href: "/articles", label: "Articles", isRoute: true },
