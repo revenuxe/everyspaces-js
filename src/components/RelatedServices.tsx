@@ -71,12 +71,12 @@ const RelatedServices = ({ currentSlug }: RelatedServicesProps) => {
               />
               <div className="absolute inset-0 bg-foreground/60 mix-blend-multiply" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="font-display text-sm md:text-base text-primary-foreground">
+              <div className="absolute bottom-0 left-0 right-0 p-4 pr-14 flex items-end justify-between">
+                <h3 className="font-display text-sm md:text-base text-primary-foreground leading-tight">
                   {service.title}
                 </h3>
               </div>
-              <div className="absolute bottom-3 right-3 w-8 h-8 bg-secondary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="absolute bottom-4 right-4 w-9 h-9 bg-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                 <ArrowRight className="w-4 h-4 text-secondary-foreground" />
               </div>
             </Link>
