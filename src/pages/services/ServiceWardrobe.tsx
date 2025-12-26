@@ -5,6 +5,7 @@ import { ArrowRight, Shirt, DoorOpen, Layers, Sparkles } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
+import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
@@ -124,6 +125,7 @@ const ServiceWardrobe = () => {
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
+      <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Wardrobe Design" }]} />
       
       <main className="pb-24">
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
