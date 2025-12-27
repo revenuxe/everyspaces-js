@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import indiranagarImage from "@/assets/locality-indiranagar.jpg?webp";
 import whitefieldImage from "@/assets/locality-whitefield.jpg?webp";
 import hsrImage from "@/assets/locality-hsr.jpg?webp";
@@ -89,8 +90,9 @@ const LocalitiesSection = () => {
         >
           <div className="flex gap-6 md:gap-8 pb-4 w-max">
             {localities.map((locality, index) => (
-              <div
+              <Link
                 key={index}
+                to="/bangalore"
                 className="flex-shrink-0 flex flex-col items-center group cursor-pointer"
               >
                 {/* Circular Image */}
@@ -110,7 +112,7 @@ const LocalitiesSection = () => {
                   {locality.name}
                 </h3>
                 <p className="text-xs text-muted-foreground font-body">{locality.projects}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

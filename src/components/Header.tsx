@@ -83,9 +83,9 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <button className="hidden md:flex btn-terracotta px-6 py-2.5 rounded-2xl text-sm font-semibold text-secondary-foreground">
+          <Link to="/contact" className="hidden md:flex btn-terracotta px-6 py-2.5 rounded-2xl text-sm font-semibold text-secondary-foreground">
             Get Quote
-          </button>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button 
@@ -127,9 +127,9 @@ const Header = () => {
                 </a>
               )
             ))}
-            <button className="mt-2 mx-4 btn-terracotta px-6 py-2.5 rounded-2xl text-sm font-semibold text-secondary-foreground">
+            <Link to="/contact" className="mt-2 mx-4 btn-terracotta px-6 py-2.5 rounded-2xl text-sm font-semibold text-secondary-foreground block text-center">
               Get Quote
-            </button>
+            </Link>
           </nav>
         </div>
       )}
