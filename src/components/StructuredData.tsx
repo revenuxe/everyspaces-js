@@ -366,12 +366,15 @@ export const createBreadcrumbSchema = (items: { name: string; url: string }[]) =
 });
 
 // FAQ schema generator (enhanced for AEO) - uses unique ID per page to avoid duplicates
-export const createFAQSchema = (faqs: { question: string; answer: string }[], pageId?: string) => ({
+// IMPORTANT: Only include ONE FAQPage schema per page URL to avoid Google Search Console errors
+export const createFAQSchema = (faqs: { question: string; answer: string }[], pageId: string) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": `https://intorza.com/${pageId || ''}#faqpage`,
-  "mainEntity": faqs.map((faq) => ({
+  "@id": `https://intorza.com/${pageId}#faq`,
+  "url": `https://intorza.com/${pageId}`,
+  "mainEntity": faqs.map((faq, index) => ({
     "@type": "Question",
+    "@id": `https://intorza.com/${pageId}#question-${index + 1}`,
     "name": faq.question,
     "acceptedAnswer": {
       "@type": "Answer",
@@ -399,6 +402,7 @@ export const createImageGallerySchema = (images: { url: string; name: string; de
 });
 
 // Product schema for specific offerings (AEO for e-commerce style queries)
+// Note: aggregateRating removed as Google doesn't support self-published reviews for rich results
 export const createProductSchema = (product: {
   name: string;
   description: string;
@@ -427,11 +431,6 @@ export const createProductSchema = (product: {
     "seller": {
       "@id": "https://intorza.com/#organization"
     }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "150"
   }
 });
 
