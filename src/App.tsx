@@ -41,6 +41,28 @@ import Articles from "./pages/Articles";
 import ArticleDetail from "./pages/ArticleDetail";
 import NotFound from "./pages/NotFound";
 
+// Locality pages
+import Indiranagar from "./pages/localities/Indiranagar";
+import Whitefield from "./pages/localities/Whitefield";
+import HSRLayout from "./pages/localities/HSRLayout";
+import Koramangala from "./pages/localities/Koramangala";
+import JPNagar from "./pages/localities/JPNagar";
+import Jayanagar from "./pages/localities/Jayanagar";
+import Marathahalli from "./pages/localities/Marathahalli";
+import ElectronicCity from "./pages/localities/ElectronicCity";
+import SarjapurRoad from "./pages/localities/SarjapurRoad";
+import Bellandur from "./pages/localities/Bellandur";
+import BTMLayout from "./pages/localities/BTMLayout";
+import Hebbal from "./pages/localities/Hebbal";
+import Yelahanka from "./pages/localities/Yelahanka";
+import Banashankari from "./pages/localities/Banashankari";
+import Malleshwaram from "./pages/localities/Malleshwaram";
+import Rajajinagar from "./pages/localities/Rajajinagar";
+import Basavanagudi from "./pages/localities/Basavanagudi";
+import Sadashivanagar from "./pages/localities/Sadashivanagar";
+import RTNagar from "./pages/localities/RTNagar";
+import Vijayanagar from "./pages/localities/Vijayanagar";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -86,6 +108,29 @@ const App = () => (
             <Route path="/articles/:slug" element={<ArticleDetail />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            
+            {/* Locality Pages */}
+            <Route path="/bangalore/indiranagar" element={<Indiranagar />} />
+            <Route path="/bangalore/whitefield" element={<Whitefield />} />
+            <Route path="/bangalore/hsr-layout" element={<HSRLayout />} />
+            <Route path="/bangalore/koramangala" element={<Koramangala />} />
+            <Route path="/bangalore/jp-nagar" element={<JPNagar />} />
+            <Route path="/bangalore/jayanagar" element={<Jayanagar />} />
+            <Route path="/bangalore/marathahalli" element={<Marathahalli />} />
+            <Route path="/bangalore/electronic-city" element={<ElectronicCity />} />
+            <Route path="/bangalore/sarjapur-road" element={<SarjapurRoad />} />
+            <Route path="/bangalore/bellandur" element={<Bellandur />} />
+            <Route path="/bangalore/btm-layout" element={<BTMLayout />} />
+            <Route path="/bangalore/hebbal" element={<Hebbal />} />
+            <Route path="/bangalore/yelahanka" element={<Yelahanka />} />
+            <Route path="/bangalore/banashankari" element={<Banashankari />} />
+            <Route path="/bangalore/malleshwaram" element={<Malleshwaram />} />
+            <Route path="/bangalore/rajajinagar" element={<Rajajinagar />} />
+            <Route path="/bangalore/basavanagudi" element={<Basavanagudi />} />
+            <Route path="/bangalore/sadashivanagar" element={<Sadashivanagar />} />
+            <Route path="/bangalore/rt-nagar" element={<RTNagar />} />
+            <Route path="/bangalore/vijayanagar" element={<Vijayanagar />} />
+            
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -23,83 +23,103 @@ import gallery16 from "@/assets/gallery-16.jpg?webp";
 const localities = [{
   name: "Indiranagar",
   projects: "45+ Projects",
-  image: indiranagarImage
+  image: indiranagarImage,
+  slug: "indiranagar"
 }, {
   name: "Whitefield",
   projects: "38+ Projects",
-  image: whitefieldImage
+  image: whitefieldImage,
+  slug: "whitefield"
 }, {
   name: "HSR Layout",
   projects: "52+ Projects",
-  image: hsrImage
+  image: hsrImage,
+  slug: "hsr-layout"
 }, {
   name: "Koramangala",
   projects: "41+ Projects",
-  image: koramangalaImage
+  image: koramangalaImage,
+  slug: "koramangala"
 }, {
   name: "JP Nagar",
   projects: "35+ Projects",
-  image: gallery1
+  image: gallery1,
+  slug: "jp-nagar"
 }, {
   name: "Jayanagar",
   projects: "28+ Projects",
-  image: gallery2
+  image: gallery2,
+  slug: "jayanagar"
 }, {
   name: "Marathahalli",
   projects: "33+ Projects",
-  image: gallery3
+  image: gallery3,
+  slug: "marathahalli"
 }, {
   name: "Electronic City",
   projects: "26+ Projects",
-  image: gallery4
+  image: gallery4,
+  slug: "electronic-city"
 }, {
   name: "Sarjapur Road",
   projects: "42+ Projects",
-  image: gallery5
+  image: gallery5,
+  slug: "sarjapur-road"
 }, {
   name: "Bellandur",
   projects: "31+ Projects",
-  image: gallery6
+  image: gallery6,
+  slug: "bellandur"
 }, {
   name: "BTM Layout",
   projects: "29+ Projects",
-  image: gallery7
+  image: gallery7,
+  slug: "btm-layout"
 }, {
   name: "Hebbal",
   projects: "24+ Projects",
-  image: gallery8
+  image: gallery8,
+  slug: "hebbal"
 }, {
   name: "Yelahanka",
   projects: "22+ Projects",
-  image: gallery9
+  image: gallery9,
+  slug: "yelahanka"
 }, {
   name: "Banashankari",
   projects: "27+ Projects",
-  image: gallery10
+  image: gallery10,
+  slug: "banashankari"
 }, {
   name: "Malleshwaram",
   projects: "19+ Projects",
-  image: gallery11
+  image: gallery11,
+  slug: "malleshwaram"
 }, {
   name: "Rajajinagar",
   projects: "21+ Projects",
-  image: gallery12
+  image: gallery12,
+  slug: "rajajinagar"
 }, {
   name: "Basavanagudi",
   projects: "18+ Projects",
-  image: gallery13
+  image: gallery13,
+  slug: "basavanagudi"
 }, {
   name: "Sadashivanagar",
   projects: "15+ Projects",
-  image: gallery14
+  image: gallery14,
+  slug: "sadashivanagar"
 }, {
   name: "RT Nagar",
   projects: "17+ Projects",
-  image: gallery15
+  image: gallery15,
+  slug: "rt-nagar"
 }, {
   name: "Vijayanagar",
   projects: "20+ Projects",
-  image: gallery16
+  image: gallery16,
+  slug: "vijayanagar"
 }];
 const LocalitiesSection = () => {
   return <section id="localities" className="py-16 md:py-24 bg-background">
@@ -125,7 +145,7 @@ const LocalitiesSection = () => {
             {localities.map((locality, index) => (
               <Link
                 key={index}
-                to="/bangalore"
+                to={`/bangalore/${locality.slug}`}
                 className="flex-shrink-0 flex flex-col items-center group cursor-pointer"
               >
                 {/* Circular Image */}
