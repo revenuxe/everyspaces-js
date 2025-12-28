@@ -3,6 +3,23 @@ import indiranagarImage from "@/assets/locality-indiranagar.jpg?webp";
 import whitefieldImage from "@/assets/locality-whitefield.jpg?webp";
 import hsrImage from "@/assets/locality-hsr.jpg?webp";
 import koramangalaImage from "@/assets/locality-koramangala.jpg?webp";
+import gallery1 from "@/assets/gallery-1.jpg?webp";
+import gallery2 from "@/assets/gallery-2.jpg?webp";
+import gallery3 from "@/assets/gallery-3.jpg?webp";
+import gallery4 from "@/assets/gallery-4.jpg?webp";
+import gallery5 from "@/assets/gallery-5.jpg?webp";
+import gallery6 from "@/assets/gallery-6.jpg?webp";
+import gallery7 from "@/assets/gallery-7.jpg?webp";
+import gallery8 from "@/assets/gallery-8.jpg?webp";
+import gallery9 from "@/assets/gallery-9.jpg?webp";
+import gallery10 from "@/assets/gallery-10.jpg?webp";
+import gallery11 from "@/assets/gallery-11.jpg?webp";
+import gallery12 from "@/assets/gallery-12.jpg?webp";
+import gallery13 from "@/assets/gallery-13.jpg?webp";
+import gallery14 from "@/assets/gallery-14.jpg?webp";
+import gallery15 from "@/assets/gallery-15.jpg?webp";
+import gallery16 from "@/assets/gallery-16.jpg?webp";
+
 const localities = [{
   name: "Indiranagar",
   projects: "45+ Projects",
@@ -22,51 +39,67 @@ const localities = [{
 }, {
   name: "JP Nagar",
   projects: "35+ Projects",
-  image: indiranagarImage
+  image: gallery1
 }, {
   name: "Jayanagar",
   projects: "28+ Projects",
-  image: whitefieldImage
+  image: gallery2
 }, {
   name: "Marathahalli",
   projects: "33+ Projects",
-  image: hsrImage
+  image: gallery3
 }, {
   name: "Electronic City",
   projects: "26+ Projects",
-  image: koramangalaImage
+  image: gallery4
 }, {
   name: "Sarjapur Road",
   projects: "42+ Projects",
-  image: indiranagarImage
+  image: gallery5
 }, {
   name: "Bellandur",
   projects: "31+ Projects",
-  image: whitefieldImage
+  image: gallery6
 }, {
   name: "BTM Layout",
   projects: "29+ Projects",
-  image: hsrImage
+  image: gallery7
 }, {
   name: "Hebbal",
   projects: "24+ Projects",
-  image: koramangalaImage
+  image: gallery8
 }, {
   name: "Yelahanka",
   projects: "22+ Projects",
-  image: indiranagarImage
+  image: gallery9
 }, {
   name: "Banashankari",
   projects: "27+ Projects",
-  image: whitefieldImage
+  image: gallery10
 }, {
   name: "Malleshwaram",
   projects: "19+ Projects",
-  image: hsrImage
+  image: gallery11
 }, {
   name: "Rajajinagar",
   projects: "21+ Projects",
-  image: koramangalaImage
+  image: gallery12
+}, {
+  name: "Basavanagudi",
+  projects: "18+ Projects",
+  image: gallery13
+}, {
+  name: "Sadashivanagar",
+  projects: "15+ Projects",
+  image: gallery14
+}, {
+  name: "RT Nagar",
+  projects: "17+ Projects",
+  image: gallery15
+}, {
+  name: "Vijayanagar",
+  projects: "20+ Projects",
+  image: gallery16
 }];
 const LocalitiesSection = () => {
   return <section id="localities" className="py-16 md:py-24 bg-background">
