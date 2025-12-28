@@ -62,6 +62,7 @@ import Basavanagudi from "./pages/localities/Basavanagudi";
 import Sadashivanagar from "./pages/localities/Sadashivanagar";
 import RTNagar from "./pages/localities/RTNagar";
 import Vijayanagar from "./pages/localities/Vijayanagar";
+import HBRLayout from "./pages/localities/HBRLayout";
 
 const queryClient = new QueryClient();
 
@@ -130,6 +131,7 @@ const App = () => (
             <Route path="/bangalore/sadashivanagar" element={<Sadashivanagar />} />
             <Route path="/bangalore/rt-nagar" element={<RTNagar />} />
             <Route path="/bangalore/vijayanagar" element={<Vijayanagar />} />
+            <Route path="/bangalore/hbr-layout" element={<HBRLayout />} />
             
             <Route path="*" element={<NotFound />} />
           </Routes>
