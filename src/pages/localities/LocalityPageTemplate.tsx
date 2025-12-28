@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
+import LocalityBreadcrumb from "@/components/LocalityBreadcrumb";
 import LocalityHeroSection from "@/components/LocalityHeroSection";
 import ActionGrid from "@/components/ActionGrid";
 import BestServices from "@/components/BestServices";
@@ -41,6 +42,31 @@ const LocalityPageTemplate = ({
     }
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://intorza.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Bangalore",
+        "item": "https://intorza.com/bangalore"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": localityName,
+        "item": `https://intorza.com/bangalore/${slug}`
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -62,8 +88,9 @@ const LocalityPageTemplate = ({
         <meta property="og:locale" content="en_IN" />
       </Helmet>
       
-      <StructuredData data={[localitySchema]} />
+      <StructuredData data={[localitySchema, breadcrumbSchema]} />
       <Header />
+      <LocalityBreadcrumb localityName={localityName} />
       
       <main>
         <LocalityHeroSection

@@ -19,6 +19,7 @@ import gallery13 from "@/assets/gallery-13.jpg?webp";
 import gallery14 from "@/assets/gallery-14.jpg?webp";
 import gallery15 from "@/assets/gallery-15.jpg?webp";
 import gallery16 from "@/assets/gallery-16.jpg?webp";
+import gallery17 from "@/assets/gallery-17.jpg?webp";
 
 const localities = [{
   name: "Indiranagar",
@@ -120,6 +121,11 @@ const localities = [{
   projects: "20+ Projects",
   image: gallery16,
   slug: "vijayanagar"
+}, {
+  name: "HBR Layout",
+  projects: "30+ Projects",
+  image: gallery17,
+  slug: "hbr-layout"
 }];
 const LocalitiesSection = () => {
   return <section id="localities" className="py-16 md:py-24 bg-background">

@@ -64,9 +64,6 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
       {/* Content */}
       <div className="relative z-10 container px-4">
         <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
-          <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary font-semibold rounded-full text-sm mb-4 animate-fade-up">
-            {projectCount} Completed
-          </span>
           <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 md:mb-4 animate-fade-up tracking-[-0.03em] md:leading-[1.2]">
             Interior Designers in
             <span className="block text-secondary tracking-[-0.02em] md:mt-2">
