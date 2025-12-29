@@ -145,12 +145,7 @@ const ServiceCrockeryUnit = () => {
                 <form onSubmit={handleSubmit} className="space-y-3">
                   <input type="text" placeholder="Your Name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
                   <input type="tel" placeholder="Mobile Number" value={formData.mobile} onChange={(e) => setFormData({ ...formData, mobile: e.target.value })} required pattern="[0-9]{10}" className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <select value={formData.projectType} onChange={(e) => setFormData({ ...formData, projectType: e.target.value })} className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all">
-                    <option value="Crockery Unit">Crockery Unit</option>
-                    <option value="Bar Unit">Bar Unit</option>
-                    <option value="Partition Unit">Partition Unit</option>
-                    <option value="Combo Unit">Bar + Crockery Combo</option>
-                  </select>
+                  <input type="text" placeholder="Project Type (e.g., Crockery Unit, Bar Unit)" value={formData.projectType} onChange={(e) => setFormData({ ...formData, projectType: e.target.value })} required className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
                   <button type="submit" disabled={isSubmitting} className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold">
                     {isSubmitting ? "Submitting..." : "Get Free Quote"}
                   </button>

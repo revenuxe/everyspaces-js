@@ -245,17 +245,14 @@ const ServiceModularKitchen = () => {
                     pattern="[0-9]{10}"
                     className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm"
                   />
-                  <select
+                  <input
+                    type="text"
+                    placeholder="Kitchen Type (e.g., L-Shaped, U-Shaped, Island)"
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                    required
                     className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm"
-                  >
-                    <option value="Modular Kitchen">Modular Kitchen</option>
-                    <option value="L-Shaped Kitchen">L-Shaped Kitchen</option>
-                    <option value="U-Shaped Kitchen">U-Shaped Kitchen</option>
-                    <option value="Island Kitchen">Island Kitchen</option>
-                    <option value="Parallel Kitchen">Parallel Kitchen</option>
-                  </select>
+                  />
                   <button
                     type="submit"
                     disabled={isSubmitting}
