@@ -49,15 +49,15 @@ const Header = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
+        <a href="https://intorza.com/" className="flex items-center gap-2">
           <img
             src={intorzaLogo}
-            alt="Intorza Interior Design"
+            alt="Intorza - Best Interior Designers in Bangalore"
             width={197}
             height={40}
             className="h-8 md:h-10 w-auto object-contain"
           />
-        </Link>
+        </a>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">

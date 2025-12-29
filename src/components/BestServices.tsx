@@ -1,6 +1,5 @@
 import { useRef, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import bhk2Image from "@/assets/service-2bhk.jpg?webp";
 import villaImage from "@/assets/service-villa.jpg?webp";
 import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
@@ -178,9 +177,9 @@ const BestServices = () => {
         {bestServices.map((service, index) => {
           const isActive = index === activeIndex;
           return (
-            <Link
+            <a
               key={service.id}
-              to={service.link}
+              href={service.link}
               onClick={(e) => {
                 if (isDragging) {
                   e.preventDefault();
@@ -228,7 +227,7 @@ const BestServices = () => {
                   <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-secondary-foreground" />
                 </div>
               </div>
-            </Link>
+            </a>
           );
         })}
       </div>

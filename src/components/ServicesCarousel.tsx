@@ -1,6 +1,5 @@
 import { useRef, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import kitchenImage from "@/assets/service-kitchen.jpg?webp";
 import bedroomImage from "@/assets/service-bedroom.jpg?webp";
 import livingImage from "@/assets/service-living.jpg?webp";
@@ -150,9 +149,9 @@ const ServicesCarousel = () => {
         {services.map((service, index) => {
           const isActive = index === activeIndex;
           return (
-            <Link
+            <a
               key={service.id}
-              to={service.href}
+              href={service.href}
               onClick={(e) => {
                 if (isDragging) {
                   e.preventDefault();
@@ -207,7 +206,7 @@ const ServicesCarousel = () => {
                   <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-secondary-foreground" />
                 </div>
               </div>
-            </Link>
+            </a>
           );
         })}
       </div>
