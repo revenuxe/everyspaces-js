@@ -237,16 +237,14 @@ const ServiceFullHome = () => {
                     pattern="[0-9]{10}"
                     className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm"
                   />
-                  <select
+                  <input
+                    type="text"
+                    placeholder="Project Type (e.g., 2BHK, 3BHK, Villa)"
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm"
-                  >
-                    <option value="Full Home">Full Home Design</option>
-                    <option value="Full Home - 2BHK">2 BHK Full Home</option>
-                    <option value="Full Home - 3BHK">3 BHK Full Home</option>
-                    <option value="Full Home - Villa">Villa Full Home</option>
-                  </select>
+                    required
+                    className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm"
+                  />
                   <button
                     type="submit"
                     disabled={isSubmitting}
