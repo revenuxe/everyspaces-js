@@ -9,15 +9,15 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link to="/" aria-label="Intorza Home">
+            <a href="https://intorza.com/" aria-label="Intorza Home - Best Interior Designers in Bangalore">
               <img
                 src={intorzaLogo}
-                alt="Intorza Interior Design"
+                alt="Intorza Interior Design Bangalore"
                 width={197}
                 height={40}
                 className="h-10 w-auto mb-4 brightness-0 invert"
               />
-            </Link>
+            </a>
             <p className="text-primary-foreground/70 text-sm max-w-sm mb-6 font-body">
               Transforming Bengaluru homes with contemporary design excellence. 
               Every space tells your story.
@@ -61,7 +61,7 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70 font-body">
-              <li><Link to="/" className="hover:text-secondary transition-colors">Home</Link></li>
+              <li><a href="https://intorza.com/" className="hover:text-secondary transition-colors">Home</a></li>
               <li><Link to="/portfolio" className="hover:text-secondary transition-colors">Portfolio</Link></li>
               <li><Link to="/price-calculator" className="hover:text-secondary transition-colors">Price Calculator</Link></li>
               <li><Link to="/bangalore" className="hover:text-secondary transition-colors">Bangalore</Link></li>

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ChevronRight, Home } from "lucide-react";
 
 interface LocalityBreadcrumbProps {
@@ -11,24 +10,24 @@ const LocalityBreadcrumb = ({ localityName }: LocalityBreadcrumbProps) => {
       <div className="container px-4 py-3">
         <ol className="flex items-center gap-2 text-sm font-body">
           <li>
-            <Link 
-              to="/" 
+            <a 
+              href="https://intorza.com/" 
               className="flex items-center gap-1 text-muted-foreground hover:text-secondary transition-colors"
             >
               <Home className="w-4 h-4" />
               <span>Home</span>
-            </Link>
+            </a>
           </li>
           <li>
             <ChevronRight className="w-4 h-4 text-muted-foreground/50" />
           </li>
           <li>
-            <Link 
-              to="/bangalore" 
+            <a 
+              href="/bangalore" 
               className="text-muted-foreground hover:text-secondary transition-colors"
             >
               Bangalore
-            </Link>
+            </a>
           </li>
           <li>
             <ChevronRight className="w-4 h-4 text-muted-foreground/50" />
