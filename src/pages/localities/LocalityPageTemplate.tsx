@@ -167,7 +167,7 @@ const LocalityPageTemplate = ({
     { name: "Home", url: "https://intorza.com" },
     { name: "Bangalore", url: "https://intorza.com/bangalore" },
     { name: localityName, url: `https://intorza.com/bangalore/${slug}` }
-  ]);
+  ], `bangalore/${slug}`);
 
   // FAQ schema with locality-specific FAQs
   const faqSchema = createFAQSchema(seoData.faqs, `bangalore/${slug}`);
