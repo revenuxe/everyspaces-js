@@ -353,10 +353,11 @@ export const createArticleSchema = (article: {
   }
 });
 
-// Breadcrumb schema generator
-export const createBreadcrumbSchema = (items: { name: string; url: string }[]) => ({
+// Breadcrumb schema generator - itemListElement is required for BreadcrumbList
+export const createBreadcrumbSchema = (items: { name: string; url: string }[], pageId?: string) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
+  "@id": pageId ? `https://intorza.com/${pageId}#breadcrumb` : undefined,
   "itemListElement": items.map((item, index) => ({
     "@type": "ListItem",
     "position": index + 1,
@@ -367,14 +368,13 @@ export const createBreadcrumbSchema = (items: { name: string; url: string }[]) =
 
 // FAQ schema generator (enhanced for AEO) - uses unique ID per page to avoid duplicates
 // IMPORTANT: Only include ONE FAQPage schema per page URL to avoid Google Search Console errors
+// Uses mainEntity array as per Google's FAQPage schema requirements
 export const createFAQSchema = (faqs: { question: string; answer: string }[], pageId: string) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "@id": `https://intorza.com/${pageId}#faq`,
-  "url": `https://intorza.com/${pageId}`,
   "mainEntity": faqs.map((faq, index) => ({
     "@type": "Question",
-    "@id": `https://intorza.com/${pageId}#question-${index + 1}`,
     "name": faq.question,
     "acceptedAnswer": {
       "@type": "Answer",
