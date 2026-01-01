@@ -141,8 +141,8 @@ const Service3BHK = () => {
     createServiceSchema(
       "3 BHK Interior Design Bangalore",
       "Premium 3 BHK interior design packages in Bangalore starting ₹8 lakh. Includes modular kitchen, wardrobes, TV unit, home theatre, and walk-in closets with 10-year warranty.",
-      "https://intorza.com/services/3bhk-interiors",
-      "https://intorza.com/service-3bhk.jpg",
+      "https://intorza.in/services/3bhk-interiors",
+      "https://intorza.in/service-3bhk.jpg",
       "800000-2000000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -150,16 +150,16 @@ const Service3BHK = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "3 BHK Interiors", url: "https://intorza.com/services/3bhk-interiors" }
+      { name: "Home", url: "https://intorza.in" },
+      { name: "Services", url: "https://intorza.in/services" },
+      { name: "3 BHK Interiors", url: "https://intorza.in/services/3bhk-interiors" }
     ]),
     createFAQSchema(bhk3FAQs, 'services/3bhk-interiors'),
     createProductSchema({
       name: "3 BHK Premium Interior Package",
       description: "Complete 3 BHK interior design in Bangalore with kitchen, wardrobes, home theatre, and luxury finishes. 60-75 day delivery with 10-year warranty.",
-      image: "https://intorza.com/service-3bhk.jpg",
-      url: "https://intorza.com/services/3bhk-interiors",
+      image: "https://intorza.in/service-3bhk.jpg",
+      url: "https://intorza.in/services/3bhk-interiors",
       priceRange: "800000-2000000",
       category: "Home Improvement > Complete Home Interior"
     })
@@ -177,11 +177,11 @@ const Service3BHK = () => {
           name="keywords"
           content="3 bhk interior design bangalore, 3bhk interior cost, 3 bhk home interior, premium 3bhk interiors, 3bhk flat interior design bangalore"
         />
-        <link rel="canonical" href="https://intorza.com/services/3bhk-interiors" />
+        <link rel="canonical" href="https://intorza.in/services/3bhk-interiors" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="3 BHK Interior Design Bangalore | From ₹8 Lakh - Intorza" />
         <meta property="og:description" content="Premium 3 BHK interiors from ₹8L. Kitchen, wardrobes, home theatre included. 60-day delivery, 10-year warranty!" />
-        <meta property="og:url" content="https://intorza.com/services/3bhk-interiors" />
+        <meta property="og:url" content="https://intorza.in/services/3bhk-interiors" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

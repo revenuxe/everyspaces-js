@@ -141,8 +141,8 @@ const ServiceVilla = () => {
     createServiceSchema(
       "Villa Interior Design Bangalore",
       "Luxury villa and bungalow interior design in Bangalore with bespoke designs, imported finishes, home theatre, and smart home integration.",
-      "https://intorza.com/services/villa-interiors",
-      "https://intorza.com/service-villa.jpg",
+      "https://intorza.in/services/villa-interiors",
+      "https://intorza.in/service-villa.jpg",
       "2500000-7500000",
       {
         areaServed: ["Bangalore", "Whitefield", "Sarjapur Road", "Electronic City", "Yelahanka"],
@@ -150,16 +150,16 @@ const ServiceVilla = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Villa Interiors", url: "https://intorza.com/services/villa-interiors" }
+      { name: "Home", url: "https://intorza.in" },
+      { name: "Services", url: "https://intorza.in/services" },
+      { name: "Villa Interiors", url: "https://intorza.in/services/villa-interiors" }
     ]),
     createFAQSchema(villaFAQs, 'services/villa-interiors'),
     createProductSchema({
       name: "Luxury Villa Interior Design",
       description: "Complete villa interior design in Bangalore with bespoke designs, imported finishes, and smart home integration. 90-120 day delivery.",
-      image: "https://intorza.com/service-villa.jpg",
-      url: "https://intorza.com/services/villa-interiors",
+      image: "https://intorza.in/service-villa.jpg",
+      url: "https://intorza.in/services/villa-interiors",
       priceRange: "2500000-7500000",
       category: "Home Improvement > Luxury Villa Interior"
     })
@@ -177,11 +177,11 @@ const ServiceVilla = () => {
           name="keywords"
           content="villa interior design bangalore, luxury villa interiors, villa interior designers, premium home interiors bangalore, bungalow interior design"
         />
-        <link rel="canonical" href="https://intorza.com/services/villa-interiors" />
+        <link rel="canonical" href="https://intorza.in/services/villa-interiors" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="Luxury Villa Interior Design Bangalore - Intorza" />
         <meta property="og:description" content="Bespoke villa interiors from ₹25L. Grand living rooms, island kitchens, home theatre. Premium finishes, 10-year warranty!" />
-        <meta property="og:url" content="https://intorza.com/services/villa-interiors" />
+        <meta property="og:url" content="https://intorza.in/services/villa-interiors" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

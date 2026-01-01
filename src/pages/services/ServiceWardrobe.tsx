@@ -87,8 +87,8 @@ const ServiceWardrobe = () => {
     createServiceSchema(
       "Wardrobe Design Bangalore",
       "Custom wardrobe designers in Bangalore offering sliding wardrobes, walk-in closets, and loft storage with Hettich hardware and 10-year warranty.",
-      "https://intorza.com/services/wardrobe-design",
-      "https://intorza.com/service-wardrobe.jpg",
+      "https://intorza.in/services/wardrobe-design",
+      "https://intorza.in/service-wardrobe.jpg",
       "70000-500000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -96,16 +96,16 @@ const ServiceWardrobe = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Wardrobe Design", url: "https://intorza.com/services/wardrobe-design" }
+      { name: "Home", url: "https://intorza.in" },
+      { name: "Services", url: "https://intorza.in/services" },
+      { name: "Wardrobe Design", url: "https://intorza.in/services/wardrobe-design" }
     ]),
     createFAQSchema(wardrobeFAQs, 'services/wardrobe-design'),
     createProductSchema({
       name: "Custom Wardrobe Design",
       description: "Premium wardrobe design and installation in Bangalore with sliding, hinged, and walk-in options. Includes Hettich/Hafele hardware and 10-year warranty.",
-      image: "https://intorza.com/service-wardrobe.jpg",
-      url: "https://intorza.com/services/wardrobe-design",
+      image: "https://intorza.in/service-wardrobe.jpg",
+      url: "https://intorza.in/services/wardrobe-design",
       priceRange: "70000-500000",
       category: "Home Improvement > Bedroom Furniture"
     })
@@ -117,11 +117,11 @@ const ServiceWardrobe = () => {
         <title>Wardrobe Design Bangalore | Sliding & Walk-in Closets | Intorza</title>
         <meta name="description" content="Best wardrobe designers in Bangalore. Sliding wardrobes from ₹80K, walk-in closets, loft storage. Hettich hardware, 10-year warranty. Free design consultation!" />
         <meta name="keywords" content="wardrobe design bangalore, sliding wardrobe, walk-in closet bangalore, custom wardrobe, modular wardrobe, wardrobe cost bangalore" />
-        <link rel="canonical" href="https://intorza.com/services/wardrobe-design" />
+        <link rel="canonical" href="https://intorza.in/services/wardrobe-design" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="Custom Wardrobe Design Bangalore | Sliding & Walk-in - Intorza" />
         <meta property="og:description" content="Premium wardrobes from ₹70K. Sliding, hinged, walk-in closets with Hettich hardware. 10-year warranty, free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/wardrobe-design" />
+        <meta property="og:url" content="https://intorza.in/services/wardrobe-design" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
