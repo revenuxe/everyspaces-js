@@ -87,8 +87,8 @@ const ServiceKidsRoom = () => {
     createServiceSchema(
       "Kids Room Design Bangalore",
       "Fun, safe, and creative kids room designs in Bangalore. Theme rooms, bunk beds, study areas, and playful storage with child-safe materials.",
-      "https://intorza.com/services/kids-room",
-      "https://intorza.com/service-kids-room.jpg",
+      "https://intorza.in/services/kids-room",
+      "https://intorza.in/service-kids-room.jpg",
       "80000-250000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -96,16 +96,16 @@ const ServiceKidsRoom = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Kids Room", url: "https://intorza.com/services/kids-room" }
+      { name: "Home", url: "https://intorza.in" },
+      { name: "Services", url: "https://intorza.in/services" },
+      { name: "Kids Room", url: "https://intorza.in/services/kids-room" }
     ]),
     createFAQSchema(kidsRoomFAQs, 'services/kids-room'),
     createProductSchema({
       name: "Kids Room Interior Design",
       description: "Safe and creative kids room designs in Bangalore with themed interiors, bunk beds, and study areas. Non-toxic materials.",
-      image: "https://intorza.com/service-kids-room.jpg",
-      url: "https://intorza.com/services/kids-room",
+      image: "https://intorza.in/service-kids-room.jpg",
+      url: "https://intorza.in/services/kids-room",
       priceRange: "80000-250000",
       category: "Home Improvement > Kids Room"
     })
@@ -117,11 +117,11 @@ const ServiceKidsRoom = () => {
         <title>Kids Room Design Bangalore | Fun & Safe Children Bedroom | Intorza</title>
         <meta name="description" content="Best kids room designers in Bangalore. Theme rooms from ₹80K. Bunk beds, study areas, playful storage. Child-safe materials. Free consultation!" />
         <meta name="keywords" content="kids room design bangalore, children bedroom interior, kids room themes, bunk bed design, kids study room, kids furniture" />
-        <link rel="canonical" href="https://intorza.com/services/kids-room" />
+        <link rel="canonical" href="https://intorza.in/services/kids-room" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="Kids Room Design Bangalore | Safe & Fun - Intorza" />
         <meta property="og:description" content="Theme rooms from ₹80K. Bunk beds, study areas, child-safe materials. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/kids-room" />
+        <meta property="og:url" content="https://intorza.in/services/kids-room" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

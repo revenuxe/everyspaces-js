@@ -87,8 +87,8 @@ const ServiceDiningRoom = () => {
     createServiceSchema(
       "Dining Room Design Bangalore",
       "Elegant dining room designs in Bangalore. Custom dining tables, crockery units, bar cabinets, and statement chandeliers for family gatherings.",
-      "https://intorza.com/services/dining-room",
-      "https://intorza.com/service-dining-room.jpg",
+      "https://intorza.in/services/dining-room",
+      "https://intorza.in/service-dining-room.jpg",
       "50000-200000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -96,16 +96,16 @@ const ServiceDiningRoom = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Dining Room", url: "https://intorza.com/services/dining-room" }
+      { name: "Home", url: "https://intorza.in" },
+      { name: "Services", url: "https://intorza.in/services" },
+      { name: "Dining Room", url: "https://intorza.in/services/dining-room" }
     ]),
     createFAQSchema(diningRoomFAQs, 'services/dining-room'),
     createProductSchema({
       name: "Dining Room Interior Design",
       description: "Elegant dining room designs in Bangalore with custom tables, crockery units, chandeliers, and bar cabinets.",
-      image: "https://intorza.com/service-dining-room.jpg",
-      url: "https://intorza.com/services/dining-room",
+      image: "https://intorza.in/service-dining-room.jpg",
+      url: "https://intorza.in/services/dining-room",
       priceRange: "50000-200000",
       category: "Home Improvement > Dining Room"
     })
@@ -117,11 +117,11 @@ const ServiceDiningRoom = () => {
         <title>Dining Room Design Bangalore | Crockery Unit & Bar Cabinet | Intorza</title>
         <meta name="description" content="Best dining room designers in Bangalore. Custom tables, crockery units from ₹50K. Chandeliers, bar cabinets. Free consultation!" />
         <meta name="keywords" content="dining room design bangalore, dining table design, crockery unit design, dining room interior, bar cabinet design, chandelier" />
-        <link rel="canonical" href="https://intorza.com/services/dining-room" />
+        <link rel="canonical" href="https://intorza.in/services/dining-room" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="Dining Room Design Bangalore | Crockery Unit - Intorza" />
         <meta property="og:description" content="Dining rooms from ₹50K. Custom tables, crockery units, chandeliers. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/dining-room" />
+        <meta property="og:url" content="https://intorza.in/services/dining-room" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

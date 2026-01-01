@@ -87,8 +87,8 @@ const ServiceHomeOffice = () => {
     createServiceSchema(
       "Home Office Design Bangalore",
       "Productivity-focused home office designs in Bangalore. Ergonomic workstations, study rooms, and WFH setups with proper lighting and storage.",
-      "https://intorza.com/services/home-office",
-      "https://intorza.com/service-home-office.jpg",
+      "https://intorza.in/services/home-office",
+      "https://intorza.in/service-home-office.jpg",
       "30000-200000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -96,16 +96,16 @@ const ServiceHomeOffice = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Home Office", url: "https://intorza.com/services/home-office" }
+      { name: "Home", url: "https://intorza.in" },
+      { name: "Services", url: "https://intorza.in/services" },
+      { name: "Home Office", url: "https://intorza.in/services/home-office" }
     ]),
     createFAQSchema(homeOfficeFAQs, 'services/home-office'),
     createProductSchema({
       name: "Home Office Interior Design",
       description: "Professional home office designs in Bangalore with ergonomic furniture, task lighting, and tech integration for productive WFH.",
-      image: "https://intorza.com/service-home-office.jpg",
-      url: "https://intorza.com/services/home-office",
+      image: "https://intorza.in/service-home-office.jpg",
+      url: "https://intorza.in/services/home-office",
       priceRange: "30000-200000",
       category: "Home Improvement > Home Office"
     })
@@ -117,11 +117,11 @@ const ServiceHomeOffice = () => {
         <title>Home Office Design Bangalore | Study Room & WFH Setup | Intorza</title>
         <meta name="description" content="Best home office designers in Bangalore. Ergonomic workstations from ₹30K. WFH setups, standing desks, executive studios. Free consultation!" />
         <meta name="keywords" content="home office design bangalore, study room interior, work from home setup, home workspace design, study table design, WFH office" />
-        <link rel="canonical" href="https://intorza.com/services/home-office" />
+        <link rel="canonical" href="https://intorza.in/services/home-office" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="Home Office Design Bangalore | WFH Setup - Intorza" />
         <meta property="og:description" content="Home offices from ₹30K. Ergonomic desks, task lighting, storage. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/home-office" />
+        <meta property="og:url" content="https://intorza.in/services/home-office" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

@@ -87,8 +87,8 @@ const ServiceLivingRoom = () => {
     createServiceSchema(
       "Living Room Interior Design Bangalore",
       "Expert living room designers in Bangalore offering TV units, false ceilings, feature walls, and smart lighting solutions.",
-      "https://intorza.com/services/living-room",
-      "https://intorza.com/service-living-room.jpg",
+      "https://intorza.in/services/living-room",
+      "https://intorza.in/service-living-room.jpg",
       "80000-300000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -96,16 +96,16 @@ const ServiceLivingRoom = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Living Room", url: "https://intorza.com/services/living-room" }
+      { name: "Home", url: "https://intorza.in" },
+      { name: "Services", url: "https://intorza.in/services" },
+      { name: "Living Room", url: "https://intorza.in/services/living-room" }
     ]),
     createFAQSchema(livingRoomFAQs, 'services/living-room'),
     createProductSchema({
       name: "Living Room Interior Design",
       description: "Complete living room design in Bangalore including TV unit, false ceiling, feature wall, and lighting. 10-year warranty included.",
-      image: "https://intorza.com/service-living-room.jpg",
-      url: "https://intorza.com/services/living-room",
+      image: "https://intorza.in/service-living-room.jpg",
+      url: "https://intorza.in/services/living-room",
       priceRange: "80000-300000",
       category: "Home Improvement > Living Room"
     })
@@ -117,11 +117,11 @@ const ServiceLivingRoom = () => {
         <title>Living Room Interior Design Bangalore | TV Unit & False Ceiling | Intorza</title>
         <meta name="description" content="Best living room designers in Bangalore. TV units, false ceilings, feature walls from ₹80K. 10-year warranty, free design consultation!" />
         <meta name="keywords" content="living room interior design bangalore, TV unit design, living room false ceiling, modern living room, feature wall design bangalore" />
-        <link rel="canonical" href="https://intorza.com/services/living-room" />
+        <link rel="canonical" href="https://intorza.in/services/living-room" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="Living Room Interior Design Bangalore | TV Unit & False Ceiling - Intorza" />
         <meta property="og:description" content="Premium living room interiors from ₹80K. TV units, false ceiling, feature walls. 10-year warranty!" />
-        <meta property="og:url" content="https://intorza.com/services/living-room" />
+        <meta property="og:url" content="https://intorza.in/services/living-room" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
