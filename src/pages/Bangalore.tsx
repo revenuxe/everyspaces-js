@@ -17,7 +17,7 @@ const bangaloreLocalBusinessSchema = {
   ...localBusinessSchema,
   "@type": "InteriorDesignBusiness",
   "name": "Intorza Interior Design - Bangalore",
-  "url": "https://intorza.com/bangalore",
+  "url": "https://intorza.in/bangalore",
   "areaServed": [
     { "@type": "City", "name": "Bangalore" },
     { "@type": "Place", "name": "Koramangala" },
@@ -40,7 +40,7 @@ const Bangalore = () => {
           name="keywords"
           content="interior designers in Bangalore, home interiors Bangalore, modular kitchen Bangalore, wardrobe designers Bangalore, best interior designers Bangalore, affordable interior design Bangalore"
         />
-        <link rel="canonical" href="https://intorza.com/bangalore" />
+        <link rel="canonical" href="https://intorza.in/bangalore" />
       </Helmet>
       <StructuredData data={[bangaloreLocalBusinessSchema]} />
       <Header />

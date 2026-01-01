@@ -14,17 +14,17 @@ const Terms = () => {
           name="description"
           content="Read Intorza's terms and conditions for interior design services in Bangalore. Understand our policies on quotes, payments, warranties & more."
         />
-        <link rel="canonical" href="https://intorza.com/terms" />
+        <link rel="canonical" href="https://intorza.in/terms" />
       </Helmet>
       <StructuredData data={[createBreadcrumbSchema([
-        { name: "Home", url: "https://intorza.com" },
-        { name: "Terms & Conditions", url: "https://intorza.com/terms" }
+        { name: "Home", url: "https://intorza.in" },
+        { name: "Terms & Conditions", url: "https://intorza.in/terms" }
       ]), {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Terms & Conditions",
         "description": "Terms and conditions for Intorza interior design services",
-        "url": "https://intorza.com/terms"
+        "url": "https://intorza.in/terms"
       }]} />
       <Header />
 

@@ -12,7 +12,7 @@ const calculatorSchema = {
   "@type": "WebApplication",
   "name": "Interior Design Cost Calculator",
   "description": "Calculate your home interior design cost instantly with Intorza's free calculator",
-  "url": "https://intorza.com/price-calculator",
+  "url": "https://intorza.in/price-calculator",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Web",
   "offers": {
@@ -98,14 +98,14 @@ const PriceCalculator = () => {
       <Helmet>
         <title>Interior Design Cost Calculator | Get Instant Quote | Intorza Bangalore</title>
         <meta name="description" content="Calculate your home interior design cost instantly. 10% lower than competitors! Free estimates for 1BHK, 2BHK, 3BHK & Villa interiors in Bangalore." />
-        <link rel="canonical" href="https://intorza.com/price-calculator" />
+        <link rel="canonical" href="https://intorza.in/price-calculator" />
       </Helmet>
       <StructuredData data={[calculatorSchema, createBreadcrumbSchema([{
       name: "Home",
-      url: "https://intorza.com"
+      url: "https://intorza.in"
     }, {
       name: "Price Calculator",
-      url: "https://intorza.com/price-calculator"
+      url: "https://intorza.in/price-calculator"
     }])]} />
 
       <div className="min-h-screen bg-background">

@@ -46,19 +46,19 @@ const Index = () => {
           content="Intorza is Bangalore's top interior design company. Modular kitchens, wardrobes & full home interiors with 10-year warranty. 500+ projects completed. Free consultation!"
         />
         <meta name="keywords" content="best interior designers bangalore, modular kitchen bangalore, wardrobe design bangalore, home interior design bangalore, interior design cost bangalore" />
-        <link rel="canonical" href="https://intorza.com/" />
+        <link rel="canonical" href="https://intorza.in/" />
         
         {/* AEO-specific meta tags */}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="author" content="Intorza Interior Design" />
         <meta name="publisher" content="Intorza" />
-        <meta property="article:publisher" content="https://intorza.com" />
+        <meta property="article:publisher" content="https://intorza.in" />
         
         {/* Enhanced Open Graph for AI platforms */}
         <meta property="og:title" content="Best Interior Designers in Bangalore | Modular Kitchen & Home Interiors - Intorza" />
         <meta property="og:description" content="Intorza is Bangalore's top interior design company with 500+ projects and 10-year warranty. Modular kitchens from ₹2.5L, 2BHK interiors from ₹8L. Free consultation!" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://intorza.com/" />
+        <meta property="og:url" content="https://intorza.in/" />
         <meta property="og:site_name" content="Intorza" />
         <meta property="og:locale" content="en_IN" />
         

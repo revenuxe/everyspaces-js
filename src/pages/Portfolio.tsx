@@ -103,17 +103,17 @@ const Portfolio = () => {
           name="description"
           content="Browse 100+ completed interior projects by Intorza in Bangalore. View our modular kitchens, wardrobes, living rooms & bedrooms gallery. Get inspired!"
         />
-        <link rel="canonical" href="https://intorza.com/portfolio" />
+        <link rel="canonical" href="https://intorza.in/portfolio" />
       </Helmet>
       <StructuredData data={[createBreadcrumbSchema([
-        { name: "Home", url: "https://intorza.com" },
-        { name: "Portfolio", url: "https://intorza.com/portfolio" }
+        { name: "Home", url: "https://intorza.in" },
+        { name: "Portfolio", url: "https://intorza.in/portfolio" }
       ]), {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": "Intorza Interior Design Portfolio",
         "description": "Browse 100+ completed interior projects by Intorza in Bangalore",
-        "url": "https://intorza.com/portfolio"
+        "url": "https://intorza.in/portfolio"
       }]} />
       <Header />
       <Breadcrumb items={[{ label: "Portfolio" }]} />

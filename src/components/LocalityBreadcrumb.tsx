@@ -11,7 +11,7 @@ const LocalityBreadcrumb = ({ localityName }: LocalityBreadcrumbProps) => {
         <ol className="flex items-center gap-2 text-sm font-body">
           <li>
             <a 
-              href="https://intorza.com/" 
+              href="https://intorza.in/" 
               className="flex items-center gap-1 text-muted-foreground hover:text-secondary transition-colors"
             >
               <Home className="w-4 h-4" />

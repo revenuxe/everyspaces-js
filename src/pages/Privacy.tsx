@@ -14,17 +14,17 @@ const Privacy = () => {
           name="description"
           content="Learn how Intorza protects your personal information. Read our privacy policy covering data collection, usage, security measures & your rights."
         />
-        <link rel="canonical" href="https://intorza.com/privacy" />
+        <link rel="canonical" href="https://intorza.in/privacy" />
       </Helmet>
       <StructuredData data={[createBreadcrumbSchema([
-        { name: "Home", url: "https://intorza.com" },
-        { name: "Privacy Policy", url: "https://intorza.com/privacy" }
+        { name: "Home", url: "https://intorza.in" },
+        { name: "Privacy Policy", url: "https://intorza.in/privacy" }
       ]), {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Privacy Policy",
         "description": "Intorza's privacy policy covering data collection, usage, and security",
-        "url": "https://intorza.com/privacy"
+        "url": "https://intorza.in/privacy"
       }]} />
       <Header />
 
