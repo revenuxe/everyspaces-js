@@ -22,13 +22,13 @@ export const StructuredData = ({ data }: StructuredDataProps) => {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://intorza.com/#organization",
+  "@id": "https://intorza.in/#organization",
   "name": "Intorza",
   "legalName": "Intorza Interior Design",
-  "url": "https://intorza.com",
+  "url": "https://intorza.in",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://intorza.com/favicon.ico",
+    "url": "https://intorza.in/favicon.ico",
     "width": 64,
     "height": 64
   },
@@ -64,7 +64,7 @@ export const organizationSchema = {
       "availableLanguage": ["English", "Hindi", "Kannada"]
     }
   ],
-  "email": "intorza.com@gmail.com",
+  "email": "intorza.in@gmail.com",
   "sameAs": [
     "https://www.instagram.com/intorza",
     "https://www.facebook.com/intorza",
@@ -116,12 +116,12 @@ export const organizationSchema = {
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://intorza.com/#localbusiness",
+  "@id": "https://intorza.in/#localbusiness",
   "name": "Intorza Interior Design",
-  "image": "https://intorza.com/favicon.ico",
-  "url": "https://intorza.com",
+  "image": "https://intorza.in/favicon.ico",
+  "url": "https://intorza.in",
   "telephone": "+91-9886579923",
-  "email": "intorza.com@gmail.com",
+  "email": "intorza.in@gmail.com",
   "description": "Best interior designers in Bangalore specializing in modular kitchens, wardrobes, and complete home interiors. 500+ projects completed with 10-year warranty.",
   "address": {
     "@type": "PostalAddress",
@@ -160,17 +160,17 @@ export const localBusinessSchema = {
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://intorza.com/#website",
+  "@id": "https://intorza.in/#website",
   "name": "Intorza - Best Interior Designers in Bangalore",
   "alternateName": "Intorza Interior Design",
-  "url": "https://intorza.com",
+  "url": "https://intorza.in",
   "description": "Intorza offers premium interior design services in Bangalore including modular kitchens, wardrobes, and full home interiors with 10-year warranty.",
   "publisher": {
-    "@id": "https://intorza.com/#organization"
+    "@id": "https://intorza.in/#organization"
   },
   "potentialAction": {
     "@type": "ReadAction",
-    "target": "https://intorza.com"
+    "target": "https://intorza.in"
   },
   "inLanguage": "en-IN"
 };
@@ -195,7 +195,7 @@ export const howToInteriorDesignSchema = {
   "@type": "HowTo",
   "name": "How to Get Interior Design Done in Bangalore with Intorza",
   "description": "Complete guide to getting your home interior designed by Intorza, the best interior designers in Bangalore. From consultation to installation in 45-90 days.",
-  "image": "https://intorza.com/how-it-works.jpg",
+  "image": "https://intorza.in/how-it-works.jpg",
   "totalTime": "P60D",
   "estimatedCost": {
     "@type": "MonetaryAmount",
@@ -224,37 +224,37 @@ export const howToInteriorDesignSchema = {
       "position": 1,
       "name": "Book Free Consultation",
       "text": "Contact Intorza at +91-9886579923 or fill the online form. Our design expert will schedule a free site visit at your convenience.",
-      "url": "https://intorza.com/contact",
-      "image": "https://intorza.com/step-consultation.jpg"
+      "url": "https://intorza.in/contact",
+      "image": "https://intorza.in/step-consultation.jpg"
     },
     {
       "@type": "HowToStep",
       "position": 2,
       "name": "Design Proposal",
       "text": "Receive detailed 3D designs, material options, and transparent cost estimate within 5 working days. Review and request modifications.",
-      "url": "https://intorza.com/services",
-      "image": "https://intorza.com/step-design.jpg"
+      "url": "https://intorza.in/services",
+      "image": "https://intorza.in/step-design.jpg"
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "Approval & Production",
       "text": "Approve final designs and make initial payment. Manufacturing begins at our in-house facility with quality materials.",
-      "image": "https://intorza.com/step-production.jpg"
+      "image": "https://intorza.in/step-production.jpg"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "Installation",
       "text": "Professional installation team executes the project with dedicated project manager. Modular kitchen takes 15-20 days, full home 45-90 days.",
-      "image": "https://intorza.com/step-installation.jpg"
+      "image": "https://intorza.in/step-installation.jpg"
     },
     {
       "@type": "HowToStep",
       "position": 5,
       "name": "Handover with Warranty",
       "text": "Final walkthrough, documentation handover, and 10-year warranty activation. After-sales support for any issues.",
-      "image": "https://intorza.com/step-handover.jpg"
+      "image": "https://intorza.in/step-handover.jpg"
     }
   ]
 };
@@ -280,7 +280,7 @@ export const createServiceSchema = (
   "url": url,
   "image": image,
   "provider": {
-    "@id": "https://intorza.com/#organization"
+    "@id": "https://intorza.in/#organization"
   },
   "areaServed": additionalInfo?.areaServed?.map(area => ({
     "@type": "Place",
@@ -290,7 +290,7 @@ export const createServiceSchema = (
     "name": "Bangalore"
   },
   "serviceType": "Interior Design",
-  "termsOfService": "https://intorza.com/terms",
+  "termsOfService": "https://intorza.in/terms",
   "offers": priceRange ? {
     "@type": "Offer",
     "priceSpecification": {
@@ -335,10 +335,10 @@ export const createArticleSchema = (article: {
   "author": {
     "@type": "Person",
     "name": article.author || "Intorza Design Team",
-    "url": "https://intorza.com/about"
+    "url": "https://intorza.in/about"
   },
   "publisher": {
-    "@id": "https://intorza.com/#organization"
+    "@id": "https://intorza.in/#organization"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -357,7 +357,7 @@ export const createArticleSchema = (article: {
 export const createBreadcrumbSchema = (items: { name: string; url: string }[], pageId?: string) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "@id": pageId ? `https://intorza.com/${pageId}#breadcrumb` : undefined,
+  "@id": pageId ? `https://intorza.in/${pageId}#breadcrumb` : undefined,
   "itemListElement": items.map((item, index) => ({
     "@type": "ListItem",
     "position": index + 1,
@@ -372,7 +372,7 @@ export const createBreadcrumbSchema = (items: { name: string; url: string }[], p
 export const createFAQSchema = (faqs: { question: string; answer: string }[], pageId: string) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": `https://intorza.com/${pageId}#faq`,
+  "@id": `https://intorza.in/${pageId}#faq`,
   "mainEntity": faqs.map((faq, index) => ({
     "@type": "Question",
     "name": faq.question,
@@ -387,7 +387,7 @@ export const createFAQSchema = (faqs: { question: string; answer: string }[], pa
 export const createImageGallerySchema = (images: { url: string; name: string; description?: string }[]) => ({
   "@context": "https://schema.org",
   "@type": "ImageGallery",
-  "@id": "https://intorza.com/portfolio#gallery",
+  "@id": "https://intorza.in/portfolio#gallery",
   "name": "Intorza Interior Design Portfolio - Completed Projects in Bangalore",
   "description": "View 500+ completed interior design projects by Intorza in Bangalore including modular kitchens, bedrooms, living rooms, and full home interiors.",
   "image": images.map((img) => ({
@@ -397,7 +397,7 @@ export const createImageGallerySchema = (images: { url: string; name: string; de
     "description": img.description || `${img.name} by Intorza Interior Design Bangalore`
   })),
   "creator": {
-    "@id": "https://intorza.com/#organization"
+    "@id": "https://intorza.in/#organization"
   }
 });
 
@@ -419,7 +419,7 @@ export const createProductSchema = (product: {
   "url": product.url,
   "category": product.category,
   "brand": {
-    "@id": "https://intorza.com/#organization"
+    "@id": "https://intorza.in/#organization"
   },
   "offers": {
     "@type": "AggregateOffer",
@@ -429,7 +429,7 @@ export const createProductSchema = (product: {
     "offerCount": "1",
     "availability": "https://schema.org/InStock",
     "seller": {
-      "@id": "https://intorza.com/#organization"
+      "@id": "https://intorza.in/#organization"
     }
   }
 });
@@ -446,7 +446,7 @@ export const createQASchema = (question: string, answer: string, url: string) =>
     "dateCreated": new Date().toISOString(),
     "author": {
       "@type": "Organization",
-      "@id": "https://intorza.com/#organization"
+      "@id": "https://intorza.in/#organization"
     },
     "acceptedAnswer": {
       "@type": "Answer",
@@ -457,7 +457,7 @@ export const createQASchema = (question: string, answer: string, url: string) =>
       "author": {
         "@type": "Organization",
         "name": "Intorza",
-        "@id": "https://intorza.com/#organization"
+        "@id": "https://intorza.in/#organization"
       }
     }
   }
@@ -467,10 +467,10 @@ export const createQASchema = (question: string, answer: string, url: string) =>
 export const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://intorza.com/#professionalservice",
+  "@id": "https://intorza.in/#professionalservice",
   "name": "Intorza Interior Design Services",
   "description": "Professional interior design services in Bangalore including modular kitchen design, wardrobe design, living room design, bedroom interiors, and complete home renovations.",
-  "url": "https://intorza.com/services",
+  "url": "https://intorza.in/services",
   "telephone": "+91-9886579923",
   "priceRange": "₹₹₹",
   "address": {
@@ -546,19 +546,19 @@ export const professionalServiceSchema = {
 export const homePageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": "https://intorza.com/#webpage",
-  "url": "https://intorza.com",
+  "@id": "https://intorza.in/#webpage",
+  "url": "https://intorza.in",
   "name": "Best Interior Designers in Bangalore | Modular Kitchen & Home Interiors - Intorza",
   "description": "Intorza is Bangalore's top interior design company offering modular kitchens, wardrobes, and complete home interiors. 500+ projects, 10-year warranty, free consultation.",
   "isPartOf": {
-    "@id": "https://intorza.com/#website"
+    "@id": "https://intorza.in/#website"
   },
   "about": {
-    "@id": "https://intorza.com/#organization"
+    "@id": "https://intorza.in/#organization"
   },
   "primaryImageOfPage": {
     "@type": "ImageObject",
-    "url": "https://intorza.com/hero-interior.jpg"
+    "url": "https://intorza.in/hero-interior.jpg"
   },
   "breadcrumb": {
     "@type": "BreadcrumbList",
@@ -567,7 +567,7 @@ export const homePageSchema = {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://intorza.com"
+        "item": "https://intorza.in"
       }
     ]
   },
@@ -582,7 +582,7 @@ export const homePageSchema = {
     ]
   },
   "mainEntity": {
-    "@id": "https://intorza.com/#localbusiness"
+    "@id": "https://intorza.in/#localbusiness"
   }
 };
 
@@ -605,13 +605,13 @@ export const createActionSchema = (actionType: string, target: string, descripti
 export const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "@id": "https://intorza.com/contact#contactpage",
+  "@id": "https://intorza.in/contact#contactpage",
   "name": "Contact Intorza - Best Interior Designers in Bangalore",
   "description": "Contact Intorza for free interior design consultation in Bangalore. Call +91-9886579923 or fill our form for modular kitchen, wardrobe, and home interior quotes.",
-  "url": "https://intorza.com/contact",
+  "url": "https://intorza.in/contact",
   "mainEntity": {
     "@type": "Organization",
-    "@id": "https://intorza.com/#organization"
+    "@id": "https://intorza.in/#organization"
   },
   "speakable": {
     "@type": "SpeakableSpecification",
