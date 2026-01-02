@@ -83,8 +83,8 @@ const ServiceFalseCeiling = () => {
     createServiceSchema(
       "False Ceiling Design Bangalore",
       "Artistic false ceiling designs in Bangalore. POP, gypsum, wooden ceilings with cove lighting, multi-level designs, and AC integration.",
-      "https://intorza.com/services/false-ceiling",
-      "https://intorza.com/service-false-ceiling.jpg",
+      "https://intorza.in/services/false-ceiling",
+      "https://intorza.in/service-false-ceiling.jpg",
       "50000-200000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -92,16 +92,16 @@ const ServiceFalseCeiling = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "False Ceiling", url: "https://intorza.com/services/false-ceiling" }
+      { name: "Home", url: "https://intorza.in" },
+      { name: "Services", url: "https://intorza.in/services" },
+      { name: "False Ceiling", url: "https://intorza.in/services/false-ceiling" }
     ]),
     createFAQSchema(falseCeilingFAQs, 'services/false-ceiling'),
     createProductSchema({
       name: "False Ceiling Design",
       description: "Designer false ceilings in Bangalore with POP, gypsum, cove lighting, and AC integration. 3-7 day installation.",
-      image: "https://intorza.com/service-false-ceiling.jpg",
-      url: "https://intorza.com/services/false-ceiling",
+      image: "https://intorza.in/service-false-ceiling.jpg",
+      url: "https://intorza.in/services/false-ceiling",
       priceRange: "50000-200000",
       category: "Home Improvement > Ceiling"
     })
@@ -113,11 +113,11 @@ const ServiceFalseCeiling = () => {
         <title>False Ceiling Design Bangalore | POP & Gypsum Ceiling | Intorza</title>
         <meta name="description" content="Best false ceiling designers in Bangalore. POP from ₹65/sq ft, gypsum, cove lighting. Artistic ceiling designs. 3-7 day installation. Free quote!" />
         <meta name="keywords" content="false ceiling design bangalore, POP ceiling, gypsum ceiling, cove lighting ceiling, living room ceiling, bedroom ceiling" />
-        <link rel="canonical" href="https://intorza.com/services/false-ceiling" />
+        <link rel="canonical" href="https://intorza.in/services/false-ceiling" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="False Ceiling Design Bangalore | POP & Gypsum - Intorza" />
         <meta property="og:description" content="False ceilings from ₹65/sq ft. POP, gypsum, cove lighting. 3-7 day installation!" />
-        <meta property="og:url" content="https://intorza.com/services/false-ceiling" />
+        <meta property="og:url" content="https://intorza.in/services/false-ceiling" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

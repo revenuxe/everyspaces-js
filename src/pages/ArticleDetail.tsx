@@ -224,7 +224,7 @@ const ArticleDetail = () => {
           <meta property="og:image" content={article.featured_image_url} />
         )}
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://intorza.com/articles/${slug}`} />
+        <meta property="og:url" content={`https://intorza.in/articles/${slug}`} />
         <meta property="og:site_name" content="Intorza" />
         <meta property="article:published_time" content={article.published_at || article.created_at} />
         <meta property="article:modified_time" content={article.updated_at} />
@@ -237,22 +237,22 @@ const ArticleDetail = () => {
           <meta name="twitter:image" content={article.featured_image_url} />
         )}
         
-        <link rel="canonical" href={`https://intorza.com/articles/${slug}`} />
+        <link rel="canonical" href={`https://intorza.in/articles/${slug}`} />
       </Helmet>
       <StructuredData data={[
         createArticleSchema({
           title: article.title,
           description: article.meta_description || article.excerpt || `Read about ${article.title} on Intorza blog`,
-          url: `https://intorza.com/articles/${slug}`,
+          url: `https://intorza.in/articles/${slug}`,
           image: article.featured_image_url || undefined,
           datePublished: article.published_at || article.created_at,
           dateModified: article.updated_at,
           author: article.author || "Intorza Team"
         }),
         createBreadcrumbSchema([
-          { name: "Home", url: "https://intorza.com" },
-          { name: "Articles", url: "https://intorza.com/articles" },
-          { name: article.title, url: `https://intorza.com/articles/${slug}` }
+          { name: "Home", url: "https://intorza.in" },
+          { name: "Articles", url: "https://intorza.in/articles" },
+          { name: article.title, url: `https://intorza.in/articles/${slug}` }
         ])
       ]} />
 
