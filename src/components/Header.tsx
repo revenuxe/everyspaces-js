@@ -49,7 +49,7 @@ const Header = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <a href="https://intorza.com/" className="flex items-center gap-2">
+        <a href="https://intorza.in/" className="flex items-center gap-2">
           <img
             src={intorzaLogo}
             alt="Intorza - Best Interior Designers in Bangalore"

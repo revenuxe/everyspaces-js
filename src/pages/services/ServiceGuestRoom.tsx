@@ -83,8 +83,8 @@ const ServiceGuestRoom = () => {
     createServiceSchema(
       "Guest Room Design Bangalore",
       "Comfortable guest room designs in Bangalore. Hotel-like guest suites, multi-purpose rooms, and sofa-cum-bed designs for visitors.",
-      "https://intorza.com/services/guest-room",
-      "https://intorza.com/service-guest-room.jpg",
+      "https://intorza.in/services/guest-room",
+      "https://intorza.in/service-guest-room.jpg",
       "60000-150000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -92,16 +92,16 @@ const ServiceGuestRoom = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Guest Room", url: "https://intorza.com/services/guest-room" }
+      { name: "Home", url: "https://intorza.in" },
+      { name: "Services", url: "https://intorza.in/services" },
+      { name: "Guest Room", url: "https://intorza.in/services/guest-room" }
     ]),
     createFAQSchema(guestRoomFAQs, 'services/guest-room'),
     createProductSchema({
       name: "Guest Room Interior Design",
       description: "Welcoming guest room designs in Bangalore with comfortable beds, compact wardrobes, and thoughtful amenities.",
-      image: "https://intorza.com/service-guest-room.jpg",
-      url: "https://intorza.com/services/guest-room",
+      image: "https://intorza.in/service-guest-room.jpg",
+      url: "https://intorza.in/services/guest-room",
       priceRange: "60000-150000",
       category: "Home Improvement > Guest Room"
     })
@@ -113,11 +113,11 @@ const ServiceGuestRoom = () => {
         <title>Guest Room Interior Design Bangalore | Guest Bedroom | Intorza</title>
         <meta name="description" content="Best guest room designers in Bangalore. Comfortable suites from ₹60K. Sofa-cum-bed designs, multi-purpose rooms. Free consultation!" />
         <meta name="keywords" content="guest room design bangalore, guest bedroom interior, spare room design, sofa cum bed design, guest room furniture, multi-purpose room" />
-        <link rel="canonical" href="https://intorza.com/services/guest-room" />
+        <link rel="canonical" href="https://intorza.in/services/guest-room" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="Guest Room Design Bangalore | Comfortable Suites - Intorza" />
         <meta property="og:description" content="Guest rooms from ₹60K. Sofa-cum-beds, multi-purpose designs. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/guest-room" />
+        <meta property="og:url" content="https://intorza.in/services/guest-room" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

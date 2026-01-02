@@ -87,8 +87,8 @@ const ServiceBathroom = () => {
     createServiceSchema(
       "Bathroom Design Bangalore",
       "Spa-inspired bathroom renovation in Bangalore with premium fixtures from Kohler, Grohe. Complete waterproofing and designer finishes.",
-      "https://intorza.com/services/bathroom-design",
-      "https://intorza.com/service-bathroom.jpg",
+      "https://intorza.in/services/bathroom-design",
+      "https://intorza.in/service-bathroom.jpg",
       "80000-300000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -96,16 +96,16 @@ const ServiceBathroom = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Bathroom Design", url: "https://intorza.com/services/bathroom-design" }
+      { name: "Home", url: "https://intorza.in" },
+      { name: "Services", url: "https://intorza.in/services" },
+      { name: "Bathroom Design", url: "https://intorza.in/services/bathroom-design" }
     ]),
     createFAQSchema(bathroomFAQs, 'services/bathroom-design'),
     createProductSchema({
       name: "Bathroom Renovation",
       description: "Complete bathroom renovation in Bangalore with Kohler/Grohe fixtures, designer tiles, and waterproofing. 10-15 day completion.",
-      image: "https://intorza.com/service-bathroom.jpg",
-      url: "https://intorza.com/services/bathroom-design",
+      image: "https://intorza.in/service-bathroom.jpg",
+      url: "https://intorza.in/services/bathroom-design",
       priceRange: "80000-300000",
       category: "Home Improvement > Bathroom"
     })
@@ -117,11 +117,11 @@ const ServiceBathroom = () => {
         <title>Bathroom Design Bangalore | Spa-Inspired Renovation | Intorza</title>
         <meta name="description" content="Best bathroom renovators in Bangalore. Spa-like bathrooms from ₹80K. Kohler, Grohe fixtures, complete waterproofing. 10-15 day completion!" />
         <meta name="keywords" content="bathroom design bangalore, bathroom interior, modern bathroom design, bathroom renovation, spa bathroom, bathroom tiles" />
-        <link rel="canonical" href="https://intorza.com/services/bathroom-design" />
+        <link rel="canonical" href="https://intorza.in/services/bathroom-design" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="Bathroom Renovation Bangalore | Spa Design - Intorza" />
         <meta property="og:description" content="Bathroom makeovers from ₹80K. Premium fixtures, waterproofing, designer tiles. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/bathroom-design" />
+        <meta property="og:url" content="https://intorza.in/services/bathroom-design" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

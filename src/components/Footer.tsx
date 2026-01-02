@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <a href="https://intorza.com/" aria-label="Intorza Home - Best Interior Designers in Bangalore">
+            <a href="https://intorza.in/" aria-label="Intorza Home - Best Interior Designers in Bangalore">
               <img
                 src={intorzaLogo}
                 alt="Intorza Interior Design Bangalore"
@@ -61,7 +61,7 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70 font-body">
-              <li><a href="https://intorza.com/" className="hover:text-secondary transition-colors">Home</a></li>
+              <li><a href="https://intorza.in/" className="hover:text-secondary transition-colors">Home</a></li>
               <li><Link to="/portfolio" className="hover:text-secondary transition-colors">Portfolio</Link></li>
               <li><Link to="/price-calculator" className="hover:text-secondary transition-colors">Price Calculator</Link></li>
               <li><Link to="/bangalore" className="hover:text-secondary transition-colors">Bangalore</Link></li>
