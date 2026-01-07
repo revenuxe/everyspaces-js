@@ -6,6 +6,7 @@ import ActionGrid from "@/components/ActionGrid";
 import BestServices from "@/components/BestServices";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import LocalityContentSection from "@/components/LocalityContentSection";
 import LocalityGallerySection from "@/components/LocalityGallerySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
@@ -25,6 +26,17 @@ interface LocalityFAQ {
   answer: string;
 }
 
+interface LocalityLandmark {
+  name: string;
+  description: string;
+  type: "landmark" | "lifestyle" | "residential" | "nature";
+}
+
+interface DesignTip {
+  title: string;
+  description: string;
+}
+
 interface LocalitySEO {
   metaTitle: string;
   metaDescription: string;
@@ -34,6 +46,9 @@ interface LocalitySEO {
   faqs: LocalityFAQ[];
   nearbyAreas: string[];
   specialties: string[];
+  landmarks?: LocalityLandmark[];
+  designTips?: DesignTip[];
+  lifestyleDescription?: string;
 }
 
 interface LocalityPageProps {
@@ -282,6 +297,12 @@ const LocalityPageTemplate = ({
         <BestServices />
         <ServicesCarousel />
         <HowItWorksSection />
+        <LocalityContentSection
+          localityName={localityName}
+          landmarks={seoData.landmarks}
+          designTips={seoData.designTips}
+          lifestyleDescription={seoData.lifestyleDescription}
+        />
         <LocalityGallerySection
           localityName={localityName}
           images={galleryImages}
