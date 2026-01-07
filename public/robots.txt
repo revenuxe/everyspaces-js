@@ -1,4 +1,4 @@
-# robots.txt for intorza.com
+# robots.txt for intorza.in
 
 User-agent: Googlebot
 Allow: /
@@ -24,4 +24,4 @@ Disallow: /admin/login
 Disallow: /thank-you
 
 # Sitemap location
-Sitemap: https://intorza.com/sitemap.xml
+Sitemap: https://intorza.in/sitemap.xml
