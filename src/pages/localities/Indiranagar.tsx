@@ -46,7 +46,48 @@ const Indiranagar = () => {
       }
     ],
     nearbyAreas: ["Domlur", "HAL 2nd Stage", "Ulsoor", "CV Raman Nagar", "Old Airport Road"],
-    specialties: ["Contemporary Design", "Modular Kitchen", "Premium Wardrobes", "Living Room Makeover", "Home Office Design"]
+    specialties: ["Contemporary Design", "Modular Kitchen", "Premium Wardrobes", "Living Room Makeover", "Home Office Design"],
+    lifestyleDescription: "Indiranagar is Bangalore's most vibrant urban neighborhood, known for its tree-lined streets, boutique cafes along 12th Main, and a perfect blend of residential tranquility with commercial buzz. Home to young professionals, entrepreneurs, and artists, this locality demands interiors that reflect sophistication and modern urban living.",
+    landmarks: [
+      {
+        name: "100 Feet Road & 12th Main",
+        description: "The bustling heart of Indiranagar with premium apartments, cafes, and boutiques. Homes here need sound-insulated designs with stylish interiors.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Defence Colony & HAL Area",
+        description: "Quieter residential pockets with larger independent houses and premium apartments. Perfect for spacious, family-oriented interior designs.",
+        type: "residential" as const
+      },
+      {
+        name: "CMH Road Precinct",
+        description: "Heritage meets modern with older buildings getting contemporary makeovers. We specialize in renovating these classic Indiranagar homes.",
+        type: "landmark" as const
+      },
+      {
+        name: "Indiranagar Park & Green Spaces",
+        description: "Proximity to parks inspires biophilic designs with indoor plants, natural materials, and earthy color palettes in local homes.",
+        type: "nature" as const
+      }
+    ],
+    designTips: [
+      {
+        title: "Maximize Natural Light",
+        description: "Indiranagar apartments often have good natural light. Use sheer curtains, light-colored walls, and strategically placed mirrors to amplify brightness throughout your home."
+      },
+      {
+        title: "Create a Functional Home Office",
+        description: "With many Indiranagar residents working in tech and startups, a dedicated workspace with ergonomic furniture and good lighting is essential for productivity."
+      },
+      {
+        title: "Opt for Noise-Reducing Materials",
+        description: "Near busy 100 Feet Road? Use acoustic panels, heavy drapes, and soft furnishings to create a peaceful sanctuary from the urban buzz."
+      },
+      {
+        title: "Blend Indoor-Outdoor Living",
+        description: "If you have a balcony, extend your living space with comfortable seating, plants, and ambient lighting for Bangalore's pleasant evenings."
+      }
+    ]
   };
 
   return (

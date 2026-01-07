@@ -46,7 +46,48 @@ const Koramangala = () => {
       }
     ],
     nearbyAreas: ["1st-8th Block Koramangala", "Ejipura", "HSR Layout", "BTM Layout", "Madiwala", "Forum Mall Area"],
-    specialties: ["Luxury Interior", "Walk-in Wardrobes", "Designer Kitchen", "Living Room Makeover", "Balcony Design"]
+    specialties: ["Luxury Interior", "Walk-in Wardrobes", "Designer Kitchen", "Living Room Makeover", "Balcony Design"],
+    lifestyleDescription: "Koramangala is Bangalore's startup capital and a lifestyle hub, home to India's most innovative companies and a thriving food and nightlife scene. From young founders in compact apartments to established families in spacious villas across 8 blocks, Koramangala demands interiors that are as dynamic and contemporary as its residents.",
+    landmarks: [
+      {
+        name: "Forum Mall & 80 Feet Road",
+        description: "The commercial heart of Koramangala with premium high-rises. Apartments here need smart storage solutions and contemporary designs for urban living.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "5th & 6th Block Residentials",
+        description: "Prime residential blocks with a mix of independent houses and apartments. Popular for families wanting spacious, well-designed interiors.",
+        type: "residential" as const
+      },
+      {
+        name: "St. John's Road & 1st Block",
+        description: "Tree-lined streets with older, charming properties. We specialize in renovation projects that preserve character while adding modern amenities.",
+        type: "landmark" as const
+      },
+      {
+        name: "Koramangala Lake & Parks",
+        description: "Green spaces inspire nature-themed interiors. Many clients request indoor gardens, natural materials, and earthy tones reflecting the locality's green pockets.",
+        type: "nature" as const
+      }
+    ],
+    designTips: [
+      {
+        title: "Embrace Open-Plan Living",
+        description: "Koramangala's social lifestyle calls for open kitchens and living areas perfect for hosting friends, with a kitchen island doubling as a breakfast bar."
+      },
+      {
+        title: "Invest in Smart Storage",
+        description: "Many Koramangala apartments are compact. Maximize space with floor-to-ceiling wardrobes, under-bed storage, and modular furniture that adapts to your needs."
+      },
+      {
+        title: "Design for Dual-Purpose Spaces",
+        description: "With work-from-home being common, create rooms that transform—a guest bedroom with a fold-out desk, or a living room corner as a mini office."
+      },
+      {
+        title: "Add Character with Industrial Elements",
+        description: "Exposed brick accents, metal fixtures, and concrete finishes resonate with Koramangala's startup vibe while keeping interiors stylish and edgy."
+      }
+    ]
   };
 
   return (
