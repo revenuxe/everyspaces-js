@@ -11,6 +11,8 @@ import LocalityGallerySection from "@/components/LocalityGallerySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import LocalitiesSection from "@/components/LocalitiesSection";
+import RelatedLocalities from "@/components/RelatedLocalities";
+import RelatedServices from "@/components/RelatedServices";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import { 
@@ -307,6 +309,8 @@ const LocalityPageTemplate = ({
           localityName={localityName}
           images={galleryImages}
         />
+        <RelatedServices currentSlug="modular-kitchen" />
+        <RelatedLocalities currentSlug={slug} />
         <TestimonialsSection />
         <FAQSection />
         <LocalitiesSection />

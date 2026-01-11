@@ -1,12 +1,11 @@
 import { Phone, Mail, MapPin, Instagram, Linkedin } from "lucide-react";
-import { Link } from "react-router-dom";
 import intorzaLogo from "@/assets/intorza-logo-new.webp";
 
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground pb-24 md:pb-8">
       <div className="container px-4 py-12 md:py-16">
-        <div className="grid md:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
             <a href="https://intorza.in/" aria-label="Intorza Home - Best Interior Designers in Bangalore">
@@ -48,12 +47,13 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg mb-4">Services</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70 font-body">
-              <li><Link to="/services/modular-kitchen" className="hover:text-secondary transition-colors">Modular Kitchens</Link></li>
-              <li><Link to="/services/bedroom-design" className="hover:text-secondary transition-colors">Bedroom Interiors</Link></li>
-              <li><Link to="/services/living-room" className="hover:text-secondary transition-colors">Living Room</Link></li>
-              <li><Link to="/services/wardrobe-design" className="hover:text-secondary transition-colors">Wardrobes</Link></li>
-              <li><Link to="/services/tv-unit" className="hover:text-secondary transition-colors">TV Units</Link></li>
-              <li><Link to="/services" className="hover:text-secondary transition-colors font-medium">View All Services →</Link></li>
+              <li><a href="/services/modular-kitchen" className="hover:text-secondary transition-colors">Modular Kitchens</a></li>
+              <li><a href="/services/bedroom-design" className="hover:text-secondary transition-colors">Bedroom Interiors</a></li>
+              <li><a href="/services/living-room" className="hover:text-secondary transition-colors">Living Room</a></li>
+              <li><a href="/services/wardrobe-design" className="hover:text-secondary transition-colors">Wardrobes</a></li>
+              <li><a href="/services/tv-unit" className="hover:text-secondary transition-colors">TV Units</a></li>
+              <li><a href="/services/pooja-room" className="hover:text-secondary transition-colors">Pooja Room</a></li>
+              <li><a href="/services" className="hover:text-secondary transition-colors font-medium">View All Services →</a></li>
             </ul>
           </div>
 
@@ -61,14 +61,27 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70 font-body">
-              <li><a href="https://intorza.in/" className="hover:text-secondary transition-colors">Home</a></li>
-              <li><Link to="/portfolio" className="hover:text-secondary transition-colors">Portfolio</Link></li>
-              <li><Link to="/price-calculator" className="hover:text-secondary transition-colors">Price Calculator</Link></li>
-              <li><Link to="/bangalore" className="hover:text-secondary transition-colors">Bangalore</Link></li>
-              <li><Link to="/articles" className="hover:text-secondary transition-colors">Articles</Link></li>
-              <li><Link to="/contact" className="hover:text-secondary transition-colors">Contact Us</Link></li>
-              <li><Link to="/terms" className="hover:text-secondary transition-colors">Terms & Conditions</Link></li>
-              <li><Link to="/privacy" className="hover:text-secondary transition-colors">Privacy Policy</Link></li>
+              <li><a href="/" className="hover:text-secondary transition-colors">Home</a></li>
+              <li><a href="/portfolio" className="hover:text-secondary transition-colors">Portfolio</a></li>
+              <li><a href="/price-calculator" className="hover:text-secondary transition-colors">Price Calculator</a></li>
+              <li><a href="/bangalore" className="hover:text-secondary transition-colors">Bangalore</a></li>
+              <li><a href="/articles" className="hover:text-secondary transition-colors">Articles</a></li>
+              <li><a href="/contact" className="hover:text-secondary transition-colors">Contact Us</a></li>
+              <li><a href="/terms" className="hover:text-secondary transition-colors">Terms & Conditions</a></li>
+              <li><a href="/privacy" className="hover:text-secondary transition-colors">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          {/* Popular Localities */}
+          <div>
+            <h4 className="font-display text-lg mb-4">Popular Localities</h4>
+            <ul className="space-y-2 text-sm text-primary-foreground/70 font-body">
+              <li><a href="/bangalore/koramangala" className="hover:text-secondary transition-colors">Koramangala</a></li>
+              <li><a href="/bangalore/indiranagar" className="hover:text-secondary transition-colors">Indiranagar</a></li>
+              <li><a href="/bangalore/hsr-layout" className="hover:text-secondary transition-colors">HSR Layout</a></li>
+              <li><a href="/bangalore/whitefield" className="hover:text-secondary transition-colors">Whitefield</a></li>
+              <li><a href="/bangalore/jayanagar" className="hover:text-secondary transition-colors">Jayanagar</a></li>
+              <li><a href="/bangalore" className="hover:text-secondary transition-colors font-medium">All Localities →</a></li>
             </ul>
           </div>
 
