@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 // Service images
@@ -58,9 +57,9 @@ const RelatedServices = ({ currentSlug }: RelatedServicesProps) => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {relatedServices.map((service) => (
-            <Link
+            <a
               key={service.slug}
-              to={`/services/${service.slug}`}
+              href={`/services/${service.slug}`}
               className="group relative overflow-hidden rounded-2xl aspect-[3/4]"
             >
               <img
@@ -79,17 +78,17 @@ const RelatedServices = ({ currentSlug }: RelatedServicesProps) => {
               <div className="absolute bottom-4 right-4 w-9 h-9 bg-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                 <ArrowRight className="w-4 h-4 text-secondary-foreground" />
               </div>
-            </Link>
+            </a>
           ))}
         </div>
 
         <div className="text-center mt-8">
-          <Link
-            to="/services"
+          <a
+            href="/services"
             className="inline-flex items-center gap-2 text-secondary font-medium hover:underline"
           >
             View All Services <ArrowRight className="w-4 h-4" />
-          </Link>
+          </a>
         </div>
       </div>
     </section>

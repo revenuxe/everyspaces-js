@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
+import RelatedLocalities from "@/components/RelatedLocalities";
 import { 
   StructuredData, 
   createServiceSchema, 
@@ -336,14 +337,15 @@ const ServiceModularKitchen = () => {
               ))}
             </div>
             <div className="text-center mt-8">
-              <Link to="/portfolio" className="inline-flex items-center gap-2 text-secondary font-medium hover:underline">
+              <a href="/portfolio" className="inline-flex items-center gap-2 text-secondary font-medium hover:underline">
                 View All Projects <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
             </div>
           </div>
         </section>
 
         <RelatedServices currentSlug="modular-kitchen" />
+        <RelatedLocalities currentSlug="koramangala" />
 
         <FAQSection />
 
@@ -352,9 +354,9 @@ const ServiceModularKitchen = () => {
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Design Your Dream Kitchen?</h2>
             <p className="text-muted-foreground font-body max-w-md mx-auto mb-6">Get a free consultation with our kitchen design experts</p>
-            <Link to="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
+            <a href="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
-            </Link>
+            </a>
           </div>
         </section>
       </main>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight, Tv, Sofa, Lamp, Frame } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
+import RelatedLocalities from "@/components/RelatedLocalities";
 import { 
   StructuredData, 
   createServiceSchema, 
@@ -199,6 +200,7 @@ const ServiceLivingRoom = () => {
         </section>
 
         <RelatedServices currentSlug="living-room" />
+        <RelatedLocalities currentSlug="hsr-layout" />
 
         <FAQSection />
 
@@ -206,9 +208,9 @@ const ServiceLivingRoom = () => {
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Transform Your Living Room?</h2>
             <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza today for a free design consultation</p>
-            <Link to="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
+            <a href="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
-            </Link>
+            </a>
           </div>
         </section>
       </main>

@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import RelatedLocalities from "@/components/RelatedLocalities";
 import { 
   StructuredData, 
   createBreadcrumbSchema,
@@ -138,9 +138,9 @@ const Services = () => {
           <div className="container px-4">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
               {services.map((service) => (
-                <Link
+                <a
                   key={service.id}
-                  to={service.link}
+                  href={service.link}
                   className="group relative overflow-hidden rounded-2xl md:rounded-3xl bg-card shadow-soft hover:shadow-glow transition-all duration-500"
                 >
                   <div className="aspect-[3/4] relative overflow-hidden">
@@ -172,11 +172,14 @@ const Services = () => {
                       <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5 text-secondary-foreground" />
                     </div>
                   </div>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
         </section>
+
+        {/* Related Localities */}
+        <RelatedLocalities currentSlug="koramangala" />
 
         {/* CTA Section */}
         <section className="py-12 md:py-16 bg-muted/30">
@@ -187,13 +190,13 @@ const Services = () => {
             <p className="text-muted-foreground font-body max-w-md mx-auto mb-6">
               Get a free consultation and quote within 24 hours
             </p>
-            <Link
-              to="/contact"
+            <a
+              href="/contact"
               className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Get Free Quote
               <ArrowRight className="w-5 h-5" />
-            </Link>
+            </a>
           </div>
         </section>
       </main>
