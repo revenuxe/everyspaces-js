@@ -45,7 +45,20 @@ const SarjapurRoad = () => {
       }
     ],
     nearbyAreas: ["Dommasandra", "Carmelaram", "Harlur", "Kasavanahalli", "Ambalipura", "Bellandur"],
-    specialties: ["New Apartment Design", "Builder Coordination", "Modern Kitchen", "Contemporary Wardrobe", "Quick Turnaround"]
+    specialties: ["New Apartment Design", "Builder Coordination", "Modern Kitchen", "Contemporary Wardrobe", "Quick Turnaround"],
+    lifestyleDescription: "Sarjapur Road is Bangalore's fastest-growing residential corridor, connecting to major IT hubs and featuring an explosion of new apartment communities from top builders. Home to young professionals, newlyweds, and growing families, this area demands fresh, contemporary interiors delivered quickly for new apartment handovers.",
+    landmarks: [
+      { name: "Prestige & Sobha Apartment Complexes", description: "Premium gated communities with modern layouts perfect for contemporary modular kitchens, sleek wardrobes, and minimalist living room designs.", type: "residential" as const },
+      { name: "Carmelaram & Harlur Junction", description: "The rapidly developing junction with new constructions needing turnkey interior solutions with quick delivery timelines.", type: "lifestyle" as const },
+      { name: "Sarjapur Lake & Nature Parks", description: "Green pockets along Sarjapur Road inspire nature-connected interiors with large balcony gardens and indoor green walls.", type: "nature" as const },
+      { name: "Wipro & Intel Campuses", description: "Proximity to major tech campuses means residents want smart, modern homes with home offices, entertainment systems, and automated features.", type: "landmark" as const }
+    ],
+    designTips: [
+      { title: "Plan Interiors Before Possession", description: "Start designing 2-3 months before apartment handover. This allows advance material procurement and manufacturing, enabling faster installation post-possession." },
+      { title: "Coordinate with Builder Specifications", description: "Understand your builder's electrical points, plumbing layout, and wall types before designing. This prevents costly modifications during installation." },
+      { title: "Choose Contemporary, Neutral Designs", description: "For new apartments, opt for timeless neutral palettes with accent colors. This ensures your interiors look fresh for years and appeal to diverse tastes." },
+      { title: "Plan Future-Proof Wiring", description: "New apartments should have extra electrical points for future smart home upgrades, charging stations, and additional appliances as your family grows." }
+    ]
   };
 
   return (

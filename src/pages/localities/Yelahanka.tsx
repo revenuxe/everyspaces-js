@@ -45,7 +45,20 @@ const Yelahanka = () => {
       }
     ],
     nearbyAreas: ["Yelahanka New Town", "Yelahanka Old Town", "Allalsandra", "Attur Layout", "Kogilu", "Hebbal"],
-    specialties: ["Independent House Design", "Spacious Layouts", "Large Kitchen", "Multiple Bedroom", "Terrace Design"]
+    specialties: ["Independent House Design", "Spacious Layouts", "Large Kitchen", "Multiple Bedroom", "Terrace Design"],
+    lifestyleDescription: "Yelahanka is North Bangalore's spacious residential haven, known for the Air Force Station, wide tree-lined roads, and abundant independent houses on BDA plots. With excellent airport connectivity and a relaxed, semi-urban atmosphere, Yelahanka offers larger living spaces that allow for expansive, luxurious interior designs.",
+    landmarks: [
+      { name: "Yelahanka Air Force Station", description: "The prominent Air Force presence lends a disciplined, structured aesthetic to the area. Military families prefer organized, durable interiors with formal layouts.", type: "landmark" as const },
+      { name: "Yelahanka New Town BDA Layout", description: "Well-planned BDA plots with independent houses offering spacious rooms perfect for large modular kitchens, multiple bedrooms, and terrace gardens.", type: "residential" as const },
+      { name: "Puttenahalli Lake & Green Spaces", description: "Natural lakes and parks create a serene backdrop, inspiring interiors with large windows, natural wood finishes, and outdoor-indoor flow.", type: "nature" as const },
+      { name: "International Airport Proximity", description: "Easy airport access makes Yelahanka popular with frequent travelers and NRIs who want globally-inspired interior designs with local craftsmanship.", type: "lifestyle" as const }
+    ],
+    designTips: [
+      { title: "Leverage Spacious Floor Plans", description: "Yelahanka houses have generous room sizes. Create grand living rooms with sectional sofas, large dining areas, and walk-in storage rather than cramming furniture." },
+      { title: "Design a Large Family Kitchen", description: "With bigger kitchens, go for U-shaped or island layouts with dedicated pantry, double sink, and breakfast counter for the whole family." },
+      { title: "Create Stunning Terrace Gardens", description: "Yelahanka's independent houses often have terraces. Design rooftop gardens with pergolas, seating areas, and container gardens for Bangalore's pleasant climate." },
+      { title: "Plan for Multiple Bedrooms", description: "Design each bedroom with a unique theme—master suite with walk-in closet, kids' room with study area, guest room with convertible furniture." }
+    ]
   };
 
   return (

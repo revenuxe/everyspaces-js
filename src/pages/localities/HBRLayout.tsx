@@ -45,7 +45,20 @@ const HBRLayout = () => {
       }
     ],
     nearbyAreas: ["1st-5th Block HBR Layout", "Kalyannagar", "Babusapalya", "HRBR Layout", "Hennur", "RT Nagar"],
-    specialties: ["Local Expertise", "Studio Visit", "Fast Service", "Neighborhood Trust", "Complete Interiors"]
+    specialties: ["Local Expertise", "Studio Visit", "Fast Service", "Neighborhood Trust", "Complete Interiors"],
+    lifestyleDescription: "HBR Layout is Intorza's home base—a vibrant North Bangalore neighborhood known for its mix of established independent houses and modern apartment complexes. With excellent connectivity to Manyata Tech Park and the airport, HBR Layout attracts families and professionals seeking quality living in a well-planned locality.",
+    landmarks: [
+      { name: "Intorza Design Studio", description: "Our HBR Layout studio is open for visits. See live material samples, browse 3D designs, and meet our team to discuss your dream home interiors in person.", type: "landmark" as const },
+      { name: "Kalyannagar & HRBR Layout", description: "Premium residential extensions with upscale apartments and villas requiring contemporary designs with family-friendly layouts.", type: "residential" as const },
+      { name: "Hennur Road Corridor", description: "The rapidly developing Hennur Road brings new apartments and villa projects, creating demand for modern interior solutions and smart home designs.", type: "lifestyle" as const },
+      { name: "HBR Layout Parks & Green Spaces", description: "Well-maintained parks inspire residents to bring nature indoors with biophilic designs, indoor plants, and natural material finishes.", type: "nature" as const }
+    ],
+    designTips: [
+      { title: "Visit Our Local Studio First", description: "Being in HBR Layout, you can visit our design studio to touch and feel materials, see hardware options, and discuss designs face-to-face before committing." },
+      { title: "Plan for North Bangalore's Growing Families", description: "HBR Layout's family-oriented community benefits from spacious kitchens for Indian cooking, dedicated study areas for children, and guest-ready living rooms." },
+      { title: "Optimize for Cross-Ventilation", description: "HBR Layout's well-planned blocks allow good cross-ventilation. Position furniture to maximize airflow and use light curtains to maintain brightness." },
+      { title: "Invest in Quality for Long-Term Living", description: "As a settled residential area, invest in premium materials and timeless designs that age gracefully rather than trendy elements that date quickly." }
+    ]
   };
 
   return (

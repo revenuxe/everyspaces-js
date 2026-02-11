@@ -45,7 +45,20 @@ const Rajajinagar = () => {
       }
     ],
     nearbyAreas: ["1st-6th Block Rajajinagar", "MEI Layout", "Industrial Town", "Malleshwaram", "Basaveshwaranagar", "Mahalakshmi Layout"],
-    specialties: ["Elegant Design", "Spacious Layouts", "Premium Kitchen", "Formal Living Room", "Study Room Design"]
+    specialties: ["Elegant Design", "Spacious Layouts", "Premium Kitchen", "Formal Living Room", "Study Room Design"],
+    lifestyleDescription: "Rajajinagar is West Bangalore's elegant residential district, spanning six well-planned blocks with wide roads and mature trees. Known for its established families, prestigious schools, and proximity to Chord Road, Rajajinagar homes exude sophistication with spacious layouts that allow for grand, elegant interior designs.",
+    landmarks: [
+      { name: "Rajajinagar 1st Block to 6th Block", description: "Each block has its own character—from the commercial buzz of 1st Block to the quiet elegance of 6th Block. Interior styles vary to match each block's personality.", type: "residential" as const },
+      { name: "Chord Road Commercial Corridor", description: "The busy commercial stretch needs homes with effective sound insulation, double-glazed windows, and serene interior retreats.", type: "lifestyle" as const },
+      { name: "MEI Layout & Industrial Town", description: "Well-planned layouts with independent houses offering large rooms perfect for formal living spaces, home libraries, and elegant dining areas.", type: "landmark" as const },
+      { name: "Rajajinagar Parks & Gardens", description: "Well-maintained parks in every block inspire homeowners to create green corners, indoor herb gardens, and nature-connected spaces.", type: "nature" as const }
+    ],
+    designTips: [
+      { title: "Create Formal & Informal Living Zones", description: "Rajajinagar homes often host guests. Design a formal drawing room for visitors and a separate family room for everyday relaxation." },
+      { title: "Invest in Elegant Furniture", description: "Spacious Rajajinagar homes deserve quality furniture. Choose solid wood dining tables, comfortable sofas, and statement bookcases that reflect refined taste." },
+      { title: "Design a Dedicated Study or Library", description: "Many Rajajinagar families are academically oriented. Create a home library with floor-to-ceiling shelving, reading nook, and proper task lighting." },
+      { title: "Choose Sophisticated Color Palettes", description: "Opt for understated elegance with muted greens, warm beiges, navy accents, and wooden tones rather than overly bold or trendy colors." }
+    ]
   };
 
   return (

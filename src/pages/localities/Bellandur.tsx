@@ -45,7 +45,20 @@ const Bellandur = () => {
       }
     ],
     nearbyAreas: ["Devarabisanahalli", "Varthur", "Marathahalli", "Outer Ring Road", "Sarjapur Road", "Kadubeesanahalli"],
-    specialties: ["Luxury Interiors", "Premium Finishes", "Designer Kitchen", "Walk-in Wardrobe", "Lake View Design"]
+    specialties: ["Luxury Interiors", "Premium Finishes", "Designer Kitchen", "Walk-in Wardrobe", "Lake View Design"],
+    lifestyleDescription: "Bellandur is Bangalore's premium IT hub, surrounded by tech parks like RMZ Ecoworld and Embassy TechVillage. Home to senior tech professionals and NRI families, this locality features luxury apartments in gated communities that demand sophisticated, contemporary interiors with international design sensibilities.",
+    landmarks: [
+      { name: "Bellandur Lake", description: "The iconic lake offers scenic views for apartments facing it. We design open layouts with floor-to-ceiling windows to maximize these lake vistas.", type: "nature" as const },
+      { name: "Outer Ring Road Tech Corridor", description: "The ORR tech hub means residents want smart home automation, home offices, and modern entertainment zones for after-work relaxation.", type: "lifestyle" as const },
+      { name: "Prestige & Brigade Gated Communities", description: "Premium gated communities with large apartments that benefit from luxury finishes, walk-in wardrobes, and island kitchens.", type: "residential" as const },
+      { name: "Kadubeesanahalli Junction", description: "The commercial center connecting Bellandur to Sarjapur Road, with newer construction apartments needing fresh, modern interior treatments.", type: "landmark" as const }
+    ],
+    designTips: [
+      { title: "Maximize Lake Views", description: "If your apartment faces Bellandur Lake, use low-profile furniture, sheer curtains, and open-plan layouts to frame the scenic views as a natural artwork." },
+      { title: "Invest in Smart Home Features", description: "Bellandur's tech-savvy residents appreciate automated lighting, smart locks, voice-controlled curtains, and integrated home theatre systems." },
+      { title: "Design a Luxurious Walk-in Closet", description: "Premium apartments here have space for walk-in wardrobes. Add island dressers, LED-lit shelving, and full-length mirrors for a boutique experience." },
+      { title: "Create an Entertainment Zone", description: "After long commutes on ORR, a dedicated home theatre or gaming room with acoustic treatment provides the perfect unwind space." }
+    ]
   };
 
   return (

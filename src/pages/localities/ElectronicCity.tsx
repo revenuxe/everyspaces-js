@@ -45,7 +45,20 @@ const ElectronicCity = () => {
       }
     ],
     nearbyAreas: ["Phase 1 Electronic City", "Phase 2 Electronic City", "Bommasandra", "Hebbagodi", "Neeladri Nagar", "HSR Layout"],
-    specialties: ["Smart Home Design", "Modern Interiors", "Tech-Savvy Solutions", "Modular Kitchen", "Home Automation Ready"]
+    specialties: ["Smart Home Design", "Modern Interiors", "Tech-Savvy Solutions", "Modular Kitchen", "Home Automation Ready"],
+    lifestyleDescription: "Electronic City is Bangalore's original IT township, housing Infosys, Wipro, and HCL campuses. Home to thousands of tech professionals, this locality features modern apartments and villa communities that demand smart, tech-integrated interiors with contemporary aesthetics and efficient space utilization.",
+    landmarks: [
+      { name: "Infosys & Wipro Campus", description: "The iconic tech campuses set the tone for modern, minimalist aesthetics that residents carry into their home interiors.", type: "landmark" as const },
+      { name: "Electronic City Flyover & Connectivity", description: "Improved connectivity means more families settling here long-term, investing in premium, permanent home interiors rather than temporary setups.", type: "lifestyle" as const },
+      { name: "Neeladri Nagar & Villa Communities", description: "Independent villas and row houses offering spacious layouts perfect for luxury interiors with outdoor living spaces.", type: "residential" as const },
+      { name: "Phase 2 Green Belt", description: "The greener Phase 2 area inspires nature-themed interiors with indoor gardens, wooden elements, and biophilic design concepts.", type: "nature" as const }
+    ],
+    designTips: [
+      { title: "Integrate Smart Home Automation", description: "Electronic City residents love tech. Install smart lighting, automated blinds, voice-controlled appliances, and app-managed security for a truly connected home." },
+      { title: "Design an Ergonomic Home Office", description: "With hybrid work culture in IT companies, create a dedicated workspace with adjustable desks, proper lighting, and soundproofing for video calls." },
+      { title: "Use Modern Minimalist Aesthetics", description: "Clean lines, neutral palettes with accent colors, and clutter-free surfaces resonate with the tech-forward lifestyle of Electronic City residents." },
+      { title: "Plan for Growing Families", description: "Many Electronic City residents are young families. Design adaptable kids' rooms, ample storage, and family-friendly kitchen layouts with safety features." }
+    ]
   };
 
   return (

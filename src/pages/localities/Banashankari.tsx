@@ -45,7 +45,20 @@ const Banashankari = () => {
       }
     ],
     nearbyAreas: ["1st-6th Stage Banashankari", "Kathriguppe", "Padmanabhanagar", "JP Nagar", "Jayanagar", "Kumaraswamy Layout"],
-    specialties: ["Traditional Design", "Pooja Room", "Family Home Interior", "Kitchen Renovation", "Vastu-Compliant Design"]
+    specialties: ["Traditional Design", "Pooja Room", "Family Home Interior", "Kitchen Renovation", "Vastu-Compliant Design"],
+    lifestyleDescription: "Banashankari is one of Bangalore's most culturally rich residential areas, known for the famous Banashankari Temple, traditional markets, and strong community bonds. Families here value heritage, Vastu compliance, and designs that honor South Indian traditions while embracing modern comfort.",
+    landmarks: [
+      { name: "Banashankari Temple", description: "The iconic temple defines the neighborhood's spiritual character. Homes near the temple often feature elaborate pooja rooms and traditional architectural elements.", type: "landmark" as const },
+      { name: "ISKON Temple Area", description: "The spiritual corridor attracts families who prefer Vastu-compliant designs with dedicated meditation spaces and serene interiors.", type: "landmark" as const },
+      { name: "Kathriguppe & Padmanabhanagar", description: "Established residential areas with independent houses perfect for traditional South Indian kitchen designs and spacious family layouts.", type: "residential" as const },
+      { name: "Banashankari BDA Complex", description: "The commercial hub with modern apartments needing contemporary designs that blend with the neighborhood's traditional character.", type: "lifestyle" as const }
+    ],
+    designTips: [
+      { title: "Design a Traditional Pooja Room", description: "Banashankari families value elaborate pooja rooms. Use teak wood shelving, brass bell holders, marble flooring, and warm backlighting for a sacred ambiance." },
+      { title: "Incorporate Vastu Principles", description: "Place the kitchen in the southeast, master bedroom in southwest, and pooja room in the northeast. Use warm earth tones and avoid dark colors in prayer areas." },
+      { title: "Plan for Joint Family Living", description: "Many Banashankari homes house joint families. Design flexible spaces with privacy partitions, multiple storage zones, and a large communal kitchen." },
+      { title: "Blend Traditional with Modern", description: "Use traditional carved wood elements alongside modern modular kitchen fittings. Brass and copper accents complement both classic and contemporary aesthetics." }
+    ]
   };
 
   return (

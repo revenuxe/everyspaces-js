@@ -45,7 +45,20 @@ const Sadashivanagar = () => {
       }
     ],
     nearbyAreas: ["Palace Road", "Sankey Road", "Vasanth Nagar", "Malleshwaram", "Palace Guttahalli", "Jayamahal"],
-    specialties: ["Luxury Bungalow", "Imported Finishes", "Grand Living Spaces", "Entertainment Room", "Private Suite Design"]
+    specialties: ["Luxury Bungalow", "Imported Finishes", "Grand Living Spaces", "Entertainment Room", "Private Suite Design"],
+    lifestyleDescription: "Sadashivanagar is Bangalore's most prestigious residential address, home to sprawling bungalows, diplomatic residences, and some of the city's wealthiest families. Located near Palace Road and Sankey Tank, this exclusive neighborhood demands the finest interior craftsmanship with imported materials and bespoke luxury designs.",
+    landmarks: [
+      { name: "Palace Road & Raj Bhavan", description: "The regal Palace Road sets the tone for grand, palatial interiors. Homes here feature marble flooring, ornate ceiling work, and museum-quality art displays.", type: "landmark" as const },
+      { name: "Sankey Tank Lakeside", description: "The serene lakeside location inspires refined interiors with large French windows, outdoor entertaining areas, and nature-connected design philosophies.", type: "nature" as const },
+      { name: "Sadashivanagar Heritage Bungalows", description: "Colonial-era bungalows with sprawling gardens, double-height ceilings, and original architectural details that require sensitive luxury restoration.", type: "residential" as const },
+      { name: "Vasanth Nagar & Jayamahal Extension", description: "Upscale extensions with newer luxury villas needing contemporary high-end interiors with smart home integration and designer finishes.", type: "lifestyle" as const }
+    ],
+    designTips: [
+      { title: "Source Premium Imported Materials", description: "Sadashivanagar homes deserve the finest—Italian marble, European oak flooring, German kitchen systems, and designer lighting from international brands." },
+      { title: "Design Grand Entrance Foyers", description: "Create dramatic double-height foyers with statement chandeliers, curved staircases, imported stone flooring, and commissioned art installations." },
+      { title: "Create Private Suite Experiences", description: "Master suites should include walk-in closets, ensuite spa bathrooms with rain showers, private sitting areas, and automated curtain systems." },
+      { title: "Plan Entertainment & Social Spaces", description: "Design dedicated entertainment rooms with home bars, wine cellars, cigar lounges, and home theatres for Sadashivanagar's social lifestyle." }
+    ]
   };
 
   return (

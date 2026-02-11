@@ -45,7 +45,20 @@ const Basavanagudi = () => {
       }
     ],
     nearbyAreas: ["Gandhi Bazaar", "DVG Road", "NR Colony", "Hanumanthanagar", "Jayanagar", "Shankarapuram"],
-    specialties: ["Heritage Preservation", "Traditional Kitchen", "Wooden Craftsmanship", "Cultural Design", "Antique Integration"]
+    specialties: ["Heritage Preservation", "Traditional Kitchen", "Wooden Craftsmanship", "Cultural Design", "Antique Integration"],
+    lifestyleDescription: "Basavanagudi is Bangalore's cultural heart, home to the iconic Bull Temple, the vibrant Gandhi Bazaar, and some of the city's oldest heritage homes. This neighborhood demands interior designs that respect its rich architectural legacy while thoughtfully introducing modern amenities.",
+    landmarks: [
+      { name: "Bull Temple & Bugle Rock", description: "The ancient Nandi Temple and Bugle Rock park define Basavanagudi's heritage. Homes nearby often feature traditional stone and wood elements inspired by these landmarks.", type: "landmark" as const },
+      { name: "Gandhi Bazaar", description: "The bustling traditional market street with flower vendors and old-world shops. Homes along this area benefit from sound insulation and heritage-style facades.", type: "lifestyle" as const },
+      { name: "DVG Road & NR Colony", description: "Tree-lined residential streets with classic bungalows featuring original Burma teak woodwork, vintage tiles, and courtyard layouts worth preserving.", type: "residential" as const },
+      { name: "Lalbagh Botanical Garden", description: "Proximity to Lalbagh inspires biophilic interiors with lush indoor gardens, natural stone elements, and earthy color palettes.", type: "nature" as const }
+    ],
+    designTips: [
+      { title: "Preserve Original Woodwork", description: "Basavanagudi's heritage homes have beautiful Burma teak doors and windows. Restore rather than replace—professional polishing can revive decades-old wood to its former glory." },
+      { title: "Respect the Courtyard Layout", description: "Traditional Basavanagudi homes center around courtyards. Maintain this open-air element while adding glass roofing or skylight options for weather protection." },
+      { title: "Use Traditional South Indian Kitchen Design", description: "Incorporate traditional features like grinding stone niches, brass vessel storage, and wet-dry kitchen separation while adding modern appliances discreetly." },
+      { title: "Integrate Antiques Thoughtfully", description: "Display family heirlooms, brass collectibles, and vintage furniture alongside modern pieces. Glass-front cabinets with LED lighting showcase antiques beautifully." }
+    ]
   };
 
   return (
