@@ -45,7 +45,20 @@ const RTNagar = () => {
       }
     ],
     nearbyAreas: ["HBR Layout", "Ganganagar", "Kammanahalli", "HRBR Layout", "Sahakara Nagar", "Hebbal"],
-    specialties: ["Affordable Design", "Value for Money", "Compact Solutions", "Modern Kitchen", "Family-Friendly Interior"]
+    specialties: ["Affordable Design", "Value for Money", "Compact Solutions", "Modern Kitchen", "Family-Friendly Interior"],
+    lifestyleDescription: "RT Nagar is a well-established North Bangalore residential area known for its tree-canopied streets, strong community feel, and excellent connectivity. With a mix of older independent houses and newer apartment complexes, RT Nagar attracts middle-class families seeking quality interiors at competitive prices.",
+    landmarks: [
+      { name: "RT Nagar Main Road", description: "The bustling main road connects to major areas. Apartments along this stretch need sound-insulated designs with efficient space planning.", type: "landmark" as const },
+      { name: "Ganganagar & Kammanahalli", description: "Adjacent residential areas with growing apartment complexes. Modern designs with smart storage solutions are highly sought after here.", type: "residential" as const },
+      { name: "HMT Factory Area", description: "The historic HMT precinct has seen rapid residential development. New constructions here need fresh, contemporary interior treatments.", type: "lifestyle" as const },
+      { name: "RT Nagar Parks & Green Corridors", description: "Local parks and tree-lined streets inspire residents to incorporate greenery into their homes with indoor plants and natural materials.", type: "nature" as const }
+    ],
+    designTips: [
+      { title: "Get Maximum Value for Budget", description: "RT Nagar families appreciate value. Invest in quality kitchen and wardrobe hardware that lasts, and save on decorative elements with DIY touches." },
+      { title: "Modernize Older Apartments", description: "Many RT Nagar apartments are 15-20 years old. Refresh them with modern modular kitchen, updated wardrobes, and fresh false ceiling without full reconstruction." },
+      { title: "Design Child-Friendly Spaces", description: "With many young families, incorporate rounded furniture edges, easy-clean surfaces, dedicated study areas, and playful kids' room designs." },
+      { title: "Optimize Kitchen for Indian Cooking", description: "RT Nagar families cook daily. Ensure powerful chimney placement, adequate counter space for grinding and chopping, and separate wet-dry zones." }
+    ]
   };
 
   return (

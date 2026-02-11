@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
+import RelatedLocalities from "@/components/RelatedLocalities";
 import { 
   StructuredData, 
   createServiceSchema, 
@@ -336,6 +337,7 @@ const ServiceFullHome = () => {
         </section>
 
         <RelatedServices currentSlug="full-home-design" />
+        <RelatedLocalities currentSlug="electronic-city" />
 
         <FAQSection />
 

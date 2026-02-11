@@ -45,7 +45,20 @@ const Vijayanagar = () => {
       }
     ],
     nearbyAreas: ["RPC Layout", "Attiguppe", "Hosahalli", "Hampi Nagar", "Rajajinagar", "Basaveshwaranagar"],
-    specialties: ["Complete Renovation", "Family Home Design", "Child-Safe Interiors", "Elder-Friendly Features", "Storage Solutions"]
+    specialties: ["Complete Renovation", "Family Home Design", "Child-Safe Interiors", "Elder-Friendly Features", "Storage Solutions"],
+    lifestyleDescription: "Vijayanagar is West Bangalore's most sought-after family neighborhood, known for its well-maintained BDA layouts, excellent schools, and strong community bonds. With a perfect mix of independent houses and modern apartments, Vijayanagar families invest in complete home transformations that cater to all generations under one roof.",
+    landmarks: [
+      { name: "RPC Layout & Chord Road", description: "The premium residential extension with spacious independent houses. Homes here feature formal living rooms, large kitchens, and dedicated pooja spaces.", type: "residential" as const },
+      { name: "Vijayanagar BDA Complex", description: "The commercial center with modern apartments needing contemporary interiors that still respect the neighborhood's family-oriented values.", type: "lifestyle" as const },
+      { name: "Attiguppe Metro & Connectivity", description: "Metro connectivity has boosted Vijayanagar's appeal. Modern apartments near the station benefit from smart, space-efficient designs.", type: "landmark" as const },
+      { name: "Hosahalli Green Corridor", description: "Tree-lined residential streets inspiring nature-themed interiors with indoor gardens, wooden elements, and earthy color palettes.", type: "nature" as const }
+    ],
+    designTips: [
+      { title: "Design for Joint Family Harmony", description: "Vijayanagar's joint families need private bedrooms with shared common areas. Create visual separation using partitions, level changes, and furniture placement." },
+      { title: "Add Elder-Friendly Features", description: "Include grab bars in bathrooms, non-slip flooring, wider doorways, lever-type handles, and night lights in hallways for senior family members." },
+      { title: "Create Child-Safe Environments", description: "Round furniture corners, secure heavy furniture to walls, use non-toxic paints, install window locks, and choose durable, easy-clean surfaces." },
+      { title: "Maximize Storage Throughout", description: "Vijayanagar families accumulate belongings over generations. Plan storage in every room—loft spaces, under-bed drawers, and built-in cabinets." }
+    ]
   };
 
   return (

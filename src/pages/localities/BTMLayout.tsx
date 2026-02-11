@@ -45,7 +45,20 @@ const BTMLayout = () => {
       }
     ],
     nearbyAreas: ["1st Stage BTM", "2nd Stage BTM", "Madiwala", "Koramangala", "HSR Layout", "JP Nagar"],
-    specialties: ["Budget-Friendly Design", "Compact Solutions", "Modular Kitchen", "Rental Property Interior", "Quick Installation"]
+    specialties: ["Budget-Friendly Design", "Compact Solutions", "Modular Kitchen", "Rental Property Interior", "Quick Installation"],
+    lifestyleDescription: "BTM Layout is Bangalore's bustling IT corridor neighborhood, home to thousands of young professionals and startup founders. With its mix of affordable apartments, PG accommodations, and family homes across 1st and 2nd Stage, BTM demands smart, budget-friendly interiors that maximize space without compromising style.",
+    landmarks: [
+      { name: "Silk Board Junction & ORR", description: "The gateway to BTM Layout connects to major IT parks. Apartments near Silk Board benefit from sound-insulated designs and compact, efficient layouts.", type: "landmark" as const },
+      { name: "BTM Lake & Parks", description: "Green spaces like Madiwala Lake inspire nature-themed interiors with indoor plants, earthy tones, and balcony gardens in nearby apartments.", type: "nature" as const },
+      { name: "1st Stage Commercial Area", description: "The vibrant commercial hub with cafes, co-working spaces, and startups. Homes here need modern, urban aesthetics with dedicated work zones.", type: "lifestyle" as const },
+      { name: "2nd Stage Residential Pocket", description: "Quieter family-oriented area with independent houses and established apartments. Perfect for spacious family interiors with traditional touches.", type: "residential" as const }
+    ],
+    designTips: [
+      { title: "Maximize Compact Spaces", description: "BTM apartments are often compact. Use wall-mounted storage, foldable furniture, and multi-purpose units to make every square foot count." },
+      { title: "Create a Productive Work Corner", description: "With many residents working in tech, a dedicated workspace with good lighting, cable management, and ergonomic setup is essential." },
+      { title: "Choose Durable, Low-Maintenance Materials", description: "For rental properties, opt for laminate finishes, scratch-resistant countertops, and easy-to-clean surfaces that withstand tenant turnover." },
+      { title: "Add Vertical Storage Solutions", description: "Tall units, loft storage, and wall-mounted shelves help utilize vertical space in BTM's typically compact floor plans." }
+    ]
   };
 
   return (

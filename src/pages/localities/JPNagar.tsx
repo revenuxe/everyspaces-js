@@ -45,7 +45,20 @@ const JPNagar = () => {
       }
     ],
     nearbyAreas: ["1st-9th Phase JP Nagar", "Bannerghatta Road", "Jayanagar", "BTM Layout", "Sarakki", "Dollars Colony"],
-    specialties: ["Family Home Design", "Traditional Pooja Room", "Modular Kitchen", "Bedroom Interior", "Dining Area Design"]
+    specialties: ["Family Home Design", "Traditional Pooja Room", "Modular Kitchen", "Bedroom Interior", "Dining Area Design"],
+    lifestyleDescription: "JP Nagar is one of Bangalore's most established and family-friendly neighborhoods, spanning nine well-organized phases. Known for its tree-lined streets, excellent schools, and the famous Bannerghatta Road connectivity, JP Nagar attracts families seeking a perfect balance of traditional values and modern convenience.",
+    landmarks: [
+      { name: "JP Nagar 6th Phase & Sarakki Market", description: "The commercial hub of JP Nagar with the popular Sarakki weekend market. Homes here blend contemporary design with functional Indian kitchen layouts.", type: "lifestyle" as const },
+      { name: "Bannerghatta National Park Proximity", description: "The nearby national park inspires nature-themed interiors with earthy tones, wooden accents, and biophilic elements in JP Nagar homes.", type: "nature" as const },
+      { name: "Dollars Colony & Premium Phases", description: "Upscale residential pockets with independent houses and premium apartments requiring sophisticated interior treatments.", type: "residential" as const },
+      { name: "JP Nagar Metro Station", description: "Excellent metro connectivity makes JP Nagar accessible. Modern apartments near the metro need space-efficient, contemporary designs.", type: "landmark" as const }
+    ],
+    designTips: [
+      { title: "Design for Multi-Generational Living", description: "JP Nagar's family homes often house three generations. Create distinct zones for elders, parents, and children with shared family spaces that bring everyone together." },
+      { title: "Optimize the Indian Kitchen", description: "JP Nagar families love cooking. Design spacious kitchens with separate wet and dry areas, ample storage for utensils, and powerful chimney placement for Indian cooking." },
+      { title: "Create Inviting Dining Areas", description: "Family meals are central to JP Nagar life. Invest in a 6-8 seater dining setup with warm pendant lighting and a nearby crockery display unit." },
+      { title: "Add Green Balcony Gardens", description: "JP Nagar's pleasant weather is perfect for balcony gardens. Design planter boxes, vertical gardens, and cozy seating for evening tea time." }
+    ]
   };
 
   return (

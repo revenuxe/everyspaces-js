@@ -45,7 +45,20 @@ const Marathahalli = () => {
       }
     ],
     nearbyAreas: ["Brookefield", "Kundalahalli", "AECS Layout", "Varthur", "Bellandur", "HAL Airport Road"],
-    specialties: ["Compact Design", "Smart Storage", "Modular Kitchen", "Home Office", "Bachelor Pad Interior"]
+    specialties: ["Compact Design", "Smart Storage", "Modular Kitchen", "Home Office", "Bachelor Pad Interior"],
+    lifestyleDescription: "Marathahalli sits at the heart of Bangalore's IT corridor along the Outer Ring Road, making it one of the city's most dynamic neighborhoods. Popular among young IT professionals, couples, and small families, this locality demands modern, efficient interiors that maximize compact spaces while maintaining stylish urban aesthetics.",
+    landmarks: [
+      { name: "Outer Ring Road IT Corridor", description: "The ORR tech hub with major IT companies means residents want modern, low-maintenance interiors with dedicated home office spaces.", type: "lifestyle" as const },
+      { name: "Brookefield & AECS Layout", description: "Premium residential extensions with newer apartments offering modern layouts perfect for contemporary interior treatments.", type: "residential" as const },
+      { name: "Marathahalli Bridge & Old Town", description: "The historic bridge area with a mix of older and newer constructions. Renovation projects here transform outdated spaces into modern, functional homes.", type: "landmark" as const },
+      { name: "Kundalahalli Lake Area", description: "The rejuvenated lake area inspires nature-connected interiors with indoor plants, natural textures, and calming color schemes.", type: "nature" as const }
+    ],
+    designTips: [
+      { title: "Master Space-Saving Solutions", description: "Marathahalli's compact 2BHKs need Murphy beds, sliding wardrobes, wall-mounted desks, and multi-purpose furniture to maximize every inch." },
+      { title: "Design a Work-From-Home Setup", description: "Create a productive home office corner with proper task lighting, cable management, acoustic panels for video calls, and ergonomic seating." },
+      { title: "Choose Easy-Maintenance Materials", description: "Busy professionals prefer low-maintenance surfaces. Use anti-fingerprint laminates, quartz countertops, and stain-resistant fabrics." },
+      { title: "Add Personality to Compact Spaces", description: "Use accent walls, statement lighting, and curated art pieces to inject personality into Marathahalli's standard apartment layouts." }
+    ]
   };
 
   return (

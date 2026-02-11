@@ -45,7 +45,20 @@ const Hebbal = () => {
       }
     ],
     nearbyAreas: ["Kempapura", "Nagawara", "Manyata Tech Park", "Bellary Road", "Yelahanka", "Sahakara Nagar"],
-    specialties: ["Villa Interior", "Large Format Design", "Premium Kitchen", "Grand Living Room", "Outdoor Living"]
+    specialties: ["Villa Interior", "Large Format Design", "Premium Kitchen", "Grand Living Room", "Outdoor Living"],
+    lifestyleDescription: "Hebbal is North Bangalore's premium gateway, known for the scenic Hebbal Lake, proximity to the international airport, and the sprawling Manyata Tech Park. The area features a mix of luxury villas, premium apartments, and penthouse residences that demand sophisticated interiors with grand proportions.",
+    landmarks: [
+      { name: "Hebbal Lake", description: "The serene lake provides stunning views for premium apartments. We design panoramic living rooms with large windows and nature-inspired palettes to complement the lakeside setting.", type: "nature" as const },
+      { name: "Manyata Tech Park", description: "One of Asia's largest tech parks drives demand for modern, smart homes. Residents want home offices, entertainment zones, and contemporary aesthetics.", type: "lifestyle" as const },
+      { name: "Bellary Road Villa Corridor", description: "Premium villas along Bellary Road offer expansive spaces ideal for grand entrance foyers, double-height living rooms, and landscaped outdoor areas.", type: "residential" as const },
+      { name: "Hebbal Flyover & Airport Road", description: "The strategic location near the airport makes Hebbal popular with frequent travelers who appreciate organized, low-maintenance luxury interiors.", type: "landmark" as const }
+    ],
+    designTips: [
+      { title: "Design Grand Villa Entrances", description: "Hebbal villas have spacious foyers. Create dramatic first impressions with statement lighting, feature walls in stone or wood, and elegant console tables." },
+      { title: "Maximize Lake Views with Open Layouts", description: "For lake-facing apartments, use open-plan living-dining areas, glass railings on balconies, and strategically placed mirrors to extend visual depth." },
+      { title: "Create Outdoor Living Spaces", description: "Hebbal's pleasant climate makes outdoor areas valuable. Design covered patios, landscaped terraces, and poolside lounges for villas." },
+      { title: "Plan Airport-Ready Wardrobes", description: "For frequent travelers, design walk-in closets with dedicated luggage storage, garment bags section, and organized accessory drawers for easy packing." }
+    ]
   };
 
   return (
