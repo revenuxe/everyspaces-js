@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "./components/ScrollToTop";
+import DomainRedirect from "./components/DomainRedirect";
 import QuotationPopup from "./components/QuotationPopup";
 import Index from "./pages/Index";
 import Bangalore from "./pages/Bangalore";
@@ -74,6 +75,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <DomainRedirect />
           <QuotationPopup />
           <Routes>
             <Route path="/" element={<Index />} />
