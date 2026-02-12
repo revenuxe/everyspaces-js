@@ -17,13 +17,13 @@ const blogSchema = {
   "@type": "Blog",
   "name": "Intorza Interior Design Blog",
   "description": "Expert interior design tips, renovation guides & trending home decor ideas for Bangalore homeowners",
-  "url": "https://intorza.in/articles",
+  "url": "https://intorza.com/articles",
   "publisher": {
     "@type": "Organization",
     "name": "Intorza",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://intorza.in/logo.png"
+      "url": "https://intorza.com/logo.png"
     }
   }
 };
@@ -68,11 +68,11 @@ const Articles = () => {
           name="description"
           content="Read expert interior design tips, renovation guides & trending home decor ideas. Get inspired with Intorza's blog for Bangalore homeowners."
         />
-        <link rel="canonical" href="https://intorza.in/articles" />
+        <link rel="canonical" href="https://intorza.com/articles" />
       </Helmet>
       <StructuredData data={[blogSchema, createBreadcrumbSchema([
-        { name: "Home", url: "https://intorza.in" },
-        { name: "Articles", url: "https://intorza.in/articles" }
+        { name: "Home", url: "https://intorza.com" },
+        { name: "Articles", url: "https://intorza.com/articles" }
       ])]} />
 
       <Header />

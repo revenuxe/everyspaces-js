@@ -58,8 +58,8 @@ const aeoSchemas = [
   contactPageSchema,
   localBusinessSchema,
   createBreadcrumbSchema([
-    { name: "Home", url: "https://intorza.in" },
-    { name: "Contact", url: "https://intorza.in/contact" }
+    { name: "Home", url: "https://intorza.com" },
+    { name: "Contact", url: "https://intorza.com/contact" }
   ]),
   createFAQSchema(contactFAQs, 'contact')
 ];
@@ -133,13 +133,13 @@ const Contact = () => {
           content="Book free interior design consultation in Bangalore with Intorza. Call +91-9886579923, WhatsApp, or fill our form. Response within 24 hours guaranteed!"
         />
         <meta name="keywords" content="contact interior designer bangalore, free consultation interior design, interior design quote bangalore" />
-        <link rel="canonical" href="https://intorza.in/contact" />
+        <link rel="canonical" href="https://intorza.com/contact" />
         
         {/* AEO meta tags */}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="Contact Intorza | Free Interior Design Consultation Bangalore" />
         <meta property="og:description" content="Book a free site visit with Bangalore's top interior designers. Call +91-9886579923 or fill our form for a quick quote." />
-        <meta property="og:url" content="https://intorza.in/contact" />
+        <meta property="og:url" content="https://intorza.com/contact" />
         <meta property="og:type" content="website" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
