@@ -116,10 +116,10 @@ const LocalityPageTemplate = ({
   const localitySchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": `https://intorza.in/bangalore/${slug}#localbusiness`,
+    "@id": `https://intorza.com/bangalore/${slug}#localbusiness`,
     "name": `Intorza Interior Designers ${localityName}`,
     "image": heroImage,
-    "url": `https://intorza.in/bangalore/${slug}`,
+    "url": `https://intorza.com/bangalore/${slug}`,
     "telephone": "+91-9886579923",
     "email": "intorza.com@gmail.com",
     "description": seoData.metaDescription,
@@ -169,7 +169,7 @@ const LocalityPageTemplate = ({
   const serviceSchema = createServiceSchema(
     `Interior Design Services in ${localityName}`,
     seoData.metaDescription,
-    `https://intorza.in/bangalore/${slug}`,
+    `https://intorza.com/bangalore/${slug}`,
     heroImage,
     "150000-2500000",
     {
@@ -181,9 +181,9 @@ const LocalityPageTemplate = ({
 
   // Breadcrumb schema
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: "Home", url: "https://intorza.in" },
-    { name: "Bangalore", url: "https://intorza.in/bangalore" },
-    { name: localityName, url: `https://intorza.in/bangalore/${slug}` }
+    { name: "Home", url: "https://intorza.com" },
+    { name: "Bangalore", url: "https://intorza.com/bangalore" },
+    { name: localityName, url: `https://intorza.com/bangalore/${slug}` }
   ], `bangalore/${slug}`);
 
   // FAQ schema with locality-specific FAQs
@@ -193,15 +193,15 @@ const LocalityPageTemplate = ({
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `https://intorza.in/bangalore/${slug}#webpage`,
-    "url": `https://intorza.in/bangalore/${slug}`,
+    "@id": `https://intorza.com/bangalore/${slug}#webpage`,
+    "url": `https://intorza.com/bangalore/${slug}`,
     "name": seoData.metaTitle,
     "description": seoData.metaDescription,
     "isPartOf": {
-      "@id": "https://intorza.in/#website"
+      "@id": "https://intorza.com/#website"
     },
     "about": {
-      "@id": `https://intorza.in/bangalore/${slug}#localbusiness`
+      "@id": `https://intorza.com/bangalore/${slug}#localbusiness`
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
@@ -217,7 +217,7 @@ const LocalityPageTemplate = ({
       ]
     },
     "breadcrumb": {
-      "@id": `https://intorza.in/bangalore/${slug}#breadcrumb`
+      "@id": `https://intorza.com/bangalore/${slug}#breadcrumb`
     }
   };
 
@@ -225,7 +225,7 @@ const LocalityPageTemplate = ({
   const placeSchema = {
     "@context": "https://schema.org",
     "@type": "Place",
-    "@id": `https://intorza.in/bangalore/${slug}#place`,
+    "@id": `https://intorza.com/bangalore/${slug}#place`,
     "name": `${localityName}, Bangalore`,
     "description": `Interior design services available in ${localityName}, Bangalore by Intorza`,
     "address": {
@@ -246,7 +246,7 @@ const LocalityPageTemplate = ({
         <title>{seoData.metaTitle}</title>
         <meta name="description" content={seoData.metaDescription} />
         <meta name="keywords" content={seoData.keywords.join(", ")} />
-        <link rel="canonical" href={`https://intorza.in/bangalore/${slug}`} />
+        <link rel="canonical" href={`https://intorza.com/bangalore/${slug}`} />
         
         {/* Robots meta for better crawling */}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -261,7 +261,7 @@ const LocalityPageTemplate = ({
         <meta property="og:title" content={seoData.ogTitle} />
         <meta property="og:description" content={seoData.ogDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://intorza.in/bangalore/${slug}`} />
+        <meta property="og:url" content={`https://intorza.com/bangalore/${slug}`} />
         <meta property="og:image" content={heroImage} />
         <meta property="og:locale" content="en_IN" />
         <meta property="og:site_name" content="Intorza" />

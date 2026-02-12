@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <a href="https://intorza.in/" aria-label="Intorza Home - Best Interior Designers in Bangalore">
+            <a href="https://intorza.com/" aria-label="Intorza Home - Best Interior Designers in Bangalore">
               <img
                 src={intorzaLogo}
                 alt="Intorza Interior Design Bangalore"

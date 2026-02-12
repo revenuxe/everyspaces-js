@@ -47,7 +47,7 @@ const services = [
 const servicesListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "@id": "https://intorza.in/services#itemlist",
+  "@id": "https://intorza.com/services#itemlist",
   "name": "Interior Design Services by Intorza Bangalore",
   "description": "Comprehensive list of 20+ interior design services offered by Intorza in Bangalore including modular kitchens, wardrobes, living rooms, bedrooms, and complete home interiors.",
   "numberOfItems": services.length,
@@ -58,11 +58,11 @@ const servicesListSchema = {
       "@type": "Service",
       "name": service.title,
       "description": service.description,
-      "url": `https://intorza.in${service.link}`,
+      "url": `https://intorza.com${service.link}`,
       "provider": {
         "@type": "Organization",
         "name": "Intorza",
-        "@id": "https://intorza.in/#organization"
+        "@id": "https://intorza.com/#organization"
       },
       "areaServed": {
         "@type": "City",
@@ -90,8 +90,8 @@ const Services = () => {
     servicesListSchema,
     professionalServiceSchema,
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.in" },
-      { name: "Services", url: "https://intorza.in/services" }
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" }
     ]),
     createFAQSchema(servicesFAQs, 'services')
   ];
@@ -105,13 +105,13 @@ const Services = () => {
           content="Explore 20+ interior design services by Intorza Bangalore. Modular kitchen, wardrobe, living room, bedroom, 2BHK, 3BHK, villa interiors & more. Free consultation!"
         />
         <meta name="keywords" content="interior design services bangalore, home interior services, modular kitchen service, wardrobe design service, full home interior bangalore" />
-        <link rel="canonical" href="https://intorza.in/services" />
+        <link rel="canonical" href="https://intorza.com/services" />
         
         {/* AEO meta tags */}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="20+ Interior Design Services in Bangalore - Intorza" />
         <meta property="og:description" content="Complete interior design services: modular kitchen, wardrobe, living room, bedroom, 2BHK, 3BHK, villa. 10-year warranty, free consultation!" />
-        <meta property="og:url" content="https://intorza.in/services" />
+        <meta property="og:url" content="https://intorza.com/services" />
         <meta property="og:type" content="website" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
