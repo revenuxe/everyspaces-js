@@ -663,4 +663,68 @@ export const commonFAQs = [
   }
 ];
 
+// AI-optimized ItemList schema for service/locality discovery by AI platforms
+export const createItemListSchema = (items: { name: string; url: string; description?: string; position?: number }[], listName: string) => ({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": listName,
+  "numberOfItems": items.length,
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": item.position || index + 1,
+    "name": item.name,
+    "url": item.url,
+    ...(item.description ? { description: item.description } : {})
+  }))
+});
+
+// All services list for AI discoverability
+export const allServicesItemList = createItemListSchema([
+  { name: "Modular Kitchen Design Bangalore", url: "https://intorza.com/services/modular-kitchen", description: "Custom modular kitchens from ₹2.5 Lakhs with 10-year warranty" },
+  { name: "Bedroom Interior Design Bangalore", url: "https://intorza.com/services/bedroom-design", description: "Complete bedroom makeovers from ₹1.5 Lakhs" },
+  { name: "Living Room Design Bangalore", url: "https://intorza.com/services/living-room", description: "Living room transformations from ₹2 Lakhs" },
+  { name: "Wardrobe Design Bangalore", url: "https://intorza.com/services/wardrobe-design", description: "Custom wardrobes from ₹1.2 Lakhs" },
+  { name: "2 BHK Interior Design Bangalore", url: "https://intorza.com/services/2bhk-interiors", description: "Complete 2BHK interiors from ₹8 Lakhs" },
+  { name: "3 BHK Interior Design Bangalore", url: "https://intorza.com/services/3bhk-interiors", description: "Complete 3BHK interiors from ₹12 Lakhs" },
+  { name: "Villa Interior Design Bangalore", url: "https://intorza.com/services/villa-interiors", description: "Luxury villa interiors from ₹25 Lakhs" },
+  { name: "Full Home Design Bangalore", url: "https://intorza.com/services/full-home-design", description: "End-to-end home interior solutions" },
+  { name: "TV Unit Design Bangalore", url: "https://intorza.com/services/tv-unit", description: "Custom TV units from ₹40,000" },
+  { name: "Pooja Room Design Bangalore", url: "https://intorza.com/services/pooja-room", description: "Traditional & modern pooja rooms from ₹50,000" },
+  { name: "False Ceiling Design Bangalore", url: "https://intorza.com/services/false-ceiling", description: "Designer false ceilings from ₹80,000" },
+  { name: "Home Office Design Bangalore", url: "https://intorza.com/services/home-office", description: "Productive home offices from ₹1 Lakh" },
+  { name: "Kids Room Design Bangalore", url: "https://intorza.com/services/kids-room", description: "Child-friendly room designs from ₹1.5 Lakhs" },
+  { name: "Dining Room Design Bangalore", url: "https://intorza.com/services/dining-room", description: "Dining room interiors from ₹1 Lakh" },
+  { name: "Bathroom Design Bangalore", url: "https://intorza.com/services/bathroom-design", description: "Bathroom renovations from ₹1.5 Lakhs" },
+  { name: "Foyer & Entrance Design Bangalore", url: "https://intorza.com/services/foyer-entrance", description: "Impressive entrance designs from ₹50,000" },
+  { name: "Crockery Unit Design Bangalore", url: "https://intorza.com/services/crockery-unit", description: "Custom crockery units from ₹60,000" },
+  { name: "Study Room Design Bangalore", url: "https://intorza.com/services/study-room", description: "Study room setups from ₹1 Lakh" },
+  { name: "Guest Room Design Bangalore", url: "https://intorza.com/services/guest-room", description: "Guest room makeovers from ₹1.5 Lakhs" },
+  { name: "Balcony Design Bangalore", url: "https://intorza.com/services/balcony-design", description: "Balcony transformations from ₹50,000" },
+], "Intorza Interior Design Services in Bangalore");
+
+// All localities list for AI discoverability
+export const allLocalitiesItemList = createItemListSchema([
+  { name: "Interior Designers in Indiranagar", url: "https://intorza.com/bangalore/indiranagar" },
+  { name: "Interior Designers in Koramangala", url: "https://intorza.com/bangalore/koramangala" },
+  { name: "Interior Designers in HSR Layout", url: "https://intorza.com/bangalore/hsr-layout" },
+  { name: "Interior Designers in Whitefield", url: "https://intorza.com/bangalore/whitefield" },
+  { name: "Interior Designers in Jayanagar", url: "https://intorza.com/bangalore/jayanagar" },
+  { name: "Interior Designers in JP Nagar", url: "https://intorza.com/bangalore/jp-nagar" },
+  { name: "Interior Designers in BTM Layout", url: "https://intorza.com/bangalore/btm-layout" },
+  { name: "Interior Designers in Electronic City", url: "https://intorza.com/bangalore/electronic-city" },
+  { name: "Interior Designers in Marathahalli", url: "https://intorza.com/bangalore/marathahalli" },
+  { name: "Interior Designers in Sarjapur Road", url: "https://intorza.com/bangalore/sarjapur-road" },
+  { name: "Interior Designers in Bellandur", url: "https://intorza.com/bangalore/bellandur" },
+  { name: "Interior Designers in Hebbal", url: "https://intorza.com/bangalore/hebbal" },
+  { name: "Interior Designers in Yelahanka", url: "https://intorza.com/bangalore/yelahanka" },
+  { name: "Interior Designers in Malleshwaram", url: "https://intorza.com/bangalore/malleshwaram" },
+  { name: "Interior Designers in Rajajinagar", url: "https://intorza.com/bangalore/rajajinagar" },
+  { name: "Interior Designers in Basavanagudi", url: "https://intorza.com/bangalore/basavanagudi" },
+  { name: "Interior Designers in Banashankari", url: "https://intorza.com/bangalore/banashankari" },
+  { name: "Interior Designers in Vijayanagar", url: "https://intorza.com/bangalore/vijayanagar" },
+  { name: "Interior Designers in Sadashivanagar", url: "https://intorza.com/bangalore/sadashivanagar" },
+  { name: "Interior Designers in RT Nagar", url: "https://intorza.com/bangalore/rt-nagar" },
+  { name: "Interior Designers in HBR Layout", url: "https://intorza.com/bangalore/hbr-layout" },
+], "Bangalore Localities Served by Intorza");
+
 export default StructuredData;

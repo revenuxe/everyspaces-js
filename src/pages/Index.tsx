@@ -21,7 +21,9 @@ import {
   howToInteriorDesignSchema,
   professionalServiceSchema,
   commonFAQs,
-  createFAQSchema
+  createFAQSchema,
+  allServicesItemList,
+  allLocalitiesItemList
 } from "@/components/StructuredData";
 
 const Index = () => {
@@ -34,7 +36,9 @@ const Index = () => {
     homePageSchema,
     howToInteriorDesignSchema,
     professionalServiceSchema,
-    createFAQSchema(commonFAQs, 'home')
+    createFAQSchema(commonFAQs, 'home'),
+    allServicesItemList,
+    allLocalitiesItemList
   ];
 
   return (
