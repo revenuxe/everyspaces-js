@@ -143,8 +143,8 @@ const Service2BHK = () => {
     createServiceSchema(
       "2 BHK Interior Design Bangalore",
       "Complete 2 BHK interior design packages in Bangalore starting ₹4 lakh. Includes modular kitchen, wardrobes, TV unit, and living room with 10-year warranty.",
-      "https://intorza.in/services/2bhk-interiors",
-      "https://intorza.in/service-2bhk.jpg",
+      "https://intorza.com/services/2bhk-interiors",
+      "https://intorza.com/service-2bhk.jpg",
       "400000-1200000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield", "Electronic City"],
@@ -152,16 +152,16 @@ const Service2BHK = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.in" },
-      { name: "Services", url: "https://intorza.in/services" },
-      { name: "2 BHK Interiors", url: "https://intorza.in/services/2bhk-interiors" }
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "2 BHK Interiors", url: "https://intorza.com/services/2bhk-interiors" }
     ]),
     createFAQSchema(bhk2FAQs, 'services/2bhk-interiors'),
     createProductSchema({
       name: "2 BHK Complete Interior Package",
       description: "Complete 2 BHK interior design in Bangalore including kitchen, wardrobes, TV unit, and living room. 45-60 day delivery with 10-year warranty.",
-      image: "https://intorza.in/service-2bhk.jpg",
-      url: "https://intorza.in/services/2bhk-interiors",
+      image: "https://intorza.com/service-2bhk.jpg",
+      url: "https://intorza.com/services/2bhk-interiors",
       priceRange: "400000-1200000",
       category: "Home Improvement > Complete Home Interior"
     })
@@ -179,11 +179,11 @@ const Service2BHK = () => {
           name="keywords"
           content="2 bhk interior design bangalore, 2bhk interior cost bangalore, 2 bhk home interior design, affordable 2bhk interiors, 2bhk flat interior design bangalore"
         />
-        <link rel="canonical" href="https://intorza.in/services/2bhk-interiors" />
+        <link rel="canonical" href="https://intorza.com/services/2bhk-interiors" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="2 BHK Interior Design Bangalore | From ₹4 Lakh - Intorza" />
         <meta property="og:description" content="Complete 2 BHK interiors from ₹4L. Kitchen, wardrobes, TV unit included. 45-day delivery, 10-year warranty!" />
-        <meta property="og:url" content="https://intorza.in/services/2bhk-interiors" />
+        <meta property="og:url" content="https://intorza.com/services/2bhk-interiors" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

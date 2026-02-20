@@ -88,8 +88,8 @@ const ServiceBedroom = () => {
     createServiceSchema(
       "Bedroom Interior Design Bangalore",
       "Expert bedroom designers in Bangalore offering master bedroom, kids room, and guest room interiors with custom wardrobes and ambient lighting.",
-      "https://intorza.in/services/bedroom-design",
-      "https://intorza.in/service-bedroom.jpg",
+      "https://intorza.com/services/bedroom-design",
+      "https://intorza.com/service-bedroom.jpg",
       "120000-400000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -97,16 +97,16 @@ const ServiceBedroom = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.in" },
-      { name: "Services", url: "https://intorza.in/services" },
-      { name: "Bedroom Design", url: "https://intorza.in/services/bedroom-design" }
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "Bedroom Design", url: "https://intorza.com/services/bedroom-design" }
     ]),
     createFAQSchema(bedroomFAQs, 'services/bedroom-design'),
     createProductSchema({
       name: "Bedroom Interior Design",
       description: "Complete bedroom interior design in Bangalore including bed design, wardrobe, false ceiling, and ambient lighting. 10-year warranty included.",
-      image: "https://intorza.in/service-bedroom.jpg",
-      url: "https://intorza.in/services/bedroom-design",
+      image: "https://intorza.com/service-bedroom.jpg",
+      url: "https://intorza.com/services/bedroom-design",
       priceRange: "120000-400000",
       category: "Home Improvement > Bedroom"
     })
@@ -118,11 +118,11 @@ const ServiceBedroom = () => {
         <title>Bedroom Interior Design Bangalore | Master & Kids Room | Intorza</title>
         <meta name="description" content="Best bedroom designers in Bangalore. Master bedroom from ₹1.2L including wardrobe, bed design, false ceiling. 10-year warranty, free consultation!" />
         <meta name="keywords" content="bedroom interior design bangalore, master bedroom design, bedroom wardrobe design, luxury bedroom interiors, kids room design bangalore" />
-        <link rel="canonical" href="https://intorza.in/services/bedroom-design" />
+        <link rel="canonical" href="https://intorza.com/services/bedroom-design" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="Bedroom Interior Design Bangalore | Master & Kids Room - Intorza" />
         <meta property="og:description" content="Premium bedroom interiors from ₹1.2L. Custom wardrobes, bed design, false ceiling. 10-year warranty!" />
-        <meta property="og:url" content="https://intorza.in/services/bedroom-design" />
+        <meta property="og:url" content="https://intorza.com/services/bedroom-design" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

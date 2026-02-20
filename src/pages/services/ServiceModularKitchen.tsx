@@ -141,8 +141,8 @@ const ServiceModularKitchen = () => {
     createServiceSchema(
       "Modular Kitchen Design Bangalore",
       "Best modular kitchen designers in Bangalore offering L-shaped, U-shaped, parallel, and island kitchens with Hettich hardware, 10-year warranty, and 45-day delivery.",
-      "https://intorza.in/services/modular-kitchen",
-      "https://intorza.in/service-modular-kitchen.jpg",
+      "https://intorza.com/services/modular-kitchen",
+      "https://intorza.com/service-modular-kitchen.jpg",
       "150000-800000",
       {
         timeRequired: "P20D",
@@ -151,23 +151,23 @@ const ServiceModularKitchen = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.in" },
-      { name: "Services", url: "https://intorza.in/services" },
-      { name: "Modular Kitchen", url: "https://intorza.in/services/modular-kitchen" }
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "Modular Kitchen", url: "https://intorza.com/services/modular-kitchen" }
     ]),
     createFAQSchema(modularKitchenFAQs, 'services/modular-kitchen'),
     createProductSchema({
       name: "Modular Kitchen Design",
       description: "Premium modular kitchen design and installation in Bangalore with L-shaped, U-shaped, and island layouts. Includes Hettich/Hafele hardware, granite countertops, and 10-year warranty.",
-      image: "https://intorza.in/service-modular-kitchen.jpg",
-      url: "https://intorza.in/services/modular-kitchen",
+      image: "https://intorza.com/service-modular-kitchen.jpg",
+      url: "https://intorza.com/services/modular-kitchen",
       priceRange: "150000-800000",
       category: "Home Improvement > Kitchen"
     }),
     createQASchema(
       "What is the best modular kitchen design for small kitchen in Bangalore?",
       "For small kitchens in Bangalore, L-shaped or straight modular kitchen designs work best. Intorza specializes in space-saving solutions with corner units, tall units, and pull-out storage. Starting from ₹2.5 lakh with 10-year warranty.",
-      "https://intorza.in/services/modular-kitchen"
+      "https://intorza.com/services/modular-kitchen"
     )
   ];
 
@@ -183,13 +183,13 @@ const ServiceModularKitchen = () => {
           name="keywords"
           content="modular kitchen bangalore, modular kitchen design, kitchen interior design bangalore, l shaped kitchen, u shaped kitchen, island kitchen bangalore, modular kitchen cost bangalore"
         />
-        <link rel="canonical" href="https://intorza.in/services/modular-kitchen" />
+        <link rel="canonical" href="https://intorza.com/services/modular-kitchen" />
         
         {/* AEO meta tags */}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="Best Modular Kitchen Design in Bangalore | L-Shape, U-Shape, Island - Intorza" />
         <meta property="og:description" content="Premium modular kitchens from ₹2.5 lakh. Hettich hardware, 10-year warranty, 45-day delivery. 500+ kitchens installed in Bangalore." />
-        <meta property="og:url" content="https://intorza.in/services/modular-kitchen" />
+        <meta property="og:url" content="https://intorza.com/services/modular-kitchen" />
         <meta property="og:type" content="product" />
       </Helmet>
       <StructuredData data={aeoSchemas} />

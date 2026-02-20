@@ -142,8 +142,8 @@ const ServiceFullHome = () => {
     createServiceSchema(
       "Full Home Interior Design Bangalore",
       "Complete end-to-end home interior design in Bangalore. Kitchen, wardrobes, living room, bedrooms all included in one package with 10-year warranty.",
-      "https://intorza.in/services/full-home-design",
-      "https://intorza.in/service-full-home.jpg",
+      "https://intorza.com/services/full-home-design",
+      "https://intorza.com/service-full-home.jpg",
       "600000-2500000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield", "Electronic City"],
@@ -151,16 +151,16 @@ const ServiceFullHome = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.in" },
-      { name: "Services", url: "https://intorza.in/services" },
-      { name: "Full Home Design", url: "https://intorza.in/services/full-home-design" }
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "Full Home Design", url: "https://intorza.com/services/full-home-design" }
     ]),
     createFAQSchema(fullHomeFAQs, 'services/full-home-design'),
     createProductSchema({
       name: "Complete Home Interior Package",
       description: "End-to-end home interior design in Bangalore including kitchen, wardrobes, living room, and all bedrooms. 45-75 day delivery with 10-year warranty.",
-      image: "https://intorza.in/service-full-home.jpg",
-      url: "https://intorza.in/services/full-home-design",
+      image: "https://intorza.com/service-full-home.jpg",
+      url: "https://intorza.com/services/full-home-design",
       priceRange: "600000-2500000",
       category: "Home Improvement > Complete Home Interior"
     })
@@ -178,11 +178,11 @@ const ServiceFullHome = () => {
           name="keywords"
           content="full home interior design bangalore, complete home interiors, end to end interior design, home interior packages bangalore, turnkey interior solutions"
         />
-        <link rel="canonical" href="https://intorza.in/services/full-home-design" />
+        <link rel="canonical" href="https://intorza.com/services/full-home-design" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="Full Home Interior Design Bangalore - Intorza" />
         <meta property="og:description" content="Complete home interiors from ₹6L. Kitchen, wardrobes, living room all included. 45-day delivery, 10-year warranty!" />
-        <meta property="og:url" content="https://intorza.in/services/full-home-design" />
+        <meta property="og:url" content="https://intorza.com/services/full-home-design" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
