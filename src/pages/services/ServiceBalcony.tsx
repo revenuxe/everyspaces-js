@@ -84,8 +84,8 @@ const ServiceBalcony = () => {
     createServiceSchema(
       "Balcony Design Bangalore",
       "Transform your balcony into a beautiful outdoor space. Vertical gardens, outdoor seating, terrace design, and weather-proof furniture in Bangalore.",
-      "https://intorza.in/services/balcony-design",
-      "https://intorza.in/service-balcony.jpg",
+      "https://intorza.com/services/balcony-design",
+      "https://intorza.com/service-balcony.jpg",
       "20000-100000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -93,16 +93,16 @@ const ServiceBalcony = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.in" },
-      { name: "Services", url: "https://intorza.in/services" },
-      { name: "Balcony Design", url: "https://intorza.in/services/balcony-design" }
+      { name: "Home", url: "https://intorza.com" },
+      { name: "Services", url: "https://intorza.com/services" },
+      { name: "Balcony Design", url: "https://intorza.com/services/balcony-design" }
     ]),
     createFAQSchema(balconyFAQs, 'services/balcony-design'),
     createProductSchema({
       name: "Balcony & Terrace Design",
       description: "Balcony transformation services in Bangalore including vertical gardens, outdoor furniture, and terrace makeovers.",
-      image: "https://intorza.in/service-balcony.jpg",
-      url: "https://intorza.in/services/balcony-design",
+      image: "https://intorza.com/service-balcony.jpg",
+      url: "https://intorza.com/services/balcony-design",
       priceRange: "20000-100000",
       category: "Home Improvement > Outdoor Living"
     })
@@ -114,11 +114,11 @@ const ServiceBalcony = () => {
         <title>Balcony Design Bangalore | Terrace Garden Interior | Intorza</title>
         <meta name="description" content="Best balcony designers in Bangalore. Vertical gardens from ₹35K, outdoor seating, terrace design. Transform your outdoor space. Free quote!" />
         <meta name="keywords" content="balcony design bangalore, terrace garden, vertical garden bangalore, outdoor seating, balcony furniture, balcony makeover" />
-        <link rel="canonical" href="https://intorza.in/services/balcony-design" />
+        <link rel="canonical" href="https://intorza.com/services/balcony-design" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="Balcony & Terrace Design Bangalore - Intorza" />
         <meta property="og:description" content="Balcony makeovers from ₹20K. Vertical gardens, outdoor furniture, pergolas. Free consultation!" />
-        <meta property="og:url" content="https://intorza.in/services/balcony-design" />
+        <meta property="og:url" content="https://intorza.com/services/balcony-design" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
