@@ -153,7 +153,38 @@ export const localBusinessSchema = {
       "name": "Bangalore"
     }
   ],
-  "hasMap": "https://maps.google.com/?q=Intorza+HBR+Layout+Bangalore"
+  "hasMap": "https://maps.google.com/?q=Intorza+HBR+Layout+Bangalore",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "520",
+    "reviewCount": "485"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Priya Sharma" },
+      "datePublished": "2025-11-15",
+      "reviewBody": "Intorza transformed our 3BHK in Whitefield beautifully. The modular kitchen quality is outstanding and the team was very professional. Completed on time with great attention to detail.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Rahul Menon" },
+      "datePublished": "2025-10-22",
+      "reviewBody": "Got our full home interiors done by Intorza for our apartment in Sarjapur Road. Excellent design sense, premium materials, and the 10-year warranty gives great peace of mind.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Anitha Reddy" },
+      "datePublished": "2025-09-10",
+      "reviewBody": "We chose Intorza for our villa interior in Hebbal. The wardrobe designs and false ceiling work exceeded our expectations. Highly recommend for premium interiors in Bangalore.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    }
+  ]
 };
 
 // Website schema (enhanced for AEO with Speakable)
