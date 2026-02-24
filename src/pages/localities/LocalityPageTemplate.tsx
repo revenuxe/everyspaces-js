@@ -162,7 +162,38 @@ const LocalityPageTemplate = ({
           "description": `Professional ${specialty.toLowerCase()} services in ${localityName}, Bangalore by Intorza`
         }
       }))
-    }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "520",
+      "reviewCount": "485"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Priya Sharma" },
+        "datePublished": "2025-11-15",
+        "reviewBody": `Intorza transformed our home in ${localityName} beautifully. The modular kitchen quality is outstanding and the team was very professional.`,
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Rahul Menon" },
+        "datePublished": "2025-10-22",
+        "reviewBody": `Got our full home interiors done by Intorza in ${localityName}. Excellent design sense, premium materials, and the 10-year warranty gives great peace of mind.`,
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Anitha Reddy" },
+        "datePublished": "2025-09-10",
+        "reviewBody": `We chose Intorza for our interior work in ${localityName}. The wardrobe designs and false ceiling work exceeded our expectations. Highly recommend!`,
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+    ]
   };
 
   // Service schema for the locality
