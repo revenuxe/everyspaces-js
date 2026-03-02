@@ -93,12 +93,10 @@ const SPACE_FOLLOWUPS: Record<string, Array<{ key: string; message: string; opti
   ],
 };
 
-// Default fallback for spaces not in the map
 const DEFAULT_FOLLOWUPS = [
   { key: "vibe", message: "What style do you prefer? 🎨", options: ["Modern & Minimal", "Luxury", "Contemporary", "Traditional", "Budget-Friendly"] },
 ];
 
-// ── Tail questions (always come after space-specific ones) ──
 const TAIL_QUESTIONS = [
   {
     key: "budget",
@@ -134,8 +132,7 @@ const RECOMMENDATION_SCHEMA = `Return VALID JSON ONLY (no markdown) with this st
   },
   "designerSecret": "One insider tip specific to this exact space type",
   "estimatedBudget": {"low": "₹X,XX,XXX", "high": "₹X,XX,XXX", "note": "Breakdown specific to what's included for this space"},
-  "moodKeywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"],
-  "moodBoardQueries": ["very specific interior design image search query for this exact space and style 1", "query 2", "query 3", "query 4"]
+  "moodKeywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"]
 }`;
 
 const RETRY_DELAYS_MS = [1500, 3000];
@@ -160,6 +157,7 @@ const callGemini = async (apiKey: string, body: object): Promise<Response | null
   return response;
 };
 
+// ── Comprehensive space-specific fallback data ──
 const buildFallback = (allAnswers: Record<string, string>) => {
   const space = allAnswers.space || "Living Room";
   const vibe = allAnswers.vibe || "Modern";
@@ -167,85 +165,421 @@ const buildFallback = (allAnswers: Record<string, string>) => {
   const details = allAnswers.details || "None";
   const location = allAnswers.location || "Bangalore";
 
-  // Space-specific furniture, colors, materials
   const spaceData: Record<string, any> = {
     "Modular Kitchen": {
-      headline: `Your ${vibe} ${allAnswers.kitchen_shape || "L-Shaped"} Modular Kitchen`,
-      intro: `Imagine cooking in a beautifully designed ${allAnswers.kitchen_shape || "L-Shaped"} kitchen that's organized, stylish, and built for your lifestyle in ${location}.`,
+      headline: `Your ${vibe} ${allAnswers.kitchen_shape || "L-Shaped"} Modular Kitchen Design`,
+      intro: `A beautifully functional ${allAnswers.kitchen_shape || "L-Shaped"} modular kitchen designed for efficient cooking, smart storage, and ${vibe.toLowerCase()} aesthetics — tailored for your ${allAnswers.kitchen_size || "compact"} space in ${location}.`,
+      colorDesc: `Colors chosen for a ${vibe.toLowerCase()} kitchen — light uppers to open up space, darker lowers to hide stains, with an accent that ties it together.`,
       colors: [
         { name: "Cream White", shade: "Asian Paints 0520", hex: "#FAF3E8", usage: "Upper cabinets & walls" },
         { name: "Charcoal Grey", shade: "Berger 8P3245", hex: "#4A4A4A", usage: "Lower cabinets & countertop edge" },
         { name: "Warm Wood", shade: "Wood Tone", hex: "#A0764A", usage: "Open shelves & handles" },
-        { name: "Olive Accent", shade: "Asian Paints 8423", hex: "#7D8B6A", usage: "Backsplash tile or accent wall" },
+        { name: "Olive Accent", shade: "Asian Paints 8423", hex: "#7D8B6A", usage: "Backsplash tile or accent strip" },
       ],
+      furnitureDesc: `Furniture & modules designed for your ${allAnswers.kitchen_shape || "L-Shaped"} kitchen (${allAnswers.kitchen_size || "medium"} size), maximizing counter space and storage.`,
       furniture: [
-        { name: `${allAnswers.kitchen_shape || "L-Shaped"} Base Cabinets`, detail: "Floor cabinets with tandem drawers, soft-close channels — optimized for ${allAnswers.kitchen_size || 'compact'} space", priceRange: "₹45,000 - ₹1,20,000" },
-        { name: "Wall-Mounted Upper Cabinets", detail: "Lift-up shutters with glass profiles for easy access", priceRange: "₹25,000 - ₹65,000" },
-        { name: "Countertop", detail: "Quartz/granite slab with integrated sink cutout", priceRange: "₹15,000 - ₹45,000" },
-        { name: "Chimney & Hob Unit", detail: "Auto-clean chimney (Elica/Faber) + 3-burner hob", priceRange: "₹18,000 - ₹35,000" },
+        { name: `${allAnswers.kitchen_shape || "L-Shaped"} Base Cabinets`, detail: `Tandem drawers with soft-close, optimized for ${allAnswers.kitchen_size || "compact"} kitchen — internal cutlery trays & bottle pull-outs`, priceRange: "₹55,000 - ₹1,40,000" },
+        { name: "Wall-Mounted Upper Cabinets", detail: "Lift-up shutters with glass profile, 2-tier internal shelf for easy access", priceRange: "₹30,000 - ₹75,000" },
+        { name: "Quartz Countertop", detail: "20mm quartz slab with integrated sink cutout and waterfall edge", priceRange: "₹18,000 - ₹50,000" },
+        { name: "Chimney & Hob Unit", detail: `Auto-clean chimney (Elica/Faber 60cm) + ${allAnswers.kitchen_needs?.includes("Built-in") ? "built-in" : "3-burner"} hob`, priceRange: "₹20,000 - ₹40,000" },
+        { name: "Tall Unit / Pantry", detail: "Floor-to-ceiling pull-out pantry with basket organizers", priceRange: "₹25,000 - ₹55,000" },
       ],
+      materialDesc: `Kitchen materials selected for ${location}'s humid climate — steam, oil, and moisture resistant finishes that stay new for years.`,
       materials: [
-        { item: "Carcass", type: "BWR Plywood (Century/Greenply)", why: "Moisture & steam resistant — essential for kitchens" },
-        { item: "Shutter Finish", type: "Acrylic / PU Paint", why: "Easy to clean, oil & heat resistant" },
-        { item: "Hardware", type: "Hettich/Hafele tandem drawers", why: "50,000+ cycle soft-close for daily kitchen use" },
-        { item: "Backsplash", type: "Ceramic/Vitrified Tiles", why: "Heat resistant, easy wipe-down" },
+        { item: "Carcass", type: "BWR Plywood (Century/Greenply)", why: "Boiling water resistant — essential for kitchen steam & splashes" },
+        { item: "Shutter Finish", type: "Acrylic / PU Paint", why: "Oil & heat resistant, easy to wipe clean daily" },
+        { item: "Hardware", type: "Hettich/Hafele tandem drawers", why: "50,000+ cycle soft-close, designed for heavy kitchen use" },
+        { item: "Backsplash", type: "Ceramic / Subway Tiles", why: "Heat resistant, easy wipe-down, adds visual depth" },
+        { item: "Countertop", type: "Quartz (Kalinga/Caesarstone)", why: "Stain-proof, scratch-resistant, hygienic food-prep surface" },
       ],
+      lightingDesc: `Three-layer kitchen lighting: bright task light for cooking, warm ambient for dining, accent for style.`,
       lighting: [
-        { type: "Task", suggestion: "Under-cabinet LED strip lights (4000K)", placement: "Below wall cabinets over countertop" },
-        { type: "Ambient", suggestion: "Warm recessed ceiling LEDs", placement: "Kitchen ceiling perimeter" },
-        { type: "Accent", suggestion: "Profile lighting inside glass cabinets", placement: "Upper glass-door cabinets" },
+        { type: "Task", suggestion: "Under-cabinet LED strip (4000K cool white)", placement: "Below all wall cabinets, above countertop" },
+        { type: "Ambient", suggestion: "Warm recessed ceiling LEDs (3000K)", placement: "Kitchen ceiling perimeter, evenly spaced" },
+        { type: "Accent", suggestion: "Profile lighting inside glass cabinets", placement: "Upper glass-door cabinets & above tall unit" },
       ],
-      secret: `In a ${allAnswers.kitchen_shape || "L-Shaped"} kitchen, keep your wet zone (sink) and hot zone (hob) on different arms with a landing counter between — it makes cooking 3x more efficient.`,
+      secret: `In a ${allAnswers.kitchen_shape || "L-Shaped"} kitchen, keep your wet zone (sink) and hot zone (hob) on different arms with a 3-foot landing counter between — it makes cooking 3x more efficient and keeps oil splashes away from clean dishes.`,
     },
     "Bedroom": {
-      headline: `Your ${vibe} ${allAnswers.bedroom_type || "Master"} Bedroom`,
-      intro: `A ${allAnswers.bedroom_type || "master"} bedroom that wraps you in comfort the moment you step in — designed for restful nights and energized mornings in ${location}.`,
+      headline: `Your ${vibe} ${allAnswers.bedroom_type || "Master"} Bedroom Retreat`,
+      intro: `A ${allAnswers.bedroom_type || "master"} bedroom (${allAnswers.bedroom_size || "medium"} size) designed for restful nights and energized mornings — with ${allAnswers.bedroom_must || "smart storage"} and a ${vibe.toLowerCase()} aesthetic in ${location}.`,
+      colorDesc: `Calming tones for a ${vibe.toLowerCase()} bedroom — soft neutrals for walls, a warm accent for the headboard wall, and nature-inspired accents.`,
       colors: [
-        { name: "Soft Linen", shade: "Asian Paints L148", hex: "#F0E8DC", usage: "All walls" },
-        { name: "Dusty Rose", shade: "Berger 4P1862", hex: "#C9A89A", usage: "Headboard wall" },
-        { name: "Deep Walnut", shade: "Wood Tone", hex: "#5C3D2E", usage: "Bed frame & wardrobe" },
-        { name: "Sage Green", shade: "Asian Paints 9460", hex: "#A8B5A0", usage: "Curtains & throw pillows" },
+        { name: "Soft Linen", shade: "Asian Paints L148", hex: "#F0E8DC", usage: "Three walls" },
+        { name: "Dusty Rose", shade: "Berger 4P1862", hex: "#C9A89A", usage: "Headboard accent wall" },
+        { name: "Deep Walnut", shade: "Wood Tone", hex: "#5C3D2E", usage: "Bed frame & wardrobe finish" },
+        { name: "Sage Green", shade: "Asian Paints 9460", hex: "#A8B5A0", usage: "Curtains, cushions & throw" },
       ],
+      furnitureDesc: `Furniture proportioned for your ${allAnswers.bedroom_size || "medium"} ${allAnswers.bedroom_type || "master"} bedroom with ${allAnswers.bedroom_must || "optimal storage"}.`,
       furniture: [
-        { name: "Bed with Hydraulic Storage", detail: `King/Queen size with ${allAnswers.bedroom_must?.includes("Storage") ? "full hydraulic + side drawer" : "hydraulic storage"} — ${allAnswers.bedroom_size || "medium"} room optimized`, priceRange: "₹35,000 - ₹85,000" },
-        { name: "Sliding Wardrobe", detail: "Floor-to-ceiling with mirror panel, internal organizers", priceRange: "₹55,000 - ₹1,60,000" },
-        { name: "Side Tables", detail: "Floating wall-mounted with LED strip below", priceRange: "₹6,000 - ₹15,000" },
-        { name: "Dresser/Study Unit", detail: "Compact wall-mounted unit with mirror and storage", priceRange: "₹12,000 - ₹30,000" },
+        { name: `King-Size Bed with ${allAnswers.bedroom_must?.includes("Storage") ? "Hydraulic Storage" : "Platform Base"}`, detail: `6.5x6 ft bed with ${allAnswers.bedroom_must?.includes("Storage") ? "full hydraulic lift + side drawers" : "slatted base"} — upholstered headboard`, priceRange: "₹40,000 - ₹95,000" },
+        { name: "Sliding Wardrobe (Floor-to-Ceiling)", detail: `${allAnswers.wardrobe_type || "Sliding"} 8ft wide — mirror panel, internal organizers, trouser pull-out`, priceRange: "₹65,000 - ₹1,80,000" },
+        { name: "Floating Side Tables", detail: "Wall-mounted with LED strip below, single drawer for essentials", priceRange: "₹8,000 - ₹18,000" },
+        { name: `${allAnswers.bedroom_must?.includes("Study") ? "Study Desk Unit" : "Dresser Unit"}`, detail: `Compact wall-mounted ${allAnswers.bedroom_must?.includes("Study") ? "study desk with overhead shelf" : "dresser with mirror and storage"}`, priceRange: "₹15,000 - ₹35,000" },
       ],
+      materialDesc: `Bedroom materials chosen for comfort, durability, and ${location}'s climate — soft-touch finishes that feel premium.`,
       materials: [
-        { item: "Wardrobe Carcass", type: "MR Grade Plywood", why: "Durable for daily use, cost-effective" },
+        { item: "Wardrobe Carcass", type: "MR Grade Plywood (Century)", why: "Moisture resistant, durable for daily use" },
         { item: "Bed Frame", type: "Engineered Wood + Metal Frame", why: "Strong, lightweight, modern look" },
-        { item: "Finish", type: "Laminate (Merino/Century)", why: "Scratch resistant, wide texture options" },
+        { item: "Shutter Finish", type: "Laminate (Merino/Century)", why: "Scratch resistant, wide texture & color options" },
+        { item: "Soft Furnishings", type: "Linen & Cotton blends", why: "Breathable for Bangalore climate, easy to wash" },
       ],
+      lightingDesc: `Layered bedroom lighting for relaxation, reading, and ambiance — warm tones throughout.`,
       lighting: [
-        { type: "Ambient", suggestion: "Warm 2700K cove lighting", placement: "False ceiling perimeter" },
-        { type: "Task", suggestion: "Adjustable reading wall lights", placement: "Both sides of headboard" },
-        { type: "Accent", suggestion: "LED strip behind headboard panel", placement: "Headboard feature wall" },
+        { type: "Ambient", suggestion: "Warm 2700K cove lighting", placement: "False ceiling perimeter around bed area" },
+        { type: "Task", suggestion: "Adjustable wall-mount reading lights", placement: "Both sides of headboard, swing-arm" },
+        { type: "Accent", suggestion: "LED strip behind headboard panel", placement: "Full width of headboard feature wall" },
       ],
-      secret: "Install your wardrobe handles at 42-inch height and add a pull-down rail for the top section — it makes a standard wardrobe feel like a walk-in closet.",
+      secret: "Install wardrobe handles at 42-inch height and add a pull-down rail for the top section — it makes a standard wardrobe feel like a walk-in. Also, keep the bed 18 inches from the wall to create a floating effect.",
+    },
+    "Living Room": {
+      headline: `Your ${vibe} Living Room — The Heart of Your Home`,
+      intro: `A ${allAnswers.living_size || "spacious"} living room designed for comfort, conversation, and style — featuring ${allAnswers.living_needs || "smart entertainment"} with a ${vibe.toLowerCase()} aesthetic in ${location}.`,
+      colorDesc: `Living room palette balancing warmth and sophistication — neutral base with a bold accent for personality.`,
+      colors: [
+        { name: "Warm White", shade: "Asian Paints L155", hex: "#F5F0E8", usage: "All walls" },
+        { name: "Slate Blue", shade: "Berger 5P2860", hex: "#6B7B8D", usage: "TV/feature wall" },
+        { name: "Burnt Sienna", shade: "Asian Paints 8621", hex: "#C65D3E", usage: "Accent cushions & art" },
+        { name: "Natural Oak", shade: "Wood Tone", hex: "#C4A76C", usage: "TV unit, shelves & coffee table" },
+      ],
+      furnitureDesc: `Seating and storage proportioned for your ${allAnswers.living_size || "medium"} living room with clear traffic flow.`,
+      furniture: [
+        { name: "L-Shaped Sofa Set", detail: `${allAnswers.living_size?.includes("Compact") ? "Compact 7ft" : "Full 9ft"} L-shaped sofa with reversible chaise — fabric upholstery`, priceRange: "₹45,000 - ₹1,20,000" },
+        { name: "TV Entertainment Unit", detail: `${allAnswers.living_needs?.includes("TV") ? "Full wall TV unit with back panel, open & closed storage" : "Floating TV shelf with minimal storage"}`, priceRange: "₹35,000 - ₹95,000" },
+        { name: "Coffee Table + Side Table", detail: "Nesting set with wooden top and metal frame", priceRange: "₹12,000 - ₹30,000" },
+        { name: "Display/Bookshelf Unit", detail: `Open & closed shelving for books, decor & ${allAnswers.living_needs?.includes("Bookshelf") ? "display collection" : "essentials"}`, priceRange: "₹20,000 - ₹55,000" },
+      ],
+      materialDesc: `Living room materials balancing aesthetics and durability — stain-resistant fabrics and scratch-proof surfaces.`,
+      materials: [
+        { item: "Sofa Fabric", type: "Microfiber / Linen blend", why: "Stain-resistant, breathable, easy to clean" },
+        { item: "TV Unit Carcass", type: "MR Plywood + Laminate", why: "Sturdy, scratch-resistant, premium look" },
+        { item: "Flooring accent", type: "Vitrified Tiles / SPC", why: "Cool underfoot for Bangalore, easy maintenance" },
+        { item: "Wall Treatment", type: "Textured paint / PVC panels", why: "Adds depth to feature wall without heavy cost" },
+      ],
+      lightingDesc: `Three-layer living room lighting for movie nights, reading, and entertaining.`,
+      lighting: [
+        { type: "Ambient", suggestion: "Warm 3000K recessed downlights", placement: "Ceiling grid, evenly spaced" },
+        { type: "Task", suggestion: "Floor lamp / reading light", placement: "Next to sofa seating area" },
+        { type: "Accent", suggestion: "LED strip behind TV panel + cove lighting", placement: "TV back panel and false ceiling edge" },
+      ],
+      secret: "Place your sofa at least 8 feet from the TV for optimal viewing. Add a rug that extends 6 inches beyond the sofa legs on each side — it anchors the entire room and makes it feel 2x more expensive.",
+    },
+    "Wardrobe": {
+      headline: `Your ${vibe} ${allAnswers.wardrobe_type || "Sliding"} Wardrobe — Organized & Elegant`,
+      intro: `A ${allAnswers.wardrobe_size || "6-8 feet"} ${allAnswers.wardrobe_type || "sliding door"} wardrobe designed for maximum organization with a ${vibe.toLowerCase()} finish — every inch optimized for your clothing and accessories.`,
+      colorDesc: `Wardrobe colors that complement your bedroom — elegant exterior with functional interior.`,
+      colors: [
+        { name: "Ivory Matte", shade: "Asian Paints 0518", hex: "#F2E9D8", usage: "Wardrobe exterior panels" },
+        { name: "Champagne Gold", shade: "Metallic Accent", hex: "#D4AF37", usage: "Handle profiles & edge banding" },
+        { name: "Dark Walnut", shade: "Wood Tone", hex: "#4A3225", usage: "Interior shelving & drawers" },
+        { name: "Soft Grey", shade: "Berger 7P1245", hex: "#B8B4AD", usage: "Back panel & lining" },
+      ],
+      furnitureDesc: `${allAnswers.wardrobe_type || "Sliding"} wardrobe (${allAnswers.wardrobe_size || "6-8 feet wide"}) with specialized zones for different clothing types.`,
+      furniture: [
+        { name: `${allAnswers.wardrobe_type || "Sliding Door"} Wardrobe Frame`, detail: `Floor-to-ceiling ${allAnswers.wardrobe_size || "7ft"} wide — aluminium track for sliding doors`, priceRange: "₹55,000 - ₹1,50,000" },
+        { name: "Internal Organizer System", detail: "Adjustable shelves, hanging rods (long & short), trouser pull-out, tie rack", priceRange: "₹15,000 - ₹40,000" },
+        { name: "Drawer Unit", detail: "4-drawer soft-close unit with velvet-lined jewelry tray", priceRange: "₹12,000 - ₹28,000" },
+        { name: "Mirror Panel", detail: "Full-height mirror on one door panel with anti-shatter film", priceRange: "₹5,000 - ₹15,000" },
+      ],
+      materialDesc: `Premium wardrobe materials for smooth daily use and long-term durability.`,
+      materials: [
+        { item: "Carcass", type: "MR Grade Plywood (19mm)", why: "Moisture resistant, holds heavy loads" },
+        { item: "Doors", type: `${allAnswers.wardrobe_type?.includes("Sliding") ? "Sliding track (Hettich)" : "Soft-close hinges (Blum)"}`, why: "Smooth, silent operation for daily use" },
+        { item: "Finish", type: `${vibe.includes("Glossy") ? "High-Gloss PU" : "Matte Laminate (Merino)"}`, why: `${vibe.includes("Glossy") ? "Premium reflective finish" : "Fingerprint resistant, scratch-proof"}` },
+        { item: "Hardware", type: "Hettich InnoTech drawers", why: "60,000+ cycle, silent soft-close" },
+      ],
+      lightingDesc: `Smart wardrobe lighting so you can see every outfit clearly.`,
+      lighting: [
+        { type: "Task", suggestion: "Motion-sensor LED strips (4000K)", placement: "Inside each wardrobe section, auto-on when doors open" },
+        { type: "Accent", suggestion: "LED profile on top edge", placement: "Top of wardrobe for ambient glow" },
+        { type: "Task", suggestion: "Spotlight for mirror section", placement: "Above full-length mirror panel" },
+      ],
+      secret: "Dedicate 60% of wardrobe space to hanging (split into long & short sections) and 40% to shelves/drawers. Add a pull-down rod for the top section — it doubles your hanging space without needing a step stool.",
+    },
+    "TV Unit": {
+      headline: `Your ${vibe} ${allAnswers.tv_wall?.includes("Full") ? "Full Wall" : "Compact"} TV Unit Design`,
+      intro: `A ${vibe.toLowerCase()} TV unit designed for your ${allAnswers.tv_wall || "living room"} wall — balancing sleek entertainment setup with smart storage${allAnswers.tv_extras ? " including " + allAnswers.tv_extras.toLowerCase() : ""}.`,
+      colorDesc: `TV unit colors that create a cinematic backdrop while complementing your room decor.`,
+      colors: [
+        { name: "Charcoal Panel", shade: "Berger 8P3250", hex: "#3A3A3A", usage: "TV back panel" },
+        { name: "Warm Oak", shade: "Wood Tone", hex: "#C4A76C", usage: "Floating shelves & base unit" },
+        { name: "Off-White", shade: "Asian Paints L150", hex: "#F0EBE0", usage: "Surrounding wall" },
+        { name: "Copper Accent", shade: "Metallic", hex: "#B87333", usage: "Handle details & display highlights" },
+      ],
+      furnitureDesc: `TV unit configuration for your ${allAnswers.tv_wall || "living room"} wall with integrated cable management.`,
+      furniture: [
+        { name: `${allAnswers.tv_wall?.includes("Full") ? "Full Wall" : "Floating"} TV Panel`, detail: `${allAnswers.tv_wall?.includes("Full") ? "10ft wide PVC/Veneer back panel" : "6ft floating laminate panel"} with concealed cable routing`, priceRange: "₹20,000 - ₹65,000" },
+        { name: "Base Storage Unit", detail: "Floating base cabinet with push-to-open doors, internal shelving", priceRange: "₹15,000 - ₹40,000" },
+        { name: "Open Display Shelves", detail: `Asymmetric open shelves for decor${allAnswers.tv_extras?.includes("Speaker") ? " and speaker placement" : ""}`, priceRange: "₹8,000 - ₹22,000" },
+        { name: "Cable Management Box", detail: "Hidden power strip housing with ventilation for set-top box", priceRange: "₹3,000 - ₹8,000" },
+      ],
+      materialDesc: `TV unit materials chosen for a premium look with practical wire management.`,
+      materials: [
+        { item: "Back Panel", type: "PVC Charcoal / Veneer", why: "Rich texture, hides fingerprints" },
+        { item: "Base Unit", type: "MR Plywood + Laminate", why: "Sturdy, supports heavy equipment" },
+        { item: "Shelves", type: "Engineered Wood + Metal bracket", why: "Clean floating look, holds decor securely" },
+        { item: "Hardware", type: "Push-to-open mechanisms", why: "Handle-free clean aesthetic" },
+      ],
+      lightingDesc: `Dramatic lighting that enhances your TV viewing experience and showcases the unit.`,
+      lighting: [
+        { type: "Accent", suggestion: `${allAnswers.tv_extras?.includes("Back Panel") ? "RGB LED strip behind TV" : "Warm LED strip behind panel"}`, placement: "Full perimeter of TV back panel" },
+        { type: "Accent", suggestion: "Shelf spotlights (2700K)", placement: "Inside open display shelves" },
+        { type: "Ambient", suggestion: "Dimmable cove lighting", placement: "Above TV unit, false ceiling edge" },
+      ],
+      secret: "Mount your TV at eye level when seated (42 inches from floor to center). Add a 2-inch gap between the back panel and wall for hidden cable routing — it makes the entire setup look wireless and premium.",
+    },
+    "Pooja Room": {
+      headline: `Your ${vibe} ${allAnswers.pooja_type || "Dedicated"} Pooja Space Design`,
+      intro: `A sacred ${allAnswers.pooja_type || "pooja room"} crafted with ${allAnswers.pooja_material || "premium wood"} in a ${vibe.toLowerCase()} style — creating a serene space for daily prayer and meditation in ${location}.`,
+      colorDesc: `Pooja room colors inspired by traditional temple aesthetics with a ${vibe.toLowerCase()} touch.`,
+      colors: [
+        { name: "Divine Cream", shade: "Asian Paints 0516", hex: "#FFF5E6", usage: "Walls & ceiling" },
+        { name: "Temple Gold", shade: "Metallic Accent", hex: "#D4A017", usage: "CNC jali pattern & trim" },
+        { name: "Rosewood", shade: "Wood Tone", hex: "#65302E", usage: "Mandir frame & shelving" },
+        { name: "Marble White", shade: "Stone Finish", hex: "#F0EDE5", usage: "Base platform & counter" },
+      ],
+      furnitureDesc: `${allAnswers.pooja_type || "Dedicated"} pooja unit in ${allAnswers.pooja_material || "premium wood"} with traditional elements and modern functionality.`,
+      furniture: [
+        { name: `${allAnswers.pooja_type || "Wall-mounted"} Mandir Unit`, detail: `${allAnswers.pooja_material || "Teak"} frame with CNC-cut jali pattern, bell holder, LED backlit arch`, priceRange: "₹35,000 - ₹1,20,000" },
+        { name: "Storage Drawer Below", detail: "Pull-out drawer for pooja items, incense holder, camphor", priceRange: "₹8,000 - ₹20,000" },
+        { name: "Marble/Granite Platform", detail: "Elevated platform with spill-resistant surface for offerings", priceRange: "₹5,000 - ₹15,000" },
+        { name: "Decorative Backdrop", detail: "CNC-cut wooden jali or brass inlay back panel", priceRange: "₹12,000 - ₹35,000" },
+      ],
+      materialDesc: `Sacred space materials chosen for longevity, beauty, and easy maintenance of daily pooja rituals.`,
+      materials: [
+        { item: "Main Structure", type: `${allAnswers.pooja_material?.includes("Teak") ? "Solid Teak Wood" : allAnswers.pooja_material?.includes("Marble") ? "Italian Marble" : "Engineered Wood + Veneer"}`, why: `${allAnswers.pooja_material?.includes("Teak") ? "Traditional, aromatic, extremely durable" : "Premium finish with sacred aesthetic"}` },
+        { item: "Jali/Screen", type: "CNC-cut MDF / Brass", why: "Intricate patterns, allows light & air flow" },
+        { item: "Platform", type: "Granite / Marble", why: "Stain-resistant for oil lamps & offerings" },
+        { item: "Finish", type: "Melamine / PU coating", why: "Protects wood from incense smoke & oil" },
+      ],
+      lightingDesc: `Sacred lighting that creates a divine ambiance for morning and evening prayers.`,
+      lighting: [
+        { type: "Accent", suggestion: "Warm 2700K LED strip behind deity area", placement: "Behind the mandir arch, creating a divine glow" },
+        { type: "Ambient", suggestion: "Dimmable warm downlight (2700K)", placement: "Directly above the mandir, recessed in ceiling" },
+        { type: "Accent", suggestion: "LED strip inside CNC jali pattern", placement: "Within the decorative screen/backdrop" },
+      ],
+      secret: "Face the pooja unit towards East or North-East for Vastu compliance. Add a marble or granite platform raised 4 inches — it keeps the space clean and gives a traditional temple feel. Use warm 2700K lighting exclusively, never cool white.",
+    },
+    "2BHK": {
+      headline: `Your ${vibe} 2BHK Complete Interior Design`,
+      intro: `A complete 2BHK transformation with focus on ${allAnswers.priority_rooms || "all rooms"} — ${allAnswers.bhk_focus || "maximizing space"} with a cohesive ${vibe.toLowerCase()} theme throughout your home in ${location}.`,
+      colorDesc: `A unified 2BHK color palette that flows seamlessly from room to room while giving each space its own identity.`,
+      colors: [
+        { name: "Warm Ivory", shade: "Asian Paints L152", hex: "#F3EDE2", usage: "All common walls & ceilings" },
+        { name: "Sage Green", shade: "Asian Paints 9460", hex: "#A8B5A0", usage: "Master bedroom accent wall" },
+        { name: "Warm Taupe", shade: "Berger 8P2672", hex: "#CFC5B7", usage: "Living room feature wall" },
+        { name: "Walnut", shade: "Wood Tone", hex: "#6B4423", usage: "All furniture pieces — cohesive theme" },
+      ],
+      furnitureDesc: `Complete 2BHK furniture plan with focus on ${allAnswers.bhk_focus || "smart space utilization"} — coordinated across all rooms.`,
+      furniture: [
+        { name: "Modular Kitchen", detail: `L-shaped kitchen with upper & lower cabinets, chimney, countertop — ${allAnswers.bhk_focus?.includes("Storage") ? "max storage config" : "standard layout"}`, priceRange: "₹1,20,000 - ₹2,80,000" },
+        { name: "Master Bedroom Set", detail: "King bed with storage, 6ft wardrobe, side tables, dresser", priceRange: "₹1,00,000 - ₹2,50,000" },
+        { name: "Living Room Setup", detail: "TV unit, shoe rack, sofa (separate), coffee table", priceRange: "₹60,000 - ₹1,50,000" },
+        { name: "Second Bedroom", detail: "Queen bed, 5ft wardrobe, study unit", priceRange: "₹70,000 - ₹1,60,000" },
+        { name: "Common Areas", detail: "Crockery unit, foyer console, bathroom vanity", priceRange: "₹30,000 - ₹80,000" },
+      ],
+      materialDesc: `2BHK materials selected for consistent quality and cohesive look across all rooms.`,
+      materials: [
+        { item: "Kitchen Carcass", type: "BWR Plywood (Century)", why: "Moisture resistant for kitchen environment" },
+        { item: "Bedroom Furniture", type: "MR Plywood + Laminate", why: "Cost-effective premium look for bedrooms" },
+        { item: "Hardware (All)", type: "Hettich/Hafele", why: "Consistent quality across all rooms" },
+        { item: "Finishes", type: "Laminate (Merino)", why: "Uniform texture & color matching across furniture" },
+      ],
+      lightingDesc: `Room-by-room lighting plan for the entire 2BHK — ambient, task, and accent layers.`,
+      lighting: [
+        { type: "Ambient", suggestion: "Warm 3000K recessed LEDs in all rooms", placement: "False ceiling perimeter in living & bedrooms" },
+        { type: "Task", suggestion: "Under-cabinet LEDs + reading lights", placement: "Kitchen countertop & bedside" },
+        { type: "Accent", suggestion: "Cove lighting + TV back panel LEDs", placement: "Living room ceiling & entertainment zone" },
+      ],
+      secret: "In a 2BHK, use the same wood tone across ALL rooms — it creates visual continuity and makes the home feel much larger. Invest 40% of budget on kitchen, 30% on master bedroom, 20% on living room, 10% on second bedroom.",
+    },
+    "3BHK": {
+      headline: `Your ${vibe} 3BHK Premium Interior Design`,
+      intro: `A premium 3BHK interior with focus on ${allAnswers.priority_rooms || "all rooms"} — ${allAnswers.bhk_focus || "coordinated design"} in a ${vibe.toLowerCase()} theme across your entire home in ${location}.`,
+      colorDesc: `Sophisticated 3BHK palette with a cohesive base and unique accent for each room's personality.`,
+      colors: [
+        { name: "Cotton White", shade: "Asian Paints L160", hex: "#F8F3EC", usage: "All common walls" },
+        { name: "Navy Accent", shade: "Asian Paints 4735", hex: "#2C3E6B", usage: "Master bedroom feature wall" },
+        { name: "Terracotta", shade: "Berger 6P4425", hex: "#CC6B49", usage: "Living room accent" },
+        { name: "Walnut Brown", shade: "Wood Tone", hex: "#5C3D2E", usage: "Consistent furniture theme" },
+      ],
+      furnitureDesc: `Complete 3BHK furniture across ${allAnswers.priority_rooms || "all rooms"} with ${allAnswers.bhk_focus || "premium materials"}.`,
+      furniture: [
+        { name: "Modular Kitchen", detail: "U-shaped/L-shaped with tall unit, chimney, built-in appliances", priceRange: "₹1,80,000 - ₹4,00,000" },
+        { name: "Master Bedroom Suite", detail: "King bed + walk-in wardrobe + dresser + side tables", priceRange: "₹1,50,000 - ₹3,50,000" },
+        { name: "Living + Dining Area", detail: "TV unit, bookshelf, shoe rack, crockery unit, dining not included", priceRange: "₹1,00,000 - ₹2,50,000" },
+        { name: "Bedroom 2 & 3", detail: "Queen beds, wardrobes, study units per room", priceRange: "₹1,20,000 - ₹2,80,000" },
+        { name: "Common Areas", detail: "Foyer, bathroom vanities, utility area shelving", priceRange: "₹40,000 - ₹1,00,000" },
+      ],
+      materialDesc: `3BHK premium materials — upgraded finishes for high-traffic areas, consistent hardware throughout.`,
+      materials: [
+        { item: "Kitchen", type: "BWR Plywood + Acrylic/PU", why: "Premium water-resistant finish" },
+        { item: "Bedrooms", type: "MR Plywood + Veneer/Laminate", why: "Luxurious texture, durable" },
+        { item: "Living Room", type: "Veneer + PU polish", why: "Rich natural wood grain feel" },
+        { item: "Hardware", type: "Hettich Premium line", why: "Consistent soft-close across all rooms" },
+      ],
+      lightingDesc: `Premium 3BHK lighting — each room gets its own lighting personality within a unified warm tone.`,
+      lighting: [
+        { type: "Ambient", suggestion: "3000K recessed + cove lighting", placement: "All rooms, false ceiling" },
+        { type: "Task", suggestion: "Kitchen under-cabinet + bedroom reading", placement: "Work zones across home" },
+        { type: "Accent", suggestion: "Feature wall spotlights + TV backlight", placement: "Living room & master bedroom" },
+      ],
+      secret: "In a 3BHK, create a 'material thread' — use the same wood finish and handle style in every room. Then differentiate with wall colors and soft furnishings. Budget split: Kitchen 30%, Master Bedroom 25%, Living 20%, Other Bedrooms 15%, Common 10%.",
+    },
+    "Villa": {
+      headline: `Your ${vibe} ${allAnswers.villa_size || "Premium"} Villa Interior`,
+      intro: `A stunning ${allAnswers.villa_size || "villa"} interior with focus on ${allAnswers.priority_rooms || "all areas"} — grand proportions, premium materials, and ${vibe.toLowerCase()} design language throughout your home in ${location}.`,
+      colorDesc: `Villa-scale palette with dramatic contrasts and luxury undertones.`,
+      colors: [
+        { name: "Pearl White", shade: "Asian Paints L165", hex: "#FAF6F0", usage: "All walls & double-height areas" },
+        { name: "Emerald Deep", shade: "Asian Paints 7584", hex: "#2D5F4A", usage: "Living room feature wall" },
+        { name: "Champagne Gold", shade: "Metallic", hex: "#D4AF37", usage: "Staircase railing & accents" },
+        { name: "Italian Walnut", shade: "Wood Tone", hex: "#5A3A28", usage: "All cabinetry & furniture" },
+      ],
+      furnitureDesc: `Villa-scale furniture for grand spaces — ${allAnswers.priority_rooms || "all areas"} with premium proportions.`,
+      furniture: [
+        { name: "Grand Living Room Setup", detail: "Custom TV unit, bookshelf, display cabinets — suited for double-height/large living", priceRange: "₹2,50,000 - ₹6,00,000" },
+        { name: "Premium Kitchen", detail: "Island/U-shaped modular kitchen with pantry, built-in appliances", priceRange: "₹3,50,000 - ₹8,00,000" },
+        { name: "Master Suite", detail: "King bed, walk-in wardrobe, dressing area, vanity", priceRange: "₹2,50,000 - ₹5,50,000" },
+        { name: "All Other Rooms", detail: "Bedrooms, study, kids room — coordinated throughout", priceRange: "₹3,00,000 - ₹7,00,000" },
+        { name: "Staircase & Common Areas", detail: "Foyer console, staircase under-storage, shoe cabinets", priceRange: "₹80,000 - ₹2,00,000" },
+      ],
+      materialDesc: `Villa-grade premium materials — natural stones, solid woods, and luxury finishes.`,
+      materials: [
+        { item: "Primary Furniture", type: "BWR Plywood + Veneer/PU", why: "Luxury finish, long-lasting" },
+        { item: "Countertops", type: "Italian Marble / Quartz", why: "Grand aesthetic for villa spaces" },
+        { item: "Flooring", type: "Italian Marble / Wooden Flooring", why: "Premium underfoot experience" },
+        { item: "Hardware", type: "Hafele Premium / Blum", why: "European-grade for luxury homes" },
+      ],
+      lightingDesc: `Grand villa lighting — chandeliers, layered recessed, and dramatic accent lighting.`,
+      lighting: [
+        { type: "Ambient", suggestion: "Statement chandelier + recessed LEDs", placement: "Double-height living & foyer" },
+        { type: "Task", suggestion: "Kitchen island pendants + vanity lights", placement: "Kitchen, bathrooms, study" },
+        { type: "Accent", suggestion: "Staircase wall washers + garden spotlights", placement: "Staircase, outdoor areas" },
+      ],
+      secret: "In a villa, the staircase is your biggest design opportunity — add a feature wall with textured stone or a curated art gallery along the staircase. Under-stair storage can hide an entire home office or bar setup.",
+    },
+    "Study Room": {
+      headline: `Your ${vibe} ${allAnswers.study_for || "Home"} Study Room`,
+      intro: `A focused ${allAnswers.study_size || "medium"} study room designed for ${allAnswers.study_for || "productivity"} — ergonomic setup, smart storage, and a ${vibe.toLowerCase()} atmosphere that boosts concentration in ${location}.`,
+      colorDesc: `Study room colors that enhance focus and reduce eye strain during long working hours.`,
+      colors: [
+        { name: "Soft Sage", shade: "Asian Paints 9458", hex: "#C5D4C0", usage: "All walls — calming, reduces eye fatigue" },
+        { name: "Warm Wood", shade: "Wood Tone", hex: "#A0764A", usage: "Desk and shelving" },
+        { name: "Cream White", shade: "Asian Paints L148", hex: "#F0E8DC", usage: "Ceiling & trims" },
+        { name: "Slate Blue", shade: "Berger 5P2855", hex: "#6B7B8D", usage: "Pin board wall / accent" },
+      ],
+      furnitureDesc: `Study furniture for ${allAnswers.study_for || "work from home"} — ergonomic and organized.`,
+      furniture: [
+        { name: "L-Shaped Study Desk", detail: `${allAnswers.study_size?.includes("Small") ? "4ft straight desk" : "5ft L-shaped desk"} with cable management grommet & keyboard tray`, priceRange: "₹18,000 - ₹45,000" },
+        { name: "Wall-Mounted Shelving", detail: "Open shelves + closed cabinets for books, files, and display", priceRange: "₹15,000 - ₹35,000" },
+        { name: "Storage Cabinet", detail: "Vertical unit with file drawers, printer shelf, and lock", priceRange: "₹12,000 - ₹28,000" },
+        { name: "Pin/Mood Board", detail: "Cork or fabric-wrapped board for notes, inspiration", priceRange: "₹3,000 - ₹8,000" },
+      ],
+      materialDesc: `Study room materials prioritizing acoustics, durability, and a professional feel.`,
+      materials: [
+        { item: "Desk Surface", type: "Laminate (Matte anti-glare)", why: "Reduces screen glare, scratch resistant" },
+        { item: "Shelving", type: "MR Plywood + Laminate", why: "Sturdy for heavy books" },
+        { item: "Acoustic Treatment", type: "Fabric wall panels", why: "Reduces echo for video calls" },
+      ],
+      lightingDesc: `Optimized study lighting to prevent eye strain and maintain energy during long hours.`,
+      lighting: [
+        { type: "Task", suggestion: "4000K neutral desk lamp (adjustable)", placement: "On desk, positioned to avoid screen glare" },
+        { type: "Ambient", suggestion: "3500K recessed panel lights", placement: "Ceiling, evenly distributed" },
+        { type: "Accent", suggestion: "Shelf strip lights", placement: "Inside open bookshelves" },
+      ],
+      secret: "Position your desk so natural light comes from the left (for right-handed) or right (for left-handed). Add a fabric acoustic panel behind your screen — it improves video call audio AND creates a professional background.",
+    },
+    "Kids Room": {
+      headline: `Your ${vibe} ${allAnswers.kid_theme || "Fun"} Kids Room for ${allAnswers.kid_age || "Young Children"}`,
+      intro: `A safe, stimulating room for ${allAnswers.kid_age || "kids"} with ${allAnswers.kid_theme || "playful"} theme — featuring ${allAnswers.kid_needs || "study and play areas"} in a ${vibe.toLowerCase()} design that grows with them in ${location}.`,
+      colorDesc: `Kid-friendly colors that are stimulating yet calming — ${vibe.toLowerCase()} tones with playful accents.`,
+      colors: [
+        { name: `${vibe.includes("Pastel") ? "Soft Lavender" : "Sky Blue"}`, shade: `Asian Paints ${vibe.includes("Pastel") ? "7832" : "4520"}`, hex: `${vibe.includes("Pastel") ? "#D8CCE8" : "#A8D8EA"}`, usage: "Feature wall" },
+        { name: "Cloud White", shade: "Asian Paints L170", hex: "#FAFAFA", usage: "Three walls & ceiling" },
+        { name: "Sunshine Yellow", shade: "Asian Paints 0340", hex: "#FFD93D", usage: "Accent furniture & accessories" },
+        { name: "Natural Birch", shade: "Wood Tone", hex: "#D4B896", usage: "Furniture — light, airy feel" },
+      ],
+      furnitureDesc: `Kid-safe furniture for ${allAnswers.kid_age || "children"} with ${allAnswers.kid_needs || "all essentials"} — rounded edges, non-toxic finishes.`,
+      furniture: [
+        { name: `${allAnswers.kid_needs?.includes("Bunk") ? "Bunk Bed" : "Single Bed with Storage"}`, detail: `${allAnswers.kid_needs?.includes("Bunk") ? "Solid wood bunk with ladder guard rails" : "Single bed with under-storage drawers"} — non-toxic paint, rounded corners`, priceRange: "₹25,000 - ₹65,000" },
+        { name: "Study Desk & Chair", detail: `Height-adjustable desk for ${allAnswers.kid_age?.includes("Toddler") ? "low height" : "growing kids"} with book shelf above`, priceRange: "₹15,000 - ₹35,000" },
+        { name: "Wardrobe (Low-height)", detail: `${allAnswers.kid_age?.includes("Toddler") ? "4ft accessible wardrobe" : "5ft wardrobe"} with colorful interiors, soft-close doors`, priceRange: "₹25,000 - ₹55,000" },
+        { name: `${allAnswers.kid_needs?.includes("Play") ? "Play Zone Mat & Storage" : "Bookshelf & Display"}`, detail: `${allAnswers.kid_needs?.includes("Play") ? "Interlocking play mat with toy chest bins" : "Open bookshelf at kid-accessible height"}`, priceRange: "₹8,000 - ₹20,000" },
+      ],
+      materialDesc: `Child-safe materials — non-toxic, rounded edges, anti-microbial, and easy to clean.`,
+      materials: [
+        { item: "All Furniture", type: "E1 Grade MDF / MR Plywood", why: "Low formaldehyde emission, safe for children" },
+        { item: "Paint", type: "Asian Paints Royale Kids (anti-bacterial)", why: "Washable, anti-bacterial, low VOC" },
+        { item: "Hardware", type: "Soft-close + child locks", why: "Prevents finger injuries, safe access" },
+        { item: "Flooring", type: "EVA foam mat / Carpet tile", why: "Cushioned for falls, easy to clean & replace" },
+      ],
+      lightingDesc: `Kid-safe lighting with no harsh glare — warm tones for sleep, bright for study.`,
+      lighting: [
+        { type: "Ambient", suggestion: "Warm 3000K flush-mount ceiling light", placement: "Center ceiling, shatter-proof cover" },
+        { type: "Task", suggestion: "Desk lamp with adjustable brightness", placement: "Study desk, eye-safe position" },
+        { type: "Accent", suggestion: `${allAnswers.kid_theme?.includes("Space") ? "Star projector night light" : "Dim night light (plug-in)"}`, placement: "Near bed for nighttime comfort" },
+      ],
+      secret: `For ${allAnswers.kid_age || "kids"}: keep 30% of floor space empty for play. Use magnetic paint on one wall for creativity without damage. Store toys in labeled bins at their height — it teaches organization and gives them independence.`,
+    },
+    "Full Home Interiors": {
+      headline: `Your ${vibe} ${allAnswers.home_size || "Complete"} Home Interior Design`,
+      intro: `A fully coordinated ${allAnswers.home_size || "home"} interior with priority on ${allAnswers.priority_rooms || "all rooms"} — ${vibe.toLowerCase()} design flowing seamlessly through every space in ${location}.`,
+      colorDesc: `Whole-home color strategy — a unified base with room-specific accents for personality.`,
+      colors: [
+        { name: "Warm Ivory", shade: "Asian Paints L152", hex: "#F3EDE2", usage: "All walls — unified base" },
+        { name: "Forest Green", shade: "Asian Paints 7582", hex: "#4A6741", usage: "Living room accent wall" },
+        { name: "Blush Pink", shade: "Berger 3P1850", hex: "#E8C4B8", usage: "Master bedroom accent" },
+        { name: "Dark Walnut", shade: "Wood Tone", hex: "#5C3D2E", usage: "All furniture — cohesive thread" },
+      ],
+      furnitureDesc: `Complete home furnishing for ${allAnswers.home_size || "your home"} — prioritizing ${allAnswers.priority_rooms || "all rooms equally"}.`,
+      furniture: [
+        { name: "Modular Kitchen", detail: "Full modular setup with upper, lower, tall unit, chimney", priceRange: "₹1,50,000 - ₹3,50,000" },
+        { name: "Master Bedroom", detail: "King bed, wardrobe, dresser, side tables — complete set", priceRange: "₹1,20,000 - ₹3,00,000" },
+        { name: "Living Room", detail: "TV unit, shoe rack, display unit, crockery", priceRange: "₹80,000 - ₹2,00,000" },
+        { name: "Additional Rooms", detail: "Beds, wardrobes, study units for each room", priceRange: "₹60,000 - ₹1,50,000 per room" },
+        { name: "Common Areas", detail: "Foyer, bathrooms, utility — finishing touches", priceRange: "₹30,000 - ₹80,000" },
+      ],
+      materialDesc: `Consistent material quality throughout the home for a unified premium feel.`,
+      materials: [
+        { item: "Kitchen", type: "BWR Plywood + Acrylic/Laminate", why: "Water resistant for kitchen" },
+        { item: "Bedrooms & Living", type: "MR Plywood + Laminate", why: "Premium look, cost-effective" },
+        { item: "All Hardware", type: "Hettich/Hafele", why: "Consistent quality everywhere" },
+        { item: "Finishes", type: "Laminate/Veneer (Merino/Century)", why: "Matching tones across all rooms" },
+      ],
+      lightingDesc: `Whole-home lighting design — warm, layered, and functional in every room.`,
+      lighting: [
+        { type: "Ambient", suggestion: "3000K recessed in all rooms", placement: "False ceiling throughout" },
+        { type: "Task", suggestion: "Kitchen + study + bedside task lighting", placement: "Work zones in each room" },
+        { type: "Accent", suggestion: "Feature wall + TV panel + pooja backlight", placement: "Key focal points per room" },
+      ],
+      secret: "The secret to a cohesive home: pick ONE wood finish, ONE handle style, and ONE metal accent tone — use them in EVERY room. Then differentiate with wall colors and soft furnishings. This creates unity without monotony.",
     },
   };
 
   const data = spaceData[space];
 
-  // Generic fallback for spaces without specific data
   const headline = data?.headline || `Your ${vibe} ${space} — Designed for ${location}`;
   const intro = data?.intro || `A beautifully curated ${space} designed with a ${vibe} aesthetic, tailored for the climate and lifestyle of ${location}.`;
+  const colorDesc = data?.colorDesc || `Color story curated for a ${vibe} ${space} in ${location}.`;
   const colors = data?.colors || [
     { name: "Soft White", shade: "Asian Paints L152", hex: "#F3EDE2", usage: "Primary walls" },
     { name: "Warm Taupe", shade: "Berger 8P2672", hex: "#CFC5B7", usage: "Feature/accent wall" },
     { name: "Forest Green", shade: "Asian Paints 9458", hex: "#6B8F71", usage: "Soft furnishings & accessories" },
     { name: "Dark Walnut", shade: "Wood Tone", hex: "#5C3D2E", usage: "Furniture & frames" },
   ];
+  const furnitureDesc = data?.furnitureDesc || `Furniture & layout designed specifically for your ${space}.`;
   const furniture = data?.furniture || [
     { name: "Primary Furniture", detail: `Core piece for your ${space}, selected for ${vibe} style`, priceRange: "₹35,000 - ₹95,000" },
     { name: "Storage Solution", detail: "Customized storage optimized for the space dimensions", priceRange: "₹45,000 - ₹1,20,000" },
   ];
+  const materialDesc = data?.materialDesc || `Materials selected for ${location}'s climate — humidity & dust resistant.`;
   const mats = data?.materials || [
     { item: "Core Structure", type: "BWP Plywood (Century)", why: `Moisture resistant for ${location} climate` },
     { item: "Hardware", type: "Hettich soft-close", why: "Premium durability, 50000+ cycles" },
     { item: "Surface Finish", type: "Laminate (Merino)", why: "Scratch resistant, easy maintenance" },
   ];
+  const lightingDesc = data?.lightingDesc || `Lighting plan tailored for your ${space} to create depth and function.`;
   const lights = data?.lighting || [
     { type: "Ambient", suggestion: "Warm 3000K recessed LEDs", placement: "Ceiling perimeter" },
     { type: "Task", suggestion: "Focused work-area lighting", placement: "Activity zones" },
@@ -259,19 +593,13 @@ const buildFallback = (allAnswers: Record<string, string>) => {
   return {
     headline,
     intro,
-    colorPalette: { description: `Color story curated for a ${vibe} ${space} in ${location}.`, colors },
-    furnitureLayout: { description: `Furniture & layout designed specifically for your ${space}.`, items: furniture },
-    materials: { description: `Materials selected for ${location}'s climate — humidity & dust resistant.`, recommendations: mats },
-    lighting: { description: `Lighting plan tailored for your ${space} to create depth and function.`, layers: lights },
-    designerSecret: secret + (details !== "None" ? ` Also considered: ${details}.` : ""),
-    estimatedBudget: { low: budgetLow, high: budgetHigh, note: `${space} — ${vibe} style, ${allAnswers.kitchen_shape || allAnswers.bedroom_type || ""} layout in ${location}` },
-    moodKeywords: [vibe, space.toLowerCase(), "curated", location.toLowerCase(), "functional"],
-    moodBoardQueries: [
-      `${vibe} ${allAnswers.kitchen_shape || allAnswers.bedroom_type || ""} ${space} interior design India`,
-      `${space} ${vibe} home decor ${location}`,
-      `modern ${space} design ideas India`,
-      `${vibe} ${space} inspiration interiors`,
-    ],
+    colorPalette: { description: colorDesc, colors },
+    furnitureLayout: { description: furnitureDesc, items: furniture },
+    materials: { description: materialDesc, recommendations: mats },
+    lighting: { description: lightingDesc, layers: lights },
+    designerSecret: secret + (details !== "None" ? ` Also: ${details} has been factored into this plan.` : ""),
+    estimatedBudget: { low: budgetLow, high: budgetHigh, note: `${space} with ${vibe} style in ${location} — prices based on current market rates` },
+    moodKeywords: [vibe.toLowerCase(), space.toLowerCase(), "curated", location.toLowerCase(), "designer-crafted"],
   };
 };
 
@@ -290,14 +618,12 @@ serve(async (req) => {
     if (phase === "question") {
       const { step = 0, name = "", space = "" } = body;
 
-      // Build the full question sequence dynamically
       const spaceFollowups = SPACE_FOLLOWUPS[space] || DEFAULT_FOLLOWUPS;
       const allQuestions = [...BASE_QUESTIONS, ...spaceFollowups, ...TAIL_QUESTIONS];
 
       if (step < allQuestions.length) {
         const q = { ...allQuestions[step] };
 
-        // Personalize location question
         if (q.key === "location" && name) {
           q.message = `Nice to meet you, ${name}! 😊 Which city are you in? 📍`;
         }
@@ -326,7 +652,6 @@ serve(async (req) => {
     if (phase === "recommend") {
       const allAnswers: Record<string, string> = body.allAnswers || {};
 
-      // Build a detailed, specific prompt from ALL answers
       const answerSummary = Object.entries(allAnswers)
         .filter(([k]) => k !== "name")
         .map(([key, value]) => `- ${key.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase())}: ${value}`)
@@ -343,13 +668,13 @@ ${answerSummary}
 
 CRITICAL INSTRUCTIONS:
 1. The headline MUST mention their specific space type (e.g., "L-Shaped Modular Kitchen" not just "Kitchen")
-2. Furniture items MUST be specific to their chosen space — e.g., for a kitchen: chimney, hob, cabinets. For bedroom: bed, wardrobe, side table
-3. Color palette MUST suit their chosen vibe and space
-4. Budget estimates MUST align with their stated budget range
-5. Materials MUST consider their location's climate
-6. Mood board queries MUST be ultra-specific (e.g., "modern L-shaped modular kitchen matte finish Bangalore" not just "kitchen design")
-7. If they mentioned specific needs like Vastu, storage, kids safety — address those directly
-8. Price ranges MUST be in INR and realistic for Indian market`;
+2. Furniture items MUST be specific to their chosen space — e.g., for a kitchen: chimney, hob, cabinets, countertop. For bedroom: bed, wardrobe, side table, dresser
+3. Color palette MUST suit their chosen vibe and space type
+4. Budget estimates MUST align with their stated budget range: ${allAnswers.budget || "flexible"}
+5. Materials MUST consider ${allAnswers.location || "Indian"} climate (humidity, dust)
+6. If they mentioned specific needs like ${allAnswers.details || "none"} — address those directly
+7. Price ranges MUST be in INR and realistic for Indian market
+8. moodKeywords MUST include the space type name so the frontend can match images correctly`;
 
       const resp = await callGemini(GEMINI_API_KEY, {
         contents: [{ role: "user", parts: [{ text: prompt }] }],
@@ -369,6 +694,11 @@ CRITICAL INSTRUCTIONS:
       const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
       let parsed;
       try { parsed = JSON.parse(text); } catch { parsed = buildFallback(allAnswers); }
+
+      // Ensure moodKeywords includes the space name for image matching
+      if (parsed.moodKeywords && !parsed.moodKeywords.some((k: string) => allAnswers.space?.toLowerCase().includes(k.toLowerCase()))) {
+        parsed.moodKeywords.unshift(allAnswers.space?.toLowerCase() || "interior");
+      }
 
       return new Response(JSON.stringify({ type: "recommendation", data: parsed, source: "gemini" }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
