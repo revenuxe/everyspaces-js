@@ -37,7 +37,7 @@ const Header = () => {
     { href: "/", label: "Home", isRoute: true },
     { href: "/services", label: "Services", isRoute: true },
     { href: "/portfolio", label: "Portfolio", isRoute: true },
-    { href: "/articles", label: "Articles", isRoute: true },
+    { href: "/orza-ai", label: "Orza AI", isRoute: true },
     { href: "/#localities", label: "Locations" },
     { href: "/contact", label: "Contact", isRoute: true },
   ];

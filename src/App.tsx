@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "./components/ScrollToTop";
 import QuotationPopup from "./components/QuotationPopup";
+import FloatingOrzaButton from "./components/FloatingOrzaButton";
 import Index from "./pages/Index";
 import Bangalore from "./pages/Bangalore";
 import Portfolio from "./pages/Portfolio";
@@ -76,6 +77,7 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <QuotationPopup />
+          <FloatingOrzaButton />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/bangalore" element={<Bangalore />} />
