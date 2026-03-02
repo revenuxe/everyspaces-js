@@ -39,6 +39,7 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Articles from "./pages/Articles";
 import ArticleDetail from "./pages/ArticleDetail";
+import OrzaAI from "./pages/OrzaAI";
 import NotFound from "./pages/NotFound";
 
 // Locality pages
@@ -107,6 +108,7 @@ const App = () => (
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/articles" element={<Articles />} />
             <Route path="/articles/:slug" element={<ArticleDetail />} />
+            <Route path="/orza-ai" element={<OrzaAI />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminDashboard />} />
             
