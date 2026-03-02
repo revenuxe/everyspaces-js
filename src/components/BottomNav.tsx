@@ -1,4 +1,4 @@
-import { Home, Wrench, MessageSquare, FileText } from "lucide-react";
+import { Home, Wrench, MessageSquare, Sparkles } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import QuotationPopup from "./QuotationPopup";
@@ -18,7 +18,7 @@ const BottomNav = () => {
     { icon: Wrench, label: "Service", href: "/services" },
     { icon: null, label: "WhatsApp", action: handleWhatsAppClick },
     { icon: MessageSquare, label: "Contact", action: () => setIsContactOpen(true) },
-    { icon: FileText, label: "Articles", href: "/articles" },
+    { icon: Sparkles, label: "Orza AI", href: "/orza-ai" },
   ];
 
   return (
