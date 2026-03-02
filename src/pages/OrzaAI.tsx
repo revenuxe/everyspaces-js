@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, ArrowLeft, Sparkles, ImagePlus, Camera, X } from "lucide-react";
+import { ArrowRight, ArrowLeft, ImagePlus, Camera, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import type { ChatMessage, Recommendation } from "@/components/orza/types";
 import RecommendationView from "@/components/orza/RecommendationView";
 import LeadCapturePopup from "@/components/orza/LeadCapturePopup";
+import orzaLogo from "@/assets/orza-logo.webp";
+import orzaIcon from "@/assets/orza-icon.webp";
 
 const OrzaAI = () => {
   const navigate = useNavigate();
@@ -193,28 +195,23 @@ const OrzaAI = () => {
 
   return (
     <div className="h-[100dvh] bg-primary flex flex-col overflow-hidden">
-      {/* Header */}
-      <div className="shrink-0 bg-primary border-b border-primary-foreground/10 px-4 py-3">
+      {/* Header - White */}
+      <div className="shrink-0 bg-white border-b border-border px-4 py-3">
         <div className="flex items-center gap-3">
-          <button onClick={() => navigate(-1)} className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/15 transition-colors">
-            <ArrowLeft className="w-4 h-4 text-primary-foreground" />
+          <button onClick={() => navigate(-1)} className="w-9 h-9 rounded-full bg-muted flex items-center justify-center hover:bg-muted/80 transition-colors">
+            <ArrowLeft className="w-4 h-4 text-foreground" />
           </button>
-          <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
-            <Sparkles className="w-4 h-4 text-secondary-foreground" />
-          </div>
-          <div className="flex-1">
-            <h1 className="text-sm font-bold text-primary-foreground">Orza AI</h1>
-            <p className="text-[10px] text-primary-foreground/50">Your personal interior designer</p>
-          </div>
+          <img src={orzaLogo} alt="Orza AI" className="h-7 object-contain" />
+          <div className="flex-1" />
           {!showImageStep && (
-            <span className="text-[10px] text-primary-foreground/40 font-medium">
+            <span className="text-[10px] text-muted-foreground font-medium">
               {currentStep + 1}/{totalSteps}
             </span>
           )}
         </div>
         {/* Progress bar */}
         {!showImageStep && (
-          <div className="mt-2 h-0.5 bg-primary-foreground/10 rounded-full overflow-hidden">
+          <div className="mt-2 h-0.5 bg-border rounded-full overflow-hidden">
             <motion.div
               className="h-full bg-secondary rounded-full"
               initial={{ width: 0 }}
@@ -237,9 +234,7 @@ const OrzaAI = () => {
               className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
             >
               {msg.role === "assistant" && (
-                <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center mr-2 mt-1 shrink-0">
-                  <Sparkles className="w-3 h-3 text-secondary" />
-                </div>
+                <img src={orzaIcon} alt="Orza" className="w-6 h-6 rounded-full mr-2 mt-1 shrink-0 bg-white object-contain" />
               )}
               <div
                 className={`max-w-[78%] rounded-2xl px-3.5 py-2.5 text-[13px] leading-relaxed ${
@@ -258,9 +253,7 @@ const OrzaAI = () => {
         <AnimatePresence>
           {isLoading && (
             <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="flex justify-start">
-              <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center mr-2 mt-1 shrink-0">
-                <Sparkles className="w-3 h-3 text-secondary" />
-              </div>
+              <img src={orzaIcon} alt="Orza" className="w-6 h-6 rounded-full mr-2 mt-1 shrink-0 bg-white object-contain" />
               <div className="bg-primary-foreground/10 border border-primary-foreground/10 rounded-2xl rounded-bl-sm px-4 py-3 flex gap-1.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "0ms" }} />
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "150ms" }} />
