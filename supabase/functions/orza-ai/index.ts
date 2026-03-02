@@ -7,18 +7,34 @@ const corsHeaders = {
 
 const QUESTIONS = [
   {
+    key: "name",
+    message: "Hey! 👋 I'm Orza — your personal interior designer. What's your name?",
+    options: [],
+    inputPlaceholder: "Enter your name...",
+  },
+  {
+    key: "location",
+    message: "", // filled dynamically with name greeting
+    options: ["Bangalore", "Mysore", "Hyderabad", "Chennai", "Mumbai", "Other"],
+    inputPlaceholder: "Or type your city...",
+  },
+  {
+    key: "space",
     message: "What space are you looking to design? ✨",
     options: ["Full Home Interiors", "Modular Kitchen", "Bedroom", "Living Room", "Wardrobe", "TV Unit", "Pooja Room", "2BHK", "3BHK", "Villa", "Study Room", "Kids Room"],
   },
   {
+    key: "vibe",
     message: "How do you want it to feel? 🎨",
     options: ["Modern & Minimal", "Luxury", "Contemporary", "Traditional", "Scandinavian", "Industrial", "Budget-Friendly"],
   },
   {
+    key: "budget",
     message: "What's your budget range? 💰",
     options: ["Under ₹3 Lakhs", "₹3-6 Lakhs", "₹6-10 Lakhs", "₹10-15 Lakhs", "₹15 Lakhs+", "Not sure yet"],
   },
   {
+    key: "details",
     message: "Any special requirements? 🏠",
     options: ["Vastu Compliant", "Pet Friendly", "Kid Safe", "Work From Home", "Lots of Storage", "Low Maintenance", "None"],
   },
@@ -38,7 +54,7 @@ const RECOMMENDATION_SCHEMA = `Return VALID JSON ONLY (no markdown) with this st
   },
   "materials": {
     "description": "2-3 sentences for Bangalore climate",
-    "recommendations": [{"item": "Name", "type": "Brand/type", "why": "Why it works in Bangalore"}]
+    "recommendations": [{"item": "Name", "type": "Brand/type", "why": "Why it works"}]
   },
   "lighting": {
     "description": "2-3 sentences",
@@ -69,8 +85,8 @@ const callGemini = async (apiKey: string, body: object): Promise<Response | null
 };
 
 const buildFallback = (space: string, vibe: string, budget: string, details: string) => ({
-  headline: `Your ${vibe} ${space} — curated for Bangalore living`,
-  intro: `Picture yourself walking into your ${space} after a long Bangalore commute — and feeling instantly at peace. That's what we're creating for you.`,
+  headline: `Your ${vibe} ${space} — curated for beautiful living`,
+  intro: `Picture yourself walking into your ${space} and feeling instantly at peace. That's what we're creating for you.`,
   colorPalette: {
     description: "A warm neutral foundation with one refined accent that elevates the entire space.",
     colors: [
@@ -83,14 +99,14 @@ const buildFallback = (space: string, vibe: string, budget: string, details: str
   furnitureLayout: {
     description: "Proportionate furniture with clear circulation paths and built-in storage.",
     items: [
-      { name: "Primary Piece", detail: "Low-profile, clean lines — scaled for Bangalore apartments", priceRange: "₹35,000 - ₹95,000" },
+      { name: "Primary Piece", detail: "Low-profile, clean lines — scaled for modern apartments", priceRange: "₹35,000 - ₹95,000" },
       { name: "Storage Unit", detail: "Floor-to-ceiling with internal organizers", priceRange: "₹45,000 - ₹1,60,000" },
     ],
   },
   materials: {
-    description: "Bangalore humidity and dust demand moisture-resistant, low-maintenance finishes.",
+    description: "Humidity and dust demand moisture-resistant, low-maintenance finishes.",
     recommendations: [
-      { item: "Core carcass", type: "BWP Plywood (Century)", why: "Moisture resistant for Bangalore" },
+      { item: "Core carcass", type: "BWP Plywood (Century)", why: "Moisture resistant" },
       { item: "Hardware", type: "Hettich soft-close", why: "Durable daily use" },
       { item: "Finish", type: "Matte laminate", why: "Low maintenance, premium look" },
     ],
@@ -103,13 +119,13 @@ const buildFallback = (space: string, vibe: string, budget: string, details: str
       { type: "Accent", suggestion: "Cove lighting", placement: "Feature wall" },
     ],
   },
-  designerSecret: `Hide daily-use storage behind flush paneling — it's the fastest way to make any Bangalore apartment look premium.${details !== "None" && details !== "none" ? ` We'll also factor in: ${details}.` : ""}`,
+  designerSecret: `Hide daily-use storage behind flush paneling — it's the fastest way to make any apartment look premium.${details !== "None" && details !== "none" ? ` We'll also factor in: ${details}.` : ""}`,
   estimatedBudget: {
     low: budget.includes("Under") ? "₹1,50,000" : budget.includes("3-6") ? "₹3,00,000" : budget.includes("6-10") ? "₹6,00,000" : budget.includes("10-15") ? "₹10,00,000" : budget.includes("15") ? "₹15,00,000" : "₹2,80,000",
     high: budget.includes("Under") ? "₹3,00,000" : budget.includes("3-6") ? "₹6,00,000" : budget.includes("6-10") ? "₹10,00,000" : budget.includes("10-15") ? "₹15,00,000" : budget.includes("15") ? "₹25,00,000" : "₹6,50,000",
-    note: `${space} with ${vibe} style — Bangalore market rates`,
+    note: `${space} with ${vibe} style — current market rates`,
   },
-  moodKeywords: [vibe || "refined", "functional", "timeless", "Bangalore-ready", "curated"],
+  moodKeywords: [vibe || "refined", "functional", "timeless", "modern", "curated"],
 });
 
 serve(async (req) => {
@@ -119,20 +135,24 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { messages = [], phase, step } = body;
+    const { phase, step, name } = body;
     const GEMINI_API_KEY = Deno.env.get("GOOGLE_GEMINI_API_KEY");
     if (!GEMINI_API_KEY) throw new Error("GOOGLE_GEMINI_API_KEY is not configured");
 
-    // Phase: structured questions (no AI call needed)
+    // Phase: structured questions
     if (phase === "question") {
       const questionIndex = typeof step === "number" ? step : 0;
       if (questionIndex < QUESTIONS.length) {
+        const q = { ...QUESTIONS[questionIndex] };
+        // Personalize location question with name
+        if (q.key === "location" && name) {
+          q.message = `Nice to meet you, ${name}! 😊 Where are you located?`;
+        }
         return new Response(
-          JSON.stringify({ type: "question", message: QUESTIONS[questionIndex].message, options: QUESTIONS[questionIndex].options, step: questionIndex }),
+          JSON.stringify({ type: "question", message: q.message, options: q.options, key: q.key, step: questionIndex, inputPlaceholder: q.inputPlaceholder }),
           { headers: { ...corsHeaders, "Content-Type": "application/json" } }
         );
       }
-      // All questions answered — signal ready
       return new Response(
         JSON.stringify({ type: "ready" }),
         { headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -141,9 +161,9 @@ serve(async (req) => {
 
     // Phase: generate recommendation
     if (phase === "recommend") {
-      const { space = "living room", vibe = "modern", budget = "balanced", details = "none" } = body;
+      const { space = "living room", vibe = "modern", budget = "balanced", details = "none", location = "" } = body;
 
-      const prompt = `You are Orza, a premium Bangalore interior designer with 15+ years experience. Create a detailed, personalized interior design recommendation. ${RECOMMENDATION_SCHEMA}\n\nClient Requirements:\n- Space: ${space}\n- Style: ${vibe}\n- Budget: ${budget}\n- Special Requirements: ${details}\n\nMake it specific to Bangalore (climate, market, local brands). Be detailed with real price ranges in INR.`;
+      const prompt = `You are Orza, a premium interior designer with 15+ years experience. Create a detailed, personalized interior design recommendation. ${RECOMMENDATION_SCHEMA}\n\nClient Requirements:\n- Space: ${space}\n- Style: ${vibe}\n- Budget: ${budget}\n- Location: ${location}\n- Special Requirements: ${details}\n\nMake it specific to the client's location and climate. Be detailed with real price ranges in INR.`;
 
       const resp = await callGemini(GEMINI_API_KEY, {
         contents: [{ role: "user", parts: [{ text: prompt }] }],
