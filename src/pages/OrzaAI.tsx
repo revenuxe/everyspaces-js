@@ -25,6 +25,7 @@ const OrzaAI = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [uploadedImages, setUploadedImages] = useState<string[]>([]);
   const [showImageStep, setShowImageStep] = useState(false);
+  const [stepHistory, setStepHistory] = useState<{ step: number; key: string; answer: string }[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -113,6 +114,9 @@ const OrzaAI = () => {
   const handleOptionSelect = (option: string) => {
     if (isLoading) return;
 
+    // Save history for back navigation
+    setStepHistory(prev => [...prev, { step: currentStep, key: currentKey, answer: option }]);
+
     const newAnswers = { ...answers, [currentKey]: option };
     setAnswers(newAnswers);
     setCurrentOptions([]);
@@ -120,11 +124,38 @@ const OrzaAI = () => {
     setIsLoading(true);
 
     const nextStep = currentStep + 1;
-    // Add a small delay before loading next question for natural flow
     setTimeout(() => {
       setIsLoading(false);
       fetchQuestion(nextStep, newAnswers);
     }, 500);
+  };
+
+  const handleGoBack = () => {
+    if (isLoading || stepHistory.length === 0) return;
+    if (showImageStep) {
+      setShowImageStep(false);
+      setUploadedImages([]);
+      // Remove image prompt message
+      setMessages(prev => prev.filter((_, i) => i < prev.length - 1));
+      const lastEntry = stepHistory[stepHistory.length - 1];
+      fetchQuestion(lastEntry.step + 1 > currentStep ? currentStep : lastEntry.step + 1, answers);
+      return;
+    }
+
+    const lastEntry = stepHistory[stepHistory.length - 1];
+    const newHistory = stepHistory.slice(0, -1);
+    setStepHistory(newHistory);
+
+    // Remove the last answer
+    const newAnswers = { ...answers };
+    delete newAnswers[lastEntry.key];
+    setAnswers(newAnswers);
+
+    // Remove last 2 messages (user answer + assistant question)
+    setMessages(prev => prev.slice(0, -2));
+
+    // Re-fetch the previous question
+    fetchQuestion(lastEntry.step, newAnswers);
   };
 
   const handleSend = () => {
@@ -171,6 +202,7 @@ const OrzaAI = () => {
     setShowPopup(false);
     setUploadedImages([]);
     setShowImageStep(false);
+    setStepHistory([]);
     setTimeout(() => fetchQuestion(0), 100);
   };
 
@@ -203,7 +235,7 @@ const OrzaAI = () => {
       {/* Header - White */}
       <div className="shrink-0 bg-white border-b border-border px-4 py-3">
         <div className="flex items-center gap-3">
-          <button onClick={() => navigate(-1)} className="w-9 h-9 rounded-full bg-muted flex items-center justify-center hover:bg-muted/80 transition-colors">
+          <button onClick={() => stepHistory.length > 0 ? handleGoBack() : navigate(-1)} className="w-9 h-9 rounded-full bg-muted flex items-center justify-center hover:bg-muted/80 transition-colors">
             <ArrowLeft className="w-4 h-4 text-foreground" />
           </button>
           <img src={orzaLogo} alt="Orza AI" className="h-7 object-contain" />
