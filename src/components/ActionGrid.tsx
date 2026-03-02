@@ -1,11 +1,20 @@
-import { Calculator, Images, Phone, ArrowUpRight } from "lucide-react";
+import { Sparkles, Calculator, Images, Phone, ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import calculatorImage from "@/assets/action-calculator.webp";
 import galleryImage from "@/assets/action-gallery.webp";
 import materialsImage from "@/assets/action-materials.webp";
+import orzaIcon from "@/assets/orza-icon.webp";
 
 const actionItems = [
+  {
+    icon: Sparkles,
+    title: "Ask Orza AI",
+    description: "Get AI-powered design recommendations",
+    image: galleryImage,
+    link: "/orza-ai",
+    isOrza: true,
+  },
   {
     icon: Calculator,
     title: "Price Calculator",
@@ -41,7 +50,7 @@ const ActionGrid = () => {
         {/* Mobile: Horizontal scroll with proper snap | Desktop: Grid */}
         <div
           ref={scrollRef}
-          className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 md:pb-0"
+          className="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 md:pb-0"
           style={{
             scrollPaddingLeft: "1rem",
             scrollPaddingRight: "1rem",
@@ -68,8 +77,12 @@ const ActionGrid = () => {
 
                 {/* Content */}
                 <div className="relative z-10 h-full flex flex-col justify-end p-5 pr-16 pb-8">
-                  <div className="w-12 h-12 rounded-2xl bg-secondary/20 backdrop-blur-sm flex items-center justify-center mb-3 group-hover:bg-secondary/30 transition-colors">
-                    <item.icon className="w-6 h-6 text-primary-foreground" />
+                  <div className="w-12 h-12 rounded-2xl bg-secondary/20 backdrop-blur-sm flex items-center justify-center mb-3 group-hover:bg-secondary/30 transition-colors overflow-hidden">
+                    {(item as any).isOrza ? (
+                      <img src={orzaIcon} alt="Orza" className="w-8 h-8 object-contain" />
+                    ) : (
+                      <item.icon className="w-6 h-6 text-primary-foreground" />
+                    )}
                   </div>
                   <h3 className="font-display text-xl text-primary-foreground mb-1 line-clamp-2">
                     {item.title}
