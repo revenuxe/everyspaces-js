@@ -148,63 +148,130 @@ const callGemini = async (apiKey: string, body: object): Promise<Response | null
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
       { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }
     );
+    console.log(`Gemini attempt ${attempt}: status ${response.status}`);
     if (response.status !== 429) break;
     if (attempt < RETRY_DELAYS_MS.length) {
       const retryAfter = Number(response.headers.get("Retry-After") ?? 0);
-      await sleep(retryAfter > 0 ? retryAfter * 1000 : RETRY_DELAYS_MS[attempt]);
+      const waitMs = retryAfter > 0 ? retryAfter * 1000 : RETRY_DELAYS_MS[attempt];
+      console.log(`Rate limited, waiting ${waitMs}ms...`);
+      await sleep(waitMs);
     }
   }
   return response;
 };
 
 const buildFallback = (allAnswers: Record<string, string>) => {
-  const space = allAnswers.space || "living room";
-  const vibe = allAnswers.vibe || "modern";
-  const budget = allAnswers.budget || "balanced";
-  const details = allAnswers.details || "none";
-  return {
-    headline: `Your ${vibe} ${space} — curated for beautiful living`,
-    intro: `Picture yourself walking into your ${space} and feeling instantly at peace. That's what we're creating for you.`,
-    colorPalette: {
-      description: `A warm neutral foundation with one refined accent that elevates your ${space}.`,
+  const space = allAnswers.space || "Living Room";
+  const vibe = allAnswers.vibe || "Modern";
+  const budget = allAnswers.budget || "Not sure yet";
+  const details = allAnswers.details || "None";
+  const location = allAnswers.location || "Bangalore";
+
+  // Space-specific furniture, colors, materials
+  const spaceData: Record<string, any> = {
+    "Modular Kitchen": {
+      headline: `Your ${vibe} ${allAnswers.kitchen_shape || "L-Shaped"} Modular Kitchen`,
+      intro: `Imagine cooking in a beautifully designed ${allAnswers.kitchen_shape || "L-Shaped"} kitchen that's organized, stylish, and built for your lifestyle in ${location}.`,
       colors: [
-        { name: "Warm Ivory", shade: "Asian Paints L152", hex: "#F3EDE2", usage: "Main walls" },
-        { name: "Greige Stone", shade: "Berger 8P2672", hex: "#CFC5B7", usage: "Feature wall" },
-        { name: "Muted Sage", shade: "Asian Paints 9458", hex: "#A9B4A4", usage: "Soft furnishings" },
-        { name: "Walnut", shade: "Wood Tone", hex: "#6B4F3E", usage: "Furniture accents" },
+        { name: "Cream White", shade: "Asian Paints 0520", hex: "#FAF3E8", usage: "Upper cabinets & walls" },
+        { name: "Charcoal Grey", shade: "Berger 8P3245", hex: "#4A4A4A", usage: "Lower cabinets & countertop edge" },
+        { name: "Warm Wood", shade: "Wood Tone", hex: "#A0764A", usage: "Open shelves & handles" },
+        { name: "Olive Accent", shade: "Asian Paints 8423", hex: "#7D8B6A", usage: "Backsplash tile or accent wall" },
       ],
-    },
-    furnitureLayout: {
-      description: `Proportionate furniture with clear circulation paths for your ${space}.`,
-      items: [
-        { name: "Primary Piece", detail: `Scaled for ${space} — clean lines, modern profile`, priceRange: "₹35,000 - ₹95,000" },
-        { name: "Storage Unit", detail: "Floor-to-ceiling with internal organizers", priceRange: "₹45,000 - ₹1,60,000" },
+      furniture: [
+        { name: `${allAnswers.kitchen_shape || "L-Shaped"} Base Cabinets`, detail: "Floor cabinets with tandem drawers, soft-close channels — optimized for ${allAnswers.kitchen_size || 'compact'} space", priceRange: "₹45,000 - ₹1,20,000" },
+        { name: "Wall-Mounted Upper Cabinets", detail: "Lift-up shutters with glass profiles for easy access", priceRange: "₹25,000 - ₹65,000" },
+        { name: "Countertop", detail: "Quartz/granite slab with integrated sink cutout", priceRange: "₹15,000 - ₹45,000" },
+        { name: "Chimney & Hob Unit", detail: "Auto-clean chimney (Elica/Faber) + 3-burner hob", priceRange: "₹18,000 - ₹35,000" },
       ],
-    },
-    materials: {
-      description: "Humidity and dust demand moisture-resistant, low-maintenance finishes.",
-      recommendations: [
-        { item: "Core carcass", type: "BWP Plywood (Century)", why: "Moisture resistant" },
-        { item: "Hardware", type: "Hettich soft-close", why: "Durable daily use" },
-        { item: "Finish", type: "Matte laminate", why: "Low maintenance, premium look" },
+      materials: [
+        { item: "Carcass", type: "BWR Plywood (Century/Greenply)", why: "Moisture & steam resistant — essential for kitchens" },
+        { item: "Shutter Finish", type: "Acrylic / PU Paint", why: "Easy to clean, oil & heat resistant" },
+        { item: "Hardware", type: "Hettich/Hafele tandem drawers", why: "50,000+ cycle soft-close for daily kitchen use" },
+        { item: "Backsplash", type: "Ceramic/Vitrified Tiles", why: "Heat resistant, easy wipe-down" },
       ],
-    },
-    lighting: {
-      description: `Three-layer lighting strategy tailored for your ${space}.`,
-      layers: [
-        { type: "Ambient", suggestion: "Warm 3000K recessed LEDs", placement: "Ceiling perimeter" },
-        { type: "Task", suggestion: "Focused wall-wash lights", placement: "Work zones" },
-        { type: "Accent", suggestion: "Cove lighting", placement: "Feature wall" },
+      lighting: [
+        { type: "Task", suggestion: "Under-cabinet LED strip lights (4000K)", placement: "Below wall cabinets over countertop" },
+        { type: "Ambient", suggestion: "Warm recessed ceiling LEDs", placement: "Kitchen ceiling perimeter" },
+        { type: "Accent", suggestion: "Profile lighting inside glass cabinets", placement: "Upper glass-door cabinets" },
       ],
+      secret: `In a ${allAnswers.kitchen_shape || "L-Shaped"} kitchen, keep your wet zone (sink) and hot zone (hob) on different arms with a landing counter between — it makes cooking 3x more efficient.`,
     },
-    designerSecret: `Hide daily-use storage behind flush paneling — it's the fastest way to make any ${space} look premium.${details !== "None" ? ` We'll also factor in: ${details}.` : ""}`,
-    estimatedBudget: {
-      low: budget.includes("Under") ? "₹1,50,000" : budget.includes("3-6") ? "₹3,00,000" : budget.includes("6-10") ? "₹6,00,000" : budget.includes("10-15") ? "₹10,00,000" : budget.includes("15") ? "₹15,00,000" : "₹2,80,000",
-      high: budget.includes("Under") ? "₹3,00,000" : budget.includes("3-6") ? "₹6,00,000" : budget.includes("6-10") ? "₹10,00,000" : budget.includes("10-15") ? "₹15,00,000" : budget.includes("15") ? "₹25,00,000" : "₹6,50,000",
-      note: `${space} with ${vibe} style — current market rates`,
+    "Bedroom": {
+      headline: `Your ${vibe} ${allAnswers.bedroom_type || "Master"} Bedroom`,
+      intro: `A ${allAnswers.bedroom_type || "master"} bedroom that wraps you in comfort the moment you step in — designed for restful nights and energized mornings in ${location}.`,
+      colors: [
+        { name: "Soft Linen", shade: "Asian Paints L148", hex: "#F0E8DC", usage: "All walls" },
+        { name: "Dusty Rose", shade: "Berger 4P1862", hex: "#C9A89A", usage: "Headboard wall" },
+        { name: "Deep Walnut", shade: "Wood Tone", hex: "#5C3D2E", usage: "Bed frame & wardrobe" },
+        { name: "Sage Green", shade: "Asian Paints 9460", hex: "#A8B5A0", usage: "Curtains & throw pillows" },
+      ],
+      furniture: [
+        { name: "Bed with Hydraulic Storage", detail: `King/Queen size with ${allAnswers.bedroom_must?.includes("Storage") ? "full hydraulic + side drawer" : "hydraulic storage"} — ${allAnswers.bedroom_size || "medium"} room optimized`, priceRange: "₹35,000 - ₹85,000" },
+        { name: "Sliding Wardrobe", detail: "Floor-to-ceiling with mirror panel, internal organizers", priceRange: "₹55,000 - ₹1,60,000" },
+        { name: "Side Tables", detail: "Floating wall-mounted with LED strip below", priceRange: "₹6,000 - ₹15,000" },
+        { name: "Dresser/Study Unit", detail: "Compact wall-mounted unit with mirror and storage", priceRange: "₹12,000 - ₹30,000" },
+      ],
+      materials: [
+        { item: "Wardrobe Carcass", type: "MR Grade Plywood", why: "Durable for daily use, cost-effective" },
+        { item: "Bed Frame", type: "Engineered Wood + Metal Frame", why: "Strong, lightweight, modern look" },
+        { item: "Finish", type: "Laminate (Merino/Century)", why: "Scratch resistant, wide texture options" },
+      ],
+      lighting: [
+        { type: "Ambient", suggestion: "Warm 2700K cove lighting", placement: "False ceiling perimeter" },
+        { type: "Task", suggestion: "Adjustable reading wall lights", placement: "Both sides of headboard" },
+        { type: "Accent", suggestion: "LED strip behind headboard panel", placement: "Headboard feature wall" },
+      ],
+      secret: "Install your wardrobe handles at 42-inch height and add a pull-down rail for the top section — it makes a standard wardrobe feel like a walk-in closet.",
     },
-    moodKeywords: [vibe, "functional", "timeless", "modern", "curated"],
-    moodBoardQueries: [`${vibe} ${space} interior design`, `${space} home decor`, `modern ${space} ideas`, `${vibe} interior inspiration`],
+  };
+
+  const data = spaceData[space];
+
+  // Generic fallback for spaces without specific data
+  const headline = data?.headline || `Your ${vibe} ${space} — Designed for ${location}`;
+  const intro = data?.intro || `A beautifully curated ${space} designed with a ${vibe} aesthetic, tailored for the climate and lifestyle of ${location}.`;
+  const colors = data?.colors || [
+    { name: "Soft White", shade: "Asian Paints L152", hex: "#F3EDE2", usage: "Primary walls" },
+    { name: "Warm Taupe", shade: "Berger 8P2672", hex: "#CFC5B7", usage: "Feature/accent wall" },
+    { name: "Forest Green", shade: "Asian Paints 9458", hex: "#6B8F71", usage: "Soft furnishings & accessories" },
+    { name: "Dark Walnut", shade: "Wood Tone", hex: "#5C3D2E", usage: "Furniture & frames" },
+  ];
+  const furniture = data?.furniture || [
+    { name: "Primary Furniture", detail: `Core piece for your ${space}, selected for ${vibe} style`, priceRange: "₹35,000 - ₹95,000" },
+    { name: "Storage Solution", detail: "Customized storage optimized for the space dimensions", priceRange: "₹45,000 - ₹1,20,000" },
+  ];
+  const mats = data?.materials || [
+    { item: "Core Structure", type: "BWP Plywood (Century)", why: `Moisture resistant for ${location} climate` },
+    { item: "Hardware", type: "Hettich soft-close", why: "Premium durability, 50000+ cycles" },
+    { item: "Surface Finish", type: "Laminate (Merino)", why: "Scratch resistant, easy maintenance" },
+  ];
+  const lights = data?.lighting || [
+    { type: "Ambient", suggestion: "Warm 3000K recessed LEDs", placement: "Ceiling perimeter" },
+    { type: "Task", suggestion: "Focused work-area lighting", placement: "Activity zones" },
+    { type: "Accent", suggestion: "Cove/strip lighting", placement: "Feature wall or shelving" },
+  ];
+  const secret = data?.secret || `For your ${space}: choose one bold feature element and keep everything else restrained — it creates instant designer-level impact on any budget.`;
+
+  const budgetLow = budget.includes("Under") ? "₹1,50,000" : budget.includes("3-6") ? "₹3,00,000" : budget.includes("6-10") ? "₹6,00,000" : budget.includes("10-15") ? "₹10,00,000" : budget.includes("15") ? "₹15,00,000" : "₹2,80,000";
+  const budgetHigh = budget.includes("Under") ? "₹3,00,000" : budget.includes("3-6") ? "₹6,00,000" : budget.includes("6-10") ? "₹10,00,000" : budget.includes("10-15") ? "₹15,00,000" : budget.includes("15") ? "₹25,00,000" : "₹6,50,000";
+
+  return {
+    headline,
+    intro,
+    colorPalette: { description: `Color story curated for a ${vibe} ${space} in ${location}.`, colors },
+    furnitureLayout: { description: `Furniture & layout designed specifically for your ${space}.`, items: furniture },
+    materials: { description: `Materials selected for ${location}'s climate — humidity & dust resistant.`, recommendations: mats },
+    lighting: { description: `Lighting plan tailored for your ${space} to create depth and function.`, layers: lights },
+    designerSecret: secret + (details !== "None" ? ` Also considered: ${details}.` : ""),
+    estimatedBudget: { low: budgetLow, high: budgetHigh, note: `${space} — ${vibe} style, ${allAnswers.kitchen_shape || allAnswers.bedroom_type || ""} layout in ${location}` },
+    moodKeywords: [vibe, space.toLowerCase(), "curated", location.toLowerCase(), "functional"],
+    moodBoardQueries: [
+      `${vibe} ${allAnswers.kitchen_shape || allAnswers.bedroom_type || ""} ${space} interior design India`,
+      `${space} ${vibe} home decor ${location}`,
+      `modern ${space} design ideas India`,
+      `${vibe} ${space} inspiration interiors`,
+    ],
   };
 };
 
@@ -290,6 +357,8 @@ CRITICAL INSTRUCTIONS:
       });
 
       if (!resp || !resp.ok) {
+        const errText = resp ? await resp.text() : "No response";
+        console.error(`Gemini failed: status=${resp?.status}, body=${errText}`);
         const fb = buildFallback(allAnswers);
         return new Response(JSON.stringify({ type: "recommendation", data: fb, source: "fallback" }), {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
