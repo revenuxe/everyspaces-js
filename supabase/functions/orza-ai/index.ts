@@ -14,7 +14,7 @@ const QUESTIONS = [
   },
   {
     key: "location",
-    message: "", // filled dynamically with name greeting
+    message: "Which city are you in? 📍",
     options: ["Bangalore", "Mysore", "Hyderabad", "Chennai", "Mumbai", "Other"],
     inputPlaceholder: "Or type your city...",
   },
@@ -146,7 +146,7 @@ serve(async (req) => {
         const q = { ...QUESTIONS[questionIndex] };
         // Personalize location question with name
         if (q.key === "location" && name) {
-          q.message = `Nice to meet you, ${name}! 😊 Where are you located?`;
+          q.message = `Nice to meet you, ${name}! 😊 Which city are you in? 📍`;
         }
         return new Response(
           JSON.stringify({ type: "question", message: q.message, options: q.options, key: q.key, step: questionIndex, inputPlaceholder: q.inputPlaceholder }),
