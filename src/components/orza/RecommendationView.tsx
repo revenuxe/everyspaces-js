@@ -3,6 +3,39 @@ import { Palette, Sofa, Lightbulb, Layers, Star, IndianRupee, Download, MessageC
 import { motion } from "framer-motion";
 import type { Recommendation } from "./types";
 
+// Import space-specific images
+import serviceKitchen from "@/assets/service-kitchen.jpg";
+import serviceModularKitchen from "@/assets/service-modular-kitchen.jpg";
+import serviceBedroom from "@/assets/service-bedroom.jpg";
+import serviceLivingRoom from "@/assets/service-living-room.jpg";
+import serviceLiving from "@/assets/service-living.jpg";
+import serviceWardrobe from "@/assets/service-wardrobe.jpg";
+import serviceTVUnit from "@/assets/service-tv-unit.jpg";
+import servicePoojaRoom from "@/assets/service-pooja-room.jpg";
+import service2BHK from "@/assets/service-2bhk.jpg";
+import serviceVilla from "@/assets/service-villa.jpg";
+import heroInterior from "@/assets/hero-interior.jpg";
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
+import gallery5 from "@/assets/gallery-5.jpg";
+import gallery6 from "@/assets/gallery-6.jpg";
+import gallery7 from "@/assets/gallery-7.jpg";
+import gallery8 from "@/assets/gallery-8.jpg";
+import gallery9 from "@/assets/gallery-9.jpg";
+import gallery10 from "@/assets/gallery-10.jpg";
+import gallery11 from "@/assets/gallery-11.jpg";
+import gallery12 from "@/assets/gallery-12.jpg";
+import gallery13 from "@/assets/gallery-13.jpg";
+import gallery14 from "@/assets/gallery-14.jpg";
+import gallery15 from "@/assets/gallery-15.jpg";
+import gallery16 from "@/assets/gallery-16.jpg";
+import gallery17 from "@/assets/gallery-17.jpg";
+import gallery18 from "@/assets/gallery-18.jpg";
+import gallery19 from "@/assets/gallery-19.jpg";
+import gallery20 from "@/assets/gallery-20.jpg";
+
 const AnimatedCard = ({ children, delay = 0, className }: { children: ReactNode; delay?: number; className: string }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -14,22 +47,41 @@ const AnimatedCard = ({ children, delay = 0, className }: { children: ReactNode;
   </motion.div>
 );
 
-const buildMoodBoardUrls = (queries?: string[], space?: string, vibe?: string): string[] => {
-  // Use AI-generated queries if available, otherwise build from space+vibe
-  const searchTerms = queries && queries.length >= 4
-    ? queries
-    : [
-        `${vibe || "modern"} ${space || "living room"} interior design`,
-        `${vibe || "contemporary"} home decor inspiration`,
-        `${space || "bedroom"} interior styling ${vibe || "minimal"}`,
-        `luxury ${space || "kitchen"} design ideas`,
-      ];
+// Map space types to relevant project images
+const SPACE_IMAGES: Record<string, string[]> = {
+  "Modular Kitchen": [serviceModularKitchen, serviceKitchen, gallery5, gallery12],
+  "Kitchen": [serviceModularKitchen, serviceKitchen, gallery5, gallery12],
+  "Bedroom": [serviceBedroom, gallery3, gallery9, gallery15],
+  "Master Bedroom": [serviceBedroom, gallery3, gallery9, gallery15],
+  "Living Room": [serviceLivingRoom, serviceLiving, gallery1, gallery7],
+  "Wardrobe": [serviceWardrobe, serviceBedroom, gallery4, gallery14],
+  "TV Unit": [serviceTVUnit, serviceLivingRoom, gallery1, gallery11],
+  "Pooja Room": [servicePoojaRoom, gallery6, gallery16, gallery20],
+  "2BHK": [service2BHK, serviceLivingRoom, serviceModularKitchen, serviceBedroom],
+  "3BHK": [service2BHK, serviceLivingRoom, serviceModularKitchen, serviceBedroom],
+  "Villa": [serviceVilla, heroInterior, gallery2, gallery8],
+  "Full Home Interiors": [heroInterior, serviceLivingRoom, serviceModularKitchen, serviceBedroom],
+  "Study Room": [gallery10, gallery13, gallery17, gallery19],
+  "Kids Room": [gallery18, gallery11, gallery6, gallery3],
+};
 
-  return searchTerms.map((q, i) => {
-    const encoded = encodeURIComponent(q);
-    // Use different sizes for visual variety + unique sig to avoid caching same image
-    return `https://source.unsplash.com/featured/600x400?${encoded}&sig=${i}`;
-  });
+const DEFAULT_IMAGES = [heroInterior, serviceLivingRoom, serviceModularKitchen, serviceBedroom];
+
+const getMoodImages = (moodKeywords?: string[]): string[] => {
+  if (!moodKeywords || moodKeywords.length === 0) return DEFAULT_IMAGES;
+  
+  // Try to match space type from mood keywords
+  for (const kw of moodKeywords) {
+    const upper = kw.charAt(0).toUpperCase() + kw.slice(1);
+    if (SPACE_IMAGES[upper]) return SPACE_IMAGES[upper];
+    // Check partial matches
+    for (const [key, imgs] of Object.entries(SPACE_IMAGES)) {
+      if (key.toLowerCase().includes(kw.toLowerCase()) || kw.toLowerCase().includes(key.toLowerCase())) {
+        return imgs;
+      }
+    }
+  }
+  return DEFAULT_IMAGES;
 };
 
 interface RecommendationViewProps {
@@ -40,11 +92,7 @@ interface RecommendationViewProps {
 }
 
 const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSupport }: RecommendationViewProps) => {
-  const moodImages = buildMoodBoardUrls(
-    (rec as any).moodBoardQueries,
-    rec.moodKeywords?.[0],
-    rec.moodKeywords?.[1]
-  );
+  const moodImages = getMoodImages(rec.moodKeywords);
 
   return (
     <div className="min-h-screen bg-background pb-24">
@@ -96,9 +144,6 @@ const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSup
                 alt={`Design inspiration ${i + 1}`}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 loading="lazy"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = `https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&h=300&fit=crop&sig=${i}`;
-                }}
               />
             </motion.div>
           ))}
