@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import type { ChatMessage, Recommendation } from "@/components/orza/types";
+import { StructuredData } from "@/components/StructuredData";
 import RecommendationView from "@/components/orza/RecommendationView";
 import LeadCapturePopup from "@/components/orza/LeadCapturePopup";
 import orzaLogo from "@/assets/orza-logo.webp";
@@ -277,6 +278,32 @@ const OrzaAI = () => {
         <meta name="twitter:description" content="Get instant AI-powered interior design recommendations for your Bangalore home. Free personalized ideas in 2 minutes." />
         <meta name="robots" content="index, follow" />
       </Helmet>
+      <StructuredData data={[
+        {
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "Orza AI – Interior Design Advisor",
+          "url": "https://intorza.com/orza-ai",
+          "description": "Free AI-powered interior design recommendation tool. Get personalized ideas for kitchens, bedrooms, living rooms and more – colors, materials, budget & timeline in 2 minutes.",
+          "applicationCategory": "DesignApplication",
+          "operatingSystem": "Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "520", "bestRating": "5" },
+          "creator": { "@type": "Organization", "name": "Intorza Interior Design", "url": "https://intorza.com" },
+          "browserRequirements": "Requires JavaScript. Works on all modern browsers.",
+          "featureList": "AI-Powered Recommendations, Budget Planning, Material Suggestions, Color Palette, Timeline Estimation, Mood Board Generation"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "@id": "https://intorza.com/orza-ai#faq",
+          "mainEntity": [
+            { "@type": "Question", "name": "Is Orza AI free to use?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Orza AI is 100% free. Get personalized interior design recommendations without any cost." }},
+            { "@type": "Question", "name": "How does Orza AI work?", "acceptedAnswer": { "@type": "Answer", "text": "Answer a few quick questions about your space, budget, and style preferences. Orza AI generates a complete design recommendation with colors, materials, furniture, and budget breakdown in under 2 minutes." }},
+            { "@type": "Question", "name": "What spaces can Orza AI design?", "acceptedAnswer": { "@type": "Answer", "text": "Orza AI covers modular kitchens, bedrooms, living rooms, wardrobes, TV units, pooja rooms, kids rooms, study rooms, bathrooms, balconies, and full home interiors." }}
+          ]
+        }
+      ]} />
       {/* Header - White */}
       <div className="shrink-0 bg-white border-b border-border px-4 py-3">
         <div className="flex items-center gap-3">
