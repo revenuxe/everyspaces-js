@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import type { ChatMessage, Recommendation } from "@/components/orza/types";
 import RecommendationView from "@/components/orza/RecommendationView";
 import LeadCapturePopup from "@/components/orza/LeadCapturePopup";
@@ -262,6 +263,20 @@ const OrzaAI = () => {
 
   return (
     <div className="h-[100dvh] bg-white flex flex-col overflow-hidden">
+      <Helmet>
+        <title>Orza AI – Free Interior Design Advisor | Intorza Bangalore</title>
+        <meta name="description" content="Get instant AI-powered interior design recommendations for your Bangalore home. Free personalized ideas for kitchens, bedrooms, living rooms & more – budget, materials, colors in 2 minutes." />
+        <meta name="keywords" content="AI interior design tool, free interior design advisor, home decor AI, modular kitchen planner, bedroom design ideas Bangalore, AI home designer, interior design cost calculator" />
+        <link rel="canonical" href="https://intorza.com/orza-ai" />
+        <meta property="og:title" content="Orza AI – Free Interior Design Advisor | Intorza" />
+        <meta property="og:description" content="Get instant AI-powered interior design recommendations for your Bangalore home. Personalized ideas in 2 minutes – 100% free." />
+        <meta property="og:url" content="https://intorza.com/orza-ai" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Orza AI – Free Interior Design Advisor | Intorza" />
+        <meta name="twitter:description" content="Get instant AI-powered interior design recommendations for your Bangalore home. Free personalized ideas in 2 minutes." />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       {/* Header - White */}
       <div className="shrink-0 bg-white border-b border-border px-4 py-3">
         <div className="flex items-center gap-3">
@@ -345,16 +360,35 @@ const OrzaAI = () => {
                   <motion.button
                     key={opt}
                     initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: i * 0.04 }}
+                    animate={{
+                      opacity: 1,
+                      scale: isSelected ? 1.05 : 1,
+                      boxShadow: isSelected ? "0 0 0 2px hsl(var(--secondary))" : "0 0 0 0px transparent",
+                    }}
+                    whileTap={{ scale: 0.92 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 20, delay: i * 0.04 }}
                     onClick={() => handleOptionSelect(opt)}
-                    className={`px-3.5 py-2 rounded-full border text-xs font-medium transition-all active:scale-95 ${
+                    className={`px-3.5 py-2 rounded-full border text-xs font-medium transition-colors ${
                       isSelected
                         ? "bg-secondary text-secondary-foreground border-secondary"
                         : "bg-secondary/10 border-secondary/30 text-secondary hover:bg-secondary hover:text-secondary-foreground"
                     }`}
                   >
-                    {isMultiSelect && isSelected && "✓ "}{opt}
+                    <AnimatePresence mode="wait">
+                      {isMultiSelect && isSelected && (
+                        <motion.span
+                          key="check"
+                          initial={{ width: 0, opacity: 0 }}
+                          animate={{ width: "auto", opacity: 1 }}
+                          exit={{ width: 0, opacity: 0 }}
+                          transition={{ duration: 0.15 }}
+                          className="inline-block overflow-hidden"
+                        >
+                          ✓{" "}
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
+                    {opt}
                   </motion.button>
                 );
               })}
