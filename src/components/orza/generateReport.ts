@@ -122,6 +122,14 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
     addText(rec.estimatedBudget.note, 9, "normal", [100, 100, 100]);
   }
 
+  // Timeline
+  if (rec.estimatedTimeline) {
+    addSectionHeader("Estimated Completion Time");
+    addText(rec.estimatedTimeline.days, 16, "bold", [199, 121, 59]);
+    addText(rec.estimatedTimeline.breakdown, 9, "normal", [30, 30, 30]);
+    addText(rec.estimatedTimeline.note, 8, "italic", [100, 100, 100]);
+  }
+
   // Footer
   y += 8;
   doc.setDrawColor(199, 121, 59);

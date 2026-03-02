@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { Palette, Sofa, Lightbulb, Layers, Star, IndianRupee, Download, MessageCircleHeart, RotateCcw, ArrowLeft, LayoutGrid } from "lucide-react";
+import { Palette, Sofa, Lightbulb, Layers, Star, IndianRupee, Download, MessageCircleHeart, RotateCcw, ArrowLeft, LayoutGrid, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import orzaLogo from "@/assets/orza-logo.webp";
 import type { Recommendation } from "./types";
@@ -256,7 +256,7 @@ const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSup
 
       {/* Budget */}
       {rec.estimatedBudget && (
-        <AnimatedCard delay={0.42} className="mx-4 mb-4 rounded-xl bg-card border border-border p-4 shadow-sm">
+        <AnimatedCard delay={0.42} className="mx-4 mb-3 rounded-xl bg-card border border-border p-4 shadow-sm">
           <div className="flex items-center gap-2 mb-2">
             <IndianRupee className="w-4 h-4 text-secondary" />
             <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Estimated Budget</h3>
@@ -264,6 +264,31 @@ const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSup
           <div className="bg-muted/50 rounded-lg px-3 py-3">
             <p className="text-base font-bold text-foreground">{rec.estimatedBudget.low} — {rec.estimatedBudget.high}</p>
             <p className="text-[10px] text-muted-foreground mt-0.5">{rec.estimatedBudget.note}</p>
+          </div>
+        </AnimatedCard>
+      )}
+
+      {/* Timeline */}
+      {rec.estimatedTimeline && (
+        <AnimatedCard delay={0.46} className="mx-4 mb-4 rounded-xl bg-secondary/5 border border-secondary/20 overflow-hidden shadow-sm">
+          <div className="flex items-center gap-2 px-4 pt-4 pb-1">
+            <Clock className="w-4 h-4 text-secondary" />
+            <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Estimated Completion Time</h3>
+          </div>
+          <div className="px-4 pb-4">
+            <div className="bg-white rounded-lg px-4 py-4 mt-2 border border-secondary/10">
+              <p className="text-2xl font-bold text-secondary leading-tight">{rec.estimatedTimeline.days}</p>
+              <p className="text-[11px] text-muted-foreground mt-2 leading-relaxed">{rec.estimatedTimeline.breakdown}</p>
+              <div className="mt-3 flex gap-1">
+                {rec.estimatedTimeline.breakdown.split("|").map((phase, i) => (
+                  <div key={i} className="flex-1 bg-secondary/10 rounded-md px-2 py-1.5 text-center">
+                    <p className="text-[9px] font-bold text-secondary">{phase.trim().split(":")[0]}</p>
+                    <p className="text-[10px] text-foreground font-medium">{phase.trim().split(":")[1]}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-[10px] text-muted-foreground mt-2 italic">{rec.estimatedTimeline.note}</p>
+            </div>
           </div>
         </AnimatedCard>
       )}
