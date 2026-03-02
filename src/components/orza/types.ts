@@ -12,6 +12,7 @@ export interface Recommendation {
   lighting: { description: string; layers: LightingLayer[] };
   designerSecret: string;
   estimatedBudget: { low: string; high: string; note: string };
+  estimatedTimeline: { days: string; breakdown: string; note: string };
   moodKeywords: string[];
 }
 

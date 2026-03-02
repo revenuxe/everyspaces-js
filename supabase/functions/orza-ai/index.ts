@@ -132,6 +132,7 @@ const RECOMMENDATION_SCHEMA = `Return VALID JSON ONLY (no markdown) with this st
   },
   "designerSecret": "One insider tip specific to this exact space type",
   "estimatedBudget": {"low": "₹X,XX,XXX", "high": "₹X,XX,XXX", "note": "Breakdown specific to what's included for this space"},
+  "estimatedTimeline": {"days": "25-35 days", "breakdown": "Design: 3-5 days | Manufacturing: 15-20 days | Installation: 5-7 days", "note": "Timeline based on scope and material availability"},
   "moodKeywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"]
 }`;
 
@@ -155,6 +156,27 @@ const callGemini = async (apiKey: string, body: object): Promise<Response | null
     }
   }
   return response;
+};
+
+// ── Timeline estimates per space ──
+const getTimelineForSpace = (space: string) => {
+  const timelines: Record<string, { days: string; breakdown: string; note: string }> = {
+    "Modular Kitchen": { days: "25-30 days", breakdown: "Design: 3-4 days | Manufacturing: 15-18 days | Installation: 5-7 days", note: "Includes chimney, hob fitting & plumbing coordination" },
+    "Kitchen": { days: "25-30 days", breakdown: "Design: 3-4 days | Manufacturing: 15-18 days | Installation: 5-7 days", note: "Includes chimney, hob fitting & plumbing coordination" },
+    "Bedroom": { days: "18-25 days", breakdown: "Design: 2-3 days | Manufacturing: 12-15 days | Installation: 3-5 days", note: "Bed, wardrobe & side units included" },
+    "Master Bedroom": { days: "20-25 days", breakdown: "Design: 3-4 days | Manufacturing: 12-15 days | Installation: 4-5 days", note: "Walk-in wardrobe adds 3-4 days" },
+    "Living Room": { days: "18-22 days", breakdown: "Design: 2-3 days | Manufacturing: 12-14 days | Installation: 3-4 days", note: "TV unit, shelving & accent walls" },
+    "Wardrobe": { days: "15-20 days", breakdown: "Design: 2-3 days | Manufacturing: 10-12 days | Installation: 2-3 days", note: "Single wardrobe unit with internals" },
+    "TV Unit": { days: "12-18 days", breakdown: "Design: 2 days | Manufacturing: 8-12 days | Installation: 2-3 days", note: "Including back panel & cable management" },
+    "Pooja Room": { days: "15-20 days", breakdown: "Design: 2-3 days | Manufacturing: 10-12 days | Installation: 2-3 days", note: "CNC jali work may add 2-3 days" },
+    "2BHK": { days: "35-40 days", breakdown: "Design: 5-7 days | Manufacturing: 20-25 days | Installation: 7-10 days", note: "All rooms done in parallel during manufacturing" },
+    "3BHK": { days: "40-45 days", breakdown: "Design: 5-7 days | Manufacturing: 25-28 days | Installation: 8-10 days", note: "Phased installation room-by-room" },
+    "Villa": { days: "45-55 days", breakdown: "Design: 7-10 days | Manufacturing: 25-30 days | Installation: 10-15 days", note: "Large scope — parallel manufacturing streams" },
+    "Full Home Interiors": { days: "35-45 days", breakdown: "Design: 5-7 days | Manufacturing: 20-28 days | Installation: 8-10 days", note: "Coordinated delivery across all rooms" },
+    "Study Room": { days: "12-18 days", breakdown: "Design: 2 days | Manufacturing: 8-12 days | Installation: 2-3 days", note: "Desk, shelving & acoustic panels" },
+    "Kids Room": { days: "18-22 days", breakdown: "Design: 2-3 days | Manufacturing: 12-14 days | Installation: 3-4 days", note: "Child-safe finishes require extra curing time" },
+  };
+  return timelines[space] || { days: "25-35 days", breakdown: "Design: 3-5 days | Manufacturing: 15-20 days | Installation: 5-7 days", note: "Timeline based on scope and complexity" };
 };
 
 // ── Comprehensive space-specific fallback data ──
@@ -598,7 +620,8 @@ const buildFallback = (allAnswers: Record<string, string>) => {
     materials: { description: materialDesc, recommendations: mats },
     lighting: { description: lightingDesc, layers: lights },
     designerSecret: secret + (details !== "None" ? ` Also: ${details} has been factored into this plan.` : ""),
-    estimatedBudget: { low: budgetLow, high: budgetHigh, note: `${space} with ${vibe} style in ${location} — prices based on current market rates` },
+    estimatedBudget: { low: budgetLow, high: budgetHigh, note: `${space} with ${vibe} style in ${location} — prices based on current 2025 market rates` },
+    estimatedTimeline: getTimelineForSpace(space),
     moodKeywords: [vibe.toLowerCase(), space.toLowerCase(), "curated", location.toLowerCase(), "designer-crafted"],
   };
 };
@@ -657,7 +680,9 @@ serve(async (req) => {
         .map(([key, value]) => `- ${key.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase())}: ${value}`)
         .join("\n");
 
-      const prompt = `You are Orza, a premium interior designer in India with 15+ years experience. Create a HIGHLY SPECIFIC and PERSONALIZED interior design recommendation based on the EXACT client requirements below. DO NOT give generic advice — every single section must directly reference their specific space, style, size, and preferences.
+      const prompt = `You are Orza, a premium interior designer at Intorza (Bangalore's top interior design firm) with 15+ years of hands-on experience across 2000+ projects. Create a HIGHLY SPECIFIC, PERSONALIZED, and ACTIONABLE interior design recommendation based on the EXACT client requirements below.
+
+DO NOT give generic advice. Every section must directly reference their specific space type, dimensions, style preference, budget, and location. Use real Indian brand names, actual market prices, and practical tips.
 
 ${RECOMMENDATION_SCHEMA}
 
@@ -666,15 +691,18 @@ CLIENT PROFILE:
 - Location: ${allAnswers.location || "India"}
 ${answerSummary}
 
-CRITICAL INSTRUCTIONS:
-1. The headline MUST mention their specific space type (e.g., "L-Shaped Modular Kitchen" not just "Kitchen")
-2. Furniture items MUST be specific to their chosen space — e.g., for a kitchen: chimney, hob, cabinets, countertop. For bedroom: bed, wardrobe, side table, dresser
-3. Color palette MUST suit their chosen vibe and space type
-4. Budget estimates MUST align with their stated budget range: ${allAnswers.budget || "flexible"}
-5. Materials MUST consider ${allAnswers.location || "Indian"} climate (humidity, dust)
-6. If they mentioned specific needs like ${allAnswers.details || "none"} — address those directly
-7. Price ranges MUST be in INR and realistic for Indian market
-8. moodKeywords MUST include the space type name so the frontend can match images correctly`;
+CRITICAL INSTRUCTIONS FOR ACCURACY:
+1. The headline MUST mention their specific space type AND style (e.g., "Your Modern L-Shaped Modular Kitchen" not just "Kitchen")
+2. Furniture items MUST be specific to their chosen space — e.g., for a kitchen: chimney, hob, cabinets, countertop. For bedroom: bed, wardrobe, side table, dresser. Include exact dimensions where possible.
+3. Color palette MUST use REAL Asian Paints / Berger shade codes that actually exist. Use 4-5 colors with specific usage for each wall/surface.
+4. Budget estimates MUST align with their stated budget range: ${allAnswers.budget || "flexible"}. Break down costs per item realistically for ${allAnswers.location || "Bangalore"} market in 2025.
+5. Materials MUST consider ${allAnswers.location || "Indian"} climate — humidity, dust, heat. Recommend specific Indian brands (Century, Greenply, Merino, Hettich, Hafele, Faber, Elica).
+6. If they mentioned specific needs like "${allAnswers.details || "none"}" — address those DIRECTLY in furniture, materials, AND designer secret sections.
+7. Price ranges MUST be in INR, realistic for 2025 Indian market. Never underestimate.
+8. moodKeywords MUST include the space type name so the frontend can match images correctly.
+9. estimatedTimeline MUST reflect realistic Intorza timelines: Design phase (3-5 days), Manufacturing (15-25 days based on complexity), Installation (3-10 days based on scope). Use fewer days for simpler spaces. Total should be competitive (25-45 days max).
+10. Lighting suggestions must include specific color temperatures (in Kelvin) and real fixture types.
+11. Designer secret must be a genuinely useful, non-obvious tip that only an experienced designer would know — specific to THIS space type.`;
 
       const resp = await callGemini(GEMINI_API_KEY, {
         contents: [{ role: "user", parts: [{ text: prompt }] }],
