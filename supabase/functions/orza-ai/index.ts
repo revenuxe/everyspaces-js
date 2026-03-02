@@ -64,18 +64,25 @@ YOUR EXPERTISE (use naturally in recommendations):
 
 START the conversation with your first question about what space they want to design.`;
 
+const MAX_CONTEXT_MESSAGES = 10;
+const RETRY_DELAYS_MS = [1200, 2400];
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: corsHeaders });
   }
 
   try {
-    const { messages } = await req.json();
+    const { messages = [] } = await req.json();
     const GEMINI_API_KEY = Deno.env.get("GOOGLE_GEMINI_API_KEY");
 
     if (!GEMINI_API_KEY) {
       throw new Error("GOOGLE_GEMINI_API_KEY is not configured");
     }
+
+    const safeMessages = Array.isArray(messages) ? messages.slice(-MAX_CONTEXT_MESSAGES) : [];
 
     // Build Gemini conversation format
     const geminiContents = [
@@ -83,34 +90,51 @@ serve(async (req) => {
       { role: "model", parts: [{ text: '{"type": "question", "message": "Hey there! 👋 I\'m Orza, your personal interior designer. So tell me — what space are we transforming today?"}' }] },
     ];
 
-    // Add conversation history
-    for (const msg of messages) {
+    for (const msg of safeMessages) {
       geminiContents.push({
         role: msg.role === "user" ? "user" : "model",
         parts: [{ text: msg.content }],
       });
     }
 
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: geminiContents,
-          generationConfig: {
-            temperature: 0.85,
-            responseMimeType: "application/json",
-          },
-        }),
+    const requestBody = {
+      contents: geminiContents,
+      generationConfig: {
+        temperature: 0.8,
+        responseMimeType: "application/json",
+        maxOutputTokens: 1200,
+      },
+    };
+
+    let response: Response | null = null;
+
+    for (let attempt = 0; attempt <= RETRY_DELAYS_MS.length; attempt++) {
+      response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(requestBody),
+        }
+      );
+
+      if (response.status !== 429) break;
+      if (attempt < RETRY_DELAYS_MS.length) {
+        const retryAfterSeconds = Number(response.headers.get("Retry-After") ?? 0);
+        const waitMs = retryAfterSeconds > 0 ? retryAfterSeconds * 1000 : RETRY_DELAYS_MS[attempt];
+        await sleep(waitMs);
       }
-    );
+    }
+
+    if (!response) {
+      throw new Error("No response from Gemini API");
+    }
 
     if (!response.ok) {
       const errorText = await response.text();
       console.error("Gemini API error:", response.status, errorText);
       if (response.status === 429) {
-        return new Response(JSON.stringify({ error: "Rate limit exceeded. Please wait a moment and try again." }), {
+        return new Response(JSON.stringify({ error: "Rate limit exceeded. Please wait a bit and try again." }), {
           status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }

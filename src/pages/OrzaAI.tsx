@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, type ReactNode } from "react";
 import { ArrowRight, Sparkles, Palette, Sofa, Lightbulb, Layers, Star, IndianRupee, RotateCcw, Phone } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
@@ -26,6 +27,17 @@ interface Recommendation {
 }
 
 const INITIAL_MESSAGE = "Hey there! 👋 I'm Orza, your personal interior designer. So tell me — what space are we transforming today?";
+
+const AnimatedCard = ({ children, delay = 0, className }: { children: ReactNode; delay?: number; className: string }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 14, scale: 0.98 }}
+    animate={{ opacity: 1, y: 0, scale: 1 }}
+    transition={{ duration: 0.35, delay, ease: "easeOut" }}
+    className={className}
+  >
+    {children}
+  </motion.div>
+);
 
 const OrzaAI = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -122,7 +134,7 @@ const OrzaAI = () => {
 
         {/* Color Palette */}
         {rec.colorPalette && (
-          <div className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 overflow-hidden">
+          <AnimatedCard delay={0.1} className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 overflow-hidden">
             <div className="flex items-center gap-2 px-5 pt-4 pb-2">
               <Palette className="w-4 h-4 text-secondary" />
               <h3 className="text-sm font-bold text-primary-foreground uppercase tracking-wider">Color Palette</h3>
@@ -149,12 +161,12 @@ const OrzaAI = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </AnimatedCard>
         )}
 
         {/* Furniture */}
         {rec.furnitureLayout && (
-          <div className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 p-5">
+          <AnimatedCard delay={0.16} className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 p-5">
             <div className="flex items-center gap-2 mb-2">
               <Sofa className="w-4 h-4 text-secondary" />
               <h3 className="text-sm font-bold text-primary-foreground uppercase tracking-wider">Furniture & Layout</h3>
@@ -171,12 +183,12 @@ const OrzaAI = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </AnimatedCard>
         )}
 
         {/* Materials */}
         {rec.materials && (
-          <div className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 p-5">
+          <AnimatedCard delay={0.22} className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 p-5">
             <div className="flex items-center gap-2 mb-2">
               <Layers className="w-4 h-4 text-secondary" />
               <h3 className="text-sm font-bold text-primary-foreground uppercase tracking-wider">Materials & Finishes</h3>
@@ -193,12 +205,12 @@ const OrzaAI = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </AnimatedCard>
         )}
 
         {/* Lighting */}
         {rec.lighting && (
-          <div className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 p-5">
+          <AnimatedCard delay={0.28} className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 p-5">
             <div className="flex items-center gap-2 mb-2">
               <Lightbulb className="w-4 h-4 text-secondary" />
               <h3 className="text-sm font-bold text-primary-foreground uppercase tracking-wider">Lighting Design</h3>
@@ -218,23 +230,23 @@ const OrzaAI = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </AnimatedCard>
         )}
 
         {/* Designer Secret */}
         {rec.designerSecret && (
-          <div className="mx-6 mb-4 rounded-2xl bg-secondary/10 border border-secondary/20 p-5">
+          <AnimatedCard delay={0.34} className="mx-6 mb-4 rounded-2xl bg-secondary/10 border border-secondary/20 p-5">
             <div className="flex items-center gap-2 mb-2">
               <Star className="w-4 h-4 text-secondary" />
               <h3 className="text-sm font-bold text-secondary uppercase tracking-wider">Designer Secret</h3>
             </div>
             <p className="text-sm text-primary-foreground/80 leading-relaxed italic">"{rec.designerSecret}"</p>
-          </div>
+          </AnimatedCard>
         )}
 
         {/* Budget */}
         {rec.estimatedBudget && (
-          <div className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 p-5">
+          <AnimatedCard delay={0.4} className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 p-5">
             <div className="flex items-center gap-2 mb-3">
               <IndianRupee className="w-4 h-4 text-secondary" />
               <h3 className="text-sm font-bold text-primary-foreground uppercase tracking-wider">Estimated Budget</h3>
@@ -243,7 +255,7 @@ const OrzaAI = () => {
               <p className="text-lg font-bold text-primary-foreground">{rec.estimatedBudget.low} — {rec.estimatedBudget.high}</p>
               <p className="text-xs text-primary-foreground/50 mt-0.5">{rec.estimatedBudget.note}</p>
             </div>
-          </div>
+          </AnimatedCard>
         )}
 
         {/* CTAs */}
@@ -277,30 +289,46 @@ const OrzaAI = () => {
 
       {/* Messages */}
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-6 pb-28 space-y-4">
-        {messages.map((msg, i) => (
-          <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
-            <div
-              className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
-                msg.role === "user"
-                  ? "bg-secondary text-secondary-foreground rounded-br-md"
-                  : "bg-primary-foreground/10 text-primary-foreground border border-primary-foreground/10 rounded-bl-md"
-              }`}
+        <AnimatePresence initial={false}>
+          {messages.map((msg, i) => (
+            <motion.div
+              key={`${msg.role}-${i}-${msg.content.slice(0, 12)}`}
+              initial={{ opacity: 0, y: 12, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
             >
-              {msg.content}
-            </div>
-          </div>
-        ))}
+              <div
+                className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+                  msg.role === "user"
+                    ? "bg-secondary text-secondary-foreground rounded-br-md"
+                    : "bg-primary-foreground/10 text-primary-foreground border border-primary-foreground/10 rounded-bl-md"
+                }`}
+              >
+                {msg.content}
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
 
         {/* Typing indicator */}
-        {isLoading && (
-          <div className="flex justify-start">
-            <div className="bg-primary-foreground/10 border border-primary-foreground/10 rounded-2xl rounded-bl-md px-4 py-3 flex gap-1.5">
-              <div className="w-2 h-2 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "0ms" }} />
-              <div className="w-2 h-2 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "150ms" }} />
-              <div className="w-2 h-2 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "300ms" }} />
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {isLoading && (
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              className="flex justify-start"
+            >
+              <div className="bg-primary-foreground/10 border border-primary-foreground/10 rounded-2xl rounded-bl-md px-4 py-3 flex gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "0ms" }} />
+                <div className="w-2 h-2 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "150ms" }} />
+                <div className="w-2 h-2 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "300ms" }} />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Input */}
