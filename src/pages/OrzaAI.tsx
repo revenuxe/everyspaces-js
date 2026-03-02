@@ -194,7 +194,7 @@ const OrzaAI = () => {
   const progressPercent = Math.min((currentStep / totalSteps) * 100, 100);
 
   return (
-    <div className="h-[100dvh] bg-primary flex flex-col overflow-hidden">
+    <div className="h-[100dvh] bg-white flex flex-col overflow-hidden">
       {/* Header - White */}
       <div className="shrink-0 bg-white border-b border-border px-4 py-3">
         <div className="flex items-center gap-3">
@@ -240,7 +240,7 @@ const OrzaAI = () => {
                 className={`max-w-[78%] rounded-2xl px-3.5 py-2.5 text-[13px] leading-relaxed ${
                   msg.role === "user"
                     ? "bg-secondary text-secondary-foreground rounded-br-sm"
-                    : "bg-primary-foreground/10 text-primary-foreground border border-primary-foreground/10 rounded-bl-sm"
+                    : "bg-muted text-primary border border-border rounded-bl-sm"
                 }`}
               >
                 {msg.content}
@@ -254,7 +254,7 @@ const OrzaAI = () => {
           {isLoading && (
             <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="flex justify-start">
               <img src={orzaIcon} alt="Orza" className="w-6 h-6 rounded-full mr-2 mt-1 shrink-0 bg-white object-contain" />
-              <div className="bg-primary-foreground/10 border border-primary-foreground/10 rounded-2xl rounded-bl-sm px-4 py-3 flex gap-1.5">
+              <div className="bg-muted border border-border rounded-2xl rounded-bl-sm px-4 py-3 flex gap-1.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "0ms" }} />
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "150ms" }} />
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "300ms" }} />
@@ -279,7 +279,7 @@ const OrzaAI = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.04 }}
                   onClick={() => handleOptionSelect(opt)}
-                  className="px-3.5 py-2 rounded-full bg-secondary/15 border border-secondary/30 text-secondary text-xs font-medium hover:bg-secondary hover:text-secondary-foreground transition-all active:scale-95"
+                  className="px-3.5 py-2 rounded-full bg-secondary/10 border border-secondary/30 text-secondary text-xs font-medium hover:bg-secondary hover:text-secondary-foreground transition-all active:scale-95"
                 >
                   {opt}
                 </motion.button>
@@ -302,8 +302,8 @@ const OrzaAI = () => {
                   {uploadedImages.map((img, i) => (
                     <div key={i} className="relative w-20 h-20 rounded-xl overflow-hidden border-2 border-secondary/30">
                       <img src={img} alt={`Upload ${i + 1}`} className="w-full h-full object-cover" />
-                      <button onClick={() => removeImage(i)} className="absolute top-0.5 right-0.5 w-5 h-5 rounded-full bg-primary/80 flex items-center justify-center">
-                        <X className="w-3 h-3 text-primary-foreground" />
+                      <button onClick={() => removeImage(i)} className="absolute top-0.5 right-0.5 w-5 h-5 rounded-full bg-destructive/80 flex items-center justify-center">
+                        <X className="w-3 h-3 text-white" />
                       </button>
                     </div>
                   ))}
@@ -313,7 +313,7 @@ const OrzaAI = () => {
                 {uploadedImages.length < 3 && (
                   <button
                     onClick={() => fileInputRef.current?.click()}
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-secondary/15 border border-secondary/30 text-secondary text-xs font-medium hover:bg-secondary hover:text-secondary-foreground transition-all"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-secondary/10 border border-secondary/30 text-secondary text-xs font-medium hover:bg-secondary hover:text-secondary-foreground transition-all"
                   >
                     <Camera className="w-4 h-4" />
                     Upload Photo{uploadedImages.length > 0 ? ` (${3 - uploadedImages.length} left)` : ""}
@@ -321,7 +321,7 @@ const OrzaAI = () => {
                 )}
                 <button
                   onClick={skipOrContinueFromImages}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-foreground/10 border border-primary-foreground/15 text-primary-foreground text-xs font-medium hover:bg-primary-foreground/20 transition-all"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary/10 border border-primary/20 text-primary text-xs font-medium hover:bg-primary hover:text-primary-foreground transition-all"
                 >
                   {uploadedImages.length > 0 ? "Continue →" : "Skip & Continue →"}
                 </button>
@@ -333,7 +333,7 @@ const OrzaAI = () => {
       </div>
 
       {/* Input bar */}
-      <div className="shrink-0 px-4 pb-4 pt-2 bg-primary border-t border-primary-foreground/10">
+      <div className="shrink-0 px-4 pb-4 pt-2 bg-white border-t border-border">
         <div className="relative max-w-2xl mx-auto">
           <input
             type="text"
@@ -342,7 +342,7 @@ const OrzaAI = () => {
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
             placeholder={showImageStep ? "Or type 'skip' to continue..." : currentPlaceholder}
             disabled={isLoading}
-            className="w-full py-3 pl-4 pr-12 rounded-xl bg-primary-foreground/10 border border-primary-foreground/15 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-secondary/50 transition-colors disabled:opacity-50"
+            className="w-full py-3 pl-4 pr-12 rounded-xl bg-muted border border-border text-primary placeholder:text-muted-foreground text-sm focus:outline-none focus:border-secondary/50 transition-colors disabled:opacity-50"
           />
           <button
             onClick={handleSend}
@@ -354,7 +354,7 @@ const OrzaAI = () => {
         </div>
         <button
           onClick={() => fileInputRef.current?.click()}
-          className="flex items-center gap-1.5 mt-2 mx-auto px-3 py-1.5 rounded-lg text-primary-foreground/40 hover:text-primary-foreground/60 transition-colors text-xs"
+          className="flex items-center gap-1.5 mt-2 mx-auto px-3 py-1.5 rounded-lg text-muted-foreground hover:text-primary transition-colors text-xs"
         >
           <ImagePlus className="w-3.5 h-3.5" />
           <span>Upload photo of your space</span>
