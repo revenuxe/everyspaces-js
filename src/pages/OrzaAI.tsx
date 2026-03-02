@@ -8,8 +8,6 @@ import type { ChatMessage, Recommendation } from "@/components/orza/types";
 import RecommendationView from "@/components/orza/RecommendationView";
 import LeadCapturePopup from "@/components/orza/LeadCapturePopup";
 
-const QUESTION_KEYS = ["name", "location", "space", "vibe", "budget", "details"];
-
 const OrzaAI = () => {
   const navigate = useNavigate();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -17,9 +15,11 @@ const OrzaAI = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
   const [currentStep, setCurrentStep] = useState(0);
+  const [totalSteps, setTotalSteps] = useState(6);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [currentOptions, setCurrentOptions] = useState<string[]>([]);
   const [currentPlaceholder, setCurrentPlaceholder] = useState("Type your answer...");
+  const [currentKey, setCurrentKey] = useState("name");
   const [showPopup, setShowPopup] = useState(false);
   const [uploadedImages, setUploadedImages] = useState<string[]>([]);
   const [showImageStep, setShowImageStep] = useState(false);
@@ -36,10 +36,11 @@ const OrzaAI = () => {
     fetchQuestion(0);
   }, []);
 
-  const fetchQuestion = async (step: number) => {
+  const fetchQuestion = async (step: number, currentAnswers?: Record<string, string>) => {
+    const a = currentAnswers || answers;
     try {
       const { data, error } = await supabase.functions.invoke("orza-ai", {
-        body: { phase: "question", step, name: answers.name || "" },
+        body: { phase: "question", step, name: a.name || "", space: a.space || "" },
       });
       if (error) throw error;
       if (data.type === "question") {
@@ -47,8 +48,9 @@ const OrzaAI = () => {
         setCurrentOptions(data.options || []);
         setCurrentPlaceholder(data.inputPlaceholder || "Type your answer...");
         setCurrentStep(step);
+        setCurrentKey(data.key || `step_${step}`);
+        if (data.totalSteps) setTotalSteps(data.totalSteps);
       } else if (data.type === "ready") {
-        // After all questions, ask for image upload
         promptImageUpload();
       }
     } catch (err: any) {
@@ -64,7 +66,7 @@ const OrzaAI = () => {
       ...prev,
       {
         role: "assistant",
-        content: "📸 Got it! Want to upload photos of your space? This helps me give you a more accurate, personalized design plan. You can upload up to 3 photos, or skip this step.",
+        content: "📸 Almost done! Want to upload photos of your space? This helps me give more accurate recommendations. You can upload up to 3 photos, or skip.",
       },
     ]);
   };
@@ -72,11 +74,9 @@ const OrzaAI = () => {
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (!files) return;
-
     const newImages: string[] = [];
     const maxImages = 3 - uploadedImages.length;
     const filesToProcess = Math.min(files.length, maxImages);
-
     for (let i = 0; i < filesToProcess; i++) {
       const reader = new FileReader();
       reader.onload = (event) => {
@@ -103,33 +103,26 @@ const OrzaAI = () => {
   const skipOrContinueFromImages = () => {
     setShowImageStep(false);
     if (uploadedImages.length > 0) {
-      setMessages(prev => [...prev, { role: "assistant", content: "Great! I'll factor in your space photos for a more tailored recommendation. Hang tight... ✨" }]);
+      setMessages(prev => [...prev, { role: "assistant", content: "Great! I'll factor in your space photos. Generating your plan... ✨" }]);
     }
     generateRecommendation();
   };
 
   const handleOptionSelect = (option: string) => {
     if (isLoading) return;
-    const key = QUESTION_KEYS[currentStep] || `step_${currentStep}`;
-    const newAnswers = { ...answers, [key]: option };
+
+    const newAnswers = { ...answers, [currentKey]: option };
     setAnswers(newAnswers);
     setCurrentOptions([]);
     setMessages(prev => [...prev, { role: "user", content: option }]);
 
     const nextStep = currentStep + 1;
-    if (nextStep < 6) {
-      fetchQuestion(nextStep);
-    } else {
-      // After last question, prompt image upload
-      setAnswers(newAnswers);
-      promptImageUpload();
-    }
+    fetchQuestion(nextStep, newAnswers);
   };
 
   const handleSend = () => {
     if (!input.trim() || isLoading) return;
     if (showImageStep) {
-      // Skip from image step
       skipOrContinueFromImages();
       return;
     }
@@ -137,20 +130,15 @@ const OrzaAI = () => {
     setInput("");
   };
 
-  const generateRecommendation = async (finalAnswers?: Record<string, string>) => {
-    const a = finalAnswers || answers;
+  const generateRecommendation = async () => {
     setIsLoading(true);
-    setMessages(prev => [...prev, { role: "assistant", content: `Crafting your personalized design plan, ${a.name || ""}... ✨` }]);
+    setMessages(prev => [...prev, { role: "assistant", content: `Crafting your personalized design plan, ${answers.name || ""}... ✨` }]);
 
     try {
       const { data, error } = await supabase.functions.invoke("orza-ai", {
         body: {
           phase: "recommend",
-          space: a.space || "Living Room",
-          vibe: a.vibe || "Modern & Minimal",
-          budget: a.budget || "Not sure yet",
-          details: a.details || "None",
-          location: a.location || "",
+          allAnswers: answers,
         },
       });
       if (error) throw error;
@@ -170,6 +158,7 @@ const OrzaAI = () => {
     setInput("");
     setRecommendation(null);
     setCurrentStep(0);
+    setTotalSteps(6);
     setAnswers({});
     setCurrentOptions([]);
     setShowPopup(false);
@@ -178,7 +167,6 @@ const OrzaAI = () => {
     setTimeout(() => fetchQuestion(0), 100);
   };
 
-  // ──────────── RECOMMENDATION UI ────────────
   if (recommendation) {
     return (
       <>
@@ -201,31 +189,38 @@ const OrzaAI = () => {
   }
 
   // ──────────── CHAT UI ────────────
+  const progressPercent = Math.min((currentStep / totalSteps) * 100, 100);
+
   return (
     <div className="h-[100dvh] bg-primary flex flex-col overflow-hidden">
       {/* Header */}
-      <div className="shrink-0 bg-primary border-b border-primary-foreground/10 px-4 py-3 flex items-center gap-3">
-        <button onClick={() => navigate(-1)} className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/15 transition-colors">
-          <ArrowLeft className="w-4 h-4 text-primary-foreground" />
-        </button>
-        <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
-          <Sparkles className="w-4 h-4 text-secondary-foreground" />
+      <div className="shrink-0 bg-primary border-b border-primary-foreground/10 px-4 py-3">
+        <div className="flex items-center gap-3">
+          <button onClick={() => navigate(-1)} className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/15 transition-colors">
+            <ArrowLeft className="w-4 h-4 text-primary-foreground" />
+          </button>
+          <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
+            <Sparkles className="w-4 h-4 text-secondary-foreground" />
+          </div>
+          <div className="flex-1">
+            <h1 className="text-sm font-bold text-primary-foreground">Orza AI</h1>
+            <p className="text-[10px] text-primary-foreground/50">Your personal interior designer</p>
+          </div>
+          {!showImageStep && (
+            <span className="text-[10px] text-primary-foreground/40 font-medium">
+              {currentStep + 1}/{totalSteps}
+            </span>
+          )}
         </div>
-        <div className="flex-1">
-          <h1 className="text-sm font-bold text-primary-foreground">Orza AI</h1>
-          <p className="text-[10px] text-primary-foreground/50">Your personal interior designer</p>
-        </div>
-        {/* Step indicator */}
-        {!showImageStep && currentStep < 6 && (
-          <div className="flex items-center gap-1">
-            {QUESTION_KEYS.map((_, i) => (
-              <div
-                key={i}
-                className={`h-1 rounded-full transition-all ${
-                  i < currentStep ? "w-3 bg-secondary" : i === currentStep ? "w-5 bg-secondary" : "w-2 bg-primary-foreground/20"
-                }`}
-              />
-            ))}
+        {/* Progress bar */}
+        {!showImageStep && (
+          <div className="mt-2 h-0.5 bg-primary-foreground/10 rounded-full overflow-hidden">
+            <motion.div
+              className="h-full bg-secondary rounded-full"
+              initial={{ width: 0 }}
+              animate={{ width: `${progressPercent}%` }}
+              transition={{ duration: 0.3 }}
+            />
           </div>
         )}
       </div>
@@ -309,23 +304,18 @@ const OrzaAI = () => {
               exit={{ opacity: 0 }}
               className="pl-8 space-y-3"
             >
-              {/* Uploaded image previews */}
               {uploadedImages.length > 0 && (
                 <div className="flex gap-2 flex-wrap">
                   {uploadedImages.map((img, i) => (
                     <div key={i} className="relative w-20 h-20 rounded-xl overflow-hidden border-2 border-secondary/30">
                       <img src={img} alt={`Upload ${i + 1}`} className="w-full h-full object-cover" />
-                      <button
-                        onClick={() => removeImage(i)}
-                        className="absolute top-0.5 right-0.5 w-5 h-5 rounded-full bg-primary/80 flex items-center justify-center"
-                      >
+                      <button onClick={() => removeImage(i)} className="absolute top-0.5 right-0.5 w-5 h-5 rounded-full bg-primary/80 flex items-center justify-center">
                         <X className="w-3 h-3 text-primary-foreground" />
                       </button>
                     </div>
                   ))}
                 </div>
               )}
-
               <div className="flex gap-2">
                 {uploadedImages.length < 3 && (
                   <button
@@ -343,15 +333,7 @@ const OrzaAI = () => {
                   {uploadedImages.length > 0 ? "Continue →" : "Skip & Continue →"}
                 </button>
               </div>
-
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept="image/*"
-                multiple
-                onChange={handleImageUpload}
-                className="hidden"
-              />
+              <input ref={fileInputRef} type="file" accept="image/*" multiple onChange={handleImageUpload} className="hidden" />
             </motion.div>
           )}
         </AnimatePresence>
