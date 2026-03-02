@@ -5,6 +5,25 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
+const QUESTIONS = [
+  {
+    message: "What space are you looking to design? ✨",
+    options: ["Full Home Interiors", "Modular Kitchen", "Bedroom", "Living Room", "Wardrobe", "TV Unit", "Pooja Room", "2BHK", "3BHK", "Villa", "Study Room", "Kids Room"],
+  },
+  {
+    message: "How do you want it to feel? 🎨",
+    options: ["Modern & Minimal", "Luxury", "Contemporary", "Traditional", "Scandinavian", "Industrial", "Budget-Friendly"],
+  },
+  {
+    message: "What's your budget range? 💰",
+    options: ["Under ₹3 Lakhs", "₹3-6 Lakhs", "₹6-10 Lakhs", "₹10-15 Lakhs", "₹15 Lakhs+", "Not sure yet"],
+  },
+  {
+    message: "Any special requirements? 🏠",
+    options: ["Vastu Compliant", "Pet Friendly", "Kid Safe", "Work From Home", "Lots of Storage", "Low Maintenance", "None"],
+  },
+];
+
 const RECOMMENDATION_SCHEMA = `Return VALID JSON ONLY (no markdown) with this structure:
 {
   "headline": "Inspiring one-line headline",
@@ -30,35 +49,6 @@ const RECOMMENDATION_SCHEMA = `Return VALID JSON ONLY (no markdown) with this st
   "moodKeywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"]
 }`;
 
-const CONVERSATION_PROMPT = `You are Orza — a charming, senior interior designer with 15+ years experience designing 800+ homes across Bangalore. You're chatting with a potential client.
-
-YOUR JOB: Have a natural, warm conversation to understand what they need. You decide when you have enough info — it could be 2 messages or 5. Don't follow a rigid script.
-
-WHAT YOU NEED TO KNOW (gather naturally):
-- What space they're designing
-- The mood/vibe they want
-- Budget sense (without asking numbers directly)
-- Any special needs (kids, storage, WFH, vastu, pets etc)
-
-If someone gives you lots of info in one message, don't ask redundant questions. If they're brief, ask a follow-up. Be smart about it.
-
-CONVERSATION STYLE:
-- Short, punchy messages — 1-2 sentences max
-- React genuinely to their answers ("Oh, I love that!", "Smart move.")
-- Use 1 emoji per message max
-- Sound like a cool friend who designs homes, not a chatbot
-- Ask naturally — never say "Question 2" or follow a template
-
-RESPONSE FORMAT — ALWAYS return valid JSON (no markdown):
-
-If you still need more info:
-{"type": "question", "message": "Your warm, short response"}
-
-When you have enough to design (at minimum: space + vibe/mood):
-{"type": "ready", "message": "Exciting short message like 'I can already see it — give me a moment ✨'", "context": {"space": "what they said", "vibe": "mood they want", "budget": "their budget approach or 'balanced' if not mentioned", "details": "any special requirements or 'none'"}}
-
-START the conversation by greeting them and asking what space they want to design.`;
-
 const RETRY_DELAYS_MS = [1500, 3000];
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
@@ -80,7 +70,7 @@ const callGemini = async (apiKey: string, body: object): Promise<Response | null
 
 const buildFallback = (space: string, vibe: string, budget: string, details: string) => ({
   headline: `Your ${vibe} ${space} — curated for Bangalore living`,
-  intro: `Picture yourself walking into your ${space} after a long Bangalore commute — and feeling instantly ${vibe.toLowerCase()}. That's what we're creating.`,
+  intro: `Picture yourself walking into your ${space} after a long Bangalore commute — and feeling instantly at peace. That's what we're creating for you.`,
   colorPalette: {
     description: "A warm neutral foundation with one refined accent that elevates the entire space.",
     colors: [
@@ -113,11 +103,11 @@ const buildFallback = (space: string, vibe: string, budget: string, details: str
       { type: "Accent", suggestion: "Cove lighting", placement: "Feature wall" },
     ],
   },
-  designerSecret: `Hide daily-use storage behind flush paneling — it's the fastest way to make any Bangalore apartment look premium.${details !== "none" ? ` We'll also factor in: ${details}.` : ""}`,
+  designerSecret: `Hide daily-use storage behind flush paneling — it's the fastest way to make any Bangalore apartment look premium.${details !== "None" && details !== "none" ? ` We'll also factor in: ${details}.` : ""}`,
   estimatedBudget: {
-    low: budget.includes("smart") ? "₹1,80,000" : budget.includes("premium") ? "₹4,50,000" : "₹2,80,000",
-    high: budget.includes("smart") ? "₹3,50,000" : budget.includes("premium") ? "₹9,50,000" : "₹6,50,000",
-    note: `${space} with ${budget} approach — Bangalore market rates`,
+    low: budget.includes("Under") ? "₹1,50,000" : budget.includes("3-6") ? "₹3,00,000" : budget.includes("6-10") ? "₹6,00,000" : budget.includes("10-15") ? "₹10,00,000" : budget.includes("15") ? "₹15,00,000" : "₹2,80,000",
+    high: budget.includes("Under") ? "₹3,00,000" : budget.includes("3-6") ? "₹6,00,000" : budget.includes("6-10") ? "₹10,00,000" : budget.includes("10-15") ? "₹15,00,000" : budget.includes("15") ? "₹25,00,000" : "₹6,50,000",
+    note: `${space} with ${vibe} style — Bangalore market rates`,
   },
   moodKeywords: [vibe || "refined", "functional", "timeless", "Bangalore-ready", "curated"],
 });
@@ -128,27 +118,40 @@ serve(async (req) => {
   }
 
   try {
-    const { messages = [], phase } = await req.json();
+    const body = await req.json();
+    const { messages = [], phase, step } = body;
     const GEMINI_API_KEY = Deno.env.get("GOOGLE_GEMINI_API_KEY");
     if (!GEMINI_API_KEY) throw new Error("GOOGLE_GEMINI_API_KEY is not configured");
 
-    const safeMessages = Array.isArray(messages) ? messages.slice(-12) : [];
+    // Phase: structured questions (no AI call needed)
+    if (phase === "question") {
+      const questionIndex = typeof step === "number" ? step : 0;
+      if (questionIndex < QUESTIONS.length) {
+        return new Response(
+          JSON.stringify({ type: "question", message: QUESTIONS[questionIndex].message, options: QUESTIONS[questionIndex].options, step: questionIndex }),
+          { headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+      // All questions answered — signal ready
+      return new Response(
+        JSON.stringify({ type: "ready" }),
+        { headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
 
-    // Phase: generate recommendation from gathered context
+    // Phase: generate recommendation
     if (phase === "recommend") {
-      const { space = "living room", vibe = "modern", budget = "balanced", details = "none" } = await req.json().catch(() => ({}));
-      const body = await req.json().catch(() => null);
-      const ctx = body || { space, vibe, budget, details };
+      const { space = "living room", vibe = "modern", budget = "balanced", details = "none" } = body;
 
-      const prompt = `You are Orza, a 15+ year Bangalore interior designer. ${RECOMMENDATION_SCHEMA}\n\nClient:\n- Space: ${ctx.space}\n- Feel: ${ctx.vibe}\n- Budget: ${ctx.budget}\n- Notes: ${ctx.details}`;
+      const prompt = `You are Orza, a premium Bangalore interior designer with 15+ years experience. Create a detailed, personalized interior design recommendation. ${RECOMMENDATION_SCHEMA}\n\nClient Requirements:\n- Space: ${space}\n- Style: ${vibe}\n- Budget: ${budget}\n- Special Requirements: ${details}\n\nMake it specific to Bangalore (climate, market, local brands). Be detailed with real price ranges in INR.`;
 
       const resp = await callGemini(GEMINI_API_KEY, {
         contents: [{ role: "user", parts: [{ text: prompt }] }],
-        generationConfig: { temperature: 0.8, responseMimeType: "application/json", maxOutputTokens: 1400 },
+        generationConfig: { temperature: 0.8, responseMimeType: "application/json", maxOutputTokens: 1800 },
       });
 
       if (!resp || !resp.ok) {
-        const fb = buildFallback(ctx.space, ctx.vibe, ctx.budget, ctx.details);
+        const fb = buildFallback(space, vibe, budget, details);
         return new Response(JSON.stringify({ type: "recommendation", data: fb, source: "fallback" }), {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
@@ -157,41 +160,15 @@ serve(async (req) => {
       const data = await resp.json();
       const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
       let parsed;
-      try { parsed = JSON.parse(text); } catch { parsed = buildFallback(ctx.space, ctx.vibe, ctx.budget, ctx.details); }
+      try { parsed = JSON.parse(text); } catch { parsed = buildFallback(space, vibe, budget, details); }
 
       return new Response(JSON.stringify({ type: "recommendation", data: parsed, source: "gemini" }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
 
-    // Phase: conversation — let AI decide when enough info is gathered
-    const geminiContents = [
-      { role: "user", parts: [{ text: CONVERSATION_PROMPT }] },
-      { role: "model", parts: [{ text: '{"type":"question","message":"Hey! 👋 I\'m Orza — think of me as your personal interior designer. So, what space are we working on today?"}' }] },
-      ...safeMessages.map((m: any) => ({
-        role: m.role === "user" ? "user" : "model",
-        parts: [{ text: m.content }],
-      })),
-    ];
-
-    const resp = await callGemini(GEMINI_API_KEY, {
-      contents: geminiContents,
-      generationConfig: { temperature: 0.85, responseMimeType: "application/json", maxOutputTokens: 300 },
-    });
-
-    if (!resp || !resp.ok) {
-      // Fallback question if Gemini is unavailable
-      return new Response(JSON.stringify({ type: "question", message: "Tell me more about the space you're dreaming of — the room, the vibe, any must-haves? 🏡" }), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
-
-    const data = await resp.json();
-    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-    let parsed;
-    try { parsed = JSON.parse(text); } catch { parsed = { type: "question", message: text || "Tell me more!" }; }
-
-    return new Response(JSON.stringify(parsed), {
+    return new Response(JSON.stringify({ error: "Invalid phase" }), {
+      status: 400,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (error) {

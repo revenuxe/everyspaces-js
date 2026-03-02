@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 interface ChatMessage {
   role: "user" | "assistant";
   content: string;
+  options?: string[];
 }
 
 interface ColorItem { name: string; shade: string; hex: string; usage: string; }
@@ -26,7 +27,7 @@ interface Recommendation {
   moodKeywords: string[];
 }
 
-const INITIAL_MESSAGE = "Hey! 👋 I'm Orza — think of me as your personal interior designer. So, what space are we working on today?";
+const INITIAL_MESSAGE = "Hey! 👋 I'm Orza — your personal interior designer. Let's design something beautiful for you.";
 
 const AnimatedCard = ({ children, delay = 0, className }: { children: ReactNode; delay?: number; className: string }) => (
   <motion.div
@@ -47,6 +48,9 @@ const OrzaAI = () => {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [answers, setAnswers] = useState<string[]>([]);
+  const [currentOptions, setCurrentOptions] = useState<string[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -55,50 +59,76 @@ const OrzaAI = () => {
     }
   }, [messages, isLoading]);
 
-  const handleSend = async () => {
-    if (!input.trim() || isLoading) return;
+  // Fetch the first question on mount
+  useEffect(() => {
+    fetchQuestion(0);
+  }, []);
 
-    const userMsg: ChatMessage = { role: "user", content: input.trim() };
-    const updatedMessages = [...messages, userMsg];
-    setMessages(updatedMessages);
-    setInput("");
-    setIsLoading(true);
-
+  const fetchQuestion = async (step: number) => {
     try {
-      const apiMessages = updatedMessages.slice(1).map((m) => ({
-        role: m.role,
-        content: m.content,
-      }));
-
       const { data, error } = await supabase.functions.invoke("orza-ai", {
-        body: { messages: apiMessages },
+        body: { phase: "question", step },
       });
-
-      if (error) throw new Error(data?.error || error.message);
-      if (data?.error) throw new Error(data.error);
-
-      if (data.type === "ready") {
-        // AI decided it has enough info — now fetch recommendation
-        setMessages((prev) => [...prev, { role: "assistant", content: data.message }]);
-        setIsLoading(true);
-
-        const { data: recData, error: recError } = await supabase.functions.invoke("orza-ai", {
-          body: { phase: "recommend", ...data.context },
-        });
-
-        if (recError) throw new Error(recData?.error || recError.message);
-        if (recData?.type === "recommendation") {
-          setRecommendation(recData.data);
-        }
-      } else if (data.type === "recommendation") {
-        setMessages((prev) => [...prev, { role: "assistant", content: data.message || "Here's your plan ✨" }]);
-        setTimeout(() => setRecommendation(data.data), 600);
-      } else {
-        setMessages((prev) => [...prev, { role: "assistant", content: data.message }]);
+      if (error) throw error;
+      if (data.type === "question") {
+        setMessages(prev => [...prev, { role: "assistant", content: data.message, options: data.options }]);
+        setCurrentOptions(data.options || []);
+        setCurrentStep(step);
+      } else if (data.type === "ready") {
+        // All questions done, generate recommendation
+        generateRecommendation();
       }
     } catch (err: any) {
-      console.error("Orza AI error:", err);
-      toast.error(err.message || "Something went wrong.");
+      console.error("Question fetch error:", err);
+      toast.error("Something went wrong. Please try again.");
+    }
+  };
+
+  const handleOptionSelect = (option: string) => {
+    if (isLoading) return;
+    const newAnswers = [...answers, option];
+    setAnswers(newAnswers);
+    setCurrentOptions([]);
+    setMessages(prev => [...prev, { role: "user", content: option }]);
+
+    // Fetch next question
+    const nextStep = currentStep + 1;
+    if (nextStep < 4) {
+      fetchQuestion(nextStep);
+    } else {
+      // All 4 answered — generate recommendation
+      generateRecommendation(newAnswers);
+    }
+  };
+
+  const handleSend = () => {
+    if (!input.trim() || isLoading) return;
+    handleOptionSelect(input.trim());
+    setInput("");
+  };
+
+  const generateRecommendation = async (finalAnswers?: string[]) => {
+    const a = finalAnswers || answers;
+    setIsLoading(true);
+    setMessages(prev => [...prev, { role: "assistant", content: "Crafting your personalized design plan... ✨" }]);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("orza-ai", {
+        body: {
+          phase: "recommend",
+          space: a[0] || "Living Room",
+          vibe: a[1] || "Modern & Minimal",
+          budget: a[2] || "Not sure yet",
+          details: a[3] || "None",
+        },
+      });
+      if (error) throw error;
+      if (data?.type === "recommendation") {
+        setTimeout(() => setRecommendation(data.data), 600);
+      }
+    } catch (err: any) {
+      console.error("Recommendation error:", err);
+      toast.error("Couldn't generate your plan. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -108,6 +138,10 @@ const OrzaAI = () => {
     setMessages([{ role: "assistant", content: INITIAL_MESSAGE }]);
     setInput("");
     setRecommendation(null);
+    setCurrentStep(0);
+    setAnswers([]);
+    setCurrentOptions([]);
+    setTimeout(() => fetchQuestion(0), 100);
   };
 
   // ──────────── RECOMMENDATION UI ────────────
@@ -130,15 +164,9 @@ const OrzaAI = () => {
         </div>
 
         {/* Hero */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="px-5 pt-6 pb-4"
-        >
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="px-5 pt-6 pb-4">
           <h2 className="text-xl font-bold text-foreground leading-tight mb-2">{rec.headline}</h2>
           <p className="text-sm text-muted-foreground leading-relaxed">{rec.intro}</p>
-
           {rec.moodKeywords && (
             <div className="flex flex-wrap gap-1.5 mt-3">
               {rec.moodKeywords.map((kw, i) => (
@@ -270,12 +298,7 @@ const OrzaAI = () => {
         )}
 
         {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.44 }}
-          className="mx-4 mt-4 space-y-2.5 pb-6"
-        >
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.44 }} className="mx-4 mt-4 space-y-2.5 pb-6">
           <Link
             to="/contact"
             className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-secondary text-secondary-foreground font-semibold text-sm shadow-md shadow-secondary/20 hover:bg-secondary/90 transition-colors"
@@ -297,9 +320,9 @@ const OrzaAI = () => {
 
   // ──────────── CHAT UI ────────────
   return (
-    <div className="min-h-screen bg-primary flex flex-col">
+    <div className="h-[100dvh] bg-primary flex flex-col overflow-hidden">
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-primary/95 backdrop-blur-sm border-b border-primary-foreground/10 px-4 py-3 flex items-center gap-3 shrink-0">
+      <div className="shrink-0 bg-primary border-b border-primary-foreground/10 px-4 py-3 flex items-center gap-3">
         <button onClick={() => navigate(-1)} className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/15 transition-colors">
           <ArrowLeft className="w-4 h-4 text-primary-foreground" />
         </button>
@@ -312,8 +335,8 @@ const OrzaAI = () => {
         </div>
       </div>
 
-      {/* Messages */}
-      <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 pt-4 pb-24 space-y-3">
+      {/* Messages area — takes all remaining space */}
+      <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 pt-4 pb-4 space-y-3">
         <AnimatePresence initial={false}>
           {messages.map((msg, i) => (
             <motion.div
@@ -336,14 +359,10 @@ const OrzaAI = () => {
           ))}
         </AnimatePresence>
 
+        {/* Loading dots */}
         <AnimatePresence>
           {isLoading && (
-            <motion.div
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              className="flex justify-start"
-            >
+            <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="flex justify-start">
               <div className="bg-primary-foreground/10 border border-primary-foreground/10 rounded-2xl rounded-bl-sm px-4 py-3 flex gap-1.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "0ms" }} />
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "150ms" }} />
@@ -352,48 +371,49 @@ const OrzaAI = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Quick reply chips */}
+        <AnimatePresence>
+          {currentOptions.length > 0 && !isLoading && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="flex flex-wrap gap-2 pt-1"
+            >
+              {currentOptions.map((opt, i) => (
+                <motion.button
+                  key={opt}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: i * 0.04 }}
+                  onClick={() => handleOptionSelect(opt)}
+                  className="px-3.5 py-2 rounded-full bg-secondary/15 border border-secondary/30 text-secondary text-xs font-medium hover:bg-secondary hover:text-secondary-foreground transition-all active:scale-95"
+                >
+                  {opt}
+                </motion.button>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
-      {/* Input — fixed above bottom nav */}
-      <div className="fixed bottom-[4.5rem] left-0 right-0 px-4 pb-3 pt-3 bg-gradient-to-t from-primary via-primary/95 to-transparent md:hidden">
-        <div className="relative">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            placeholder="Type your answer..."
-            disabled={isLoading}
-            className="w-full py-3 pl-4 pr-12 rounded-xl bg-primary-foreground/10 border border-primary-foreground/15 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-secondary/50 transition-colors disabled:opacity-50"
-            autoFocus
-          />
-          <button
-            onClick={handleSend}
-            disabled={!input.trim() || isLoading}
-            className="absolute right-1.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-secondary text-secondary-foreground flex items-center justify-center disabled:opacity-30 transition-opacity"
-          >
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
-      </div>
-
-      {/* Desktop input */}
-      <div className="hidden md:block fixed bottom-0 left-0 right-0 px-6 pb-6 pt-4 bg-gradient-to-t from-primary via-primary to-transparent">
+      {/* Input bar — always visible at bottom */}
+      <div className="shrink-0 px-4 pb-4 pt-2 bg-primary border-t border-primary-foreground/10">
         <div className="relative max-w-2xl mx-auto">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            placeholder="Type your answer..."
+            placeholder="Or type your answer..."
             disabled={isLoading}
-            className="w-full py-3.5 pl-5 pr-14 rounded-2xl bg-primary-foreground/10 border border-primary-foreground/15 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-secondary/50 transition-colors disabled:opacity-50"
-            autoFocus
+            className="w-full py-3 pl-4 pr-12 rounded-xl bg-primary-foreground/10 border border-primary-foreground/15 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-secondary/50 transition-colors disabled:opacity-50"
           />
           <button
             onClick={handleSend}
             disabled={!input.trim() || isLoading}
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-xl bg-secondary text-secondary-foreground flex items-center justify-center disabled:opacity-30 transition-opacity"
+            className="absolute right-1.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-secondary text-secondary-foreground flex items-center justify-center disabled:opacity-30 transition-opacity"
           >
             <ArrowRight className="w-4 h-4" />
           </button>
