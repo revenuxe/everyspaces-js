@@ -5,13 +5,14 @@ import calculatorImage from "@/assets/action-calculator.webp";
 import galleryImage from "@/assets/action-gallery.webp";
 import materialsImage from "@/assets/action-materials.webp";
 import orzaIcon from "@/assets/orza-icon.webp";
+import orzaAiImage from "@/assets/action-orza-ai.webp";
 
 const actionItems = [
   {
     icon: Sparkles,
     title: "Ask Orza AI",
     description: "Get AI-powered design recommendations",
-    image: galleryImage,
+    image: orzaAiImage,
     link: "/orza-ai",
     isOrza: true,
   },
