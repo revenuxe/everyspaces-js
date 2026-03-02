@@ -302,6 +302,14 @@ const OrzaAI = () => {
             { "@type": "Question", "name": "How does Orza AI work?", "acceptedAnswer": { "@type": "Answer", "text": "Answer a few quick questions about your space, budget, and style preferences. Orza AI generates a complete design recommendation with colors, materials, furniture, and budget breakdown in under 2 minutes." }},
             { "@type": "Question", "name": "What spaces can Orza AI design?", "acceptedAnswer": { "@type": "Answer", "text": "Orza AI covers modular kitchens, bedrooms, living rooms, wardrobes, TV units, pooja rooms, kids rooms, study rooms, bathrooms, balconies, and full home interiors." }}
           ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://intorza.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Orza AI – Interior Design Advisor", "item": "https://intorza.com/orza-ai" }
+          ]
         }
       ]} />
       {/* Header - White */}
