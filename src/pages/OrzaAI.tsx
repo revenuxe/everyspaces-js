@@ -195,25 +195,25 @@ const OrzaAI = () => {
 
   return (
     <div className="h-[100dvh] bg-primary flex flex-col overflow-hidden">
-      {/* Header - White */}
-      <div className="shrink-0 bg-white border-b border-border px-4 py-3">
+      {/* Header - Brand Orange */}
+      <div className="shrink-0 bg-secondary border-b border-secondary/80 px-4 py-3">
         <div className="flex items-center gap-3">
-          <button onClick={() => navigate(-1)} className="w-9 h-9 rounded-full bg-muted flex items-center justify-center hover:bg-muted/80 transition-colors">
-            <ArrowLeft className="w-4 h-4 text-foreground" />
+          <button onClick={() => navigate(-1)} className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+            <ArrowLeft className="w-4 h-4 text-white" />
           </button>
           <img src={orzaLogo} alt="Orza AI" className="h-7 object-contain" />
           <div className="flex-1" />
           {!showImageStep && (
-            <span className="text-[10px] text-muted-foreground font-medium">
+            <span className="text-[10px] text-white/80 font-medium">
               {currentStep + 1}/{totalSteps}
             </span>
           )}
         </div>
         {/* Progress bar */}
         {!showImageStep && (
-          <div className="mt-2 h-0.5 bg-border rounded-full overflow-hidden">
+          <div className="mt-2 h-0.5 bg-white/20 rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-secondary rounded-full"
+              className="h-full bg-white rounded-full"
               initial={{ width: 0 }}
               animate={{ width: `${progressPercent}%` }}
               transition={{ duration: 0.3 }}
@@ -253,8 +253,14 @@ const OrzaAI = () => {
         <AnimatePresence>
           {isLoading && (
             <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="flex justify-start">
-              <img src={orzaIcon} alt="Orza" className="w-6 h-6 rounded-full mr-2 mt-1 shrink-0 bg-white object-contain" />
-              <div className="bg-primary-foreground/10 border border-primary-foreground/10 rounded-2xl rounded-bl-sm px-4 py-3 flex gap-1.5">
+              <motion.img
+                src={orzaIcon}
+                alt="Orza"
+                className="w-6 h-6 rounded-full mr-2 mt-1 shrink-0 bg-white object-contain"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              />
+              <div className="bg-primary-foreground/10 border border-primary-foreground/10 rounded-2xl rounded-bl-sm px-4 py-3 flex gap-1.5 items-center">
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "0ms" }} />
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "150ms" }} />
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "300ms" }} />
