@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
-import { ArrowRight, ArrowLeft, Sparkles, Palette, Sofa, Lightbulb, Layers, Star, IndianRupee, RotateCcw, Phone } from "lucide-react";
+import { ArrowRight, ArrowLeft, Sparkles, Palette, Sofa, Lightbulb, Layers, Star, IndianRupee, RotateCcw, Phone, ImagePlus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -418,6 +418,10 @@ const OrzaAI = () => {
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
+        <button className="flex items-center gap-1.5 mt-2 mx-auto px-3 py-1.5 rounded-lg text-primary-foreground/40 hover:text-primary-foreground/60 transition-colors text-xs">
+          <ImagePlus className="w-3.5 h-3.5" />
+          <span>Upload photo of your space</span>
+        </button>
       </div>
     </div>
   );
