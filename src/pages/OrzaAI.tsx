@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
-import { ArrowRight, Sparkles, Palette, Sofa, Lightbulb, Layers, Star, IndianRupee, RotateCcw, Phone } from "lucide-react";
+import { ArrowRight, ArrowLeft, Sparkles, Palette, Sofa, Lightbulb, Layers, Star, IndianRupee, RotateCcw, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface ChatMessage {
   role: "user" | "assistant";
@@ -26,13 +26,13 @@ interface Recommendation {
   moodKeywords: string[];
 }
 
-const INITIAL_MESSAGE = "Hey there! 👋 I'm Orza, your personal interior designer. So tell me — what space are we transforming today?";
+const INITIAL_MESSAGE = "Hey! 👋 I'm Orza — think of me as your personal interior designer. So, what space are we working on today?";
 
 const AnimatedCard = ({ children, delay = 0, className }: { children: ReactNode; delay?: number; className: string }) => (
   <motion.div
-    initial={{ opacity: 0, y: 14, scale: 0.98 }}
-    animate={{ opacity: 1, y: 0, scale: 1 }}
-    transition={{ duration: 0.35, delay, ease: "easeOut" }}
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.4, delay, ease: "easeOut" }}
     className={className}
   >
     {children}
@@ -40,6 +40,7 @@ const AnimatedCard = ({ children, delay = 0, className }: { children: ReactNode;
 );
 
 const OrzaAI = () => {
+  const navigate = useNavigate();
   const [messages, setMessages] = useState<ChatMessage[]>([
     { role: "assistant", content: INITIAL_MESSAGE },
   ]);
@@ -49,7 +50,9 @@ const OrzaAI = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
   }, [messages, isLoading]);
 
   const handleSend = async () => {
@@ -62,7 +65,6 @@ const OrzaAI = () => {
     setIsLoading(true);
 
     try {
-      // Send only user messages for the API (system prompt + initial greeting are in the edge function)
       const apiMessages = updatedMessages.slice(1).map((m) => ({
         role: m.role,
         content: m.content,
@@ -72,26 +74,31 @@ const OrzaAI = () => {
         body: { messages: apiMessages },
       });
 
-      if (error) {
-        const msg = data?.error || error.message;
-        throw new Error(msg);
-      }
+      if (error) throw new Error(data?.error || error.message);
       if (data?.error) throw new Error(data.error);
 
-      if (data.type === "recommendation") {
-        // Add transition message to chat
+      if (data.type === "ready") {
+        // AI decided it has enough info — now fetch recommendation
         setMessages((prev) => [...prev, { role: "assistant", content: data.message }]);
-        // Show structured recommendation
-        setTimeout(() => setRecommendation(data.data), 800);
+        setIsLoading(true);
+
+        const { data: recData, error: recError } = await supabase.functions.invoke("orza-ai", {
+          body: { phase: "recommend", ...data.context },
+        });
+
+        if (recError) throw new Error(recData?.error || recError.message);
+        if (recData?.type === "recommendation") {
+          setRecommendation(recData.data);
+        }
+      } else if (data.type === "recommendation") {
+        setMessages((prev) => [...prev, { role: "assistant", content: data.message || "Here's your plan ✨" }]);
+        setTimeout(() => setRecommendation(data.data), 600);
       } else {
         setMessages((prev) => [...prev, { role: "assistant", content: data.message }]);
       }
     } catch (err: any) {
       console.error("Orza AI error:", err);
-      const msg = err.message?.includes("Rate limit")
-        ? "Gemini rate limit hit. Wait 30 seconds and try again."
-        : err.message || "Something went wrong.";
-      toast.error(msg);
+      toast.error(err.message || "Something went wrong.");
     } finally {
       setIsLoading(false);
     }
@@ -103,60 +110,64 @@ const OrzaAI = () => {
     setRecommendation(null);
   };
 
-  // Recommendation UI
+  // ──────────── RECOMMENDATION UI ────────────
   if (recommendation) {
     const rec = recommendation;
     return (
-      <div className="min-h-screen bg-primary pb-24">
+      <div className="min-h-screen bg-background pb-24">
         {/* Header */}
-        <div className="px-6 pt-8 pb-6">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-secondary-foreground" />
-            </div>
-            <div>
-              <h1 className="text-lg font-bold text-primary-foreground">Orza AI</h1>
-              <p className="text-xs text-primary-foreground/60">Your personalized design</p>
-            </div>
+        <div className="sticky top-0 z-10 bg-background/95 backdrop-blur-sm border-b border-border px-4 py-3 flex items-center gap-3">
+          <button onClick={handleReset} className="w-9 h-9 rounded-full bg-muted flex items-center justify-center hover:bg-muted/80 transition-colors">
+            <ArrowLeft className="w-4 h-4 text-foreground" />
+          </button>
+          <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
+            <Sparkles className="w-4 h-4 text-secondary-foreground" />
           </div>
+          <div>
+            <h1 className="text-sm font-bold text-foreground">Orza AI</h1>
+            <p className="text-[10px] text-muted-foreground">Your design plan</p>
+          </div>
+        </div>
 
-          <h2 className="text-2xl font-bold text-primary-foreground leading-tight mb-3">{rec.headline}</h2>
-          <p className="text-sm text-primary-foreground/70 leading-relaxed">{rec.intro}</p>
+        {/* Hero */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="px-5 pt-6 pb-4"
+        >
+          <h2 className="text-xl font-bold text-foreground leading-tight mb-2">{rec.headline}</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed">{rec.intro}</p>
 
           {rec.moodKeywords && (
-            <div className="flex flex-wrap gap-2 mt-4">
+            <div className="flex flex-wrap gap-1.5 mt-3">
               {rec.moodKeywords.map((kw, i) => (
-                <span key={i} className="text-xs px-3 py-1.5 rounded-full bg-secondary/10 text-secondary border border-secondary/20 font-medium">{kw}</span>
+                <span key={i} className="text-[10px] px-2.5 py-1 rounded-full bg-secondary/10 text-secondary font-medium">{kw}</span>
               ))}
             </div>
           )}
-        </div>
+        </motion.div>
 
         {/* Color Palette */}
         {rec.colorPalette && (
-          <AnimatedCard delay={0.1} className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 overflow-hidden">
-            <div className="flex items-center gap-2 px-5 pt-4 pb-2">
+          <AnimatedCard delay={0.08} className="mx-4 mb-3 rounded-xl bg-card border border-border overflow-hidden shadow-sm">
+            <div className="flex items-center gap-2 px-4 pt-4 pb-1">
               <Palette className="w-4 h-4 text-secondary" />
-              <h3 className="text-sm font-bold text-primary-foreground uppercase tracking-wider">Color Palette</h3>
+              <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Color Palette</h3>
             </div>
-            <p className="px-5 text-xs text-primary-foreground/60 mb-3">{rec.colorPalette.description}</p>
-            <div className="flex gap-0 overflow-hidden">
+            <p className="px-4 text-[11px] text-muted-foreground mb-2">{rec.colorPalette.description}</p>
+            <div className="flex">
               {rec.colorPalette.colors?.map((c, i) => (
-                <div key={i} className="flex-1 group relative" style={{ backgroundColor: c.hex, minHeight: "80px" }}>
-                  <div className="absolute bottom-0 left-0 right-0 bg-black/60 backdrop-blur-sm px-2 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <p className="text-[10px] text-white font-semibold truncate">{c.name}</p>
-                    <p className="text-[9px] text-white/70 truncate">{c.shade}</p>
-                  </div>
-                </div>
+                <div key={i} className="flex-1" style={{ backgroundColor: c.hex, height: "56px" }} />
               ))}
             </div>
-            <div className="px-5 py-3 grid grid-cols-2 gap-2">
+            <div className="px-4 py-3 grid grid-cols-2 gap-2">
               {rec.colorPalette.colors?.map((c, i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <div className="w-4 h-4 rounded-full shrink-0 mt-0.5 border border-primary-foreground/10" style={{ backgroundColor: c.hex }} />
+                  <div className="w-3.5 h-3.5 rounded-full shrink-0 mt-0.5 border border-border" style={{ backgroundColor: c.hex }} />
                   <div>
-                    <p className="text-xs font-semibold text-primary-foreground">{c.name}</p>
-                    <p className="text-[10px] text-primary-foreground/50">{c.usage}</p>
+                    <p className="text-[11px] font-semibold text-foreground leading-tight">{c.name}</p>
+                    <p className="text-[10px] text-muted-foreground">{c.usage}</p>
                   </div>
                 </div>
               ))}
@@ -166,20 +177,20 @@ const OrzaAI = () => {
 
         {/* Furniture */}
         {rec.furnitureLayout && (
-          <AnimatedCard delay={0.16} className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 p-5">
-            <div className="flex items-center gap-2 mb-2">
+          <AnimatedCard delay={0.14} className="mx-4 mb-3 rounded-xl bg-card border border-border p-4 shadow-sm">
+            <div className="flex items-center gap-2 mb-1">
               <Sofa className="w-4 h-4 text-secondary" />
-              <h3 className="text-sm font-bold text-primary-foreground uppercase tracking-wider">Furniture & Layout</h3>
+              <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Furniture & Layout</h3>
             </div>
-            <p className="text-xs text-primary-foreground/60 mb-4">{rec.furnitureLayout.description}</p>
-            <div className="space-y-3">
+            <p className="text-[11px] text-muted-foreground mb-3">{rec.furnitureLayout.description}</p>
+            <div className="space-y-2">
               {rec.furnitureLayout.items?.map((item, i) => (
-                <div key={i} className="flex items-start justify-between gap-3 bg-primary-foreground/5 rounded-xl px-4 py-3">
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-primary-foreground">{item.name}</p>
-                    <p className="text-xs text-primary-foreground/50 mt-0.5">{item.detail}</p>
+                <div key={i} className="flex items-start justify-between gap-2 bg-muted/50 rounded-lg px-3 py-2.5">
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-semibold text-foreground">{item.name}</p>
+                    <p className="text-[10px] text-muted-foreground mt-0.5 leading-snug">{item.detail}</p>
                   </div>
-                  <span className="text-xs text-secondary font-semibold whitespace-nowrap">{item.priceRange}</span>
+                  <span className="text-[10px] text-secondary font-bold whitespace-nowrap">{item.priceRange}</span>
                 </div>
               ))}
             </div>
@@ -188,20 +199,20 @@ const OrzaAI = () => {
 
         {/* Materials */}
         {rec.materials && (
-          <AnimatedCard delay={0.22} className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 p-5">
-            <div className="flex items-center gap-2 mb-2">
+          <AnimatedCard delay={0.2} className="mx-4 mb-3 rounded-xl bg-card border border-border p-4 shadow-sm">
+            <div className="flex items-center gap-2 mb-1">
               <Layers className="w-4 h-4 text-secondary" />
-              <h3 className="text-sm font-bold text-primary-foreground uppercase tracking-wider">Materials & Finishes</h3>
+              <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Materials & Finishes</h3>
             </div>
-            <p className="text-xs text-primary-foreground/60 mb-4">{rec.materials.description}</p>
-            <div className="space-y-3">
+            <p className="text-[11px] text-muted-foreground mb-3">{rec.materials.description}</p>
+            <div className="space-y-2">
               {rec.materials.recommendations?.map((m, i) => (
-                <div key={i} className="bg-primary-foreground/5 rounded-xl px-4 py-3">
-                  <div className="flex items-center justify-between mb-1">
-                    <p className="text-sm font-semibold text-primary-foreground">{m.item}</p>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-secondary/10 text-secondary font-medium">{m.type}</span>
+                <div key={i} className="bg-muted/50 rounded-lg px-3 py-2.5">
+                  <div className="flex items-center justify-between mb-0.5">
+                    <p className="text-xs font-semibold text-foreground">{m.item}</p>
+                    <span className="text-[9px] px-2 py-0.5 rounded-full bg-secondary/10 text-secondary font-semibold">{m.type}</span>
                   </div>
-                  <p className="text-xs text-primary-foreground/50">{m.why}</p>
+                  <p className="text-[10px] text-muted-foreground">{m.why}</p>
                 </div>
               ))}
             </div>
@@ -210,22 +221,22 @@ const OrzaAI = () => {
 
         {/* Lighting */}
         {rec.lighting && (
-          <AnimatedCard delay={0.28} className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 p-5">
-            <div className="flex items-center gap-2 mb-2">
+          <AnimatedCard delay={0.26} className="mx-4 mb-3 rounded-xl bg-card border border-border p-4 shadow-sm">
+            <div className="flex items-center gap-2 mb-1">
               <Lightbulb className="w-4 h-4 text-secondary" />
-              <h3 className="text-sm font-bold text-primary-foreground uppercase tracking-wider">Lighting Design</h3>
+              <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Lighting Design</h3>
             </div>
-            <p className="text-xs text-primary-foreground/60 mb-4">{rec.lighting.description}</p>
-            <div className="space-y-3">
+            <p className="text-[11px] text-muted-foreground mb-3">{rec.lighting.description}</p>
+            <div className="space-y-2">
               {rec.lighting.layers?.map((l, i) => (
-                <div key={i} className="flex items-start gap-3 bg-primary-foreground/5 rounded-xl px-4 py-3">
-                  <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
-                    <Lightbulb className="w-4 h-4 text-secondary" />
+                <div key={i} className="flex items-start gap-2.5 bg-muted/50 rounded-lg px-3 py-2.5">
+                  <div className="w-7 h-7 rounded-md bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <Lightbulb className="w-3.5 h-3.5 text-secondary" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-secondary uppercase">{l.type}</p>
-                    <p className="text-sm text-primary-foreground font-medium">{l.suggestion}</p>
-                    <p className="text-xs text-primary-foreground/50">{l.placement}</p>
+                    <p className="text-[10px] font-bold text-secondary uppercase">{l.type}</p>
+                    <p className="text-xs text-foreground font-medium">{l.suggestion}</p>
+                    <p className="text-[10px] text-muted-foreground">{l.placement}</p>
                   </div>
                 </div>
               ))}
@@ -235,75 +246,88 @@ const OrzaAI = () => {
 
         {/* Designer Secret */}
         {rec.designerSecret && (
-          <AnimatedCard delay={0.34} className="mx-6 mb-4 rounded-2xl bg-secondary/10 border border-secondary/20 p-5">
-            <div className="flex items-center gap-2 mb-2">
+          <AnimatedCard delay={0.32} className="mx-4 mb-3 rounded-xl bg-secondary/5 border border-secondary/20 p-4">
+            <div className="flex items-center gap-2 mb-1.5">
               <Star className="w-4 h-4 text-secondary" />
-              <h3 className="text-sm font-bold text-secondary uppercase tracking-wider">Designer Secret</h3>
+              <h3 className="text-xs font-bold text-secondary uppercase tracking-wider">Designer Secret</h3>
             </div>
-            <p className="text-sm text-primary-foreground/80 leading-relaxed italic">"{rec.designerSecret}"</p>
+            <p className="text-xs text-foreground/80 leading-relaxed italic">"{rec.designerSecret}"</p>
           </AnimatedCard>
         )}
 
         {/* Budget */}
         {rec.estimatedBudget && (
-          <AnimatedCard delay={0.4} className="mx-6 mb-4 rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 p-5">
-            <div className="flex items-center gap-2 mb-3">
+          <AnimatedCard delay={0.38} className="mx-4 mb-4 rounded-xl bg-card border border-border p-4 shadow-sm">
+            <div className="flex items-center gap-2 mb-2">
               <IndianRupee className="w-4 h-4 text-secondary" />
-              <h3 className="text-sm font-bold text-primary-foreground uppercase tracking-wider">Estimated Budget</h3>
+              <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Estimated Budget</h3>
             </div>
-            <div className="bg-primary-foreground/5 rounded-xl px-4 py-3">
-              <p className="text-lg font-bold text-primary-foreground">{rec.estimatedBudget.low} — {rec.estimatedBudget.high}</p>
-              <p className="text-xs text-primary-foreground/50 mt-0.5">{rec.estimatedBudget.note}</p>
+            <div className="bg-muted/50 rounded-lg px-3 py-3">
+              <p className="text-base font-bold text-foreground">{rec.estimatedBudget.low} — {rec.estimatedBudget.high}</p>
+              <p className="text-[10px] text-muted-foreground mt-0.5">{rec.estimatedBudget.note}</p>
             </div>
           </AnimatedCard>
         )}
 
         {/* CTAs */}
-        <div className="mx-6 mt-6 space-y-3 pb-6">
-          <Link to="/contact" className="flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl bg-secondary text-secondary-foreground font-semibold text-sm">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.44 }}
+          className="mx-4 mt-4 space-y-2.5 pb-6"
+        >
+          <Link
+            to="/contact"
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-secondary text-secondary-foreground font-semibold text-sm shadow-md shadow-secondary/20 hover:bg-secondary/90 transition-colors"
+          >
             <Phone className="w-4 h-4" />
             Book Free Consultation
           </Link>
-          <button onClick={handleReset} className="flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl bg-primary-foreground/10 text-primary-foreground font-semibold text-sm border border-primary-foreground/10">
+          <button
+            onClick={handleReset}
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-muted text-foreground font-semibold text-sm border border-border hover:bg-muted/80 transition-colors"
+          >
             <RotateCcw className="w-4 h-4" />
             Design Another Space
           </button>
-        </div>
+        </motion.div>
       </div>
     );
   }
 
-  // Chat UI
+  // ──────────── CHAT UI ────────────
   return (
     <div className="min-h-screen bg-primary flex flex-col">
       {/* Header */}
-      <div className="flex items-center gap-3 px-6 pt-8 pb-4 shrink-0">
-        <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-          <Sparkles className="w-5 h-5 text-secondary-foreground" />
+      <div className="sticky top-0 z-10 bg-primary/95 backdrop-blur-sm border-b border-primary-foreground/10 px-4 py-3 flex items-center gap-3 shrink-0">
+        <button onClick={() => navigate(-1)} className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/15 transition-colors">
+          <ArrowLeft className="w-4 h-4 text-primary-foreground" />
+        </button>
+        <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
+          <Sparkles className="w-4 h-4 text-secondary-foreground" />
         </div>
         <div>
-          <h1 className="text-lg font-bold text-primary-foreground">Orza AI</h1>
-          <p className="text-xs text-primary-foreground/60">Your personal interior designer</p>
+          <h1 className="text-sm font-bold text-primary-foreground">Orza AI</h1>
+          <p className="text-[10px] text-primary-foreground/50">Your personal interior designer</p>
         </div>
       </div>
 
       {/* Messages */}
-      <div ref={scrollRef} className="flex-1 overflow-y-auto px-6 pb-28 space-y-4">
+      <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 pt-4 pb-24 space-y-3">
         <AnimatePresence initial={false}>
           {messages.map((msg, i) => (
             <motion.div
-              key={`${msg.role}-${i}-${msg.content.slice(0, 12)}`}
-              initial={{ opacity: 0, y: 12, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
+              key={`${msg.role}-${i}`}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
             >
               <div
-                className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+                className={`max-w-[80%] rounded-2xl px-3.5 py-2.5 text-[13px] leading-relaxed ${
                   msg.role === "user"
-                    ? "bg-secondary text-secondary-foreground rounded-br-md"
-                    : "bg-primary-foreground/10 text-primary-foreground border border-primary-foreground/10 rounded-bl-md"
+                    ? "bg-secondary text-secondary-foreground rounded-br-sm"
+                    : "bg-primary-foreground/10 text-primary-foreground border border-primary-foreground/10 rounded-bl-sm"
                 }`}
               >
                 {msg.content}
@@ -312,28 +336,50 @@ const OrzaAI = () => {
           ))}
         </AnimatePresence>
 
-        {/* Typing indicator */}
         <AnimatePresence>
           {isLoading && (
             <motion.div
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
+              exit={{ opacity: 0 }}
               className="flex justify-start"
             >
-              <div className="bg-primary-foreground/10 border border-primary-foreground/10 rounded-2xl rounded-bl-md px-4 py-3 flex gap-1.5">
-                <div className="w-2 h-2 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "0ms" }} />
-                <div className="w-2 h-2 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "150ms" }} />
-                <div className="w-2 h-2 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "300ms" }} />
+              <div className="bg-primary-foreground/10 border border-primary-foreground/10 rounded-2xl rounded-bl-sm px-4 py-3 flex gap-1.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "0ms" }} />
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "150ms" }} />
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary/60 animate-bounce" style={{ animationDelay: "300ms" }} />
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
 
-      {/* Input */}
-      <div className="fixed bottom-20 left-0 right-0 px-6 pb-4 md:pb-6 bg-gradient-to-t from-primary via-primary to-transparent pt-6">
+      {/* Input — fixed above bottom nav */}
+      <div className="fixed bottom-[4.5rem] left-0 right-0 px-4 pb-3 pt-3 bg-gradient-to-t from-primary via-primary/95 to-transparent md:hidden">
         <div className="relative">
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleSend()}
+            placeholder="Type your answer..."
+            disabled={isLoading}
+            className="w-full py-3 pl-4 pr-12 rounded-xl bg-primary-foreground/10 border border-primary-foreground/15 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-secondary/50 transition-colors disabled:opacity-50"
+            autoFocus
+          />
+          <button
+            onClick={handleSend}
+            disabled={!input.trim() || isLoading}
+            className="absolute right-1.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-secondary text-secondary-foreground flex items-center justify-center disabled:opacity-30 transition-opacity"
+          >
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
+      {/* Desktop input */}
+      <div className="hidden md:block fixed bottom-0 left-0 right-0 px-6 pb-6 pt-4 bg-gradient-to-t from-primary via-primary to-transparent">
+        <div className="relative max-w-2xl mx-auto">
           <input
             type="text"
             value={input}
