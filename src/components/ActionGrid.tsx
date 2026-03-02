@@ -78,7 +78,7 @@ const ActionGrid = () => {
 
                 {/* Content */}
                 <div className="relative z-10 h-full flex flex-col justify-end p-5 pr-16 pb-8">
-                  <div className="w-12 h-12 rounded-2xl bg-secondary/20 backdrop-blur-sm flex items-center justify-center mb-3 group-hover:bg-secondary/30 transition-colors overflow-hidden">
+                  <div className={`w-12 h-12 rounded-2xl backdrop-blur-sm flex items-center justify-center mb-3 transition-colors overflow-hidden ${(item as any).isOrza ? 'bg-white' : 'bg-secondary/20 group-hover:bg-secondary/30'}`}>
                     {(item as any).isOrza ? (
                       <img src={orzaIcon} alt="Orza" className="w-8 h-8 object-contain" />
                     ) : (
