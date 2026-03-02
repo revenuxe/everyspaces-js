@@ -92,12 +92,19 @@ const OrzaAI = () => {
         const { data, error } = await supabase.functions.invoke("orza-ai", {
           body: newAnswers,
         });
-        if (error) throw error;
+        if (error) {
+          // supabase-js wraps non-2xx as FunctionsHttpError
+          const msg = data?.error || error.message || "Something went wrong";
+          throw new Error(msg);
+        }
         if (data?.error) throw new Error(data.error);
         setRecommendation(data.recommendation);
       } catch (err: any) {
         console.error("Orza AI error:", err);
-        toast.error(err.message || "Something went wrong. Please try again.");
+        const message = err.message?.includes("Rate limit")
+          ? "Gemini rate limit hit. Please wait 30 seconds and try again."
+          : err.message || "Something went wrong. Please try again.";
+        toast.error(message);
         setPhase(PHASES.length - 1);
         setCurrentInput(newAnswers.details || "");
       } finally {
