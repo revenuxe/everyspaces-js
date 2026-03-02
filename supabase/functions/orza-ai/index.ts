@@ -62,7 +62,8 @@ const RECOMMENDATION_SCHEMA = `Return VALID JSON ONLY (no markdown) with this st
   },
   "designerSecret": "One insider tip they won't find on Pinterest",
   "estimatedBudget": {"low": "₹X,XX,XXX", "high": "₹X,XX,XXX", "note": "What's included"},
-  "moodKeywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"]
+  "moodKeywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"],
+  "moodBoardQueries": ["specific interior design search query 1", "specific interior design search query 2", "specific interior design search query 3", "specific interior design search query 4"]
 }`;
 
 const RETRY_DELAYS_MS = [1500, 3000];
