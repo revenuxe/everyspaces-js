@@ -117,9 +117,14 @@ const OrzaAI = () => {
     setAnswers(newAnswers);
     setCurrentOptions([]);
     setMessages(prev => [...prev, { role: "user", content: option }]);
+    setIsLoading(true);
 
     const nextStep = currentStep + 1;
-    fetchQuestion(nextStep, newAnswers);
+    // Add a small delay before loading next question for natural flow
+    setTimeout(() => {
+      setIsLoading(false);
+      fetchQuestion(nextStep, newAnswers);
+    }, 500);
   };
 
   const handleSend = () => {

@@ -103,12 +103,25 @@ const TAIL_QUESTIONS = [
     message: "What's your budget range? 💰",
     options: ["Under ₹3 Lakhs", "₹3-6 Lakhs", "₹6-10 Lakhs", "₹10-15 Lakhs", "₹15 Lakhs+", "Not sure yet"],
   },
-  {
-    key: "details",
-    message: "Any special requirements? 🏠",
-    options: ["Vastu Compliant", "Pet Friendly", "Kid Safe", "Work From Home", "Lots of Storage", "Low Maintenance", "None"],
-  },
 ];
+
+// ── Space-specific requirements (replaces generic "details" question) ──
+const SPACE_REQUIREMENTS: Record<string, { message: string; options: string[] }> = {
+  "Modular Kitchen": { message: "Any specific kitchen requirements? 🍳", options: ["Vastu Compliant", "Separate Wet & Dry Zone", "Oil-Splash Resistant", "Senior-Friendly Height", "Microwave + OTG Built-in", "None"] },
+  "Kitchen": { message: "Any specific kitchen requirements? 🍳", options: ["Vastu Compliant", "Separate Wet & Dry Zone", "Oil-Splash Resistant", "Senior-Friendly Height", "Microwave + OTG Built-in", "None"] },
+  "Bedroom": { message: "Any special bedroom requirements? 🛏️", options: ["Vastu Compliant", "Blackout Setup", "Soundproofing", "AC/Fan Placement", "Couple-Friendly Layout", "None"] },
+  "Master Bedroom": { message: "Any special bedroom requirements? 🛏️", options: ["Vastu Compliant", "Blackout Setup", "Soundproofing", "Walk-in Closet", "Attached Bath Integration", "None"] },
+  "Living Room": { message: "Any special living room needs? 🛋️", options: ["Vastu Compliant", "Pet Friendly Fabrics", "Kid Safe Corners", "Home Theatre Setup", "Guest-Ready Always", "None"] },
+  "Wardrobe": { message: "Any wardrobe-specific needs? 👔", options: ["Sari Section", "Shoe Rack Inside", "Accessories Drawer", "Humidity Control", "Full Mirror Panel", "None"] },
+  "TV Unit": { message: "Any TV unit-specific needs? 📺", options: ["Gaming Console Storage", "Soundbar Integration", "Hidden Wiring", "Bookshelf Combo", "Display for Decor", "None"] },
+  "Pooja Room": { message: "Any pooja room requirements? 🙏", options: ["Vastu East-Facing", "Bell Hanging Spot", "Smoke Ventilation", "Daily Pooja Storage", "Festival-Ready Setup", "None"] },
+  "2BHK": { message: "Any special requirements for your 2BHK? 🏠", options: ["Vastu Compliant", "Pet Friendly", "Kid Safe", "Work From Home Setup", "Elderly Accessible", "None"] },
+  "3BHK": { message: "Any special requirements for your 3BHK? 🏠", options: ["Vastu Compliant", "Pet Friendly", "Kid Safe", "Work From Home Setup", "Entertainment Zone", "None"] },
+  "Villa": { message: "Any villa-specific requirements? 🏡", options: ["Vastu Compliant", "Outdoor-Indoor Flow", "Smart Home Ready", "Staff Quarters", "Home Gym Space", "None"] },
+  "Full Home Interiors": { message: "Any special home requirements? 🏠", options: ["Vastu Compliant", "Pet Friendly", "Kid Safe", "Work From Home", "Elderly Accessible", "None"] },
+  "Study Room": { message: "Any study room needs? 📚", options: ["Dual Monitor Setup", "Video Call Background", "Soundproofing", "Standing Desk Option", "Whiteboard Wall", "None"] },
+  "Kids Room": { message: "Any kids room requirements? 👧", options: ["Anti-Bacterial Surfaces", "Growth Chart Wall", "Night Light Setup", "Sibling Sharing Layout", "Allergy-Safe Materials", "None"] },
+};
 
 const RECOMMENDATION_SCHEMA = `Return VALID JSON ONLY (no markdown) with this structure:
 {
@@ -642,7 +655,15 @@ serve(async (req) => {
       const { step = 0, name = "", space = "" } = body;
 
       const spaceFollowups = SPACE_FOLLOWUPS[space] || DEFAULT_FOLLOWUPS;
-      const allQuestions = [...BASE_QUESTIONS, ...spaceFollowups, ...TAIL_QUESTIONS];
+      // Build space-specific requirements question
+      const spaceReq = SPACE_REQUIREMENTS[space] || { message: "Any special requirements? 🏠", options: ["Vastu Compliant", "Pet Friendly", "Kid Safe", "Work From Home", "Lots of Storage", "None"] };
+      const detailsQuestion = { key: "details", message: spaceReq.message, options: spaceReq.options };
+      
+      // Deduplicate: remove followup keys that overlap with tail questions
+      const tailKeys = new Set(TAIL_QUESTIONS.map(q => q.key));
+      const filteredFollowups = spaceFollowups.filter(q => !tailKeys.has(q.key));
+      
+      const allQuestions = [...BASE_QUESTIONS, ...filteredFollowups, ...TAIL_QUESTIONS, detailsQuestion];
 
       if (step < allQuestions.length) {
         const q = { ...allQuestions[step] };
