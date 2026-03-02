@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
-import { Trash2, Eye, Loader2, Globe, Calendar, FileText } from "lucide-react";
+import { Trash2, Eye, Loader2, Globe, Calendar, FileText, Download } from "lucide-react";
 import { toast } from "sonner";
 import { format } from "date-fns";
 
@@ -190,6 +190,17 @@ export function LeadsTable() {
                   </TableCell>
                   <TableCell className="text-right">
                     <div className="flex items-center justify-end gap-2">
+                      {(lead.data as Record<string, unknown>).report_url && (
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-8 w-8 text-secondary hover:text-secondary hover:bg-secondary/10"
+                          onClick={() => window.open(String((lead.data as Record<string, unknown>).report_url), '_blank')}
+                          title="Download Report"
+                        >
+                          <Download className="h-4 w-4" />
+                        </Button>
+                      )}
                       <Button
                         variant="ghost"
                         size="icon"
