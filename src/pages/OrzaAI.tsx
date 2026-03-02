@@ -22,6 +22,8 @@ const OrzaAI = () => {
   const [currentOptions, setCurrentOptions] = useState<string[]>([]);
   const [currentPlaceholder, setCurrentPlaceholder] = useState("Type your answer...");
   const [currentKey, setCurrentKey] = useState("name");
+  const [isMultiSelect, setIsMultiSelect] = useState(false);
+  const [selectedMulti, setSelectedMulti] = useState<string[]>([]);
   const [showPopup, setShowPopup] = useState(false);
   const [uploadedImages, setUploadedImages] = useState<string[]>([]);
   const [showImageStep, setShowImageStep] = useState(false);
@@ -47,11 +49,14 @@ const OrzaAI = () => {
       });
       if (error) throw error;
       if (data.type === "question") {
-        setMessages(prev => [...prev, { role: "assistant", content: data.message, options: data.options }]);
+        const multiSelect = data.key === "details";
+        setMessages(prev => [...prev, { role: "assistant", content: data.message + (multiSelect ? "\n(Select multiple, then tap Done ✓)" : ""), options: data.options }]);
         setCurrentOptions(data.options || []);
         setCurrentPlaceholder(data.inputPlaceholder || "Type your answer...");
         setCurrentStep(step);
         setCurrentKey(data.key || `step_${step}`);
+        setIsMultiSelect(multiSelect);
+        setSelectedMulti([]);
         if (data.totalSteps) setTotalSteps(data.totalSteps);
       } else if (data.type === "ready") {
         promptImageUpload();
@@ -114,6 +119,31 @@ const OrzaAI = () => {
   const handleOptionSelect = (option: string) => {
     if (isLoading) return;
 
+    // Multi-select mode: toggle selection
+    if (isMultiSelect) {
+      if (option === "None") {
+        setSelectedMulti(["None"]);
+      } else {
+        setSelectedMulti(prev => {
+          const filtered = prev.filter(o => o !== "None");
+          return filtered.includes(option) ? filtered.filter(o => o !== option) : [...filtered, option];
+        });
+      }
+      return;
+    }
+
+    submitAnswer(option);
+  };
+
+  const handleMultiSelectDone = () => {
+    if (selectedMulti.length === 0) return;
+    const combined = selectedMulti.join(", ");
+    submitAnswer(combined);
+    setIsMultiSelect(false);
+    setSelectedMulti([]);
+  };
+
+  const submitAnswer = (option: string) => {
     // Save history for back navigation
     setStepHistory(prev => [...prev, { step: currentStep, key: currentKey, answer: option }]);
 
@@ -309,18 +339,35 @@ const OrzaAI = () => {
               exit={{ opacity: 0 }}
               className="flex flex-wrap gap-2 pt-1 pl-8"
             >
-              {currentOptions.map((opt, i) => (
+              {currentOptions.map((opt, i) => {
+                const isSelected = isMultiSelect && selectedMulti.includes(opt);
+                return (
+                  <motion.button
+                    key={opt}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: i * 0.04 }}
+                    onClick={() => handleOptionSelect(opt)}
+                    className={`px-3.5 py-2 rounded-full border text-xs font-medium transition-all active:scale-95 ${
+                      isSelected
+                        ? "bg-secondary text-secondary-foreground border-secondary"
+                        : "bg-secondary/10 border-secondary/30 text-secondary hover:bg-secondary hover:text-secondary-foreground"
+                    }`}
+                  >
+                    {isMultiSelect && isSelected && "✓ "}{opt}
+                  </motion.button>
+                );
+              })}
+              {isMultiSelect && selectedMulti.length > 0 && (
                 <motion.button
-                  key={opt}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.04 }}
-                  onClick={() => handleOptionSelect(opt)}
-                  className="px-3.5 py-2 rounded-full bg-secondary/10 border border-secondary/30 text-secondary text-xs font-medium hover:bg-secondary hover:text-secondary-foreground transition-all active:scale-95"
+                  onClick={handleMultiSelectDone}
+                  className="px-4 py-2 rounded-full bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all active:scale-95"
                 >
-                  {opt}
+                  Done ✓
                 </motion.button>
-              ))}
+              )}
             </motion.div>
           )}
         </AnimatePresence>
