@@ -1,6 +1,7 @@
 import { type ReactNode } from "react";
-import { Palette, Sofa, Lightbulb, Layers, Star, IndianRupee, Download, MessageCircleHeart, RotateCcw, ArrowLeft, Sparkles, LayoutGrid } from "lucide-react";
+import { Palette, Sofa, Lightbulb, Layers, Star, IndianRupee, Download, MessageCircleHeart, RotateCcw, ArrowLeft, LayoutGrid } from "lucide-react";
 import { motion } from "framer-motion";
+import orzaLogo from "@/assets/orza-logo.webp";
 import type { Recommendation } from "./types";
 
 // Import space-specific images
@@ -97,17 +98,13 @@ const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSup
   return (
     <div className="min-h-screen bg-background pb-24">
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-background/95 backdrop-blur-sm border-b border-border px-4 py-3 flex items-center gap-3">
+      <div className="sticky top-0 z-10 bg-white backdrop-blur-sm border-b border-border px-4 py-3 flex items-center gap-3">
         <button onClick={onReset} className="w-9 h-9 rounded-full bg-muted flex items-center justify-center hover:bg-muted/80 transition-colors">
           <ArrowLeft className="w-4 h-4 text-foreground" />
         </button>
-        <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
-          <Sparkles className="w-4 h-4 text-secondary-foreground" />
-        </div>
-        <div>
-          <h1 className="text-sm font-bold text-foreground">Your Design Plan</h1>
-          <p className="text-[10px] text-muted-foreground">by Orza AI</p>
-        </div>
+        <img src={orzaLogo} alt="Orza AI" className="h-7 object-contain" />
+        <div className="flex-1" />
+        <span className="text-[10px] text-muted-foreground font-medium">Your Design Plan</span>
       </div>
 
       {/* Hero */}
