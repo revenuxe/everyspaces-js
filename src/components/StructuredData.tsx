@@ -452,6 +452,36 @@ export const createProductSchema = (product: {
   "brand": {
     "@id": "https://intorza.com/#organization"
   },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "520",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "author": { "@type": "Person", "name": "Priya Sharma" },
+      "datePublished": "2025-01-15",
+      "reviewBody": "Intorza delivered exceptional quality for our home interiors. The attention to detail and use of premium materials exceeded our expectations."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "author": { "@type": "Person", "name": "Rahul Menon" },
+      "datePublished": "2025-02-10",
+      "reviewBody": "Professional team, on-time delivery, and beautiful designs. Highly recommend Intorza for anyone looking for quality interior solutions in Bangalore."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "4", "bestRating": "5" },
+      "author": { "@type": "Person", "name": "Anitha Reddy" },
+      "datePublished": "2025-03-05",
+      "reviewBody": "Great design team and excellent craftsmanship. Our modular kitchen and wardrobes look stunning. Very happy with the final result."
+    }
+  ],
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "INR",
