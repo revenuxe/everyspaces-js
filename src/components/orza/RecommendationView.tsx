@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { Palette, Sofa, Lightbulb, Layers, Star, IndianRupee, Download, MessageCircleHeart, RotateCcw, ArrowLeft, LayoutGrid, Clock } from "lucide-react";
+import { Palette, Sofa, Lightbulb, Layers, Star, IndianRupee, Download, MessageCircleHeart, RotateCcw, ArrowLeft, LayoutGrid, Clock, Compass, Wrench, Zap, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import orzaLogo from "@/assets/orza-logo.webp";
 import type { Recommendation } from "./types";
@@ -254,9 +254,72 @@ const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSup
         </AnimatedCard>
       )}
 
+      {/* Vastu Tips */}
+      {rec.vastuTips && rec.vastuTips.tips?.length > 0 && (
+        <AnimatedCard delay={0.38} className="mx-4 mb-3 rounded-xl bg-card border border-border p-4 shadow-sm">
+          <div className="flex items-center gap-2 mb-1">
+            <Compass className="w-4 h-4 text-secondary" />
+            <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Vastu Guidelines</h3>
+          </div>
+          <p className="text-[11px] text-muted-foreground mb-3">{rec.vastuTips.description}</p>
+          <div className="space-y-2">
+            {rec.vastuTips.tips.map((tip, i) => (
+              <div key={i} className="bg-muted/50 rounded-lg px-3 py-2.5">
+                <p className="text-xs font-semibold text-foreground">{tip.aspect}</p>
+                <p className="text-[10px] text-muted-foreground mt-0.5">{tip.recommendation}</p>
+                <p className="text-[10px] text-secondary mt-1 italic">💡 Modern take: {tip.modern_adaptation}</p>
+              </div>
+            ))}
+          </div>
+        </AnimatedCard>
+      )}
+
+      {/* Pro Tips */}
+      {rec.proTips && rec.proTips.length > 0 && (
+        <AnimatedCard delay={0.4} className="mx-4 mb-3 rounded-xl bg-card border border-border p-4 shadow-sm">
+          <div className="flex items-center gap-2 mb-1">
+            <Zap className="w-4 h-4 text-secondary" />
+            <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Expert Pro Tips</h3>
+          </div>
+          <div className="space-y-2 mt-2">
+            {rec.proTips.map((tip, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <span className="text-[10px] font-bold text-secondary bg-secondary/10 rounded-full w-5 h-5 flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                <p className="text-[11px] text-foreground/80 leading-relaxed">{tip}</p>
+              </div>
+            ))}
+          </div>
+        </AnimatedCard>
+      )}
+
+      {/* Maintenance Guide */}
+      {rec.maintenanceGuide && rec.maintenanceGuide.tasks?.length > 0 && (
+        <AnimatedCard delay={0.42} className="mx-4 mb-3 rounded-xl bg-card border border-border p-4 shadow-sm">
+          <div className="flex items-center gap-2 mb-1">
+            <Wrench className="w-4 h-4 text-secondary" />
+            <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Maintenance Guide</h3>
+          </div>
+          <p className="text-[11px] text-muted-foreground mb-3">{rec.maintenanceGuide.description}</p>
+          <div className="space-y-2">
+            {rec.maintenanceGuide.tasks.map((task, i) => (
+              <div key={i} className="flex items-start justify-between gap-2 bg-muted/50 rounded-lg px-3 py-2.5">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <p className="text-xs font-semibold text-foreground">{task.item}</p>
+                    <span className="text-[9px] px-2 py-0.5 rounded-full bg-secondary/10 text-secondary font-semibold">{task.frequency}</span>
+                  </div>
+                  <p className="text-[10px] text-muted-foreground mt-0.5">{task.method}</p>
+                </div>
+                <span className="text-[10px] text-secondary font-bold whitespace-nowrap">{task.cost}</span>
+              </div>
+            ))}
+          </div>
+        </AnimatedCard>
+      )}
+
       {/* Budget */}
       {rec.estimatedBudget && (
-        <AnimatedCard delay={0.42} className="mx-4 mb-3 rounded-xl bg-card border border-border p-4 shadow-sm">
+        <AnimatedCard delay={0.46} className="mx-4 mb-3 rounded-xl bg-card border border-border p-4 shadow-sm">
           <div className="flex items-center gap-2 mb-2">
             <IndianRupee className="w-4 h-4 text-secondary" />
             <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Estimated Budget</h3>
@@ -270,7 +333,7 @@ const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSup
 
       {/* Timeline */}
       {rec.estimatedTimeline && (
-        <AnimatedCard delay={0.46} className="mx-4 mb-4 rounded-xl bg-secondary/5 border border-secondary/20 overflow-hidden shadow-sm">
+        <AnimatedCard delay={0.5} className="mx-4 mb-3 rounded-xl bg-secondary/5 border border-secondary/20 overflow-hidden shadow-sm">
           <div className="flex items-center gap-2 px-4 pt-4 pb-1">
             <Clock className="w-4 h-4 text-secondary" />
             <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Estimated Completion Time</h3>
@@ -290,6 +353,17 @@ const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSup
               <p className="text-[10px] text-muted-foreground mt-2 italic">{rec.estimatedTimeline.note}</p>
             </div>
           </div>
+        </AnimatedCard>
+      )}
+
+      {/* Bangalore Specific */}
+      {rec.bangaloreSpecific && (
+        <AnimatedCard delay={0.54} className="mx-4 mb-4 rounded-xl bg-primary/5 border border-primary/20 p-4">
+          <div className="flex items-center gap-2 mb-1.5">
+            <MapPin className="w-4 h-4 text-primary" />
+            <h3 className="text-xs font-bold text-primary uppercase tracking-wider">Bangalore Context</h3>
+          </div>
+          <p className="text-[11px] text-foreground/70 leading-relaxed">{rec.bangaloreSpecific}</p>
         </AnimatedCard>
       )}
 

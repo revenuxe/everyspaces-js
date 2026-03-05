@@ -8,22 +8,27 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
   const contentWidth = pageWidth - margin * 2;
   let y = 20;
 
+  const checkPageBreak = (needed: number) => {
+    if (y + needed > 280) {
+      doc.addPage();
+      y = 20;
+    }
+  };
+
   const addText = (text: string, size: number, style: "normal" | "bold" | "italic" = "normal", color: [number, number, number] = [30, 30, 30]) => {
     doc.setFontSize(size);
     doc.setFont("helvetica", style);
     doc.setTextColor(...color);
     const lines = doc.splitTextToSize(text, contentWidth);
-    if (y + lines.length * (size * 0.5) > 280) {
-      doc.addPage();
-      y = 20;
-    }
+    checkPageBreak(lines.length * (size * 0.5));
     doc.text(lines, margin, y);
     y += lines.length * (size * 0.45) + 2;
   };
 
   const addSectionHeader = (title: string) => {
     y += 4;
-    doc.setFillColor(199, 121, 59); // brand orange
+    checkPageBreak(14);
+    doc.setFillColor(199, 121, 59);
     doc.roundedRect(margin, y - 4, contentWidth, 8, 1, 1, "F");
     doc.setFontSize(10);
     doc.setFont("helvetica", "bold");
@@ -33,7 +38,7 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
   };
 
   // Header
-  doc.setFillColor(26, 54, 72); // brand navy
+  doc.setFillColor(26, 54, 72);
   doc.rect(0, 0, pageWidth, 36, "F");
   doc.setFontSize(18);
   doc.setFont("helvetica", "bold");
@@ -61,11 +66,11 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
     addSectionHeader("Color Palette");
     addText(rec.colorPalette.description, 9, "normal", [80, 80, 80]);
     rec.colorPalette.colors?.forEach((c) => {
-      // Color swatch
       const hex = c.hex.replace("#", "");
       const r = parseInt(hex.substring(0, 2), 16);
       const g = parseInt(hex.substring(2, 4), 16);
       const b = parseInt(hex.substring(4, 6), 16);
+      checkPageBreak(12);
       doc.setFillColor(r, g, b);
       doc.roundedRect(margin, y - 3, 6, 6, 1, 1, "F");
       doc.setFontSize(9);
@@ -109,10 +114,38 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
     });
   }
 
+  // Vastu Tips
+  if (rec.vastuTips && rec.vastuTips.tips?.length > 0) {
+    addSectionHeader("Vastu Guidelines");
+    addText(rec.vastuTips.description, 9, "normal", [80, 80, 80]);
+    rec.vastuTips.tips.forEach((tip) => {
+      addText(`• ${tip.aspect}: ${tip.recommendation}`, 9, "normal");
+      addText(`  Modern adaptation: ${tip.modern_adaptation}`, 8, "italic", [100, 100, 100]);
+    });
+  }
+
+  // Pro Tips
+  if (rec.proTips && rec.proTips.length > 0) {
+    addSectionHeader("Expert Pro Tips");
+    rec.proTips.forEach((tip, i) => {
+      addText(`${i + 1}. ${tip}`, 9, "normal", [60, 60, 60]);
+    });
+  }
+
   // Designer Secret
   if (rec.designerSecret) {
     addSectionHeader("Designer Secret");
     addText(`"${rec.designerSecret}"`, 9, "italic", [80, 80, 80]);
+  }
+
+  // Maintenance Guide
+  if (rec.maintenanceGuide && rec.maintenanceGuide.tasks?.length > 0) {
+    addSectionHeader("Maintenance Guide");
+    addText(rec.maintenanceGuide.description, 9, "normal", [80, 80, 80]);
+    rec.maintenanceGuide.tasks.forEach((task) => {
+      addText(`• ${task.item} (${task.frequency}): ${task.method}`, 9, "normal");
+      addText(`  Est. annual cost: ${task.cost}`, 8, "italic", [199, 121, 59]);
+    });
   }
 
   // Budget
@@ -130,13 +163,20 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
     addText(rec.estimatedTimeline.note, 8, "italic", [100, 100, 100]);
   }
 
+  // Bangalore Specific
+  if (rec.bangaloreSpecific) {
+    addSectionHeader("Bangalore Context");
+    addText(rec.bangaloreSpecific, 9, "normal", [80, 80, 80]);
+  }
+
   // Footer
   y += 8;
+  checkPageBreak(20);
   doc.setDrawColor(199, 121, 59);
   doc.line(margin, y, pageWidth - margin, y);
   y += 6;
   addText("Ready to bring this design to life? Contact Intorza for a free consultation.", 9, "bold", [26, 54, 72]);
-  addText("📞 Call us or visit intorza.com/contact", 9, "normal", [199, 121, 59]);
+  addText("📞 +91 9886579923 | intorza.com/contact", 9, "normal", [199, 121, 59]);
 
   return doc;
 };
