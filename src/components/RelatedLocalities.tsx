@@ -51,7 +51,7 @@ const RelatedLocalities = ({ currentSlug }: RelatedLocalitiesProps) => {
           {relatedLocalities.map((locality) => (
             <a
               key={locality.slug}
-              href={`/bangalore/${locality.slug}`}
+              href={`https://intorza.com/bangalore/${locality.slug}`}
               className="group flex items-center gap-3 p-4 bg-card rounded-2xl border border-border/50 hover:border-secondary/50 hover:shadow-soft transition-all"
             >
               <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
@@ -70,7 +70,7 @@ const RelatedLocalities = ({ currentSlug }: RelatedLocalitiesProps) => {
 
         <div className="text-center mt-8">
           <a
-            href="/bangalore"
+            href="https://intorza.com/bangalore"
             className="inline-flex items-center gap-2 text-secondary font-medium hover:underline"
           >
             View All Bangalore Localities <ArrowRight className="w-4 h-4" />
