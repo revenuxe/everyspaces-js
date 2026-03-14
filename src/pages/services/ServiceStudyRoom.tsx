@@ -115,10 +115,18 @@ const ServiceStudyRoom = () => {
         <meta name="description" content="Best study room designers in Bangalore. Study tables from ₹15K. Kids study stations, bookshelves, ergonomic designs. Free consultation!" />
         <meta name="keywords" content="study room design bangalore, study table design, kids study room, bookshelf design, learning space interior, study corner" />
         <link rel="canonical" href="https://intorza.com/services/study-room" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Intorza Interior Design" />
         <meta property="og:title" content="Study Room Design Bangalore | Study Table - Intorza" />
         <meta property="og:description" content="Study tables from ₹15K. Ergonomic designs, bookshelves, task lighting. Free consultation!" />
         <meta property="og:url" content="https://intorza.com/services/study-room" />
+        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Study Room Design Bangalore | Intorza" />
+        <meta name="twitter:description" content="Study tables from ₹15K. Ergonomic designs, bookshelves, task lighting. Free consultation!" />
+        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

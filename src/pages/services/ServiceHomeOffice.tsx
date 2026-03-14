@@ -119,10 +119,18 @@ const ServiceHomeOffice = () => {
         <meta name="description" content="Best home office designers in Bangalore. Ergonomic workstations from ₹30K. WFH setups, standing desks, executive studios. Free consultation!" />
         <meta name="keywords" content="home office design bangalore, study room interior, work from home setup, home workspace design, study table design, WFH office" />
         <link rel="canonical" href="https://intorza.com/services/home-office" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Intorza Interior Design" />
         <meta property="og:title" content="Home Office Design Bangalore | WFH Setup - Intorza" />
         <meta property="og:description" content="Home offices from ₹30K. Ergonomic desks, task lighting, storage. Free consultation!" />
         <meta property="og:url" content="https://intorza.com/services/home-office" />
+        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Home Office Design Bangalore | Intorza" />
+        <meta name="twitter:description" content="Home offices from ₹30K. Ergonomic desks, task lighting, storage. Free consultation!" />
+        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
