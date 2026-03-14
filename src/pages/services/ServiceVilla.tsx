@@ -179,10 +179,18 @@ const ServiceVilla = () => {
           content="villa interior design bangalore, luxury villa interiors, villa interior designers, premium home interiors bangalore, bungalow interior design"
         />
         <link rel="canonical" href="https://intorza.com/services/villa-interiors" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Intorza Interior Design" />
         <meta property="og:title" content="Luxury Villa Interior Design Bangalore - Intorza" />
         <meta property="og:description" content="Bespoke villa interiors from ₹25L. Grand living rooms, island kitchens, home theatre. Premium finishes, 10-year warranty!" />
         <meta property="og:url" content="https://intorza.com/services/villa-interiors" />
+        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Luxury Villa Interior Design Bangalore - Intorza" />
+        <meta name="twitter:description" content="Bespoke villa interiors from ₹25L. Grand living rooms, island kitchens, home theatre. Premium finishes, 10-year warranty!" />
+        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

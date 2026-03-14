@@ -119,10 +119,18 @@ const ServiceBedroom = () => {
         <meta name="description" content="Best bedroom designers in Bangalore. Master bedroom from ₹1.2L including wardrobe, bed design, false ceiling. 10-year warranty, free consultation!" />
         <meta name="keywords" content="bedroom interior design bangalore, master bedroom design, bedroom wardrobe design, luxury bedroom interiors, kids room design bangalore" />
         <link rel="canonical" href="https://intorza.com/services/bedroom-design" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Intorza Interior Design" />
         <meta property="og:title" content="Bedroom Interior Design Bangalore | Master & Kids Room - Intorza" />
         <meta property="og:description" content="Premium bedroom interiors from ₹1.2L. Custom wardrobes, bed design, false ceiling. 10-year warranty!" />
         <meta property="og:url" content="https://intorza.com/services/bedroom-design" />
+        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Bedroom Interior Design Bangalore | Intorza" />
+        <meta name="twitter:description" content="Premium bedroom interiors from ₹1.2L. Custom wardrobes, bed design, false ceiling. 10-year warranty!" />
+        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

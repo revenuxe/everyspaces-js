@@ -115,10 +115,18 @@ const ServiceFalseCeiling = () => {
         <meta name="description" content="Best false ceiling designers in Bangalore. POP from ₹65/sq ft, gypsum, cove lighting. Artistic ceiling designs. 3-7 day installation. Free quote!" />
         <meta name="keywords" content="false ceiling design bangalore, POP ceiling, gypsum ceiling, cove lighting ceiling, living room ceiling, bedroom ceiling" />
         <link rel="canonical" href="https://intorza.com/services/false-ceiling" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Intorza Interior Design" />
         <meta property="og:title" content="False Ceiling Design Bangalore | POP & Gypsum - Intorza" />
         <meta property="og:description" content="False ceilings from ₹65/sq ft. POP, gypsum, cove lighting. 3-7 day installation!" />
         <meta property="og:url" content="https://intorza.com/services/false-ceiling" />
+        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="False Ceiling Design Bangalore | Intorza" />
+        <meta name="twitter:description" content="False ceilings from ₹65/sq ft. POP, gypsum, cove lighting. 3-7 day installation!" />
+        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

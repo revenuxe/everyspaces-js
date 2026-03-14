@@ -119,10 +119,18 @@ const ServiceBathroom = () => {
         <meta name="description" content="Best bathroom renovators in Bangalore. Spa-like bathrooms from ₹80K. Kohler, Grohe fixtures, complete waterproofing. 10-15 day completion!" />
         <meta name="keywords" content="bathroom design bangalore, bathroom interior, modern bathroom design, bathroom renovation, spa bathroom, bathroom tiles" />
         <link rel="canonical" href="https://intorza.com/services/bathroom-design" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Intorza Interior Design" />
         <meta property="og:title" content="Bathroom Renovation Bangalore | Spa Design - Intorza" />
         <meta property="og:description" content="Bathroom makeovers from ₹80K. Premium fixtures, waterproofing, designer tiles. Free consultation!" />
         <meta property="og:url" content="https://intorza.com/services/bathroom-design" />
+        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Bathroom Renovation Bangalore | Intorza" />
+        <meta name="twitter:description" content="Bathroom makeovers from ₹80K. Premium fixtures, waterproofing, designer tiles. Free consultation!" />
+        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

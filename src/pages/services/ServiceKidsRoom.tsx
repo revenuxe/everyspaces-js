@@ -119,10 +119,18 @@ const ServiceKidsRoom = () => {
         <meta name="description" content="Best kids room designers in Bangalore. Theme rooms from ₹80K. Bunk beds, study areas, playful storage. Child-safe materials. Free consultation!" />
         <meta name="keywords" content="kids room design bangalore, children bedroom interior, kids room themes, bunk bed design, kids study room, kids furniture" />
         <link rel="canonical" href="https://intorza.com/services/kids-room" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Intorza Interior Design" />
         <meta property="og:title" content="Kids Room Design Bangalore | Safe & Fun - Intorza" />
         <meta property="og:description" content="Theme rooms from ₹80K. Bunk beds, study areas, child-safe materials. Free consultation!" />
         <meta property="og:url" content="https://intorza.com/services/kids-room" />
+        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Kids Room Design Bangalore | Intorza" />
+        <meta name="twitter:description" content="Theme rooms from ₹80K. Bunk beds, study areas, child-safe materials. Free consultation!" />
+        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

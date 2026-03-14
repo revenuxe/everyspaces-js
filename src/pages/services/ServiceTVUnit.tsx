@@ -115,10 +115,18 @@ const ServiceTVUnit = () => {
         <meta name="description" content="Best TV unit designers in Bangalore. Floating units from ₹25K, backlit panels, stone accent walls. Modern entertainment centers. Free quote!" />
         <meta name="keywords" content="TV unit design bangalore, entertainment unit, floating TV unit, TV wall design, living room TV unit, feature wall design" />
         <link rel="canonical" href="https://intorza.com/services/tv-unit" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Intorza Interior Design" />
         <meta property="og:title" content="TV Unit Design Bangalore | Entertainment Wall - Intorza" />
         <meta property="og:description" content="Modern TV units from ₹25K. Floating units, backlit panels, stone walls. Free consultation!" />
         <meta property="og:url" content="https://intorza.com/services/tv-unit" />
+        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="TV Unit Design Bangalore | Intorza" />
+        <meta name="twitter:description" content="Modern TV units from ₹25K. Floating units, backlit panels, stone walls. Free consultation!" />
+        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />

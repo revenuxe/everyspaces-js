@@ -119,10 +119,18 @@ const ServiceWardrobe = () => {
         <meta name="description" content="Best wardrobe designers in Bangalore. Sliding wardrobes from ₹80K, walk-in closets, loft storage. Hettich hardware, 10-year warranty. Free design consultation!" />
         <meta name="keywords" content="wardrobe design bangalore, sliding wardrobe, walk-in closet bangalore, custom wardrobe, modular wardrobe, wardrobe cost bangalore" />
         <link rel="canonical" href="https://intorza.com/services/wardrobe-design" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Intorza Interior Design" />
         <meta property="og:title" content="Custom Wardrobe Design Bangalore | Sliding & Walk-in - Intorza" />
         <meta property="og:description" content="Premium wardrobes from ₹70K. Sliding, hinged, walk-in closets with Hettich hardware. 10-year warranty, free consultation!" />
         <meta property="og:url" content="https://intorza.com/services/wardrobe-design" />
+        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Custom Wardrobe Design Bangalore | Intorza" />
+        <meta name="twitter:description" content="Premium wardrobes from ₹70K. Sliding, hinged, walk-in closets with Hettich hardware. 10-year warranty!" />
+        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
