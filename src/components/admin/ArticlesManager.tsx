@@ -59,8 +59,8 @@ const ArticlesManager = () => {
   const { data: articles, isLoading } = useQuery({
     queryKey: ["admin-articles"],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("articles")
+      const { data, error } = await (supabase
+        .from("articles") as any)
         .select("*")
         .order("created_at", { ascending: false });
 
