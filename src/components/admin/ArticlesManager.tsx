@@ -71,7 +71,7 @@ const ArticlesManager = () => {
 
   const deleteMutation = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase.from("articles").delete().eq("id", id);
+      const { error } = await (supabase.from("articles") as any).delete().eq("id", id);
       if (error) throw error;
     },
     onSuccess: () => {
