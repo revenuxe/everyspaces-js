@@ -120,7 +120,7 @@ const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
         excerpt: excerpt || null,
         content,
         category: category || null,
-        author: author || "Intorza Team",
+        author: author || "EverySpaces Team",
         keywords: keywords ? keywords.split(",").map((k) => k.trim()) : null,
         tags: tags ? tags.split(",").map((t) => t.trim()) : null,
         featured_image_url: featuredImageUrl || null,
