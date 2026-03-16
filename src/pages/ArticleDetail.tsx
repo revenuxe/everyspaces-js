@@ -53,8 +53,8 @@ const ArticleDetail = () => {
     queryKey: ["related-articles", article?.category, article?.id],
     queryFn: async () => {
       if (!article) return [];
-      const { data, error } = await supabase
-        .from("articles")
+      const { data, error } = await (supabase
+        .from("articles") as any)
         .select("id, title, slug, excerpt, featured_image_url, reading_time")
         .eq("status", "published")
         .neq("id", article.id)
