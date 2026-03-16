@@ -130,13 +130,13 @@ const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
       };
 
       if (article?.id) {
-        const { error } = await supabase
-          .from("articles")
+        const { error } = await (supabase
+          .from("articles") as any)
           .update(articleData)
           .eq("id", article.id);
         if (error) throw error;
       } else {
-        const { error } = await supabase.from("articles").insert(articleData);
+        const { error } = await (supabase.from("articles") as any).insert(articleData);
         if (error) throw error;
       }
     },

@@ -59,7 +59,7 @@ const QuotationPopup = ({ externalOpen, onExternalOpenChange }: QuotationPopupPr
     setIsLoading(true);
 
     try {
-      const { error } = await supabase.from("leads").insert({
+      const { error } = await (supabase.from("leads") as any).insert({
         form_name: externalOpen !== undefined ? "Mobile Contact Popup" : "Quotation Popup",
         source_page: location.pathname,
         data: {

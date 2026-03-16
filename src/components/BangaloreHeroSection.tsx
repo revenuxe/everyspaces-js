@@ -19,7 +19,7 @@ const BangaloreHeroSection = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from("leads").insert({
+      const { error } = await (supabase.from("leads") as any).insert({
         form_name: "Bangalore Landing Page Form",
         source_page: "/bangalore",
         data: {

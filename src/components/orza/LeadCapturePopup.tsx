@@ -48,7 +48,7 @@ const LeadCapturePopup = ({ isOpen, onClose, userName, location, recommendation,
         .getPublicUrl(fileName);
 
       // Save lead to Supabase
-      const { error: leadError } = await supabase.from("leads").insert({
+      const { error: leadError } = await (supabase.from("leads") as any).insert({
         form_name: "orza_ai_report",
         source_page: "/orza-ai",
         data: {

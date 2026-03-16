@@ -59,8 +59,8 @@ const ArticlesManager = () => {
   const { data: articles, isLoading } = useQuery({
     queryKey: ["admin-articles"],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("articles")
+      const { data, error } = await (supabase
+        .from("articles") as any)
         .select("*")
         .order("created_at", { ascending: false });
 
@@ -71,7 +71,7 @@ const ArticlesManager = () => {
 
   const deleteMutation = useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase.from("articles").delete().eq("id", id);
+      const { error } = await (supabase.from("articles") as any).delete().eq("id", id);
       if (error) throw error;
     },
     onSuccess: () => {
@@ -114,8 +114,8 @@ const ArticlesManager = () => {
 
   const handleEdit = async (article: Article) => {
     // Fetch full article data
-    const { data, error } = await supabase
-      .from("articles")
+    const { data, error } = await (supabase
+      .from("articles") as any)
       .select("*")
       .eq("id", article.id)
       .single();

@@ -35,8 +35,8 @@ const Articles = () => {
   const { data: articles, isLoading } = useQuery({
     queryKey: ["articles"],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("articles")
+      const { data, error } = await (supabase
+        .from("articles") as any)
         .select("*")
         .eq("status", "published")
         .order("published_at", { ascending: false });
@@ -46,8 +46,8 @@ const Articles = () => {
     },
   });
 
-  const categories = articles
-    ? [...new Set(articles.map((a) => a.category).filter(Boolean))]
+  const categories: string[] = articles
+    ? ([...new Set(articles.map((a: any) => a.category).filter(Boolean))] as string[])
     : [];
 
   const filteredArticles = articles?.filter((article) => {

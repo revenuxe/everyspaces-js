@@ -22,8 +22,8 @@ const AdminLogin = () => {
       async (event, session) => {
         if (session?.user) {
           // Check if user is admin
-          const { data: roles } = await supabase
-            .from('user_roles')
+          const { data: roles } = await (supabase
+            .from('user_roles') as any)
             .select('role')
             .eq('user_id', session.user.id)
             .eq('role', 'admin');
@@ -38,8 +38,8 @@ const AdminLogin = () => {
 
     supabase.auth.getSession().then(async ({ data: { session } }) => {
       if (session?.user) {
-        const { data: roles } = await supabase
-          .from('user_roles')
+        const { data: roles } = await (supabase
+          .from('user_roles') as any)
           .select('role')
           .eq('user_id', session.user.id)
           .eq('role', 'admin');
@@ -71,8 +71,8 @@ const AdminLogin = () => {
 
       if (data.user) {
         // Check if user has admin role
-        const { data: roles, error: roleError } = await supabase
-          .from('user_roles')
+        const { data: roles, error: roleError } = await (supabase
+          .from('user_roles') as any)
           .select('role')
           .eq('user_id', data.user.id)
           .eq('role', 'admin');

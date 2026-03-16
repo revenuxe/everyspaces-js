@@ -27,8 +27,8 @@ export function DashboardStats() {
 
   useEffect(() => {
     const fetchStats = async () => {
-      const { data: leads } = await supabase
-        .from('leads')
+      const { data: leads } = await (supabase
+        .from('leads') as any)
         .select('status');
 
       if (leads) {

@@ -47,8 +47,8 @@ export function LeadsTable() {
   const [filterStatus, setFilterStatus] = useState<string>("all");
 
   const fetchLeads = async () => {
-    let query = supabase
-      .from('leads')
+    let query = (supabase
+      .from('leads') as any)
       .select('*')
       .order('created_at', { ascending: false });
 
@@ -72,8 +72,8 @@ export function LeadsTable() {
   }, [filterStatus]);
 
   const updateStatus = async (id: string, status: LeadStatus) => {
-    const { error } = await supabase
-      .from('leads')
+    const { error } = await (supabase
+      .from('leads') as any)
       .update({ status })
       .eq('id', id);
 
@@ -87,8 +87,8 @@ export function LeadsTable() {
   };
 
   const deleteLead = async (id: string) => {
-    const { error } = await supabase
-      .from('leads')
+    const { error } = await (supabase
+      .from('leads') as any)
       .delete()
       .eq('id', id);
 
