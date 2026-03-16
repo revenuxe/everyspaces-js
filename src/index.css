@@ -20,8 +20,8 @@
     --primary: 197 74% 18%; /* #0d3b4f */
     --primary-foreground: 0 0% 100%;
 
-    /* Vibrant Orange Accent */
-    --secondary: 22 82% 50%; /* #e8651a */
+    /* Dark Orange Accent */
+    --secondary: 22 85% 42%; /* #c75415 - darker orange */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 30 10% 94%;
