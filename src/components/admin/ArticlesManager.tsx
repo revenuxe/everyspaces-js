@@ -215,7 +215,7 @@ const ArticlesManager = () => {
                     )}
                   </TableCell>
                   <TableCell>{getStatusBadge(article.status)}</TableCell>
-                  <TableCell>{article.author || "Intorza Team"}</TableCell>
+                  <TableCell>{article.author || "EverySpaces Team"}</TableCell>
                   <TableCell className="text-muted-foreground">
                     {format(new Date(article.created_at), "MMM d, yyyy")}
                   </TableCell>

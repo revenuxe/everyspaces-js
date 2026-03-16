@@ -349,7 +349,7 @@ const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
                 id="author"
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
-                placeholder="Intorza Team"
+                placeholder="EverySpaces Team"
               />
             </div>
           </div>
