@@ -46,7 +46,7 @@ export function AdminSidebar({ activeView, setActiveView }: AdminSidebarProps) {
     >
       <div className="p-4 border-b border-border">
         <div className="flex items-center gap-3">
-          <img src={intorzaLogo} alt="Intorza" className="h-8 w-auto" />
+          <img src={everyspacesLogo} alt="EverySpaces" className="h-8 w-auto" />
           {!collapsed && (
             <span className="font-semibold text-foreground">Admin</span>
           )}

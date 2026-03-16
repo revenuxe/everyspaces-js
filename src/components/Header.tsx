@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import intorzaLogo from "@/assets/intorza-logo-new.webp";
+import everyspacesLogo from "@/assets/everyspaces-logo.webp";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,7 +28,6 @@ const Header = () => {
     };
   }, []);
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
@@ -44,75 +43,35 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-smooth bg-card shadow-soft ${
-        isScrolled ? "py-3" : "py-4"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-smooth bg-primary ${
+        isScrolled ? "py-2 shadow-lg" : "py-3"
       }`}
     >
       <div className="container flex items-center justify-between">
-        <a href="https://intorza.com/" className="flex items-center gap-2">
+        {/* Logo */}
+        <a href="/" className="flex items-center gap-2">
           <img
-            src={intorzaLogo}
-            alt="Intorza - Best Interior Designers in Bangalore"
+            src={everyspacesLogo}
+            alt="EverySpaces - For the Way You Work"
             width={197}
             height={40}
             className="h-8 md:h-10 w-auto object-contain"
           />
         </a>
         
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            link.isRoute ? (
-              <Link 
-                key={link.href}
-                to={link.href} 
-                className="text-sm font-medium text-primary hover:text-secondary transition-colors"
-              >
-                {link.label}
-              </Link>
-            ) : (
-              <a 
-                key={link.href}
-                href={link.href} 
-                className="text-sm font-medium text-primary hover:text-secondary transition-colors"
-              >
-                {link.label}
-              </a>
-            )
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-3">
-          <Link to="/contact" className="hidden md:flex btn-terracotta px-6 py-2.5 rounded-2xl text-sm font-semibold text-secondary-foreground">
-            Get Quote
-          </Link>
-
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-muted/50"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-5 h-5 text-primary" aria-hidden="true" />
-            ) : (
-              <Menu className="w-5 h-5 text-primary" aria-hidden="true" />
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-card shadow-lg border-t border-border/50">
-          <nav className="container py-4 flex flex-col gap-2">
+        {/* Desktop Navigation - Pill shape like screenshot */}
+        <nav className="hidden md:flex items-center">
+          <div className="flex items-center gap-1 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-2 py-1.5 border border-primary-foreground/15">
             {navLinks.map((link) => (
               link.isRoute ? (
                 <Link 
                   key={link.href}
                   to={link.href} 
-                  className="px-4 py-3 text-sm font-medium text-primary hover:text-secondary hover:bg-muted/50 rounded-lg transition-colors"
+                  className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
+                    location.pathname === link.href
+                      ? "bg-primary-foreground/15 text-primary-foreground"
+                      : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                  }`}
                 >
                   {link.label}
                 </Link>
@@ -120,14 +79,70 @@ const Header = () => {
                 <a 
                   key={link.href}
                   href={link.href} 
-                  className="px-4 py-3 text-sm font-medium text-primary hover:text-secondary hover:bg-muted/50 rounded-lg transition-colors"
+                  className="px-4 py-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10 rounded-full transition-all duration-300"
+                >
+                  {link.label}
+                </a>
+              )
+            ))}
+          </div>
+        </nav>
+
+        <div className="flex items-center gap-3">
+          {/* Orange circle button with arrow - matching screenshot */}
+          <Link 
+            to="/contact" 
+            className="hidden md:flex w-11 h-11 rounded-full bg-secondary items-center justify-center hover:bg-secondary/90 transition-all duration-300 shadow-lg shadow-secondary/30 hover:scale-105"
+            aria-label="Get Quote"
+          >
+            <ArrowUpRight className="w-5 h-5 text-secondary-foreground" />
+          </Link>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-primary-foreground/10"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMobileMenuOpen}
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-5 h-5 text-primary-foreground" aria-hidden="true" />
+            ) : (
+              <Menu className="w-5 h-5 text-primary-foreground" aria-hidden="true" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-primary shadow-lg border-t border-primary-foreground/10">
+          <nav className="container py-4 flex flex-col gap-1">
+            {navLinks.map((link) => (
+              link.isRoute ? (
+                <Link 
+                  key={link.href}
+                  to={link.href} 
+                  className={`px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
+                    location.pathname === link.href
+                      ? "bg-primary-foreground/15 text-primary-foreground"
+                      : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a 
+                  key={link.href}
+                  href={link.href} 
+                  className="px-4 py-3 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10 rounded-lg transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
                 </a>
               )
             ))}
-            <Link to="/contact" className="mt-2 mx-4 btn-terracotta px-6 py-2.5 rounded-2xl text-sm font-semibold text-secondary-foreground block text-center">
+            <Link to="/contact" className="mt-2 mx-4 btn-orange px-6 py-2.5 rounded-2xl text-sm font-semibold text-secondary-foreground block text-center">
               Get Quote
             </Link>
           </nav>
