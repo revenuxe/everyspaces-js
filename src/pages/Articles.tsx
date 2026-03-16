@@ -46,8 +46,8 @@ const Articles = () => {
     },
   });
 
-  const categories = articles
-    ? [...new Set(articles.map((a) => a.category).filter(Boolean))]
+  const categories: string[] = articles
+    ? [...new Set(articles.map((a: any) => a.category).filter(Boolean))]
     : [];
 
   const filteredArticles = articles?.filter((article) => {
