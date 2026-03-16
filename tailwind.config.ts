@@ -57,9 +57,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Intorza custom colors
-        navy: "hsl(var(--navy))",
-        terracotta: "hsl(var(--terracotta))",
+        // EverySpaces custom colors
+        teal: "hsl(var(--teal))",
+        orange: "hsl(var(--orange))",
         cream: "hsl(var(--cream))",
       },
       fontFamily: {
