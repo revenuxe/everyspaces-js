@@ -72,8 +72,8 @@ export function LeadsTable() {
   }, [filterStatus]);
 
   const updateStatus = async (id: string, status: LeadStatus) => {
-    const { error } = await supabase
-      .from('leads')
+    const { error } = await (supabase
+      .from('leads') as any)
       .update({ status })
       .eq('id', id);
 
