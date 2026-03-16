@@ -47,8 +47,8 @@ export function LeadsTable() {
   const [filterStatus, setFilterStatus] = useState<string>("all");
 
   const fetchLeads = async () => {
-    let query = supabase
-      .from('leads')
+    let query = (supabase
+      .from('leads') as any)
       .select('*')
       .order('created_at', { ascending: false });
 
