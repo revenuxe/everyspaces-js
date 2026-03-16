@@ -38,8 +38,8 @@ const AdminLogin = () => {
 
     supabase.auth.getSession().then(async ({ data: { session } }) => {
       if (session?.user) {
-        const { data: roles } = await supabase
-          .from('user_roles')
+        const { data: roles } = await (supabase
+          .from('user_roles') as any)
           .select('role')
           .eq('user_id', session.user.id)
           .eq('role', 'admin');
