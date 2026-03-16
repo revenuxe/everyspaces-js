@@ -37,8 +37,8 @@ const ArticleDetail = () => {
   const { data: article, isLoading } = useQuery({
     queryKey: ["article", slug],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("articles")
+      const { data, error } = await (supabase
+        .from("articles") as any)
         .select("*")
         .eq("slug", slug)
         .eq("status", "published")
