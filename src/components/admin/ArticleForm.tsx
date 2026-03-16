@@ -40,7 +40,7 @@ const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
   const [excerpt, setExcerpt] = useState(article?.excerpt || "");
   const [content, setContent] = useState(article?.content || "");
   const [category, setCategory] = useState(article?.category || "");
-  const [author, setAuthor] = useState(article?.author || "Intorza Team");
+  const [author, setAuthor] = useState(article?.author || "EverySpaces Team");
   const [keywords, setKeywords] = useState(
     article?.keywords?.join(", ") || ""
   );
@@ -120,7 +120,7 @@ const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
         excerpt: excerpt || null,
         content,
         category: category || null,
-        author: author || "Intorza Team",
+        author: author || "EverySpaces Team",
         keywords: keywords ? keywords.split(",").map((k) => k.trim()) : null,
         tags: tags ? tags.split(",").map((t) => t.trim()) : null,
         featured_image_url: featuredImageUrl || null,
@@ -349,7 +349,7 @@ const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
                 id="author"
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
-                placeholder="Intorza Team"
+                placeholder="EverySpaces Team"
               />
             </div>
           </div>
