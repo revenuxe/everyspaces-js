@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
 import { Eye, EyeOff, Lock, Mail, Loader2 } from "lucide-react";
-import intorzaLogo from "@/assets/intorza-logo-new.webp";
+import everyspacesLogo from "@/assets/everyspaces-logo.webp";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
