@@ -10,174 +10,20 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.1"
+    PostgrestVersion: "14.4"
   }
   public: {
     Tables: {
-      articles: {
-        Row: {
-          author: string | null
-          category: string | null
-          content: string
-          created_at: string
-          excerpt: string | null
-          featured_image_url: string | null
-          id: string
-          keywords: string[] | null
-          meta_description: string | null
-          meta_title: string | null
-          published_at: string | null
-          reading_time: number | null
-          slug: string
-          status: Database["public"]["Enums"]["article_status"]
-          tags: string[] | null
-          title: string
-          updated_at: string
-        }
-        Insert: {
-          author?: string | null
-          category?: string | null
-          content: string
-          created_at?: string
-          excerpt?: string | null
-          featured_image_url?: string | null
-          id?: string
-          keywords?: string[] | null
-          meta_description?: string | null
-          meta_title?: string | null
-          published_at?: string | null
-          reading_time?: number | null
-          slug: string
-          status?: Database["public"]["Enums"]["article_status"]
-          tags?: string[] | null
-          title: string
-          updated_at?: string
-        }
-        Update: {
-          author?: string | null
-          category?: string | null
-          content?: string
-          created_at?: string
-          excerpt?: string | null
-          featured_image_url?: string | null
-          id?: string
-          keywords?: string[] | null
-          meta_description?: string | null
-          meta_title?: string | null
-          published_at?: string | null
-          reading_time?: number | null
-          slug?: string
-          status?: Database["public"]["Enums"]["article_status"]
-          tags?: string[] | null
-          title?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      leads: {
-        Row: {
-          created_at: string
-          data: Json
-          form_name: string
-          id: string
-          notes: string | null
-          source_page: string | null
-          status: Database["public"]["Enums"]["lead_status"]
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          data?: Json
-          form_name: string
-          id?: string
-          notes?: string | null
-          source_page?: string | null
-          status?: Database["public"]["Enums"]["lead_status"]
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          data?: Json
-          form_name?: string
-          id?: string
-          notes?: string | null
-          source_page?: string | null
-          status?: Database["public"]["Enums"]["lead_status"]
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      profiles: {
-        Row: {
-          avatar_url: string | null
-          created_at: string
-          email: string | null
-          full_name: string | null
-          id: string
-          updated_at: string
-        }
-        Insert: {
-          avatar_url?: string | null
-          created_at?: string
-          email?: string | null
-          full_name?: string | null
-          id: string
-          updated_at?: string
-        }
-        Update: {
-          avatar_url?: string | null
-          created_at?: string
-          email?: string | null
-          full_name?: string | null
-          id?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      user_roles: {
-        Row: {
-          created_at: string
-          id: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          role?: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          role?: Database["public"]["Enums"]["app_role"]
-          user_id?: string
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      has_role: {
-        Args: {
-          _role: Database["public"]["Enums"]["app_role"]
-          _user_id: string
-        }
-        Returns: boolean
-      }
+      [_ in never]: never
     }
     Enums: {
-      app_role: "admin" | "moderator" | "user"
-      article_status: "draft" | "published" | "archived"
-      lead_status:
-        | "new"
-        | "follow_up"
-        | "site_visit"
-        | "quotation"
-        | "converted"
-        | "rejected"
+      [_ in never]: never
     }
     CompositeTypes: {
       [_ in never]: never
@@ -304,17 +150,6 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {
-      app_role: ["admin", "moderator", "user"],
-      article_status: ["draft", "published", "archived"],
-      lead_status: [
-        "new",
-        "follow_up",
-        "site_visit",
-        "quotation",
-        "converted",
-        "rejected",
-      ],
-    },
+    Enums: {},
   },
 } as const
