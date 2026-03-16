@@ -43,19 +43,19 @@ const foyerFeatures = [
 const foyerFAQs = [
   {
     question: "What is the cost of foyer design in Bangalore?",
-    answer: "Foyer design in Bangalore costs ₹30,000 to ₹1.5 lakh depending on size and design. At Intorza, basic foyer setups start from ₹30,000, feature walls from ₹50,000, and grand entrances with chandelier from ₹1 lakh."
+    answer: "Foyer design in Bangalore costs ₹30,000 to ₹1.5 lakh depending on size and design. At EverySpaces, basic foyer setups start from ₹30,000, feature walls from ₹50,000, and grand entrances with chandelier from ₹1 lakh."
   },
   {
     question: "What should be included in a foyer design?",
-    answer: "A well-designed foyer includes shoe cabinet, console table, mirror, feature wall or art, statement lighting, and a coat/umbrella stand. Intorza customizes foyer elements based on your entrance size and style."
+    answer: "A well-designed foyer includes shoe cabinet, console table, mirror, feature wall or art, statement lighting, and a coat/umbrella stand. EverySpaces customizes foyer elements based on your entrance size and style."
   },
   {
     question: "How to design a small apartment entrance?",
-    answer: "For small entrances, Intorza uses wall-mounted shoe cabinets, slim consoles, mirrors to create depth, and vertical storage. We maximize function without cluttering the space. Starting from ₹30,000."
+    answer: "For small entrances, EverySpaces uses wall-mounted shoe cabinets, slim consoles, mirrors to create depth, and vertical storage. We maximize function without cluttering the space. Starting from ₹30,000."
   },
   {
     question: "Can you design a Vastu-compliant entrance?",
-    answer: "Yes, Intorza designs Vastu-compliant entrances with proper placement of mirrors, lighting, and decor. We avoid sharp corners, use auspicious elements, and ensure positive energy flow."
+    answer: "Yes, EverySpaces designs Vastu-compliant entrances with proper placement of mirrors, lighting, and decor. We avoid sharp corners, use auspicious elements, and ensure positive energy flow."
   }
 ];
 
@@ -83,9 +83,9 @@ const ServiceFoyer = () => {
   const aeoSchemas = [
     createServiceSchema(
       "Foyer & Entrance Design Bangalore",
-      "Make stunning first impressions with Intorza's foyer designs. Shoe cabinets, console tables, feature walls, and statement lighting in Bangalore.",
-      "https://intorza.com/services/foyer-entrance",
-      "https://intorza.com/service-foyer.jpg",
+      "Make stunning first impressions with EverySpaces's foyer designs. Shoe cabinets, console tables, feature walls, and statement lighting in Bangalore.",
+      "https://everyspaces.com/services/foyer-entrance",
+      "https://everyspaces.com/service-foyer.jpg",
       "30000-150000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -93,16 +93,16 @@ const ServiceFoyer = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Foyer & Entrance", url: "https://intorza.com/services/foyer-entrance" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "Foyer & Entrance", url: "https://everyspaces.com/services/foyer-entrance" }
     ]),
     createFAQSchema(foyerFAQs, 'services/foyer-entrance'),
     createProductSchema({
       name: "Foyer & Entrance Interior",
       description: "Entrance and foyer design in Bangalore with shoe cabinets, consoles, feature walls, and chandeliers.",
-      image: "https://intorza.com/service-foyer.jpg",
-      url: "https://intorza.com/services/foyer-entrance",
+      image: "https://everyspaces.com/service-foyer.jpg",
+      url: "https://everyspaces.com/services/foyer-entrance",
       priceRange: "30000-150000",
       category: "Home Improvement > Entryway"
     })
@@ -111,22 +111,22 @@ const ServiceFoyer = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Foyer & Entrance Design Bangalore | Entryway Interior | Intorza</title>
+        <title>Foyer & Entrance Design Bangalore | Entryway Interior | EverySpaces</title>
         <meta name="description" content="Best foyer designers in Bangalore. Shoe cabinets from ₹30K, console tables, feature walls. Make stunning first impressions. Free quote!" />
         <meta name="keywords" content="foyer design bangalore, entrance interior, shoe cabinet design, console table, entryway design, entrance decor" />
-        <link rel="canonical" href="https://intorza.com/services/foyer-entrance" />
+        <link rel="canonical" href="https://everyspaces.com/services/foyer-entrance" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="Foyer & Entrance Design Bangalore - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="Foyer & Entrance Design Bangalore - EverySpaces" />
         <meta property="og:description" content="Entrance makeovers from ₹30K. Shoe cabinets, feature walls, chandeliers. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/foyer-entrance" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/foyer-entrance" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Foyer & Entrance Design Bangalore | Intorza" />
+        <meta name="twitter:title" content="Foyer & Entrance Design Bangalore | EverySpaces" />
         <meta name="twitter:description" content="Entrance makeovers from ₹30K. Shoe cabinets, feature walls, chandeliers. Free consultation!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -145,7 +145,7 @@ const ServiceFoyer = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Make stunning first impressions with Intorza's entryway designs
+                Make stunning first impressions with EverySpaces's entryway designs
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -211,7 +211,7 @@ const ServiceFoyer = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Transform Your Entrance?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza for a free foyer design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces for a free foyer design consultation</p>
             <Link to="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </Link>

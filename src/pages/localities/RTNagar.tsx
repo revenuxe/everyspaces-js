@@ -24,12 +24,12 @@ const RTNagar = () => {
       "budget home design rt nagar",
       "north bangalore interiors rt nagar"
     ],
-    ogTitle: "Interior Designers in RT Nagar | Intorza - Affordable Quality Interiors",
+    ogTitle: "Interior Designers in RT Nagar | EverySpaces - Affordable Quality Interiors",
     ogDescription: "RT Nagar interior experts. 17+ projects, affordable from ₹6 lakhs. Quality assured. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in RT Nagar?",
-        answer: "Interior design in RT Nagar costs ₹1,200 to ₹2,400 per sq ft. Intorza offers affordable packages from ₹6 lakhs for 2BHK. We've completed 17+ projects in RT Nagar with quality materials and 10-year warranty."
+        answer: "Interior design in RT Nagar costs ₹1,200 to ₹2,400 per sq ft. EverySpaces offers affordable packages from ₹6 lakhs for 2BHK. We've completed 17+ projects in RT Nagar with quality materials and 10-year warranty."
       },
       {
         question: "Do you offer budget-friendly options in RT Nagar?",

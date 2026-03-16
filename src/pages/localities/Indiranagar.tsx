@@ -25,16 +25,16 @@ const Indiranagar = () => {
       "interior decorators indiranagar",
       "living room design indiranagar"
     ],
-    ogTitle: "Best Interior Designers in Indiranagar | Intorza - Luxury Home Interiors",
-    ogDescription: "Transform your Indiranagar home with Intorza. 45+ premium projects, 10-year warranty. Free design consultation!",
+    ogTitle: "Best Interior Designers in Indiranagar | EverySpaces - Luxury Home Interiors",
+    ogDescription: "Transform your Indiranagar home with EverySpaces. 45+ premium projects, 10-year warranty. Free design consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in Indiranagar, Bangalore?",
-        answer: "Interior design in Indiranagar typically costs ₹2,000 to ₹4,000 per sq ft due to premium standards. At Intorza, we offer luxury packages from ₹10 lakhs for 2BHK in Indiranagar. We've completed 45+ premium projects with 10-year warranty and premium materials like Hettich/Hafele hardware."
+        answer: "Interior design in Indiranagar typically costs ₹2,000 to ₹4,000 per sq ft due to premium standards. At EverySpaces, we offer luxury packages from ₹10 lakhs for 2BHK in Indiranagar. We've completed 45+ premium projects with 10-year warranty and premium materials like Hettich/Hafele hardware."
       },
       {
         question: "Who are the best interior designers in Indiranagar?",
-        answer: "Intorza is rated among the best interior designers in Indiranagar with 4.9/5 rating, 45+ completed projects, and expertise in contemporary and luxury designs. We specialize in premium apartments near 100 Feet Road, CMH Road, and HAL areas with dedicated project managers."
+        answer: "EverySpaces is rated among the best interior designers in Indiranagar with 4.9/5 rating, 45+ completed projects, and expertise in contemporary and luxury designs. We specialize in premium apartments near 100 Feet Road, CMH Road, and HAL areas with dedicated project managers."
       },
       {
         question: "Do you design apartments near 100 Feet Road, Indiranagar?",

@@ -8,7 +8,7 @@ const BottomNav = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   const handleWhatsAppClick = () => {
-    const message = "Hi! I'm interested in interior design services from Intorza. Please share more details.";
+    const message = "Hi! I'm interested in interior design services from EverySpaces. Please share more details.";
     const whatsappUrl = `https://wa.me/919886579923?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };

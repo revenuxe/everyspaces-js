@@ -10,17 +10,17 @@ const bangaloreFaqs = [
   {
     question: "What is the average cost of a 2BHK interior design in Bangalore in 2025?",
     answer:
-      "In 2025, a complete 2BHK interior design in Bangalore costs between ₹6 lakhs to ₹15 lakhs depending on materials, finishes, and scope. Economy packages with laminate finishes start at ₹6-8 lakhs, mid-range with acrylic and premium laminates cost ₹8-12 lakhs, and luxury with lacquer glass and Italian finishes go up to ₹15 lakhs+. At Intorza, our most popular 2BHK package starts at ₹8 lakhs including modular kitchen, 2 wardrobes, TV unit, and false ceiling.",
+      "In 2025, a complete 2BHK interior design in Bangalore costs between ₹6 lakhs to ₹15 lakhs depending on materials, finishes, and scope. Economy packages with laminate finishes start at ₹6-8 lakhs, mid-range with acrylic and premium laminates cost ₹8-12 lakhs, and luxury with lacquer glass and Italian finishes go up to ₹15 lakhs+. At EverySpaces, our most popular 2BHK package starts at ₹8 lakhs including modular kitchen, 2 wardrobes, TV unit, and false ceiling.",
   },
   {
     question: "Which areas in Bangalore have the highest demand for interior design?",
     answer:
-      "Whitefield, Sarjapur Road, and Electronic City lead in demand due to massive IT-driven residential development. In established areas, Koramangala, Indiranagar, and HSR Layout see high renovation demand. North Bangalore areas like Hebbal and Yelahanka are emerging hotspots with new apartment complexes. Intorza has completed 500+ projects across all these localities.",
+      "Whitefield, Sarjapur Road, and Electronic City lead in demand due to massive IT-driven residential development. In established areas, Koramangala, Indiranagar, and HSR Layout see high renovation demand. North Bangalore areas like Hebbal and Yelahanka are emerging hotspots with new apartment complexes. EverySpaces has completed 500+ projects across all these localities.",
   },
   {
     question: "How do I choose the right interior designer in Bangalore?",
     answer:
-      "Look for: (1) Portfolio with Bangalore-specific projects similar to your home type, (2) In-house manufacturing — not just design outsourcing, (3) Clear warranty terms in writing (Intorza offers 10-year hardware warranty), (4) BBMP and society approval handling, (5) Transparent pricing with no hidden costs, (6) Real Google reviews from Bangalore homeowners. Always visit their factory or showroom before finalizing.",
+      "Look for: (1) Portfolio with Bangalore-specific projects similar to your home type, (2) In-house manufacturing — not just design outsourcing, (3) Clear warranty terms in writing (EverySpaces offers 10-year hardware warranty), (4) BBMP and society approval handling, (5) Transparent pricing with no hidden costs, (6) Real Google reviews from Bangalore homeowners. Always visit their factory or showroom before finalizing.",
   },
   {
     question: "What modular kitchen layout works best for Bangalore apartments?",
@@ -30,10 +30,10 @@ const bangaloreFaqs = [
   {
     question: "What materials are best suited for Bangalore's climate?",
     answer:
-      "Bangalore's moderate climate with monsoon humidity requires: BWR (Boiling Water Resistant) grade plywood for all cabinetry, marine plywood for kitchen base units, moisture-resistant MDF for decorative panels, and powder-coated or stainless steel hardware. Avoid particle board in kitchen areas. For countertops, granite from Bangalore's local quarries offers the best value, while quartz is premium. Intorza exclusively uses BWR plywood with Hettich/Hafele hardware.",
+      "Bangalore's moderate climate with monsoon humidity requires: BWR (Boiling Water Resistant) grade plywood for all cabinetry, marine plywood for kitchen base units, moisture-resistant MDF for decorative panels, and powder-coated or stainless steel hardware. Avoid particle board in kitchen areas. For countertops, granite from Bangalore's local quarries offers the best value, while quartz is premium. EverySpaces exclusively uses BWR plywood with Hettich/Hafele hardware.",
   },
   {
-    question: "Can Intorza handle interior design for apartments in gated communities?",
+    question: "Can EverySpaces handle interior design for apartments in gated communities?",
     answer:
       "Yes, we regularly work in Bangalore's top gated communities including Prestige, Brigade, Sobha, Salarpuria, and Puravankara properties. We handle society permissions, freight elevator booking, material entry passes, and noise restriction compliance. Our project managers coordinate with building management throughout the project so you don't face any hassle.",
   },

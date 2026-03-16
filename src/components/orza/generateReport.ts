@@ -43,12 +43,12 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
   doc.setFontSize(18);
   doc.setFont("helvetica", "bold");
   doc.setTextColor(255, 255, 255);
-  doc.text("Intorza Design Report", margin, 16);
+  doc.text("EverySpaces Design Report", margin, 16);
   doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(200, 200, 200);
   doc.text(`Prepared for ${userName} • ${location} • ${new Date().toLocaleDateString("en-IN")}`, margin, 24);
-  doc.text("Powered by Orza AI — intorza.com", margin, 30);
+  doc.text("Powered by Orza AI — everyspaces.com", margin, 30);
   y = 44;
 
   // Headline
@@ -175,8 +175,8 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
   doc.setDrawColor(199, 121, 59);
   doc.line(margin, y, pageWidth - margin, y);
   y += 6;
-  addText("Ready to bring this design to life? Contact Intorza for a free consultation.", 9, "bold", [26, 54, 72]);
-  addText("📞 +91 9886579923 | intorza.com/contact", 9, "normal", [199, 121, 59]);
+  addText("Ready to bring this design to life? Contact EverySpaces for a free consultation.", 9, "bold", [26, 54, 72]);
+  addText("📞 +91 9886579923 | everyspaces.com/contact", 9, "normal", [199, 121, 59]);
 
   return doc;
 };

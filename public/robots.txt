@@ -1,4 +1,4 @@
-# robots.txt for intorza.com
+# robots.txt for everyspaces.com
 
 # Standard search engine crawlers
 User-agent: Googlebot
@@ -63,9 +63,9 @@ Disallow: /admin/login
 Disallow: /thank-you
 
 # AI discovery files
-# LLMs.txt: https://intorza.com/llms.txt
-# LLMs Full: https://intorza.com/llms-full.txt
-# AI Plugin: https://intorza.com/.well-known/ai-plugin.json
+# LLMs.txt: https://everyspaces.com/llms.txt
+# LLMs Full: https://everyspaces.com/llms-full.txt
+# AI Plugin: https://everyspaces.com/.well-known/ai-plugin.json
 
 # Sitemap location
-Sitemap: https://intorza.com/sitemap.xml
+Sitemap: https://everyspaces.com/sitemap.xml

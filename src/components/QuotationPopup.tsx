@@ -158,7 +158,7 @@ const QuotationPopup = ({ externalOpen, onExternalOpenChange }: QuotationPopupPr
           />
 
           <p className="text-[10px] md:text-xs text-muted-foreground text-center">
-            By continuing, I agree to Intorza{" "}
+            By continuing, I agree to EverySpaces{" "}
             <a href="/terms" className="text-secondary hover:underline">Terms of Use</a>
             {" & "}
             <a href="/privacy" className="text-secondary hover:underline">Privacy Policy</a>

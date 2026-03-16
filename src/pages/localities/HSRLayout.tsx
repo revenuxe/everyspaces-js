@@ -25,12 +25,12 @@ const HSRLayout = () => {
       "hsr layout home makeover",
       "modern interior design hsr"
     ],
-    ogTitle: "Best Interior Designers in HSR Layout | Intorza - Modern Home Interiors",
-    ogDescription: "Transform your HSR Layout home with Intorza. 52+ projects, all sectors covered. Free consultation!",
+    ogTitle: "Best Interior Designers in HSR Layout | EverySpaces - Modern Home Interiors",
+    ogDescription: "Transform your HSR Layout home with EverySpaces. 52+ projects, all sectors covered. Free consultation!",
     faqs: [
       {
         question: "What is the interior design cost in HSR Layout, Bangalore?",
-        answer: "Interior design in HSR Layout costs ₹1,800 to ₹3,500 per sq ft depending on scope. Intorza offers packages from ₹8 lakhs for 2BHK. We've completed 52+ projects across HSR Sectors 1-7 with premium materials and 10-year warranty."
+        answer: "Interior design in HSR Layout costs ₹1,800 to ₹3,500 per sq ft depending on scope. EverySpaces offers packages from ₹8 lakhs for 2BHK. We've completed 52+ projects across HSR Sectors 1-7 with premium materials and 10-year warranty."
       },
       {
         question: "Which HSR Layout sectors do you cover?",

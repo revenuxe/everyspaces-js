@@ -43,19 +43,19 @@ const balconyFeatures = [
 const balconyFAQs = [
   {
     question: "What is the cost of balcony design in Bangalore?",
-    answer: "Balcony design in Bangalore costs ₹20,000 to ₹1 lakh depending on size and features. At Intorza, basic balcony makeovers start from ₹20,000, vertical gardens from ₹35,000, and complete terrace transformations from ₹60,000."
+    answer: "Balcony design in Bangalore costs ₹20,000 to ₹1 lakh depending on size and features. At EverySpaces, basic balcony makeovers start from ₹20,000, vertical gardens from ₹35,000, and complete terrace transformations from ₹60,000."
   },
   {
     question: "How to design a small balcony in Bangalore apartments?",
-    answer: "For small balconies, Intorza uses vertical gardens, foldable furniture, wall-mounted planters, and compact seating. We maximize space with multi-level planters and hanging elements. Starting from ₹20,000."
+    answer: "For small balconies, EverySpaces uses vertical gardens, foldable furniture, wall-mounted planters, and compact seating. We maximize space with multi-level planters and hanging elements. Starting from ₹20,000."
   },
   {
     question: "Can you install a vertical garden on my balcony?",
-    answer: "Yes, Intorza designs and installs vertical gardens for balconies in Bangalore. Options include modular planters, living walls, and hydroponic systems. We also provide plant selection and maintenance guidance."
+    answer: "Yes, EverySpaces designs and installs vertical gardens for balconies in Bangalore. Options include modular planters, living walls, and hydroponic systems. We also provide plant selection and maintenance guidance."
   },
   {
     question: "What furniture works best for Bangalore balconies?",
-    answer: "Weather-resistant furniture like powder-coated metal, treated wood, and outdoor-grade wicker works best. Intorza recommends foldable furniture for small balconies and fixed seating for larger terraces."
+    answer: "Weather-resistant furniture like powder-coated metal, treated wood, and outdoor-grade wicker works best. EverySpaces recommends foldable furniture for small balconies and fixed seating for larger terraces."
   }
 ];
 
@@ -84,8 +84,8 @@ const ServiceBalcony = () => {
     createServiceSchema(
       "Balcony Design Bangalore",
       "Transform your balcony into a beautiful outdoor space. Vertical gardens, outdoor seating, terrace design, and weather-proof furniture in Bangalore.",
-      "https://intorza.com/services/balcony-design",
-      "https://intorza.com/service-balcony.jpg",
+      "https://everyspaces.com/services/balcony-design",
+      "https://everyspaces.com/service-balcony.jpg",
       "20000-100000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -93,16 +93,16 @@ const ServiceBalcony = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Balcony Design", url: "https://intorza.com/services/balcony-design" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "Balcony Design", url: "https://everyspaces.com/services/balcony-design" }
     ]),
     createFAQSchema(balconyFAQs, 'services/balcony-design'),
     createProductSchema({
       name: "Balcony & Terrace Design",
       description: "Balcony transformation services in Bangalore including vertical gardens, outdoor furniture, and terrace makeovers.",
-      image: "https://intorza.com/service-balcony.jpg",
-      url: "https://intorza.com/services/balcony-design",
+      image: "https://everyspaces.com/service-balcony.jpg",
+      url: "https://everyspaces.com/services/balcony-design",
       priceRange: "20000-100000",
       category: "Home Improvement > Outdoor Living"
     })
@@ -111,22 +111,22 @@ const ServiceBalcony = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Balcony Design Bangalore | Terrace Garden Interior | Intorza</title>
+        <title>Balcony Design Bangalore | Terrace Garden Interior | EverySpaces</title>
         <meta name="description" content="Best balcony designers in Bangalore. Vertical gardens from ₹35K, outdoor seating, terrace design. Transform your outdoor space. Free quote!" />
         <meta name="keywords" content="balcony design bangalore, terrace garden, vertical garden bangalore, outdoor seating, balcony furniture, balcony makeover" />
-        <link rel="canonical" href="https://intorza.com/services/balcony-design" />
+        <link rel="canonical" href="https://everyspaces.com/services/balcony-design" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="Balcony & Terrace Design Bangalore - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="Balcony & Terrace Design Bangalore - EverySpaces" />
         <meta property="og:description" content="Balcony makeovers from ₹20K. Vertical gardens, outdoor furniture, pergolas. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/balcony-design" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/balcony-design" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Balcony & Terrace Design Bangalore | Intorza" />
+        <meta name="twitter:title" content="Balcony & Terrace Design Bangalore | EverySpaces" />
         <meta name="twitter:description" content="Balcony makeovers from ₹20K. Vertical gardens, outdoor furniture, pergolas. Free consultation!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -145,7 +145,7 @@ const ServiceBalcony = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Transform outdoor spaces into relaxing retreats with Intorza
+                Transform outdoor spaces into relaxing retreats with EverySpaces
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -211,7 +211,7 @@ const ServiceBalcony = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Transform Your Outdoor Space?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza for a free balcony design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces for a free balcony design consultation</p>
             <Link to="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </Link>

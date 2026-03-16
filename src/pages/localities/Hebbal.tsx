@@ -24,12 +24,12 @@ const Hebbal = () => {
       "north bangalore interiors hebbal",
       "luxury villa design hebbal"
     ],
-    ogTitle: "Interior Designers in Hebbal | Intorza - Villa & Apartment Specialists",
+    ogTitle: "Interior Designers in Hebbal | EverySpaces - Villa & Apartment Specialists",
     ogDescription: "Hebbal interior experts. 24+ projects, villa specialists. North Bangalore leaders. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in Hebbal?",
-        answer: "Interior design in Hebbal costs ₹1,600 to ₹3,500 per sq ft. Villa interiors start from ₹12 lakhs, apartments from ₹8 lakhs. Intorza has completed 24+ projects in Hebbal with premium materials and 10-year warranty."
+        answer: "Interior design in Hebbal costs ₹1,600 to ₹3,500 per sq ft. Villa interiors start from ₹12 lakhs, apartments from ₹8 lakhs. EverySpaces has completed 24+ projects in Hebbal with premium materials and 10-year warranty."
       },
       {
         question: "Do you specialize in Hebbal villa interiors?",

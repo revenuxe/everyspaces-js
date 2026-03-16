@@ -25,12 +25,12 @@ const Whitefield = () => {
       "interior decorators whitefield bangalore",
       "whitefield home makeover"
     ],
-    ogTitle: "Best Interior Designers in Whitefield | Intorza - Premium Home Interiors",
-    ogDescription: "Transform your Whitefield home with Intorza. 38+ projects, ITPL area specialists. Free consultation!",
+    ogTitle: "Best Interior Designers in Whitefield | EverySpaces - Premium Home Interiors",
+    ogDescription: "Transform your Whitefield home with EverySpaces. 38+ projects, ITPL area specialists. Free consultation!",
     faqs: [
       {
         question: "What is the interior design cost in Whitefield, Bangalore?",
-        answer: "Interior design in Whitefield ranges from ₹1,800 to ₹4,000 per sq ft. At Intorza, we offer packages from ₹9 lakhs for 2BHK. We've completed 38+ projects near ITPL, EPIP Zone, and Prestige Shantiniketan with 10-year warranty."
+        answer: "Interior design in Whitefield ranges from ₹1,800 to ₹4,000 per sq ft. At EverySpaces, we offer packages from ₹9 lakhs for 2BHK. We've completed 38+ projects near ITPL, EPIP Zone, and Prestige Shantiniketan with 10-year warranty."
       },
       {
         question: "Do you design interiors in Prestige Shantiniketan and Brigade properties?",

@@ -22,17 +22,17 @@ export const StructuredData = ({ data }: StructuredDataProps) => {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://intorza.com/#organization",
-  "name": "Intorza",
-  "legalName": "Intorza Interior Design",
-  "url": "https://intorza.com",
+  "@id": "https://everyspaces.com/#organization",
+  "name": "EverySpaces",
+  "legalName": "EverySpaces Interior Design",
+  "url": "https://everyspaces.com",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://intorza.com/favicon.ico",
+    "url": "https://everyspaces.com/favicon.ico",
     "width": 64,
     "height": 64
   },
-  "description": "Intorza is the best interior design company in Bangalore offering modular kitchens, wardrobes, and full home interiors with 10-year warranty. We have completed 500+ projects across Bangalore.",
+  "description": "EverySpaces is the best interior design company in Bangalore offering modular kitchens, wardrobes, and full home interiors with 10-year warranty. We have completed 500+ projects across Bangalore.",
   "foundingDate": "2014",
   "numberOfEmployees": {
     "@type": "QuantitativeValue",
@@ -64,13 +64,13 @@ export const organizationSchema = {
       "availableLanguage": ["English", "Hindi", "Kannada"]
     }
   ],
-  "email": "intorza.com@gmail.com",
+  "email": "everyspaces.com@gmail.com",
   "sameAs": [
-    "https://www.instagram.com/intorza",
-    "https://www.facebook.com/intorza",
-    "https://www.youtube.com/@intorza",
-    "https://in.pinterest.com/intorza",
-    "https://www.linkedin.com/company/intorza"
+    "https://www.instagram.com/everyspaces",
+    "https://www.facebook.com/everyspaces",
+    "https://www.youtube.com/@everyspaces",
+    "https://in.pinterest.com/everyspaces",
+    "https://www.linkedin.com/company/everyspaces"
   ],
   "knowsAbout": [
     "Interior Design",
@@ -116,12 +116,12 @@ export const organizationSchema = {
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://intorza.com/#localbusiness",
-  "name": "Intorza Interior Design",
-  "image": "https://intorza.com/favicon.ico",
-  "url": "https://intorza.com",
+  "@id": "https://everyspaces.com/#localbusiness",
+  "name": "EverySpaces Interior Design",
+  "image": "https://everyspaces.com/favicon.ico",
+  "url": "https://everyspaces.com",
   "telephone": "+91-9886579923",
-  "email": "intorza.com@gmail.com",
+  "email": "everyspaces.com@gmail.com",
   "description": "Best interior designers in Bangalore specializing in modular kitchens, wardrobes, and complete home interiors. 500+ projects completed with 10-year warranty.",
   "address": {
     "@type": "PostalAddress",
@@ -153,7 +153,7 @@ export const localBusinessSchema = {
       "name": "Bangalore"
     }
   ],
-  "hasMap": "https://maps.google.com/?q=Intorza+HBR+Layout+Bangalore",
+  "hasMap": "https://maps.google.com/?q=EverySpaces+HBR+Layout+Bangalore",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
@@ -167,21 +167,21 @@ export const localBusinessSchema = {
       "@type": "Review",
       "author": { "@type": "Person", "name": "Priya Sharma" },
       "datePublished": "2025-11-15",
-      "reviewBody": "Intorza transformed our 3BHK in Whitefield beautifully. The modular kitchen quality is outstanding and the team was very professional. Completed on time with great attention to detail.",
+      "reviewBody": "EverySpaces transformed our 3BHK in Whitefield beautifully. The modular kitchen quality is outstanding and the team was very professional. Completed on time with great attention to detail.",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
     },
     {
       "@type": "Review",
       "author": { "@type": "Person", "name": "Rahul Menon" },
       "datePublished": "2025-10-22",
-      "reviewBody": "Got our full home interiors done by Intorza for our apartment in Sarjapur Road. Excellent design sense, premium materials, and the 10-year warranty gives great peace of mind.",
+      "reviewBody": "Got our full home interiors done by EverySpaces for our apartment in Sarjapur Road. Excellent design sense, premium materials, and the 10-year warranty gives great peace of mind.",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
     },
     {
       "@type": "Review",
       "author": { "@type": "Person", "name": "Anitha Reddy" },
       "datePublished": "2025-09-10",
-      "reviewBody": "We chose Intorza for our villa interior in Hebbal. The wardrobe designs and false ceiling work exceeded our expectations. Highly recommend for premium interiors in Bangalore.",
+      "reviewBody": "We chose EverySpaces for our villa interior in Hebbal. The wardrobe designs and false ceiling work exceeded our expectations. Highly recommend for premium interiors in Bangalore.",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
     }
   ]
@@ -191,17 +191,17 @@ export const localBusinessSchema = {
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://intorza.com/#website",
-  "name": "Intorza - Best Interior Designers in Bangalore",
-  "alternateName": "Intorza Interior Design",
-  "url": "https://intorza.com",
-  "description": "Intorza offers premium interior design services in Bangalore including modular kitchens, wardrobes, and full home interiors with 10-year warranty.",
+  "@id": "https://everyspaces.com/#website",
+  "name": "EverySpaces - Best Interior Designers in Bangalore",
+  "alternateName": "EverySpaces Interior Design",
+  "url": "https://everyspaces.com",
+  "description": "EverySpaces offers premium interior design services in Bangalore including modular kitchens, wardrobes, and full home interiors with 10-year warranty.",
   "publisher": {
-    "@id": "https://intorza.com/#organization"
+    "@id": "https://everyspaces.com/#organization"
   },
   "potentialAction": {
     "@type": "ReadAction",
-    "target": "https://intorza.com"
+    "target": "https://everyspaces.com"
   },
   "inLanguage": "en-IN"
 };
@@ -224,9 +224,9 @@ export const createSpeakableSchema = (
 export const howToInteriorDesignSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "How to Get Interior Design Done in Bangalore with Intorza",
-  "description": "Complete guide to getting your home interior designed by Intorza, the best interior designers in Bangalore. From consultation to installation in 45-90 days.",
-  "image": "https://intorza.com/how-it-works.jpg",
+  "name": "How to Get Interior Design Done in Bangalore with EverySpaces",
+  "description": "Complete guide to getting your home interior designed by EverySpaces, the best interior designers in Bangalore. From consultation to installation in 45-90 days.",
+  "image": "https://everyspaces.com/how-it-works.jpg",
   "totalTime": "P60D",
   "estimatedCost": {
     "@type": "MonetaryAmount",
@@ -254,38 +254,38 @@ export const howToInteriorDesignSchema = {
       "@type": "HowToStep",
       "position": 1,
       "name": "Book Free Consultation",
-      "text": "Contact Intorza at +91-9886579923 or fill the online form. Our design expert will schedule a free site visit at your convenience.",
-      "url": "https://intorza.com/contact",
-      "image": "https://intorza.com/step-consultation.jpg"
+      "text": "Contact EverySpaces at +91-9886579923 or fill the online form. Our design expert will schedule a free site visit at your convenience.",
+      "url": "https://everyspaces.com/contact",
+      "image": "https://everyspaces.com/step-consultation.jpg"
     },
     {
       "@type": "HowToStep",
       "position": 2,
       "name": "Design Proposal",
       "text": "Receive detailed 3D designs, material options, and transparent cost estimate within 5 working days. Review and request modifications.",
-      "url": "https://intorza.com/services",
-      "image": "https://intorza.com/step-design.jpg"
+      "url": "https://everyspaces.com/services",
+      "image": "https://everyspaces.com/step-design.jpg"
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "Approval & Production",
       "text": "Approve final designs and make initial payment. Manufacturing begins at our in-house facility with quality materials.",
-      "image": "https://intorza.com/step-production.jpg"
+      "image": "https://everyspaces.com/step-production.jpg"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "Installation",
       "text": "Professional installation team executes the project with dedicated project manager. Modular kitchen takes 15-20 days, full home 45-90 days.",
-      "image": "https://intorza.com/step-installation.jpg"
+      "image": "https://everyspaces.com/step-installation.jpg"
     },
     {
       "@type": "HowToStep",
       "position": 5,
       "name": "Handover with Warranty",
       "text": "Final walkthrough, documentation handover, and 10-year warranty activation. After-sales support for any issues.",
-      "image": "https://intorza.com/step-handover.jpg"
+      "image": "https://everyspaces.com/step-handover.jpg"
     }
   ]
 };
@@ -311,7 +311,7 @@ export const createServiceSchema = (
   "url": url,
   "image": image,
   "provider": {
-    "@id": "https://intorza.com/#organization"
+    "@id": "https://everyspaces.com/#organization"
   },
   "areaServed": additionalInfo?.areaServed?.map(area => ({
     "@type": "Place",
@@ -321,7 +321,7 @@ export const createServiceSchema = (
     "name": "Bangalore"
   },
   "serviceType": "Interior Design",
-  "termsOfService": "https://intorza.com/terms",
+  "termsOfService": "https://everyspaces.com/terms",
   "offers": priceRange ? {
     "@type": "Offer",
     "priceSpecification": {
@@ -365,11 +365,11 @@ export const createArticleSchema = (article: {
   "dateModified": article.dateModified || article.datePublished,
   "author": {
     "@type": "Person",
-    "name": article.author || "Intorza Design Team",
-    "url": "https://intorza.com/about"
+    "name": article.author || "EverySpaces Design Team",
+    "url": "https://everyspaces.com/about"
   },
   "publisher": {
-    "@id": "https://intorza.com/#organization"
+    "@id": "https://everyspaces.com/#organization"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -388,7 +388,7 @@ export const createArticleSchema = (article: {
 export const createBreadcrumbSchema = (items: { name: string; url: string }[], pageId?: string) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "@id": pageId ? `https://intorza.com/${pageId}#breadcrumb` : undefined,
+  "@id": pageId ? `https://everyspaces.com/${pageId}#breadcrumb` : undefined,
   "itemListElement": items.map((item, index) => ({
     "@type": "ListItem",
     "position": index + 1,
@@ -403,7 +403,7 @@ export const createBreadcrumbSchema = (items: { name: string; url: string }[], p
 export const createFAQSchema = (faqs: { question: string; answer: string }[], pageId: string) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": `https://intorza.com/${pageId}#faq`,
+  "@id": `https://everyspaces.com/${pageId}#faq`,
   "mainEntity": faqs.map((faq, index) => ({
     "@type": "Question",
     "name": faq.question,
@@ -418,17 +418,17 @@ export const createFAQSchema = (faqs: { question: string; answer: string }[], pa
 export const createImageGallerySchema = (images: { url: string; name: string; description?: string }[]) => ({
   "@context": "https://schema.org",
   "@type": "ImageGallery",
-  "@id": "https://intorza.com/portfolio#gallery",
-  "name": "Intorza Interior Design Portfolio - Completed Projects in Bangalore",
-  "description": "View 500+ completed interior design projects by Intorza in Bangalore including modular kitchens, bedrooms, living rooms, and full home interiors.",
+  "@id": "https://everyspaces.com/portfolio#gallery",
+  "name": "EverySpaces Interior Design Portfolio - Completed Projects in Bangalore",
+  "description": "View 500+ completed interior design projects by EverySpaces in Bangalore including modular kitchens, bedrooms, living rooms, and full home interiors.",
   "image": images.map((img) => ({
     "@type": "ImageObject",
     "url": img.url,
     "name": img.name,
-    "description": img.description || `${img.name} by Intorza Interior Design Bangalore`
+    "description": img.description || `${img.name} by EverySpaces Interior Design Bangalore`
   })),
   "creator": {
-    "@id": "https://intorza.com/#organization"
+    "@id": "https://everyspaces.com/#organization"
   }
 });
 
@@ -450,7 +450,7 @@ export const createProductSchema = (product: {
   "url": product.url,
   "category": product.category,
   "brand": {
-    "@id": "https://intorza.com/#organization"
+    "@id": "https://everyspaces.com/#organization"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -465,14 +465,14 @@ export const createProductSchema = (product: {
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
       "author": { "@type": "Person", "name": "Priya Sharma" },
       "datePublished": "2025-01-15",
-      "reviewBody": "Intorza delivered exceptional quality for our home interiors. The attention to detail and use of premium materials exceeded our expectations."
+      "reviewBody": "EverySpaces delivered exceptional quality for our home interiors. The attention to detail and use of premium materials exceeded our expectations."
     },
     {
       "@type": "Review",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
       "author": { "@type": "Person", "name": "Rahul Menon" },
       "datePublished": "2025-02-10",
-      "reviewBody": "Professional team, on-time delivery, and beautiful designs. Highly recommend Intorza for anyone looking for quality interior solutions in Bangalore."
+      "reviewBody": "Professional team, on-time delivery, and beautiful designs. Highly recommend EverySpaces for anyone looking for quality interior solutions in Bangalore."
     },
     {
       "@type": "Review",
@@ -490,7 +490,7 @@ export const createProductSchema = (product: {
     "offerCount": "1",
     "availability": "https://schema.org/InStock",
     "seller": {
-      "@id": "https://intorza.com/#organization"
+      "@id": "https://everyspaces.com/#organization"
     }
   }
 });
@@ -507,7 +507,7 @@ export const createQASchema = (question: string, answer: string, url: string) =>
     "dateCreated": new Date().toISOString(),
     "author": {
       "@type": "Organization",
-      "@id": "https://intorza.com/#organization"
+      "@id": "https://everyspaces.com/#organization"
     },
     "acceptedAnswer": {
       "@type": "Answer",
@@ -517,8 +517,8 @@ export const createQASchema = (question: string, answer: string, url: string) =>
       "url": url,
       "author": {
         "@type": "Organization",
-        "name": "Intorza",
-        "@id": "https://intorza.com/#organization"
+        "name": "EverySpaces",
+        "@id": "https://everyspaces.com/#organization"
       }
     }
   }
@@ -528,10 +528,10 @@ export const createQASchema = (question: string, answer: string, url: string) =>
 export const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://intorza.com/#professionalservice",
-  "name": "Intorza Interior Design Services",
+  "@id": "https://everyspaces.com/#professionalservice",
+  "name": "EverySpaces Interior Design Services",
   "description": "Professional interior design services in Bangalore including modular kitchen design, wardrobe design, living room design, bedroom interiors, and complete home renovations.",
-  "url": "https://intorza.com/services",
+  "url": "https://everyspaces.com/services",
   "telephone": "+91-9886579923",
   "priceRange": "₹₹₹",
   "address": {
@@ -607,19 +607,19 @@ export const professionalServiceSchema = {
 export const homePageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": "https://intorza.com/#webpage",
-  "url": "https://intorza.com",
-  "name": "Best Interior Designers in Bangalore | Modular Kitchen & Home Interiors - Intorza",
-  "description": "Intorza is Bangalore's top interior design company offering modular kitchens, wardrobes, and complete home interiors. 500+ projects, 10-year warranty, free consultation.",
+  "@id": "https://everyspaces.com/#webpage",
+  "url": "https://everyspaces.com",
+  "name": "Best Interior Designers in Bangalore | Modular Kitchen & Home Interiors - EverySpaces",
+  "description": "EverySpaces is Bangalore's top interior design company offering modular kitchens, wardrobes, and complete home interiors. 500+ projects, 10-year warranty, free consultation.",
   "isPartOf": {
-    "@id": "https://intorza.com/#website"
+    "@id": "https://everyspaces.com/#website"
   },
   "about": {
-    "@id": "https://intorza.com/#organization"
+    "@id": "https://everyspaces.com/#organization"
   },
   "primaryImageOfPage": {
     "@type": "ImageObject",
-    "url": "https://intorza.com/hero-interior.jpg"
+    "url": "https://everyspaces.com/hero-interior.jpg"
   },
   "breadcrumb": {
     "@type": "BreadcrumbList",
@@ -628,7 +628,7 @@ export const homePageSchema = {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://intorza.com"
+        "item": "https://everyspaces.com"
       }
     ]
   },
@@ -643,7 +643,7 @@ export const homePageSchema = {
     ]
   },
   "mainEntity": {
-    "@id": "https://intorza.com/#localbusiness"
+    "@id": "https://everyspaces.com/#localbusiness"
   }
 };
 
@@ -666,13 +666,13 @@ export const createActionSchema = (actionType: string, target: string, descripti
 export const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "@id": "https://intorza.com/contact#contactpage",
-  "name": "Contact Intorza - Best Interior Designers in Bangalore",
-  "description": "Contact Intorza for free interior design consultation in Bangalore. Call +91-9886579923 or fill our form for modular kitchen, wardrobe, and home interior quotes.",
-  "url": "https://intorza.com/contact",
+  "@id": "https://everyspaces.com/contact#contactpage",
+  "name": "Contact EverySpaces - Best Interior Designers in Bangalore",
+  "description": "Contact EverySpaces for free interior design consultation in Bangalore. Call +91-9886579923 or fill our form for modular kitchen, wardrobe, and home interior quotes.",
+  "url": "https://everyspaces.com/contact",
   "mainEntity": {
     "@type": "Organization",
-    "@id": "https://intorza.com/#organization"
+    "@id": "https://everyspaces.com/#organization"
   },
   "speakable": {
     "@type": "SpeakableSpecification",
@@ -684,7 +684,7 @@ export const contactPageSchema = {
 export const commonFAQs = [
   {
     question: "How much does interior design cost in Bangalore?",
-    answer: "Interior design costs in Bangalore typically range from ₹1,500 to ₹3,500 per square foot depending on the scope, materials, and finishes. At Intorza, we offer customized packages starting from ₹8 lakhs for a 2BHK apartment interior design. We provide detailed cost breakdowns and transparent pricing with no hidden charges. Contact us for a free consultation and accurate quote."
+    answer: "Interior design costs in Bangalore typically range from ₹1,500 to ₹3,500 per square foot depending on the scope, materials, and finishes. At EverySpaces, we offer customized packages starting from ₹8 lakhs for a 2BHK apartment interior design. We provide detailed cost breakdowns and transparent pricing with no hidden charges. Contact us for a free consultation and accurate quote."
   },
   {
     question: "How long does it take to complete home interior design?",
@@ -692,7 +692,7 @@ export const commonFAQs = [
   },
   {
     question: "Do you provide modular kitchen designs in Bangalore?",
-    answer: "Yes! Intorza specializes in premium modular kitchen designs in Bangalore. We offer L-shaped, U-shaped, parallel, and island kitchen layouts with soft-close mechanisms, durable finishes, and smart storage solutions. Our modular kitchens come with a 10-year warranty on hardware and are customized to fit your space and budget."
+    answer: "Yes! EverySpaces specializes in premium modular kitchen designs in Bangalore. We offer L-shaped, U-shaped, parallel, and island kitchen layouts with soft-close mechanisms, durable finishes, and smart storage solutions. Our modular kitchens come with a 10-year warranty on hardware and are customized to fit your space and budget."
   },
   {
     question: "What areas in Bangalore do you serve for interior design?",
@@ -715,11 +715,11 @@ export const commonFAQs = [
     answer: "Yes! We offer flexible interior design services for individual spaces. Whether you need just a modular kitchen design, bedroom renovation, bathroom remodeling, or living room makeover, we can help. Our minimum project value starts from ₹2.5 lakhs for individual room designs."
   },
   {
-    question: "What makes Intorza different from other interior designers in Bangalore?",
-    answer: "Intorza stands out with 10+ years of experience, 500+ completed projects, in-house manufacturing facility, transparent pricing, dedicated project managers, and a strong focus on quality materials. We use premium brands like Hettich, Hafele, and Century for all our projects with proper documentation and warranty."
+    question: "What makes EverySpaces different from other interior designers in Bangalore?",
+    answer: "EverySpaces stands out with 10+ years of experience, 500+ completed projects, in-house manufacturing facility, transparent pricing, dedicated project managers, and a strong focus on quality materials. We use premium brands like Hettich, Hafele, and Century for all our projects with proper documentation and warranty."
   },
   {
-    question: "How do I start my interior design project with Intorza?",
+    question: "How do I start my interior design project with EverySpaces?",
     answer: "Starting is easy! Simply call us at +91 9886579923 or fill out our contact form for a free consultation. Our design expert will visit your site, understand your requirements, and provide a detailed proposal with 3D designs and cost estimate within 5 working days. No commitment required for the initial consultation."
   }
 ];
@@ -741,51 +741,51 @@ export const createItemListSchema = (items: { name: string; url: string; descrip
 
 // All services list for AI discoverability
 export const allServicesItemList = createItemListSchema([
-  { name: "Modular Kitchen Design Bangalore", url: "https://intorza.com/services/modular-kitchen", description: "Custom modular kitchens from ₹2.5 Lakhs with 10-year warranty" },
-  { name: "Bedroom Interior Design Bangalore", url: "https://intorza.com/services/bedroom-design", description: "Complete bedroom makeovers from ₹1.5 Lakhs" },
-  { name: "Living Room Design Bangalore", url: "https://intorza.com/services/living-room", description: "Living room transformations from ₹2 Lakhs" },
-  { name: "Wardrobe Design Bangalore", url: "https://intorza.com/services/wardrobe-design", description: "Custom wardrobes from ₹1.2 Lakhs" },
-  { name: "2 BHK Interior Design Bangalore", url: "https://intorza.com/services/2bhk-interiors", description: "Complete 2BHK interiors from ₹8 Lakhs" },
-  { name: "3 BHK Interior Design Bangalore", url: "https://intorza.com/services/3bhk-interiors", description: "Complete 3BHK interiors from ₹12 Lakhs" },
-  { name: "Villa Interior Design Bangalore", url: "https://intorza.com/services/villa-interiors", description: "Luxury villa interiors from ₹25 Lakhs" },
-  { name: "Full Home Design Bangalore", url: "https://intorza.com/services/full-home-design", description: "End-to-end home interior solutions" },
-  { name: "TV Unit Design Bangalore", url: "https://intorza.com/services/tv-unit", description: "Custom TV units from ₹40,000" },
-  { name: "Pooja Room Design Bangalore", url: "https://intorza.com/services/pooja-room", description: "Traditional & modern pooja rooms from ₹50,000" },
-  { name: "False Ceiling Design Bangalore", url: "https://intorza.com/services/false-ceiling", description: "Designer false ceilings from ₹80,000" },
-  { name: "Home Office Design Bangalore", url: "https://intorza.com/services/home-office", description: "Productive home offices from ₹1 Lakh" },
-  { name: "Kids Room Design Bangalore", url: "https://intorza.com/services/kids-room", description: "Child-friendly room designs from ₹1.5 Lakhs" },
-  { name: "Dining Room Design Bangalore", url: "https://intorza.com/services/dining-room", description: "Dining room interiors from ₹1 Lakh" },
-  { name: "Bathroom Design Bangalore", url: "https://intorza.com/services/bathroom-design", description: "Bathroom renovations from ₹1.5 Lakhs" },
-  { name: "Foyer & Entrance Design Bangalore", url: "https://intorza.com/services/foyer-entrance", description: "Impressive entrance designs from ₹50,000" },
-  { name: "Crockery Unit Design Bangalore", url: "https://intorza.com/services/crockery-unit", description: "Custom crockery units from ₹60,000" },
-  { name: "Study Room Design Bangalore", url: "https://intorza.com/services/study-room", description: "Study room setups from ₹1 Lakh" },
-  { name: "Guest Room Design Bangalore", url: "https://intorza.com/services/guest-room", description: "Guest room makeovers from ₹1.5 Lakhs" },
-  { name: "Balcony Design Bangalore", url: "https://intorza.com/services/balcony-design", description: "Balcony transformations from ₹50,000" },
-], "Intorza Interior Design Services in Bangalore");
+  { name: "Modular Kitchen Design Bangalore", url: "https://everyspaces.com/services/modular-kitchen", description: "Custom modular kitchens from ₹2.5 Lakhs with 10-year warranty" },
+  { name: "Bedroom Interior Design Bangalore", url: "https://everyspaces.com/services/bedroom-design", description: "Complete bedroom makeovers from ₹1.5 Lakhs" },
+  { name: "Living Room Design Bangalore", url: "https://everyspaces.com/services/living-room", description: "Living room transformations from ₹2 Lakhs" },
+  { name: "Wardrobe Design Bangalore", url: "https://everyspaces.com/services/wardrobe-design", description: "Custom wardrobes from ₹1.2 Lakhs" },
+  { name: "2 BHK Interior Design Bangalore", url: "https://everyspaces.com/services/2bhk-interiors", description: "Complete 2BHK interiors from ₹8 Lakhs" },
+  { name: "3 BHK Interior Design Bangalore", url: "https://everyspaces.com/services/3bhk-interiors", description: "Complete 3BHK interiors from ₹12 Lakhs" },
+  { name: "Villa Interior Design Bangalore", url: "https://everyspaces.com/services/villa-interiors", description: "Luxury villa interiors from ₹25 Lakhs" },
+  { name: "Full Home Design Bangalore", url: "https://everyspaces.com/services/full-home-design", description: "End-to-end home interior solutions" },
+  { name: "TV Unit Design Bangalore", url: "https://everyspaces.com/services/tv-unit", description: "Custom TV units from ₹40,000" },
+  { name: "Pooja Room Design Bangalore", url: "https://everyspaces.com/services/pooja-room", description: "Traditional & modern pooja rooms from ₹50,000" },
+  { name: "False Ceiling Design Bangalore", url: "https://everyspaces.com/services/false-ceiling", description: "Designer false ceilings from ₹80,000" },
+  { name: "Home Office Design Bangalore", url: "https://everyspaces.com/services/home-office", description: "Productive home offices from ₹1 Lakh" },
+  { name: "Kids Room Design Bangalore", url: "https://everyspaces.com/services/kids-room", description: "Child-friendly room designs from ₹1.5 Lakhs" },
+  { name: "Dining Room Design Bangalore", url: "https://everyspaces.com/services/dining-room", description: "Dining room interiors from ₹1 Lakh" },
+  { name: "Bathroom Design Bangalore", url: "https://everyspaces.com/services/bathroom-design", description: "Bathroom renovations from ₹1.5 Lakhs" },
+  { name: "Foyer & Entrance Design Bangalore", url: "https://everyspaces.com/services/foyer-entrance", description: "Impressive entrance designs from ₹50,000" },
+  { name: "Crockery Unit Design Bangalore", url: "https://everyspaces.com/services/crockery-unit", description: "Custom crockery units from ₹60,000" },
+  { name: "Study Room Design Bangalore", url: "https://everyspaces.com/services/study-room", description: "Study room setups from ₹1 Lakh" },
+  { name: "Guest Room Design Bangalore", url: "https://everyspaces.com/services/guest-room", description: "Guest room makeovers from ₹1.5 Lakhs" },
+  { name: "Balcony Design Bangalore", url: "https://everyspaces.com/services/balcony-design", description: "Balcony transformations from ₹50,000" },
+], "EverySpaces Interior Design Services in Bangalore");
 
 // All localities list for AI discoverability
 export const allLocalitiesItemList = createItemListSchema([
-  { name: "Interior Designers in Indiranagar", url: "https://intorza.com/bangalore/indiranagar" },
-  { name: "Interior Designers in Koramangala", url: "https://intorza.com/bangalore/koramangala" },
-  { name: "Interior Designers in HSR Layout", url: "https://intorza.com/bangalore/hsr-layout" },
-  { name: "Interior Designers in Whitefield", url: "https://intorza.com/bangalore/whitefield" },
-  { name: "Interior Designers in Jayanagar", url: "https://intorza.com/bangalore/jayanagar" },
-  { name: "Interior Designers in JP Nagar", url: "https://intorza.com/bangalore/jp-nagar" },
-  { name: "Interior Designers in BTM Layout", url: "https://intorza.com/bangalore/btm-layout" },
-  { name: "Interior Designers in Electronic City", url: "https://intorza.com/bangalore/electronic-city" },
-  { name: "Interior Designers in Marathahalli", url: "https://intorza.com/bangalore/marathahalli" },
-  { name: "Interior Designers in Sarjapur Road", url: "https://intorza.com/bangalore/sarjapur-road" },
-  { name: "Interior Designers in Bellandur", url: "https://intorza.com/bangalore/bellandur" },
-  { name: "Interior Designers in Hebbal", url: "https://intorza.com/bangalore/hebbal" },
-  { name: "Interior Designers in Yelahanka", url: "https://intorza.com/bangalore/yelahanka" },
-  { name: "Interior Designers in Malleshwaram", url: "https://intorza.com/bangalore/malleshwaram" },
-  { name: "Interior Designers in Rajajinagar", url: "https://intorza.com/bangalore/rajajinagar" },
-  { name: "Interior Designers in Basavanagudi", url: "https://intorza.com/bangalore/basavanagudi" },
-  { name: "Interior Designers in Banashankari", url: "https://intorza.com/bangalore/banashankari" },
-  { name: "Interior Designers in Vijayanagar", url: "https://intorza.com/bangalore/vijayanagar" },
-  { name: "Interior Designers in Sadashivanagar", url: "https://intorza.com/bangalore/sadashivanagar" },
-  { name: "Interior Designers in RT Nagar", url: "https://intorza.com/bangalore/rt-nagar" },
-  { name: "Interior Designers in HBR Layout", url: "https://intorza.com/bangalore/hbr-layout" },
-], "Bangalore Localities Served by Intorza");
+  { name: "Interior Designers in Indiranagar", url: "https://everyspaces.com/bangalore/indiranagar" },
+  { name: "Interior Designers in Koramangala", url: "https://everyspaces.com/bangalore/koramangala" },
+  { name: "Interior Designers in HSR Layout", url: "https://everyspaces.com/bangalore/hsr-layout" },
+  { name: "Interior Designers in Whitefield", url: "https://everyspaces.com/bangalore/whitefield" },
+  { name: "Interior Designers in Jayanagar", url: "https://everyspaces.com/bangalore/jayanagar" },
+  { name: "Interior Designers in JP Nagar", url: "https://everyspaces.com/bangalore/jp-nagar" },
+  { name: "Interior Designers in BTM Layout", url: "https://everyspaces.com/bangalore/btm-layout" },
+  { name: "Interior Designers in Electronic City", url: "https://everyspaces.com/bangalore/electronic-city" },
+  { name: "Interior Designers in Marathahalli", url: "https://everyspaces.com/bangalore/marathahalli" },
+  { name: "Interior Designers in Sarjapur Road", url: "https://everyspaces.com/bangalore/sarjapur-road" },
+  { name: "Interior Designers in Bellandur", url: "https://everyspaces.com/bangalore/bellandur" },
+  { name: "Interior Designers in Hebbal", url: "https://everyspaces.com/bangalore/hebbal" },
+  { name: "Interior Designers in Yelahanka", url: "https://everyspaces.com/bangalore/yelahanka" },
+  { name: "Interior Designers in Malleshwaram", url: "https://everyspaces.com/bangalore/malleshwaram" },
+  { name: "Interior Designers in Rajajinagar", url: "https://everyspaces.com/bangalore/rajajinagar" },
+  { name: "Interior Designers in Basavanagudi", url: "https://everyspaces.com/bangalore/basavanagudi" },
+  { name: "Interior Designers in Banashankari", url: "https://everyspaces.com/bangalore/banashankari" },
+  { name: "Interior Designers in Vijayanagar", url: "https://everyspaces.com/bangalore/vijayanagar" },
+  { name: "Interior Designers in Sadashivanagar", url: "https://everyspaces.com/bangalore/sadashivanagar" },
+  { name: "Interior Designers in RT Nagar", url: "https://everyspaces.com/bangalore/rt-nagar" },
+  { name: "Interior Designers in HBR Layout", url: "https://everyspaces.com/bangalore/hbr-layout" },
+], "Bangalore Localities Served by EverySpaces");
 
 export default StructuredData;

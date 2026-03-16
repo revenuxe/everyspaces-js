@@ -43,19 +43,19 @@ const wardrobeFeatures = [
 const wardrobeFAQs = [
   {
     question: "What is the cost of wardrobe design in Bangalore?",
-    answer: "Wardrobe design cost in Bangalore ranges from ₹1,200 to ₹2,500 per sq ft. At Intorza, sliding wardrobes start from ₹80,000, hinged wardrobes from ₹70,000, and walk-in closets from ₹2 lakh. All include Hettich/Hafele hardware with 10-year warranty."
+    answer: "Wardrobe design cost in Bangalore ranges from ₹1,200 to ₹2,500 per sq ft. At EverySpaces, sliding wardrobes start from ₹80,000, hinged wardrobes from ₹70,000, and walk-in closets from ₹2 lakh. All include Hettich/Hafele hardware with 10-year warranty."
   },
   {
     question: "Which wardrobe type is best for small bedrooms?",
-    answer: "Sliding door wardrobes are best for small bedrooms as they don't need door swing space. Intorza's sliding wardrobes with mirror finishes also make rooms appear larger. Loft wardrobes maximize vertical space in compact rooms."
+    answer: "Sliding door wardrobes are best for small bedrooms as they don't need door swing space. EverySpaces's sliding wardrobes with mirror finishes also make rooms appear larger. Loft wardrobes maximize vertical space in compact rooms."
   },
   {
     question: "How long does wardrobe installation take?",
-    answer: "Single wardrobe installation takes 3-5 days, while full home wardrobes take 10-15 days. Intorza's in-house manufacturing ensures faster delivery with quality control at every stage."
+    answer: "Single wardrobe installation takes 3-5 days, while full home wardrobes take 10-15 days. EverySpaces's in-house manufacturing ensures faster delivery with quality control at every stage."
   },
   {
-    question: "What materials are used in Intorza wardrobes?",
-    answer: "Intorza uses BWR plywood from Century/Greenply, premium laminates or lacquer finish, Hettich/Hafele soft-close hardware, and aluminum profiles for sliding systems. All materials come with manufacturer warranty."
+    question: "What materials are used in EverySpaces wardrobes?",
+    answer: "EverySpaces uses BWR plywood from Century/Greenply, premium laminates or lacquer finish, Hettich/Hafele soft-close hardware, and aluminum profiles for sliding systems. All materials come with manufacturer warranty."
   }
 ];
 
@@ -88,8 +88,8 @@ const ServiceWardrobe = () => {
     createServiceSchema(
       "Wardrobe Design Bangalore",
       "Custom wardrobe designers in Bangalore offering sliding wardrobes, walk-in closets, and loft storage with Hettich hardware and 10-year warranty.",
-      "https://intorza.com/services/wardrobe-design",
-      "https://intorza.com/service-wardrobe.jpg",
+      "https://everyspaces.com/services/wardrobe-design",
+      "https://everyspaces.com/service-wardrobe.jpg",
       "70000-500000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -97,16 +97,16 @@ const ServiceWardrobe = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Wardrobe Design", url: "https://intorza.com/services/wardrobe-design" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "Wardrobe Design", url: "https://everyspaces.com/services/wardrobe-design" }
     ]),
     createFAQSchema(wardrobeFAQs, 'services/wardrobe-design'),
     createProductSchema({
       name: "Custom Wardrobe Design",
       description: "Premium wardrobe design and installation in Bangalore with sliding, hinged, and walk-in options. Includes Hettich/Hafele hardware and 10-year warranty.",
-      image: "https://intorza.com/service-wardrobe.jpg",
-      url: "https://intorza.com/services/wardrobe-design",
+      image: "https://everyspaces.com/service-wardrobe.jpg",
+      url: "https://everyspaces.com/services/wardrobe-design",
       priceRange: "70000-500000",
       category: "Home Improvement > Bedroom Furniture"
     })
@@ -115,22 +115,22 @@ const ServiceWardrobe = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Wardrobe Design Bangalore | Sliding & Walk-in Closets | Intorza</title>
+        <title>Wardrobe Design Bangalore | Sliding & Walk-in Closets | EverySpaces</title>
         <meta name="description" content="Best wardrobe designers in Bangalore. Sliding wardrobes from ₹80K, walk-in closets, loft storage. Hettich hardware, 10-year warranty. Free design consultation!" />
         <meta name="keywords" content="wardrobe design bangalore, sliding wardrobe, walk-in closet bangalore, custom wardrobe, modular wardrobe, wardrobe cost bangalore" />
-        <link rel="canonical" href="https://intorza.com/services/wardrobe-design" />
+        <link rel="canonical" href="https://everyspaces.com/services/wardrobe-design" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="Custom Wardrobe Design Bangalore | Sliding & Walk-in - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="Custom Wardrobe Design Bangalore | Sliding & Walk-in - EverySpaces" />
         <meta property="og:description" content="Premium wardrobes from ₹70K. Sliding, hinged, walk-in closets with Hettich hardware. 10-year warranty, free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/wardrobe-design" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/wardrobe-design" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Custom Wardrobe Design Bangalore | Intorza" />
+        <meta name="twitter:title" content="Custom Wardrobe Design Bangalore | EverySpaces" />
         <meta name="twitter:description" content="Premium wardrobes from ₹70K. Sliding, hinged, walk-in closets with Hettich hardware. 10-year warranty!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -149,7 +149,7 @@ const ServiceWardrobe = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Maximize storage with Intorza's smart wardrobe solutions
+                Maximize storage with EverySpaces's smart wardrobe solutions
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -215,7 +215,7 @@ const ServiceWardrobe = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Organize Your Space?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza for a free wardrobe design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces for a free wardrobe design consultation</p>
             <a href="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </a>

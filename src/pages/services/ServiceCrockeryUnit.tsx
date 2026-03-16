@@ -43,19 +43,19 @@ const crockeryFeatures = [
 const crockeryUnitFAQs = [
   {
     question: "What is the cost of crockery unit in Bangalore?",
-    answer: "Crockery unit in Bangalore costs ₹40,000 to ₹1.5 lakh depending on size and design. At Intorza, wall-mounted units start from ₹40,000, floor units from ₹60,000, and bar+crockery combos from ₹1 lakh."
+    answer: "Crockery unit in Bangalore costs ₹40,000 to ₹1.5 lakh depending on size and design. At EverySpaces, wall-mounted units start from ₹40,000, floor units from ₹60,000, and bar+crockery combos from ₹1 lakh."
   },
   {
     question: "What is the ideal size for a crockery unit?",
-    answer: "Standard crockery units are 4-6 feet wide and 6-7 feet tall. Intorza designs custom units based on your collection size, dining room dimensions, and storage requirements."
+    answer: "Standard crockery units are 4-6 feet wide and 6-7 feet tall. EverySpaces designs custom units based on your collection size, dining room dimensions, and storage requirements."
   },
   {
     question: "Can crockery unit work as a room divider?",
-    answer: "Yes, Intorza designs partition crockery units that divide living and dining areas while providing display and storage. Both sides can have glass displays or one side closed storage."
+    answer: "Yes, EverySpaces designs partition crockery units that divide living and dining areas while providing display and storage. Both sides can have glass displays or one side closed storage."
   },
   {
     question: "What lighting is best for crockery units?",
-    answer: "Intorza recommends warm LED strip lights (2700-3000K) for crockery units. We install lights at multiple levels with mirror backing for sparkling display effect."
+    answer: "EverySpaces recommends warm LED strip lights (2700-3000K) for crockery units. We install lights at multiple levels with mirror backing for sparkling display effect."
   }
 ];
 
@@ -84,8 +84,8 @@ const ServiceCrockeryUnit = () => {
     createServiceSchema(
       "Crockery Unit Design Bangalore",
       "Elegant crockery unit designs in Bangalore. Glass display cabinets, bar units, partition units with LED lighting and mirror backing.",
-      "https://intorza.com/services/crockery-unit",
-      "https://intorza.com/service-crockery-unit.jpg",
+      "https://everyspaces.com/services/crockery-unit",
+      "https://everyspaces.com/service-crockery-unit.jpg",
       "40000-150000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -93,16 +93,16 @@ const ServiceCrockeryUnit = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Crockery Unit", url: "https://intorza.com/services/crockery-unit" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "Crockery Unit", url: "https://everyspaces.com/services/crockery-unit" }
     ]),
     createFAQSchema(crockeryUnitFAQs, 'services/crockery-unit'),
     createProductSchema({
       name: "Crockery Unit & Display Cabinet",
       description: "Elegant crockery units in Bangalore with glass displays, LED lighting, and bar sections for fine china and beverages.",
-      image: "https://intorza.com/service-crockery-unit.jpg",
-      url: "https://intorza.com/services/crockery-unit",
+      image: "https://everyspaces.com/service-crockery-unit.jpg",
+      url: "https://everyspaces.com/services/crockery-unit",
       priceRange: "40000-150000",
       category: "Home Improvement > Dining Room"
     })
@@ -111,22 +111,22 @@ const ServiceCrockeryUnit = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Crockery Unit Design Bangalore | Display Cabinet | Intorza</title>
+        <title>Crockery Unit Design Bangalore | Display Cabinet | EverySpaces</title>
         <meta name="description" content="Best crockery unit designers in Bangalore. Glass display cabinets from ₹40K. Bar units, LED lighting, mirror backing. Free quote!" />
         <meta name="keywords" content="crockery unit design bangalore, display cabinet, dining room storage, bar cabinet, glass display unit, partition unit" />
-        <link rel="canonical" href="https://intorza.com/services/crockery-unit" />
+        <link rel="canonical" href="https://everyspaces.com/services/crockery-unit" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="Crockery Unit Design Bangalore | Display Cabinet - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="Crockery Unit Design Bangalore | Display Cabinet - EverySpaces" />
         <meta property="og:description" content="Crockery units from ₹40K. Glass displays, LED lighting, bar combos. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/crockery-unit" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/crockery-unit" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Crockery Unit Design Bangalore | Intorza" />
+        <meta name="twitter:title" content="Crockery Unit Design Bangalore | EverySpaces" />
         <meta name="twitter:description" content="Crockery units from ₹40K. Glass displays, LED lighting, bar combos. Free consultation!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -145,7 +145,7 @@ const ServiceCrockeryUnit = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Stylish display units for your precious collection by Intorza
+                Stylish display units for your precious collection by EverySpaces
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -211,7 +211,7 @@ const ServiceCrockeryUnit = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Display Your Collection?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza for a free crockery unit design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces for a free crockery unit design consultation</p>
             <Link to="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </Link>

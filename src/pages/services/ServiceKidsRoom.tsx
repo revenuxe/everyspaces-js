@@ -43,19 +43,19 @@ const kidsRoomFeatures = [
 const kidsRoomFAQs = [
   {
     question: "What is the cost of kids room design in Bangalore?",
-    answer: "Kids room design in Bangalore costs ₹1-2.5 lakh including wardrobe, bed, study table, and decor. At Intorza, basic packages start from ₹80,000, themed rooms from ₹1.2 lakh, and luxury designs from ₹2 lakh."
+    answer: "Kids room design in Bangalore costs ₹1-2.5 lakh including wardrobe, bed, study table, and decor. At EverySpaces, basic packages start from ₹80,000, themed rooms from ₹1.2 lakh, and luxury designs from ₹2 lakh."
   },
   {
     question: "What themes are popular for kids rooms in Bangalore?",
-    answer: "Popular kids room themes include space exploration, jungle safari, princess castle, superhero, sports, underwater world, and Montessori-inspired designs. Intorza customizes themes based on your child's interests."
+    answer: "Popular kids room themes include space exploration, jungle safari, princess castle, superhero, sports, underwater world, and Montessori-inspired designs. EverySpaces customizes themes based on your child's interests."
   },
   {
     question: "How to design a shared kids room for siblings?",
-    answer: "For shared rooms, Intorza uses bunk beds, L-shaped beds, or twin beds with individual storage and study areas. We create personal zones within the shared space while maximizing floor area for play."
+    answer: "For shared rooms, EverySpaces uses bunk beds, L-shaped beds, or twin beds with individual storage and study areas. We create personal zones within the shared space while maximizing floor area for play."
   },
   {
     question: "Are kids room materials safe?",
-    answer: "Yes, Intorza uses only child-safe materials: non-toxic paints, rounded furniture edges, anti-tip mounting, soft-close mechanisms, and eco-friendly laminates. All materials are ISI certified and low-VOC."
+    answer: "Yes, EverySpaces uses only child-safe materials: non-toxic paints, rounded furniture edges, anti-tip mounting, soft-close mechanisms, and eco-friendly laminates. All materials are ISI certified and low-VOC."
   }
 ];
 
@@ -88,8 +88,8 @@ const ServiceKidsRoom = () => {
     createServiceSchema(
       "Kids Room Design Bangalore",
       "Fun, safe, and creative kids room designs in Bangalore. Theme rooms, bunk beds, study areas, and playful storage with child-safe materials.",
-      "https://intorza.com/services/kids-room",
-      "https://intorza.com/service-kids-room.jpg",
+      "https://everyspaces.com/services/kids-room",
+      "https://everyspaces.com/service-kids-room.jpg",
       "80000-250000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -97,16 +97,16 @@ const ServiceKidsRoom = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Kids Room", url: "https://intorza.com/services/kids-room" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "Kids Room", url: "https://everyspaces.com/services/kids-room" }
     ]),
     createFAQSchema(kidsRoomFAQs, 'services/kids-room'),
     createProductSchema({
       name: "Kids Room Interior Design",
       description: "Safe and creative kids room designs in Bangalore with themed interiors, bunk beds, and study areas. Non-toxic materials.",
-      image: "https://intorza.com/service-kids-room.jpg",
-      url: "https://intorza.com/services/kids-room",
+      image: "https://everyspaces.com/service-kids-room.jpg",
+      url: "https://everyspaces.com/services/kids-room",
       priceRange: "80000-250000",
       category: "Home Improvement > Kids Room"
     })
@@ -115,22 +115,22 @@ const ServiceKidsRoom = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Kids Room Design Bangalore | Fun & Safe Children Bedroom | Intorza</title>
+        <title>Kids Room Design Bangalore | Fun & Safe Children Bedroom | EverySpaces</title>
         <meta name="description" content="Best kids room designers in Bangalore. Theme rooms from ₹80K. Bunk beds, study areas, playful storage. Child-safe materials. Free consultation!" />
         <meta name="keywords" content="kids room design bangalore, children bedroom interior, kids room themes, bunk bed design, kids study room, kids furniture" />
-        <link rel="canonical" href="https://intorza.com/services/kids-room" />
+        <link rel="canonical" href="https://everyspaces.com/services/kids-room" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="Kids Room Design Bangalore | Safe & Fun - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="Kids Room Design Bangalore | Safe & Fun - EverySpaces" />
         <meta property="og:description" content="Theme rooms from ₹80K. Bunk beds, study areas, child-safe materials. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/kids-room" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/kids-room" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Kids Room Design Bangalore | Intorza" />
+        <meta name="twitter:title" content="Kids Room Design Bangalore | EverySpaces" />
         <meta name="twitter:description" content="Theme rooms from ₹80K. Bunk beds, study areas, child-safe materials. Free consultation!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -149,7 +149,7 @@ const ServiceKidsRoom = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Create magical, safe spaces for your little ones with Intorza
+                Create magical, safe spaces for your little ones with EverySpaces
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -215,7 +215,7 @@ const ServiceKidsRoom = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Create a Magical Space?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza for a free kids room design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces for a free kids room design consultation</p>
             <Link to="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </Link>

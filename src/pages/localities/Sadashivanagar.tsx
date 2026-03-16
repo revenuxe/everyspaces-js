@@ -24,12 +24,12 @@ const Sadashivanagar = () => {
       "elite home design sadashivanagar",
       "palace road interiors"
     ],
-    ogTitle: "Interior Designers in Sadashivanagar | Intorza - Luxury Bungalow Specialists",
+    ogTitle: "Interior Designers in Sadashivanagar | EverySpaces - Luxury Bungalow Specialists",
     ogDescription: "Sadashivanagar interior experts. 15+ luxury projects, bungalow specialists. Premium quality. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in Sadashivanagar?",
-        answer: "Interior design in Sadashivanagar costs ₹3,000 to ₹6,000 per sq ft for luxury finishes. Bungalow interiors start from ₹25 lakhs. Intorza has completed 15+ premium projects with imported materials and exclusive designs."
+        answer: "Interior design in Sadashivanagar costs ₹3,000 to ₹6,000 per sq ft for luxury finishes. Bungalow interiors start from ₹25 lakhs. EverySpaces has completed 15+ premium projects with imported materials and exclusive designs."
       },
       {
         question: "Do you specialize in Sadashivanagar bungalows?",

@@ -24,12 +24,12 @@ const Rajajinagar = () => {
       "west bangalore interiors rajajinagar",
       "sophisticated home design rajajinagar"
     ],
-    ogTitle: "Interior Designers in Rajajinagar | Intorza - Elegant Home Solutions",
+    ogTitle: "Interior Designers in Rajajinagar | EverySpaces - Elegant Home Solutions",
     ogDescription: "Rajajinagar interior experts. 21+ projects, elegant designs. West Bangalore leaders. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in Rajajinagar?",
-        answer: "Interior design in Rajajinagar costs ₹1,500 to ₹3,000 per sq ft. Intorza offers packages from ₹8 lakhs for 2BHK. We've completed 21+ projects across Rajajinagar 1st to 6th Block with elegant designs and 10-year warranty."
+        answer: "Interior design in Rajajinagar costs ₹1,500 to ₹3,000 per sq ft. EverySpaces offers packages from ₹8 lakhs for 2BHK. We've completed 21+ projects across Rajajinagar 1st to 6th Block with elegant designs and 10-year warranty."
       },
       {
         question: "Which Rajajinagar blocks do you cover?",

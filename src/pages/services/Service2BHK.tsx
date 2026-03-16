@@ -82,11 +82,11 @@ const whyChooseUs = [
 const bhk2FAQs = [
   {
     question: "What is the cost of 2 BHK interior design in Bangalore?",
-    answer: "2 BHK interior design in Bangalore costs ₹4-12 lakh for complete interiors. At Intorza, basic packages start from ₹4 lakh (kitchen + wardrobes), standard from ₹6 lakh (adds living room), and premium from ₹8 lakh (full home with false ceiling)."
+    answer: "2 BHK interior design in Bangalore costs ₹4-12 lakh for complete interiors. At EverySpaces, basic packages start from ₹4 lakh (kitchen + wardrobes), standard from ₹6 lakh (adds living room), and premium from ₹8 lakh (full home with false ceiling)."
   },
   {
     question: "What is included in 2 BHK interior package?",
-    answer: "Intorza's 2 BHK package includes modular kitchen, 2 wardrobes, TV unit, shoe rack, and basic false ceiling. Premium packages add bedroom designs, living room interiors, study tables, and complete painting."
+    answer: "EverySpaces's 2 BHK package includes modular kitchen, 2 wardrobes, TV unit, shoe rack, and basic false ceiling. Premium packages add bedroom designs, living room interiors, study tables, and complete painting."
   },
   {
     question: "How long does 2 BHK interior design take?",
@@ -94,7 +94,7 @@ const bhk2FAQs = [
   },
   {
     question: "Can I customize the 2 BHK interior package?",
-    answer: "Yes, Intorza offers fully customizable 2 BHK packages. You can choose specific rooms, materials, finishes, and hardware. Our designers help optimize the budget while meeting your requirements."
+    answer: "Yes, EverySpaces offers fully customizable 2 BHK packages. You can choose specific rooms, materials, finishes, and hardware. Our designers help optimize the budget while meeting your requirements."
   }
 ];
 
@@ -143,8 +143,8 @@ const Service2BHK = () => {
     createServiceSchema(
       "2 BHK Interior Design Bangalore",
       "Complete 2 BHK interior design packages in Bangalore starting ₹4 lakh. Includes modular kitchen, wardrobes, TV unit, and living room with 10-year warranty.",
-      "https://intorza.com/services/2bhk-interiors",
-      "https://intorza.com/service-2bhk.jpg",
+      "https://everyspaces.com/services/2bhk-interiors",
+      "https://everyspaces.com/service-2bhk.jpg",
       "400000-1200000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield", "Electronic City"],
@@ -152,16 +152,16 @@ const Service2BHK = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "2 BHK Interiors", url: "https://intorza.com/services/2bhk-interiors" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "2 BHK Interiors", url: "https://everyspaces.com/services/2bhk-interiors" }
     ]),
     createFAQSchema(bhk2FAQs, 'services/2bhk-interiors'),
     createProductSchema({
       name: "2 BHK Complete Interior Package",
       description: "Complete 2 BHK interior design in Bangalore including kitchen, wardrobes, TV unit, and living room. 45-60 day delivery with 10-year warranty.",
-      image: "https://intorza.com/service-2bhk.jpg",
-      url: "https://intorza.com/services/2bhk-interiors",
+      image: "https://everyspaces.com/service-2bhk.jpg",
+      url: "https://everyspaces.com/services/2bhk-interiors",
       priceRange: "400000-1200000",
       category: "Home Improvement > Complete Home Interior"
     })
@@ -170,7 +170,7 @@ const Service2BHK = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>2 BHK Interior Design Bangalore | Affordable Packages from ₹4L | Intorza</title>
+        <title>2 BHK Interior Design Bangalore | Affordable Packages from ₹4L | EverySpaces</title>
         <meta
           name="description"
           content="Best 2 BHK interior designers in Bangalore. Complete packages from ₹4 lakh including kitchen, wardrobes, TV unit. 45-day delivery, 10-year warranty!"
@@ -179,19 +179,19 @@ const Service2BHK = () => {
           name="keywords"
           content="2 bhk interior design bangalore, 2bhk interior cost bangalore, 2 bhk home interior design, affordable 2bhk interiors, 2bhk flat interior design bangalore"
         />
-        <link rel="canonical" href="https://intorza.com/services/2bhk-interiors" />
+        <link rel="canonical" href="https://everyspaces.com/services/2bhk-interiors" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="2 BHK Interior Design Bangalore | From ₹4 Lakh - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="2 BHK Interior Design Bangalore | From ₹4 Lakh - EverySpaces" />
         <meta property="og:description" content="Complete 2 BHK interiors from ₹4L. Kitchen, wardrobes, TV unit included. 45-day delivery, 10-year warranty!" />
-        <meta property="og:url" content="https://intorza.com/services/2bhk-interiors" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/2bhk-interiors" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="2 BHK Interior Design Bangalore | From ₹4 Lakh - Intorza" />
+        <meta name="twitter:title" content="2 BHK Interior Design Bangalore | From ₹4 Lakh - EverySpaces" />
         <meta name="twitter:description" content="Complete 2 BHK interiors from ₹4L. Kitchen, wardrobes, TV unit included. 45-day delivery, 10-year warranty!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -330,7 +330,7 @@ const Service2BHK = () => {
           <div className="container px-4">
             <div className="text-center mb-10">
               <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">
-                Why Choose Intorza for Your 2 BHK?
+                Why Choose EverySpaces for Your 2 BHK?
               </h2>
               <p className="text-muted-foreground font-body">
                 Trusted by hundreds of homeowners in Bangalore

@@ -24,12 +24,12 @@ const JPNagar = () => {
       "interior decorators jp nagar",
       "jp nagar interior solutions"
     ],
-    ogTitle: "Interior Designers in JP Nagar | Intorza - Trusted Home Interiors",
+    ogTitle: "Interior Designers in JP Nagar | EverySpaces - Trusted Home Interiors",
     ogDescription: "JP Nagar interior experts. 35+ projects, all phases covered. Affordable quality. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in JP Nagar?",
-        answer: "Interior design in JP Nagar costs ₹1,400 to ₹2,800 per sq ft. Intorza offers packages from ₹7.5 lakhs for 2BHK in JP Nagar. We've completed 35+ projects across all JP Nagar phases with quality materials and 10-year warranty."
+        answer: "Interior design in JP Nagar costs ₹1,400 to ₹2,800 per sq ft. EverySpaces offers packages from ₹7.5 lakhs for 2BHK in JP Nagar. We've completed 35+ projects across all JP Nagar phases with quality materials and 10-year warranty."
       },
       {
         question: "Which JP Nagar phases do you serve?",

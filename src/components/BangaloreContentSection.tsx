@@ -71,14 +71,14 @@ const BangaloreContentSection = () => {
           ))}
         </div>
 
-        {/* Why Intorza in Bangalore */}
+        {/* Why EverySpaces in Bangalore */}
         <div className="mb-16">
           <div className="text-center mb-10">
             <span className="text-secondary font-semibold text-sm tracking-wider uppercase mb-2 block">
               Why Choose Us
             </span>
             <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
-              Why Bangalore Homeowners Trust Intorza
+              Why Bangalore Homeowners Trust EverySpaces
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto font-body">
               We understand Bangalore's unique housing landscape — from compact IT corridor apartments to spacious Sadashivanagar villas

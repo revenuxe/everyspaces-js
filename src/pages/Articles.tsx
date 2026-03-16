@@ -15,15 +15,15 @@ import { StructuredData, createBreadcrumbSchema } from "@/components/StructuredD
 const blogSchema = {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "name": "Intorza Interior Design Blog",
+  "name": "EverySpaces Interior Design Blog",
   "description": "Expert interior design tips, renovation guides & trending home decor ideas for Bangalore homeowners",
-  "url": "https://intorza.com/articles",
+  "url": "https://everyspaces.com/articles",
   "publisher": {
     "@type": "Organization",
-    "name": "Intorza",
+    "name": "EverySpaces",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://intorza.com/logo.png"
+      "url": "https://everyspaces.com/logo.png"
     }
   }
 };
@@ -63,16 +63,16 @@ const Articles = () => {
   return (
     <>
       <Helmet>
-        <title>Interior Design Tips & Ideas Blog | Home Decor Trends | Intorza</title>
+        <title>Interior Design Tips & Ideas Blog | Home Decor Trends | EverySpaces</title>
         <meta
           name="description"
-          content="Read expert interior design tips, renovation guides & trending home decor ideas. Get inspired with Intorza's blog for Bangalore homeowners."
+          content="Read expert interior design tips, renovation guides & trending home decor ideas. Get inspired with EverySpaces's blog for Bangalore homeowners."
         />
-        <link rel="canonical" href="https://intorza.com/articles" />
+        <link rel="canonical" href="https://everyspaces.com/articles" />
       </Helmet>
       <StructuredData data={[blogSchema, createBreadcrumbSchema([
-        { name: "Home", url: "https://intorza.com" },
-        { name: "Articles", url: "https://intorza.com/articles" }
+        { name: "Home", url: "https://everyspaces.com" },
+        { name: "Articles", url: "https://everyspaces.com/articles" }
       ])]} />
 
       <Header />

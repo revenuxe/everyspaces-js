@@ -24,12 +24,12 @@ const BTMLayout = () => {
       "budget interiors btm layout",
       "btm layout home design"
     ],
-    ogTitle: "Interior Designers in BTM Layout | Intorza - Affordable Quality Interiors",
+    ogTitle: "Interior Designers in BTM Layout | EverySpaces - Affordable Quality Interiors",
     ogDescription: "BTM Layout interior experts. 29+ projects, affordable from ₹6.5 lakhs. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in BTM Layout?",
-        answer: "Interior design in BTM Layout costs ₹1,200 to ₹2,400 per sq ft. Intorza offers budget-friendly packages from ₹6.5 lakhs for 2BHK. We've completed 29+ projects in BTM 1st & 2nd Stage with quality materials and 10-year warranty."
+        answer: "Interior design in BTM Layout costs ₹1,200 to ₹2,400 per sq ft. EverySpaces offers budget-friendly packages from ₹6.5 lakhs for 2BHK. We've completed 29+ projects in BTM 1st & 2nd Stage with quality materials and 10-year warranty."
       },
       {
         question: "Do you offer budget-friendly options in BTM Layout?",

@@ -43,19 +43,19 @@ const poojaFeatures = [
 const poojaRoomFAQs = [
   {
     question: "What is the cost of pooja room design in Bangalore?",
-    answer: "Pooja room design in Bangalore costs ₹30,000 to ₹2 lakh depending on size and materials. At Intorza, wall-mounted units start from ₹30,000, standalone mandirs from ₹60,000, and walk-in pooja rooms from ₹1.5 lakh."
+    answer: "Pooja room design in Bangalore costs ₹30,000 to ₹2 lakh depending on size and materials. At EverySpaces, wall-mounted units start from ₹30,000, standalone mandirs from ₹60,000, and walk-in pooja rooms from ₹1.5 lakh."
   },
   {
     question: "Which direction is best for pooja room as per Vastu?",
-    answer: "As per Vastu, northeast (Ishaan corner) is ideal for pooja rooms. East and north directions are also auspicious. Intorza's designers ensure all pooja room designs follow Vastu principles for positive energy flow."
+    answer: "As per Vastu, northeast (Ishaan corner) is ideal for pooja rooms. East and north directions are also auspicious. EverySpaces's designers ensure all pooja room designs follow Vastu principles for positive energy flow."
   },
   {
     question: "What materials are used for pooja room design?",
-    answer: "Intorza uses teak wood, rosewood, or sheesham for traditional mandirs. Modern designs feature marble, brass, corian, and lacquer finishes. We also offer CNC-carved MDF for intricate patterns at affordable prices."
+    answer: "EverySpaces uses teak wood, rosewood, or sheesham for traditional mandirs. Modern designs feature marble, brass, corian, and lacquer finishes. We also offer CNC-carved MDF for intricate patterns at affordable prices."
   },
   {
     question: "Can you design a pooja unit for small apartments?",
-    answer: "Yes, Intorza specializes in compact pooja solutions. Wall-mounted units, corner mandirs, and foldable pooja cabinets are perfect for small apartments. Starting from ₹30,000 with full Vastu compliance."
+    answer: "Yes, EverySpaces specializes in compact pooja solutions. Wall-mounted units, corner mandirs, and foldable pooja cabinets are perfect for small apartments. Starting from ₹30,000 with full Vastu compliance."
   }
 ];
 
@@ -84,8 +84,8 @@ const ServicePoojaRoom = () => {
     createServiceSchema(
       "Pooja Room Design Bangalore",
       "Traditional and modern pooja room designs in Bangalore. Wooden mandirs, wall-mounted units, and walk-in pooja rooms with Vastu compliance.",
-      "https://intorza.com/services/pooja-room",
-      "https://intorza.com/service-pooja-room.jpg",
+      "https://everyspaces.com/services/pooja-room",
+      "https://everyspaces.com/service-pooja-room.jpg",
       "30000-200000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -93,16 +93,16 @@ const ServicePoojaRoom = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Pooja Room", url: "https://intorza.com/services/pooja-room" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "Pooja Room", url: "https://everyspaces.com/services/pooja-room" }
     ]),
     createFAQSchema(poojaRoomFAQs, 'services/pooja-room'),
     createProductSchema({
       name: "Pooja Room Interior Design",
       description: "Traditional and modern pooja room designs in Bangalore. Teak wood mandirs, brass accents, and Vastu-compliant layouts.",
-      image: "https://intorza.com/service-pooja-room.jpg",
-      url: "https://intorza.com/services/pooja-room",
+      image: "https://everyspaces.com/service-pooja-room.jpg",
+      url: "https://everyspaces.com/services/pooja-room",
       priceRange: "30000-200000",
       category: "Home Improvement > Pooja Room"
     })
@@ -111,22 +111,22 @@ const ServicePoojaRoom = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Pooja Room Design Bangalore | Mandir Interior | Vastu | Intorza</title>
+        <title>Pooja Room Design Bangalore | Mandir Interior | Vastu | EverySpaces</title>
         <meta name="description" content="Best pooja room designers in Bangalore. Traditional wooden mandirs from ₹30K. Vastu-compliant designs, teak/rosewood options. Free design consultation!" />
         <meta name="keywords" content="pooja room design bangalore, mandir design, pooja unit, wooden pooja room, vastu pooja room, temple design home" />
-        <link rel="canonical" href="https://intorza.com/services/pooja-room" />
+        <link rel="canonical" href="https://everyspaces.com/services/pooja-room" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="Pooja Room Design Bangalore | Vastu Compliant - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="Pooja Room Design Bangalore | Vastu Compliant - EverySpaces" />
         <meta property="og:description" content="Traditional mandirs from ₹30K. Teak, rosewood, Vastu-compliant designs. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/pooja-room" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/pooja-room" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Pooja Room Design Bangalore | Intorza" />
+        <meta name="twitter:title" content="Pooja Room Design Bangalore | EverySpaces" />
         <meta name="twitter:description" content="Traditional mandirs from ₹30K. Teak, rosewood, Vastu-compliant designs. Free consultation!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -145,7 +145,7 @@ const ServicePoojaRoom = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Create sacred spaces with traditional craftsmanship by Intorza
+                Create sacred spaces with traditional craftsmanship by EverySpaces
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -211,7 +211,7 @@ const ServicePoojaRoom = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Create Your Sacred Space?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza for a free pooja room design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces for a free pooja room design consultation</p>
             <Link to="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </Link>

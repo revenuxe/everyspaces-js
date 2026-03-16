@@ -11,8 +11,8 @@ const calculatorSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Interior Design Cost Calculator",
-  "description": "Calculate your home interior design cost instantly with Intorza's free calculator",
-  "url": "https://intorza.com/price-calculator",
+  "description": "Calculate your home interior design cost instantly with EverySpaces's free calculator",
+  "url": "https://everyspaces.com/price-calculator",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Web",
   "offers": {
@@ -22,7 +22,7 @@ const calculatorSchema = {
   },
   "provider": {
     "@type": "Organization",
-    "name": "Intorza"
+    "name": "EverySpaces"
   }
 };
 const propertyTypes = [{
@@ -96,16 +96,16 @@ const PriceCalculator = () => {
   };
   return <>
       <Helmet>
-        <title>Interior Design Cost Calculator | Get Instant Quote | Intorza Bangalore</title>
+        <title>Interior Design Cost Calculator | Get Instant Quote | EverySpaces Bangalore</title>
         <meta name="description" content="Calculate your home interior design cost instantly. 10% lower than competitors! Free estimates for 1BHK, 2BHK, 3BHK & Villa interiors in Bangalore." />
-        <link rel="canonical" href="https://intorza.com/price-calculator" />
+        <link rel="canonical" href="https://everyspaces.com/price-calculator" />
       </Helmet>
       <StructuredData data={[calculatorSchema, createBreadcrumbSchema([{
       name: "Home",
-      url: "https://intorza.com"
+      url: "https://everyspaces.com"
     }, {
       name: "Price Calculator",
-      url: "https://intorza.com/price-calculator"
+      url: "https://everyspaces.com/price-calculator"
     }])]} />
 
       <div className="min-h-screen bg-background">

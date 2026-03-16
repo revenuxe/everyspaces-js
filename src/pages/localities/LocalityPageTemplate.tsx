@@ -86,16 +86,16 @@ const LocalityPageTemplate = ({
       `home renovation ${localityName}`,
       `interior decorators ${localityName}`
     ],
-    ogTitle: `Interior Designers in ${localityName} | Intorza`,
+    ogTitle: `Interior Designers in ${localityName} | EverySpaces`,
     ogDescription: `${description} Free consultation!`,
     faqs: [
       {
         question: `What is the cost of interior design in ${localityName}?`,
-        answer: `Interior design cost in ${localityName} ranges from ₹1,500 to ₹3,500 per sq ft depending on materials and scope. At Intorza, we offer customized packages starting ₹8 lakhs for 2BHK. We have completed ${projectCount} in ${localityName} with 10-year warranty.`
+        answer: `Interior design cost in ${localityName} ranges from ₹1,500 to ₹3,500 per sq ft depending on materials and scope. At EverySpaces, we offer customized packages starting ₹8 lakhs for 2BHK. We have completed ${projectCount} in ${localityName} with 10-year warranty.`
       },
       {
         question: `Who are the best interior designers in ${localityName}, Bangalore?`,
-        answer: `Intorza is rated among the best interior designers in ${localityName} with 4.8/5 rating, ${projectCount} completed, and 10-year warranty. We specialize in modular kitchens, wardrobes, and complete home interiors with premium materials.`
+        answer: `EverySpaces is rated among the best interior designers in ${localityName} with 4.8/5 rating, ${projectCount} completed, and 10-year warranty. We specialize in modular kitchens, wardrobes, and complete home interiors with premium materials.`
       },
       {
         question: `How long does home interior work take in ${localityName}?`,
@@ -103,7 +103,7 @@ const LocalityPageTemplate = ({
       },
       {
         question: `Do you offer free consultation in ${localityName}?`,
-        answer: `Yes! Intorza offers free site visit and consultation in ${localityName}. Our design expert will visit your home, understand requirements, and provide detailed 3D designs with transparent cost estimate within 5 days.`
+        answer: `Yes! EverySpaces offers free site visit and consultation in ${localityName}. Our design expert will visit your home, understand requirements, and provide detailed 3D designs with transparent cost estimate within 5 days.`
       }
     ],
     nearbyAreas: [],
@@ -116,12 +116,12 @@ const LocalityPageTemplate = ({
   const localitySchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": `https://intorza.com/bangalore/${slug}#localbusiness`,
-    "name": `Intorza Interior Designers ${localityName}`,
+    "@id": `https://everyspaces.com/bangalore/${slug}#localbusiness`,
+    "name": `EverySpaces Interior Designers ${localityName}`,
     "image": heroImage,
-    "url": `https://intorza.com/bangalore/${slug}`,
+    "url": `https://everyspaces.com/bangalore/${slug}`,
     "telephone": "+91-9886579923",
-    "email": "intorza.com@gmail.com",
+    "email": "everyspaces.com@gmail.com",
     "description": seoData.metaDescription,
     "address": {
       "@type": "PostalAddress",
@@ -159,7 +159,7 @@ const LocalityPageTemplate = ({
         "itemOffered": {
           "@type": "Service",
           "name": `${specialty} in ${localityName}`,
-          "description": `Professional ${specialty.toLowerCase()} services in ${localityName}, Bangalore by Intorza`
+          "description": `Professional ${specialty.toLowerCase()} services in ${localityName}, Bangalore by EverySpaces`
         }
       }))
     },
@@ -176,21 +176,21 @@ const LocalityPageTemplate = ({
         "@type": "Review",
         "author": { "@type": "Person", "name": "Priya Sharma" },
         "datePublished": "2025-11-15",
-        "reviewBody": `Intorza transformed our home in ${localityName} beautifully. The modular kitchen quality is outstanding and the team was very professional.`,
+        "reviewBody": `EverySpaces transformed our home in ${localityName} beautifully. The modular kitchen quality is outstanding and the team was very professional.`,
         "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
       },
       {
         "@type": "Review",
         "author": { "@type": "Person", "name": "Rahul Menon" },
         "datePublished": "2025-10-22",
-        "reviewBody": `Got our full home interiors done by Intorza in ${localityName}. Excellent design sense, premium materials, and the 10-year warranty gives great peace of mind.`,
+        "reviewBody": `Got our full home interiors done by EverySpaces in ${localityName}. Excellent design sense, premium materials, and the 10-year warranty gives great peace of mind.`,
         "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
       },
       {
         "@type": "Review",
         "author": { "@type": "Person", "name": "Anitha Reddy" },
         "datePublished": "2025-09-10",
-        "reviewBody": `We chose Intorza for our interior work in ${localityName}. The wardrobe designs and false ceiling work exceeded our expectations. Highly recommend!`,
+        "reviewBody": `We chose EverySpaces for our interior work in ${localityName}. The wardrobe designs and false ceiling work exceeded our expectations. Highly recommend!`,
         "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
       }
     ]
@@ -200,7 +200,7 @@ const LocalityPageTemplate = ({
   const serviceSchema = createServiceSchema(
     `Interior Design Services in ${localityName}`,
     seoData.metaDescription,
-    `https://intorza.com/bangalore/${slug}`,
+    `https://everyspaces.com/bangalore/${slug}`,
     heroImage,
     "150000-2500000",
     {
@@ -212,9 +212,9 @@ const LocalityPageTemplate = ({
 
   // Breadcrumb schema
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: "Home", url: "https://intorza.com" },
-    { name: "Bangalore", url: "https://intorza.com/bangalore" },
-    { name: localityName, url: `https://intorza.com/bangalore/${slug}` }
+    { name: "Home", url: "https://everyspaces.com" },
+    { name: "Bangalore", url: "https://everyspaces.com/bangalore" },
+    { name: localityName, url: `https://everyspaces.com/bangalore/${slug}` }
   ], `bangalore/${slug}`);
 
   // FAQ schema with locality-specific FAQs
@@ -224,15 +224,15 @@ const LocalityPageTemplate = ({
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `https://intorza.com/bangalore/${slug}#webpage`,
-    "url": `https://intorza.com/bangalore/${slug}`,
+    "@id": `https://everyspaces.com/bangalore/${slug}#webpage`,
+    "url": `https://everyspaces.com/bangalore/${slug}`,
     "name": seoData.metaTitle,
     "description": seoData.metaDescription,
     "isPartOf": {
-      "@id": "https://intorza.com/#website"
+      "@id": "https://everyspaces.com/#website"
     },
     "about": {
-      "@id": `https://intorza.com/bangalore/${slug}#localbusiness`
+      "@id": `https://everyspaces.com/bangalore/${slug}#localbusiness`
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
@@ -248,7 +248,7 @@ const LocalityPageTemplate = ({
       ]
     },
     "breadcrumb": {
-      "@id": `https://intorza.com/bangalore/${slug}#breadcrumb`
+      "@id": `https://everyspaces.com/bangalore/${slug}#breadcrumb`
     }
   };
 
@@ -256,9 +256,9 @@ const LocalityPageTemplate = ({
   const placeSchema = {
     "@context": "https://schema.org",
     "@type": "Place",
-    "@id": `https://intorza.com/bangalore/${slug}#place`,
+    "@id": `https://everyspaces.com/bangalore/${slug}#place`,
     "name": `${localityName}, Bangalore`,
-    "description": `Interior design services available in ${localityName}, Bangalore by Intorza`,
+    "description": `Interior design services available in ${localityName}, Bangalore by EverySpaces`,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": localityName,
@@ -277,7 +277,7 @@ const LocalityPageTemplate = ({
         <title>{seoData.metaTitle}</title>
         <meta name="description" content={seoData.metaDescription} />
         <meta name="keywords" content={seoData.keywords.join(", ")} />
-        <link rel="canonical" href={`https://intorza.com/bangalore/${slug}`} />
+        <link rel="canonical" href={`https://everyspaces.com/bangalore/${slug}`} />
         
         {/* Robots meta for better crawling */}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -292,10 +292,10 @@ const LocalityPageTemplate = ({
         <meta property="og:title" content={seoData.ogTitle} />
         <meta property="og:description" content={seoData.ogDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://intorza.com/bangalore/${slug}`} />
+        <meta property="og:url" content={`https://everyspaces.com/bangalore/${slug}`} />
         <meta property="og:image" content={heroImage} />
         <meta property="og:locale" content="en_IN" />
-        <meta property="og:site_name" content="Intorza" />
+        <meta property="og:site_name" content="EverySpaces" />
         
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -304,7 +304,7 @@ const LocalityPageTemplate = ({
         <meta name="twitter:image" content={heroImage} />
         
         {/* Additional SEO meta tags */}
-        <meta name="author" content="Intorza" />
+        <meta name="author" content="EverySpaces" />
         <meta name="language" content="English" />
         <meta name="revisit-after" content="7 days" />
         <meta name="coverage" content={`${localityName}, Bangalore, Karnataka, India`} />

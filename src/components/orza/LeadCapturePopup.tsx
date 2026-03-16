@@ -68,7 +68,7 @@ const LeadCapturePopup = ({ isOpen, onClose, userName, location, recommendation,
       if (leadError) throw leadError;
 
       // Auto download for user
-      doc.save(`Intorza-Design-Report-${name}.pdf`);
+      doc.save(`EverySpaces-Design-Report-${name}.pdf`);
 
       toast.success("Report downloaded! Our team will reach out soon 🎉");
       onClose();

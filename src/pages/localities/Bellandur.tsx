@@ -24,12 +24,12 @@ const Bellandur = () => {
       "premium home design bellandur",
       "bellandur interior solutions"
     ],
-    ogTitle: "Interior Designers in Bellandur | Intorza - Premium Apartment Interiors",
+    ogTitle: "Interior Designers in Bellandur | EverySpaces - Premium Apartment Interiors",
     ogDescription: "Bellandur interior experts. 31+ premium projects. Luxury apartment specialists. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in Bellandur?",
-        answer: "Interior design in Bellandur costs ₹1,800 to ₹3,500 per sq ft for premium apartments. Intorza offers packages from ₹9 lakhs for 2BHK in Bellandur. We've completed 31+ projects with luxury finishes and 10-year warranty."
+        answer: "Interior design in Bellandur costs ₹1,800 to ₹3,500 per sq ft for premium apartments. EverySpaces offers packages from ₹9 lakhs for 2BHK in Bellandur. We've completed 31+ projects with luxury finishes and 10-year warranty."
       },
       {
         question: "Do you design luxury apartments in Bellandur?",

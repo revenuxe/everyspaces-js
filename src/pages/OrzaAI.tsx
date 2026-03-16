@@ -265,16 +265,16 @@ const OrzaAI = () => {
   return (
     <div className="h-[100dvh] bg-white flex flex-col overflow-hidden">
       <Helmet>
-        <title>Orza AI – Free Interior Design Advisor | Intorza Bangalore</title>
+        <title>Orza AI – Free Interior Design Advisor | EverySpaces Bangalore</title>
         <meta name="description" content="Get instant AI-powered interior design recommendations for your Bangalore home. Free personalized ideas for kitchens, bedrooms, living rooms & more – budget, materials, colors in 2 minutes." />
         <meta name="keywords" content="AI interior design tool, free interior design advisor, home decor AI, modular kitchen planner, bedroom design ideas Bangalore, AI home designer, interior design cost calculator" />
-        <link rel="canonical" href="https://intorza.com/orza-ai" />
-        <meta property="og:title" content="Orza AI – Free Interior Design Advisor | Intorza" />
+        <link rel="canonical" href="https://everyspaces.com/orza-ai" />
+        <meta property="og:title" content="Orza AI – Free Interior Design Advisor | EverySpaces" />
         <meta property="og:description" content="Get instant AI-powered interior design recommendations for your Bangalore home. Personalized ideas in 2 minutes – 100% free." />
-        <meta property="og:url" content="https://intorza.com/orza-ai" />
+        <meta property="og:url" content="https://everyspaces.com/orza-ai" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Orza AI – Free Interior Design Advisor | Intorza" />
+        <meta name="twitter:title" content="Orza AI – Free Interior Design Advisor | EverySpaces" />
         <meta name="twitter:description" content="Get instant AI-powered interior design recommendations for your Bangalore home. Free personalized ideas in 2 minutes." />
         <meta name="robots" content="index, follow" />
       </Helmet>
@@ -283,20 +283,20 @@ const OrzaAI = () => {
           "@context": "https://schema.org",
           "@type": "WebApplication",
           "name": "Orza AI – Interior Design Advisor",
-          "url": "https://intorza.com/orza-ai",
+          "url": "https://everyspaces.com/orza-ai",
           "description": "Free AI-powered interior design recommendation tool. Get personalized ideas for kitchens, bedrooms, living rooms and more – colors, materials, budget & timeline in 2 minutes.",
           "applicationCategory": "DesignApplication",
           "operatingSystem": "Web",
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
           "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "520", "bestRating": "5" },
-          "creator": { "@type": "Organization", "name": "Intorza Interior Design", "url": "https://intorza.com" },
+          "creator": { "@type": "Organization", "name": "EverySpaces Interior Design", "url": "https://everyspaces.com" },
           "browserRequirements": "Requires JavaScript. Works on all modern browsers.",
           "featureList": "AI-Powered Recommendations, Budget Planning, Material Suggestions, Color Palette, Timeline Estimation, Mood Board Generation"
         },
         {
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          "@id": "https://intorza.com/orza-ai#faq",
+          "@id": "https://everyspaces.com/orza-ai#faq",
           "mainEntity": [
             { "@type": "Question", "name": "Is Orza AI free to use?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Orza AI is 100% free. Get personalized interior design recommendations without any cost." }},
             { "@type": "Question", "name": "How does Orza AI work?", "acceptedAnswer": { "@type": "Answer", "text": "Answer a few quick questions about your space, budget, and style preferences. Orza AI generates a complete design recommendation with colors, materials, furniture, and budget breakdown in under 2 minutes." }},
@@ -307,8 +307,8 @@ const OrzaAI = () => {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://intorza.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Orza AI – Interior Design Advisor", "item": "https://intorza.com/orza-ai" }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://everyspaces.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Orza AI – Interior Design Advisor", "item": "https://everyspaces.com/orza-ai" }
           ]
         }
       ]} />

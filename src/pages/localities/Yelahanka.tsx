@@ -24,12 +24,12 @@ const Yelahanka = () => {
       "north bangalore interiors yelahanka",
       "spacious home design yelahanka"
     ],
-    ogTitle: "Interior Designers in Yelahanka | Intorza - Spacious Home Specialists",
+    ogTitle: "Interior Designers in Yelahanka | EverySpaces - Spacious Home Specialists",
     ogDescription: "Yelahanka interior experts. 22+ projects, independent house specialists. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in Yelahanka?",
-        answer: "Interior design in Yelahanka costs ₹1,400 to ₹2,800 per sq ft. Independent house interiors start from ₹10 lakhs, apartments from ₹7.5 lakhs. Intorza has completed 22+ projects in Yelahanka with 10-year warranty."
+        answer: "Interior design in Yelahanka costs ₹1,400 to ₹2,800 per sq ft. Independent house interiors start from ₹10 lakhs, apartments from ₹7.5 lakhs. EverySpaces has completed 22+ projects in Yelahanka with 10-year warranty."
       },
       {
         question: "Do you design independent houses in Yelahanka?",

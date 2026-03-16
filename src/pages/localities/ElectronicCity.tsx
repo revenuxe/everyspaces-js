@@ -24,12 +24,12 @@ const ElectronicCity = () => {
       "tech park area interiors",
       "electronic city home design"
     ],
-    ogTitle: "Interior Designers in Electronic City | Intorza - Smart Home Specialists",
+    ogTitle: "Interior Designers in Electronic City | EverySpaces - Smart Home Specialists",
     ogDescription: "Electronic City interior experts. 26+ projects, smart home solutions. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in Electronic City?",
-        answer: "Interior design in Electronic City costs ₹1,400 to ₹2,800 per sq ft. Intorza offers packages from ₹7.5 lakhs for 2BHK in Electronic City. We've completed 26+ projects in Phase 1 & 2 with modern designs and 10-year warranty."
+        answer: "Interior design in Electronic City costs ₹1,400 to ₹2,800 per sq ft. EverySpaces offers packages from ₹7.5 lakhs for 2BHK in Electronic City. We've completed 26+ projects in Phase 1 & 2 with modern designs and 10-year warranty."
       },
       {
         question: "Do you offer smart home integration in Electronic City?",

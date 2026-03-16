@@ -43,19 +43,19 @@ const tvUnitFeatures = [
 const tvUnitFAQs = [
   {
     question: "What is the cost of TV unit design in Bangalore?",
-    answer: "TV unit design in Bangalore costs ₹25,000 to ₹1.5 lakh depending on size and design. At Intorza, floating units start from ₹25,000, wall-mounted panels from ₹40,000, and floor-to-ceiling entertainment walls from ₹80,000."
+    answer: "TV unit design in Bangalore costs ₹25,000 to ₹1.5 lakh depending on size and design. At EverySpaces, floating units start from ₹25,000, wall-mounted panels from ₹40,000, and floor-to-ceiling entertainment walls from ₹80,000."
   },
   {
     question: "Which TV unit design is trending in Bangalore?",
-    answer: "Trending TV unit designs in Bangalore include floating wall-mounted units, backlit stone panels, floor-to-ceiling entertainment walls with LED lighting, and minimalist designs with hidden storage. Intorza offers all these styles."
+    answer: "Trending TV unit designs in Bangalore include floating wall-mounted units, backlit stone panels, floor-to-ceiling entertainment walls with LED lighting, and minimalist designs with hidden storage. EverySpaces offers all these styles."
   },
   {
     question: "What size TV unit do I need?",
-    answer: "TV unit width should be 1.5-2 times your TV size. For a 55-inch TV, we recommend 6-7 feet wide units. Intorza designs custom TV units based on your TV size, room dimensions, and storage requirements."
+    answer: "TV unit width should be 1.5-2 times your TV size. For a 55-inch TV, we recommend 6-7 feet wide units. EverySpaces designs custom TV units based on your TV size, room dimensions, and storage requirements."
   },
   {
     question: "Can you design a TV unit with a feature wall?",
-    answer: "Yes, Intorza specializes in TV units with feature walls including stone cladding, wooden panels, PU finish, textured wallpaper, and backlit panels. Prices start from ₹60,000 for TV unit with feature wall."
+    answer: "Yes, EverySpaces specializes in TV units with feature walls including stone cladding, wooden panels, PU finish, textured wallpaper, and backlit panels. Prices start from ₹60,000 for TV unit with feature wall."
   }
 ];
 
@@ -84,8 +84,8 @@ const ServiceTVUnit = () => {
     createServiceSchema(
       "TV Unit Design Bangalore",
       "Modern TV unit and entertainment wall designs in Bangalore. Floating units, backlit panels, stone accent walls with LED lighting and cable management.",
-      "https://intorza.com/services/tv-unit",
-      "https://intorza.com/service-tv-unit.jpg",
+      "https://everyspaces.com/services/tv-unit",
+      "https://everyspaces.com/service-tv-unit.jpg",
       "25000-150000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -93,16 +93,16 @@ const ServiceTVUnit = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "TV Unit", url: "https://intorza.com/services/tv-unit" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "TV Unit", url: "https://everyspaces.com/services/tv-unit" }
     ]),
     createFAQSchema(tvUnitFAQs, 'services/tv-unit'),
     createProductSchema({
       name: "TV Unit & Entertainment Wall",
       description: "Modern TV unit designs in Bangalore with floating units, backlit panels, and feature walls. Includes cable management and LED lighting.",
-      image: "https://intorza.com/service-tv-unit.jpg",
-      url: "https://intorza.com/services/tv-unit",
+      image: "https://everyspaces.com/service-tv-unit.jpg",
+      url: "https://everyspaces.com/services/tv-unit",
       priceRange: "25000-150000",
       category: "Home Improvement > Living Room"
     })
@@ -111,22 +111,22 @@ const ServiceTVUnit = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>TV Unit Design Bangalore | Entertainment Wall | Intorza</title>
+        <title>TV Unit Design Bangalore | Entertainment Wall | EverySpaces</title>
         <meta name="description" content="Best TV unit designers in Bangalore. Floating units from ₹25K, backlit panels, stone accent walls. Modern entertainment centers. Free quote!" />
         <meta name="keywords" content="TV unit design bangalore, entertainment unit, floating TV unit, TV wall design, living room TV unit, feature wall design" />
-        <link rel="canonical" href="https://intorza.com/services/tv-unit" />
+        <link rel="canonical" href="https://everyspaces.com/services/tv-unit" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="TV Unit Design Bangalore | Entertainment Wall - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="TV Unit Design Bangalore | Entertainment Wall - EverySpaces" />
         <meta property="og:description" content="Modern TV units from ₹25K. Floating units, backlit panels, stone walls. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/tv-unit" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/tv-unit" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="TV Unit Design Bangalore | Intorza" />
+        <meta name="twitter:title" content="TV Unit Design Bangalore | EverySpaces" />
         <meta name="twitter:description" content="Modern TV units from ₹25K. Floating units, backlit panels, stone walls. Free consultation!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -145,7 +145,7 @@ const ServiceTVUnit = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Modern entertainment centers designed by Intorza experts
+                Modern entertainment centers designed by EverySpaces experts
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -211,7 +211,7 @@ const ServiceTVUnit = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Upgrade Your Entertainment Area?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza for a free TV unit design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces for a free TV unit design consultation</p>
             <Link to="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </Link>

@@ -43,19 +43,19 @@ const bathroomFeatures = [
 const bathroomFAQs = [
   {
     question: "What is the cost of bathroom renovation in Bangalore?",
-    answer: "Bathroom renovation in Bangalore costs ₹1-3 lakh for complete makeover. At Intorza, basic renovations start from ₹80,000, premium from ₹1.5 lakh with Kohler/Grohe fixtures, and luxury spa bathrooms from ₹2.5 lakh."
+    answer: "Bathroom renovation in Bangalore costs ₹1-3 lakh for complete makeover. At EverySpaces, basic renovations start from ₹80,000, premium from ₹1.5 lakh with Kohler/Grohe fixtures, and luxury spa bathrooms from ₹2.5 lakh."
   },
   {
     question: "How long does bathroom renovation take?",
-    answer: "Complete bathroom renovation takes 10-15 working days including demolition, waterproofing, tiling, and fixture installation. Intorza provides dedicated project management for timely completion."
+    answer: "Complete bathroom renovation takes 10-15 working days including demolition, waterproofing, tiling, and fixture installation. EverySpaces provides dedicated project management for timely completion."
   },
   {
     question: "Which bathroom fixtures are best for Bangalore?",
-    answer: "Intorza recommends Kohler, Grohe, American Standard, and Jaquar for durability and after-sales service. We help select fixtures based on your budget, style preference, and water pressure requirements."
+    answer: "EverySpaces recommends Kohler, Grohe, American Standard, and Jaquar for durability and after-sales service. We help select fixtures based on your budget, style preference, and water pressure requirements."
   },
   {
     question: "Do you provide waterproofing for bathrooms?",
-    answer: "Yes, Intorza provides complete waterproofing with Dr. Fixit or FOSROC products. We ensure waterproofing of walls up to 6 feet height and complete floor waterproofing with 10-year leakage warranty."
+    answer: "Yes, EverySpaces provides complete waterproofing with Dr. Fixit or FOSROC products. We ensure waterproofing of walls up to 6 feet height and complete floor waterproofing with 10-year leakage warranty."
   }
 ];
 
@@ -88,8 +88,8 @@ const ServiceBathroom = () => {
     createServiceSchema(
       "Bathroom Design Bangalore",
       "Spa-inspired bathroom renovation in Bangalore with premium fixtures from Kohler, Grohe. Complete waterproofing and designer finishes.",
-      "https://intorza.com/services/bathroom-design",
-      "https://intorza.com/service-bathroom.jpg",
+      "https://everyspaces.com/services/bathroom-design",
+      "https://everyspaces.com/service-bathroom.jpg",
       "80000-300000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -97,16 +97,16 @@ const ServiceBathroom = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Bathroom Design", url: "https://intorza.com/services/bathroom-design" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "Bathroom Design", url: "https://everyspaces.com/services/bathroom-design" }
     ]),
     createFAQSchema(bathroomFAQs, 'services/bathroom-design'),
     createProductSchema({
       name: "Bathroom Renovation",
       description: "Complete bathroom renovation in Bangalore with Kohler/Grohe fixtures, designer tiles, and waterproofing. 10-15 day completion.",
-      image: "https://intorza.com/service-bathroom.jpg",
-      url: "https://intorza.com/services/bathroom-design",
+      image: "https://everyspaces.com/service-bathroom.jpg",
+      url: "https://everyspaces.com/services/bathroom-design",
       priceRange: "80000-300000",
       category: "Home Improvement > Bathroom"
     })
@@ -115,22 +115,22 @@ const ServiceBathroom = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Bathroom Design Bangalore | Spa-Inspired Renovation | Intorza</title>
+        <title>Bathroom Design Bangalore | Spa-Inspired Renovation | EverySpaces</title>
         <meta name="description" content="Best bathroom renovators in Bangalore. Spa-like bathrooms from ₹80K. Kohler, Grohe fixtures, complete waterproofing. 10-15 day completion!" />
         <meta name="keywords" content="bathroom design bangalore, bathroom interior, modern bathroom design, bathroom renovation, spa bathroom, bathroom tiles" />
-        <link rel="canonical" href="https://intorza.com/services/bathroom-design" />
+        <link rel="canonical" href="https://everyspaces.com/services/bathroom-design" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="Bathroom Renovation Bangalore | Spa Design - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="Bathroom Renovation Bangalore | Spa Design - EverySpaces" />
         <meta property="og:description" content="Bathroom makeovers from ₹80K. Premium fixtures, waterproofing, designer tiles. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/bathroom-design" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/bathroom-design" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Bathroom Renovation Bangalore | Intorza" />
+        <meta name="twitter:title" content="Bathroom Renovation Bangalore | EverySpaces" />
         <meta name="twitter:description" content="Bathroom makeovers from ₹80K. Premium fixtures, waterproofing, designer tiles. Free consultation!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -149,7 +149,7 @@ const ServiceBathroom = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Transform your bathroom into a spa-like sanctuary with Intorza
+                Transform your bathroom into a spa-like sanctuary with EverySpaces
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -215,7 +215,7 @@ const ServiceBathroom = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Upgrade Your Bathroom?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza for a free bathroom design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces for a free bathroom design consultation</p>
             <Link to="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </Link>

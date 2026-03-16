@@ -47,9 +47,9 @@ const services = [
 const servicesListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "@id": "https://intorza.com/services#itemlist",
-  "name": "Interior Design Services by Intorza Bangalore",
-  "description": "Comprehensive list of 20+ interior design services offered by Intorza in Bangalore including modular kitchens, wardrobes, living rooms, bedrooms, and complete home interiors.",
+  "@id": "https://everyspaces.com/services#itemlist",
+  "name": "Interior Design Services by EverySpaces Bangalore",
+  "description": "Comprehensive list of 20+ interior design services offered by EverySpaces in Bangalore including modular kitchens, wardrobes, living rooms, bedrooms, and complete home interiors.",
   "numberOfItems": services.length,
   "itemListElement": services.map((service, index) => ({
     "@type": "ListItem",
@@ -58,11 +58,11 @@ const servicesListSchema = {
       "@type": "Service",
       "name": service.title,
       "description": service.description,
-      "url": `https://intorza.com${service.link}`,
+      "url": `https://everyspaces.com${service.link}`,
       "provider": {
         "@type": "Organization",
-        "name": "Intorza",
-        "@id": "https://intorza.com/#organization"
+        "name": "EverySpaces",
+        "@id": "https://everyspaces.com/#organization"
       },
       "areaServed": {
         "@type": "City",
@@ -75,12 +75,12 @@ const servicesListSchema = {
 // AEO-optimized FAQs for services page
 const servicesFAQs = [
   {
-    question: "What interior design services does Intorza offer in Bangalore?",
-    answer: "Intorza offers 20+ interior design services in Bangalore including modular kitchen design, wardrobe design, living room interiors, bedroom design, 2BHK/3BHK packages, villa interiors, TV units, false ceiling, pooja room, study room, kids room, home office, and complete full home interior solutions."
+    question: "What interior design services does EverySpaces offer in Bangalore?",
+    answer: "EverySpaces offers 20+ interior design services in Bangalore including modular kitchen design, wardrobe design, living room interiors, bedroom design, 2BHK/3BHK packages, villa interiors, TV units, false ceiling, pooja room, study room, kids room, home office, and complete full home interior solutions."
   },
   {
     question: "Which interior design service is most popular in Bangalore?",
-    answer: "Modular kitchen design and complete home interior packages are the most popular services at Intorza Bangalore. 2BHK and 3BHK apartment interior packages are also in high demand, offering end-to-end solutions with 10-year warranty."
+    answer: "Modular kitchen design and complete home interior packages are the most popular services at EverySpaces Bangalore. 2BHK and 3BHK apartment interior packages are also in high demand, offering end-to-end solutions with 10-year warranty."
   }
 ];
 
@@ -90,8 +90,8 @@ const Services = () => {
     servicesListSchema,
     professionalServiceSchema,
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" }
     ]),
     createFAQSchema(servicesFAQs, 'services')
   ];
@@ -99,19 +99,19 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>All Interior Design Services in Bangalore | 20+ Categories | Intorza</title>
+        <title>All Interior Design Services in Bangalore | 20+ Categories | EverySpaces</title>
         <meta
           name="description"
-          content="Explore 20+ interior design services by Intorza Bangalore. Modular kitchen, wardrobe, living room, bedroom, 2BHK, 3BHK, villa interiors & more. Free consultation!"
+          content="Explore 20+ interior design services by EverySpaces Bangalore. Modular kitchen, wardrobe, living room, bedroom, 2BHK, 3BHK, villa interiors & more. Free consultation!"
         />
         <meta name="keywords" content="interior design services bangalore, home interior services, modular kitchen service, wardrobe design service, full home interior bangalore" />
-        <link rel="canonical" href="https://intorza.com/services" />
+        <link rel="canonical" href="https://everyspaces.com/services" />
         
         {/* AEO meta tags */}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-        <meta property="og:title" content="20+ Interior Design Services in Bangalore - Intorza" />
+        <meta property="og:title" content="20+ Interior Design Services in Bangalore - EverySpaces" />
         <meta property="og:description" content="Complete interior design services: modular kitchen, wardrobe, living room, bedroom, 2BHK, 3BHK, villa. 10-year warranty, free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services" />
+        <meta property="og:url" content="https://everyspaces.com/services" />
         <meta property="og:type" content="website" />
       </Helmet>
       <StructuredData data={aeoSchemas} />

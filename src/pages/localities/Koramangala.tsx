@@ -25,12 +25,12 @@ const Koramangala = () => {
       "designer interiors koramangala",
       "koramangala home makeover"
     ],
-    ogTitle: "Best Interior Designers in Koramangala | Intorza - Luxury Home Interiors",
+    ogTitle: "Best Interior Designers in Koramangala | EverySpaces - Luxury Home Interiors",
     ogDescription: "Premium Koramangala interior designers. 41+ luxury projects, all blocks covered. Free consultation!",
     faqs: [
       {
         question: "What is the interior design cost in Koramangala, Bangalore?",
-        answer: "Interior design in Koramangala typically costs ₹2,000 to ₹4,500 per sq ft for premium finishes. Intorza offers luxury packages from ₹10 lakhs for 2BHK. We've completed 41+ projects across Koramangala 1st to 8th Block with premium materials and 10-year warranty."
+        answer: "Interior design in Koramangala typically costs ₹2,000 to ₹4,500 per sq ft for premium finishes. EverySpaces offers luxury packages from ₹10 lakhs for 2BHK. We've completed 41+ projects across Koramangala 1st to 8th Block with premium materials and 10-year warranty."
       },
       {
         question: "Which Koramangala blocks do you serve?",

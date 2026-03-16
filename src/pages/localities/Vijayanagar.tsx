@@ -24,12 +24,12 @@ const Vijayanagar = () => {
       "west bangalore interiors vijayanagar",
       "family home design vijayanagar"
     ],
-    ogTitle: "Interior Designers in Vijayanagar | Intorza - Complete Home Transformation",
+    ogTitle: "Interior Designers in Vijayanagar | EverySpaces - Complete Home Transformation",
     ogDescription: "Vijayanagar interior experts. 20+ projects, complete transformations. Family-focused. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in Vijayanagar?",
-        answer: "Interior design in Vijayanagar costs ₹1,400 to ₹2,800 per sq ft. Intorza offers packages from ₹7.5 lakhs for 2BHK. We've completed 20+ complete home transformations in Vijayanagar with 10-year warranty."
+        answer: "Interior design in Vijayanagar costs ₹1,400 to ₹2,800 per sq ft. EverySpaces offers packages from ₹7.5 lakhs for 2BHK. We've completed 20+ complete home transformations in Vijayanagar with 10-year warranty."
       },
       {
         question: "Do you specialize in family homes in Vijayanagar?",

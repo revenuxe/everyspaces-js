@@ -43,19 +43,19 @@ const officeFeatures = [
 const homeOfficeFAQs = [
   {
     question: "What is the cost of home office design in Bangalore?",
-    answer: "Home office design in Bangalore costs ₹30,000 to ₹2 lakh depending on size and features. At Intorza, compact workstations start from ₹30,000, dedicated rooms from ₹80,000, and executive studios from ₹1.5 lakh."
+    answer: "Home office design in Bangalore costs ₹30,000 to ₹2 lakh depending on size and features. At EverySpaces, compact workstations start from ₹30,000, dedicated rooms from ₹80,000, and executive studios from ₹1.5 lakh."
   },
   {
     question: "How to set up a productive work from home space?",
-    answer: "Intorza creates productive WFH spaces with ergonomic desks at proper height, adjustable chairs, task lighting, soundproofing options, cable management, and dedicated storage. We ensure distraction-free environments."
+    answer: "EverySpaces creates productive WFH spaces with ergonomic desks at proper height, adjustable chairs, task lighting, soundproofing options, cable management, and dedicated storage. We ensure distraction-free environments."
   },
   {
     question: "What is the ideal desk size for home office?",
-    answer: "For single monitor setups, 4x2 feet desks work well. For dual monitors, we recommend 5x2.5 feet. Intorza designs custom desks based on your equipment, work style, and available space."
+    answer: "For single monitor setups, 4x2 feet desks work well. For dual monitors, we recommend 5x2.5 feet. EverySpaces designs custom desks based on your equipment, work style, and available space."
   },
   {
     question: "Can you design a home office in bedroom?",
-    answer: "Yes, Intorza specializes in bedroom-office combos with foldable desks, partition screens, and proper zoning. We create focused work areas that can be hidden during non-work hours."
+    answer: "Yes, EverySpaces specializes in bedroom-office combos with foldable desks, partition screens, and proper zoning. We create focused work areas that can be hidden during non-work hours."
   }
 ];
 
@@ -88,8 +88,8 @@ const ServiceHomeOffice = () => {
     createServiceSchema(
       "Home Office Design Bangalore",
       "Productivity-focused home office designs in Bangalore. Ergonomic workstations, study rooms, and WFH setups with proper lighting and storage.",
-      "https://intorza.com/services/home-office",
-      "https://intorza.com/service-home-office.jpg",
+      "https://everyspaces.com/services/home-office",
+      "https://everyspaces.com/service-home-office.jpg",
       "30000-200000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -97,16 +97,16 @@ const ServiceHomeOffice = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Home Office", url: "https://intorza.com/services/home-office" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "Home Office", url: "https://everyspaces.com/services/home-office" }
     ]),
     createFAQSchema(homeOfficeFAQs, 'services/home-office'),
     createProductSchema({
       name: "Home Office Interior Design",
       description: "Professional home office designs in Bangalore with ergonomic furniture, task lighting, and tech integration for productive WFH.",
-      image: "https://intorza.com/service-home-office.jpg",
-      url: "https://intorza.com/services/home-office",
+      image: "https://everyspaces.com/service-home-office.jpg",
+      url: "https://everyspaces.com/services/home-office",
       priceRange: "30000-200000",
       category: "Home Improvement > Home Office"
     })
@@ -115,22 +115,22 @@ const ServiceHomeOffice = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Home Office Design Bangalore | Study Room & WFH Setup | Intorza</title>
+        <title>Home Office Design Bangalore | Study Room & WFH Setup | EverySpaces</title>
         <meta name="description" content="Best home office designers in Bangalore. Ergonomic workstations from ₹30K. WFH setups, standing desks, executive studios. Free consultation!" />
         <meta name="keywords" content="home office design bangalore, study room interior, work from home setup, home workspace design, study table design, WFH office" />
-        <link rel="canonical" href="https://intorza.com/services/home-office" />
+        <link rel="canonical" href="https://everyspaces.com/services/home-office" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="Home Office Design Bangalore | WFH Setup - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="Home Office Design Bangalore | WFH Setup - EverySpaces" />
         <meta property="og:description" content="Home offices from ₹30K. Ergonomic desks, task lighting, storage. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/home-office" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/home-office" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Home Office Design Bangalore | Intorza" />
+        <meta name="twitter:title" content="Home Office Design Bangalore | EverySpaces" />
         <meta name="twitter:description" content="Home offices from ₹30K. Ergonomic desks, task lighting, storage. Free consultation!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -149,7 +149,7 @@ const ServiceHomeOffice = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Create your perfect productivity space with Intorza
+                Create your perfect productivity space with EverySpaces
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -215,7 +215,7 @@ const ServiceHomeOffice = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Boost Your Productivity?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza for a free home office design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces for a free home office design consultation</p>
             <Link to="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </Link>

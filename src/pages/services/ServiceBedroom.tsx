@@ -43,11 +43,11 @@ const bedroomFeatures = [
 const bedroomFAQs = [
   {
     question: "What is the cost of bedroom interior design in Bangalore?",
-    answer: "Bedroom interior design in Bangalore costs ₹1.5-3 lakh for a master bedroom including wardrobe, bed design, and false ceiling. At Intorza, bedroom packages start from ₹1.2 lakh with premium finishes and 10-year warranty."
+    answer: "Bedroom interior design in Bangalore costs ₹1.5-3 lakh for a master bedroom including wardrobe, bed design, and false ceiling. At EverySpaces, bedroom packages start from ₹1.2 lakh with premium finishes and 10-year warranty."
   },
   {
     question: "What is included in bedroom interior design?",
-    answer: "Intorza's bedroom interior includes custom bed design with headboard, wardrobe with smart storage, side tables, study table (optional), false ceiling with lights, wall treatments, and complete color consultation."
+    answer: "EverySpaces's bedroom interior includes custom bed design with headboard, wardrobe with smart storage, side tables, study table (optional), false ceiling with lights, wall treatments, and complete color consultation."
   },
   {
     question: "How long does bedroom interior design take?",
@@ -55,7 +55,7 @@ const bedroomFAQs = [
   },
   {
     question: "Can you design a small bedroom to look bigger?",
-    answer: "Yes, Intorza specializes in space optimization for small bedrooms. We use light colors, mirror wardrobes, wall-mounted furniture, and smart storage to maximize space and create an illusion of larger rooms."
+    answer: "Yes, EverySpaces specializes in space optimization for small bedrooms. We use light colors, mirror wardrobes, wall-mounted furniture, and smart storage to maximize space and create an illusion of larger rooms."
   }
 ];
 
@@ -88,8 +88,8 @@ const ServiceBedroom = () => {
     createServiceSchema(
       "Bedroom Interior Design Bangalore",
       "Expert bedroom designers in Bangalore offering master bedroom, kids room, and guest room interiors with custom wardrobes and ambient lighting.",
-      "https://intorza.com/services/bedroom-design",
-      "https://intorza.com/service-bedroom.jpg",
+      "https://everyspaces.com/services/bedroom-design",
+      "https://everyspaces.com/service-bedroom.jpg",
       "120000-400000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -97,16 +97,16 @@ const ServiceBedroom = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Bedroom Design", url: "https://intorza.com/services/bedroom-design" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "Bedroom Design", url: "https://everyspaces.com/services/bedroom-design" }
     ]),
     createFAQSchema(bedroomFAQs, 'services/bedroom-design'),
     createProductSchema({
       name: "Bedroom Interior Design",
       description: "Complete bedroom interior design in Bangalore including bed design, wardrobe, false ceiling, and ambient lighting. 10-year warranty included.",
-      image: "https://intorza.com/service-bedroom.jpg",
-      url: "https://intorza.com/services/bedroom-design",
+      image: "https://everyspaces.com/service-bedroom.jpg",
+      url: "https://everyspaces.com/services/bedroom-design",
       priceRange: "120000-400000",
       category: "Home Improvement > Bedroom"
     })
@@ -115,22 +115,22 @@ const ServiceBedroom = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Bedroom Interior Design Bangalore | Master & Kids Room | Intorza</title>
+        <title>Bedroom Interior Design Bangalore | Master & Kids Room | EverySpaces</title>
         <meta name="description" content="Best bedroom designers in Bangalore. Master bedroom from ₹1.2L including wardrobe, bed design, false ceiling. 10-year warranty, free consultation!" />
         <meta name="keywords" content="bedroom interior design bangalore, master bedroom design, bedroom wardrobe design, luxury bedroom interiors, kids room design bangalore" />
-        <link rel="canonical" href="https://intorza.com/services/bedroom-design" />
+        <link rel="canonical" href="https://everyspaces.com/services/bedroom-design" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="Bedroom Interior Design Bangalore | Master & Kids Room - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="Bedroom Interior Design Bangalore | Master & Kids Room - EverySpaces" />
         <meta property="og:description" content="Premium bedroom interiors from ₹1.2L. Custom wardrobes, bed design, false ceiling. 10-year warranty!" />
-        <meta property="og:url" content="https://intorza.com/services/bedroom-design" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/bedroom-design" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Bedroom Interior Design Bangalore | Intorza" />
+        <meta name="twitter:title" content="Bedroom Interior Design Bangalore | EverySpaces" />
         <meta name="twitter:description" content="Premium bedroom interiors from ₹1.2L. Custom wardrobes, bed design, false ceiling. 10-year warranty!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -149,7 +149,7 @@ const ServiceBedroom = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Create your perfect sanctuary with Intorza's expert bedroom designers
+                Create your perfect sanctuary with EverySpaces's expert bedroom designers
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -215,7 +215,7 @@ const ServiceBedroom = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Design Your Dream Bedroom?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza for a free bedroom design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces for a free bedroom design consultation</p>
             <a href="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </a>

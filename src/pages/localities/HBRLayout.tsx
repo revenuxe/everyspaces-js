@@ -22,18 +22,18 @@ const HBRLayout = () => {
       "home renovation hbr layout bangalore",
       "interior decorators hbr layout",
       "north bangalore interiors hbr layout",
-      "intorza hbr layout studio"
+      "everyspaces hbr layout studio"
     ],
-    ogTitle: "Interior Designers in HBR Layout | Intorza - Your Local Design Studio",
+    ogTitle: "Interior Designers in HBR Layout | EverySpaces - Your Local Design Studio",
     ogDescription: "HBR Layout's local interior experts. 30+ projects, visit our studio. Trusted neighborhood designers!",
     faqs: [
       {
         question: "What is the cost of interior design in HBR Layout?",
-        answer: "Interior design in HBR Layout costs ₹1,400 to ₹2,800 per sq ft. As local designers based in HBR Layout, Intorza offers competitive packages from ₹7 lakhs for 2BHK. We've completed 30+ projects in our neighborhood with 10-year warranty."
+        answer: "Interior design in HBR Layout costs ₹1,400 to ₹2,800 per sq ft. As local designers based in HBR Layout, EverySpaces offers competitive packages from ₹7 lakhs for 2BHK. We've completed 30+ projects in our neighborhood with 10-year warranty."
       },
       {
-        question: "Is Intorza based in HBR Layout?",
-        answer: "Yes! Intorza is headquartered in HBR Layout, Bangalore. This is our home locality, and we've been designing homes here for over 10 years. You can visit our studio to see material samples, discuss designs, and meet our team personally."
+        question: "Is EverySpaces based in HBR Layout?",
+        answer: "Yes! EverySpaces is headquartered in HBR Layout, Bangalore. This is our home locality, and we've been designing homes here for over 10 years. You can visit our studio to see material samples, discuss designs, and meet our team personally."
       },
       {
         question: "Which HBR Layout blocks do you cover?",
@@ -46,9 +46,9 @@ const HBRLayout = () => {
     ],
     nearbyAreas: ["1st-5th Block HBR Layout", "Kalyannagar", "Babusapalya", "HRBR Layout", "Hennur", "RT Nagar"],
     specialties: ["Local Expertise", "Studio Visit", "Fast Service", "Neighborhood Trust", "Complete Interiors"],
-    lifestyleDescription: "HBR Layout is Intorza's home base—a vibrant North Bangalore neighborhood known for its mix of established independent houses and modern apartment complexes. With excellent connectivity to Manyata Tech Park and the airport, HBR Layout attracts families and professionals seeking quality living in a well-planned locality.",
+    lifestyleDescription: "HBR Layout is EverySpaces's home base—a vibrant North Bangalore neighborhood known for its mix of established independent houses and modern apartment complexes. With excellent connectivity to Manyata Tech Park and the airport, HBR Layout attracts families and professionals seeking quality living in a well-planned locality.",
     landmarks: [
-      { name: "Intorza Design Studio", description: "Our HBR Layout studio is open for visits. See live material samples, browse 3D designs, and meet our team to discuss your dream home interiors in person.", type: "landmark" as const },
+      { name: "EverySpaces Design Studio", description: "Our HBR Layout studio is open for visits. See live material samples, browse 3D designs, and meet our team to discuss your dream home interiors in person.", type: "landmark" as const },
       { name: "Kalyannagar & HRBR Layout", description: "Premium residential extensions with upscale apartments and villas requiring contemporary designs with family-friendly layouts.", type: "residential" as const },
       { name: "Hennur Road Corridor", description: "The rapidly developing Hennur Road brings new apartments and villa projects, creating demand for modern interior solutions and smart home designs.", type: "lifestyle" as const },
       { name: "HBR Layout Parks & Green Spaces", description: "Well-maintained parks inspire residents to bring nature indoors with biophilic designs, indoor plants, and natural material finishes.", type: "nature" as const }
