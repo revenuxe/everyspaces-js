@@ -40,7 +40,7 @@ const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
   const [excerpt, setExcerpt] = useState(article?.excerpt || "");
   const [content, setContent] = useState(article?.content || "");
   const [category, setCategory] = useState(article?.category || "");
-  const [author, setAuthor] = useState(article?.author || "Intorza Team");
+  const [author, setAuthor] = useState(article?.author || "EverySpaces Team");
   const [keywords, setKeywords] = useState(
     article?.keywords?.join(", ") || ""
   );
