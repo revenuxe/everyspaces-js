@@ -130,7 +130,7 @@ const AdminLogin = () => {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="admin@intorza.com"
+                  placeholder="admin@es.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="pl-10 h-12 bg-background border-border focus:border-primary"
