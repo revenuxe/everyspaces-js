@@ -43,19 +43,19 @@ const livingFeatures = [
 const livingRoomFAQs = [
   {
     question: "What is the cost of living room interior design in Bangalore?",
-    answer: "Living room interior design in Bangalore costs ₹1-2.5 lakh depending on size and finishes. At Intorza, packages include TV unit, false ceiling, feature wall, and lighting. Basic packages start from ₹80,000."
+    answer: "Living room interior design in Bangalore costs ₹1-2.5 lakh depending on size and finishes. At EverySpaces, packages include TV unit, false ceiling, feature wall, and lighting. Basic packages start from ₹80,000."
   },
   {
     question: "What is included in living room interior design?",
-    answer: "Intorza's living room design includes custom TV unit with storage, false ceiling with LED lighting, feature wall or wall paneling, sofa layout planning, curtain selection, and complete color consultation."
+    answer: "EverySpaces's living room design includes custom TV unit with storage, false ceiling with LED lighting, feature wall or wall paneling, sofa layout planning, curtain selection, and complete color consultation."
   },
   {
     question: "How to make a small living room look bigger?",
-    answer: "Intorza uses light colors, mirrors, minimal furniture, wall-mounted TV units, and smart lighting to make small living rooms appear larger. Multi-functional furniture and vertical storage also help maximize space."
+    answer: "EverySpaces uses light colors, mirrors, minimal furniture, wall-mounted TV units, and smart lighting to make small living rooms appear larger. Multi-functional furniture and vertical storage also help maximize space."
   },
   {
     question: "What TV unit designs are trending in Bangalore?",
-    answer: "Popular TV unit designs in Bangalore include floating wall-mounted units, floor-to-ceiling entertainment walls, minimalist designs with hidden storage, and units with integrated LED backlighting. Intorza offers all these styles."
+    answer: "Popular TV unit designs in Bangalore include floating wall-mounted units, floor-to-ceiling entertainment walls, minimalist designs with hidden storage, and units with integrated LED backlighting. EverySpaces offers all these styles."
   }
 ];
 
@@ -88,8 +88,8 @@ const ServiceLivingRoom = () => {
     createServiceSchema(
       "Living Room Interior Design Bangalore",
       "Expert living room designers in Bangalore offering TV units, false ceilings, feature walls, and smart lighting solutions.",
-      "https://intorza.com/services/living-room",
-      "https://intorza.com/service-living-room.jpg",
+      "https://everyspaces.com/services/living-room",
+      "https://everyspaces.com/service-living-room.jpg",
       "80000-300000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -97,16 +97,16 @@ const ServiceLivingRoom = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Living Room", url: "https://intorza.com/services/living-room" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "Living Room", url: "https://everyspaces.com/services/living-room" }
     ]),
     createFAQSchema(livingRoomFAQs, 'services/living-room'),
     createProductSchema({
       name: "Living Room Interior Design",
       description: "Complete living room design in Bangalore including TV unit, false ceiling, feature wall, and lighting. 10-year warranty included.",
-      image: "https://intorza.com/service-living-room.jpg",
-      url: "https://intorza.com/services/living-room",
+      image: "https://everyspaces.com/service-living-room.jpg",
+      url: "https://everyspaces.com/services/living-room",
       priceRange: "80000-300000",
       category: "Home Improvement > Living Room"
     })
@@ -115,22 +115,22 @@ const ServiceLivingRoom = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Living Room Interior Design Bangalore | TV Unit & False Ceiling | Intorza</title>
+        <title>Living Room Interior Design Bangalore | TV Unit & False Ceiling | EverySpaces</title>
         <meta name="description" content="Best living room designers in Bangalore. TV units, false ceilings, feature walls from ₹80K. 10-year warranty, free design consultation!" />
         <meta name="keywords" content="living room interior design bangalore, TV unit design, living room false ceiling, modern living room, feature wall design bangalore" />
-        <link rel="canonical" href="https://intorza.com/services/living-room" />
+        <link rel="canonical" href="https://everyspaces.com/services/living-room" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="Living Room Interior Design Bangalore | TV Unit & False Ceiling - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="Living Room Interior Design Bangalore | TV Unit & False Ceiling - EverySpaces" />
         <meta property="og:description" content="Premium living room interiors from ₹80K. TV units, false ceiling, feature walls. 10-year warranty!" />
-        <meta property="og:url" content="https://intorza.com/services/living-room" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/living-room" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Living Room Interior Design Bangalore | Intorza" />
+        <meta name="twitter:title" content="Living Room Interior Design Bangalore | EverySpaces" />
         <meta name="twitter:description" content="Premium living room interiors from ₹80K. TV units, false ceiling, feature walls. 10-year warranty!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -149,7 +149,7 @@ const ServiceLivingRoom = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Create the heart of your home with Intorza's expert designers
+                Create the heart of your home with EverySpaces's expert designers
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -215,7 +215,7 @@ const ServiceLivingRoom = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Transform Your Living Room?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza today for a free design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces today for a free design consultation</p>
             <a href="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </a>

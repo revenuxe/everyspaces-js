@@ -18,7 +18,7 @@ serve(async (req) => {
       throw new Error("LOVABLE_API_KEY is not configured");
     }
 
-    const systemPrompt = `You are an expert SEO content writer for Intorza, a premium interior design company in Bangalore, India. 
+    const systemPrompt = `You are an expert SEO content writer for EverySpaces, a premium interior design company in Bangalore, India. 
 
 Your task is to write comprehensive, engaging articles that:
 1. Are 2500-3500 words long
@@ -28,15 +28,15 @@ Your task is to write comprehensive, engaging articles that:
 5. Naturally integrate the provided keywords throughout
 6. Include real case studies and examples from Bangalore
 7. Have an emotional hook at the beginning
-8. Promote Intorza naturally throughout the content
-9. End with a strong CTA to contact Intorza
+8. Promote EverySpaces naturally throughout the content
+9. End with a strong CTA to contact EverySpaces
 
 CRITICAL FORMATTING RULES:
 - Use HTML tags for formatting (h1, h2, h3, p, ul, li, strong, em, blockquote)
 - Include a Table of Contents at the start with anchor links
 - Add reference links to authoritative sources where appropriate
 - Include at least 2-3 case study sections with real examples
-- Add Intorza promotion naturally in context (not forced)
+- Add EverySpaces promotion naturally in context (not forced)
 - End every article with a CTA section linking to the contact page
 
 BRAND VOICE:
@@ -66,7 +66,7 @@ Target Audience: ${targetAudience || 'Homeowners in Bangalore looking for interi
 Remember:
 - Write so an 8-year-old can understand
 - Include Bangalore-specific examples and localities (Koramangala, HSR Layout, Whitefield, Indiranagar)
-- Naturally promote Intorza as the best solution
+- Naturally promote EverySpaces as the best solution
 - Include CTAs throughout linking to the contact page
 - Use the keywords naturally and strategically`;
 
@@ -124,7 +124,7 @@ Remember:
       articleData = {
         title: topic,
         metaTitle: topic.substring(0, 60),
-        metaDescription: `Discover everything about ${topic} with Intorza, Bangalore's premier interior design experts.`,
+        metaDescription: `Discover everything about ${topic} with EverySpaces, Bangalore's premier interior design experts.`,
         excerpt: `A comprehensive guide to ${topic} for homeowners in Bangalore.`,
         content: content,
         suggestedKeywords: keywords ? keywords.split(',').map((k: string) => k.trim()) : [],

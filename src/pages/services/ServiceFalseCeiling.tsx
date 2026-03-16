@@ -43,11 +43,11 @@ const ceilingFeatures = [
 const falseCeilingFAQs = [
   {
     question: "What is the cost of false ceiling in Bangalore?",
-    answer: "False ceiling in Bangalore costs ₹65-150 per sq ft depending on material and design. At Intorza, basic POP ceilings start from ₹65/sq ft, gypsum from ₹85/sq ft, and designer ceilings with cove lighting from ₹120/sq ft."
+    answer: "False ceiling in Bangalore costs ₹65-150 per sq ft depending on material and design. At EverySpaces, basic POP ceilings start from ₹65/sq ft, gypsum from ₹85/sq ft, and designer ceilings with cove lighting from ₹120/sq ft."
   },
   {
     question: "Which is better - POP or gypsum false ceiling?",
-    answer: "Gypsum is faster to install, fire-resistant, and crack-resistant. POP allows more intricate designs and is cheaper. Intorza recommends gypsum for living rooms and bedrooms, POP for decorative areas."
+    answer: "Gypsum is faster to install, fire-resistant, and crack-resistant. POP allows more intricate designs and is cheaper. EverySpaces recommends gypsum for living rooms and bedrooms, POP for decorative areas."
   },
   {
     question: "How long does false ceiling installation take?",
@@ -55,7 +55,7 @@ const falseCeilingFAQs = [
   },
   {
     question: "What is the ideal false ceiling height?",
-    answer: "Minimum 8 feet room height is needed for false ceiling. Intorza recommends dropping 6-9 inches for cove lighting areas. For AC integration, 12-15 inches drop is required in specific zones."
+    answer: "Minimum 8 feet room height is needed for false ceiling. EverySpaces recommends dropping 6-9 inches for cove lighting areas. For AC integration, 12-15 inches drop is required in specific zones."
   }
 ];
 
@@ -84,8 +84,8 @@ const ServiceFalseCeiling = () => {
     createServiceSchema(
       "False Ceiling Design Bangalore",
       "Artistic false ceiling designs in Bangalore. POP, gypsum, wooden ceilings with cove lighting, multi-level designs, and AC integration.",
-      "https://intorza.com/services/false-ceiling",
-      "https://intorza.com/service-false-ceiling.jpg",
+      "https://everyspaces.com/services/false-ceiling",
+      "https://everyspaces.com/service-false-ceiling.jpg",
       "50000-200000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -93,16 +93,16 @@ const ServiceFalseCeiling = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "False Ceiling", url: "https://intorza.com/services/false-ceiling" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "False Ceiling", url: "https://everyspaces.com/services/false-ceiling" }
     ]),
     createFAQSchema(falseCeilingFAQs, 'services/false-ceiling'),
     createProductSchema({
       name: "False Ceiling Design",
       description: "Designer false ceilings in Bangalore with POP, gypsum, cove lighting, and AC integration. 3-7 day installation.",
-      image: "https://intorza.com/service-false-ceiling.jpg",
-      url: "https://intorza.com/services/false-ceiling",
+      image: "https://everyspaces.com/service-false-ceiling.jpg",
+      url: "https://everyspaces.com/services/false-ceiling",
       priceRange: "50000-200000",
       category: "Home Improvement > Ceiling"
     })
@@ -111,22 +111,22 @@ const ServiceFalseCeiling = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>False Ceiling Design Bangalore | POP & Gypsum Ceiling | Intorza</title>
+        <title>False Ceiling Design Bangalore | POP & Gypsum Ceiling | EverySpaces</title>
         <meta name="description" content="Best false ceiling designers in Bangalore. POP from ₹65/sq ft, gypsum, cove lighting. Artistic ceiling designs. 3-7 day installation. Free quote!" />
         <meta name="keywords" content="false ceiling design bangalore, POP ceiling, gypsum ceiling, cove lighting ceiling, living room ceiling, bedroom ceiling" />
-        <link rel="canonical" href="https://intorza.com/services/false-ceiling" />
+        <link rel="canonical" href="https://everyspaces.com/services/false-ceiling" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="False Ceiling Design Bangalore | POP & Gypsum - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="False Ceiling Design Bangalore | POP & Gypsum - EverySpaces" />
         <meta property="og:description" content="False ceilings from ₹65/sq ft. POP, gypsum, cove lighting. 3-7 day installation!" />
-        <meta property="og:url" content="https://intorza.com/services/false-ceiling" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/false-ceiling" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="False Ceiling Design Bangalore | Intorza" />
+        <meta name="twitter:title" content="False Ceiling Design Bangalore | EverySpaces" />
         <meta name="twitter:description" content="False ceilings from ₹65/sq ft. POP, gypsum, cove lighting. 3-7 day installation!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -145,7 +145,7 @@ const ServiceFalseCeiling = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Artistic ceiling designs with ambient lighting by Intorza
+                Artistic ceiling designs with ambient lighting by EverySpaces
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -211,7 +211,7 @@ const ServiceFalseCeiling = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Elevate Your Ceilings?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza for a free false ceiling design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces for a free false ceiling design consultation</p>
             <Link to="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </Link>

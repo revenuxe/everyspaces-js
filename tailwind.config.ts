@@ -57,9 +57,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Intorza custom colors
-        navy: "hsl(var(--navy))",
-        terracotta: "hsl(var(--terracotta))",
+        // EverySpaces custom colors
+        teal: "hsl(var(--teal))",
+        orange: "hsl(var(--orange))",
         cream: "hsl(var(--cream))",
       },
       fontFamily: {
@@ -110,8 +110,8 @@ export default {
           "50%": { transform: "translateY(-10px)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 0 0 hsl(16 55% 48% / 0.4)" },
-          "50%": { boxShadow: "0 0 0 12px hsl(16 55% 48% / 0)" },
+          "0%, 100%": { boxShadow: "0 0 0 0 hsl(22 82% 50% / 0.4)" },
+          "50%": { boxShadow: "0 0 0 12px hsl(22 82% 50% / 0)" },
         },
       },
       animation: {

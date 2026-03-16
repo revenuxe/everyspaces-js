@@ -43,19 +43,19 @@ const diningFeatures = [
 const diningRoomFAQs = [
   {
     question: "What is the cost of dining room design in Bangalore?",
-    answer: "Dining room design in Bangalore costs ₹50,000 to ₹2 lakh depending on size and fixtures. At Intorza, basic setups start from ₹50,000, with crockery units from ₹80,000, and luxury dining with chandelier from ₹1.5 lakh."
+    answer: "Dining room design in Bangalore costs ₹50,000 to ₹2 lakh depending on size and fixtures. At EverySpaces, basic setups start from ₹50,000, with crockery units from ₹80,000, and luxury dining with chandelier from ₹1.5 lakh."
   },
   {
     question: "What size dining table do I need?",
-    answer: "For 4-person families, 4x3 feet table works. 6-seater needs 5x3 feet, 8-seater needs 6x3.5 feet. Intorza designs custom dining tables based on your room size and family requirements."
+    answer: "For 4-person families, 4x3 feet table works. 6-seater needs 5x3 feet, 8-seater needs 6x3.5 feet. EverySpaces designs custom dining tables based on your room size and family requirements."
   },
   {
     question: "What lighting is best for dining room?",
-    answer: "Intorza recommends warm 2700-3000K lighting for dining rooms. Chandeliers or pendant lights should hang 30-36 inches above table. We add dimmer controls for ambiance during dinner parties."
+    answer: "EverySpaces recommends warm 2700-3000K lighting for dining rooms. Chandeliers or pendant lights should hang 30-36 inches above table. We add dimmer controls for ambiance during dinner parties."
   },
   {
     question: "Can you design a dining area in living room?",
-    answer: "Yes, Intorza specializes in open-plan living-dining designs. We use rugs, lighting, and furniture placement to define zones while maintaining visual flow. Starting from ₹50,000 for dining area."
+    answer: "Yes, EverySpaces specializes in open-plan living-dining designs. We use rugs, lighting, and furniture placement to define zones while maintaining visual flow. Starting from ₹50,000 for dining area."
   }
 ];
 
@@ -88,8 +88,8 @@ const ServiceDiningRoom = () => {
     createServiceSchema(
       "Dining Room Design Bangalore",
       "Elegant dining room designs in Bangalore. Custom dining tables, crockery units, bar cabinets, and statement chandeliers for family gatherings.",
-      "https://intorza.com/services/dining-room",
-      "https://intorza.com/service-dining-room.jpg",
+      "https://everyspaces.com/services/dining-room",
+      "https://everyspaces.com/service-dining-room.jpg",
       "50000-200000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -97,16 +97,16 @@ const ServiceDiningRoom = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Dining Room", url: "https://intorza.com/services/dining-room" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "Dining Room", url: "https://everyspaces.com/services/dining-room" }
     ]),
     createFAQSchema(diningRoomFAQs, 'services/dining-room'),
     createProductSchema({
       name: "Dining Room Interior Design",
       description: "Elegant dining room designs in Bangalore with custom tables, crockery units, chandeliers, and bar cabinets.",
-      image: "https://intorza.com/service-dining-room.jpg",
-      url: "https://intorza.com/services/dining-room",
+      image: "https://everyspaces.com/service-dining-room.jpg",
+      url: "https://everyspaces.com/services/dining-room",
       priceRange: "50000-200000",
       category: "Home Improvement > Dining Room"
     })
@@ -115,22 +115,22 @@ const ServiceDiningRoom = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Dining Room Design Bangalore | Crockery Unit & Bar Cabinet | Intorza</title>
+        <title>Dining Room Design Bangalore | Crockery Unit & Bar Cabinet | EverySpaces</title>
         <meta name="description" content="Best dining room designers in Bangalore. Custom tables, crockery units from ₹50K. Chandeliers, bar cabinets. Free consultation!" />
         <meta name="keywords" content="dining room design bangalore, dining table design, crockery unit design, dining room interior, bar cabinet design, chandelier" />
-        <link rel="canonical" href="https://intorza.com/services/dining-room" />
+        <link rel="canonical" href="https://everyspaces.com/services/dining-room" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="Dining Room Design Bangalore | Crockery Unit - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="Dining Room Design Bangalore | Crockery Unit - EverySpaces" />
         <meta property="og:description" content="Dining rooms from ₹50K. Custom tables, crockery units, chandeliers. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/dining-room" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/dining-room" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Dining Room Design Bangalore | Intorza" />
+        <meta name="twitter:title" content="Dining Room Design Bangalore | EverySpaces" />
         <meta name="twitter:description" content="Dining rooms from ₹50K. Custom tables, crockery units, chandeliers. Free consultation!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -149,7 +149,7 @@ const ServiceDiningRoom = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Create memorable dining experiences with Intorza's elegant designs
+                Create memorable dining experiences with EverySpaces's elegant designs
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -215,7 +215,7 @@ const ServiceDiningRoom = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Design Your Dining Space?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza for a free dining room design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces for a free dining room design consultation</p>
             <Link to="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </Link>

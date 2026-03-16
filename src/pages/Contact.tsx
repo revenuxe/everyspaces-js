@@ -41,7 +41,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 const contactFAQs = [
   {
     question: "How do I book a free interior design consultation in Bangalore?",
-    answer: "Book a free consultation with Intorza by calling +91-9886579923, sending a WhatsApp message, or filling the contact form on this page. Our design expert will schedule a site visit at your convenience within 24 hours."
+    answer: "Book a free consultation with EverySpaces by calling +91-9886579923, sending a WhatsApp message, or filling the contact form on this page. Our design expert will schedule a site visit at your convenience within 24 hours."
   },
   {
     question: "What information should I provide for an interior design quote?",
@@ -49,7 +49,7 @@ const contactFAQs = [
   },
   {
     question: "Do you charge for the initial consultation?",
-    answer: "No, Intorza provides completely free initial consultation and site visit anywhere in Bangalore. There's no obligation to proceed after the consultation. We'll share design ideas and cost estimates during the visit."
+    answer: "No, EverySpaces provides completely free initial consultation and site visit anywhere in Bangalore. There's no obligation to proceed after the consultation. We'll share design ideas and cost estimates during the visit."
   }
 ];
 
@@ -58,8 +58,8 @@ const aeoSchemas = [
   contactPageSchema,
   localBusinessSchema,
   createBreadcrumbSchema([
-    { name: "Home", url: "https://intorza.com" },
-    { name: "Contact", url: "https://intorza.com/contact" }
+    { name: "Home", url: "https://everyspaces.com" },
+    { name: "Contact", url: "https://everyspaces.com/contact" }
   ]),
   createFAQSchema(contactFAQs, 'contact')
 ];
@@ -120,26 +120,26 @@ const Contact = () => {
   };
 
   const handleWhatsAppClick = () => {
-    const message = "Hi! I'm interested in interior design services from Intorza. Please share more details.";
+    const message = "Hi! I'm interested in interior design services from EverySpaces. Please share more details.";
     window.open(`https://wa.me/919886579923?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Contact Us | Free Interior Design Consultation Bangalore | Intorza</title>
+        <title>Contact Us | Free Interior Design Consultation Bangalore | EverySpaces</title>
         <meta
           name="description"
-          content="Book free interior design consultation in Bangalore with Intorza. Call +91-9886579923, WhatsApp, or fill our form. Response within 24 hours guaranteed!"
+          content="Book free interior design consultation in Bangalore with EverySpaces. Call +91-9886579923, WhatsApp, or fill our form. Response within 24 hours guaranteed!"
         />
         <meta name="keywords" content="contact interior designer bangalore, free consultation interior design, interior design quote bangalore" />
-        <link rel="canonical" href="https://intorza.com/contact" />
+        <link rel="canonical" href="https://everyspaces.com/contact" />
         
         {/* AEO meta tags */}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-        <meta property="og:title" content="Contact Intorza | Free Interior Design Consultation Bangalore" />
+        <meta property="og:title" content="Contact EverySpaces | Free Interior Design Consultation Bangalore" />
         <meta property="og:description" content="Book a free site visit with Bangalore's top interior designers. Call +91-9886579923 or fill our form for a quick quote." />
-        <meta property="og:url" content="https://intorza.com/contact" />
+        <meta property="og:url" content="https://everyspaces.com/contact" />
         <meta property="og:type" content="website" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
@@ -279,8 +279,8 @@ const Contact = () => {
                       </div>
                       <div>
                         <p className="font-semibold text-primary">Email</p>
-                        <a href="mailto:intorza.com@gmail.com" className="text-muted-foreground hover:text-secondary transition-colors font-body">
-                          intorza.com@gmail.com
+                        <a href="mailto:everyspaces.com@gmail.com" className="text-muted-foreground hover:text-secondary transition-colors font-body">
+                          everyspaces.com@gmail.com
                         </a>
                       </div>
                     </div>
@@ -340,7 +340,7 @@ const Contact = () => {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Intorza Office Location - HBR Layout, Bangalore"
+                    title="EverySpaces Office Location - HBR Layout, Bangalore"
                   ></iframe>
                 </div>
               </div>

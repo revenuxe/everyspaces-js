@@ -203,8 +203,8 @@ const ArticleDetail = () => {
   const tags = article.tags as string[] | null;
   const processedContent = processContent(article.content);
 
-  const pageTitle = `${article.meta_title || article.title} | Intorza Interior Design`;
-  const pageDescription = article.meta_description || article.excerpt || `Read about ${article.title} on Intorza blog`;
+  const pageTitle = `${article.meta_title || article.title} | EverySpaces Interior Design`;
+  const pageDescription = article.meta_description || article.excerpt || `Read about ${article.title} on EverySpaces blog`;
 
   return (
     <>
@@ -215,7 +215,7 @@ const ArticleDetail = () => {
           <meta name="keywords" content={keywords.join(", ")} />
         )}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-        <meta name="author" content={article.author || "Intorza Team"} />
+        <meta name="author" content={article.author || "EverySpaces Team"} />
         
         {/* Open Graph */}
         <meta property="og:title" content={article.meta_title || article.title} />
@@ -224,8 +224,8 @@ const ArticleDetail = () => {
           <meta property="og:image" content={article.featured_image_url} />
         )}
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://intorza.com/articles/${slug}`} />
-        <meta property="og:site_name" content="Intorza" />
+        <meta property="og:url" content={`https://everyspaces.com/articles/${slug}`} />
+        <meta property="og:site_name" content="EverySpaces" />
         <meta property="article:published_time" content={article.published_at || article.created_at} />
         <meta property="article:modified_time" content={article.updated_at} />
         
@@ -237,22 +237,22 @@ const ArticleDetail = () => {
           <meta name="twitter:image" content={article.featured_image_url} />
         )}
         
-        <link rel="canonical" href={`https://intorza.com/articles/${slug}`} />
+        <link rel="canonical" href={`https://everyspaces.com/articles/${slug}`} />
       </Helmet>
       <StructuredData data={[
         createArticleSchema({
           title: article.title,
-          description: article.meta_description || article.excerpt || `Read about ${article.title} on Intorza blog`,
-          url: `https://intorza.com/articles/${slug}`,
+          description: article.meta_description || article.excerpt || `Read about ${article.title} on EverySpaces blog`,
+          url: `https://everyspaces.com/articles/${slug}`,
           image: article.featured_image_url || undefined,
           datePublished: article.published_at || article.created_at,
           dateModified: article.updated_at,
-          author: article.author || "Intorza Team"
+          author: article.author || "EverySpaces Team"
         }),
         createBreadcrumbSchema([
-          { name: "Home", url: "https://intorza.com" },
-          { name: "Articles", url: "https://intorza.com/articles" },
-          { name: article.title, url: `https://intorza.com/articles/${slug}` }
+          { name: "Home", url: "https://everyspaces.com" },
+          { name: "Articles", url: "https://everyspaces.com/articles" },
+          { name: article.title, url: `https://everyspaces.com/articles/${slug}` }
         ])
       ]} />
 
@@ -318,7 +318,7 @@ const ArticleDetail = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground text-xs md:text-sm">
-                    {article.author || "Intorza Team"}
+                    {article.author || "EverySpaces Team"}
                   </p>
                   <p className="text-[10px] md:text-xs text-muted-foreground">Interior Expert</p>
                 </div>
@@ -419,7 +419,7 @@ const ArticleDetail = () => {
                 Ready to Transform Your Home?
               </h3>
               <p className="text-white/90 mb-4 md:mb-6 max-w-md mx-auto text-xs md:text-sm leading-relaxed">
-                Get a free consultation from Intorza's expert designers in Bangalore.
+                Get a free consultation from EverySpaces's expert designers in Bangalore.
                 Let's bring your dream home to life!
               </p>
               <div className="flex flex-col gap-2.5">
@@ -427,7 +427,7 @@ const ArticleDetail = () => {
                   to="/contact"
                   className="w-full inline-flex items-center justify-center gap-2 bg-white text-secondary px-5 py-3 rounded-full font-semibold hover:bg-white/95 transition-all shadow-lg text-sm"
                 >
-                  Contact Intorza Today <ArrowRight className="w-4 h-4" />
+                  Contact EverySpaces Today <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
                   href="tel:+919876543210"

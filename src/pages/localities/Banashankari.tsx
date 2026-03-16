@@ -24,12 +24,12 @@ const Banashankari = () => {
       "interior decorators banashankari",
       "south bangalore interiors"
     ],
-    ogTitle: "Interior Designers in Banashankari | Intorza - Traditional & Modern Designs",
+    ogTitle: "Interior Designers in Banashankari | EverySpaces - Traditional & Modern Designs",
     ogDescription: "Banashankari interior experts. 27+ projects, traditional & modern. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in Banashankari?",
-        answer: "Interior design in Banashankari costs ₹1,400 to ₹2,800 per sq ft. Intorza offers packages from ₹7.5 lakhs for 2BHK. We've completed 27+ projects across Banashankari 1st to 6th Stage with traditional and modern designs."
+        answer: "Interior design in Banashankari costs ₹1,400 to ₹2,800 per sq ft. EverySpaces offers packages from ₹7.5 lakhs for 2BHK. We've completed 27+ projects across Banashankari 1st to 6th Stage with traditional and modern designs."
       },
       {
         question: "Do you design traditional pooja rooms in Banashankari?",

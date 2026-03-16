@@ -24,12 +24,12 @@ const Marathahalli = () => {
       "affordable interiors marathahalli",
       "marathahalli home design"
     ],
-    ogTitle: "Interior Designers in Marathahalli | Intorza - Budget-Friendly Quality",
+    ogTitle: "Interior Designers in Marathahalli | EverySpaces - Budget-Friendly Quality",
     ogDescription: "Marathahalli interior experts. 33+ projects, budget-friendly from ₹7 lakhs. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in Marathahalli?",
-        answer: "Interior design in Marathahalli ranges from ₹1,300 to ₹2,500 per sq ft. Intorza offers budget-friendly packages starting ₹7 lakhs for 2BHK. We've completed 33+ projects near Marathahalli ORR with quality materials and 10-year warranty."
+        answer: "Interior design in Marathahalli ranges from ₹1,300 to ₹2,500 per sq ft. EverySpaces offers budget-friendly packages starting ₹7 lakhs for 2BHK. We've completed 33+ projects near Marathahalli ORR with quality materials and 10-year warranty."
       },
       {
         question: "Do you design compact apartments in Marathahalli?",

@@ -1,17 +1,17 @@
 {
   "schema_version": "v1",
-  "name_for_human": "Intorza Interior Design",
-  "name_for_model": "intorza",
+  "name_for_human": "EverySpaces Interior Design",
+  "name_for_model": "everyspaces",
   "description_for_human": "Best interior designers in Bangalore - modular kitchens, wardrobes, and full home interiors with 10-year warranty.",
-  "description_for_model": "Intorza is Bangalore's leading interior design company. Use this to find information about interior design services, pricing, and availability in Bangalore, India. Services include modular kitchens (from ₹2.5L), 2BHK interiors (from ₹8L), 3BHK interiors (from ₹12L), villa interiors (from ₹25L), wardrobes, TV units, false ceilings, pooja rooms, and more. Contact: +91-9886579923. Website: https://intorza.com",
+  "description_for_model": "EverySpaces is Bangalore's leading interior design company. Use this to find information about interior design services, pricing, and availability in Bangalore, India. Services include modular kitchens (from ₹2.5L), 2BHK interiors (from ₹8L), 3BHK interiors (from ₹12L), villa interiors (from ₹25L), wardrobes, TV units, false ceilings, pooja rooms, and more. Contact: +91-9886579923. Website: https://everyspaces.com",
   "auth": {
     "type": "none"
   },
   "api": {
     "type": "openapi",
-    "url": "https://intorza.com/llms.txt"
+    "url": "https://everyspaces.com/llms.txt"
   },
-  "logo_url": "https://intorza.com/favicon.ico",
-  "contact_email": "intorza.com@gmail.com",
-  "legal_info_url": "https://intorza.com/terms"
+  "logo_url": "https://everyspaces.com/favicon.ico",
+  "contact_email": "everyspaces.com@gmail.com",
+  "legal_info_url": "https://everyspaces.com/terms"
 }

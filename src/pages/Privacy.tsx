@@ -9,22 +9,22 @@ const Privacy = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Privacy Policy | Data Protection & Security | Intorza Bangalore</title>
+        <title>Privacy Policy | Data Protection & Security | EverySpaces Bangalore</title>
         <meta
           name="description"
-          content="Learn how Intorza protects your personal information. Read our privacy policy covering data collection, usage, security measures & your rights."
+          content="Learn how EverySpaces protects your personal information. Read our privacy policy covering data collection, usage, security measures & your rights."
         />
-        <link rel="canonical" href="https://intorza.com/privacy" />
+        <link rel="canonical" href="https://everyspaces.com/privacy" />
       </Helmet>
       <StructuredData data={[createBreadcrumbSchema([
-        { name: "Home", url: "https://intorza.com" },
-        { name: "Privacy Policy", url: "https://intorza.com/privacy" }
+        { name: "Home", url: "https://everyspaces.com" },
+        { name: "Privacy Policy", url: "https://everyspaces.com/privacy" }
       ]), {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Privacy Policy",
-        "description": "Intorza's privacy policy covering data collection, usage, and security",
-        "url": "https://intorza.com/privacy"
+        "description": "EverySpaces's privacy policy covering data collection, usage, and security",
+        "url": "https://everyspaces.com/privacy"
       }]} />
       <Header />
 
@@ -36,7 +36,7 @@ const Privacy = () => {
               Privacy Policy
             </h1>
             <p className="text-primary-foreground/80 font-body mt-3 max-w-2xl">
-              This policy explains how Intorza collects, uses, shares, and protects
+              This policy explains how EverySpaces collects, uses, shares, and protects
               your information.
             </p>
           </div>
@@ -52,8 +52,8 @@ const Privacy = () => {
               <section className="mt-8 space-y-4">
                 <h2 className="font-display text-2xl text-primary">1. Who we are</h2>
                 <p className="text-foreground font-body">
-                  Intorza Interior Design ("Intorza", "we", "our", "us") operates
-                  intorza.com and provides interior design services in Bengaluru.
+                  EverySpaces Interior Design ("EverySpaces", "we", "our", "us") operates
+                  everyspaces.com and provides interior design services in Bengaluru.
                 </p>
               </section>
 
@@ -142,10 +142,10 @@ const Privacy = () => {
                 <p className="text-foreground font-body">
                   For privacy questions or requests, contact{" "}
                   <a
-                    href="mailto:intorza.com@gmail.com"
+                    href="mailto:everyspaces.com@gmail.com"
                     className="text-secondary hover:underline"
                   >
-                    intorza.com@gmail.com
+                    everyspaces.com@gmail.com
                   </a>
                   {" "}or visit our{" "}
                   <Link to="/contact" className="text-secondary hover:underline">

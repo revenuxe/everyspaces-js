@@ -24,12 +24,12 @@ const Basavanagudi = () => {
       "old bangalore interiors",
       "cultural home design basavanagudi"
     ],
-    ogTitle: "Interior Designers in Basavanagudi | Intorza - Heritage Specialists",
+    ogTitle: "Interior Designers in Basavanagudi | EverySpaces - Heritage Specialists",
     ogDescription: "Basavanagudi interior experts. 18+ projects, heritage preservation. Old-world charm. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in Basavanagudi?",
-        answer: "Interior design in Basavanagudi costs ₹1,800 to ₹4,000 per sq ft for heritage-quality work. Intorza offers packages from ₹9 lakhs. We've completed 18+ projects preserving Basavanagudi's old-world charm with 10-year warranty."
+        answer: "Interior design in Basavanagudi costs ₹1,800 to ₹4,000 per sq ft for heritage-quality work. EverySpaces offers packages from ₹9 lakhs. We've completed 18+ projects preserving Basavanagudi's old-world charm with 10-year warranty."
       },
       {
         question: "Do you preserve heritage elements in Basavanagudi homes?",

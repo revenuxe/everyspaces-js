@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
 import { Eye, EyeOff, Lock, Mail, Loader2 } from "lucide-react";
-import intorzaLogo from "@/assets/intorza-logo-new.webp";
+import everyspacesLogo from "@/assets/everyspaces-logo.webp";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
@@ -111,7 +111,7 @@ const AdminLogin = () => {
       <Card className="w-full max-w-md relative z-10 border-border/50 shadow-2xl backdrop-blur-sm bg-card/95">
         <CardHeader className="text-center space-y-4 pb-8">
           <div className="mx-auto w-32 h-auto">
-            <img src={intorzaLogo} alt="Intorza" className="w-full h-auto" />
+            <img src={everyspacesLogo} alt="EverySpaces" className="w-full h-auto" />
           </div>
           <div>
             <CardTitle className="text-2xl font-bold text-foreground">Admin Portal</CardTitle>
@@ -130,7 +130,7 @@ const AdminLogin = () => {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="admin@intorza.com"
+                  placeholder="admin@es.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="pl-10 h-12 bg-background border-border focus:border-primary"

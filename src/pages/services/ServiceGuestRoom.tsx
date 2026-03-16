@@ -43,19 +43,19 @@ const guestRoomFeatures = [
 const guestRoomFAQs = [
   {
     question: "What is the cost of guest room design in Bangalore?",
-    answer: "Guest room design in Bangalore costs ₹60,000 to ₹1.5 lakh including bed, wardrobe, and basic decor. At Intorza, basic setups start from ₹60,000, comfortable suites from ₹90,000, and luxury guest rooms from ₹1.2 lakh."
+    answer: "Guest room design in Bangalore costs ₹60,000 to ₹1.5 lakh including bed, wardrobe, and basic decor. At EverySpaces, basic setups start from ₹60,000, comfortable suites from ₹90,000, and luxury guest rooms from ₹1.2 lakh."
   },
   {
     question: "How to design a multi-purpose guest room?",
-    answer: "Intorza designs multi-purpose rooms with sofa-cum-beds, murphy beds, or folding beds combined with study tables and storage. This maximizes utility when guests aren't staying. Starting from ₹70,000."
+    answer: "EverySpaces designs multi-purpose rooms with sofa-cum-beds, murphy beds, or folding beds combined with study tables and storage. This maximizes utility when guests aren't staying. Starting from ₹70,000."
   },
   {
     question: "What furniture is essential for a guest room?",
-    answer: "Essential guest room furniture includes comfortable bed, nightstand, compact wardrobe, mirror, task lamp, and charging points. Intorza adds luggage rack, towel stand, and amenity tray for hotel-like experience."
+    answer: "Essential guest room furniture includes comfortable bed, nightstand, compact wardrobe, mirror, task lamp, and charging points. EverySpaces adds luggage rack, towel stand, and amenity tray for hotel-like experience."
   },
   {
     question: "Can you design a small guest room?",
-    answer: "Yes, Intorza specializes in compact guest rooms. We use wall beds, sofa-cum-beds, wall-mounted storage, and space-saving furniture to create comfortable guest spaces even in small areas."
+    answer: "Yes, EverySpaces specializes in compact guest rooms. We use wall beds, sofa-cum-beds, wall-mounted storage, and space-saving furniture to create comfortable guest spaces even in small areas."
   }
 ];
 
@@ -84,8 +84,8 @@ const ServiceGuestRoom = () => {
     createServiceSchema(
       "Guest Room Design Bangalore",
       "Comfortable guest room designs in Bangalore. Hotel-like guest suites, multi-purpose rooms, and sofa-cum-bed designs for visitors.",
-      "https://intorza.com/services/guest-room",
-      "https://intorza.com/service-guest-room.jpg",
+      "https://everyspaces.com/services/guest-room",
+      "https://everyspaces.com/service-guest-room.jpg",
       "60000-150000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -93,16 +93,16 @@ const ServiceGuestRoom = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Guest Room", url: "https://intorza.com/services/guest-room" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "Guest Room", url: "https://everyspaces.com/services/guest-room" }
     ]),
     createFAQSchema(guestRoomFAQs, 'services/guest-room'),
     createProductSchema({
       name: "Guest Room Interior Design",
       description: "Welcoming guest room designs in Bangalore with comfortable beds, compact wardrobes, and thoughtful amenities.",
-      image: "https://intorza.com/service-guest-room.jpg",
-      url: "https://intorza.com/services/guest-room",
+      image: "https://everyspaces.com/service-guest-room.jpg",
+      url: "https://everyspaces.com/services/guest-room",
       priceRange: "60000-150000",
       category: "Home Improvement > Guest Room"
     })
@@ -111,22 +111,22 @@ const ServiceGuestRoom = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Guest Room Interior Design Bangalore | Guest Bedroom | Intorza</title>
+        <title>Guest Room Interior Design Bangalore | Guest Bedroom | EverySpaces</title>
         <meta name="description" content="Best guest room designers in Bangalore. Comfortable suites from ₹60K. Sofa-cum-bed designs, multi-purpose rooms. Free consultation!" />
         <meta name="keywords" content="guest room design bangalore, guest bedroom interior, spare room design, sofa cum bed design, guest room furniture, multi-purpose room" />
-        <link rel="canonical" href="https://intorza.com/services/guest-room" />
+        <link rel="canonical" href="https://everyspaces.com/services/guest-room" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="Guest Room Design Bangalore | Comfortable Suites - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="Guest Room Design Bangalore | Comfortable Suites - EverySpaces" />
         <meta property="og:description" content="Guest rooms from ₹60K. Sofa-cum-beds, multi-purpose designs. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/guest-room" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/guest-room" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Guest Room Design Bangalore | Intorza" />
+        <meta name="twitter:title" content="Guest Room Design Bangalore | EverySpaces" />
         <meta name="twitter:description" content="Guest rooms from ₹60K. Sofa-cum-beds, multi-purpose designs. Free consultation!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -145,7 +145,7 @@ const ServiceGuestRoom = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Create welcoming spaces for your visitors with Intorza
+                Create welcoming spaces for your visitors with EverySpaces
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -211,7 +211,7 @@ const ServiceGuestRoom = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Welcome Your Guests in Style?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza for a free guest room design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces for a free guest room design consultation</p>
             <Link to="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </Link>

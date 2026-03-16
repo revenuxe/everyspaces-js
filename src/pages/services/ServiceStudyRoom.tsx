@@ -43,19 +43,19 @@ const studyFeatures = [
 const studyRoomFAQs = [
   {
     question: "What is the cost of study table design in Bangalore?",
-    answer: "Study table design in Bangalore costs ₹15,000 to ₹60,000 depending on size and features. At Intorza, basic study tables start from ₹15,000, L-shaped units from ₹25,000, and complete study room setups from ₹50,000."
+    answer: "Study table design in Bangalore costs ₹15,000 to ₹60,000 depending on size and features. At EverySpaces, basic study tables start from ₹15,000, L-shaped units from ₹25,000, and complete study room setups from ₹50,000."
   },
   {
     question: "What is the ideal study table height?",
-    answer: "Ideal study table height is 28-30 inches for adults and 22-26 inches for children. Intorza designs ergonomic study tables with adjustable heights for growing children and proper monitor placement for adults."
+    answer: "Ideal study table height is 28-30 inches for adults and 22-26 inches for children. EverySpaces designs ergonomic study tables with adjustable heights for growing children and proper monitor placement for adults."
   },
   {
     question: "How to design a study corner in bedroom?",
-    answer: "For bedroom study corners, Intorza uses wall-mounted desks, floating shelves, and integrated lighting. We ensure proper ventilation, natural light access, and minimal distractions. Starting from ₹15,000."
+    answer: "For bedroom study corners, EverySpaces uses wall-mounted desks, floating shelves, and integrated lighting. We ensure proper ventilation, natural light access, and minimal distractions. Starting from ₹15,000."
   },
   {
     question: "What lighting is best for study room?",
-    answer: "Intorza recommends 4000-5000K neutral white LED lights for study rooms. We design layered lighting with overhead lights, focused task lamps, and ambient lighting to reduce eye strain and boost concentration."
+    answer: "EverySpaces recommends 4000-5000K neutral white LED lights for study rooms. We design layered lighting with overhead lights, focused task lamps, and ambient lighting to reduce eye strain and boost concentration."
   }
 ];
 
@@ -84,8 +84,8 @@ const ServiceStudyRoom = () => {
     createServiceSchema(
       "Study Room Design Bangalore",
       "Ergonomic study room and study table designs in Bangalore. Kids study stations, bookshelves, and focused learning spaces with proper lighting.",
-      "https://intorza.com/services/study-room",
-      "https://intorza.com/service-study-room.jpg",
+      "https://everyspaces.com/services/study-room",
+      "https://everyspaces.com/service-study-room.jpg",
       "15000-100000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -93,16 +93,16 @@ const ServiceStudyRoom = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Study Room", url: "https://intorza.com/services/study-room" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "Study Room", url: "https://everyspaces.com/services/study-room" }
     ]),
     createFAQSchema(studyRoomFAQs, 'services/study-room'),
     createProductSchema({
       name: "Study Room & Table Design",
       description: "Ergonomic study room designs in Bangalore with study tables, bookshelves, and proper lighting for focused learning.",
-      image: "https://intorza.com/service-study-room.jpg",
-      url: "https://intorza.com/services/study-room",
+      image: "https://everyspaces.com/service-study-room.jpg",
+      url: "https://everyspaces.com/services/study-room",
       priceRange: "15000-100000",
       category: "Home Improvement > Study Room"
     })
@@ -111,22 +111,22 @@ const ServiceStudyRoom = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Study Room Design Bangalore | Study Table Interior | Intorza</title>
+        <title>Study Room Design Bangalore | Study Table Interior | EverySpaces</title>
         <meta name="description" content="Best study room designers in Bangalore. Study tables from ₹15K. Kids study stations, bookshelves, ergonomic designs. Free consultation!" />
         <meta name="keywords" content="study room design bangalore, study table design, kids study room, bookshelf design, learning space interior, study corner" />
-        <link rel="canonical" href="https://intorza.com/services/study-room" />
+        <link rel="canonical" href="https://everyspaces.com/services/study-room" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="Study Room Design Bangalore | Study Table - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="Study Room Design Bangalore | Study Table - EverySpaces" />
         <meta property="og:description" content="Study tables from ₹15K. Ergonomic designs, bookshelves, task lighting. Free consultation!" />
-        <meta property="og:url" content="https://intorza.com/services/study-room" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/study-room" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Study Room Design Bangalore | Intorza" />
+        <meta name="twitter:title" content="Study Room Design Bangalore | EverySpaces" />
         <meta name="twitter:description" content="Study tables from ₹15K. Ergonomic designs, bookshelves, task lighting. Free consultation!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -145,7 +145,7 @@ const ServiceStudyRoom = () => {
                 <span className="block text-secondary mt-2">in Bangalore</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Focused learning environments designed by Intorza experts
+                Focused learning environments designed by EverySpaces experts
               </p>
             </div>
             <div className="max-w-sm mx-auto animate-fade-up delay-300">
@@ -211,7 +211,7 @@ const ServiceStudyRoom = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-primary mb-4">Ready to Create the Perfect Study Space?</h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact Intorza for a free study room design consultation</p>
+            <p className="text-muted-foreground max-w-md mx-auto mb-6">Contact EverySpaces for a free study room design consultation</p>
             <Link to="/contact" className="inline-flex items-center gap-2 btn-terracotta px-8 py-4 rounded-2xl text-secondary-foreground font-semibold shadow-lg">
               Book Free Consultation <ArrowRight className="w-5 h-5" />
             </Link>

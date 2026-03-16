@@ -24,12 +24,12 @@ const Jayanagar = () => {
       "interior decorators jayanagar",
       "classic home design jayanagar"
     ],
-    ogTitle: "Interior Designers in Jayanagar | Intorza - Classic & Modern Designs",
+    ogTitle: "Interior Designers in Jayanagar | EverySpaces - Classic & Modern Designs",
     ogDescription: "Jayanagar interior experts. 28+ projects, classic to contemporary. Free consultation!",
     faqs: [
       {
         question: "What is the interior design cost in Jayanagar, Bangalore?",
-        answer: "Interior design in Jayanagar costs ₹1,600 to ₹3,200 per sq ft. Intorza offers packages from ₹8 lakhs for 2BHK. We've completed 28+ projects across Jayanagar blocks with traditional and modern designs, backed by 10-year warranty."
+        answer: "Interior design in Jayanagar costs ₹1,600 to ₹3,200 per sq ft. EverySpaces offers packages from ₹8 lakhs for 2BHK. We've completed 28+ projects across Jayanagar blocks with traditional and modern designs, backed by 10-year warranty."
       },
       {
         question: "Do you design traditional pooja rooms in Jayanagar?",

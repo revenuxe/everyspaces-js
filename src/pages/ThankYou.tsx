@@ -14,10 +14,10 @@ const ThankYou = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Helmet>
-        <title>Thank You | Request Submitted Successfully | Intorza</title>
+        <title>Thank You | Request Submitted Successfully | EverySpaces</title>
         <meta
           name="description"
-          content="Thank you for contacting Intorza! Our interior design experts will reach out within 24 hours to discuss your dream home project."
+          content="Thank you for contacting EverySpaces! Our interior design experts will reach out within 24 hours to discuss your dream home project."
         />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>

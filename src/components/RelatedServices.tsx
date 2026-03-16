@@ -59,7 +59,7 @@ const RelatedServices = ({ currentSlug }: RelatedServicesProps) => {
           {relatedServices.map((service) => (
             <a
               key={service.slug}
-              href={`https://intorza.com/services/${service.slug}`}
+              href={`https://everyspaces.com/services/${service.slug}`}
               className="group relative overflow-hidden rounded-2xl aspect-[3/4]"
             >
               <img
@@ -84,7 +84,7 @@ const RelatedServices = ({ currentSlug }: RelatedServicesProps) => {
 
         <div className="text-center mt-8">
           <a
-            href="https://intorza.com/services"
+            href="https://everyspaces.com/services"
             className="inline-flex items-center gap-2 text-secondary font-medium hover:underline"
           >
             View All Services <ArrowRight className="w-4 h-4" />

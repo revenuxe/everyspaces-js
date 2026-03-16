@@ -9,22 +9,22 @@ const Terms = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Terms & Conditions | Interior Design Services | Intorza Bangalore</title>
+        <title>Terms & Conditions | Interior Design Services | EverySpaces Bangalore</title>
         <meta
           name="description"
-          content="Read Intorza's terms and conditions for interior design services in Bangalore. Understand our policies on quotes, payments, warranties & more."
+          content="Read EverySpaces's terms and conditions for interior design services in Bangalore. Understand our policies on quotes, payments, warranties & more."
         />
-        <link rel="canonical" href="https://intorza.com/terms" />
+        <link rel="canonical" href="https://everyspaces.com/terms" />
       </Helmet>
       <StructuredData data={[createBreadcrumbSchema([
-        { name: "Home", url: "https://intorza.com" },
-        { name: "Terms & Conditions", url: "https://intorza.com/terms" }
+        { name: "Home", url: "https://everyspaces.com" },
+        { name: "Terms & Conditions", url: "https://everyspaces.com/terms" }
       ]), {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Terms & Conditions",
-        "description": "Terms and conditions for Intorza interior design services",
-        "url": "https://intorza.com/terms"
+        "description": "Terms and conditions for EverySpaces interior design services",
+        "url": "https://everyspaces.com/terms"
       }]} />
       <Header />
 
@@ -36,7 +36,7 @@ const Terms = () => {
               Terms &amp; Conditions
             </h1>
             <p className="text-primary-foreground/80 font-body mt-3 max-w-2xl">
-              These Terms govern your use of Intorza’s website and our interior design
+              These Terms govern your use of EverySpaces’s website and our interior design
               services.
             </p>
           </div>
@@ -50,9 +50,9 @@ const Terms = () => {
               </p>
 
               <section className="mt-8 space-y-4">
-                <h2 className="font-display text-2xl text-primary">1. About Intorza</h2>
+                <h2 className="font-display text-2xl text-primary">1. About EverySpaces</h2>
                 <p className="text-foreground font-body">
-                  Intorza Interior Design ("Intorza", "we", "our", "us") provides
+                  EverySpaces Interior Design ("EverySpaces", "we", "our", "us") provides
                   interior design consultation, planning, and execution services in
                   Bengaluru and surrounding areas.
                 </p>
@@ -182,7 +182,7 @@ const Terms = () => {
               <section className="mt-8 space-y-4">
                 <h2 className="font-display text-2xl text-primary">11. Limitation of liability</h2>
                 <p className="text-foreground font-body">
-                  To the maximum extent permitted by law, Intorza will not be liable for
+                  To the maximum extent permitted by law, EverySpaces will not be liable for
                   indirect or consequential damages. Our total liability related to any
                   service will be limited to the fees paid for the specific scope giving
                   rise to the claim, unless otherwise required by law.
@@ -213,10 +213,10 @@ const Terms = () => {
                 <p className="text-foreground font-body">
                   For legal questions, email{" "}
                   <a
-                    href="mailto:intorza.com@gmail.com"
+                    href="mailto:everyspaces.com@gmail.com"
                     className="text-secondary hover:underline"
                   >
-                    intorza.com@gmail.com
+                    everyspaces.com@gmail.com
                   </a>
                   {" "}or visit our{" "}
                   <Link to="/contact" className="text-secondary hover:underline">

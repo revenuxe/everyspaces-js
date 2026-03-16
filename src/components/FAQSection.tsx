@@ -10,7 +10,7 @@ const faqs = [
   {
     question: "How much does interior design cost in Bangalore?",
     answer:
-      "Interior design costs in Bangalore typically range from ₹1,500 to ₹3,500 per square foot depending on the scope, materials, and finishes. At Intorza, we offer customized packages starting from ₹8 lakhs for a 2BHK apartment interior design. We provide detailed cost breakdowns and transparent pricing with no hidden charges. Contact us for a free consultation and accurate quote.",
+      "Interior design costs in Bangalore typically range from ₹1,500 to ₹3,500 per square foot depending on the scope, materials, and finishes. At EverySpaces, we offer customized packages starting from ₹8 lakhs for a 2BHK apartment interior design. We provide detailed cost breakdowns and transparent pricing with no hidden charges. Contact us for a free consultation and accurate quote.",
   },
   {
     question: "How long does it take to complete home interior design?",
@@ -20,7 +20,7 @@ const faqs = [
   {
     question: "Do you provide modular kitchen designs in Bangalore?",
     answer:
-      "Yes! Intorza specializes in premium modular kitchen designs in Bangalore. We offer L-shaped, U-shaped, parallel, and island kitchen layouts with soft-close mechanisms, durable finishes, and smart storage solutions. Our modular kitchens come with a 10-year warranty on hardware and are customized to fit your space and budget.",
+      "Yes! EverySpaces specializes in premium modular kitchen designs in Bangalore. We offer L-shaped, U-shaped, parallel, and island kitchen layouts with soft-close mechanisms, durable finishes, and smart storage solutions. Our modular kitchens come with a 10-year warranty on hardware and are customized to fit your space and budget.",
   },
   {
     question: "What areas in Bangalore do you serve for interior design?",
@@ -48,12 +48,12 @@ const faqs = [
       "Yes! We offer flexible interior design services for individual spaces. Whether you need just a modular kitchen design, bedroom renovation, bathroom remodeling, or living room makeover, we can help. Our minimum project value starts from ₹2.5 lakhs for individual room designs.",
   },
   {
-    question: "What makes Intorza different from other interior designers in Bangalore?",
+    question: "What makes EverySpaces different from other interior designers in Bangalore?",
     answer:
-      "Intorza stands out with 10+ years of experience, 500+ completed projects, in-house manufacturing facility, transparent pricing, dedicated project managers, and a strong focus on quality materials. We use premium brands like Hettich, Hafele, and Century for all our projects with proper documentation and warranty.",
+      "EverySpaces stands out with 10+ years of experience, 500+ completed projects, in-house manufacturing facility, transparent pricing, dedicated project managers, and a strong focus on quality materials. We use premium brands like Hettich, Hafele, and Century for all our projects with proper documentation and warranty.",
   },
   {
-    question: "How do I start my interior design project with Intorza?",
+    question: "How do I start my interior design project with EverySpaces?",
     answer:
       "Starting is easy! Simply call us at +91 9886579923 or fill out our contact form for a free consultation. Our design expert will visit your site, understand your requirements, and provide a detailed proposal with 3D designs and cost estimate within 5 working days. No commitment required for the initial consultation.",
   },

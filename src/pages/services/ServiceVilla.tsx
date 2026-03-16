@@ -82,19 +82,19 @@ const whyChooseUs = [
 const villaFAQs = [
   {
     question: "What is the cost of villa interior design in Bangalore?",
-    answer: "Villa interior design in Bangalore costs ₹25-75 lakh depending on size and luxury level. At Intorza, basic villa packages start from ₹25 lakh for 3000 sq ft, premium from ₹40 lakh, and luxury bespoke designs from ₹60 lakh."
+    answer: "Villa interior design in Bangalore costs ₹25-75 lakh depending on size and luxury level. At EverySpaces, basic villa packages start from ₹25 lakh for 3000 sq ft, premium from ₹40 lakh, and luxury bespoke designs from ₹60 lakh."
   },
   {
     question: "How long does villa interior design take?",
-    answer: "Complete villa interior design takes 90-120 working days. Large villas with extensive customization may take 4-5 months. Intorza assigns dedicated project managers for seamless execution."
+    answer: "Complete villa interior design takes 90-120 working days. Large villas with extensive customization may take 4-5 months. EverySpaces assigns dedicated project managers for seamless execution."
   },
   {
     question: "Do you design outdoor spaces for villas?",
-    answer: "Yes, Intorza designs complete villa interiors including outdoor living areas, pool decks, garden gazebos, and landscaping consultation. We create cohesive indoor-outdoor living experiences."
+    answer: "Yes, EverySpaces designs complete villa interiors including outdoor living areas, pool decks, garden gazebos, and landscaping consultation. We create cohesive indoor-outdoor living experiences."
   },
   {
     question: "What luxury finishes do you offer for villas?",
-    answer: "Intorza offers Italian marble, imported wooden flooring, designer wallpapers, motorized curtains, smart home integration, imported sanitaryware, and custom furniture for luxury villas in Bangalore."
+    answer: "EverySpaces offers Italian marble, imported wooden flooring, designer wallpapers, motorized curtains, smart home integration, imported sanitaryware, and custom furniture for luxury villas in Bangalore."
   }
 ];
 
@@ -142,8 +142,8 @@ const ServiceVilla = () => {
     createServiceSchema(
       "Villa Interior Design Bangalore",
       "Luxury villa and bungalow interior design in Bangalore with bespoke designs, imported finishes, home theatre, and smart home integration.",
-      "https://intorza.com/services/villa-interiors",
-      "https://intorza.com/service-villa.jpg",
+      "https://everyspaces.com/services/villa-interiors",
+      "https://everyspaces.com/service-villa.jpg",
       "2500000-7500000",
       {
         areaServed: ["Bangalore", "Whitefield", "Sarjapur Road", "Electronic City", "Yelahanka"],
@@ -151,16 +151,16 @@ const ServiceVilla = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "Villa Interiors", url: "https://intorza.com/services/villa-interiors" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "Villa Interiors", url: "https://everyspaces.com/services/villa-interiors" }
     ]),
     createFAQSchema(villaFAQs, 'services/villa-interiors'),
     createProductSchema({
       name: "Luxury Villa Interior Design",
       description: "Complete villa interior design in Bangalore with bespoke designs, imported finishes, and smart home integration. 90-120 day delivery.",
-      image: "https://intorza.com/service-villa.jpg",
-      url: "https://intorza.com/services/villa-interiors",
+      image: "https://everyspaces.com/service-villa.jpg",
+      url: "https://everyspaces.com/services/villa-interiors",
       priceRange: "2500000-7500000",
       category: "Home Improvement > Luxury Villa Interior"
     })
@@ -169,7 +169,7 @@ const ServiceVilla = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Villa & Bungalow Interior Design Bangalore | Luxury Homes | Intorza</title>
+        <title>Villa & Bungalow Interior Design Bangalore | Luxury Homes | EverySpaces</title>
         <meta
           name="description"
           content="Best villa interior designers in Bangalore. Luxury bespoke designs from ₹25L. Grand living rooms, gourmet kitchens, home theatre. 10-year warranty!"
@@ -178,19 +178,19 @@ const ServiceVilla = () => {
           name="keywords"
           content="villa interior design bangalore, luxury villa interiors, villa interior designers, premium home interiors bangalore, bungalow interior design"
         />
-        <link rel="canonical" href="https://intorza.com/services/villa-interiors" />
+        <link rel="canonical" href="https://everyspaces.com/services/villa-interiors" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="Luxury Villa Interior Design Bangalore - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="Luxury Villa Interior Design Bangalore - EverySpaces" />
         <meta property="og:description" content="Bespoke villa interiors from ₹25L. Grand living rooms, island kitchens, home theatre. Premium finishes, 10-year warranty!" />
-        <meta property="og:url" content="https://intorza.com/services/villa-interiors" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/villa-interiors" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Luxury Villa Interior Design Bangalore - Intorza" />
+        <meta name="twitter:title" content="Luxury Villa Interior Design Bangalore - EverySpaces" />
         <meta name="twitter:description" content="Bespoke villa interiors from ₹25L. Grand living rooms, island kitchens, home theatre. Premium finishes, 10-year warranty!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -305,7 +305,7 @@ const ServiceVilla = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4">
             <div className="text-center mb-10">
-              <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">Why Choose Intorza for Your Villa?</h2>
+              <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">Why Choose EverySpaces for Your Villa?</h2>
               <p className="text-muted-foreground font-body">Bangalore's trusted luxury villa interior experts</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -2,32 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Intorza Interior Design - Premium Design System */
+/* EverySpaces - Premium Design System */
 
 @layer base {
   :root {
-    /* Brand Colors - Deep Navy & Terracotta */
+    /* Brand Colors - Deep Teal & Vibrant Orange */
     --background: 30 10% 98%; /* #F9F9F9 off-white */
-    --foreground: 210 45% 25%; /* Deep Navy Blue */
+    --foreground: 197 74% 18%; /* Deep Teal */
 
     --card: 0 0% 100%;
-    --card-foreground: 210 45% 25%;
+    --card-foreground: 197 74% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 45% 25%;
+    --popover-foreground: 197 74% 18%;
 
-    /* Deep Navy Blue Primary */
-    --primary: 210 51% 24%; /* #1E3A5F */
-    --primary-foreground: 30 10% 98%;
+    /* Deep Teal Primary */
+    --primary: 197 74% 18%; /* #0d3b4f */
+    --primary-foreground: 0 0% 100%;
 
-    /* Terracotta Orange Accent */
-    --secondary: 16 55% 48%; /* #C05A35 */
+    /* Vibrant Orange Accent */
+    --secondary: 22 82% 50%; /* #e8651a */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 30 10% 94%;
-    --muted-foreground: 210 20% 45%;
+    --muted-foreground: 197 20% 45%;
 
-    --accent: 16 55% 48%;
+    --accent: 22 82% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -35,81 +35,80 @@
 
     --border: 30 15% 90%;
     --input: 30 15% 90%;
-    --ring: 16 55% 48%;
+    --ring: 22 82% 50%;
 
     --radius: 1.5rem;
 
-    /* Custom Intorza tokens */
-    --navy: 210 51% 24%;
-    --terracotta: 16 55% 48%;
-    --terracotta-light: 16 55% 58%;
+    /* Custom EverySpaces tokens */
+    --teal: 197 74% 18%;
+    --orange: 22 82% 50%;
+    --orange-light: 22 82% 60%;
     --cream: 30 10% 98%;
     --glass: 0 0% 100%;
     --glass-opacity: 0.7;
     
     /* Shadows */
-    --shadow-soft: 0 4px 24px -4px hsl(210 51% 24% / 0.1);
-    --shadow-elevated: 0 12px 40px -8px hsl(210 51% 24% / 0.15);
-    --shadow-glow: 0 0 30px hsl(16 55% 48% / 0.25);
-    --shadow-glow: 0 0 40px hsl(16 55% 48% / 0.3);
+    --shadow-soft: 0 4px 24px -4px hsl(197 74% 18% / 0.1);
+    --shadow-elevated: 0 12px 40px -8px hsl(197 74% 18% / 0.15);
+    --shadow-glow: 0 0 40px hsl(22 82% 50% / 0.3);
     
     /* Gradients */
     --gradient-hero: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
     --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
-    --gradient-terracotta: linear-gradient(135deg, hsl(16 55% 48%) 0%, hsl(16 55% 58%) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(22 82% 50%) 0%, hsl(22 82% 60%) 100%);
     
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     --sidebar-background: 30 10% 98%;
-    --sidebar-foreground: 210 45% 25%;
-    --sidebar-primary: 210 51% 24%;
+    --sidebar-foreground: 197 74% 18%;
+    --sidebar-primary: 197 74% 18%;
     --sidebar-primary-foreground: 30 10% 98%;
-    --sidebar-accent: 16 55% 48%;
+    --sidebar-accent: 22 82% 50%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 30 15% 90%;
-    --sidebar-ring: 16 55% 48%;
+    --sidebar-ring: 22 82% 50%;
   }
 
   .dark {
-    --background: 210 45% 8%;
+    --background: 197 74% 8%;
     --foreground: 30 10% 95%;
 
-    --card: 210 45% 12%;
+    --card: 197 74% 12%;
     --card-foreground: 30 10% 95%;
 
-    --popover: 210 45% 12%;
+    --popover: 197 74% 12%;
     --popover-foreground: 30 10% 95%;
 
     --primary: 30 10% 95%;
-    --primary-foreground: 210 51% 24%;
+    --primary-foreground: 197 74% 18%;
 
-    --secondary: 16 55% 48%;
+    --secondary: 22 82% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 30% 18%;
+    --muted: 197 30% 18%;
     --muted-foreground: 30 10% 70%;
 
-    --accent: 16 55% 48%;
+    --accent: 22 82% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 30% 20%;
-    --input: 210 30% 20%;
-    --ring: 16 55% 48%;
+    --border: 197 30% 20%;
+    --input: 197 30% 20%;
+    --ring: 22 82% 50%;
     
     --glass-opacity: 0.15;
-    --sidebar-background: 210 45% 8%;
+    --sidebar-background: 197 74% 8%;
     --sidebar-foreground: 30 10% 95%;
     --sidebar-primary: 30 10% 95%;
-    --sidebar-primary-foreground: 210 51% 24%;
-    --sidebar-accent: 16 55% 48%;
+    --sidebar-primary-foreground: 197 74% 18%;
+    --sidebar-accent: 22 82% 50%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 210 30% 20%;
-    --sidebar-ring: 16 55% 48%;
+    --sidebar-border: 197 30% 20%;
+    --sidebar-ring: 22 82% 50%;
   }
 }
 
@@ -162,15 +161,31 @@
     background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
   }
   
-  /* Terracotta Gradient Button */
+  /* Orange Gradient Button */
+  .btn-orange {
+    background: linear-gradient(135deg, hsl(22 82% 50%) 0%, hsl(22 82% 60%) 100%);
+    box-shadow: 0 4px 20px -4px hsl(22 82% 50% / 0.5);
+    @apply transition-all duration-300;
+  }
+  
+  .btn-orange:hover {
+    box-shadow: 0 8px 30px -4px hsl(22 82% 50% / 0.6);
+    transform: translateY(-2px);
+  }
+  
+  .btn-orange:active {
+    transform: translateY(0);
+  }
+
+  /* Legacy alias */
   .btn-terracotta {
-    background: linear-gradient(135deg, hsl(16 55% 48%) 0%, hsl(16 55% 58%) 100%);
-    box-shadow: 0 4px 20px -4px hsl(16 55% 48% / 0.5);
+    background: linear-gradient(135deg, hsl(22 82% 50%) 0%, hsl(22 82% 60%) 100%);
+    box-shadow: 0 4px 20px -4px hsl(22 82% 50% / 0.5);
     @apply transition-all duration-300;
   }
   
   .btn-terracotta:hover {
-    box-shadow: 0 8px 30px -4px hsl(16 55% 48% / 0.6);
+    box-shadow: 0 8px 30px -4px hsl(22 82% 50% / 0.6);
     transform: translateY(-2px);
   }
   
@@ -216,7 +231,7 @@
   
   .hover-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px -8px hsl(210 51% 24% / 0.15);
+    box-shadow: 0 12px 40px -8px hsl(197 74% 18% / 0.15);
   }
 }
 
@@ -285,10 +300,10 @@
 
 @keyframes pulse-soft {
   0%, 100% {
-    box-shadow: 0 0 0 0 hsl(16 55% 48% / 0.4);
+    box-shadow: 0 0 0 0 hsl(22 82% 50% / 0.4);
   }
   50% {
-    box-shadow: 0 0 0 12px hsl(16 55% 48% / 0);
+    box-shadow: 0 0 0 12px hsl(22 82% 50% / 0);
   }
 }
 

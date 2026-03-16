@@ -98,22 +98,22 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Our Portfolio | Completed Interior Design Projects | Intorza Bangalore</title>
+        <title>Our Portfolio | Completed Interior Design Projects | EverySpaces Bangalore</title>
         <meta
           name="description"
-          content="Browse 100+ completed interior projects by Intorza in Bangalore. View our modular kitchens, wardrobes, living rooms & bedrooms gallery. Get inspired!"
+          content="Browse 100+ completed interior projects by EverySpaces in Bangalore. View our modular kitchens, wardrobes, living rooms & bedrooms gallery. Get inspired!"
         />
-        <link rel="canonical" href="https://intorza.com/portfolio" />
+        <link rel="canonical" href="https://everyspaces.com/portfolio" />
       </Helmet>
       <StructuredData data={[createBreadcrumbSchema([
-        { name: "Home", url: "https://intorza.com" },
-        { name: "Portfolio", url: "https://intorza.com/portfolio" }
+        { name: "Home", url: "https://everyspaces.com" },
+        { name: "Portfolio", url: "https://everyspaces.com/portfolio" }
       ]), {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "Intorza Interior Design Portfolio",
-        "description": "Browse 100+ completed interior projects by Intorza in Bangalore",
-        "url": "https://intorza.com/portfolio"
+        "name": "EverySpaces Interior Design Portfolio",
+        "description": "Browse 100+ completed interior projects by EverySpaces in Bangalore",
+        "url": "https://everyspaces.com/portfolio"
       }]} />
       <Header />
       <Breadcrumb items={[{ label: "Portfolio" }]} />

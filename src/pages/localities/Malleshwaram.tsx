@@ -24,12 +24,12 @@ const Malleshwaram = () => {
       "classic home design malleshwaram",
       "west bangalore interiors"
     ],
-    ogTitle: "Interior Designers in Malleshwaram | Intorza - Heritage & Classic Designs",
+    ogTitle: "Interior Designers in Malleshwaram | EverySpaces - Heritage & Classic Designs",
     ogDescription: "Malleshwaram interior experts. 19+ projects, heritage specialists. Classic elegance. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in Malleshwaram?",
-        answer: "Interior design in Malleshwaram costs ₹1,800 to ₹3,500 per sq ft for quality heritage-style work. Intorza offers packages from ₹9 lakhs for 2BHK. We've completed 19+ projects respecting Malleshwaram's classic aesthetic."
+        answer: "Interior design in Malleshwaram costs ₹1,800 to ₹3,500 per sq ft for quality heritage-style work. EverySpaces offers packages from ₹9 lakhs for 2BHK. We've completed 19+ projects respecting Malleshwaram's classic aesthetic."
       },
       {
         question: "Do you specialize in heritage home renovations?",

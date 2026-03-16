@@ -24,12 +24,12 @@ const SarjapurRoad = () => {
       "sarjapur road home design",
       "builder apartment interiors sarjapur"
     ],
-    ogTitle: "Interior Designers in Sarjapur Road | Intorza - New Apartment Specialists",
+    ogTitle: "Interior Designers in Sarjapur Road | EverySpaces - New Apartment Specialists",
     ogDescription: "Sarjapur Road interior experts. 42+ projects in new apartments. Free consultation!",
     faqs: [
       {
         question: "What is the cost of interior design in Sarjapur Road?",
-        answer: "Interior design in Sarjapur Road costs ₹1,400 to ₹2,800 per sq ft. Intorza offers packages from ₹7.5 lakhs for 2BHK. We've completed 42+ projects in new Sarjapur Road apartments with modern designs and 10-year warranty."
+        answer: "Interior design in Sarjapur Road costs ₹1,400 to ₹2,800 per sq ft. EverySpaces offers packages from ₹7.5 lakhs for 2BHK. We've completed 42+ projects in new Sarjapur Road apartments with modern designs and 10-year warranty."
       },
       {
         question: "Do you work with new apartment handovers in Sarjapur Road?",

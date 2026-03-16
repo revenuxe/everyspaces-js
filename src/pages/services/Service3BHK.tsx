@@ -82,11 +82,11 @@ const whyChooseUs = [
 const bhk3FAQs = [
   {
     question: "What is the cost of 3 BHK interior design in Bangalore?",
-    answer: "3 BHK interior design in Bangalore costs ₹8-20 lakh for complete interiors. At Intorza, basic packages start from ₹8 lakh, premium from ₹12 lakh with false ceiling, and luxury from ₹18 lakh with home theatre and walk-in closets."
+    answer: "3 BHK interior design in Bangalore costs ₹8-20 lakh for complete interiors. At EverySpaces, basic packages start from ₹8 lakh, premium from ₹12 lakh with false ceiling, and luxury from ₹18 lakh with home theatre and walk-in closets."
   },
   {
     question: "What is included in 3 BHK interior package?",
-    answer: "Intorza's 3 BHK package includes modular kitchen, 3 wardrobes, TV unit, shoe rack, crockery unit, false ceiling, and study table. Premium packages add home theatre setup, walk-in closet, pooja room, and complete painting."
+    answer: "EverySpaces's 3 BHK package includes modular kitchen, 3 wardrobes, TV unit, shoe rack, crockery unit, false ceiling, and study table. Premium packages add home theatre setup, walk-in closet, pooja room, and complete painting."
   },
   {
     question: "How long does 3 BHK interior design take?",
@@ -94,7 +94,7 @@ const bhk3FAQs = [
   },
   {
     question: "Do you design home theatre for 3 BHK apartments?",
-    answer: "Yes, Intorza designs home theatre setups for 3 BHK apartments with acoustic paneling, projection systems, comfortable seating, and ambient lighting. We optimize spare rooms or living areas for the best cinematic experience."
+    answer: "Yes, EverySpaces designs home theatre setups for 3 BHK apartments with acoustic paneling, projection systems, comfortable seating, and ambient lighting. We optimize spare rooms or living areas for the best cinematic experience."
   }
 ];
 
@@ -142,8 +142,8 @@ const Service3BHK = () => {
     createServiceSchema(
       "3 BHK Interior Design Bangalore",
       "Premium 3 BHK interior design packages in Bangalore starting ₹8 lakh. Includes modular kitchen, wardrobes, TV unit, home theatre, and walk-in closets with 10-year warranty.",
-      "https://intorza.com/services/3bhk-interiors",
-      "https://intorza.com/service-3bhk.jpg",
+      "https://everyspaces.com/services/3bhk-interiors",
+      "https://everyspaces.com/service-3bhk.jpg",
       "800000-2000000",
       {
         areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
@@ -151,16 +151,16 @@ const Service3BHK = () => {
       }
     ),
     createBreadcrumbSchema([
-      { name: "Home", url: "https://intorza.com" },
-      { name: "Services", url: "https://intorza.com/services" },
-      { name: "3 BHK Interiors", url: "https://intorza.com/services/3bhk-interiors" }
+      { name: "Home", url: "https://everyspaces.com" },
+      { name: "Services", url: "https://everyspaces.com/services" },
+      { name: "3 BHK Interiors", url: "https://everyspaces.com/services/3bhk-interiors" }
     ]),
     createFAQSchema(bhk3FAQs, 'services/3bhk-interiors'),
     createProductSchema({
       name: "3 BHK Premium Interior Package",
       description: "Complete 3 BHK interior design in Bangalore with kitchen, wardrobes, home theatre, and luxury finishes. 60-75 day delivery with 10-year warranty.",
-      image: "https://intorza.com/service-3bhk.jpg",
-      url: "https://intorza.com/services/3bhk-interiors",
+      image: "https://everyspaces.com/service-3bhk.jpg",
+      url: "https://everyspaces.com/services/3bhk-interiors",
       priceRange: "800000-2000000",
       category: "Home Improvement > Complete Home Interior"
     })
@@ -169,7 +169,7 @@ const Service3BHK = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>3 BHK Interior Design Bangalore | Premium Packages from ₹8L | Intorza</title>
+        <title>3 BHK Interior Design Bangalore | Premium Packages from ₹8L | EverySpaces</title>
         <meta
           name="description"
           content="Best 3 BHK interior designers in Bangalore. Premium packages from ₹8 lakh including kitchen, wardrobes, home theatre. 60-day delivery, 10-year warranty!"
@@ -178,19 +178,19 @@ const Service3BHK = () => {
           name="keywords"
           content="3 bhk interior design bangalore, 3bhk interior cost, 3 bhk home interior, premium 3bhk interiors, 3bhk flat interior design bangalore"
         />
-        <link rel="canonical" href="https://intorza.com/services/3bhk-interiors" />
+        <link rel="canonical" href="https://everyspaces.com/services/3bhk-interiors" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Intorza Interior Design" />
-        <meta property="og:title" content="3 BHK Interior Design Bangalore | From ₹8 Lakh - Intorza" />
+        <meta property="og:site_name" content="EverySpaces Interior Design" />
+        <meta property="og:title" content="3 BHK Interior Design Bangalore | From ₹8 Lakh - EverySpaces" />
         <meta property="og:description" content="Premium 3 BHK interiors from ₹8L. Kitchen, wardrobes, home theatre included. 60-day delivery, 10-year warranty!" />
-        <meta property="og:url" content="https://intorza.com/services/3bhk-interiors" />
-        <meta property="og:image" content="https://intorza.com/og-image.jpg" />
+        <meta property="og:url" content="https://everyspaces.com/services/3bhk-interiors" />
+        <meta property="og:image" content="https://everyspaces.com/og-image.jpg" />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="3 BHK Interior Design Bangalore | From ₹8 Lakh - Intorza" />
+        <meta name="twitter:title" content="3 BHK Interior Design Bangalore | From ₹8 Lakh - EverySpaces" />
         <meta name="twitter:description" content="Premium 3 BHK interiors from ₹8L. Kitchen, wardrobes, home theatre included. 60-day delivery, 10-year warranty!" />
-        <meta name="twitter:image" content="https://intorza.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://everyspaces.com/og-image.jpg" />
       </Helmet>
       <StructuredData data={aeoSchemas} />
       <Header />
@@ -305,7 +305,7 @@ const Service3BHK = () => {
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4">
             <div className="text-center mb-10">
-              <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">Why Choose Intorza for Your 3 BHK?</h2>
+              <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">Why Choose EverySpaces for Your 3 BHK?</h2>
               <p className="text-muted-foreground font-body">Premium designs for discerning homeowners</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
