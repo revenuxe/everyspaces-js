@@ -71,8 +71,8 @@ const AdminLogin = () => {
 
       if (data.user) {
         // Check if user has admin role
-        const { data: roles, error: roleError } = await supabase
-          .from('user_roles')
+        const { data: roles, error: roleError } = await (supabase
+          .from('user_roles') as any)
           .select('role')
           .eq('user_id', data.user.id)
           .eq('role', 'admin');

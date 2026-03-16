@@ -23,7 +23,7 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const { error } = await supabase.from("leads").insert({
+      const { error } = await (supabase.from("leads") as any).insert({
         form_name: "Locality Hero Form",
         source_page: `/bangalore/${localityName.toLowerCase().replace(/\s+/g, '-')}`,
         data: {

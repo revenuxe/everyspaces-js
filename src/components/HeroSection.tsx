@@ -20,7 +20,7 @@ const HeroSection = () => {
     try {
       const {
         error
-      } = await supabase.from("leads").insert({
+      } = await (supabase.from("leads") as any).insert({
         form_name: "Hero Contact Form",
         source_page: "/",
         data: {

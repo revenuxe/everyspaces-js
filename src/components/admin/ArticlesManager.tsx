@@ -114,8 +114,8 @@ const ArticlesManager = () => {
 
   const handleEdit = async (article: Article) => {
     // Fetch full article data
-    const { data, error } = await supabase
-      .from("articles")
+    const { data, error } = await (supabase
+      .from("articles") as any)
       .select("*")
       .eq("id", article.id)
       .single();

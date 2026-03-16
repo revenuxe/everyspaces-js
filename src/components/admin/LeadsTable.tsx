@@ -87,8 +87,8 @@ export function LeadsTable() {
   };
 
   const deleteLead = async (id: string) => {
-    const { error } = await supabase
-      .from('leads')
+    const { error } = await (supabase
+      .from('leads') as any)
       .delete()
       .eq('id', id);
 
