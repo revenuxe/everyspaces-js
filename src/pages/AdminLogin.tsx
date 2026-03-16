@@ -22,8 +22,8 @@ const AdminLogin = () => {
       async (event, session) => {
         if (session?.user) {
           // Check if user is admin
-          const { data: roles } = await supabase
-            .from('user_roles')
+          const { data: roles } = await (supabase
+            .from('user_roles') as any)
             .select('role')
             .eq('user_id', session.user.id)
             .eq('role', 'admin');
