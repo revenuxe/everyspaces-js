@@ -84,7 +84,7 @@ const HeroSection = () => {
                 <span className="text-primary-foreground/70 text-xs font-body">Projects</span>
               </div>
               <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="text-secondary font-bold text-sm">10 Yr</span>
+                <span className="text-primary font-bold text-sm">10 Yr</span>
                 <span className="text-primary-foreground/70 text-xs font-body">Warranty</span>
               </div>
               <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
