@@ -50,8 +50,8 @@ const HeroSection = () => {
           alt="Luxury interior design in Bangalore"
           decoding="async"
           fetchPriority="high"
-          className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
-        />
+          className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform" />
+        
         <div className="absolute inset-0 hero-overlay" />
       </div>
 
@@ -62,7 +62,7 @@ const HeroSection = () => {
           <div className="text-center md:text-left">
             <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-4 md:mb-6 animate-fade-up tracking-[-0.03em] md:leading-[1.15]">
               Interior Designers in
-              <span className="block text-primary tracking-[-0.02em] mt-2">
+              <span className="block tracking-[-0.02em] mt-2 text-primary-foreground">
                 Bengaluru
               </span>
             </h1>
@@ -80,16 +80,16 @@ const HeroSection = () => {
             {/* Trust badges */}
             <div className="flex flex-wrap gap-4 mt-6 md:mt-8 justify-center md:justify-start animate-fade-up delay-300">
               <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="text-primary font-bold text-sm">500+</span>
-                <span className="text-primary-foreground/70 text-xs font-body">Projects</span>
+                <span className="font-bold text-sm text-secondary-foreground">500+</span>
+                <span className="text-xs font-body text-primary">Projects</span>
               </div>
               <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="text-primary font-bold text-sm">10 Yr</span>
-                <span className="text-primary-foreground/70 text-xs font-body">Warranty</span>
+                <span className="font-bold text-sm text-primary-foreground">10 Yr</span>
+                <span className="text-xs font-body text-primary">Warranty</span>
               </div>
               <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="text-primary font-bold text-sm">45 Day</span>
-                <span className="text-primary-foreground/70 text-xs font-body">Delivery</span>
+                <span className="font-bold text-sm text-primary-foreground">45 Day</span>
+                <span className="text-xs font-body text-primary">Delivery</span>
               </div>
             </div>
           </div>
@@ -108,8 +108,8 @@ const HeroSection = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(22_85%_42%/0.1)] transition-all duration-300 font-body text-sm"
-                />
+                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(22_85%_42%/0.1)] transition-all duration-300 font-body text-sm" />
+                
                 <input
                   type="tel"
                   placeholder="Mobile Number"
@@ -118,21 +118,21 @@ const HeroSection = () => {
                   required
                   pattern="[0-9]{10}"
                   title="Please enter a 10-digit phone number"
-                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(22_85%_42%/0.1)] transition-all duration-300 font-body text-sm"
-                />
+                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(22_85%_42%/0.1)] transition-all duration-300 font-body text-sm" />
+                
                 <input
                   type="text"
                   placeholder="Project Type (e.g., 2BHK, Villa)"
                   value={formData.projectType}
                   onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                   required
-                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(22_85%_42%/0.1)] transition-all duration-300 font-body text-sm"
-                />
+                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(22_85%_42%/0.1)] transition-all duration-300 font-body text-sm" />
+                
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold font-body text-base shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
+                  className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold font-body text-base shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                  
                   {isSubmitting ? "Submitting..." : "Get My Free Design"}
                 </button>
               </form>
@@ -144,8 +144,8 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default HeroSection;
