@@ -62,7 +62,7 @@ const HeroSection = () => {
           <div className="text-center md:text-left">
             <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-4 md:mb-6 animate-fade-up tracking-[-0.03em] md:leading-[1.15]">
               Interior Designers in
-              <span className="block text-secondary tracking-[-0.02em] mt-2">
+              <span className="block text-primary tracking-[-0.02em] mt-2">
                 Bengaluru
               </span>
             </h1>
@@ -80,15 +80,15 @@ const HeroSection = () => {
             {/* Trust badges */}
             <div className="flex flex-wrap gap-4 mt-6 md:mt-8 justify-center md:justify-start animate-fade-up delay-300">
               <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="text-secondary font-bold text-sm">500+</span>
+                <span className="text-primary font-bold text-sm">500+</span>
                 <span className="text-primary-foreground/70 text-xs font-body">Projects</span>
               </div>
               <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="text-secondary font-bold text-sm">10 Yr</span>
+                <span className="text-primary font-bold text-sm">10 Yr</span>
                 <span className="text-primary-foreground/70 text-xs font-body">Warranty</span>
               </div>
               <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="text-secondary font-bold text-sm">45 Day</span>
+                <span className="text-primary font-bold text-sm">45 Day</span>
                 <span className="text-primary-foreground/70 text-xs font-body">Delivery</span>
               </div>
             </div>
