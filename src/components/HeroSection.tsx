@@ -62,7 +62,7 @@ const HeroSection = () => {
           <div className="text-center md:text-left">
             <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-4 md:mb-6 animate-fade-up tracking-[-0.03em] md:leading-[1.15]">
               Interior Designers in
-              <span className="block text-secondary tracking-[-0.02em] mt-2">
+              <span className="block text-primary tracking-[-0.02em] mt-2">
                 Bengaluru
               </span>
             </h1>
