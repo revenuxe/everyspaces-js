@@ -95,20 +95,20 @@ const HeroSection = () => {
           </div>
 
           {/* Right Side - Form */}
-          <div className="max-w-sm mx-auto md:ml-auto md:mr-0 w-full animate-fade-up delay-300">
-            <div className="glass-card rounded-3xl p-5 md:p-6 shadow-elevated">
-              <h2 className="font-display text-lg md:text-xl text-foreground text-center mb-4 tracking-[-0.02em]">
-                Get Your Free Design Consultation
+          <div className="max-w-xs mx-auto md:ml-auto md:mr-0 w-full animate-fade-up delay-300">
+            <div className="glass-card rounded-2xl p-4 shadow-elevated">
+              <h2 className="font-display text-base text-foreground text-center mb-2.5 tracking-[-0.02em]">
+                Get Free Design Consultation
               </h2>
 
-              <form onSubmit={handleSubmit} className="space-y-3">
+              <form onSubmit={handleSubmit} className="space-y-2">
                 <input
                   type="text"
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(22_85%_42%/0.1)] transition-all duration-300 font-body text-sm" />
+                  className="w-full px-3 py-2.5 bg-background/60 border border-border rounded-xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm" />
                 
                 <input
                   type="tel"
@@ -118,26 +118,25 @@ const HeroSection = () => {
                   required
                   pattern="[0-9]{10}"
                   title="Please enter a 10-digit phone number"
-                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(22_85%_42%/0.1)] transition-all duration-300 font-body text-sm" />
+                  className="w-full px-3 py-2.5 bg-background/60 border border-border rounded-xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm" />
                 
                 <input
                   type="text"
-                  placeholder="Project Type (e.g., 2BHK, Villa)"
+                  placeholder="Project Type (e.g., 2BHK)"
                   value={formData.projectType}
                   onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                   required
-                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(22_85%_42%/0.1)] transition-all duration-300 font-body text-sm" />
+                  className="w-full px-3 py-2.5 bg-background/60 border border-border rounded-xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm" />
                 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold font-body text-base shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
-                  
+                  className="w-full btn-terracotta py-2.5 rounded-xl text-secondary-foreground font-semibold font-body text-sm shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
                   {isSubmitting ? "Submitting..." : "Get My Free Design"}
                 </button>
               </form>
 
-              <p className="text-center text-xs text-muted-foreground mt-4 font-body">
+              <p className="text-center text-[11px] text-muted-foreground mt-2 font-body">
                 🔒 No spam. We respect your privacy.
               </p>
             </div>
