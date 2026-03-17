@@ -46,15 +46,6 @@ const FloatingOrzaButton = () => {
     return null;
   }
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
-
-  useEffect(() => {
-    if (isOpen && inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [isOpen]);
 
   const sendMessage = async (text: string) => {
     if (!text.trim() || isLoading) return;
