@@ -106,9 +106,10 @@ Remember:
     }
 
     const data = await response.json();
-    const content = data.choices?.[0]?.message?.content;
+    const content = data.candidates?.[0]?.content?.parts?.[0]?.text;
 
     if (!content) {
+      console.error("No content in Gemini response:", JSON.stringify(data));
       throw new Error("No content generated");
     }
 
