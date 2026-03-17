@@ -12,10 +12,10 @@ serve(async (req) => {
 
   try {
     const { topic, keywords, targetAudience } = await req.json();
-    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
+    const GOOGLE_GEMINI_API_KEY = Deno.env.get("GOOGLE_GEMINI_API_KEY");
     
-    if (!LOVABLE_API_KEY) {
-      throw new Error("LOVABLE_API_KEY is not configured");
+    if (!GOOGLE_GEMINI_API_KEY) {
+      throw new Error("GOOGLE_GEMINI_API_KEY is not configured");
     }
 
     const systemPrompt = `You are an expert SEO content writer for EverySpaces, a premium interior design company in Bangalore, India. 
