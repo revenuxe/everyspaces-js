@@ -1,9 +1,11 @@
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { X, Send, Sparkles, ArrowRight, Loader2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import orzaIcon from "@/assets/orza-icon.webp";
+import { imgSrc } from "@/lib/utils";
 
 interface Message {
   role: "user" | "assistant";
@@ -18,7 +20,7 @@ const QUICK_PROMPTS = [
 ];
 
 const FloatingOrzaButton = () => {
-  const location = useLocation();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -42,7 +44,7 @@ const FloatingOrzaButton = () => {
   }, [isOpen]);
 
   // Hide on Orza AI page and admin pages
-  if (location.pathname === "/orza-ai" || location.pathname.startsWith("/admin")) {
+  if ((pathname ?? "") === "/orza-ai" || (pathname ?? "").startsWith("/admin")) {
     return null;
   }
 
@@ -61,7 +63,7 @@ const FloatingOrzaButton = () => {
       const { data, error } = await supabase.functions.invoke("orza-chat", {
         body: {
           messages: newMessages,
-          page: location.pathname,
+          page: pathname,
         },
       });
 
@@ -98,13 +100,13 @@ const FloatingOrzaButton = () => {
         <div className="hidden md:flex fixed bottom-24 right-8 z-50 w-[380px] h-[520px] flex-col rounded-3xl bg-background border border-border shadow-2xl overflow-hidden animate-in slide-in-from-bottom-4 fade-in duration-300">
           {/* Header */}
           <div className="flex items-center gap-3 px-5 py-4 bg-primary text-primary-foreground">
-            <img src={orzaIcon} alt="Orza" className="w-9 h-9 rounded-full object-contain bg-white p-0.5" />
+            <img src={imgSrc(orzaIcon)} alt="Orza" className="w-9 h-9 rounded-full object-contain bg-white p-0.5" />
             <div className="flex-1">
               <h3 className="font-bold text-sm">Orza AI Assistant</h3>
               <p className="text-xs opacity-80">Interior design help • Instant answers</p>
             </div>
             <Link
-              to="/orza-ai"
+              href="/orza-ai"
               className="text-xs bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-full transition-colors flex items-center gap-1"
             >
               Full Tool <ArrowRight className="w-3 h-3" />
@@ -159,7 +161,7 @@ const FloatingOrzaButton = () => {
                       <ReactMarkdown
                         components={{
                           a: ({ href, children }) => (
-                            <Link to={href || "/"} className="text-secondary underline font-medium" onClick={() => setIsOpen(false)}>
+                            <Link href={href || "/"} className="text-secondary underline font-medium" onClick={() => setIsOpen(false)}>
                               {children}
                             </Link>
                           ),
@@ -208,7 +210,7 @@ const FloatingOrzaButton = () => {
             </div>
             <p className="text-[10px] text-muted-foreground mt-2 text-center">
               For detailed design plans, try{" "}
-              <Link to="/orza-ai" className="text-secondary underline" onClick={() => setIsOpen(false)}>
+              <Link href="/orza-ai" className="text-secondary underline" onClick={() => setIsOpen(false)}>
                 Orza AI Full Tool
               </Link>
             </p>
@@ -232,7 +234,7 @@ const FloatingOrzaButton = () => {
           </>
         ) : (
           <>
-            <img src={orzaIcon} alt="Orza" className="w-7 h-7 rounded-full object-contain bg-white" />
+            <img src={imgSrc(orzaIcon)} alt="Orza" className="w-7 h-7 rounded-full object-contain bg-white" />
             <span className="text-sm font-semibold">Ask Orza</span>
             <Sparkles className="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" />
           </>

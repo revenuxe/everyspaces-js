@@ -1,4 +1,5 @@
-import { Helmet } from "react-helmet-async";
+import type { StaticImageData } from "next/image";
+import { imgSrc } from "@/lib/utils";
 
 interface StructuredDataProps {
   data: object | object[];
@@ -6,15 +7,13 @@ interface StructuredDataProps {
 
 export const StructuredData = ({ data }: StructuredDataProps) => {
   const jsonLd = Array.isArray(data) ? data : [data];
-  
+
   return (
-    <Helmet>
+    <>
       {jsonLd.map((item, index) => (
-        <script key={index} type="application/ld+json">
-          {JSON.stringify(item)}
-        </script>
+        <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }} />
       ))}
-    </Helmet>
+    </>
   );
 };
 
@@ -295,7 +294,7 @@ export const createServiceSchema = (
   name: string,
   description: string,
   url: string,
-  image?: string,
+  image?: string | StaticImageData,
   priceRange?: string,
   additionalInfo?: {
     timeRequired?: string;
@@ -309,7 +308,7 @@ export const createServiceSchema = (
   "name": name,
   "description": description,
   "url": url,
-  "image": image,
+  "image": image !== undefined ? imgSrc(image) : undefined,
   "provider": {
     "@id": "https://everyspaces.com/#organization"
   },
@@ -348,7 +347,7 @@ export const createArticleSchema = (article: {
   title: string;
   description: string;
   url: string;
-  image?: string;
+  image?: string | StaticImageData;
   datePublished?: string;
   dateModified?: string;
   author?: string;
@@ -360,7 +359,7 @@ export const createArticleSchema = (article: {
   "headline": article.title,
   "description": article.description,
   "url": article.url,
-  "image": article.image,
+  "image": article.image !== undefined ? imgSrc(article.image) : undefined,
   "datePublished": article.datePublished,
   "dateModified": article.dateModified || article.datePublished,
   "author": {
@@ -415,7 +414,7 @@ export const createFAQSchema = (faqs: { question: string; answer: string }[], pa
 });
 
 // Image Gallery schema (enhanced for AEO)
-export const createImageGallerySchema = (images: { url: string; name: string; description?: string }[]) => ({
+export const createImageGallerySchema = (images: { url: string | StaticImageData; name: string; description?: string }[]) => ({
   "@context": "https://schema.org",
   "@type": "ImageGallery",
   "@id": "https://everyspaces.com/portfolio#gallery",
@@ -423,7 +422,7 @@ export const createImageGallerySchema = (images: { url: string; name: string; de
   "description": "View 500+ completed interior design projects by EverySpaces in Bangalore including modular kitchens, bedrooms, living rooms, and full home interiors.",
   "image": images.map((img) => ({
     "@type": "ImageObject",
-    "url": img.url,
+    "url": imgSrc(img.url),
     "name": img.name,
     "description": img.description || `${img.name} by EverySpaces Interior Design Bangalore`
   })),
@@ -437,7 +436,7 @@ export const createImageGallerySchema = (images: { url: string; name: string; de
 export const createProductSchema = (product: {
   name: string;
   description: string;
-  image: string;
+  image: string | StaticImageData;
   url: string;
   priceRange: string;
   category: string;
@@ -446,7 +445,7 @@ export const createProductSchema = (product: {
   "@type": "Product",
   "name": product.name,
   "description": product.description,
-  "image": product.image,
+  "image": imgSrc(product.image),
   "url": product.url,
   "category": product.category,
   "brand": {

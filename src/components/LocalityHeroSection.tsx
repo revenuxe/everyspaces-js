@@ -1,5 +1,5 @@
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
@@ -10,7 +10,7 @@ interface LocalityHeroSectionProps {
 }
 
 const LocalityHeroSection = ({ localityName, projectCount, heroImage }: LocalityHeroSectionProps) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -34,7 +34,7 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
         }
       });
       if (error) throw error;
-      navigate("/thank-you");
+      router.push("/thank-you");
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({

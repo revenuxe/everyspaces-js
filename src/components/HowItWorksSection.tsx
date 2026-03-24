@@ -1,6 +1,5 @@
+import Link from "next/link";
 import { ClipboardCheck, Palette, Ruler, Truck, Home } from "lucide-react";
-import { Link } from "react-router-dom";
-
 const steps = [
   {
     icon: ClipboardCheck,
@@ -103,7 +102,7 @@ const HowItWorksSection = () => {
         {/* CTA */}
         <div className="text-center mt-8 md:mt-16">
           <Link
-            to="/contact"
+            href="/contact"
             className="inline-flex items-center gap-2 btn-terracotta px-6 py-3 md:px-8 md:py-4 rounded-2xl text-secondary-foreground font-semibold font-body text-sm md:text-base"
           >
             Start Your Project

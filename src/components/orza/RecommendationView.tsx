@@ -3,6 +3,8 @@ import { Palette, Sofa, Lightbulb, Layers, Star, IndianRupee, Download, MessageC
 import { motion } from "framer-motion";
 import orzaLogo from "@/assets/orza-logo.webp";
 import type { Recommendation } from "./types";
+import { imgSrc } from "@/lib/utils";
+import type { StaticImageData } from "next/image";
 
 // Import space-specific images
 import serviceKitchen from "@/assets/service-kitchen.jpg";
@@ -49,7 +51,7 @@ const AnimatedCard = ({ children, delay = 0, className }: { children: ReactNode;
 );
 
 // Map space types to relevant project images
-const SPACE_IMAGES: Record<string, string[]> = {
+const SPACE_IMAGES: Record<string, StaticImageData[]> = {
   "Modular Kitchen": [serviceModularKitchen, serviceKitchen, gallery5, gallery12],
   "Kitchen": [serviceModularKitchen, serviceKitchen, gallery5, gallery12],
   "Bedroom": [serviceBedroom, gallery3, gallery9, gallery15],
@@ -66,23 +68,20 @@ const SPACE_IMAGES: Record<string, string[]> = {
   "Kids Room": [gallery18, gallery11, gallery6, gallery3],
 };
 
-const DEFAULT_IMAGES = [heroInterior, serviceLivingRoom, serviceModularKitchen, serviceBedroom];
+const DEFAULT_IMAGES: StaticImageData[] = [heroInterior, serviceLivingRoom, serviceModularKitchen, serviceBedroom];
 
 const getMoodImages = (moodKeywords?: string[]): string[] => {
-  if (!moodKeywords || moodKeywords.length === 0) return DEFAULT_IMAGES;
-  
-  // Try to match space type from mood keywords
+  if (!moodKeywords?.length) return DEFAULT_IMAGES.map(imgSrc);
   for (const kw of moodKeywords) {
     const upper = kw.charAt(0).toUpperCase() + kw.slice(1);
-    if (SPACE_IMAGES[upper]) return SPACE_IMAGES[upper];
-    // Check partial matches
+    if (SPACE_IMAGES[upper]) return SPACE_IMAGES[upper].map(imgSrc);
     for (const [key, imgs] of Object.entries(SPACE_IMAGES)) {
       if (key.toLowerCase().includes(kw.toLowerCase()) || kw.toLowerCase().includes(key.toLowerCase())) {
-        return imgs;
+        return imgs.map(imgSrc);
       }
     }
   }
-  return DEFAULT_IMAGES;
+  return DEFAULT_IMAGES.map(imgSrc);
 };
 
 interface RecommendationViewProps {
@@ -102,7 +101,7 @@ const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSup
         <button onClick={onReset} className="w-9 h-9 rounded-full bg-muted flex items-center justify-center hover:bg-muted/80 transition-colors">
           <ArrowLeft className="w-4 h-4 text-foreground" />
         </button>
-        <img src={orzaLogo} alt="Orza AI" className="h-7 object-contain" />
+        <img src={imgSrc(orzaLogo)} alt="Orza AI" className="h-7 object-contain" />
         <div className="flex-1" />
         <span className="text-[10px] text-muted-foreground font-medium">Your Design Plan</span>
       </div>

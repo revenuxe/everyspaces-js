@@ -1,11 +1,12 @@
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import heroImage from "@/assets/hero-interior.jpg?webp";
+import heroImage from "@/assets/hero-interior.jpg";
+import { imgSrc } from "@/lib/utils";
 
 const BangaloreHeroSection = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -31,7 +32,7 @@ const BangaloreHeroSection = () => {
 
       if (error) throw error;
 
-      navigate("/thank-you");
+      router.push("/thank-you");
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({
@@ -49,7 +50,7 @@ const BangaloreHeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroImage}
+          src={imgSrc(heroImage)}
           alt="Best interior designers in Bangalore"
           decoding="async"
           fetchPriority="high"

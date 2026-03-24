@@ -1,5 +1,5 @@
+import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import { X, Gift } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -15,8 +15,8 @@ interface QuotationPopupProps {
 const QuotationPopup = ({ externalOpen, onExternalOpenChange }: QuotationPopupProps) => {
   const [internalOpen, setInternalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
+  const pathname = usePathname();
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -32,8 +32,9 @@ const QuotationPopup = ({ externalOpen, onExternalOpenChange }: QuotationPopupPr
     if (externalOpen !== undefined) return;
 
     // Don't show on admin pages, thank-you page, or if already dismissed in session
-    const isAdminPage = location.pathname.startsWith("/admin");
-    const isThankYouPage = location.pathname === "/thank-you";
+    const path = pathname ?? "";
+    const isAdminPage = path.startsWith("/admin");
+    const isThankYouPage = path === "/thank-you";
     const alreadyShown = sessionStorage.getItem("quotationPopupShown");
 
     if (isAdminPage || isThankYouPage || alreadyShown) {
@@ -46,7 +47,7 @@ const QuotationPopup = ({ externalOpen, onExternalOpenChange }: QuotationPopupPr
     }, 5000);
 
     return () => clearTimeout(timer);
-  }, [location.pathname, externalOpen]);
+  }, [pathname, externalOpen]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,7 +62,7 @@ const QuotationPopup = ({ externalOpen, onExternalOpenChange }: QuotationPopupPr
     try {
       const { error } = await (supabase.from("leads") as any).insert({
         form_name: externalOpen !== undefined ? "Mobile Contact Popup" : "Quotation Popup",
-        source_page: location.pathname,
+        source_page: pathname ?? "",
         data: {
           name: formData.name,
           phone: formData.phone,
@@ -73,7 +74,7 @@ const QuotationPopup = ({ externalOpen, onExternalOpenChange }: QuotationPopupPr
 
       setIsOpen(false);
       setFormData({ name: "", phone: "", pincode: "" });
-      navigate("/thank-you");
+      router.push("/thank-you");
     } catch (error) {
       console.error("Error submitting form:", error);
       toast.error("Something went wrong. Please try again.");

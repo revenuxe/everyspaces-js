@@ -1,14 +1,15 @@
 import { ArrowRight } from "lucide-react";
 
 // Service images
-import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
-import wardrobeImage from "@/assets/service-wardrobe.jpg?webp";
-import livingImage from "@/assets/service-living-room.jpg?webp";
-import bedroomImage from "@/assets/service-bedroom.jpg?webp";
-import tvUnitImage from "@/assets/service-tv-unit.jpg?webp";
-import poojaImage from "@/assets/service-pooja-room.jpg?webp";
-import villaImage from "@/assets/service-villa.jpg?webp";
-import bhk2Image from "@/assets/service-2bhk.jpg?webp";
+import kitchenImage from "@/assets/service-modular-kitchen.jpg";
+import wardrobeImage from "@/assets/service-wardrobe.jpg";
+import livingImage from "@/assets/service-living-room.jpg";
+import bedroomImage from "@/assets/service-bedroom.jpg";
+import tvUnitImage from "@/assets/service-tv-unit.jpg";
+import poojaImage from "@/assets/service-pooja-room.jpg";
+import villaImage from "@/assets/service-villa.jpg";
+import bhk2Image from "@/assets/service-2bhk.jpg";
+import { imgSrc } from "@/lib/utils";
 
 const allServices = [
   { slug: "modular-kitchen", title: "Modular Kitchen", image: kitchenImage },
@@ -59,11 +60,11 @@ const RelatedServices = ({ currentSlug }: RelatedServicesProps) => {
           {relatedServices.map((service) => (
             <a
               key={service.slug}
-              href={`https://everyspaces.com/services/${service.slug}`}
+              href={`/services/${service.slug}`}
               className="group relative overflow-hidden rounded-2xl aspect-[3/4]"
             >
               <img
-                src={service.image}
+                src={imgSrc(service.image)}
                 alt={service.title}
                 loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"

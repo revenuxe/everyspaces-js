@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import iLoveBangaloreImage from "@/assets/i-love-bangalore.webp";
+import { imgSrc } from "@/lib/utils";
 
 const ExploreBangaloreCTA = () => {
   return (
@@ -12,7 +13,7 @@ const ExploreBangaloreCTA = () => {
           {/* Image */}
           <div className="w-full md:w-1/2 h-48 md:h-64 overflow-hidden">
             <img
-              src={iLoveBangaloreImage}
+              src={imgSrc(iLoveBangaloreImage)}
               alt="I Love Bangalore"
               loading="lazy"
               decoding="async"

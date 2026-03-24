@@ -1,7 +1,8 @@
+import { useRouter } from "next/navigation";
+import { imgSrc } from "@/lib/utils";
 import { LayoutDashboard, Users, LogOut, FileText } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
 import everyspacesLogo from "@/assets/everyspaces-logo.webp";
 
 import {
@@ -31,12 +32,12 @@ const menuItems = [
 export function AdminSidebar({ activeView, setActiveView }: AdminSidebarProps) {
   const { state } = useSidebar();
   const collapsed = state === "collapsed";
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
     toast.success("Logged out successfully");
-    navigate('/admin/login');
+    router.push('/admin/login');
   };
 
   return (
@@ -46,7 +47,7 @@ export function AdminSidebar({ activeView, setActiveView }: AdminSidebarProps) {
     >
       <div className="p-4 border-b border-border">
         <div className="flex items-center gap-3">
-          <img src={everyspacesLogo} alt="EverySpaces" className="h-8 w-auto" />
+          <img src={imgSrc(everyspacesLogo)} alt="EverySpaces" className="h-8 w-auto" />
           {!collapsed && (
             <span className="font-semibold text-foreground">Admin</span>
           )}

@@ -1,14 +1,15 @@
+import Link from "next/link";
 import { useState } from "react";
 import { X, ZoomIn } from "lucide-react";
-import { Link } from "react-router-dom";
-import gallery1 from "@/assets/gallery-1.jpg?webp";
-import gallery2 from "@/assets/gallery-2.jpg?webp";
-import gallery3 from "@/assets/gallery-3.jpg?webp";
-import gallery4 from "@/assets/gallery-4.jpg?webp";
-import gallery5 from "@/assets/gallery-5.jpg?webp";
-import gallery6 from "@/assets/gallery-6.jpg?webp";
-import gallery7 from "@/assets/gallery-7.jpg?webp";
-import gallery8 from "@/assets/gallery-8.jpg?webp";
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
+import gallery5 from "@/assets/gallery-5.jpg";
+import gallery6 from "@/assets/gallery-6.jpg";
+import gallery7 from "@/assets/gallery-7.jpg";
+import gallery8 from "@/assets/gallery-8.jpg";
+import { imgSrc } from "@/lib/utils";
 
 const galleryImages = [
   { id: 1, src: gallery1, title: "Modern Kitchen", category: "Kitchen" },
@@ -30,7 +31,7 @@ const GallerySection = () => {
       onClick={() => setSelectedImage(image)}
     >
       <img 
-        src={image.src} 
+        src={imgSrc(image.src)} 
         alt={image.title}
         loading="lazy"
         decoding="async"
@@ -78,7 +79,7 @@ const GallerySection = () => {
         {/* CTA Button */}
         <div className="text-center mt-8 md:mt-10">
           <Link 
-            to="/portfolio"
+            href="/portfolio"
             className="inline-flex items-center gap-2 px-6 md:px-8 py-3 bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full font-medium text-sm md:text-base transition-all duration-300 hover:shadow-lg hover:shadow-secondary/25"
           >
             View All Projects
@@ -100,7 +101,7 @@ const GallerySection = () => {
           </button>
           <div className="max-w-5xl max-h-[85vh] overflow-hidden rounded-xl md:rounded-2xl" onClick={(e) => e.stopPropagation()}>
             <img 
-              src={selectedImage.src} 
+              src={imgSrc(selectedImage.src)} 
               alt={selectedImage.title}
               loading="lazy"
               className="w-full h-full object-contain"

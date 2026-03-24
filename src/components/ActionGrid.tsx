@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { Sparkles, Calculator, Images, Phone, ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { imgSrc } from "@/lib/utils";
 import calculatorImage from "@/assets/action-calculator.webp";
 import galleryImage from "@/assets/action-gallery.webp";
 import materialsImage from "@/assets/action-materials.webp";
@@ -60,13 +61,13 @@ const ActionGrid = () => {
           {actionItems.map((item, index) => (
             <Link
               key={index}
-              to={item.link}
+              href={item.link}
               className="flex-shrink-0 w-[75vw] sm:w-[60vw] md:w-auto snap-center first:ml-4 last:mr-4 md:first:ml-0 md:last:mr-0"
             >
               <div className="relative overflow-hidden rounded-3xl h-[180px] md:h-[200px] hover-lift cursor-pointer group">
                 {/* Background Image */}
                 <img
-                  src={item.image}
+                  src={imgSrc(item.image)}
                   alt={item.title}
                   loading="lazy"
                   decoding="async"
@@ -80,7 +81,7 @@ const ActionGrid = () => {
                 <div className="relative z-10 h-full flex flex-col justify-end p-5 pr-16 pb-8">
                   <div className={`w-12 h-12 rounded-2xl backdrop-blur-sm flex items-center justify-center mb-3 transition-colors overflow-hidden ${(item as any).isOrza ? 'bg-white' : 'bg-secondary/20 group-hover:bg-secondary/30'}`}>
                     {(item as any).isOrza ? (
-                      <img src={orzaIcon} alt="Orza" className="w-8 h-8 object-contain" />
+                      <img src={imgSrc(orzaIcon)} alt="Orza" className="w-8 h-8 object-contain" />
                     ) : (
                       <item.icon className="w-6 h-6 text-primary-foreground" />
                     )}

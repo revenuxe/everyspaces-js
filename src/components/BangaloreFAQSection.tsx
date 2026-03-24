@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   Accordion,
   AccordionContent,
@@ -89,7 +89,7 @@ const BangaloreFAQSection = () => {
             Ready to start your Bangalore home interior project?
           </p>
           <Link
-            to="/contact"
+            href="/contact"
             className="inline-flex btn-terracotta px-8 py-3 rounded-2xl font-semibold text-secondary-foreground"
           >
             Get Free Consultation

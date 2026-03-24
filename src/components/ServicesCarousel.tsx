@@ -1,8 +1,9 @@
 import { useRef, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import kitchenImage from "@/assets/service-kitchen.jpg?webp";
-import bedroomImage from "@/assets/service-bedroom.jpg?webp";
-import livingImage from "@/assets/service-living.jpg?webp";
+import kitchenImage from "@/assets/service-kitchen.jpg";
+import bedroomImage from "@/assets/service-bedroom.jpg";
+import livingImage from "@/assets/service-living.jpg";
+import { imgSrc } from "@/lib/utils";
 
 const services = [
   { id: 1, title: "Modular Kitchens", description: "Expertly crafted for Bengaluru's modern culinary lifestyle.", image: kitchenImage, href: "/services/modular-kitchen" },
@@ -173,7 +174,7 @@ const ServicesCarousel = () => {
                 {/* Parallax Image */}
                 <div className="absolute inset-0 overflow-hidden">
                   <img
-                    src={service.image}
+                    src={imgSrc(service.image)}
                     alt={service.title}
                     loading="lazy"
                     decoding="async"

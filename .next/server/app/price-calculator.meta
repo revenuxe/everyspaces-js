@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/price-calculator/layout,_N_T_/price-calculator/page,_N_T_/price-calculator"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/price-calculator/__PAGE__",
+    "/price-calculator",
+    "/_index",
+    "/_head"
+  ]
+}

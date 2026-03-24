@@ -1,9 +1,10 @@
 import { useRef, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import bhk2Image from "@/assets/service-2bhk.jpg?webp";
-import villaImage from "@/assets/service-villa.jpg?webp";
-import kitchenImage from "@/assets/service-modular-kitchen.jpg?webp";
-import bedroomImage from "@/assets/service-bedroom.jpg?webp";
+import bhk2Image from "@/assets/service-2bhk.jpg";
+import villaImage from "@/assets/service-villa.jpg";
+import kitchenImage from "@/assets/service-modular-kitchen.jpg";
+import bedroomImage from "@/assets/service-bedroom.jpg";
+import { imgSrc } from "@/lib/utils";
 
 const bestServices = [
   {
@@ -194,7 +195,7 @@ const BestServices = () => {
                 {/* Parallax Image */}
                 <div className="absolute inset-0 overflow-hidden">
                   <img
-                    src={service.image}
+                    src={imgSrc(service.image)}
                     alt={service.title}
                     loading="lazy"
                     decoding="async"

@@ -1,0 +1,223 @@
+{
+  "app": {
+    "[project]/src/app/_not-found/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/admin/login/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/admin/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/articles/[slug]/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/articles/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/bangalore/[locality]/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/bangalore/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/contact/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/orza-ai/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/portfolio/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/price-calculator/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/privacy/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/2bhk-interiors/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/3bhk-interiors/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/balcony-design/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/bathroom-design/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/bedroom-design/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/crockery-unit/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/dining-room/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/false-ceiling/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/foyer-entrance/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/full-home-design/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/guest-room/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/home-office/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/kids-room/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/living-room/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/modular-kitchen/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/pooja-room/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/study-room/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/tv-unit/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/villa-interiors/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/services/wardrobe-design/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/terms/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ],
+    "[project]/src/app/thank-you/page": [
+      "static/media/a218039a3287bcfd-s.p.17-1enzs_j91b.woff2",
+      "static/media/8e6fa89aa22d24ec-s.p.0uvzar8hswo3p.woff2",
+      "static/media/e2334d715941921e-s.p.12skym0rqknxy.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.0~mcdl10zdfb3.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

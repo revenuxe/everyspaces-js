@@ -1,10 +1,11 @@
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Home, Wrench, MessageSquare, Sparkles } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import QuotationPopup from "./QuotationPopup";
 
 const BottomNav = () => {
-  const location = useLocation();
+  const pathname = usePathname();
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   const handleWhatsAppClick = () => {
@@ -52,7 +53,7 @@ const BottomNav = () => {
               }
 
               const Icon = item.icon!;
-              const isActive = item.href ? location.pathname === item.href : false;
+              const isActive = item.href ? pathname === item.href : false;
 
               // Handle items with action (like Contact)
               if (item.action && !item.href) {
@@ -71,7 +72,7 @@ const BottomNav = () => {
               return (
                 <Link
                   key={index}
-                  to={item.href!}
+                  href={item.href!}
                   className={`flex flex-col items-center gap-1 py-2 px-3 transition-colors ${
                     isActive ? "text-secondary" : "text-primary-foreground/70 hover:text-primary-foreground"
                   }`}

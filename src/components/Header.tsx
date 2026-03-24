@@ -1,12 +1,14 @@
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
 import everyspacesLogo from "@/assets/everyspaces-logo.webp";
+import { imgSrc } from "@/lib/utils";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     let rafId = 0;
@@ -30,7 +32,7 @@ const Header = () => {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   const navLinks = [
     { href: "/", label: "Home", isRoute: true },
@@ -51,7 +53,7 @@ const Header = () => {
         {/* Logo */}
         <a href="/" className="flex items-center gap-2">
           <img
-            src={everyspacesLogo}
+            src={imgSrc(everyspacesLogo)}
             alt="EverySpaces - For the Way You Work"
             width={197}
             height={40}
@@ -66,9 +68,9 @@ const Header = () => {
               link.isRoute ? (
                 <Link 
                   key={link.href}
-                  to={link.href} 
+                  href={link.href} 
                   className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
-                    location.pathname === link.href
+                    pathname === link.href
                       ? "bg-primary-foreground/15 text-primary-foreground"
                       : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
                   }`}
@@ -91,7 +93,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           {/* Orange circle button with arrow - matching screenshot */}
           <Link 
-            to="/contact" 
+            href="/contact" 
             className="hidden md:flex w-11 h-11 rounded-full bg-secondary items-center justify-center hover:bg-secondary/90 transition-all duration-300 shadow-lg shadow-secondary/30 hover:scale-105"
             aria-label="Get Quote"
           >
@@ -122,9 +124,9 @@ const Header = () => {
               link.isRoute ? (
                 <Link 
                   key={link.href}
-                  to={link.href} 
+                  href={link.href} 
                   className={`px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
-                    location.pathname === link.href
+                    pathname === link.href
                       ? "bg-primary-foreground/15 text-primary-foreground"
                       : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
                   }`}
@@ -142,7 +144,7 @@ const Header = () => {
                 </a>
               )
             ))}
-            <Link to="/contact" className="mt-2 mx-4 btn-orange px-6 py-2.5 rounded-2xl text-sm font-semibold text-secondary-foreground block text-center">
+            <Link href="/contact" className="mt-2 mx-4 btn-orange px-6 py-2.5 rounded-2xl text-sm font-semibold text-secondary-foreground block text-center">
               Get Quote
             </Link>
           </nav>

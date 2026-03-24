@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/bangalore/layout,_N_T_/bangalore/[locality]/layout,_N_T_/bangalore/[locality]/page,_N_T_/bangalore/sarjapur-road"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/bangalore/$d$locality/__PAGE__",
+    "/bangalore/$d$locality",
+    "/bangalore",
+    "/_index",
+    "/_head"
+  ]
+}

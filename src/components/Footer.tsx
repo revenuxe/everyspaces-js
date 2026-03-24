@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Instagram, Linkedin } from "lucide-react";
 import everyspacesLogo from "@/assets/everyspaces-logo.webp";
+import { imgSrc } from "@/lib/utils";
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
           <div className="md:col-span-1">
             <a href="/" aria-label="EverySpaces Home - Best Interior Designers in Bangalore">
               <img
-                src={everyspacesLogo}
+                src={imgSrc(everyspacesLogo)}
                 alt="EverySpaces Interior Design Bangalore"
                 width={197}
                 height={40}
