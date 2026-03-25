@@ -81,6 +81,20 @@ export const PAGE_METADATA: Record<string, Metadata> = {
     alternates: { canonical: "/privacy" },
     openGraph: { ...ogDefaults, title: "Privacy Policy | EverySpaces", url: "/privacy" },
   },
+  "/about-us": {
+    title: "About Us | Intorza Interiors Management | EverySpaces",
+    description:
+      "Started in 2025, EverySpaces delivers interior design and execution powered by Intorza, a software management company for interiors. Discover how our structured workflow helps your project.",
+    alternates: { canonical: "/about-us" },
+    openGraph: {
+      ...ogDefaults,
+      title: "About Us | Intorza x EverySpaces",
+      description:
+        "Started in 2025, EverySpaces delivers interior design and execution powered by Intorza, a software management company for interiors.",
+      url: "/about-us",
+    },
+    robots: { index: true, follow: true },
+  },
   "/articles": {
     title: "Interior Design Tips & Ideas Blog | Home Decor Trends | EverySpaces",
     description:

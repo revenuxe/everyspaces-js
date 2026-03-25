@@ -20,6 +20,7 @@ export const CORE_SITEMAP_ENTRIES: Entry[] = [
   { path: "/orza-ai", changeFrequency: "weekly", priority: 0.9 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.4 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.4 },
+  { path: "/about-us", changeFrequency: "yearly", priority: 0.5 },
   { path: "/llms.txt", changeFrequency: "monthly", priority: 0.35 },
   { path: "/llms-full.txt", changeFrequency: "monthly", priority: 0.3 },
 ];
