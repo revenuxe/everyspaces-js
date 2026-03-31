@@ -1,0 +1,49 @@
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+
+function unauthorizedResponse() {
+  return new NextResponse("Authentication required", {
+    status: 401,
+    headers: {
+      "WWW-Authenticate": 'Basic realm="Sanity Studio", charset="UTF-8"',
+    },
+  });
+}
+
+export function middleware(request: NextRequest) {
+  if (!request.nextUrl.pathname.startsWith("/studio")) {
+    return NextResponse.next();
+  }
+
+  const user = process.env.SANITY_STUDIO_BASIC_USER;
+  const pass = process.env.SANITY_STUDIO_BASIC_PASS;
+
+  if (!user || !pass) {
+    if (process.env.NODE_ENV === "production") {
+      return NextResponse.json(
+        { error: "Studio auth credentials are not configured." },
+        { status: 503 },
+      );
+    }
+    return NextResponse.next();
+  }
+
+  const authHeader = request.headers.get("authorization");
+  if (!authHeader?.startsWith("Basic ")) {
+    return unauthorizedResponse();
+  }
+
+  const encoded = authHeader.split(" ")[1] || "";
+  const decoded = atob(encoded);
+  const [inputUser, inputPass] = decoded.split(":");
+
+  if (inputUser !== user || inputPass !== pass) {
+    return unauthorizedResponse();
+  }
+
+  return NextResponse.next();
+}
+
+export const config = {
+  matcher: ["/studio/:path*"],
+};

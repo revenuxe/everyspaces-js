@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery13 from "@/assets/gallery-13.jpg";
@@ -12,68 +12,95 @@ import gallery20 from "@/assets/gallery-20.jpg";
 
 const Basavanagudi = () => {
   const seo = {
-    metaTitle: "Interior Designers in Basavanagudi | Heritage Home Interiors Bangalore",
-    metaDescription: "Heritage-specialist interior designers in Basavanagudi, Bangalore. 18+ projects preserving old-world charm. Traditional craftsmanship, wooden interiors & culturally-rich designs. 10-year warranty!",
+    metaTitle: "Best Interior Designers in Abids Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Abids, Hyderabad with modular kitchens, wardrobes, and full-home design. 18+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers basavanagudi",
-      "best interior designers in basavanagudi bangalore",
-      "home interiors basavanagudi",
-      "heritage kitchen basavanagudi",
-      "traditional interior design basavanagudi",
-      "wooden interior basavanagudi",
-      "home renovation basavanagudi bangalore",
-      "interior decorators basavanagudi",
-      "old bangalore interiors",
-      "cultural home design basavanagudi"
+      "interior designers in Abids hyderabad",
+      "home interiors Abids",
+      "best interior designers Abids",
+      "modular kitchen Abids hyderabad",
+      "wardrobe design Abids",
+      "full home interiors hyderabad",
+      "interior decorators Abids",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Interior Designers in Basavanagudi | EverySpaces - Heritage Specialists",
-    ogDescription: "Basavanagudi interior experts. 18+ projects, heritage preservation. Old-world charm. Free consultation!",
+    ogTitle: "Interior Designers in Abids, Hyderabad | EverySpaces",
+    ogDescription: "18+ Projects completed in and around Abids. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in Basavanagudi?",
-        answer: "Interior design in Basavanagudi costs ₹1,800 to ₹4,000 per sq ft for heritage-quality work. EverySpaces offers packages from ₹9 lakhs. We've completed 18+ projects preserving Basavanagudi's old-world charm with 10-year warranty."
+        question: "What is the interior design cost in Abids, Hyderabad?",
+        answer: "Interior design cost in Abids typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Do you preserve heritage elements in Basavanagudi homes?",
-        answer: "Absolutely! Basavanagudi has Bangalore's oldest heritage homes. We specialize in preserving original Burma teak doors, vintage flooring, traditional columns, and architectural details while sensitively adding modern amenities."
+        question: "Do you provide modular kitchen and wardrobe design in Abids?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Abids."
       },
       {
-        question: "Which areas in Basavanagudi do you serve?",
-        answer: "We serve all Basavanagudi including Gandhi Bazaar, DVG Road, NR Colony, Hanumanthanagar, and surrounding areas. Our portfolio includes heritage bungalows near Bull Temple and classic Basavanagudi residences."
+        question: "How long does a full home interior project take in Abids?",
+        answer: "Most 2BHK and 3BHK interior projects in Abids are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "Can you design traditional South Indian kitchens?",
-        answer: "Yes! We design traditional South Indian kitchens with proper provisions for agraharam-style cooking, traditional storage vessels, grinding stone spaces, and modern convenience while maintaining cultural authenticity."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["Gandhi Bazaar", "DVG Road", "NR Colony", "Hanumanthanagar", "Jayanagar", "Shankarapuram"],
-    specialties: ["Heritage Preservation", "Traditional Kitchen", "Wooden Craftsmanship", "Cultural Design", "Antique Integration"],
-    lifestyleDescription: "Basavanagudi is Bangalore's cultural heart, home to the iconic Bull Temple, the vibrant Gandhi Bazaar, and some of the city's oldest heritage homes. This neighborhood demands interior designs that respect its rich architectural legacy while thoughtfully introducing modern amenities.",
+    nearbyAreas: ["Koti","Nampally","Basheerbagh","Himayatnagar","Lakdikapul","Narayanaguda"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Abids is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
-      { name: "Bull Temple & Bugle Rock", description: "The ancient Nandi Temple and Bugle Rock park define Basavanagudi's heritage. Homes nearby often feature traditional stone and wood elements inspired by these landmarks.", type: "landmark" as const },
-      { name: "Gandhi Bazaar", description: "The bustling traditional market street with flower vendors and old-world shops. Homes along this area benefit from sound insulation and heritage-style facades.", type: "lifestyle" as const },
-      { name: "DVG Road & NR Colony", description: "Tree-lined residential streets with classic bungalows featuring original Burma teak woodwork, vintage tiles, and courtyard layouts worth preserving.", type: "residential" as const },
-      { name: "Lalbagh Botanical Garden", description: "Proximity to Lalbagh inspires biophilic interiors with lush indoor gardens, natural stone elements, and earthy color palettes.", type: "nature" as const }
+      {
+        name: "Residential Communities in Abids",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
+        type: "residential" as const
+      },
+      {
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
+        type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
+      }
     ],
     designTips: [
-      { title: "Preserve Original Woodwork", description: "Basavanagudi's heritage homes have beautiful Burma teak doors and windows. Restore rather than replace—professional polishing can revive decades-old wood to its former glory." },
-      { title: "Respect the Courtyard Layout", description: "Traditional Basavanagudi homes center around courtyards. Maintain this open-air element while adding glass roofing or skylight options for weather protection." },
-      { title: "Use Traditional South Indian Kitchen Design", description: "Incorporate traditional features like grinding stone niches, brass vessel storage, and wet-dry kitchen separation while adding modern appliances discreetly." },
-      { title: "Integrate Antiques Thoughtfully", description: "Display family heirlooms, brass collectibles, and vintage furniture alongside modern pieces. Glass-front cabinets with LED lighting showcase antiques beautifully." }
+      {
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
+      },
+      {
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
+      },
+      {
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
+      },
+      {
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
+      }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="Basavanagudi"
+      localityName="Abids"
       slug="basavanagudi"
       projectCount="18+ Projects"
       heroImage={gallery13}
       galleryImages={[gallery14, gallery15, gallery16, gallery17, gallery18, gallery19, gallery20, gallery13]}
-      description="Classic interior designers in Basavanagudi, Bangalore. Traditional South Bangalore homes with modern amenities."
+      description="Top interior designers in Abids, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default Basavanagudi;
+

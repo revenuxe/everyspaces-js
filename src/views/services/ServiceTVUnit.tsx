@@ -45,12 +45,12 @@ const tvUnitFeatures = [
 // AEO-optimized FAQs
 const tvUnitFAQs = [
   {
-    question: "What is the cost of TV unit design in Bangalore?",
-    answer: "TV unit design in Bangalore costs ₹25,000 to ₹1.5 lakh depending on size and design. At EverySpaces, floating units start from ₹25,000, wall-mounted panels from ₹40,000, and floor-to-ceiling entertainment walls from ₹80,000."
+    question: "What is the cost of TV unit design in Hyderabad?",
+    answer: "TV unit design in Hyderabad costs ₹25,000 to ₹1.5 lakh depending on size and design. At EverySpaces, floating units start from ₹25,000, wall-mounted panels from ₹40,000, and floor-to-ceiling entertainment walls from ₹80,000."
   },
   {
-    question: "Which TV unit design is trending in Bangalore?",
-    answer: "Trending TV unit designs in Bangalore include floating wall-mounted units, backlit stone panels, floor-to-ceiling entertainment walls with LED lighting, and minimalist designs with hidden storage. EverySpaces offers all these styles."
+    question: "Which TV unit design is trending in Hyderabad?",
+    answer: "Trending TV unit designs in Hyderabad include floating wall-mounted units, backlit stone panels, floor-to-ceiling entertainment walls with LED lighting, and minimalist designs with hidden storage. EverySpaces offers all these styles."
   },
   {
     question: "What size TV unit do I need?",
@@ -85,13 +85,13 @@ const ServiceTVUnit = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "TV Unit Design Bangalore",
-      "Modern TV unit and entertainment wall designs in Bangalore. Floating units, backlit panels, stone accent walls with LED lighting and cable management.",
+      "TV Unit Design Hyderabad",
+      "Modern TV unit and entertainment wall designs in Hyderabad. Floating units, backlit panels, stone accent walls with LED lighting and cable management.",
       "https://everyspaces.com/services/tv-unit",
       "https://everyspaces.com/service-tv-unit.jpg",
       "25000-150000",
       {
-        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Floating TV Unit", "Backlit Panel", "Stone Accent Wall", "Cable Management", "LED Lighting"]
       }
     ),
@@ -103,7 +103,7 @@ const ServiceTVUnit = () => {
     createFAQSchema(tvUnitFAQs, 'services/tv-unit'),
     createProductSchema({
       name: "TV Unit & Entertainment Wall",
-      description: "Modern TV unit designs in Bangalore with floating units, backlit panels, and feature walls. Includes cable management and LED lighting.",
+      description: "Modern TV unit designs in Hyderabad with floating units, backlit panels, and feature walls. Includes cable management and LED lighting.",
       image: "https://everyspaces.com/service-tv-unit.jpg",
       url: "https://everyspaces.com/services/tv-unit",
       priceRange: "25000-150000",
@@ -120,14 +120,14 @@ const ServiceTVUnit = () => {
       <main className="pb-24">
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(tvUnitImage)} alt="TV Unit Design Bangalore" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(tvUnitImage)} alt="TV Unit Design Hyderabad" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 TV Unit Design
-                <span className="block text-secondary mt-2">in Bangalore</span>
+                <span className="block text-secondary mt-2">in Hyderabad</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Modern entertainment centers designed by EverySpaces experts
@@ -211,3 +211,4 @@ const ServiceTVUnit = () => {
 };
 
 export default ServiceTVUnit;
+

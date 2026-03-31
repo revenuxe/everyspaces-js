@@ -44,8 +44,8 @@ const bedroomFeatures = [
 // AEO-optimized FAQs
 const bedroomFAQs = [
   {
-    question: "What is the cost of bedroom interior design in Bangalore?",
-    answer: "Bedroom interior design in Bangalore costs ₹1.5-3 lakh for a master bedroom including wardrobe, bed design, and false ceiling. At EverySpaces, bedroom packages start from ₹1.2 lakh with premium finishes and 10-year warranty."
+    question: "What is the cost of bedroom interior design in Hyderabad?",
+    answer: "Bedroom interior design in Hyderabad costs ₹1.5-3 lakh for a master bedroom including wardrobe, bed design, and false ceiling. At EverySpaces, bedroom packages start from ₹1.2 lakh with premium finishes and 10-year warranty."
   },
   {
     question: "What is included in bedroom interior design?",
@@ -88,13 +88,13 @@ const ServiceBedroom = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Bedroom Interior Design Bangalore",
-      "Expert bedroom designers in Bangalore offering master bedroom, kids room, and guest room interiors with custom wardrobes and ambient lighting.",
+      "Bedroom Interior Design Hyderabad",
+      "Expert bedroom designers in Hyderabad offering master bedroom, kids room, and guest room interiors with custom wardrobes and ambient lighting.",
       "https://everyspaces.com/services/bedroom-design",
       "https://everyspaces.com/service-bedroom.jpg",
       "120000-400000",
       {
-        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Master Bedroom", "Kids Room", "Guest Room", "Custom Wardrobe", "False Ceiling", "Ambient Lighting"]
       }
     ),
@@ -106,7 +106,7 @@ const ServiceBedroom = () => {
     createFAQSchema(bedroomFAQs, 'services/bedroom-design'),
     createProductSchema({
       name: "Bedroom Interior Design",
-      description: "Complete bedroom interior design in Bangalore including bed design, wardrobe, false ceiling, and ambient lighting. 10-year warranty included.",
+      description: "Complete bedroom interior design in Hyderabad including bed design, wardrobe, false ceiling, and ambient lighting. 10-year warranty included.",
       image: "https://everyspaces.com/service-bedroom.jpg",
       url: "https://everyspaces.com/services/bedroom-design",
       priceRange: "120000-400000",
@@ -123,14 +123,14 @@ const ServiceBedroom = () => {
       <main className="pb-24">
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(bedroomImage)} alt="Luxury Bedroom Design Bangalore" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(bedroomImage)} alt="Luxury Bedroom Design Hyderabad" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Luxury Bedroom Design
-                <span className="block text-secondary mt-2">in Bangalore</span>
+                <span className="block text-secondary mt-2">in Hyderabad</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Create your perfect sanctuary with EverySpaces's expert bedroom designers
@@ -214,3 +214,4 @@ const ServiceBedroom = () => {
 };
 
 export default ServiceBedroom;
+

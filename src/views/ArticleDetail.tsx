@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
@@ -388,7 +388,7 @@ const ArticleDetail = ({ slug }: { slug: string }) => {
                 Ready to Transform Your Home?
               </h3>
               <p className="text-white/90 mb-4 md:mb-6 max-w-md mx-auto text-xs md:text-sm leading-relaxed">
-                Get a free consultation from EverySpaces's expert designers in Bangalore.
+                Get a free consultation from EverySpaces's expert designers in Hyderabad.
                 Let's bring your dream home to life!
               </p>
               <div className="flex flex-col gap-2.5">
@@ -465,3 +465,4 @@ const ArticleDetail = ({ slug }: { slug: string }) => {
 };
 
 export default ArticleDetail;
+

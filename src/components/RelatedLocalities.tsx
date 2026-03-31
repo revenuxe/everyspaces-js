@@ -2,27 +2,27 @@ import { ArrowRight, MapPin } from "lucide-react";
 
 // All localities data
 const allLocalities = [
-  { slug: "indiranagar", name: "Indiranagar" },
-  { slug: "koramangala", name: "Koramangala" },
-  { slug: "hsr-layout", name: "HSR Layout" },
-  { slug: "whitefield", name: "Whitefield" },
-  { slug: "jayanagar", name: "Jayanagar" },
-  { slug: "jp-nagar", name: "JP Nagar" },
-  { slug: "btm-layout", name: "BTM Layout" },
-  { slug: "electronic-city", name: "Electronic City" },
-  { slug: "marathahalli", name: "Marathahalli" },
-  { slug: "sarjapur-road", name: "Sarjapur Road" },
-  { slug: "bellandur", name: "Bellandur" },
-  { slug: "hebbal", name: "Hebbal" },
-  { slug: "yelahanka", name: "Yelahanka" },
-  { slug: "malleshwaram", name: "Malleshwaram" },
-  { slug: "rajajinagar", name: "Rajajinagar" },
-  { slug: "basavanagudi", name: "Basavanagudi" },
-  { slug: "banashankari", name: "Banashankari" },
-  { slug: "vijayanagar", name: "Vijayanagar" },
-  { slug: "sadashivanagar", name: "Sadashivanagar" },
-  { slug: "rt-nagar", name: "RT Nagar" },
-  { slug: "hbr-layout", name: "HBR Layout" },
+  { slug: "indiranagar", name: "Jubilee Hills" },
+  { slug: "koramangala", name: "Gachibowli" },
+  { slug: "hsr-layout", name: "Kondapur" },
+  { slug: "whitefield", name: "Madhapur" },
+  { slug: "jayanagar", name: "Himayatnagar" },
+  { slug: "jp-nagar", name: "Nallagandla" },
+  { slug: "btm-layout", name: "Ameerpet" },
+  { slug: "electronic-city", name: "HITEC City" },
+  { slug: "marathahalli", name: "Nanakramguda" },
+  { slug: "sarjapur-road", name: "Narsingi" },
+  { slug: "bellandur", name: "Financial District" },
+  { slug: "hebbal", name: "Kokapet" },
+  { slug: "yelahanka", name: "Kompally" },
+  { slug: "malleshwaram", name: "Secunderabad" },
+  { slug: "rajajinagar", name: "Miyapur" },
+  { slug: "basavanagudi", name: "Abids" },
+  { slug: "banashankari", name: "Uppal" },
+  { slug: "vijayanagar", name: "Kukatpally" },
+  { slug: "sadashivanagar", name: "Banjara Hills" },
+  { slug: "rt-nagar", name: "Manikonda" },
+  { slug: "hbr-layout", name: "Begumpet" },
 ];
 
 interface RelatedLocalitiesProps {
@@ -43,7 +43,7 @@ const RelatedLocalities = ({ currentSlug }: RelatedLocalitiesProps) => {
             We Also Serve Nearby Areas
           </h2>
           <p className="text-muted-foreground font-body">
-            Explore our interior design services in other Bangalore localities
+            Explore our interior design services in other Hyderabad localities
           </p>
         </div>
 
@@ -51,7 +51,7 @@ const RelatedLocalities = ({ currentSlug }: RelatedLocalitiesProps) => {
           {relatedLocalities.map((locality) => (
             <a
               key={locality.slug}
-              href={`https://everyspaces.com/bangalore/${locality.slug}`}
+              href={`https://everyspaces.com/hyderabad/${locality.slug}`}
               className="group flex items-center gap-3 p-4 bg-card rounded-2xl border border-border/50 hover:border-secondary/50 hover:shadow-soft transition-all"
             >
               <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
@@ -70,10 +70,10 @@ const RelatedLocalities = ({ currentSlug }: RelatedLocalitiesProps) => {
 
         <div className="text-center mt-8">
           <a
-            href="https://everyspaces.com/bangalore"
+            href="https://everyspaces.com/hyderabad"
             className="inline-flex items-center gap-2 text-secondary font-medium hover:underline"
           >
-            View All Bangalore Localities <ArrowRight className="w-4 h-4" />
+            View All Hyderabad Localities <ArrowRight className="w-4 h-4" />
           </a>
         </div>
       </div>
@@ -82,3 +82,4 @@ const RelatedLocalities = ({ currentSlug }: RelatedLocalitiesProps) => {
 };
 
 export default RelatedLocalities;
+

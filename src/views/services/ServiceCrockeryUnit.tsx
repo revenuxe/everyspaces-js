@@ -45,8 +45,8 @@ const crockeryFeatures = [
 // AEO-optimized FAQs
 const crockeryUnitFAQs = [
   {
-    question: "What is the cost of crockery unit in Bangalore?",
-    answer: "Crockery unit in Bangalore costs ₹40,000 to ₹1.5 lakh depending on size and design. At EverySpaces, wall-mounted units start from ₹40,000, floor units from ₹60,000, and bar+crockery combos from ₹1 lakh."
+    question: "What is the cost of crockery unit in Hyderabad?",
+    answer: "Crockery unit in Hyderabad costs ₹40,000 to ₹1.5 lakh depending on size and design. At EverySpaces, wall-mounted units start from ₹40,000, floor units from ₹60,000, and bar+crockery combos from ₹1 lakh."
   },
   {
     question: "What is the ideal size for a crockery unit?",
@@ -85,13 +85,13 @@ const ServiceCrockeryUnit = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Crockery Unit Design Bangalore",
-      "Elegant crockery unit designs in Bangalore. Glass display cabinets, bar units, partition units with LED lighting and mirror backing.",
+      "Crockery Unit Design Hyderabad",
+      "Elegant crockery unit designs in Hyderabad. Glass display cabinets, bar units, partition units with LED lighting and mirror backing.",
       "https://everyspaces.com/services/crockery-unit",
       "https://everyspaces.com/service-crockery-unit.jpg",
       "40000-150000",
       {
-        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Glass Display", "LED Lighting", "Bar Cabinet", "Mirror Backing", "Partition Unit"]
       }
     ),
@@ -103,7 +103,7 @@ const ServiceCrockeryUnit = () => {
     createFAQSchema(crockeryUnitFAQs, 'services/crockery-unit'),
     createProductSchema({
       name: "Crockery Unit & Display Cabinet",
-      description: "Elegant crockery units in Bangalore with glass displays, LED lighting, and bar sections for fine china and beverages.",
+      description: "Elegant crockery units in Hyderabad with glass displays, LED lighting, and bar sections for fine china and beverages.",
       image: "https://everyspaces.com/service-crockery-unit.jpg",
       url: "https://everyspaces.com/services/crockery-unit",
       priceRange: "40000-150000",
@@ -120,14 +120,14 @@ const ServiceCrockeryUnit = () => {
       <main className="pb-24">
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(kitchenImage)} alt="Crockery Unit Design Bangalore" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(kitchenImage)} alt="Crockery Unit Design Hyderabad" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Crockery Unit Design
-                <span className="block text-secondary mt-2">in Bangalore</span>
+                <span className="block text-secondary mt-2">in Hyderabad</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Stylish display units for your precious collection by EverySpaces
@@ -211,3 +211,4 @@ const ServiceCrockeryUnit = () => {
 };
 
 export default ServiceCrockeryUnit;
+

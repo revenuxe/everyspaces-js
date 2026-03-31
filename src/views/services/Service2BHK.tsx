@@ -84,8 +84,8 @@ const whyChooseUs = [
 // AEO-optimized FAQs
 const bhk2FAQs = [
   {
-    question: "What is the cost of 2 BHK interior design in Bangalore?",
-    answer: "2 BHK interior design in Bangalore costs ₹4-12 lakh for complete interiors. At EverySpaces, basic packages start from ₹4 lakh (kitchen + wardrobes), standard from ₹6 lakh (adds living room), and premium from ₹8 lakh (full home with false ceiling)."
+    question: "What is the cost of 2 BHK interior design in Hyderabad?",
+    answer: "2 BHK interior design in Hyderabad costs â‚¹4-12 lakh for complete interiors. At EverySpaces, basic packages start from â‚¹4 lakh (kitchen + wardrobes), standard from â‚¹6 lakh (adds living room), and premium from â‚¹8 lakh (full home with false ceiling)."
   },
   {
     question: "What is included in 2 BHK interior package?",
@@ -144,13 +144,13 @@ const Service2BHK = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "2 BHK Interior Design Bangalore",
-      "Complete 2 BHK interior design packages in Bangalore starting ₹4 lakh. Includes modular kitchen, wardrobes, TV unit, and living room with 10-year warranty.",
+      "2 BHK Interior Design Hyderabad",
+      "Complete 2 BHK interior design packages in Hyderabad starting â‚¹4 lakh. Includes modular kitchen, wardrobes, TV unit, and living room with 10-year warranty.",
       "https://everyspaces.com/services/2bhk-interiors",
       "https://everyspaces.com/service-2bhk.jpg",
       "400000-1200000",
       {
-        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield", "Electronic City"],
+        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Modular Kitchen", "Wardrobes", "TV Unit", "False Ceiling", "Living Room", "Bedroom Design"]
       }
     ),
@@ -162,7 +162,7 @@ const Service2BHK = () => {
     createFAQSchema(bhk2FAQs, 'services/2bhk-interiors'),
     createProductSchema({
       name: "2 BHK Complete Interior Package",
-      description: "Complete 2 BHK interior design in Bangalore including kitchen, wardrobes, TV unit, and living room. 45-60 day delivery with 10-year warranty.",
+      description: "Complete 2 BHK interior design in Hyderabad including kitchen, wardrobes, TV unit, and living room. 45-60 day delivery with 10-year warranty.",
       image: "https://everyspaces.com/service-2bhk.jpg",
       url: "https://everyspaces.com/services/2bhk-interiors",
       priceRange: "400000-1200000",
@@ -182,7 +182,7 @@ const Service2BHK = () => {
           <div className="absolute inset-0 z-0">
             <img
               src={imgSrc(bhk2Image)}
-              alt="2 BHK Interior Design Bangalore"
+              alt="2 BHK Interior Design Hyderabad"
               decoding="async"
               fetchPriority="high"
               className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
@@ -194,7 +194,7 @@ const Service2BHK = () => {
             <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 md:mb-4 animate-fade-up tracking-[-0.03em] md:leading-[1.2]">
                 2 BHK Interior Design
-                <span className="block text-secondary tracking-[-0.02em] md:mt-2">in Bangalore</span>
+                <span className="block text-secondary tracking-[-0.02em] md:mt-2">in Hyderabad</span>
               </h1>
               <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Transform your 2 BHK into a stunning home with expert designers
@@ -254,7 +254,7 @@ const Service2BHK = () => {
                 </form>
 
                 <p className="text-center text-xs text-muted-foreground mt-4 font-body">
-                  🔒 No spam. We respect your privacy.
+                  No spam. We respect your privacy.
                 </p>
               </div>
             </div>
@@ -312,7 +312,7 @@ const Service2BHK = () => {
                 Why Choose EverySpaces for Your 2 BHK?
               </h2>
               <p className="text-muted-foreground font-body">
-                Trusted by hundreds of homeowners in Bangalore
+                Trusted by hundreds of homeowners in Hyderabad
               </p>
             </div>
             
@@ -338,7 +338,7 @@ const Service2BHK = () => {
           <div className="container px-4">
             <div className="text-center mb-10">
               <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">
-                Our 2 BHK Projects in Bangalore
+                Our 2 BHK Projects in Hyderabad
               </h2>
               <p className="text-muted-foreground font-body">
                 Real homes transformed by our expert team
@@ -406,3 +406,4 @@ const Service2BHK = () => {
 };
 
 export default Service2BHK;
+

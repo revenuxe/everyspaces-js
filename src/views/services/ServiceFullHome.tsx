@@ -88,8 +88,8 @@ const fullHomeFAQs = [
     answer: "EverySpaces's full home interior includes modular kitchen, all wardrobes, TV unit, false ceiling, electrical work, painting, flooring consultation, shoe rack, crockery unit, study tables, and soft furnishings. We handle everything from design to installation."
   },
   {
-    question: "What is the cost of full home interior in Bangalore?",
-    answer: "Full home interior in Bangalore costs ₹1,800-3,500 per sq ft. At EverySpaces, 2BHK starts from ₹6 lakh, 3BHK from ₹10 lakh, and villas from ₹25 lakh. Complete packages offer 15-20% savings compared to individual services."
+    question: "What is the cost of full home interior in Hyderabad?",
+    answer: "Full home interior in Hyderabad costs â‚¹1,800-3,500 per sq ft. At EverySpaces, 2BHK starts from â‚¹6 lakh, 3BHK from â‚¹10 lakh, and villas from â‚¹25 lakh. Complete packages offer 15-20% savings compared to individual services."
   },
   {
     question: "Why choose full home interior package over individual services?",
@@ -143,13 +143,13 @@ const ServiceFullHome = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Full Home Interior Design Bangalore",
-      "Complete end-to-end home interior design in Bangalore. Kitchen, wardrobes, living room, bedrooms all included in one package with 10-year warranty.",
+      "Full Home Interior Design Hyderabad",
+      "Complete end-to-end home interior design in Hyderabad. Kitchen, wardrobes, living room, bedrooms all included in one package with 10-year warranty.",
       "https://everyspaces.com/services/full-home-design",
       "https://everyspaces.com/service-full-home.jpg",
       "600000-2500000",
       {
-        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield", "Electronic City"],
+        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Modular Kitchen", "All Wardrobes", "TV Unit", "False Ceiling", "Painting", "Electrical Work"]
       }
     ),
@@ -161,7 +161,7 @@ const ServiceFullHome = () => {
     createFAQSchema(fullHomeFAQs, 'services/full-home-design'),
     createProductSchema({
       name: "Complete Home Interior Package",
-      description: "End-to-end home interior design in Bangalore including kitchen, wardrobes, living room, and all bedrooms. 45-75 day delivery with 10-year warranty.",
+      description: "End-to-end home interior design in Hyderabad including kitchen, wardrobes, living room, and all bedrooms. 45-75 day delivery with 10-year warranty.",
       image: "https://everyspaces.com/service-full-home.jpg",
       url: "https://everyspaces.com/services/full-home-design",
       priceRange: "600000-2500000",
@@ -181,7 +181,7 @@ const ServiceFullHome = () => {
           <div className="absolute inset-0 z-0">
             <img
               src={imgSrc(livingImage)}
-              alt="Full Home Interior Design Bangalore"
+              alt="Full Home Interior Design Hyderabad"
               decoding="async"
               fetchPriority="high"
               className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
@@ -193,7 +193,7 @@ const ServiceFullHome = () => {
             <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 md:mb-4 animate-fade-up tracking-[-0.03em] md:leading-[1.2]">
                 Full Home Interior Design
-                <span className="block text-secondary tracking-[-0.02em] md:mt-2">in Bangalore</span>
+                <span className="block text-secondary tracking-[-0.02em] md:mt-2">in Hyderabad</span>
               </h1>
               <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 End-to-end interior solutions for your complete home transformation
@@ -242,7 +242,7 @@ const ServiceFullHome = () => {
                   </button>
                 </form>
                 <p className="text-center text-xs text-muted-foreground mt-4 font-body">
-                  🔒 No spam. We respect your privacy.
+                  No spam. We respect your privacy.
                 </p>
               </div>
             </div>
@@ -347,3 +347,4 @@ const ServiceFullHome = () => {
 };
 
 export default ServiceFullHome;
+

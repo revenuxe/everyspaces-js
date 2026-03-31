@@ -266,7 +266,7 @@ const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSup
               <div key={i} className="bg-muted/50 rounded-lg px-3 py-2.5">
                 <p className="text-xs font-semibold text-foreground">{tip.aspect}</p>
                 <p className="text-[10px] text-muted-foreground mt-0.5">{tip.recommendation}</p>
-                <p className="text-[10px] text-secondary mt-1 italic">💡 Modern take: {tip.modern_adaptation}</p>
+                <p className="text-[10px] text-secondary mt-1 italic">Modern take: {tip.modern_adaptation}</p>
               </div>
             ))}
           </div>
@@ -324,7 +324,7 @@ const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSup
             <h3 className="text-xs font-bold text-foreground uppercase tracking-wider">Estimated Budget</h3>
           </div>
           <div className="bg-muted/50 rounded-lg px-3 py-3">
-            <p className="text-base font-bold text-foreground">{rec.estimatedBudget.low} — {rec.estimatedBudget.high}</p>
+            <p className="text-base font-bold text-foreground">{rec.estimatedBudget.low} â€” {rec.estimatedBudget.high}</p>
             <p className="text-[10px] text-muted-foreground mt-0.5">{rec.estimatedBudget.note}</p>
           </div>
         </AnimatedCard>
@@ -355,12 +355,12 @@ const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSup
         </AnimatedCard>
       )}
 
-      {/* Bangalore Specific */}
+      {/* Hyderabad Specific */}
       {rec.bangaloreSpecific && (
         <AnimatedCard delay={0.54} className="mx-4 mb-4 rounded-xl bg-primary/5 border border-primary/20 p-4">
           <div className="flex items-center gap-2 mb-1.5">
             <MapPin className="w-4 h-4 text-primary" />
-            <h3 className="text-xs font-bold text-primary uppercase tracking-wider">Bangalore Context</h3>
+            <h3 className="text-xs font-bold text-primary uppercase tracking-wider">Hyderabad Context</h3>
           </div>
           <p className="text-[11px] text-foreground/70 leading-relaxed">{rec.bangaloreSpecific}</p>
         </AnimatedCard>
@@ -380,7 +380,7 @@ const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSup
           className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm border border-primary-foreground/10 hover:bg-primary/90 transition-colors"
         >
           <MessageCircleHeart className="w-4 h-4" />
-          Talk to a Designer — It's Free
+          Talk to a Designer â€” It's Free
         </button>
         <button
           onClick={onReset}
@@ -395,3 +395,4 @@ const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSup
 };
 
 export default RecommendationView;
+

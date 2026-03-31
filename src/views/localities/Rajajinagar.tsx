@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery12 from "@/assets/gallery-12.jpg";
@@ -12,68 +12,95 @@ import gallery11 from "@/assets/gallery-11.jpg";
 
 const Rajajinagar = () => {
   const seo = {
-    metaTitle: "Interior Designers in Rajajinagar | Elegant Home Interiors Bangalore",
-    metaDescription: "Experienced interior designers in Rajajinagar, Bangalore. 21+ projects across all blocks. Elegant modular kitchens, spacious wardrobes & sophisticated living spaces. 10-year warranty!",
+    metaTitle: "Best Interior Designers in Miyapur Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Miyapur, Hyderabad with modular kitchens, wardrobes, and full-home design. 21+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers rajajinagar",
-      "best interior designers in rajajinagar bangalore",
-      "home interiors rajajinagar",
-      "modular kitchen rajajinagar",
-      "elegant interior design rajajinagar",
-      "apartment interior rajajinagar",
-      "home renovation rajajinagar bangalore",
-      "interior decorators rajajinagar",
-      "west bangalore interiors rajajinagar",
-      "sophisticated home design rajajinagar"
+      "interior designers in Miyapur hyderabad",
+      "home interiors Miyapur",
+      "best interior designers Miyapur",
+      "modular kitchen Miyapur hyderabad",
+      "wardrobe design Miyapur",
+      "full home interiors hyderabad",
+      "interior decorators Miyapur",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Interior Designers in Rajajinagar | EverySpaces - Elegant Home Solutions",
-    ogDescription: "Rajajinagar interior experts. 21+ projects, elegant designs. West Bangalore leaders. Free consultation!",
+    ogTitle: "Interior Designers in Miyapur, Hyderabad | EverySpaces",
+    ogDescription: "21+ Projects completed in and around Miyapur. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in Rajajinagar?",
-        answer: "Interior design in Rajajinagar costs ₹1,500 to ₹3,000 per sq ft. EverySpaces offers packages from ₹8 lakhs for 2BHK. We've completed 21+ projects across Rajajinagar 1st to 6th Block with elegant designs and 10-year warranty."
+        question: "What is the interior design cost in Miyapur, Hyderabad?",
+        answer: "Interior design cost in Miyapur typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Which Rajajinagar blocks do you cover?",
-        answer: "We serve all Rajajinagar blocks - 1st to 6th Block, including MEI Layout, Industrial Town, and surrounding areas. Our portfolio includes independent houses near Chord Road and apartments in various Rajajinagar localities."
+        question: "Do you provide modular kitchen and wardrobe design in Miyapur?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Miyapur."
       },
       {
-        question: "Do you design interiors for older Rajajinagar properties?",
-        answer: "Yes! Rajajinagar has established neighborhoods with older properties. We renovate and modernize these homes while maintaining structural integrity, upgrading utilities, and creating contemporary spaces within traditional layouts."
+        question: "How long does a full home interior project take in Miyapur?",
+        answer: "Most 2BHK and 3BHK interior projects in Miyapur are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "Can you work with West Bangalore's architectural style?",
-        answer: "Absolutely! We understand West Bangalore's design preferences - spacious layouts, elegant finishes, family-oriented designs with formal and informal spaces. We blend contemporary elements with the area's established aesthetic."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["1st-6th Block Rajajinagar", "MEI Layout", "Industrial Town", "Malleshwaram", "Basaveshwaranagar", "Mahalakshmi Layout"],
-    specialties: ["Elegant Design", "Spacious Layouts", "Premium Kitchen", "Formal Living Room", "Study Room Design"],
-    lifestyleDescription: "Rajajinagar is West Bangalore's elegant residential district, spanning six well-planned blocks with wide roads and mature trees. Known for its established families, prestigious schools, and proximity to Chord Road, Rajajinagar homes exude sophistication with spacious layouts that allow for grand, elegant interior designs.",
+    nearbyAreas: ["Kukatpally","Nizampet","Hafeezpet","Bachupally","Chandanagar","Ameenpur"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Miyapur is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
-      { name: "Rajajinagar 1st Block to 6th Block", description: "Each block has its own character—from the commercial buzz of 1st Block to the quiet elegance of 6th Block. Interior styles vary to match each block's personality.", type: "residential" as const },
-      { name: "Chord Road Commercial Corridor", description: "The busy commercial stretch needs homes with effective sound insulation, double-glazed windows, and serene interior retreats.", type: "lifestyle" as const },
-      { name: "MEI Layout & Industrial Town", description: "Well-planned layouts with independent houses offering large rooms perfect for formal living spaces, home libraries, and elegant dining areas.", type: "landmark" as const },
-      { name: "Rajajinagar Parks & Gardens", description: "Well-maintained parks in every block inspire homeowners to create green corners, indoor herb gardens, and nature-connected spaces.", type: "nature" as const }
+      {
+        name: "Residential Communities in Miyapur",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
+        type: "residential" as const
+      },
+      {
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
+        type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
+      }
     ],
     designTips: [
-      { title: "Create Formal & Informal Living Zones", description: "Rajajinagar homes often host guests. Design a formal drawing room for visitors and a separate family room for everyday relaxation." },
-      { title: "Invest in Elegant Furniture", description: "Spacious Rajajinagar homes deserve quality furniture. Choose solid wood dining tables, comfortable sofas, and statement bookcases that reflect refined taste." },
-      { title: "Design a Dedicated Study or Library", description: "Many Rajajinagar families are academically oriented. Create a home library with floor-to-ceiling shelving, reading nook, and proper task lighting." },
-      { title: "Choose Sophisticated Color Palettes", description: "Opt for understated elegance with muted greens, warm beiges, navy accents, and wooden tones rather than overly bold or trendy colors." }
+      {
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
+      },
+      {
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
+      },
+      {
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
+      },
+      {
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
+      }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="Rajajinagar"
+      localityName="Miyapur"
       slug="rajajinagar"
       projectCount="21+ Projects"
       heroImage={gallery12}
       galleryImages={[gallery5, gallery6, gallery7, gallery8, gallery9, gallery10, gallery11, gallery12]}
-      description="Experienced interior designers in Rajajinagar, Bangalore. West Bangalore experts with elegant home solutions."
+      description="Top interior designers in Miyapur, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default Rajajinagar;
+

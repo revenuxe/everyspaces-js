@@ -31,7 +31,7 @@ export const organizationSchema = {
     "width": 64,
     "height": 64
   },
-  "description": "EverySpaces is the best interior design company in Bangalore offering modular kitchens, wardrobes, and full home interiors with 10-year warranty. We have completed 500+ projects across Bangalore.",
+  "description": "EverySpaces is the best interior design company in Hyderabad offering modular kitchens, wardrobes, and full home interiors with 10-year warranty. We have completed 500+ projects across Hyderabad.",
   "foundingDate": "2014",
   "numberOfEmployees": {
     "@type": "QuantitativeValue",
@@ -42,7 +42,7 @@ export const organizationSchema = {
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "HBR Layout",
-    "addressLocality": "Bangalore",
+    "addressLocality": "Hyderabad",
     "addressRegion": "Karnataka",
     "postalCode": "560045",
     "addressCountry": "IN"
@@ -52,7 +52,7 @@ export const organizationSchema = {
       "@type": "ContactPoint",
       "telephone": "+91-9886579923",
       "contactType": "customer service",
-      "areaServed": "Bangalore",
+      "areaServed": "Hyderabad",
       "availableLanguage": ["English", "Hindi", "Kannada"]
     },
     {
@@ -121,11 +121,11 @@ export const localBusinessSchema = {
   "url": "https://everyspaces.com",
   "telephone": "+91-9886579923",
   "email": "everyspaces.com@gmail.com",
-  "description": "Best interior designers in Bangalore specializing in modular kitchens, wardrobes, and complete home interiors. 500+ projects completed with 10-year warranty.",
+  "description": "Best interior designers in Hyderabad specializing in modular kitchens, wardrobes, and complete home interiors. 500+ projects completed with 10-year warranty.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "HBR Layout",
-    "addressLocality": "Bangalore",
+    "addressLocality": "Hyderabad",
     "addressRegion": "Karnataka",
     "postalCode": "560045",
     "addressCountry": "IN"
@@ -149,10 +149,10 @@ export const localBusinessSchema = {
   "areaServed": [
     {
       "@type": "City",
-      "name": "Bangalore"
+      "name": "Hyderabad"
     }
   ],
-  "hasMap": "https://maps.google.com/?q=EverySpaces+HBR+Layout+Bangalore",
+  "hasMap": "https://maps.google.com/?q=EverySpaces+HBR+Layout+Hyderabad",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
@@ -180,7 +180,7 @@ export const localBusinessSchema = {
       "@type": "Review",
       "author": { "@type": "Person", "name": "Anitha Reddy" },
       "datePublished": "2025-09-10",
-      "reviewBody": "We chose EverySpaces for our villa interior in Hebbal. The wardrobe designs and false ceiling work exceeded our expectations. Highly recommend for premium interiors in Bangalore.",
+      "reviewBody": "We chose EverySpaces for our villa interior in Hebbal. The wardrobe designs and false ceiling work exceeded our expectations. Highly recommend for premium interiors in Hyderabad.",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
     }
   ]
@@ -191,10 +191,10 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://everyspaces.com/#website",
-  "name": "EverySpaces - Best Interior Designers in Bangalore",
+  "name": "EverySpaces - Best Interior Designers in Hyderabad",
   "alternateName": "EverySpaces Interior Design",
   "url": "https://everyspaces.com",
-  "description": "EverySpaces offers premium interior design services in Bangalore including modular kitchens, wardrobes, and full home interiors with 10-year warranty.",
+  "description": "EverySpaces offers premium interior design services in Hyderabad including modular kitchens, wardrobes, and full home interiors with 10-year warranty.",
   "publisher": {
     "@id": "https://everyspaces.com/#organization"
   },
@@ -223,8 +223,8 @@ export const createSpeakableSchema = (
 export const howToInteriorDesignSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "How to Get Interior Design Done in Bangalore with EverySpaces",
-  "description": "Complete guide to getting your home interior designed by EverySpaces, the best interior designers in Bangalore. From consultation to installation in 45-90 days.",
+  "name": "How to Get Interior Design Done in Hyderabad with EverySpaces",
+  "description": "Complete guide to getting your home interior designed by EverySpaces, the best interior designers in Hyderabad. From consultation to installation in 45-90 days.",
   "image": "https://everyspaces.com/how-it-works.jpg",
   "totalTime": "P60D",
   "estimatedCost": {
@@ -317,7 +317,7 @@ export const createServiceSchema = (
     "name": area
   })) || {
     "@type": "City",
-    "name": "Bangalore"
+    "name": "Hyderabad"
   },
   "serviceType": "Interior Design",
   "termsOfService": "https://everyspaces.com/terms",
@@ -418,13 +418,13 @@ export const createImageGallerySchema = (images: { url: string | StaticImageData
   "@context": "https://schema.org",
   "@type": "ImageGallery",
   "@id": "https://everyspaces.com/portfolio#gallery",
-  "name": "EverySpaces Interior Design Portfolio - Completed Projects in Bangalore",
-  "description": "View 500+ completed interior design projects by EverySpaces in Bangalore including modular kitchens, bedrooms, living rooms, and full home interiors.",
+  "name": "EverySpaces Interior Design Portfolio - Completed Projects in Hyderabad",
+  "description": "View 500+ completed interior design projects by EverySpaces in Hyderabad including modular kitchens, bedrooms, living rooms, and full home interiors.",
   "image": images.map((img) => ({
     "@type": "ImageObject",
     "url": imgSrc(img.url),
     "name": img.name,
-    "description": img.description || `${img.name} by EverySpaces Interior Design Bangalore`
+    "description": img.description || `${img.name} by EverySpaces Interior Design Hyderabad`
   })),
   "creator": {
     "@id": "https://everyspaces.com/#organization"
@@ -471,7 +471,7 @@ export const createProductSchema = (product: {
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
       "author": { "@type": "Person", "name": "Rahul Menon" },
       "datePublished": "2025-02-10",
-      "reviewBody": "Professional team, on-time delivery, and beautiful designs. Highly recommend EverySpaces for anyone looking for quality interior solutions in Bangalore."
+      "reviewBody": "Professional team, on-time delivery, and beautiful designs. Highly recommend EverySpaces for anyone looking for quality interior solutions in Hyderabad."
     },
     {
       "@type": "Review",
@@ -529,14 +529,14 @@ export const professionalServiceSchema = {
   "@type": "ProfessionalService",
   "@id": "https://everyspaces.com/#professionalservice",
   "name": "EverySpaces Interior Design Services",
-  "description": "Professional interior design services in Bangalore including modular kitchen design, wardrobe design, living room design, bedroom interiors, and complete home renovations.",
+  "description": "Professional interior design services in Hyderabad including modular kitchen design, wardrobe design, living room design, bedroom interiors, and complete home renovations.",
   "url": "https://everyspaces.com/services",
   "telephone": "+91-9886579923",
   "priceRange": "₹₹₹",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "HBR Layout",
-    "addressLocality": "Bangalore",
+    "addressLocality": "Hyderabad",
     "addressRegion": "Karnataka",
     "postalCode": "560045",
     "addressCountry": "IN"
@@ -548,7 +548,7 @@ export const professionalServiceSchema = {
   },
   "areaServed": {
     "@type": "City",
-    "name": "Bangalore"
+    "name": "Hyderabad"
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -608,8 +608,8 @@ export const homePageSchema = {
   "@type": "WebPage",
   "@id": "https://everyspaces.com/#webpage",
   "url": "https://everyspaces.com",
-  "name": "Best Interior Designers in Bangalore | Modular Kitchen & Home Interiors - EverySpaces",
-  "description": "EverySpaces is Bangalore's top interior design company offering modular kitchens, wardrobes, and complete home interiors. 500+ projects, 10-year warranty, free consultation.",
+  "name": "Best Interior Designers in Hyderabad | Modular Kitchen & Home Interiors - EverySpaces",
+  "description": "EverySpaces is Hyderabad's top interior design company offering modular kitchens, wardrobes, and complete home interiors. 500+ projects, 10-year warranty, free consultation.",
   "isPartOf": {
     "@id": "https://everyspaces.com/#website"
   },
@@ -666,8 +666,8 @@ export const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   "@id": "https://everyspaces.com/contact#contactpage",
-  "name": "Contact EverySpaces - Best Interior Designers in Bangalore",
-  "description": "Contact EverySpaces for free interior design consultation in Bangalore. Call +91-9886579923 or fill our form for modular kitchen, wardrobe, and home interior quotes.",
+  "name": "Contact EverySpaces - Best Interior Designers in Hyderabad",
+  "description": "Contact EverySpaces for free interior design consultation in Hyderabad. Call +91-9886579923 or fill our form for modular kitchen, wardrobe, and home interior quotes.",
   "url": "https://everyspaces.com/contact",
   "mainEntity": {
     "@type": "Organization",
@@ -682,20 +682,20 @@ export const contactPageSchema = {
 // Define common AEO-optimized FAQs for home page - matches FAQSection content
 export const commonFAQs = [
   {
-    question: "How much does interior design cost in Bangalore?",
-    answer: "Interior design costs in Bangalore typically range from ₹1,500 to ₹3,500 per square foot depending on the scope, materials, and finishes. At EverySpaces, we offer customized packages starting from ₹8 lakhs for a 2BHK apartment interior design. We provide detailed cost breakdowns and transparent pricing with no hidden charges. Contact us for a free consultation and accurate quote."
+    question: "How much does interior design cost in Hyderabad?",
+    answer: "Interior design costs in Hyderabad typically range from ₹1,500 to ₹3,500 per square foot depending on the scope, materials, and finishes. At EverySpaces, we offer customized packages starting from ₹8 lakhs for a 2BHK apartment interior design. We provide detailed cost breakdowns and transparent pricing with no hidden charges. Contact us for a free consultation and accurate quote."
   },
   {
     question: "How long does it take to complete home interior design?",
     answer: "A complete home interior design project typically takes 45-90 days depending on the size and complexity. Modular kitchen installation takes 15-20 days, while a full 3BHK apartment interior can take 60-75 days. We use advanced project management and quality materials to ensure timely delivery without compromising on craftsmanship."
   },
   {
-    question: "Do you provide modular kitchen designs in Bangalore?",
-    answer: "Yes! EverySpaces specializes in premium modular kitchen designs in Bangalore. We offer L-shaped, U-shaped, parallel, and island kitchen layouts with soft-close mechanisms, durable finishes, and smart storage solutions. Our modular kitchens come with a 10-year warranty on hardware and are customized to fit your space and budget."
+    question: "Do you provide modular kitchen designs in Hyderabad?",
+    answer: "Yes! EverySpaces specializes in premium modular kitchen designs in Hyderabad. We offer L-shaped, U-shaped, parallel, and island kitchen layouts with soft-close mechanisms, durable finishes, and smart storage solutions. Our modular kitchens come with a 10-year warranty on hardware and are customized to fit your space and budget."
   },
   {
-    question: "What areas in Bangalore do you serve for interior design?",
-    answer: "We provide interior design services across all major areas in Bangalore including Koramangala, Indiranagar, HSR Layout, Whitefield, Electronic City, Marathahalli, Jayanagar, JP Nagar, HBR Layout, Hebbal, Yelahanka, and Sarjapur Road. Our team conducts free site visits for consultation anywhere in Bangalore."
+    question: "What areas in Hyderabad do you serve for interior design?",
+    answer: "We provide interior design services across major Hyderabad areas including Gachibowli, Jubilee Hills, Kondapur, Madhapur, HITEC City, Financial District, Kokapet, Narsingi, Kompally, and Banjara Hills. Our team conducts free site visits for consultation anywhere in Hyderabad."
   },
   {
     question: "Do you offer 3D visualization before starting the project?",
@@ -714,7 +714,7 @@ export const commonFAQs = [
     answer: "Yes! We offer flexible interior design services for individual spaces. Whether you need just a modular kitchen design, bedroom renovation, bathroom remodeling, or living room makeover, we can help. Our minimum project value starts from ₹2.5 lakhs for individual room designs."
   },
   {
-    question: "What makes EverySpaces different from other interior designers in Bangalore?",
+    question: "What makes EverySpaces different from other interior designers in Hyderabad?",
     answer: "EverySpaces stands out with 10+ years of experience, 500+ completed projects, in-house manufacturing facility, transparent pricing, dedicated project managers, and a strong focus on quality materials. We use premium brands like Hettich, Hafele, and Century for all our projects with proper documentation and warranty."
   },
   {
@@ -740,51 +740,52 @@ export const createItemListSchema = (items: { name: string; url: string; descrip
 
 // All services list for AI discoverability
 export const allServicesItemList = createItemListSchema([
-  { name: "Modular Kitchen Design Bangalore", url: "https://everyspaces.com/services/modular-kitchen", description: "Custom modular kitchens from ₹2.5 Lakhs with 10-year warranty" },
-  { name: "Bedroom Interior Design Bangalore", url: "https://everyspaces.com/services/bedroom-design", description: "Complete bedroom makeovers from ₹1.5 Lakhs" },
-  { name: "Living Room Design Bangalore", url: "https://everyspaces.com/services/living-room", description: "Living room transformations from ₹2 Lakhs" },
-  { name: "Wardrobe Design Bangalore", url: "https://everyspaces.com/services/wardrobe-design", description: "Custom wardrobes from ₹1.2 Lakhs" },
-  { name: "2 BHK Interior Design Bangalore", url: "https://everyspaces.com/services/2bhk-interiors", description: "Complete 2BHK interiors from ₹8 Lakhs" },
-  { name: "3 BHK Interior Design Bangalore", url: "https://everyspaces.com/services/3bhk-interiors", description: "Complete 3BHK interiors from ₹12 Lakhs" },
-  { name: "Villa Interior Design Bangalore", url: "https://everyspaces.com/services/villa-interiors", description: "Luxury villa interiors from ₹25 Lakhs" },
-  { name: "Full Home Design Bangalore", url: "https://everyspaces.com/services/full-home-design", description: "End-to-end home interior solutions" },
-  { name: "TV Unit Design Bangalore", url: "https://everyspaces.com/services/tv-unit", description: "Custom TV units from ₹40,000" },
-  { name: "Pooja Room Design Bangalore", url: "https://everyspaces.com/services/pooja-room", description: "Traditional & modern pooja rooms from ₹50,000" },
-  { name: "False Ceiling Design Bangalore", url: "https://everyspaces.com/services/false-ceiling", description: "Designer false ceilings from ₹80,000" },
-  { name: "Home Office Design Bangalore", url: "https://everyspaces.com/services/home-office", description: "Productive home offices from ₹1 Lakh" },
-  { name: "Kids Room Design Bangalore", url: "https://everyspaces.com/services/kids-room", description: "Child-friendly room designs from ₹1.5 Lakhs" },
-  { name: "Dining Room Design Bangalore", url: "https://everyspaces.com/services/dining-room", description: "Dining room interiors from ₹1 Lakh" },
-  { name: "Bathroom Design Bangalore", url: "https://everyspaces.com/services/bathroom-design", description: "Bathroom renovations from ₹1.5 Lakhs" },
-  { name: "Foyer & Entrance Design Bangalore", url: "https://everyspaces.com/services/foyer-entrance", description: "Impressive entrance designs from ₹50,000" },
-  { name: "Crockery Unit Design Bangalore", url: "https://everyspaces.com/services/crockery-unit", description: "Custom crockery units from ₹60,000" },
-  { name: "Study Room Design Bangalore", url: "https://everyspaces.com/services/study-room", description: "Study room setups from ₹1 Lakh" },
-  { name: "Guest Room Design Bangalore", url: "https://everyspaces.com/services/guest-room", description: "Guest room makeovers from ₹1.5 Lakhs" },
-  { name: "Balcony Design Bangalore", url: "https://everyspaces.com/services/balcony-design", description: "Balcony transformations from ₹50,000" },
-], "EverySpaces Interior Design Services in Bangalore");
+  { name: "Modular Kitchen Design Hyderabad", url: "https://everyspaces.com/services/modular-kitchen", description: "Custom modular kitchens from ₹2.5 Lakhs with 10-year warranty" },
+  { name: "Bedroom Interior Design Hyderabad", url: "https://everyspaces.com/services/bedroom-design", description: "Complete bedroom makeovers from ₹1.5 Lakhs" },
+  { name: "Living Room Design Hyderabad", url: "https://everyspaces.com/services/living-room", description: "Living room transformations from ₹2 Lakhs" },
+  { name: "Wardrobe Design Hyderabad", url: "https://everyspaces.com/services/wardrobe-design", description: "Custom wardrobes from ₹1.2 Lakhs" },
+  { name: "2 BHK Interior Design Hyderabad", url: "https://everyspaces.com/services/2bhk-interiors", description: "Complete 2BHK interiors from ₹8 Lakhs" },
+  { name: "3 BHK Interior Design Hyderabad", url: "https://everyspaces.com/services/3bhk-interiors", description: "Complete 3BHK interiors from ₹12 Lakhs" },
+  { name: "Villa Interior Design Hyderabad", url: "https://everyspaces.com/services/villa-interiors", description: "Luxury villa interiors from ₹25 Lakhs" },
+  { name: "Full Home Design Hyderabad", url: "https://everyspaces.com/services/full-home-design", description: "End-to-end home interior solutions" },
+  { name: "TV Unit Design Hyderabad", url: "https://everyspaces.com/services/tv-unit", description: "Custom TV units from ₹40,000" },
+  { name: "Pooja Room Design Hyderabad", url: "https://everyspaces.com/services/pooja-room", description: "Traditional & modern pooja rooms from ₹50,000" },
+  { name: "False Ceiling Design Hyderabad", url: "https://everyspaces.com/services/false-ceiling", description: "Designer false ceilings from ₹80,000" },
+  { name: "Home Office Design Hyderabad", url: "https://everyspaces.com/services/home-office", description: "Productive home offices from ₹1 Lakh" },
+  { name: "Kids Room Design Hyderabad", url: "https://everyspaces.com/services/kids-room", description: "Child-friendly room designs from ₹1.5 Lakhs" },
+  { name: "Dining Room Design Hyderabad", url: "https://everyspaces.com/services/dining-room", description: "Dining room interiors from ₹1 Lakh" },
+  { name: "Bathroom Design Hyderabad", url: "https://everyspaces.com/services/bathroom-design", description: "Bathroom renovations from ₹1.5 Lakhs" },
+  { name: "Foyer & Entrance Design Hyderabad", url: "https://everyspaces.com/services/foyer-entrance", description: "Impressive entrance designs from ₹50,000" },
+  { name: "Crockery Unit Design Hyderabad", url: "https://everyspaces.com/services/crockery-unit", description: "Custom crockery units from ₹60,000" },
+  { name: "Study Room Design Hyderabad", url: "https://everyspaces.com/services/study-room", description: "Study room setups from ₹1 Lakh" },
+  { name: "Guest Room Design Hyderabad", url: "https://everyspaces.com/services/guest-room", description: "Guest room makeovers from ₹1.5 Lakhs" },
+  { name: "Balcony Design Hyderabad", url: "https://everyspaces.com/services/balcony-design", description: "Balcony transformations from ₹50,000" },
+], "EverySpaces Interior Design Services in Hyderabad");
 
 // All localities list for AI discoverability
 export const allLocalitiesItemList = createItemListSchema([
-  { name: "Interior Designers in Indiranagar", url: "https://everyspaces.com/bangalore/indiranagar" },
-  { name: "Interior Designers in Koramangala", url: "https://everyspaces.com/bangalore/koramangala" },
-  { name: "Interior Designers in HSR Layout", url: "https://everyspaces.com/bangalore/hsr-layout" },
-  { name: "Interior Designers in Whitefield", url: "https://everyspaces.com/bangalore/whitefield" },
-  { name: "Interior Designers in Jayanagar", url: "https://everyspaces.com/bangalore/jayanagar" },
-  { name: "Interior Designers in JP Nagar", url: "https://everyspaces.com/bangalore/jp-nagar" },
-  { name: "Interior Designers in BTM Layout", url: "https://everyspaces.com/bangalore/btm-layout" },
-  { name: "Interior Designers in Electronic City", url: "https://everyspaces.com/bangalore/electronic-city" },
-  { name: "Interior Designers in Marathahalli", url: "https://everyspaces.com/bangalore/marathahalli" },
-  { name: "Interior Designers in Sarjapur Road", url: "https://everyspaces.com/bangalore/sarjapur-road" },
-  { name: "Interior Designers in Bellandur", url: "https://everyspaces.com/bangalore/bellandur" },
-  { name: "Interior Designers in Hebbal", url: "https://everyspaces.com/bangalore/hebbal" },
-  { name: "Interior Designers in Yelahanka", url: "https://everyspaces.com/bangalore/yelahanka" },
-  { name: "Interior Designers in Malleshwaram", url: "https://everyspaces.com/bangalore/malleshwaram" },
-  { name: "Interior Designers in Rajajinagar", url: "https://everyspaces.com/bangalore/rajajinagar" },
-  { name: "Interior Designers in Basavanagudi", url: "https://everyspaces.com/bangalore/basavanagudi" },
-  { name: "Interior Designers in Banashankari", url: "https://everyspaces.com/bangalore/banashankari" },
-  { name: "Interior Designers in Vijayanagar", url: "https://everyspaces.com/bangalore/vijayanagar" },
-  { name: "Interior Designers in Sadashivanagar", url: "https://everyspaces.com/bangalore/sadashivanagar" },
-  { name: "Interior Designers in RT Nagar", url: "https://everyspaces.com/bangalore/rt-nagar" },
-  { name: "Interior Designers in HBR Layout", url: "https://everyspaces.com/bangalore/hbr-layout" },
-], "Bangalore Localities Served by EverySpaces");
+  { name: "Interior Designers in Jubilee Hills", url: "https://everyspaces.com/hyderabad/indiranagar" },
+  { name: "Interior Designers in Gachibowli", url: "https://everyspaces.com/hyderabad/koramangala" },
+  { name: "Interior Designers in Kondapur", url: "https://everyspaces.com/hyderabad/hsr-layout" },
+  { name: "Interior Designers in Madhapur", url: "https://everyspaces.com/hyderabad/whitefield" },
+  { name: "Interior Designers in Jayanagar", url: "https://everyspaces.com/hyderabad/jayanagar" },
+  { name: "Interior Designers in JP Nagar", url: "https://everyspaces.com/hyderabad/jp-nagar" },
+  { name: "Interior Designers in BTM Layout", url: "https://everyspaces.com/hyderabad/btm-layout" },
+  { name: "Interior Designers in HITEC City", url: "https://everyspaces.com/hyderabad/electronic-city" },
+  { name: "Interior Designers in Nanakramguda", url: "https://everyspaces.com/hyderabad/marathahalli" },
+  { name: "Interior Designers in Narsingi", url: "https://everyspaces.com/hyderabad/sarjapur-road" },
+  { name: "Interior Designers in Financial District", url: "https://everyspaces.com/hyderabad/bellandur" },
+  { name: "Interior Designers in Kokapet", url: "https://everyspaces.com/hyderabad/hebbal" },
+  { name: "Interior Designers in Kompally", url: "https://everyspaces.com/hyderabad/yelahanka" },
+  { name: "Interior Designers in Secunderabad", url: "https://everyspaces.com/hyderabad/malleshwaram" },
+  { name: "Interior Designers in Miyapur", url: "https://everyspaces.com/hyderabad/rajajinagar" },
+  { name: "Interior Designers in Abids", url: "https://everyspaces.com/hyderabad/basavanagudi" },
+  { name: "Interior Designers in Uppal", url: "https://everyspaces.com/hyderabad/banashankari" },
+  { name: "Interior Designers in Kukatpally", url: "https://everyspaces.com/hyderabad/vijayanagar" },
+  { name: "Interior Designers in Banjara Hills", url: "https://everyspaces.com/hyderabad/sadashivanagar" },
+  { name: "Interior Designers in Manikonda", url: "https://everyspaces.com/hyderabad/rt-nagar" },
+  { name: "Interior Designers in Begumpet", url: "https://everyspaces.com/hyderabad/hbr-layout" },
+], "Hyderabad Localities Served by EverySpaces");
 
 export default StructuredData;
+

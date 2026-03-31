@@ -15,7 +15,7 @@ interface Message {
 const QUICK_PROMPTS = [
   "What's the cost for a modular kitchen?",
   "How long does a 2BHK interior take?",
-  "Do you serve my area in Bangalore?",
+  "Do you serve my area in Hyderabad?",
   "What styles are trending in 2025?",
 ];
 
@@ -80,7 +80,7 @@ const FloatingOrzaButton = () => {
         ...newMessages,
         {
           role: "assistant",
-          content: "Oops! Something went wrong 😅 Try **[our full design tool](/orza-ai)** or **[contact us](/contact)**!",
+          content: "Oops! Something went wrong. Try **[our full design tool](/orza-ai)** or **[contact us](/contact)**!",
         },
       ]);
     } finally {
@@ -126,7 +126,7 @@ const FloatingOrzaButton = () => {
               <div className="space-y-4">
                 <div className="bg-muted rounded-2xl rounded-tl-sm px-4 py-3">
                   <p className="text-sm text-foreground">
-                    Hey! 👋 I'm <strong>Orza</strong>, your interior design assistant. Ask me anything about home interiors, pricing, or styles!
+                    Hey! I'm <strong>Orza</strong>, your interior design assistant. Ask me anything about home interiors, pricing, or styles!
                   </p>
                 </div>
                 <div className="space-y-2">
@@ -245,3 +245,4 @@ const FloatingOrzaButton = () => {
 };
 
 export default FloatingOrzaButton;
+

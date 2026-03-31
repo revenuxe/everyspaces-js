@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Instagram, Linkedin } from "lucide-react";
+﻿import { Phone, Mail, MapPin, Instagram, Linkedin } from "lucide-react";
 import everyspacesLogo from "@/assets/everyspaces-logo.webp";
 import { imgSrc } from "@/lib/utils";
 
@@ -9,17 +9,17 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <a href="/" aria-label="EverySpaces Home - Best Interior Designers in Bangalore">
+            <a href="/" aria-label="EverySpaces Home - Best Interior Designers in Hyderabad">
               <img
                 src={imgSrc(everyspacesLogo)}
-                alt="EverySpaces Interior Design Bangalore"
+                alt="EverySpaces Interior Design Hyderabad"
                 width={197}
                 height={40}
                 className="h-10 w-auto mb-4"
               />
             </a>
             <p className="text-primary-foreground/70 text-sm max-w-sm mb-6 font-body">
-              For the Way You Work. Transforming Bengaluru homes with contemporary design excellence.
+              For the Way You Work. Transforming Hyderabad homes with contemporary design excellence.
               Every space tells your story.
             </p>
             <div className="flex gap-4">
@@ -79,7 +79,7 @@ const Footer = () => {
               <li><a href="/" className="hover:text-secondary transition-colors">Home</a></li>
               <li><a href="/portfolio" className="hover:text-secondary transition-colors">Portfolio</a></li>
               <li><a href="/price-calculator" className="hover:text-secondary transition-colors">Price Calculator</a></li>
-              <li><a href="/bangalore" className="hover:text-secondary transition-colors">Bangalore</a></li>
+              <li><a href="/hyderabad" className="hover:text-secondary transition-colors">Hyderabad</a></li>
               <li><a href="/articles" className="hover:text-secondary transition-colors">Articles</a></li>
               <li><a href="/contact" className="hover:text-secondary transition-colors">Contact Us</a></li>
               <li><a href="/orza-ai" className="hover:text-secondary transition-colors">Orza AI</a></li>
@@ -91,7 +91,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/70 font-body">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-secondary flex-shrink-0" />
-                <span>HBR Layout, Bangalore 560045</span>
+                <span>HBR Layout, Hyderabad 560045</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-secondary flex-shrink-0" />
@@ -106,35 +106,35 @@ const Footer = () => {
 
           {/* All Localities */}
           <div>
-            <h4 className="font-display text-lg mb-4">Bangalore Localities</h4>
+            <h4 className="font-display text-lg mb-4">Hyderabad Localities</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70 font-body">
-              <li><a href="/bangalore/indiranagar" className="hover:text-secondary transition-colors">Indiranagar</a></li>
-              <li><a href="/bangalore/koramangala" className="hover:text-secondary transition-colors">Koramangala</a></li>
-              <li><a href="/bangalore/hsr-layout" className="hover:text-secondary transition-colors">HSR Layout</a></li>
-              <li><a href="/bangalore/whitefield" className="hover:text-secondary transition-colors">Whitefield</a></li>
-              <li><a href="/bangalore/jayanagar" className="hover:text-secondary transition-colors">Jayanagar</a></li>
-              <li><a href="/bangalore/jp-nagar" className="hover:text-secondary transition-colors">JP Nagar</a></li>
-              <li><a href="/bangalore/btm-layout" className="hover:text-secondary transition-colors">BTM Layout</a></li>
-              <li><a href="/bangalore/electronic-city" className="hover:text-secondary transition-colors">Electronic City</a></li>
-              <li><a href="/bangalore/marathahalli" className="hover:text-secondary transition-colors">Marathahalli</a></li>
-              <li><a href="/bangalore/sarjapur-road" className="hover:text-secondary transition-colors">Sarjapur Road</a></li>
-              <li><a href="/bangalore/bellandur" className="hover:text-secondary transition-colors">Bellandur</a></li>
-              <li><a href="/bangalore/hebbal" className="hover:text-secondary transition-colors">Hebbal</a></li>
-              <li><a href="/bangalore/yelahanka" className="hover:text-secondary transition-colors">Yelahanka</a></li>
-              <li><a href="/bangalore/malleshwaram" className="hover:text-secondary transition-colors">Malleshwaram</a></li>
-              <li><a href="/bangalore/rajajinagar" className="hover:text-secondary transition-colors">Rajajinagar</a></li>
-              <li><a href="/bangalore/basavanagudi" className="hover:text-secondary transition-colors">Basavanagudi</a></li>
-              <li><a href="/bangalore/banashankari" className="hover:text-secondary transition-colors">Banashankari</a></li>
-              <li><a href="/bangalore/vijayanagar" className="hover:text-secondary transition-colors">Vijayanagar</a></li>
-              <li><a href="/bangalore/sadashivanagar" className="hover:text-secondary transition-colors">Sadashivanagar</a></li>
-              <li><a href="/bangalore/rt-nagar" className="hover:text-secondary transition-colors">RT Nagar</a></li>
-              <li><a href="/bangalore/hbr-layout" className="hover:text-secondary transition-colors">HBR Layout</a></li>
+              <li><a href="/hyderabad/indiranagar" className="hover:text-secondary transition-colors">Indiranagar</a></li>
+              <li><a href="/hyderabad/koramangala" className="hover:text-secondary transition-colors">Koramangala</a></li>
+              <li><a href="/hyderabad/hsr-layout" className="hover:text-secondary transition-colors">HSR Layout</a></li>
+              <li><a href="/hyderabad/whitefield" className="hover:text-secondary transition-colors">Whitefield</a></li>
+              <li><a href="/hyderabad/jayanagar" className="hover:text-secondary transition-colors">Jayanagar</a></li>
+              <li><a href="/hyderabad/jp-nagar" className="hover:text-secondary transition-colors">JP Nagar</a></li>
+              <li><a href="/hyderabad/btm-layout" className="hover:text-secondary transition-colors">BTM Layout</a></li>
+              <li><a href="/hyderabad/electronic-city" className="hover:text-secondary transition-colors">Electronic City</a></li>
+              <li><a href="/hyderabad/marathahalli" className="hover:text-secondary transition-colors">Marathahalli</a></li>
+              <li><a href="/hyderabad/sarjapur-road" className="hover:text-secondary transition-colors">Sarjapur Road</a></li>
+              <li><a href="/hyderabad/bellandur" className="hover:text-secondary transition-colors">Bellandur</a></li>
+              <li><a href="/hyderabad/hebbal" className="hover:text-secondary transition-colors">Hebbal</a></li>
+              <li><a href="/hyderabad/yelahanka" className="hover:text-secondary transition-colors">Yelahanka</a></li>
+              <li><a href="/hyderabad/malleshwaram" className="hover:text-secondary transition-colors">Malleshwaram</a></li>
+              <li><a href="/hyderabad/rajajinagar" className="hover:text-secondary transition-colors">Rajajinagar</a></li>
+              <li><a href="/hyderabad/basavanagudi" className="hover:text-secondary transition-colors">Basavanagudi</a></li>
+              <li><a href="/hyderabad/banashankari" className="hover:text-secondary transition-colors">Banashankari</a></li>
+              <li><a href="/hyderabad/vijayanagar" className="hover:text-secondary transition-colors">Vijayanagar</a></li>
+              <li><a href="/hyderabad/sadashivanagar" className="hover:text-secondary transition-colors">Sadashivanagar</a></li>
+              <li><a href="/hyderabad/rt-nagar" className="hover:text-secondary transition-colors">RT Nagar</a></li>
+              <li><a href="/hyderabad/hbr-layout" className="hover:text-secondary transition-colors">HBR Layout</a></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-sm text-primary-foreground/50 font-body">
-          <p>© {new Date().getFullYear()} EverySpaces Interior Design. All rights reserved.</p>
+          <p>Â© {new Date().getFullYear()} EverySpaces Interior Design. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -142,3 +142,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

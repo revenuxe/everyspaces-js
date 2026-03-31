@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -225,7 +225,7 @@ const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
                   id="keywords"
                   value={aiKeywords}
                   onChange={(e) => setAiKeywords(e.target.value)}
-                  placeholder="e.g., modular kitchen bangalore, kitchen design, kitchen interiors"
+                  placeholder="e.g., modular kitchen hyderabad, kitchen design, kitchen interiors"
                 />
                 <p className="text-xs text-muted-foreground">
                   Comma-separated keywords for SEO
@@ -238,7 +238,7 @@ const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
                   id="audience"
                   value={aiAudience}
                   onChange={(e) => setAiAudience(e.target.value)}
-                  placeholder="e.g., Homeowners in Bangalore looking for kitchen renovation"
+                  placeholder="e.g., Homeowners in Hyderabad looking for kitchen renovation"
                 />
               </div>
             </div>
@@ -478,3 +478,4 @@ const ArticleForm = ({ article, onClose }: ArticleFormProps) => {
 };
 
 export default ArticleForm;
+

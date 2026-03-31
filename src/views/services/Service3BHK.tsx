@@ -84,8 +84,8 @@ const whyChooseUs = [
 // AEO-optimized FAQs
 const bhk3FAQs = [
   {
-    question: "What is the cost of 3 BHK interior design in Bangalore?",
-    answer: "3 BHK interior design in Bangalore costs ₹8-20 lakh for complete interiors. At EverySpaces, basic packages start from ₹8 lakh, premium from ₹12 lakh with false ceiling, and luxury from ₹18 lakh with home theatre and walk-in closets."
+    question: "What is the cost of 3 BHK interior design in Hyderabad?",
+    answer: "3 BHK interior design in Hyderabad costs â‚¹8-20 lakh for complete interiors. At EverySpaces, basic packages start from â‚¹8 lakh, premium from â‚¹12 lakh with false ceiling, and luxury from â‚¹18 lakh with home theatre and walk-in closets."
   },
   {
     question: "What is included in 3 BHK interior package?",
@@ -143,13 +143,13 @@ const Service3BHK = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "3 BHK Interior Design Bangalore",
-      "Premium 3 BHK interior design packages in Bangalore starting ₹8 lakh. Includes modular kitchen, wardrobes, TV unit, home theatre, and walk-in closets with 10-year warranty.",
+      "3 BHK Interior Design Hyderabad",
+      "Premium 3 BHK interior design packages in Hyderabad starting â‚¹8 lakh. Includes modular kitchen, wardrobes, TV unit, home theatre, and walk-in closets with 10-year warranty.",
       "https://everyspaces.com/services/3bhk-interiors",
       "https://everyspaces.com/service-3bhk.jpg",
       "800000-2000000",
       {
-        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Modular Kitchen", "Walk-in Closet", "Home Theatre", "False Ceiling", "Premium Finishes"]
       }
     ),
@@ -161,7 +161,7 @@ const Service3BHK = () => {
     createFAQSchema(bhk3FAQs, 'services/3bhk-interiors'),
     createProductSchema({
       name: "3 BHK Premium Interior Package",
-      description: "Complete 3 BHK interior design in Bangalore with kitchen, wardrobes, home theatre, and luxury finishes. 60-75 day delivery with 10-year warranty.",
+      description: "Complete 3 BHK interior design in Hyderabad with kitchen, wardrobes, home theatre, and luxury finishes. 60-75 day delivery with 10-year warranty.",
       image: "https://everyspaces.com/service-3bhk.jpg",
       url: "https://everyspaces.com/services/3bhk-interiors",
       priceRange: "800000-2000000",
@@ -181,7 +181,7 @@ const Service3BHK = () => {
           <div className="absolute inset-0 z-0">
             <img
               src={imgSrc(villaImage)}
-              alt="3 BHK Interior Design Bangalore"
+              alt="3 BHK Interior Design Hyderabad"
               decoding="async"
               fetchPriority="high"
               className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
@@ -193,7 +193,7 @@ const Service3BHK = () => {
             <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 md:mb-4 animate-fade-up tracking-[-0.03em] md:leading-[1.2]">
                 3 BHK Interior Design
-                <span className="block text-secondary tracking-[-0.02em] md:mt-2">in Bangalore</span>
+                <span className="block text-secondary tracking-[-0.02em] md:mt-2">in Hyderabad</span>
               </h1>
               <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Premium interiors for spacious homes with luxury finishes
@@ -242,7 +242,7 @@ const Service3BHK = () => {
                   </button>
                 </form>
                 <p className="text-center text-xs text-muted-foreground mt-4 font-body">
-                  🔒 No spam. We respect your privacy.
+                  No spam. We respect your privacy.
                 </p>
               </div>
             </div>
@@ -305,7 +305,7 @@ const Service3BHK = () => {
         <section className="py-12 md:py-16">
           <div className="container px-4">
             <div className="text-center mb-10">
-              <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">Our 3 BHK Projects in Bangalore</h2>
+              <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">Our 3 BHK Projects in Hyderabad</h2>
               <p className="text-muted-foreground font-body">Premium homes transformed by our expert team</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -347,3 +347,4 @@ const Service3BHK = () => {
 };
 
 export default Service3BHK;
+

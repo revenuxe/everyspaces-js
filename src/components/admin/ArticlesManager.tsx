@@ -142,6 +142,16 @@ const ArticlesManager = () => {
 
   return (
     <div className="space-y-6">
+      <div className="rounded-xl border border-secondary/30 bg-secondary/10 p-4">
+        <p className="text-sm text-foreground">
+          Blog publishing has moved to Sanity Studio for SEO workflow and SSR delivery.
+          Use{" "}
+          <a href="/studio" className="font-semibold underline underline-offset-2">
+            /studio
+          </a>{" "}
+          for all new and updated posts.
+        </p>
+      </div>
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>

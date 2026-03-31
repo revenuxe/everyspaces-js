@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery14 from "@/assets/gallery-14.jpg";
@@ -12,68 +12,95 @@ import gallery27 from "@/assets/gallery-27.jpg";
 
 const Sadashivanagar = () => {
   const seo = {
-    metaTitle: "Interior Designers in Sadashivanagar | Luxury Bungalow Interiors Bangalore",
-    metaDescription: "Luxury interior designers in Sadashivanagar, Bangalore. 15+ premium bungalow projects. Grand living spaces, imported finishes & exclusive designs for elite homes. Free consultation!",
+    metaTitle: "Best Interior Designers in Banjara Hills Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Banjara Hills, Hyderabad with modular kitchens, wardrobes, and full-home design. 15+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers sadashivanagar",
-      "best interior designers in sadashivanagar bangalore",
-      "luxury home interiors sadashivanagar",
-      "bungalow interior design sadashivanagar",
-      "premium interior design sadashivanagar",
-      "villa interior sadashivanagar",
-      "high-end renovation sadashivanagar bangalore",
-      "interior decorators sadashivanagar",
-      "elite home design sadashivanagar",
-      "palace road interiors"
+      "interior designers in Banjara Hills hyderabad",
+      "home interiors Banjara Hills",
+      "best interior designers Banjara Hills",
+      "modular kitchen Banjara Hills hyderabad",
+      "wardrobe design Banjara Hills",
+      "full home interiors hyderabad",
+      "interior decorators Banjara Hills",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Interior Designers in Sadashivanagar | EverySpaces - Luxury Bungalow Specialists",
-    ogDescription: "Sadashivanagar interior experts. 15+ luxury projects, bungalow specialists. Premium quality. Free consultation!",
+    ogTitle: "Interior Designers in Banjara Hills, Hyderabad | EverySpaces",
+    ogDescription: "15+ Projects completed in and around Banjara Hills. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in Sadashivanagar?",
-        answer: "Interior design in Sadashivanagar costs ₹3,000 to ₹6,000 per sq ft for luxury finishes. Bungalow interiors start from ₹25 lakhs. EverySpaces has completed 15+ premium projects with imported materials and exclusive designs."
+        question: "What is the interior design cost in Banjara Hills, Hyderabad?",
+        answer: "Interior design cost in Banjara Hills typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Do you specialize in Sadashivanagar bungalows?",
-        answer: "Yes! Sadashivanagar has Bangalore's most prestigious bungalows. We specialize in grand-scale interiors - dramatic entrance foyers, formal living rooms, entertainment spaces, private suites, and landscaped outdoor areas."
+        question: "Do you provide modular kitchen and wardrobe design in Banjara Hills?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Banjara Hills."
       },
       {
-        question: "Can you source imported materials for Sadashivanagar homes?",
-        answer: "Absolutely! We source Italian marble, European hardware, imported kitchen appliances, designer lighting, and exclusive furnishings for Sadashivanagar's elite clientele. We work with premium international brands."
+        question: "How long does a full home interior project take in Banjara Hills?",
+        answer: "Most 2BHK and 3BHK interior projects in Banjara Hills are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "Do you work with architects for Sadashivanagar renovations?",
-        answer: "Yes! We collaborate with leading architects for major Sadashivanagar renovations. We coordinate structural changes, heritage preservation, and interior design to create cohesive luxury spaces."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["Palace Road", "Sankey Road", "Vasanth Nagar", "Malleshwaram", "Palace Guttahalli", "Jayamahal"],
-    specialties: ["Luxury Bungalow", "Imported Finishes", "Grand Living Spaces", "Entertainment Room", "Private Suite Design"],
-    lifestyleDescription: "Sadashivanagar is Bangalore's most prestigious residential address, home to sprawling bungalows, diplomatic residences, and some of the city's wealthiest families. Located near Palace Road and Sankey Tank, this exclusive neighborhood demands the finest interior craftsmanship with imported materials and bespoke luxury designs.",
+    nearbyAreas: ["Jubilee Hills","Somajiguda","Panjagutta","Film Nagar","Begumpet","Khairatabad"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Banjara Hills is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
-      { name: "Palace Road & Raj Bhavan", description: "The regal Palace Road sets the tone for grand, palatial interiors. Homes here feature marble flooring, ornate ceiling work, and museum-quality art displays.", type: "landmark" as const },
-      { name: "Sankey Tank Lakeside", description: "The serene lakeside location inspires refined interiors with large French windows, outdoor entertaining areas, and nature-connected design philosophies.", type: "nature" as const },
-      { name: "Sadashivanagar Heritage Bungalows", description: "Colonial-era bungalows with sprawling gardens, double-height ceilings, and original architectural details that require sensitive luxury restoration.", type: "residential" as const },
-      { name: "Vasanth Nagar & Jayamahal Extension", description: "Upscale extensions with newer luxury villas needing contemporary high-end interiors with smart home integration and designer finishes.", type: "lifestyle" as const }
+      {
+        name: "Residential Communities in Banjara Hills",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
+        type: "residential" as const
+      },
+      {
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
+        type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
+      }
     ],
     designTips: [
-      { title: "Source Premium Imported Materials", description: "Sadashivanagar homes deserve the finest—Italian marble, European oak flooring, German kitchen systems, and designer lighting from international brands." },
-      { title: "Design Grand Entrance Foyers", description: "Create dramatic double-height foyers with statement chandeliers, curved staircases, imported stone flooring, and commissioned art installations." },
-      { title: "Create Private Suite Experiences", description: "Master suites should include walk-in closets, ensuite spa bathrooms with rain showers, private sitting areas, and automated curtain systems." },
-      { title: "Plan Entertainment & Social Spaces", description: "Design dedicated entertainment rooms with home bars, wine cellars, cigar lounges, and home theatres for Sadashivanagar's social lifestyle." }
+      {
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
+      },
+      {
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
+      },
+      {
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
+      },
+      {
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
+      }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="Sadashivanagar"
+      localityName="Banjara Hills"
       slug="sadashivanagar"
       projectCount="15+ Projects"
       heroImage={gallery14}
       galleryImages={[gallery21, gallery22, gallery23, gallery24, gallery25, gallery26, gallery27, gallery14]}
-      description="Luxury interior designers in Sadashivanagar, Bangalore. Premium bungalow & villa interior specialists."
+      description="Top interior designers in Banjara Hills, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default Sadashivanagar;
+

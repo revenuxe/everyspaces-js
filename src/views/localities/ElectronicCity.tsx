@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery4 from "@/assets/gallery-4.jpg";
@@ -12,68 +12,95 @@ import gallery7 from "@/assets/gallery-7.jpg";
 
 const ElectronicCity = () => {
   const seo = {
-    metaTitle: "Interior Designers in Electronic City | Smart Home Interiors Bangalore",
-    metaDescription: "Expert interior designers in Electronic City, Bangalore. 26+ projects in Phase 1 & 2. Smart home integration, modern modular kitchens & tech-savvy living spaces. 10-year warranty!",
+    metaTitle: "Best Interior Designers in HITEC City Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in HITEC City, Hyderabad with modular kitchens, wardrobes, and full-home design. 26+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers electronic city",
-      "best interior designers in electronic city bangalore",
-      "home interiors electronic city",
-      "modular kitchen electronic city",
-      "smart home interior electronic city",
-      "apartment interior electronic city phase 1",
-      "home renovation electronic city phase 2",
-      "interior decorators electronic city bangalore",
-      "tech park area interiors",
-      "electronic city home design"
+      "interior designers in HITEC City hyderabad",
+      "home interiors HITEC City",
+      "best interior designers HITEC City",
+      "modular kitchen HITEC City hyderabad",
+      "wardrobe design HITEC City",
+      "full home interiors hyderabad",
+      "interior decorators HITEC City",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Interior Designers in Electronic City | EverySpaces - Smart Home Specialists",
-    ogDescription: "Electronic City interior experts. 26+ projects, smart home solutions. Free consultation!",
+    ogTitle: "Interior Designers in HITEC City, Hyderabad | EverySpaces",
+    ogDescription: "26+ Projects completed in and around HITEC City. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in Electronic City?",
-        answer: "Interior design in Electronic City costs ₹1,400 to ₹2,800 per sq ft. EverySpaces offers packages from ₹7.5 lakhs for 2BHK in Electronic City. We've completed 26+ projects in Phase 1 & 2 with modern designs and 10-year warranty."
+        question: "What is the interior design cost in HITEC City, Hyderabad?",
+        answer: "Interior design cost in HITEC City typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Do you offer smart home integration in Electronic City?",
-        answer: "Yes! Electronic City's tech-savvy residents often prefer smart home features. We integrate automated lighting, smart locks, voice-controlled appliances, motorized curtains, and home automation systems into our interior designs."
+        question: "Do you provide modular kitchen and wardrobe design in HITEC City?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in HITEC City."
       },
       {
-        question: "Which areas in Electronic City do you cover?",
-        answer: "We serve Electronic City Phase 1, Phase 2, Neeladri Nagar, Velankani, Bommasandra, and Hebbagodi. Our portfolio includes apartments in Prestige, Salarpuria, Purva, and independent villas in the area."
+        question: "How long does a full home interior project take in HITEC City?",
+        answer: "Most 2BHK and 3BHK interior projects in HITEC City are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "Do you design interiors for Electronic City villas?",
-        answer: "Absolutely! We design villa interiors in Electronic City including Velankani, Bommasandra, and surrounding villa communities. Our villa designs include landscaping coordination, outdoor living spaces, and large-format interiors."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["Phase 1 Electronic City", "Phase 2 Electronic City", "Bommasandra", "Hebbagodi", "Neeladri Nagar", "HSR Layout"],
-    specialties: ["Smart Home Design", "Modern Interiors", "Tech-Savvy Solutions", "Modular Kitchen", "Home Automation Ready"],
-    lifestyleDescription: "Electronic City is Bangalore's original IT township, housing Infosys, Wipro, and HCL campuses. Home to thousands of tech professionals, this locality features modern apartments and villa communities that demand smart, tech-integrated interiors with contemporary aesthetics and efficient space utilization.",
+    nearbyAreas: ["Madhapur","Kondapur","Gachibowli","Raidurg","Kavuri Hills","Financial District"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "HITEC City is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
-      { name: "Infosys & Wipro Campus", description: "The iconic tech campuses set the tone for modern, minimalist aesthetics that residents carry into their home interiors.", type: "landmark" as const },
-      { name: "Electronic City Flyover & Connectivity", description: "Improved connectivity means more families settling here long-term, investing in premium, permanent home interiors rather than temporary setups.", type: "lifestyle" as const },
-      { name: "Neeladri Nagar & Villa Communities", description: "Independent villas and row houses offering spacious layouts perfect for luxury interiors with outdoor living spaces.", type: "residential" as const },
-      { name: "Phase 2 Green Belt", description: "The greener Phase 2 area inspires nature-themed interiors with indoor gardens, wooden elements, and biophilic design concepts.", type: "nature" as const }
+      {
+        name: "Residential Communities in HITEC City",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
+        type: "residential" as const
+      },
+      {
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
+        type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
+      }
     ],
     designTips: [
-      { title: "Integrate Smart Home Automation", description: "Electronic City residents love tech. Install smart lighting, automated blinds, voice-controlled appliances, and app-managed security for a truly connected home." },
-      { title: "Design an Ergonomic Home Office", description: "With hybrid work culture in IT companies, create a dedicated workspace with adjustable desks, proper lighting, and soundproofing for video calls." },
-      { title: "Use Modern Minimalist Aesthetics", description: "Clean lines, neutral palettes with accent colors, and clutter-free surfaces resonate with the tech-forward lifestyle of Electronic City residents." },
-      { title: "Plan for Growing Families", description: "Many Electronic City residents are young families. Design adaptable kids' rooms, ample storage, and family-friendly kitchen layouts with safety features." }
+      {
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
+      },
+      {
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
+      },
+      {
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
+      },
+      {
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
+      }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="Electronic City"
+      localityName="HITEC City"
       slug="electronic-city"
       projectCount="26+ Projects"
       heroImage={gallery4}
       galleryImages={[gallery27, gallery1, gallery2, gallery3, gallery5, gallery6, gallery7, gallery4]}
-      description="Expert interior designers in Electronic City, Bangalore. Tech park area specialists with smart home solutions."
+      description="Top interior designers in HITEC City, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default ElectronicCity;
+

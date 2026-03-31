@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
-import { createServerSupabase } from "@/integrations/supabase/server";
 import { absoluteUrl } from "@/lib/site-url";
 import { VALID_LOCALITY_SLUGS } from "@/seo/locality-metadata";
 import { CORE_SITEMAP_ENTRIES, SERVICE_SITEMAP_ENTRIES } from "@/seo/static-sitemap-paths";
+import { getPublishedPostSlugs } from "@/sanity/lib/posts";
 
 /** Regenerate sitemap periodically so new articles appear without redeploying. */
 export const revalidate = 3600;
@@ -26,24 +26,9 @@ function toSitemapRow(
 
 async function fetchPublishedArticleUrls(): Promise<MetadataRoute.Sitemap> {
   try {
-    const supabase = createServerSupabase();
-    const { data, error } = await supabase
-      .from("articles")
-      .select("slug, updated_at, published_at")
-      .eq("status", "published");
-
-    if (error || !data?.length) return [];
-
-    return data.map((row) => {
-      const raw = row.updated_at || row.published_at;
-      const lastModified = raw ? new Date(raw) : undefined;
-      return toSitemapRow(
-        `/articles/${row.slug}`,
-        "weekly",
-        0.75,
-        lastModified,
-      );
-    });
+    const slugs = await getPublishedPostSlugs();
+    if (!slugs.length) return [];
+    return slugs.map((slug) => toSitemapRow(`/articles/${slug}`, "weekly", 0.78));
   } catch {
     return [];
   }
@@ -54,7 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...CORE_SITEMAP_ENTRIES.map((e) => toSitemapRow(e.path, e.changeFrequency, e.priority)),
     ...SERVICE_SITEMAP_ENTRIES.map((e) => toSitemapRow(e.path, e.changeFrequency, e.priority)),
     ...VALID_LOCALITY_SLUGS.map((locality) =>
-      toSitemapRow(`/bangalore/${locality}`, "monthly", 0.85),
+      toSitemapRow(`/hyderabad/${locality}`, "monthly", 0.85),
     ),
   ];
 
@@ -62,3 +47,4 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [...staticRows, ...articleRows];
 }
+

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery11 from "@/assets/gallery-11.jpg";
@@ -12,68 +12,95 @@ import gallery4 from "@/assets/gallery-4.jpg";
 
 const Malleshwaram = () => {
   const seo = {
-    metaTitle: "Interior Designers in Malleshwaram | Heritage & Classic Home Interiors Bangalore",
-    metaDescription: "Heritage-conscious interior designers in Malleshwaram, Bangalore. 19+ projects blending classic elegance with modern functionality. Traditional kitchens, wooden interiors & timeless designs!",
+    metaTitle: "Best Interior Designers in Secunderabad Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Secunderabad, Hyderabad with modular kitchens, wardrobes, and full-home design. 19+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers malleshwaram",
-      "best interior designers in malleshwaram bangalore",
-      "home interiors malleshwaram",
-      "traditional kitchen malleshwaram",
-      "heritage interior design malleshwaram",
-      "wooden interior malleshwaram",
-      "home renovation malleshwaram bangalore",
-      "interior decorators malleshwaram",
-      "classic home design malleshwaram",
-      "west bangalore interiors"
+      "interior designers in Secunderabad hyderabad",
+      "home interiors Secunderabad",
+      "best interior designers Secunderabad",
+      "modular kitchen Secunderabad hyderabad",
+      "wardrobe design Secunderabad",
+      "full home interiors hyderabad",
+      "interior decorators Secunderabad",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Interior Designers in Malleshwaram | EverySpaces - Heritage & Classic Designs",
-    ogDescription: "Malleshwaram interior experts. 19+ projects, heritage specialists. Classic elegance. Free consultation!",
+    ogTitle: "Interior Designers in Secunderabad, Hyderabad | EverySpaces",
+    ogDescription: "19+ Projects completed in and around Secunderabad. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in Malleshwaram?",
-        answer: "Interior design in Malleshwaram costs ₹1,800 to ₹3,500 per sq ft for quality heritage-style work. EverySpaces offers packages from ₹9 lakhs for 2BHK. We've completed 19+ projects respecting Malleshwaram's classic aesthetic."
+        question: "What is the interior design cost in Secunderabad, Hyderabad?",
+        answer: "Interior design cost in Secunderabad typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Do you specialize in heritage home renovations?",
-        answer: "Yes! Malleshwaram has many heritage homes. We specialize in renovating traditional bungalows, preserving original elements like wooden doors, vintage tiles, and architectural details while adding modern conveniences."
+        question: "Do you provide modular kitchen and wardrobe design in Secunderabad?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Secunderabad."
       },
       {
-        question: "Which areas in Malleshwaram do you serve?",
-        answer: "We serve all Malleshwaram areas including 8th Cross, 18th Cross, Sampige Road, Margosa Road, and surrounding areas. Our portfolio includes heritage bungalows, independent houses, and apartments near Sankey Tank."
+        question: "How long does a full home interior project take in Secunderabad?",
+        answer: "Most 2BHK and 3BHK interior projects in Secunderabad are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "Can you create wooden interiors for Malleshwaram homes?",
-        answer: "Absolutely! We specialize in solid wood interiors - teak wood kitchens, rosewood furniture, traditional wooden doors, and carved elements that match Malleshwaram's classic aesthetic. We source premium Indian hardwoods."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["8th Cross Malleshwaram", "Sampige Road", "Margosa Road", "Rajajinagar", "Sadashivanagar", "Sankey Tank Area"],
-    specialties: ["Heritage Renovation", "Wooden Interiors", "Traditional Kitchen", "Classic Design", "Antique Restoration"],
-    lifestyleDescription: "Malleshwaram is Bangalore's heritage jewel, one of the oldest planned localities dating back to the 1890s. Known for its iconic 8th Cross shopping street, Sankey Tank, and beautiful tree-lined avenues, Malleshwaram combines old-world Bangalore charm with a strong cultural identity that its residents proudly preserve.",
+    nearbyAreas: ["Begumpet","Trimulgherry","Maredpally","Bolarum","Tarnaka","Himayatnagar"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Secunderabad is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
-      { name: "8th Cross & Sampige Road", description: "The iconic heritage shopping streets with century-old establishments. Homes near here reflect traditional Bangalore aesthetics with wooden facades and classic proportions.", type: "landmark" as const },
-      { name: "Sankey Tank", description: "The picturesque lake creates a peaceful atmosphere. Lake-facing properties benefit from nature-inspired interiors with panoramic window treatments.", type: "nature" as const },
-      { name: "Malleshwaram Heritage Bungalows", description: "Grand colonial-era bungalows with original wooden staircases, carved pillars, and spacious verandahs that deserve respectful modernization.", type: "residential" as const },
-      { name: "Margosa Road Cultural District", description: "The cultural hub with classical music venues and art galleries. Homes here often feature music rooms, art display walls, and culturally-rich interiors.", type: "lifestyle" as const }
+      {
+        name: "Residential Communities in Secunderabad",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
+        type: "residential" as const
+      },
+      {
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
+        type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
+      }
     ],
     designTips: [
-      { title: "Preserve Century-Old Woodwork", description: "Malleshwaram homes have irreplaceable original wood elements. Professional restoration of teak doors, rosewood furniture, and carved pillars adds immense value." },
-      { title: "Design Around the Verandah", description: "Classic Malleshwaram bungalows have beautiful verandahs. Enhance them with traditional seating, jhoola (swing), and potted plants for a quintessential old Bangalore feel." },
-      { title: "Create a Music or Art Room", description: "Malleshwaram's cultural community appreciates dedicated spaces for classical music practice or art display with proper acoustics and gallery lighting." },
-      { title: "Use Traditional Flooring Wisely", description: "If your home has original Athangudi tiles or red oxide flooring, restore them rather than replacing with modern tiles. They add irreplaceable character." }
+      {
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
+      },
+      {
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
+      },
+      {
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
+      },
+      {
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
+      }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="Malleshwaram"
+      localityName="Secunderabad"
       slug="malleshwaram"
       projectCount="19+ Projects"
       heroImage={gallery11}
       galleryImages={[gallery25, gallery26, gallery27, gallery1, gallery2, gallery3, gallery4, gallery11]}
-      description="Heritage-conscious interior designers in Malleshwaram, Bangalore. Classic designs with modern functionality."
+      description="Top interior designers in Secunderabad, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default Malleshwaram;
+

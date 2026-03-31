@@ -8,9 +8,9 @@ import {
 
 const faqs = [
   {
-    question: "How much does interior design cost in Bangalore?",
+    question: "How much does interior design cost in Hyderabad?",
     answer:
-      "Interior design costs in Bangalore typically range from ₹1,500 to ₹3,500 per square foot depending on the scope, materials, and finishes. At EverySpaces, we offer customized packages starting from ₹8 lakhs for a 2BHK apartment interior design. We provide detailed cost breakdowns and transparent pricing with no hidden charges. Contact us for a free consultation and accurate quote.",
+      "Interior design costs in Hyderabad typically range from ₹1,500 to ₹3,500 per square foot depending on the scope, materials, and finishes. At EverySpaces, we offer customized packages starting from ₹8 lakhs for a 2BHK apartment interior design. We provide detailed cost breakdowns and transparent pricing with no hidden charges. Contact us for a free consultation and accurate quote.",
   },
   {
     question: "How long does it take to complete home interior design?",
@@ -18,14 +18,14 @@ const faqs = [
       "A complete home interior design project typically takes 45-90 days depending on the size and complexity. Modular kitchen installation takes 15-20 days, while a full 3BHK apartment interior can take 60-75 days. We use advanced project management and quality materials to ensure timely delivery without compromising on craftsmanship.",
   },
   {
-    question: "Do you provide modular kitchen designs in Bangalore?",
+    question: "Do you provide modular kitchen designs in Hyderabad?",
     answer:
-      "Yes! EverySpaces specializes in premium modular kitchen designs in Bangalore. We offer L-shaped, U-shaped, parallel, and island kitchen layouts with soft-close mechanisms, durable finishes, and smart storage solutions. Our modular kitchens come with a 10-year warranty on hardware and are customized to fit your space and budget.",
+      "Yes! EverySpaces specializes in premium modular kitchen designs in Hyderabad. We offer L-shaped, U-shaped, parallel, and island kitchen layouts with soft-close mechanisms, durable finishes, and smart storage solutions. Our modular kitchens come with a 10-year warranty on hardware and are customized to fit your space and budget.",
   },
   {
-    question: "What areas in Bangalore do you serve for interior design?",
+    question: "What areas in Hyderabad do you serve for interior design?",
     answer:
-      "We provide interior design services across all major areas in Bangalore including Koramangala, Indiranagar, HSR Layout, Whitefield, Electronic City, Marathahalli, Jayanagar, JP Nagar, HBR Layout, Hebbal, Yelahanka, and Sarjapur Road. Our team conducts free site visits for consultation anywhere in Bangalore.",
+      "We provide interior design services across major Hyderabad areas including Gachibowli, Jubilee Hills, Kondapur, Madhapur, HITEC City, Financial District, Kokapet, Narsingi, Kompally, and Banjara Hills. Our team conducts free site visits for consultation anywhere in Hyderabad.",
   },
   {
     question: "Do you offer 3D visualization before starting the project?",
@@ -48,7 +48,7 @@ const faqs = [
       "Yes! We offer flexible interior design services for individual spaces. Whether you need just a modular kitchen design, bedroom renovation, bathroom remodeling, or living room makeover, we can help. Our minimum project value starts from ₹2.5 lakhs for individual room designs.",
   },
   {
-    question: "What makes EverySpaces different from other interior designers in Bangalore?",
+    question: "What makes EverySpaces different from other interior designers in Hyderabad?",
     answer:
       "EverySpaces stands out with 10+ years of experience, 500+ completed projects, in-house manufacturing facility, transparent pricing, dedicated project managers, and a strong focus on quality materials. We use premium brands like Hettich, Hafele, and Century for all our projects with proper documentation and warranty.",
   },
@@ -72,7 +72,7 @@ const FAQSection = () => {
             Everything You Need to Know
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto font-body">
-            Find answers to common questions about interior design services, pricing, and process in Bangalore
+            Find answers to common questions about interior design services, pricing, and process in Hyderabad
           </p>
         </div>
 
@@ -112,3 +112,4 @@ const FAQSection = () => {
 };
 
 export default FAQSection;
+

@@ -47,8 +47,8 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
   doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(200, 200, 200);
-  doc.text(`Prepared for ${userName} • ${location} • ${new Date().toLocaleDateString("en-IN")}`, margin, 24);
-  doc.text("Powered by Orza AI — everyspaces.com", margin, 30);
+  doc.text(`Prepared for ${userName} â€¢ ${location} â€¢ ${new Date().toLocaleDateString("en-IN")}`, margin, 24);
+  doc.text("Powered by Orza AI â€” everyspaces.com", margin, 30);
   y = 44;
 
   // Headline
@@ -58,7 +58,7 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
 
   // Mood Keywords
   if (rec.moodKeywords?.length) {
-    addText("Style Keywords: " + rec.moodKeywords.join(" • "), 9, "italic", [199, 121, 59]);
+    addText("Style Keywords: " + rec.moodKeywords.join(" â€¢ "), 9, "italic", [199, 121, 59]);
   }
 
   // Color Palette
@@ -79,7 +79,7 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
       doc.text(`${c.name} (${c.shade})`, margin + 9, y);
       doc.setFont("helvetica", "normal");
       doc.setTextColor(100, 100, 100);
-      doc.text(`— ${c.usage}`, margin + 9, y + 4);
+      doc.text(`â€” ${c.usage}`, margin + 9, y + 4);
       y += 10;
     });
   }
@@ -89,7 +89,7 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
     addSectionHeader("Furniture & Layout");
     addText(rec.furnitureLayout.description, 9, "normal", [80, 80, 80]);
     rec.furnitureLayout.items?.forEach((item) => {
-      addText(`• ${item.name} — ${item.detail}`, 9, "normal");
+      addText(`â€¢ ${item.name} â€” ${item.detail}`, 9, "normal");
       addText(`  Price: ${item.priceRange}`, 8, "italic", [199, 121, 59]);
     });
   }
@@ -99,7 +99,7 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
     addSectionHeader("Materials & Finishes");
     addText(rec.materials.description, 9, "normal", [80, 80, 80]);
     rec.materials.recommendations?.forEach((m) => {
-      addText(`• ${m.item}: ${m.type}`, 9, "bold");
+      addText(`â€¢ ${m.item}: ${m.type}`, 9, "bold");
       addText(`  ${m.why}`, 8, "normal", [100, 100, 100]);
     });
   }
@@ -109,7 +109,7 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
     addSectionHeader("Lighting Design");
     addText(rec.lighting.description, 9, "normal", [80, 80, 80]);
     rec.lighting.layers?.forEach((l) => {
-      addText(`• ${l.type}: ${l.suggestion}`, 9, "normal");
+      addText(`â€¢ ${l.type}: ${l.suggestion}`, 9, "normal");
       addText(`  Placement: ${l.placement}`, 8, "italic", [100, 100, 100]);
     });
   }
@@ -119,7 +119,7 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
     addSectionHeader("Vastu Guidelines");
     addText(rec.vastuTips.description, 9, "normal", [80, 80, 80]);
     rec.vastuTips.tips.forEach((tip) => {
-      addText(`• ${tip.aspect}: ${tip.recommendation}`, 9, "normal");
+      addText(`â€¢ ${tip.aspect}: ${tip.recommendation}`, 9, "normal");
       addText(`  Modern adaptation: ${tip.modern_adaptation}`, 8, "italic", [100, 100, 100]);
     });
   }
@@ -143,7 +143,7 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
     addSectionHeader("Maintenance Guide");
     addText(rec.maintenanceGuide.description, 9, "normal", [80, 80, 80]);
     rec.maintenanceGuide.tasks.forEach((task) => {
-      addText(`• ${task.item} (${task.frequency}): ${task.method}`, 9, "normal");
+      addText(`â€¢ ${task.item} (${task.frequency}): ${task.method}`, 9, "normal");
       addText(`  Est. annual cost: ${task.cost}`, 8, "italic", [199, 121, 59]);
     });
   }
@@ -151,7 +151,7 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
   // Budget
   if (rec.estimatedBudget) {
     addSectionHeader("Estimated Budget");
-    addText(`${rec.estimatedBudget.low} — ${rec.estimatedBudget.high}`, 14, "bold", [26, 54, 72]);
+    addText(`${rec.estimatedBudget.low} â€” ${rec.estimatedBudget.high}`, 14, "bold", [26, 54, 72]);
     addText(rec.estimatedBudget.note, 9, "normal", [100, 100, 100]);
   }
 
@@ -163,9 +163,9 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
     addText(rec.estimatedTimeline.note, 8, "italic", [100, 100, 100]);
   }
 
-  // Bangalore Specific
+  // Hyderabad Specific
   if (rec.bangaloreSpecific) {
-    addSectionHeader("Bangalore Context");
+    addSectionHeader("Hyderabad Context");
     addText(rec.bangaloreSpecific, 9, "normal", [80, 80, 80]);
   }
 
@@ -176,7 +176,8 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
   doc.line(margin, y, pageWidth - margin, y);
   y += 6;
   addText("Ready to bring this design to life? Contact EverySpaces for a free consultation.", 9, "bold", [26, 54, 72]);
-  addText("📞 +91 9886579923 | everyspaces.com/contact", 9, "normal", [199, 121, 59]);
+  addText("Phone: +91 9886579923 | everyspaces.com/contact", 9, "normal", [199, 121, 59]);
 
   return doc;
 };
+

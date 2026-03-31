@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import heroImage from "@/assets/locality-indiranagar.jpg";
@@ -13,96 +13,95 @@ import gallery8 from "@/assets/gallery-8.jpg";
 
 const Indiranagar = () => {
   const seo = {
-    metaTitle: "Best Interior Designers in Indiranagar | Premium Home Interiors Bangalore",
-    metaDescription: "Top-rated interior designers in Indiranagar, Bangalore. 45+ luxury projects completed. Bespoke modular kitchens, designer wardrobes & contemporary living spaces. 10-year warranty. Free consultation!",
+    metaTitle: "Best Interior Designers in Jubilee Hills Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Jubilee Hills, Hyderabad with modular kitchens, wardrobes, and full-home design. 45+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers indiranagar",
-      "best interior designers in indiranagar bangalore",
-      "home interiors indiranagar",
-      "modular kitchen indiranagar",
-      "wardrobe design indiranagar",
-      "luxury interior design indiranagar",
-      "apartment interior indiranagar",
-      "home renovation indiranagar bangalore",
-      "interior decorators indiranagar",
-      "living room design indiranagar"
+      "interior designers in Jubilee Hills hyderabad",
+      "home interiors Jubilee Hills",
+      "best interior designers Jubilee Hills",
+      "modular kitchen Jubilee Hills hyderabad",
+      "wardrobe design Jubilee Hills",
+      "full home interiors hyderabad",
+      "interior decorators Jubilee Hills",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Best Interior Designers in Indiranagar | EverySpaces - Luxury Home Interiors",
-    ogDescription: "Transform your Indiranagar home with EverySpaces. 45+ premium projects, 10-year warranty. Free design consultation!",
+    ogTitle: "Interior Designers in Jubilee Hills, Hyderabad | EverySpaces",
+    ogDescription: "45+ Projects completed in and around Jubilee Hills. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in Indiranagar, Bangalore?",
-        answer: "Interior design in Indiranagar typically costs ₹2,000 to ₹4,000 per sq ft due to premium standards. At EverySpaces, we offer luxury packages from ₹10 lakhs for 2BHK in Indiranagar. We've completed 45+ premium projects with 10-year warranty and premium materials like Hettich/Hafele hardware."
+        question: "What is the interior design cost in Jubilee Hills, Hyderabad?",
+        answer: "Interior design cost in Jubilee Hills typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Who are the best interior designers in Indiranagar?",
-        answer: "EverySpaces is rated among the best interior designers in Indiranagar with 4.9/5 rating, 45+ completed projects, and expertise in contemporary and luxury designs. We specialize in premium apartments near 100 Feet Road, CMH Road, and HAL areas with dedicated project managers."
+        question: "Do you provide modular kitchen and wardrobe design in Jubilee Hills?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Jubilee Hills."
       },
       {
-        question: "Do you design apartments near 100 Feet Road, Indiranagar?",
-        answer: "Yes! We have extensive experience designing apartments along 100 Feet Road, CMH Road, and 12th Main Indiranagar. Our portfolio includes premium projects in Brigade Millenium, Mantri Elegance, and other upscale Indiranagar residences."
+        question: "How long does a full home interior project take in Jubilee Hills?",
+        answer: "Most 2BHK and 3BHK interior projects in Jubilee Hills are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "What interior styles are popular in Indiranagar homes?",
-        answer: "Indiranagar homes typically prefer contemporary, minimalist, and Scandinavian-inspired designs. We also design industrial-chic interiors popular among young professionals. Our designs blend functionality with aesthetics suited to Indiranagar's urban lifestyle."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["Domlur", "HAL 2nd Stage", "Ulsoor", "CV Raman Nagar", "Old Airport Road"],
-    specialties: ["Contemporary Design", "Modular Kitchen", "Premium Wardrobes", "Living Room Makeover", "Home Office Design"],
-    lifestyleDescription: "Indiranagar is Bangalore's most vibrant urban neighborhood, known for its tree-lined streets, boutique cafes along 12th Main, and a perfect blend of residential tranquility with commercial buzz. Home to young professionals, entrepreneurs, and artists, this locality demands interiors that reflect sophistication and modern urban living.",
+    nearbyAreas: ["Banjara Hills","Madhapur","Film Nagar","Somajiguda","Begumpet","Kondapur"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Jubilee Hills is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
       {
-        name: "100 Feet Road & 12th Main",
-        description: "The bustling heart of Indiranagar with premium apartments, cafes, and boutiques. Homes here need sound-insulated designs with stylish interiors.",
-        type: "lifestyle" as const
-      },
-      {
-        name: "Defence Colony & HAL Area",
-        description: "Quieter residential pockets with larger independent houses and premium apartments. Perfect for spacious, family-oriented interior designs.",
+        name: "Residential Communities in Jubilee Hills",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
         type: "residential" as const
       },
       {
-        name: "CMH Road Precinct",
-        description: "Heritage meets modern with older buildings getting contemporary makeovers. We specialize in renovating these classic Indiranagar homes.",
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
         type: "landmark" as const
       },
       {
-        name: "Indiranagar Park & Green Spaces",
-        description: "Proximity to parks inspires biophilic designs with indoor plants, natural materials, and earthy color palettes in local homes.",
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
         type: "nature" as const
       }
     ],
     designTips: [
       {
-        title: "Maximize Natural Light",
-        description: "Indiranagar apartments often have good natural light. Use sheer curtains, light-colored walls, and strategically placed mirrors to amplify brightness throughout your home."
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
       },
       {
-        title: "Create a Functional Home Office",
-        description: "With many Indiranagar residents working in tech and startups, a dedicated workspace with ergonomic furniture and good lighting is essential for productivity."
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
       },
       {
-        title: "Opt for Noise-Reducing Materials",
-        description: "Near busy 100 Feet Road? Use acoustic panels, heavy drapes, and soft furnishings to create a peaceful sanctuary from the urban buzz."
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
       },
       {
-        title: "Blend Indoor-Outdoor Living",
-        description: "If you have a balcony, extend your living space with comfortable seating, plants, and ambient lighting for Bangalore's pleasant evenings."
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
       }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="Indiranagar"
+      localityName="Jubilee Hills"
       slug="indiranagar"
       projectCount="45+ Projects"
       heroImage={heroImage}
       galleryImages={[gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7, gallery8]}
-      description="Top-rated interior designers in Indiranagar, Bangalore. Premium modular kitchens, wardrobes & complete home interiors."
+      description="Top interior designers in Jubilee Hills, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default Indiranagar;
+

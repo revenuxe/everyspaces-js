@@ -65,7 +65,7 @@ const designElements = [
 const whyChooseUs = [
   {
     title: "Villa Specialists",
-    description: "Extensive experience designing luxury villas across Bangalore",
+    description: "Extensive experience designing luxury villas across Hyderabad",
   },
   {
     title: "Bespoke Design",
@@ -84,8 +84,8 @@ const whyChooseUs = [
 // AEO-optimized FAQs
 const villaFAQs = [
   {
-    question: "What is the cost of villa interior design in Bangalore?",
-    answer: "Villa interior design in Bangalore costs ₹25-75 lakh depending on size and luxury level. At EverySpaces, basic villa packages start from ₹25 lakh for 3000 sq ft, premium from ₹40 lakh, and luxury bespoke designs from ₹60 lakh."
+    question: "What is the cost of villa interior design in Hyderabad?",
+    answer: "Villa interior design in Hyderabad costs â‚¹25-75 lakh depending on size and luxury level. At EverySpaces, basic villa packages start from â‚¹25 lakh for 3000 sq ft, premium from â‚¹40 lakh, and luxury bespoke designs from â‚¹60 lakh."
   },
   {
     question: "How long does villa interior design take?",
@@ -97,7 +97,7 @@ const villaFAQs = [
   },
   {
     question: "What luxury finishes do you offer for villas?",
-    answer: "EverySpaces offers Italian marble, imported wooden flooring, designer wallpapers, motorized curtains, smart home integration, imported sanitaryware, and custom furniture for luxury villas in Bangalore."
+    answer: "EverySpaces offers Italian marble, imported wooden flooring, designer wallpapers, motorized curtains, smart home integration, imported sanitaryware, and custom furniture for luxury villas in Hyderabad."
   }
 ];
 
@@ -143,13 +143,13 @@ const ServiceVilla = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Villa Interior Design Bangalore",
-      "Luxury villa and bungalow interior design in Bangalore with bespoke designs, imported finishes, home theatre, and smart home integration.",
+      "Villa Interior Design Hyderabad",
+      "Luxury villa and bungalow interior design in Hyderabad with bespoke designs, imported finishes, home theatre, and smart home integration.",
       "https://everyspaces.com/services/villa-interiors",
       "https://everyspaces.com/service-villa.jpg",
       "2500000-7500000",
       {
-        areaServed: ["Bangalore", "Whitefield", "Sarjapur Road", "Electronic City", "Yelahanka"],
+        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Grand Living Room", "Walk-in Closet", "Home Theatre", "Island Kitchen", "Smart Home"]
       }
     ),
@@ -161,7 +161,7 @@ const ServiceVilla = () => {
     createFAQSchema(villaFAQs, 'services/villa-interiors'),
     createProductSchema({
       name: "Luxury Villa Interior Design",
-      description: "Complete villa interior design in Bangalore with bespoke designs, imported finishes, and smart home integration. 90-120 day delivery.",
+      description: "Complete villa interior design in Hyderabad with bespoke designs, imported finishes, and smart home integration. 90-120 day delivery.",
       image: "https://everyspaces.com/service-villa.jpg",
       url: "https://everyspaces.com/services/villa-interiors",
       priceRange: "2500000-7500000",
@@ -181,7 +181,7 @@ const ServiceVilla = () => {
           <div className="absolute inset-0 z-0">
             <img
               src={imgSrc(villaImage)}
-              alt="Villa Interior Design Bangalore"
+              alt="Villa Interior Design Hyderabad"
               decoding="async"
               fetchPriority="high"
               className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
@@ -193,7 +193,7 @@ const ServiceVilla = () => {
             <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 md:mb-4 animate-fade-up tracking-[-0.03em] md:leading-[1.2]">
                 Villa Interior Design
-                <span className="block text-secondary tracking-[-0.02em] md:mt-2">in Bangalore</span>
+                <span className="block text-secondary tracking-[-0.02em] md:mt-2">in Hyderabad</span>
               </h1>
               <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Luxury living spaces crafted for the most discerning homeowners
@@ -242,7 +242,7 @@ const ServiceVilla = () => {
                   </button>
                 </form>
                 <p className="text-center text-xs text-muted-foreground mt-4 font-body">
-                  🔒 No spam. We respect your privacy.
+                  No spam. We respect your privacy.
                 </p>
               </div>
             </div>
@@ -285,7 +285,7 @@ const ServiceVilla = () => {
           <div className="container px-4">
             <div className="text-center mb-10">
               <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">Why Choose EverySpaces for Your Villa?</h2>
-              <p className="text-muted-foreground font-body">Bangalore's trusted luxury villa interior experts</p>
+              <p className="text-muted-foreground font-body">Hyderabad's trusted luxury villa interior experts</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {whyChooseUs.map((item, index) => (
@@ -305,7 +305,7 @@ const ServiceVilla = () => {
         <section className="py-12 md:py-16">
           <div className="container px-4">
             <div className="text-center mb-10">
-              <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">Our Villa Projects in Bangalore</h2>
+              <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">Our Villa Projects in Hyderabad</h2>
               <p className="text-muted-foreground font-body">Luxury homes transformed by our expert team</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -347,3 +347,4 @@ const ServiceVilla = () => {
 };
 
 export default ServiceVilla;
+

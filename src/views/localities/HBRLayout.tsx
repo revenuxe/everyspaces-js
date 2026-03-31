@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery17 from "@/assets/gallery-17.jpg";
@@ -12,68 +12,95 @@ import gallery24 from "@/assets/gallery-24.jpg";
 
 const HBRLayout = () => {
   const seo = {
-    metaTitle: "Interior Designers in HBR Layout | Local Experts Home Interiors Bangalore",
-    metaDescription: "Local expert interior designers in HBR Layout, Bangalore. 30+ projects in our home locality. Modern modular kitchens, wardrobes & complete home interiors. 10-year warranty. Visit our studio!",
+    metaTitle: "Best Interior Designers in Begumpet Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Begumpet, Hyderabad with modular kitchens, wardrobes, and full-home design. 30+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers hbr layout",
-      "best interior designers in hbr layout bangalore",
-      "home interiors hbr layout",
-      "modular kitchen hbr layout",
-      "local interior design hbr layout",
-      "apartment interior hbr layout",
-      "home renovation hbr layout bangalore",
-      "interior decorators hbr layout",
-      "north bangalore interiors hbr layout",
-      "everyspaces hbr layout studio"
+      "interior designers in Begumpet hyderabad",
+      "home interiors Begumpet",
+      "best interior designers Begumpet",
+      "modular kitchen Begumpet hyderabad",
+      "wardrobe design Begumpet",
+      "full home interiors hyderabad",
+      "interior decorators Begumpet",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Interior Designers in HBR Layout | EverySpaces - Your Local Design Studio",
-    ogDescription: "HBR Layout's local interior experts. 30+ projects, visit our studio. Trusted neighborhood designers!",
+    ogTitle: "Interior Designers in Begumpet, Hyderabad | EverySpaces",
+    ogDescription: "30+ Projects completed in and around Begumpet. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in HBR Layout?",
-        answer: "Interior design in HBR Layout costs ₹1,400 to ₹2,800 per sq ft. As local designers based in HBR Layout, EverySpaces offers competitive packages from ₹7 lakhs for 2BHK. We've completed 30+ projects in our neighborhood with 10-year warranty."
+        question: "What is the interior design cost in Begumpet, Hyderabad?",
+        answer: "Interior design cost in Begumpet typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Is EverySpaces based in HBR Layout?",
-        answer: "Yes! EverySpaces is headquartered in HBR Layout, Bangalore. This is our home locality, and we've been designing homes here for over 10 years. You can visit our studio to see material samples, discuss designs, and meet our team personally."
+        question: "Do you provide modular kitchen and wardrobe design in Begumpet?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Begumpet."
       },
       {
-        question: "Which HBR Layout blocks do you cover?",
-        answer: "We serve all HBR Layout blocks - 1st to 5th Block, Kalyannagar, Babusapalya, HRBR Layout, and surrounding areas. As local designers, we know every street and can reach any HBR Layout project within 15 minutes."
+        question: "How long does a full home interior project take in Begumpet?",
+        answer: "Most 2BHK and 3BHK interior projects in Begumpet are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "Do you offer after-sales service in HBR Layout?",
-        answer: "Absolutely! Being local to HBR Layout, we provide the fastest after-sales service. Our team can reach your home within hours for any warranty issues. We believe in building long-term relationships with our HBR Layout neighbors."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["1st-5th Block HBR Layout", "Kalyannagar", "Babusapalya", "HRBR Layout", "Hennur", "RT Nagar"],
-    specialties: ["Local Expertise", "Studio Visit", "Fast Service", "Neighborhood Trust", "Complete Interiors"],
-    lifestyleDescription: "HBR Layout is EverySpaces's home base—a vibrant North Bangalore neighborhood known for its mix of established independent houses and modern apartment complexes. With excellent connectivity to Manyata Tech Park and the airport, HBR Layout attracts families and professionals seeking quality living in a well-planned locality.",
+    nearbyAreas: ["Somajiguda","Panjagutta","Ameerpet","Secunderabad","Banjara Hills","Khairatabad"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Begumpet is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
-      { name: "EverySpaces Design Studio", description: "Our HBR Layout studio is open for visits. See live material samples, browse 3D designs, and meet our team to discuss your dream home interiors in person.", type: "landmark" as const },
-      { name: "Kalyannagar & HRBR Layout", description: "Premium residential extensions with upscale apartments and villas requiring contemporary designs with family-friendly layouts.", type: "residential" as const },
-      { name: "Hennur Road Corridor", description: "The rapidly developing Hennur Road brings new apartments and villa projects, creating demand for modern interior solutions and smart home designs.", type: "lifestyle" as const },
-      { name: "HBR Layout Parks & Green Spaces", description: "Well-maintained parks inspire residents to bring nature indoors with biophilic designs, indoor plants, and natural material finishes.", type: "nature" as const }
+      {
+        name: "Residential Communities in Begumpet",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
+        type: "residential" as const
+      },
+      {
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
+        type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
+      }
     ],
     designTips: [
-      { title: "Visit Our Local Studio First", description: "Being in HBR Layout, you can visit our design studio to touch and feel materials, see hardware options, and discuss designs face-to-face before committing." },
-      { title: "Plan for North Bangalore's Growing Families", description: "HBR Layout's family-oriented community benefits from spacious kitchens for Indian cooking, dedicated study areas for children, and guest-ready living rooms." },
-      { title: "Optimize for Cross-Ventilation", description: "HBR Layout's well-planned blocks allow good cross-ventilation. Position furniture to maximize airflow and use light curtains to maintain brightness." },
-      { title: "Invest in Quality for Long-Term Living", description: "As a settled residential area, invest in premium materials and timeless designs that age gracefully rather than trendy elements that date quickly." }
+      {
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
+      },
+      {
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
+      },
+      {
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
+      },
+      {
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
+      }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="HBR Layout"
+      localityName="Begumpet"
       slug="hbr-layout"
       projectCount="30+ Projects"
       heroImage={gallery17}
       galleryImages={[gallery18, gallery19, gallery20, gallery21, gallery22, gallery23, gallery24, gallery17]}
-      description="Expert interior designers in HBR Layout, Bangalore. Modern apartment interiors & complete home transformation solutions."
+      description="Top interior designers in Begumpet, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default HBRLayout;
+

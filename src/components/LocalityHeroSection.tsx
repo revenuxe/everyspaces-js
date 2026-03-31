@@ -25,7 +25,7 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
     try {
       const { error } = await (supabase.from("leads") as any).insert({
         form_name: "Locality Hero Form",
-        source_page: `/bangalore/${localityName.toLowerCase().replace(/\s+/g, '-')}`,
+        source_page: `/hyderabad/${localityName.toLowerCase().replace(/\s+/g, '-')}`,
         data: {
           name: formData.name,
           mobile: formData.mobile,
@@ -53,7 +53,7 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt={`Interior design in ${localityName}, Bangalore`}
+          alt={`Interior design in ${localityName}, Hyderabad`}
           decoding="async"
           fetchPriority="high"
           className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
@@ -67,11 +67,11 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
           <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 md:mb-4 animate-fade-up tracking-[-0.03em] md:leading-[1.2]">
             Interior Designers in
             <span className="block text-secondary tracking-[-0.02em] md:mt-2">
-              {localityName}, Bangalore
+              {localityName}, Hyderabad
             </span>
           </h1>
           <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-            Premium interior design solutions for homes in {localityName}. Transform your space with Bangalore's trusted designers.
+            Premium interior design solutions for homes in {localityName}. Transform your space with Hyderabad's trusted designers.
           </p>
         </div>
 
@@ -128,7 +128,7 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
             </form>
 
             <p className="text-center text-xs text-muted-foreground mt-4 font-body">
-              🔒 No spam. We respect your privacy.
+              No spam. We respect your privacy.
             </p>
           </div>
         </div>
@@ -138,3 +138,4 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
 };
 
 export default LocalityHeroSection;
+

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery5 from "@/assets/gallery-5.jpg";
@@ -12,68 +12,95 @@ import gallery14 from "@/assets/gallery-14.jpg";
 
 const SarjapurRoad = () => {
   const seo = {
-    metaTitle: "Interior Designers in Sarjapur Road | New Apartment Interiors Bangalore",
-    metaDescription: "Professional interior designers in Sarjapur Road, Bangalore. 42+ projects in new apartments. Modern modular kitchens, stylish wardrobes & contemporary living spaces. 10-year warranty!",
+    metaTitle: "Best Interior Designers in Narsingi Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Narsingi, Hyderabad with modular kitchens, wardrobes, and full-home design. 42+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers sarjapur road",
-      "best interior designers in sarjapur road bangalore",
-      "home interiors sarjapur road",
-      "modular kitchen sarjapur road",
-      "new apartment interior sarjapur road",
-      "apartment interior sarjapur road",
-      "home renovation sarjapur road bangalore",
-      "interior decorators sarjapur road",
-      "sarjapur road home design",
-      "builder apartment interiors sarjapur"
+      "interior designers in Narsingi hyderabad",
+      "home interiors Narsingi",
+      "best interior designers Narsingi",
+      "modular kitchen Narsingi hyderabad",
+      "wardrobe design Narsingi",
+      "full home interiors hyderabad",
+      "interior decorators Narsingi",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Interior Designers in Sarjapur Road | EverySpaces - New Apartment Specialists",
-    ogDescription: "Sarjapur Road interior experts. 42+ projects in new apartments. Free consultation!",
+    ogTitle: "Interior Designers in Narsingi, Hyderabad | EverySpaces",
+    ogDescription: "42+ Projects completed in and around Narsingi. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in Sarjapur Road?",
-        answer: "Interior design in Sarjapur Road costs ₹1,400 to ₹2,800 per sq ft. EverySpaces offers packages from ₹7.5 lakhs for 2BHK. We've completed 42+ projects in new Sarjapur Road apartments with modern designs and 10-year warranty."
+        question: "What is the interior design cost in Narsingi, Hyderabad?",
+        answer: "Interior design cost in Narsingi typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Do you work with new apartment handovers in Sarjapur Road?",
-        answer: "Yes! Sarjapur Road has many new constructions. We coordinate with builders, start design during handover, and complete interiors quickly. We work with Prestige, Sobha, Brigade, Salarpuria, and other builder apartments in the area."
+        question: "Do you provide modular kitchen and wardrobe design in Narsingi?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Narsingi."
       },
       {
-        question: "Which areas on Sarjapur Road do you cover?",
-        answer: "We serve entire Sarjapur Road including Dommasandra, Carmelaram, Harlur, Kasavanahalli, Ambalipura, and ORR Junction areas. Our portfolio includes projects in major apartment complexes and gated communities."
+        question: "How long does a full home interior project take in Narsingi?",
+        answer: "Most 2BHK and 3BHK interior projects in Narsingi are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "Can you handle quick turnaround for new Sarjapur apartments?",
-        answer: "Absolutely! We offer fast-track interior packages for new apartment handovers. With advance planning, we deliver complete interiors in 45-60 days. Our in-house manufacturing ensures timely delivery without quality compromise."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["Dommasandra", "Carmelaram", "Harlur", "Kasavanahalli", "Ambalipura", "Bellandur"],
-    specialties: ["New Apartment Design", "Builder Coordination", "Modern Kitchen", "Contemporary Wardrobe", "Quick Turnaround"],
-    lifestyleDescription: "Sarjapur Road is Bangalore's fastest-growing residential corridor, connecting to major IT hubs and featuring an explosion of new apartment communities from top builders. Home to young professionals, newlyweds, and growing families, this area demands fresh, contemporary interiors delivered quickly for new apartment handovers.",
+    nearbyAreas: ["Kokapet","Financial District","Manikonda","Gachibowli","Puppalaguda","Tellapur"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Narsingi is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
-      { name: "Prestige & Sobha Apartment Complexes", description: "Premium gated communities with modern layouts perfect for contemporary modular kitchens, sleek wardrobes, and minimalist living room designs.", type: "residential" as const },
-      { name: "Carmelaram & Harlur Junction", description: "The rapidly developing junction with new constructions needing turnkey interior solutions with quick delivery timelines.", type: "lifestyle" as const },
-      { name: "Sarjapur Lake & Nature Parks", description: "Green pockets along Sarjapur Road inspire nature-connected interiors with large balcony gardens and indoor green walls.", type: "nature" as const },
-      { name: "Wipro & Intel Campuses", description: "Proximity to major tech campuses means residents want smart, modern homes with home offices, entertainment systems, and automated features.", type: "landmark" as const }
+      {
+        name: "Residential Communities in Narsingi",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
+        type: "residential" as const
+      },
+      {
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
+        type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
+      }
     ],
     designTips: [
-      { title: "Plan Interiors Before Possession", description: "Start designing 2-3 months before apartment handover. This allows advance material procurement and manufacturing, enabling faster installation post-possession." },
-      { title: "Coordinate with Builder Specifications", description: "Understand your builder's electrical points, plumbing layout, and wall types before designing. This prevents costly modifications during installation." },
-      { title: "Choose Contemporary, Neutral Designs", description: "For new apartments, opt for timeless neutral palettes with accent colors. This ensures your interiors look fresh for years and appeal to diverse tastes." },
-      { title: "Plan Future-Proof Wiring", description: "New apartments should have extra electrical points for future smart home upgrades, charging stations, and additional appliances as your family grows." }
+      {
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
+      },
+      {
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
+      },
+      {
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
+      },
+      {
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
+      }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="Sarjapur Road"
+      localityName="Narsingi"
       slug="sarjapur-road"
       projectCount="42+ Projects"
       heroImage={gallery5}
       galleryImages={[gallery8, gallery9, gallery10, gallery11, gallery12, gallery13, gallery14, gallery5]}
-      description="Leading interior designers on Sarjapur Road, Bangalore. New apartment specialists with contemporary designs."
+      description="Top interior designers in Narsingi, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default SarjapurRoad;
+

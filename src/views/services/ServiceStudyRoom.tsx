@@ -45,8 +45,8 @@ const studyFeatures = [
 // AEO-optimized FAQs
 const studyRoomFAQs = [
   {
-    question: "What is the cost of study table design in Bangalore?",
-    answer: "Study table design in Bangalore costs ₹15,000 to ₹60,000 depending on size and features. At EverySpaces, basic study tables start from ₹15,000, L-shaped units from ₹25,000, and complete study room setups from ₹50,000."
+    question: "What is the cost of study table design in Hyderabad?",
+    answer: "Study table design in Hyderabad costs ₹15,000 to ₹60,000 depending on size and features. At EverySpaces, basic study tables start from ₹15,000, L-shaped units from ₹25,000, and complete study room setups from ₹50,000."
   },
   {
     question: "What is the ideal study table height?",
@@ -85,13 +85,13 @@ const ServiceStudyRoom = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Study Room Design Bangalore",
-      "Ergonomic study room and study table designs in Bangalore. Kids study stations, bookshelves, and focused learning spaces with proper lighting.",
+      "Study Room Design Hyderabad",
+      "Ergonomic study room and study table designs in Hyderabad. Kids study stations, bookshelves, and focused learning spaces with proper lighting.",
       "https://everyspaces.com/services/study-room",
       "https://everyspaces.com/service-study-room.jpg",
       "15000-100000",
       {
-        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Study Table", "Bookshelf", "Task Lighting", "Cable Management", "Ergonomic Design"]
       }
     ),
@@ -103,7 +103,7 @@ const ServiceStudyRoom = () => {
     createFAQSchema(studyRoomFAQs, 'services/study-room'),
     createProductSchema({
       name: "Study Room & Table Design",
-      description: "Ergonomic study room designs in Bangalore with study tables, bookshelves, and proper lighting for focused learning.",
+      description: "Ergonomic study room designs in Hyderabad with study tables, bookshelves, and proper lighting for focused learning.",
       image: "https://everyspaces.com/service-study-room.jpg",
       url: "https://everyspaces.com/services/study-room",
       priceRange: "15000-100000",
@@ -120,14 +120,14 @@ const ServiceStudyRoom = () => {
       <main className="pb-24">
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(bedroomImage)} alt="Study Room Design Bangalore" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(bedroomImage)} alt="Study Room Design Hyderabad" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Study Room Design
-                <span className="block text-secondary mt-2">in Bangalore</span>
+                <span className="block text-secondary mt-2">in Hyderabad</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Focused learning environments designed by EverySpaces experts
@@ -211,3 +211,4 @@ const ServiceStudyRoom = () => {
 };
 
 export default ServiceStudyRoom;
+

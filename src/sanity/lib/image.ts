@@ -1,0 +1,8 @@
+import { createImageUrlBuilder } from "@sanity/image-url";
+import { sanityClient } from "./client";
+
+const builder = createImageUrlBuilder(sanityClient);
+
+export function urlForImage(source: unknown) {
+  return builder.image(source as never).auto("format").fit("max");
+}

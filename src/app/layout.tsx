@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Providers from "./providers";
 import "../index.css";
@@ -13,16 +13,16 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL("https://everyspaces.com"),
   title: {
-    default: "EverySpaces | Best Interior Designers in Bangalore",
+    default: "EverySpaces | Best Interior Designers in Hyderabad",
     template: "%s | EverySpaces",
   },
   description:
-    "End to End Interior Solutions in Bangalore. Modular kitchens, wardrobes & home interiors with 10-year warranty. Free consultation!",
+    "End to End Interior Solutions in Hyderabad. Modular kitchens, wardrobes & home interiors with 10-year warranty. Free consultation!",
   keywords: [
-    "interior designers in bangalore",
-    "modular kitchen bangalore",
-    "home interior design bangalore",
-    "best interior designers bangalore",
+    "interior designers in hyderabad",
+    "modular kitchen hyderabad",
+    "home interior design hyderabad",
+    "best interior designers hyderabad",
   ],
   authors: [{ name: "EverySpaces Interior Design" }],
   creator: "EverySpaces",
@@ -37,16 +37,16 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://everyspaces.com/",
     siteName: "EverySpaces Interior Design",
-    title: "EverySpaces Interior Design | Best Interior Designers in Bangalore",
+    title: "EverySpaces Interior Design | Best Interior Designers in Hyderabad",
     description:
-      "Transform your home with Bangalore interior designers. Modular kitchens, bedrooms, and smart living spaces. Free consultation. Call +91 9886579923",
+      "Transform your home with Hyderabad interior designers. Modular kitchens, bedrooms, and smart living spaces. Free consultation. Call +91 9886579923",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "EverySpaces Interior Design | Best Interior Designers in Bangalore",
+    title: "EverySpaces Interior Design | Best Interior Designers in Hyderabad",
     description:
-      "Premium modular kitchens, bedrooms, and home interiors in Bangalore. Free consultation.",
+      "Premium modular kitchens, bedrooms, and home interiors in Hyderabad. Free consultation.",
     images: ["/og-image.jpg"],
   },
   alternates: { canonical: "https://everyspaces.com/" },
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   category: "interior design",
   other: {
     "geo.region": "IN-KA",
-    "geo.placename": "Bangalore",
+    "geo.placename": "Hyderabad",
     "geo.position": "13.0297;77.6125",
     ICBM: "13.0297, 77.6125",
     "theme-color": "#0d3b4f",
@@ -72,3 +72,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+

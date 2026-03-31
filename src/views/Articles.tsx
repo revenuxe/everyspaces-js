@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -17,7 +17,7 @@ const blogSchema = {
   "@context": "https://schema.org",
   "@type": "Blog",
   "name": "EverySpaces Interior Design Blog",
-  "description": "Expert interior design tips, renovation guides & trending home decor ideas for Bangalore homeowners",
+  "description": "Expert interior design tips, renovation guides & trending home decor ideas for Hyderabad homeowners",
   "url": "https://everyspaces.com/articles",
   "publisher": {
     "@type": "Organization",
@@ -85,7 +85,7 @@ const Articles = () => {
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8">
                 Expert tips, trending ideas, and comprehensive guides to help you
-                create your dream home in Bangalore
+                create your dream home in Hyderabad
               </p>
 
               {/* Search */}
@@ -263,3 +263,4 @@ const Articles = () => {
 };
 
 export default Articles;
+

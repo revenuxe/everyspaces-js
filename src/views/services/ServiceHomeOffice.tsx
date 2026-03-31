@@ -45,8 +45,8 @@ const officeFeatures = [
 // AEO-optimized FAQs
 const homeOfficeFAQs = [
   {
-    question: "What is the cost of home office design in Bangalore?",
-    answer: "Home office design in Bangalore costs ₹30,000 to ₹2 lakh depending on size and features. At EverySpaces, compact workstations start from ₹30,000, dedicated rooms from ₹80,000, and executive studios from ₹1.5 lakh."
+    question: "What is the cost of home office design in Hyderabad?",
+    answer: "Home office design in Hyderabad costs ₹30,000 to ₹2 lakh depending on size and features. At EverySpaces, compact workstations start from ₹30,000, dedicated rooms from ₹80,000, and executive studios from ₹1.5 lakh."
   },
   {
     question: "How to set up a productive work from home space?",
@@ -89,13 +89,13 @@ const ServiceHomeOffice = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Home Office Design Bangalore",
-      "Productivity-focused home office designs in Bangalore. Ergonomic workstations, study rooms, and WFH setups with proper lighting and storage.",
+      "Home Office Design Hyderabad",
+      "Productivity-focused home office designs in Hyderabad. Ergonomic workstations, study rooms, and WFH setups with proper lighting and storage.",
       "https://everyspaces.com/services/home-office",
       "https://everyspaces.com/service-home-office.jpg",
       "30000-200000",
       {
-        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Ergonomic Desk", "Task Lighting", "Cable Management", "Standing Desk", "Bookshelves"]
       }
     ),
@@ -107,7 +107,7 @@ const ServiceHomeOffice = () => {
     createFAQSchema(homeOfficeFAQs, 'services/home-office'),
     createProductSchema({
       name: "Home Office Interior Design",
-      description: "Professional home office designs in Bangalore with ergonomic furniture, task lighting, and tech integration for productive WFH.",
+      description: "Professional home office designs in Hyderabad with ergonomic furniture, task lighting, and tech integration for productive WFH.",
       image: "https://everyspaces.com/service-home-office.jpg",
       url: "https://everyspaces.com/services/home-office",
       priceRange: "30000-200000",
@@ -124,14 +124,14 @@ const ServiceHomeOffice = () => {
       <main className="pb-24">
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(bedroomImage)} alt="Home Office Design Bangalore" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(bedroomImage)} alt="Home Office Design Hyderabad" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Home Office Design
-                <span className="block text-secondary mt-2">in Bangalore</span>
+                <span className="block text-secondary mt-2">in Hyderabad</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Create your perfect productivity space with EverySpaces
@@ -215,3 +215,4 @@ const ServiceHomeOffice = () => {
 };
 
 export default ServiceHomeOffice;
+

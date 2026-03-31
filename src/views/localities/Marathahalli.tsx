@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery3 from "@/assets/gallery-3.jpg";
@@ -12,68 +12,95 @@ import gallery26 from "@/assets/gallery-26.jpg";
 
 const Marathahalli = () => {
   const seo = {
-    metaTitle: "Interior Designers in Marathahalli | Budget-Friendly Home Interiors Bangalore",
-    metaDescription: "Budget-friendly interior designers in Marathahalli, Bangalore. 33+ projects near ORR. Modern modular kitchens, compact wardrobes & smart storage solutions. Starting ₹7 lakhs. 10-year warranty!",
+    metaTitle: "Best Interior Designers in Nanakramguda Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Nanakramguda, Hyderabad with modular kitchens, wardrobes, and full-home design. 33+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers marathahalli",
-      "best interior designers in marathahalli bangalore",
-      "home interiors marathahalli",
-      "modular kitchen marathahalli",
-      "budget interior design marathahalli",
-      "apartment interior marathahalli",
-      "home renovation marathahalli orr",
-      "interior decorators marathahalli bangalore",
-      "affordable interiors marathahalli",
-      "marathahalli home design"
+      "interior designers in Nanakramguda hyderabad",
+      "home interiors Nanakramguda",
+      "best interior designers Nanakramguda",
+      "modular kitchen Nanakramguda hyderabad",
+      "wardrobe design Nanakramguda",
+      "full home interiors hyderabad",
+      "interior decorators Nanakramguda",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Interior Designers in Marathahalli | EverySpaces - Budget-Friendly Quality",
-    ogDescription: "Marathahalli interior experts. 33+ projects, budget-friendly from ₹7 lakhs. Free consultation!",
+    ogTitle: "Interior Designers in Nanakramguda, Hyderabad | EverySpaces",
+    ogDescription: "33+ Projects completed in and around Nanakramguda. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in Marathahalli?",
-        answer: "Interior design in Marathahalli ranges from ₹1,300 to ₹2,500 per sq ft. EverySpaces offers budget-friendly packages starting ₹7 lakhs for 2BHK. We've completed 33+ projects near Marathahalli ORR with quality materials and 10-year warranty."
+        question: "What is the interior design cost in Nanakramguda, Hyderabad?",
+        answer: "Interior design cost in Nanakramguda typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Do you design compact apartments in Marathahalli?",
-        answer: "Yes! Marathahalli has many compact apartments for IT professionals. We specialize in space-saving solutions - Murphy beds, sliding wardrobes, multifunctional furniture, and smart storage that maximize every square foot."
+        question: "Do you provide modular kitchen and wardrobe design in Nanakramguda?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Nanakramguda."
       },
       {
-        question: "Which areas near Marathahalli do you serve?",
-        answer: "We serve Marathahalli, Brookefield, Kundalahalli, AECS Layout, Varthur, and surrounding areas. Our portfolio includes apartments in SNN Raj, Prestige, Nitesh, and various builders near ORR and HAL Airport Road."
+        question: "How long does a full home interior project take in Nanakramguda?",
+        answer: "Most 2BHK and 3BHK interior projects in Nanakramguda are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "Can you design bachelor-friendly interiors in Marathahalli?",
-        answer: "Absolutely! Many Marathahalli clients are working professionals seeking modern, low-maintenance interiors. We design easy-to-clean surfaces, modular systems, home offices, and contemporary aesthetics suited for bachelor and young couple lifestyles."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["Brookefield", "Kundalahalli", "AECS Layout", "Varthur", "Bellandur", "HAL Airport Road"],
-    specialties: ["Compact Design", "Smart Storage", "Modular Kitchen", "Home Office", "Bachelor Pad Interior"],
-    lifestyleDescription: "Marathahalli sits at the heart of Bangalore's IT corridor along the Outer Ring Road, making it one of the city's most dynamic neighborhoods. Popular among young IT professionals, couples, and small families, this locality demands modern, efficient interiors that maximize compact spaces while maintaining stylish urban aesthetics.",
+    nearbyAreas: ["Financial District","Gachibowli","Kokapet","Madhapur","Raidurg","Tellapur"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Nanakramguda is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
-      { name: "Outer Ring Road IT Corridor", description: "The ORR tech hub with major IT companies means residents want modern, low-maintenance interiors with dedicated home office spaces.", type: "lifestyle" as const },
-      { name: "Brookefield & AECS Layout", description: "Premium residential extensions with newer apartments offering modern layouts perfect for contemporary interior treatments.", type: "residential" as const },
-      { name: "Marathahalli Bridge & Old Town", description: "The historic bridge area with a mix of older and newer constructions. Renovation projects here transform outdated spaces into modern, functional homes.", type: "landmark" as const },
-      { name: "Kundalahalli Lake Area", description: "The rejuvenated lake area inspires nature-connected interiors with indoor plants, natural textures, and calming color schemes.", type: "nature" as const }
+      {
+        name: "Residential Communities in Nanakramguda",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
+        type: "residential" as const
+      },
+      {
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
+        type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
+      }
     ],
     designTips: [
-      { title: "Master Space-Saving Solutions", description: "Marathahalli's compact 2BHKs need Murphy beds, sliding wardrobes, wall-mounted desks, and multi-purpose furniture to maximize every inch." },
-      { title: "Design a Work-From-Home Setup", description: "Create a productive home office corner with proper task lighting, cable management, acoustic panels for video calls, and ergonomic seating." },
-      { title: "Choose Easy-Maintenance Materials", description: "Busy professionals prefer low-maintenance surfaces. Use anti-fingerprint laminates, quartz countertops, and stain-resistant fabrics." },
-      { title: "Add Personality to Compact Spaces", description: "Use accent walls, statement lighting, and curated art pieces to inject personality into Marathahalli's standard apartment layouts." }
+      {
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
+      },
+      {
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
+      },
+      {
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
+      },
+      {
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
+      }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="Marathahalli"
+      localityName="Nanakramguda"
       slug="marathahalli"
       projectCount="33+ Projects"
       heroImage={gallery3}
       galleryImages={[gallery20, gallery21, gallery22, gallery23, gallery24, gallery25, gallery26, gallery3]}
-      description="Affordable interior designers in Marathahalli, Bangalore. IT corridor specialists with modern apartment solutions."
+      description="Top interior designers in Nanakramguda, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default Marathahalli;
+

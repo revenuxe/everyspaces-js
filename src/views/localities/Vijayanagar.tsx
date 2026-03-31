@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery16 from "@/assets/gallery-16.jpg";
@@ -12,68 +12,95 @@ import gallery14 from "@/assets/gallery-14.jpg";
 
 const Vijayanagar = () => {
   const seo = {
-    metaTitle: "Interior Designers in Vijayanagar | Complete Home Transformation Bangalore",
-    metaDescription: "Trusted interior designers in Vijayanagar, Bangalore. 20+ complete home transformations. Modern modular kitchens, smart storage & family-friendly designs. 10-year warranty!",
+    metaTitle: "Best Interior Designers in Kukatpally Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Kukatpally, Hyderabad with modular kitchens, wardrobes, and full-home design. 20+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers vijayanagar",
-      "best interior designers in vijayanagar bangalore",
-      "home interiors vijayanagar",
-      "modular kitchen vijayanagar",
-      "complete home interior vijayanagar",
-      "apartment interior vijayanagar",
-      "home renovation vijayanagar bangalore",
-      "interior decorators vijayanagar",
-      "west bangalore interiors vijayanagar",
-      "family home design vijayanagar"
+      "interior designers in Kukatpally hyderabad",
+      "home interiors Kukatpally",
+      "best interior designers Kukatpally",
+      "modular kitchen Kukatpally hyderabad",
+      "wardrobe design Kukatpally",
+      "full home interiors hyderabad",
+      "interior decorators Kukatpally",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Interior Designers in Vijayanagar | EverySpaces - Complete Home Transformation",
-    ogDescription: "Vijayanagar interior experts. 20+ projects, complete transformations. Family-focused. Free consultation!",
+    ogTitle: "Interior Designers in Kukatpally, Hyderabad | EverySpaces",
+    ogDescription: "20+ Projects completed in and around Kukatpally. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in Vijayanagar?",
-        answer: "Interior design in Vijayanagar costs ₹1,400 to ₹2,800 per sq ft. EverySpaces offers packages from ₹7.5 lakhs for 2BHK. We've completed 20+ complete home transformations in Vijayanagar with 10-year warranty."
+        question: "What is the interior design cost in Kukatpally, Hyderabad?",
+        answer: "Interior design cost in Kukatpally typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Do you specialize in family homes in Vijayanagar?",
-        answer: "Yes! Vijayanagar is known for family-oriented homes. We design child-safe interiors, elder-friendly features, spacious storage, functional kitchens for Indian cooking, and community-friendly layouts suited for joint families."
+        question: "Do you provide modular kitchen and wardrobe design in Kukatpally?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Kukatpally."
       },
       {
-        question: "Which Vijayanagar areas do you cover?",
-        answer: "We serve all Vijayanagar including RPC Layout, Attiguppe, Hosahalli, Hampi Nagar, and surrounding areas. Our portfolio includes independent houses, BDA flats, and apartments across Vijayanagar."
+        question: "How long does a full home interior project take in Kukatpally?",
+        answer: "Most 2BHK and 3BHK interior projects in Kukatpally are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "Can you handle complete home renovation in Vijayanagar?",
-        answer: "Absolutely! We offer turnkey renovation services - demolition, civil work, electrical upgrade, plumbing, interiors, and finishing. Our project managers coordinate everything for hassle-free complete home transformation."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["RPC Layout", "Attiguppe", "Hosahalli", "Hampi Nagar", "Rajajinagar", "Basaveshwaranagar"],
-    specialties: ["Complete Renovation", "Family Home Design", "Child-Safe Interiors", "Elder-Friendly Features", "Storage Solutions"],
-    lifestyleDescription: "Vijayanagar is West Bangalore's most sought-after family neighborhood, known for its well-maintained BDA layouts, excellent schools, and strong community bonds. With a perfect mix of independent houses and modern apartments, Vijayanagar families invest in complete home transformations that cater to all generations under one roof.",
+    nearbyAreas: ["KPHB","Moosapet","Miyapur","Nizampet","Bachupally","Pragathi Nagar"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Kukatpally is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
-      { name: "RPC Layout & Chord Road", description: "The premium residential extension with spacious independent houses. Homes here feature formal living rooms, large kitchens, and dedicated pooja spaces.", type: "residential" as const },
-      { name: "Vijayanagar BDA Complex", description: "The commercial center with modern apartments needing contemporary interiors that still respect the neighborhood's family-oriented values.", type: "lifestyle" as const },
-      { name: "Attiguppe Metro & Connectivity", description: "Metro connectivity has boosted Vijayanagar's appeal. Modern apartments near the station benefit from smart, space-efficient designs.", type: "landmark" as const },
-      { name: "Hosahalli Green Corridor", description: "Tree-lined residential streets inspiring nature-themed interiors with indoor gardens, wooden elements, and earthy color palettes.", type: "nature" as const }
+      {
+        name: "Residential Communities in Kukatpally",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
+        type: "residential" as const
+      },
+      {
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
+        type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
+      }
     ],
     designTips: [
-      { title: "Design for Joint Family Harmony", description: "Vijayanagar's joint families need private bedrooms with shared common areas. Create visual separation using partitions, level changes, and furniture placement." },
-      { title: "Add Elder-Friendly Features", description: "Include grab bars in bathrooms, non-slip flooring, wider doorways, lever-type handles, and night lights in hallways for senior family members." },
-      { title: "Create Child-Safe Environments", description: "Round furniture corners, secure heavy furniture to walls, use non-toxic paints, install window locks, and choose durable, easy-clean surfaces." },
-      { title: "Maximize Storage Throughout", description: "Vijayanagar families accumulate belongings over generations. Plan storage in every room—loft spaces, under-bed drawers, and built-in cabinets." }
+      {
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
+      },
+      {
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
+      },
+      {
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
+      },
+      {
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
+      }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="Vijayanagar"
+      localityName="Kukatpally"
       slug="vijayanagar"
       projectCount="20+ Projects"
       heroImage={gallery16}
       galleryImages={[gallery8, gallery9, gallery10, gallery11, gallery12, gallery13, gallery14, gallery16]}
-      description="Trusted interior designers in Vijayanagar, Bangalore. Complete home transformation with modern designs."
+      description="Top interior designers in Kukatpally, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default Vijayanagar;
+

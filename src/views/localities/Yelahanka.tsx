@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery9 from "@/assets/gallery-9.jpg";
@@ -12,68 +12,95 @@ import gallery17 from "@/assets/gallery-17.jpg";
 
 const Yelahanka = () => {
   const seo = {
-    metaTitle: "Interior Designers in Yelahanka | Spacious Home Interiors Bangalore",
-    metaDescription: "Professional interior designers in Yelahanka, Bangalore. 22+ projects in independent houses & villas. Spacious home designs with modern amenities. 10-year warranty. Free consultation!",
+    metaTitle: "Best Interior Designers in Kompally Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Kompally, Hyderabad with modular kitchens, wardrobes, and full-home design. 22+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers yelahanka",
-      "best interior designers in yelahanka bangalore",
-      "home interiors yelahanka",
-      "modular kitchen yelahanka",
-      "independent house interior yelahanka",
-      "villa interior yelahanka",
-      "home renovation yelahanka bangalore",
-      "interior decorators yelahanka",
-      "north bangalore interiors yelahanka",
-      "spacious home design yelahanka"
+      "interior designers in Kompally hyderabad",
+      "home interiors Kompally",
+      "best interior designers Kompally",
+      "modular kitchen Kompally hyderabad",
+      "wardrobe design Kompally",
+      "full home interiors hyderabad",
+      "interior decorators Kompally",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Interior Designers in Yelahanka | EverySpaces - Spacious Home Specialists",
-    ogDescription: "Yelahanka interior experts. 22+ projects, independent house specialists. Free consultation!",
+    ogTitle: "Interior Designers in Kompally, Hyderabad | EverySpaces",
+    ogDescription: "22+ Projects completed in and around Kompally. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in Yelahanka?",
-        answer: "Interior design in Yelahanka costs ₹1,400 to ₹2,800 per sq ft. Independent house interiors start from ₹10 lakhs, apartments from ₹7.5 lakhs. EverySpaces has completed 22+ projects in Yelahanka with 10-year warranty."
+        question: "What is the interior design cost in Kompally, Hyderabad?",
+        answer: "Interior design cost in Kompally typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Do you design independent houses in Yelahanka?",
-        answer: "Yes! Yelahanka has many independent houses and we specialize in their unique requirements - larger kitchens, multiple bedrooms, custom storage, terrace gardens, and outdoor areas. We handle complete home interiors for ground to duplex houses."
+        question: "Do you provide modular kitchen and wardrobe design in Kompally?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Kompally."
       },
       {
-        question: "Which areas in Yelahanka do you cover?",
-        answer: "We serve Yelahanka Old Town, New Town, Allalsandra, Attur Layout, Kogilu, and surrounding areas. Our portfolio includes independent houses, BDA plots, and apartments in the Yelahanka belt."
+        question: "How long does a full home interior project take in Kompally?",
+        answer: "Most 2BHK and 3BHK interior projects in Kompally are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "Can you design interiors for Air Force families in Yelahanka?",
-        answer: "Absolutely! Yelahanka has a significant Air Force community. We understand their requirements for formal layouts, structured designs, and quick turnaround during postings. We've designed homes for many Air Force families."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["Yelahanka New Town", "Yelahanka Old Town", "Allalsandra", "Attur Layout", "Kogilu", "Hebbal"],
-    specialties: ["Independent House Design", "Spacious Layouts", "Large Kitchen", "Multiple Bedroom", "Terrace Design"],
-    lifestyleDescription: "Yelahanka is North Bangalore's spacious residential haven, known for the Air Force Station, wide tree-lined roads, and abundant independent houses on BDA plots. With excellent airport connectivity and a relaxed, semi-urban atmosphere, Yelahanka offers larger living spaces that allow for expansive, luxurious interior designs.",
+    nearbyAreas: ["Suchitra","Bowenpally","Alwal","Jeedimetla","Medchal","Trimulgherry"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Kompally is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
-      { name: "Yelahanka Air Force Station", description: "The prominent Air Force presence lends a disciplined, structured aesthetic to the area. Military families prefer organized, durable interiors with formal layouts.", type: "landmark" as const },
-      { name: "Yelahanka New Town BDA Layout", description: "Well-planned BDA plots with independent houses offering spacious rooms perfect for large modular kitchens, multiple bedrooms, and terrace gardens.", type: "residential" as const },
-      { name: "Puttenahalli Lake & Green Spaces", description: "Natural lakes and parks create a serene backdrop, inspiring interiors with large windows, natural wood finishes, and outdoor-indoor flow.", type: "nature" as const },
-      { name: "International Airport Proximity", description: "Easy airport access makes Yelahanka popular with frequent travelers and NRIs who want globally-inspired interior designs with local craftsmanship.", type: "lifestyle" as const }
+      {
+        name: "Residential Communities in Kompally",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
+        type: "residential" as const
+      },
+      {
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
+        type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
+      }
     ],
     designTips: [
-      { title: "Leverage Spacious Floor Plans", description: "Yelahanka houses have generous room sizes. Create grand living rooms with sectional sofas, large dining areas, and walk-in storage rather than cramming furniture." },
-      { title: "Design a Large Family Kitchen", description: "With bigger kitchens, go for U-shaped or island layouts with dedicated pantry, double sink, and breakfast counter for the whole family." },
-      { title: "Create Stunning Terrace Gardens", description: "Yelahanka's independent houses often have terraces. Design rooftop gardens with pergolas, seating areas, and container gardens for Bangalore's pleasant climate." },
-      { title: "Plan for Multiple Bedrooms", description: "Design each bedroom with a unique theme—master suite with walk-in closet, kids' room with study area, guest room with convertible furniture." }
+      {
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
+      },
+      {
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
+      },
+      {
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
+      },
+      {
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
+      }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="Yelahanka"
+      localityName="Kompally"
       slug="yelahanka"
       projectCount="22+ Projects"
       heroImage={gallery9}
       galleryImages={[gallery11, gallery12, gallery13, gallery14, gallery15, gallery16, gallery17, gallery9]}
-      description="Professional interior designers in Yelahanka, Bangalore. Spacious home designs for independent houses & villas."
+      description="Top interior designers in Kompally, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default Yelahanka;
+

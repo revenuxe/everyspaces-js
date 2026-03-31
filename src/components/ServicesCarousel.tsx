@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+﻿import { useRef, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import kitchenImage from "@/assets/service-kitchen.jpg";
 import bedroomImage from "@/assets/service-bedroom.jpg";
@@ -6,7 +6,7 @@ import livingImage from "@/assets/service-living.jpg";
 import { imgSrc } from "@/lib/utils";
 
 const services = [
-  { id: 1, title: "Modular Kitchens", description: "Expertly crafted for Bengaluru's modern culinary lifestyle.", image: kitchenImage, href: "/services/modular-kitchen" },
+  { id: 1, title: "Modular Kitchens", description: "Expertly crafted for Hyderabad's modern culinary lifestyle.", image: kitchenImage, href: "/services/modular-kitchen" },
   { id: 2, title: "Luxury Bedrooms", description: "Where serenity meets smart storage solutions.", image: bedroomImage, href: "/services/bedroom-design" },
   { id: 3, title: "Smart Living Rooms", description: "Tech-integrated spaces designed for entertaining.", image: livingImage, href: "/services/living-room" },
   { id: 4, title: "Elegant Bathrooms", description: "Spa-inspired designs with premium fixtures.", image: kitchenImage, href: "/services/bathroom-design" },
@@ -240,3 +240,4 @@ const ServicesCarousel = () => {
 };
 
 export default ServicesCarousel;
+

@@ -41,7 +41,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 // AEO-optimized contact FAQs
 const contactFAQs = [
   {
-    question: "How do I book a free interior design consultation in Bangalore?",
+    question: "How do I book a free interior design consultation in Hyderabad?",
     answer: "Book a free consultation with EverySpaces by calling +91-9886579923, sending a WhatsApp message, or filling the contact form on this page. Our design expert will schedule a site visit at your convenience within 24 hours."
   },
   {
@@ -50,7 +50,7 @@ const contactFAQs = [
   },
   {
     question: "Do you charge for the initial consultation?",
-    answer: "No, EverySpaces provides completely free initial consultation and site visit anywhere in Bangalore. There's no obligation to proceed after the consultation. We'll share design ideas and cost estimates during the visit."
+    answer: "No, EverySpaces provides completely free initial consultation and site visit anywhere in Hyderabad. There's no obligation to proceed after the consultation. We'll share design ideas and cost estimates during the visit."
   }
 ];
 
@@ -139,7 +139,7 @@ const Contact = () => {
               Let's Design Your Dream Home
             </h1>
             <p className="text-primary-foreground/80 max-w-2xl mx-auto font-body text-lg">
-              Get in touch with Bangalore's trusted interior designers. Free consultation, transparent pricing, and premium quality guaranteed.
+              Get in touch with Hyderabad's trusted interior designers. Free consultation, transparent pricing, and premium quality guaranteed.
             </p>
           </div>
         </section>
@@ -237,7 +237,7 @@ const Contact = () => {
                 </form>
 
                 <p className="text-center text-xs text-muted-foreground mt-4 font-body">
-                  🔒 No spam. We respect your privacy.
+                  No spam. We respect your privacy.
                 </p>
               </div>
 
@@ -277,7 +277,7 @@ const Contact = () => {
                       <div>
                         <p className="font-semibold text-primary">Office Address</p>
                         <p className="text-muted-foreground font-body">
-                          HBR Layout, Bangalore 560045<br />
+                          HBR Layout, Hyderabad 560045<br />
                           Karnataka, India
                         </p>
                       </div>
@@ -318,14 +318,14 @@ const Contact = () => {
                 {/* Google Map */}
                 <div className="rounded-3xl overflow-hidden shadow-soft border border-border/50">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0847073368395!2d77.61235!3d13.0297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17b8f3c40c8d%3A0x9f5c1e4f9d1e4f5c!2sHBR%20Layout%2C%20Bengaluru%2C%20Karnataka%20560045!5e0!3m2!1sen!2sin!4v1703123456789!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0847073368395!2d77.61235!3d13.0297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17b8f3c40c8d%3A0x9f5c1e4f9d1e4f5c!2sHBR%20Layout%2C%20Hyderabad%2C%20Telangana%20560045!5e0!3m2!1sen!2sin!4v1703123456789!5m2!1sen!2sin"
                     width="100%"
                     height="300"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="EverySpaces Office Location - HBR Layout, Bangalore"
+                    title="EverySpaces Office Location - HBR Layout, Hyderabad"
                   ></iframe>
                 </div>
               </div>
@@ -341,3 +341,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import heroImage from "@/assets/locality-hsr.jpg";
@@ -13,96 +13,95 @@ import gallery24 from "@/assets/gallery-24.jpg";
 
 const HSRLayout = () => {
   const seo = {
-    metaTitle: "Best Interior Designers in HSR Layout | Premium Home Interiors Bangalore",
-    metaDescription: "Top interior designers in HSR Layout, Bangalore. 52+ projects completed across all sectors. Premium modular kitchens, smart wardrobes & modern living spaces. 10-year warranty. Free consultation!",
+    metaTitle: "Best Interior Designers in Kondapur Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Kondapur, Hyderabad with modular kitchens, wardrobes, and full-home design. 52+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers hsr layout",
-      "best interior designers in hsr layout bangalore",
-      "home interiors hsr layout",
-      "modular kitchen hsr layout",
-      "wardrobe design hsr layout",
-      "apartment interior hsr layout",
-      "home renovation hsr layout",
-      "interior decorators hsr layout bangalore",
-      "hsr layout home makeover",
-      "modern interior design hsr"
+      "interior designers in Kondapur hyderabad",
+      "home interiors Kondapur",
+      "best interior designers Kondapur",
+      "modular kitchen Kondapur hyderabad",
+      "wardrobe design Kondapur",
+      "full home interiors hyderabad",
+      "interior decorators Kondapur",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Best Interior Designers in HSR Layout | EverySpaces - Modern Home Interiors",
-    ogDescription: "Transform your HSR Layout home with EverySpaces. 52+ projects, all sectors covered. Free consultation!",
+    ogTitle: "Interior Designers in Kondapur, Hyderabad | EverySpaces",
+    ogDescription: "52+ Projects completed in and around Kondapur. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the interior design cost in HSR Layout, Bangalore?",
-        answer: "Interior design in HSR Layout costs ₹1,800 to ₹3,500 per sq ft depending on scope. EverySpaces offers packages from ₹8 lakhs for 2BHK. We've completed 52+ projects across HSR Sectors 1-7 with premium materials and 10-year warranty."
+        question: "What is the interior design cost in Kondapur, Hyderabad?",
+        answer: "Interior design cost in Kondapur typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Which HSR Layout sectors do you cover?",
-        answer: "We serve all HSR Layout sectors - Sector 1 to Sector 7, including BDA Complex, 27th Main, and Agara Lake area. Our portfolio includes apartments in Mantri Serenity, Salarpuria, and independent houses."
+        question: "Do you provide modular kitchen and wardrobe design in Kondapur?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Kondapur."
       },
       {
-        question: "Do you design tech-enabled smart homes in HSR?",
-        answer: "Absolutely! HSR Layout residents often request smart home integration. We design homes with automated lighting, smart locks, voice-controlled systems, and concealed wiring for a clutter-free modern look."
+        question: "How long does a full home interior project take in Kondapur?",
+        answer: "Most 2BHK and 3BHK interior projects in Kondapur are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "What makes HSR Layout homes unique for interior design?",
-        answer: "HSR Layout has newer constructions with good ventilation and layouts. We leverage these advantages with open-plan designs, large windows, and contemporary aesthetics suited for the young, tech-savvy demographic."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["Sectors 1-7 HSR", "Agara", "Koramangala", "BTM Layout", "Bommanahalli", "Kudlu Gate"],
-    specialties: ["Smart Home Design", "Modular Kitchen", "Contemporary Wardrobes", "Living Room", "Home Office"],
-    lifestyleDescription: "HSR Layout is Bangalore's planned residential paradise, known for its wide roads, systematic sectors, and proximity to tech parks. Popular among IT professionals and young families, this locality features modern apartments and gated communities that call for smart, contemporary interior designs with functional spaces for work and play.",
+    nearbyAreas: ["Madhapur","Gachibowli","HITEC City","Botanical Garden","Kothaguda","Serilingampally"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Kondapur is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
       {
-        name: "27th Main Road & BDA Complex",
-        description: "The commercial spine of HSR with cafes, restaurants, and premium apartments. Homes here benefit from modern, minimalist designs with smart storage.",
-        type: "lifestyle" as const
-      },
-      {
-        name: "Agara Lake & Sector 2",
-        description: "Lake-facing properties command premium interiors. We design homes with large windows to capture views and biophilic elements to connect with nature.",
-        type: "nature" as const
-      },
-      {
-        name: "Sector 4 & 5 Residentials",
-        description: "Family-oriented sectors with gated communities like Mantri Serenity. Spacious layouts allow for dedicated kids' rooms, study areas, and entertainment zones.",
+        name: "Residential Communities in Kondapur",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
         type: "residential" as const
       },
       {
-        name: "Tech Parks Proximity",
-        description: "Close to Outer Ring Road tech hubs, many residents work from home. Ergonomic home offices with good lighting and acoustics are a top request.",
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
         type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
       }
     ],
     designTips: [
       {
-        title: "Leverage High Ceilings",
-        description: "Many HSR apartments have generous ceiling heights. Use vertical storage, tall bookshelves, and statement lighting to make the most of this space advantage."
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
       },
       {
-        title: "Design a Productive Home Office",
-        description: "With most HSR residents in IT, a well-designed workspace with natural light, ergonomic furniture, and video-call-friendly backgrounds is essential."
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
       },
       {
-        title: "Create Pet-Friendly Spaces",
-        description: "HSR has many pet parents! Design with scratch-resistant flooring, built-in feeding stations, and cozy nooks for your furry family members."
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
       },
       {
-        title: "Maximize Balcony Potential",
-        description: "HSR's pleasant climate makes balconies ideal for extended living. Add comfortable seating, vertical gardens, and ambient lighting for year-round enjoyment."
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
       }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="HSR Layout"
+      localityName="Kondapur"
       slug="hsr-layout"
       projectCount="52+ Projects"
       heroImage={heroImage}
       galleryImages={[gallery17, gallery18, gallery19, gallery20, gallery21, gallery22, gallery23, gallery24]}
-      description="Top interior designers in HSR Layout, Bangalore. Premium modular kitchens, wardrobes & contemporary living spaces."
+      description="Top interior designers in Kondapur, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default HSRLayout;
+

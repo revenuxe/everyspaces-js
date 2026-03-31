@@ -45,8 +45,8 @@ const diningFeatures = [
 // AEO-optimized FAQs
 const diningRoomFAQs = [
   {
-    question: "What is the cost of dining room design in Bangalore?",
-    answer: "Dining room design in Bangalore costs ₹50,000 to ₹2 lakh depending on size and fixtures. At EverySpaces, basic setups start from ₹50,000, with crockery units from ₹80,000, and luxury dining with chandelier from ₹1.5 lakh."
+    question: "What is the cost of dining room design in Hyderabad?",
+    answer: "Dining room design in Hyderabad costs ₹50,000 to ₹2 lakh depending on size and fixtures. At EverySpaces, basic setups start from ₹50,000, with crockery units from ₹80,000, and luxury dining with chandelier from ₹1.5 lakh."
   },
   {
     question: "What size dining table do I need?",
@@ -89,13 +89,13 @@ const ServiceDiningRoom = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Dining Room Design Bangalore",
-      "Elegant dining room designs in Bangalore. Custom dining tables, crockery units, bar cabinets, and statement chandeliers for family gatherings.",
+      "Dining Room Design Hyderabad",
+      "Elegant dining room designs in Hyderabad. Custom dining tables, crockery units, bar cabinets, and statement chandeliers for family gatherings.",
       "https://everyspaces.com/services/dining-room",
       "https://everyspaces.com/service-dining-room.jpg",
       "50000-200000",
       {
-        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Dining Table", "Crockery Unit", "Chandelier", "Bar Cabinet", "Feature Wall"]
       }
     ),
@@ -107,7 +107,7 @@ const ServiceDiningRoom = () => {
     createFAQSchema(diningRoomFAQs, 'services/dining-room'),
     createProductSchema({
       name: "Dining Room Interior Design",
-      description: "Elegant dining room designs in Bangalore with custom tables, crockery units, chandeliers, and bar cabinets.",
+      description: "Elegant dining room designs in Hyderabad with custom tables, crockery units, chandeliers, and bar cabinets.",
       image: "https://everyspaces.com/service-dining-room.jpg",
       url: "https://everyspaces.com/services/dining-room",
       priceRange: "50000-200000",
@@ -124,14 +124,14 @@ const ServiceDiningRoom = () => {
       <main className="pb-24">
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(kitchenImage)} alt="Dining Room Design Bangalore" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(kitchenImage)} alt="Dining Room Design Hyderabad" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Dining Room Design
-                <span className="block text-secondary mt-2">in Bangalore</span>
+                <span className="block text-secondary mt-2">in Hyderabad</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Create memorable dining experiences with EverySpaces's elegant designs
@@ -215,3 +215,4 @@ const ServiceDiningRoom = () => {
 };
 
 export default ServiceDiningRoom;
+

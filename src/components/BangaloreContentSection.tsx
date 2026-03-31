@@ -1,7 +1,7 @@
-import { MapPin, Award, Clock, Shield, Star, Home } from "lucide-react";
+﻿import { MapPin, Award, Clock, Shield, Star, Home } from "lucide-react";
 
 const stats = [
-  { icon: Home, value: "500+", label: "Homes Designed in Bangalore" },
+  { icon: Home, value: "500+", label: "Homes Designed in Hyderabad" },
   { icon: Star, value: "4.8/5", label: "Average Customer Rating" },
   { icon: Clock, value: "45 Days", label: "Average Project Delivery" },
   { icon: Shield, value: "10 Years", label: "Warranty on Hardware" },
@@ -9,22 +9,22 @@ const stats = [
 
 const neighborhoods = [
   {
-    name: "South Bangalore",
+    name: "South Hyderabad",
     areas: ["Koramangala", "Jayanagar", "JP Nagar", "Banashankari", "BTM Layout", "Basavanagudi"],
     description: "Premium apartments and independent houses with a blend of traditional and contemporary styles.",
   },
   {
-    name: "East Bangalore",
+    name: "East Hyderabad",
     areas: ["Whitefield", "Marathahalli", "Bellandur", "Sarjapur Road"],
     description: "IT corridor homes demanding modern, space-efficient interior solutions for tech professionals.",
   },
   {
-    name: "North Bangalore",
+    name: "North Hyderabad",
     areas: ["Hebbal", "Yelahanka", "HBR Layout", "RT Nagar", "Sadashivanagar"],
     description: "Rapidly growing residential hubs with new-age apartments and villa communities.",
   },
   {
-    name: "Central & West Bangalore",
+    name: "Central & West Hyderabad",
     areas: ["Indiranagar", "Malleshwaram", "Rajajinagar", "Vijayanagar"],
     description: "Heritage neighborhoods with character homes requiring thoughtful renovation and modern upgrades.",
   },
@@ -34,12 +34,12 @@ const whyBangalore = [
   {
     icon: MapPin,
     title: "Local Material Sourcing",
-    description: "We source from Bangalore's trusted suppliers — Century Ply from Peenya, Hettich hardware from authorized dealers, and Bangalore-made granite and tiles for cost savings.",
+    description: "We source from Hyderabad's trusted suppliers — Century Ply from Peenya, Hettich hardware from authorized dealers, and Hyderabad-made granite and tiles for cost savings.",
   },
   {
     icon: Award,
-    title: "Bangalore Climate Design",
-    description: "Our designs account for Bangalore's moderate climate — optimal ventilation, moisture-resistant materials for monsoons, and natural light maximization year-round.",
+    title: "Hyderabad Climate Design",
+    description: "Our designs account for Hyderabad's moderate climate — optimal ventilation, moisture-resistant materials for monsoons, and natural light maximization year-round.",
   },
   {
     icon: Clock,
@@ -48,8 +48,8 @@ const whyBangalore = [
   },
   {
     icon: Shield,
-    title: "In-House Factory in Bangalore",
-    description: "Our manufacturing unit in Bangalore ensures faster delivery, quality control, and cost efficiency compared to outsourced production.",
+    title: "In-House Factory in Hyderabad",
+    description: "Our manufacturing unit in Hyderabad ensures faster delivery, quality control, and cost efficiency compared to outsourced production.",
   },
 ];
 
@@ -71,17 +71,17 @@ const BangaloreContentSection = () => {
           ))}
         </div>
 
-        {/* Why EverySpaces in Bangalore */}
+        {/* Why EverySpaces in Hyderabad */}
         <div className="mb-16">
           <div className="text-center mb-10">
             <span className="text-secondary font-semibold text-sm tracking-wider uppercase mb-2 block">
               Why Choose Us
             </span>
             <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
-              Why Bangalore Homeowners Trust EverySpaces
+              Why Hyderabad Homeowners Trust EverySpaces
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto font-body">
-              We understand Bangalore's unique housing landscape — from compact IT corridor apartments to spacious Sadashivanagar villas
+              We understand Hyderabad's unique housing landscape — from compact IT corridor apartments to spacious Sadashivanagar villas
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -107,10 +107,10 @@ const BangaloreContentSection = () => {
               Our Coverage
             </span>
             <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
-              Interior Design Across All of Bangalore
+              Interior Design Across All of Hyderabad
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto font-body">
-              From Whitefield to Rajajinagar, we've designed homes in every corner of Bangalore
+              From Whitefield to Rajajinagar, we've designed homes in every corner of Hyderabad
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -125,7 +125,7 @@ const BangaloreContentSection = () => {
                   {zone.areas.map((area) => (
                     <a
                       key={area}
-                      href={`/bangalore/${area.toLowerCase().replace(/\s+/g, "-")}`}
+                      href={`/hyderabad/${area.toLowerCase().replace(/\s+/g, "-")}`}
                       className="text-xs bg-muted px-3 py-1.5 rounded-full text-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors font-body"
                     >
                       {area}
@@ -142,3 +142,4 @@ const BangaloreContentSection = () => {
 };
 
 export default BangaloreContentSection;
+

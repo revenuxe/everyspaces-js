@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery7 from "@/assets/gallery-7.jpg";
@@ -12,68 +12,95 @@ import gallery1 from "@/assets/gallery-1.jpg";
 
 const BTMLayout = () => {
   const seo = {
-    metaTitle: "Interior Designers in BTM Layout | Affordable Home Interiors Bangalore",
-    metaDescription: "Trusted interior designers in BTM Layout, Bangalore. 29+ projects in 1st & 2nd Stage. Budget-friendly modular kitchens, wardrobes & complete home makeovers. Starting ₹6.5 lakhs!",
+    metaTitle: "Best Interior Designers in Ameerpet Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Ameerpet, Hyderabad with modular kitchens, wardrobes, and full-home design. 29+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers btm layout",
-      "best interior designers in btm layout bangalore",
-      "home interiors btm layout",
-      "modular kitchen btm layout",
-      "affordable interior design btm layout",
-      "apartment interior btm layout 1st stage",
-      "home renovation btm layout 2nd stage",
-      "interior decorators btm layout bangalore",
-      "budget interiors btm layout",
-      "btm layout home design"
+      "interior designers in Ameerpet hyderabad",
+      "home interiors Ameerpet",
+      "best interior designers Ameerpet",
+      "modular kitchen Ameerpet hyderabad",
+      "wardrobe design Ameerpet",
+      "full home interiors hyderabad",
+      "interior decorators Ameerpet",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Interior Designers in BTM Layout | EverySpaces - Affordable Quality Interiors",
-    ogDescription: "BTM Layout interior experts. 29+ projects, affordable from ₹6.5 lakhs. Free consultation!",
+    ogTitle: "Interior Designers in Ameerpet, Hyderabad | EverySpaces",
+    ogDescription: "29+ Projects completed in and around Ameerpet. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in BTM Layout?",
-        answer: "Interior design in BTM Layout costs ₹1,200 to ₹2,400 per sq ft. EverySpaces offers budget-friendly packages from ₹6.5 lakhs for 2BHK. We've completed 29+ projects in BTM 1st & 2nd Stage with quality materials and 10-year warranty."
+        question: "What is the interior design cost in Ameerpet, Hyderabad?",
+        answer: "Interior design cost in Ameerpet typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Do you offer budget-friendly options in BTM Layout?",
-        answer: "Yes! BTM Layout is popular among young professionals and we offer flexible packages. Our Basic package starts ₹1,200/sq ft, Premium at ₹1,800/sq ft. All packages include quality hardware, proper finish, and 10-year warranty."
+        question: "Do you provide modular kitchen and wardrobe design in Ameerpet?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Ameerpet."
       },
       {
-        question: "Which BTM Layout stages do you cover?",
-        answer: "We serve BTM 1st Stage, 2nd Stage, and surrounding areas including Madiwala, Bannerghatta Road, and JP Nagar junction. Our portfolio includes apartments, PG buildings, and independent houses across BTM Layout."
+        question: "How long does a full home interior project take in Ameerpet?",
+        answer: "Most 2BHK and 3BHK interior projects in Ameerpet are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "Can you design rental-friendly interiors in BTM Layout?",
-        answer: "Absolutely! Many BTM Layout property owners seek rental-friendly interiors. We design durable, low-maintenance, and neutral-toned interiors that attract tenants while being cost-effective and easy to maintain long-term."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["1st Stage BTM", "2nd Stage BTM", "Madiwala", "Koramangala", "HSR Layout", "JP Nagar"],
-    specialties: ["Budget-Friendly Design", "Compact Solutions", "Modular Kitchen", "Rental Property Interior", "Quick Installation"],
-    lifestyleDescription: "BTM Layout is Bangalore's bustling IT corridor neighborhood, home to thousands of young professionals and startup founders. With its mix of affordable apartments, PG accommodations, and family homes across 1st and 2nd Stage, BTM demands smart, budget-friendly interiors that maximize space without compromising style.",
+    nearbyAreas: ["SR Nagar","Punjagutta","Somajiguda","Begumpet","Erragadda","Maitrivanam"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Ameerpet is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
-      { name: "Silk Board Junction & ORR", description: "The gateway to BTM Layout connects to major IT parks. Apartments near Silk Board benefit from sound-insulated designs and compact, efficient layouts.", type: "landmark" as const },
-      { name: "BTM Lake & Parks", description: "Green spaces like Madiwala Lake inspire nature-themed interiors with indoor plants, earthy tones, and balcony gardens in nearby apartments.", type: "nature" as const },
-      { name: "1st Stage Commercial Area", description: "The vibrant commercial hub with cafes, co-working spaces, and startups. Homes here need modern, urban aesthetics with dedicated work zones.", type: "lifestyle" as const },
-      { name: "2nd Stage Residential Pocket", description: "Quieter family-oriented area with independent houses and established apartments. Perfect for spacious family interiors with traditional touches.", type: "residential" as const }
+      {
+        name: "Residential Communities in Ameerpet",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
+        type: "residential" as const
+      },
+      {
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
+        type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
+      }
     ],
     designTips: [
-      { title: "Maximize Compact Spaces", description: "BTM apartments are often compact. Use wall-mounted storage, foldable furniture, and multi-purpose units to make every square foot count." },
-      { title: "Create a Productive Work Corner", description: "With many residents working in tech, a dedicated workspace with good lighting, cable management, and ergonomic setup is essential." },
-      { title: "Choose Durable, Low-Maintenance Materials", description: "For rental properties, opt for laminate finishes, scratch-resistant countertops, and easy-to-clean surfaces that withstand tenant turnover." },
-      { title: "Add Vertical Storage Solutions", description: "Tall units, loft storage, and wall-mounted shelves help utilize vertical space in BTM's typically compact floor plans." }
+      {
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
+      },
+      {
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
+      },
+      {
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
+      },
+      {
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
+      }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="BTM Layout"
+      localityName="Ameerpet"
       slug="btm-layout"
       projectCount="29+ Projects"
       heroImage={gallery7}
       galleryImages={[gallery22, gallery23, gallery24, gallery25, gallery26, gallery27, gallery1, gallery7]}
-      description="Trusted interior designers in BTM Layout, Bangalore. Budget-friendly home interiors with quality materials."
+      description="Top interior designers in Ameerpet, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default BTMLayout;
+

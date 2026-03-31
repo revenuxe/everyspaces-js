@@ -1,4 +1,4 @@
-import { ChevronRight, Home } from "lucide-react";
+﻿import { ChevronRight, Home } from "lucide-react";
 
 interface LocalityBreadcrumbProps {
   localityName: string;
@@ -23,10 +23,10 @@ const LocalityBreadcrumb = ({ localityName }: LocalityBreadcrumbProps) => {
           </li>
           <li>
             <a 
-              href="/bangalore" 
+              href="/hyderabad" 
               className="text-muted-foreground hover:text-secondary transition-colors"
             >
-              Bangalore
+              Hyderabad
             </a>
           </li>
           <li>
@@ -42,3 +42,4 @@ const LocalityBreadcrumb = ({ localityName }: LocalityBreadcrumbProps) => {
 };
 
 export default LocalityBreadcrumb;
+

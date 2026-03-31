@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery6 from "@/assets/gallery-6.jpg";
@@ -12,68 +12,95 @@ import gallery21 from "@/assets/gallery-21.jpg";
 
 const Bellandur = () => {
   const seo = {
-    metaTitle: "Interior Designers in Bellandur | Premium Apartment Interiors Bangalore",
-    metaDescription: "Premium interior designers in Bellandur, Bangalore. 31+ projects in luxury apartments. Modern modular kitchens, designer wardrobes & upscale living spaces. 10-year warranty!",
+    metaTitle: "Best Interior Designers in Financial District Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Financial District, Hyderabad with modular kitchens, wardrobes, and full-home design. 31+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers bellandur",
-      "best interior designers in bellandur bangalore",
-      "home interiors bellandur",
-      "modular kitchen bellandur",
-      "luxury apartment interior bellandur",
-      "apartment interior bellandur",
-      "home renovation bellandur bangalore",
-      "interior decorators bellandur",
-      "premium home design bellandur",
-      "bellandur interior solutions"
+      "interior designers in Financial District hyderabad",
+      "home interiors Financial District",
+      "best interior designers Financial District",
+      "modular kitchen Financial District hyderabad",
+      "wardrobe design Financial District",
+      "full home interiors hyderabad",
+      "interior decorators Financial District",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Interior Designers in Bellandur | EverySpaces - Premium Apartment Interiors",
-    ogDescription: "Bellandur interior experts. 31+ premium projects. Luxury apartment specialists. Free consultation!",
+    ogTitle: "Interior Designers in Financial District, Hyderabad | EverySpaces",
+    ogDescription: "31+ Projects completed in and around Financial District. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in Bellandur?",
-        answer: "Interior design in Bellandur costs ₹1,800 to ₹3,500 per sq ft for premium apartments. EverySpaces offers packages from ₹9 lakhs for 2BHK in Bellandur. We've completed 31+ projects with luxury finishes and 10-year warranty."
+        question: "What is the interior design cost in Financial District, Hyderabad?",
+        answer: "Interior design cost in Financial District typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Do you design luxury apartments in Bellandur?",
-        answer: "Yes! Bellandur has many premium apartments. We've designed interiors in Prestige Lakeside Habitat, RMZ Galleria, Salarpuria Serenity, and other upscale residences. Our designs feature premium materials, Italian finishes, and luxury hardware."
+        question: "Do you provide modular kitchen and wardrobe design in Financial District?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Financial District."
       },
       {
-        question: "Which areas near Bellandur do you cover?",
-        answer: "We serve Bellandur, Devarabisanahalli, Outer Ring Road, Marathahalli, Varthur, and surrounding areas. Our portfolio includes premium apartments, penthouses, and gated community villas in the Bellandur belt."
+        question: "How long does a full home interior project take in Financial District?",
+        answer: "Most 2BHK and 3BHK interior projects in Financial District are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "Can you design lake-view apartments in Bellandur?",
-        answer: "Absolutely! We specialize in designing apartments with lake views, maximizing the scenic advantage. We use large windows, open layouts, and outdoor-indoor flow designs to enhance Bellandur Lake views from your living spaces."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["Devarabisanahalli", "Varthur", "Marathahalli", "Outer Ring Road", "Sarjapur Road", "Kadubeesanahalli"],
-    specialties: ["Luxury Interiors", "Premium Finishes", "Designer Kitchen", "Walk-in Wardrobe", "Lake View Design"],
-    lifestyleDescription: "Bellandur is Bangalore's premium IT hub, surrounded by tech parks like RMZ Ecoworld and Embassy TechVillage. Home to senior tech professionals and NRI families, this locality features luxury apartments in gated communities that demand sophisticated, contemporary interiors with international design sensibilities.",
+    nearbyAreas: ["Gachibowli","Nanakramguda","Kokapet","Narsingi","Raidurg","Tellapur"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Financial District is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
-      { name: "Bellandur Lake", description: "The iconic lake offers scenic views for apartments facing it. We design open layouts with floor-to-ceiling windows to maximize these lake vistas.", type: "nature" as const },
-      { name: "Outer Ring Road Tech Corridor", description: "The ORR tech hub means residents want smart home automation, home offices, and modern entertainment zones for after-work relaxation.", type: "lifestyle" as const },
-      { name: "Prestige & Brigade Gated Communities", description: "Premium gated communities with large apartments that benefit from luxury finishes, walk-in wardrobes, and island kitchens.", type: "residential" as const },
-      { name: "Kadubeesanahalli Junction", description: "The commercial center connecting Bellandur to Sarjapur Road, with newer construction apartments needing fresh, modern interior treatments.", type: "landmark" as const }
+      {
+        name: "Residential Communities in Financial District",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
+        type: "residential" as const
+      },
+      {
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
+        type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
+      }
     ],
     designTips: [
-      { title: "Maximize Lake Views", description: "If your apartment faces Bellandur Lake, use low-profile furniture, sheer curtains, and open-plan layouts to frame the scenic views as a natural artwork." },
-      { title: "Invest in Smart Home Features", description: "Bellandur's tech-savvy residents appreciate automated lighting, smart locks, voice-controlled curtains, and integrated home theatre systems." },
-      { title: "Design a Luxurious Walk-in Closet", description: "Premium apartments here have space for walk-in wardrobes. Add island dressers, LED-lit shelving, and full-length mirrors for a boutique experience." },
-      { title: "Create an Entertainment Zone", description: "After long commutes on ORR, a dedicated home theatre or gaming room with acoustic treatment provides the perfect unwind space." }
+      {
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
+      },
+      {
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
+      },
+      {
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
+      },
+      {
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
+      }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="Bellandur"
+      localityName="Financial District"
       slug="bellandur"
       projectCount="31+ Projects"
       heroImage={gallery6}
       galleryImages={[gallery15, gallery16, gallery17, gallery18, gallery19, gallery20, gallery21, gallery6]}
-      description="Premium interior designers in Bellandur, Bangalore. Luxury apartment interiors & villa design specialists."
+      description="Top interior designers in Financial District, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default Bellandur;
+

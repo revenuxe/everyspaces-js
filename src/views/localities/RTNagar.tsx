@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery15 from "@/assets/gallery-15.jpg";
@@ -12,68 +12,95 @@ import gallery7 from "@/assets/gallery-7.jpg";
 
 const RTNagar = () => {
   const seo = {
-    metaTitle: "Interior Designers in RT Nagar | Affordable Quality Home Interiors Bangalore",
-    metaDescription: "Affordable interior designers in RT Nagar, Bangalore. 17+ projects with quality materials. Budget-friendly modular kitchens, wardrobes & complete home solutions. Starting ₹6 lakhs!",
+    metaTitle: "Best Interior Designers in Manikonda Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Manikonda, Hyderabad with modular kitchens, wardrobes, and full-home design. 17+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers rt nagar",
-      "best interior designers in rt nagar bangalore",
-      "home interiors rt nagar",
-      "modular kitchen rt nagar",
-      "affordable interior design rt nagar",
-      "apartment interior rt nagar",
-      "home renovation rt nagar bangalore",
-      "interior decorators rt nagar",
-      "budget home design rt nagar",
-      "north bangalore interiors rt nagar"
+      "interior designers in Manikonda hyderabad",
+      "home interiors Manikonda",
+      "best interior designers Manikonda",
+      "modular kitchen Manikonda hyderabad",
+      "wardrobe design Manikonda",
+      "full home interiors hyderabad",
+      "interior decorators Manikonda",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Interior Designers in RT Nagar | EverySpaces - Affordable Quality Interiors",
-    ogDescription: "RT Nagar interior experts. 17+ projects, affordable from ₹6 lakhs. Quality assured. Free consultation!",
+    ogTitle: "Interior Designers in Manikonda, Hyderabad | EverySpaces",
+    ogDescription: "17+ Projects completed in and around Manikonda. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in RT Nagar?",
-        answer: "Interior design in RT Nagar costs ₹1,200 to ₹2,400 per sq ft. EverySpaces offers affordable packages from ₹6 lakhs for 2BHK. We've completed 17+ projects in RT Nagar with quality materials and 10-year warranty."
+        question: "What is the interior design cost in Manikonda, Hyderabad?",
+        answer: "Interior design cost in Manikonda typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Do you offer budget-friendly options in RT Nagar?",
-        answer: "Yes! We understand RT Nagar's middle-class requirements. Our packages balance quality and cost - Basic (₹1,200/sq ft), Standard (₹1,800/sq ft), and Premium (₹2,400/sq ft). All include quality hardware and proper finishing."
+        question: "Do you provide modular kitchen and wardrobe design in Manikonda?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Manikonda."
       },
       {
-        question: "Which areas near RT Nagar do you serve?",
-        answer: "We serve RT Nagar, HBR Layout, Ganganagar, Kammanahalli, HRBR Layout, and surrounding areas. Our portfolio includes apartments, independent floors, and houses across the RT Nagar belt in North Bangalore."
+        question: "How long does a full home interior project take in Manikonda?",
+        answer: "Most 2BHK and 3BHK interior projects in Manikonda are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "Can you renovate older RT Nagar apartments?",
-        answer: "Absolutely! RT Nagar has many older apartments needing renovation. We modernize these spaces with updated kitchens, contemporary designs, improved storage, and fresh aesthetics while working within budget constraints."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["HBR Layout", "Ganganagar", "Kammanahalli", "HRBR Layout", "Sahakara Nagar", "Hebbal"],
-    specialties: ["Affordable Design", "Value for Money", "Compact Solutions", "Modern Kitchen", "Family-Friendly Interior"],
-    lifestyleDescription: "RT Nagar is a well-established North Bangalore residential area known for its tree-canopied streets, strong community feel, and excellent connectivity. With a mix of older independent houses and newer apartment complexes, RT Nagar attracts middle-class families seeking quality interiors at competitive prices.",
+    nearbyAreas: ["Gachibowli","Kokapet","Narsingi","Puppalaguda","Khajaguda","Raidurg"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Manikonda is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
-      { name: "RT Nagar Main Road", description: "The bustling main road connects to major areas. Apartments along this stretch need sound-insulated designs with efficient space planning.", type: "landmark" as const },
-      { name: "Ganganagar & Kammanahalli", description: "Adjacent residential areas with growing apartment complexes. Modern designs with smart storage solutions are highly sought after here.", type: "residential" as const },
-      { name: "HMT Factory Area", description: "The historic HMT precinct has seen rapid residential development. New constructions here need fresh, contemporary interior treatments.", type: "lifestyle" as const },
-      { name: "RT Nagar Parks & Green Corridors", description: "Local parks and tree-lined streets inspire residents to incorporate greenery into their homes with indoor plants and natural materials.", type: "nature" as const }
+      {
+        name: "Residential Communities in Manikonda",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
+        type: "residential" as const
+      },
+      {
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
+        type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
+      }
     ],
     designTips: [
-      { title: "Get Maximum Value for Budget", description: "RT Nagar families appreciate value. Invest in quality kitchen and wardrobe hardware that lasts, and save on decorative elements with DIY touches." },
-      { title: "Modernize Older Apartments", description: "Many RT Nagar apartments are 15-20 years old. Refresh them with modern modular kitchen, updated wardrobes, and fresh false ceiling without full reconstruction." },
-      { title: "Design Child-Friendly Spaces", description: "With many young families, incorporate rounded furniture edges, easy-clean surfaces, dedicated study areas, and playful kids' room designs." },
-      { title: "Optimize Kitchen for Indian Cooking", description: "RT Nagar families cook daily. Ensure powerful chimney placement, adequate counter space for grinding and chopping, and separate wet-dry zones." }
+      {
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
+      },
+      {
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
+      },
+      {
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
+      },
+      {
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
+      }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="RT Nagar"
+      localityName="Manikonda"
       slug="rt-nagar"
       projectCount="17+ Projects"
       heroImage={gallery15}
       galleryImages={[gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7, gallery15]}
-      description="Affordable interior designers in RT Nagar, Bangalore. Quality home interiors at competitive prices."
+      description="Top interior designers in Manikonda, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default RTNagar;
+

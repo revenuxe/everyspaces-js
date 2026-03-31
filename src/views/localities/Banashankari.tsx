@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery10 from "@/assets/gallery-10.jpg";
@@ -12,68 +12,95 @@ import gallery24 from "@/assets/gallery-24.jpg";
 
 const Banashankari = () => {
   const seo = {
-    metaTitle: "Interior Designers in Banashankari | Traditional & Modern Home Interiors Bangalore",
-    metaDescription: "Experienced interior designers in Banashankari, Bangalore. 27+ projects across all stages. Traditional pooja rooms, modern modular kitchens & family-friendly designs. 10-year warranty!",
+    metaTitle: "Best Interior Designers in Uppal Hyderabad | Home Interiors EverySpaces",
+    metaDescription: "EverySpaces offers premium home interiors in Uppal, Hyderabad with modular kitchens, wardrobes, and full-home design. 27+ Projects delivered with transparent pricing and 10-year warranty.",
     keywords: [
-      "interior designers banashankari",
-      "best interior designers in banashankari bangalore",
-      "home interiors banashankari",
-      "modular kitchen banashankari",
-      "traditional interior design banashankari",
-      "pooja room design banashankari",
-      "apartment interior banashankari",
-      "home renovation banashankari bangalore",
-      "interior decorators banashankari",
-      "south bangalore interiors"
+      "interior designers in Uppal hyderabad",
+      "home interiors Uppal",
+      "best interior designers Uppal",
+      "modular kitchen Uppal hyderabad",
+      "wardrobe design Uppal",
+      "full home interiors hyderabad",
+      "interior decorators Uppal",
+      "hyderabad interior design company"
     ],
-    ogTitle: "Interior Designers in Banashankari | EverySpaces - Traditional & Modern Designs",
-    ogDescription: "Banashankari interior experts. 27+ projects, traditional & modern. Free consultation!",
+    ogTitle: "Interior Designers in Uppal, Hyderabad | EverySpaces",
+    ogDescription: "27+ Projects completed in and around Uppal. Book a free consultation for end-to-end interiors in Hyderabad.",
     faqs: [
       {
-        question: "What is the cost of interior design in Banashankari?",
-        answer: "Interior design in Banashankari costs ₹1,400 to ₹2,800 per sq ft. EverySpaces offers packages from ₹7.5 lakhs for 2BHK. We've completed 27+ projects across Banashankari 1st to 6th Stage with traditional and modern designs."
+        question: "What is the interior design cost in Uppal, Hyderabad?",
+        answer: "Interior design cost in Uppal typically starts from Rs 1,500 per sq ft and varies by finish, scope, and timeline. EverySpaces offers tailored 2BHK, 3BHK, and villa packages with factory-finished execution and a 10-year warranty."
       },
       {
-        question: "Do you design traditional pooja rooms in Banashankari?",
-        answer: "Yes! Banashankari families often prefer elaborate traditional pooja rooms. We create customized mandirs with teak wood, traditional carvings, brass work, and proper vastu alignment. We also design modern pooja units with backlighting."
+        question: "Do you provide modular kitchen and wardrobe design in Uppal?",
+        answer: "Yes. We provide modular kitchen Hyderabad solutions, custom wardrobes, TV units, and complete storage planning for apartments and villas in Uppal."
       },
       {
-        question: "Which Banashankari stages do you cover?",
-        answer: "We serve all Banashankari stages - 1st Stage to 6th Stage, including Kathriguppe, Padmanabhanagar, and surrounding areas. Our portfolio includes independent houses, apartments, and heritage home renovations."
+        question: "How long does a full home interior project take in Uppal?",
+        answer: "Most 2BHK and 3BHK interior projects in Uppal are delivered in 45 to 90 days depending on civil scope and material selections."
       },
       {
-        question: "Can you renovate old Banashankari homes?",
-        answer: "Absolutely! Banashankari has many older properties. We specialize in complete renovations - upgrading electrical systems, modernizing kitchens, adding contemporary elements while preserving the home's character and family memories."
+        question: "Why choose EverySpaces as your interior designers in Hyderabad?",
+        answer: "Homeowners choose EverySpaces for design-first planning, clear BOQs, dedicated project management, and dependable post-installation support across Hyderabad."
       }
     ],
-    nearbyAreas: ["1st-6th Stage Banashankari", "Kathriguppe", "Padmanabhanagar", "JP Nagar", "Jayanagar", "Kumaraswamy Layout"],
-    specialties: ["Traditional Design", "Pooja Room", "Family Home Interior", "Kitchen Renovation", "Vastu-Compliant Design"],
-    lifestyleDescription: "Banashankari is one of Bangalore's most culturally rich residential areas, known for the famous Banashankari Temple, traditional markets, and strong community bonds. Families here value heritage, Vastu compliance, and designs that honor South Indian traditions while embracing modern comfort.",
+    nearbyAreas: ["Habsiguda","Tarnaka","Boduppal","Nagole","Nacharam","Ramanthapur"],
+    specialties: ["Modular Kitchen", "Wardrobe Design", "Living Room Interiors", "Bedroom Interiors", "Full Home Interiors"],
+    lifestyleDescription: "Uppal is one of Hyderabad's fast-growing residential zones with a mix of premium apartments, gated communities, and independent homes. Our designs focus on practical storage, climate-ready materials, and contemporary aesthetics suited to Hyderabad lifestyles.",
     landmarks: [
-      { name: "Banashankari Temple", description: "The iconic temple defines the neighborhood's spiritual character. Homes near the temple often feature elaborate pooja rooms and traditional architectural elements.", type: "landmark" as const },
-      { name: "ISKON Temple Area", description: "The spiritual corridor attracts families who prefer Vastu-compliant designs with dedicated meditation spaces and serene interiors.", type: "landmark" as const },
-      { name: "Kathriguppe & Padmanabhanagar", description: "Established residential areas with independent houses perfect for traditional South Indian kitchen designs and spacious family layouts.", type: "residential" as const },
-      { name: "Banashankari BDA Complex", description: "The commercial hub with modern apartments needing contemporary designs that blend with the neighborhood's traditional character.", type: "lifestyle" as const }
+      {
+        name: "Residential Communities in Uppal",
+        description: "We design turnkey interiors for newly handed-over flats and family homes with efficient layouts and premium finishes.",
+        type: "residential" as const
+      },
+      {
+        name: "Retail and Lifestyle Corridors",
+        description: "Popular social zones nearby inspire open-plan living, statement lighting, and entertaining-friendly spaces.",
+        type: "lifestyle" as const
+      },
+      {
+        name: "Commuter and Office Connectivity",
+        description: "For professionals across Hyderabad, we create hybrid-ready homes with work corners, acoustic comfort, and uncluttered storage.",
+        type: "landmark" as const
+      },
+      {
+        name: "Urban Green Pockets",
+        description: "We use natural textures, indoor plants, and balanced lighting palettes to keep interiors calm and breathable.",
+        type: "nature" as const
+      }
     ],
     designTips: [
-      { title: "Design a Traditional Pooja Room", description: "Banashankari families value elaborate pooja rooms. Use teak wood shelving, brass bell holders, marble flooring, and warm backlighting for a sacred ambiance." },
-      { title: "Incorporate Vastu Principles", description: "Place the kitchen in the southeast, master bedroom in southwest, and pooja room in the northeast. Use warm earth tones and avoid dark colors in prayer areas." },
-      { title: "Plan for Joint Family Living", description: "Many Banashankari homes house joint families. Design flexible spaces with privacy partitions, multiple storage zones, and a large communal kitchen." },
-      { title: "Blend Traditional with Modern", description: "Use traditional carved wood elements alongside modern modular kitchen fittings. Brass and copper accents complement both classic and contemporary aesthetics." }
+      {
+        title: "Plan Storage Room by Room",
+        description: "Build a storage matrix early to optimize wardrobes, lofts, utility units, and hidden shelves before finalizing aesthetics."
+      },
+      {
+        title: "Choose Heat-Resistant Finishes",
+        description: "For Hyderabad homes, prefer durable laminates, quartz counters, and moisture-resistant core materials in wet areas."
+      },
+      {
+        title: "Design Flexible Multi-Use Zones",
+        description: "Create spaces that switch between work, study, and leisure using sliding partitions, foldable furniture, and layered lighting."
+      },
+      {
+        title: "Use Lighting to Add Depth",
+        description: "Combine cove, task, and accent lighting to elevate room proportions and bring premium character to everyday spaces."
+      }
     ]
   };
 
   return (
     <LocalityPageTemplate
-      localityName="Banashankari"
+      localityName="Uppal"
       slug="banashankari"
       projectCount="27+ Projects"
       heroImage={gallery10}
       galleryImages={[gallery18, gallery19, gallery20, gallery21, gallery22, gallery23, gallery24, gallery10]}
-      description="Best interior designers in Banashankari, Bangalore. Traditional & contemporary home interior solutions."
+      description="Top interior designers in Uppal, Hyderabad for modular kitchen, wardrobe design, and full home interiors."
       seo={seo}
     />
   );
 };
 
 export default Banashankari;
+

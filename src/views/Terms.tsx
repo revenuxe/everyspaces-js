@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -29,7 +29,7 @@ const Terms = () => {
               Terms &amp; Conditions
             </h1>
             <p className="text-primary-foreground/80 font-body mt-3 max-w-2xl">
-              These Terms govern your use of EverySpaces’s website and our interior design
+              These Terms govern your use of EverySpaces's website and our interior design
               services.
             </p>
           </div>
@@ -47,7 +47,7 @@ const Terms = () => {
                 <p className="text-foreground font-body">
                   EverySpaces Interior Design ("EverySpaces", "we", "our", "us") provides
                   interior design consultation, planning, and execution services in
-                  Bengaluru and surrounding areas.
+                  Hyderabad and surrounding areas.
                 </p>
               </section>
 
@@ -196,7 +196,7 @@ const Terms = () => {
               <section className="mt-8 space-y-4">
                 <h2 className="font-display text-2xl text-primary">13. Governing law</h2>
                 <p className="text-foreground font-body">
-                  These Terms are governed by the laws of India. Courts in Bengaluru,
+                  These Terms are governed by the laws of India. Courts in Hyderabad,
                   Karnataka shall have jurisdiction, unless otherwise agreed.
                 </p>
               </section>
@@ -230,3 +230,4 @@ const Terms = () => {
 };
 
 export default Terms;
+

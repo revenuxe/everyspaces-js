@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { imgSrc } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
@@ -50,8 +50,8 @@ const servicesListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   "@id": "https://everyspaces.com/services#itemlist",
-  "name": "Interior Design Services by EverySpaces Bangalore",
-  "description": "Comprehensive list of 20+ interior design services offered by EverySpaces in Bangalore including modular kitchens, wardrobes, living rooms, bedrooms, and complete home interiors.",
+  "name": "Interior Design Services by EverySpaces Hyderabad",
+  "description": "Comprehensive list of 20+ interior design services offered by EverySpaces in Hyderabad including modular kitchens, wardrobes, living rooms, bedrooms, and complete home interiors.",
   "numberOfItems": services.length,
   "itemListElement": services.map((service, index) => ({
     "@type": "ListItem",
@@ -68,7 +68,7 @@ const servicesListSchema = {
       },
       "areaServed": {
         "@type": "City",
-        "name": "Bangalore"
+        "name": "Hyderabad"
       }
     }
   }))
@@ -77,12 +77,12 @@ const servicesListSchema = {
 // AEO-optimized FAQs for services page
 const servicesFAQs = [
   {
-    question: "What interior design services does EverySpaces offer in Bangalore?",
-    answer: "EverySpaces offers 20+ interior design services in Bangalore including modular kitchen design, wardrobe design, living room interiors, bedroom design, 2BHK/3BHK packages, villa interiors, TV units, false ceiling, pooja room, study room, kids room, home office, and complete full home interior solutions."
+    question: "What interior design services does EverySpaces offer in Hyderabad?",
+    answer: "EverySpaces offers 20+ interior design services in Hyderabad including modular kitchen design, wardrobe design, living room interiors, bedroom design, 2BHK/3BHK packages, villa interiors, TV units, false ceiling, pooja room, study room, kids room, home office, and complete full home interior solutions."
   },
   {
-    question: "Which interior design service is most popular in Bangalore?",
-    answer: "Modular kitchen design and complete home interior packages are the most popular services at EverySpaces Bangalore. 2BHK and 3BHK apartment interior packages are also in high demand, offering end-to-end solutions with 10-year warranty."
+    question: "Which interior design service is most popular in Hyderabad?",
+    answer: "Modular kitchen design and complete home interior packages are the most popular services at EverySpaces Hyderabad. 2BHK and 3BHK apartment interior packages are also in high demand, offering end-to-end solutions with 10-year warranty."
   }
 ];
 
@@ -194,3 +194,4 @@ const Services = () => {
 };
 
 export default Services;
+

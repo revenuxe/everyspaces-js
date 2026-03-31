@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 
 type Freq = NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
 
@@ -11,7 +11,7 @@ type Entry = {
 /** Marketing / hub pages (excludes admin, thank-you — see robots.txt). */
 export const CORE_SITEMAP_ENTRIES: Entry[] = [
   { path: "/", changeFrequency: "weekly", priority: 1 },
-  { path: "/bangalore", changeFrequency: "weekly", priority: 0.95 },
+  { path: "/hyderabad", changeFrequency: "weekly", priority: 0.95 },
   { path: "/services", changeFrequency: "weekly", priority: 0.95 },
   { path: "/portfolio", changeFrequency: "weekly", priority: 0.85 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.9 },
@@ -51,3 +51,4 @@ export const SERVICE_SITEMAP_ENTRIES: Entry[] = [
   { path: "/services/villa-interiors", changeFrequency: "weekly", priority: 0.85 },
   { path: "/services/full-home-design", changeFrequency: "weekly", priority: 0.85 },
 ];
+

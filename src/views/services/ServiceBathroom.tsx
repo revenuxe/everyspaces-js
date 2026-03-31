@@ -45,15 +45,15 @@ const bathroomFeatures = [
 // AEO-optimized FAQs
 const bathroomFAQs = [
   {
-    question: "What is the cost of bathroom renovation in Bangalore?",
-    answer: "Bathroom renovation in Bangalore costs ₹1-3 lakh for complete makeover. At EverySpaces, basic renovations start from ₹80,000, premium from ₹1.5 lakh with Kohler/Grohe fixtures, and luxury spa bathrooms from ₹2.5 lakh."
+    question: "What is the cost of bathroom renovation in Hyderabad?",
+    answer: "Bathroom renovation in Hyderabad costs ₹1-3 lakh for complete makeover. At EverySpaces, basic renovations start from ₹80,000, premium from ₹1.5 lakh with Kohler/Grohe fixtures, and luxury spa bathrooms from ₹2.5 lakh."
   },
   {
     question: "How long does bathroom renovation take?",
     answer: "Complete bathroom renovation takes 10-15 working days including demolition, waterproofing, tiling, and fixture installation. EverySpaces provides dedicated project management for timely completion."
   },
   {
-    question: "Which bathroom fixtures are best for Bangalore?",
+    question: "Which bathroom fixtures are best for Hyderabad?",
     answer: "EverySpaces recommends Kohler, Grohe, American Standard, and Jaquar for durability and after-sales service. We help select fixtures based on your budget, style preference, and water pressure requirements."
   },
   {
@@ -89,13 +89,13 @@ const ServiceBathroom = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Bathroom Design Bangalore",
-      "Spa-inspired bathroom renovation in Bangalore with premium fixtures from Kohler, Grohe. Complete waterproofing and designer finishes.",
+      "Bathroom Design Hyderabad",
+      "Spa-inspired bathroom renovation in Hyderabad with premium fixtures from Kohler, Grohe. Complete waterproofing and designer finishes.",
       "https://everyspaces.com/services/bathroom-design",
       "https://everyspaces.com/service-bathroom.jpg",
       "80000-300000",
       {
-        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Premium Fixtures", "Waterproofing", "Rain Shower", "Designer Tiles", "Vanity Unit"]
       }
     ),
@@ -107,7 +107,7 @@ const ServiceBathroom = () => {
     createFAQSchema(bathroomFAQs, 'services/bathroom-design'),
     createProductSchema({
       name: "Bathroom Renovation",
-      description: "Complete bathroom renovation in Bangalore with Kohler/Grohe fixtures, designer tiles, and waterproofing. 10-15 day completion.",
+      description: "Complete bathroom renovation in Hyderabad with Kohler/Grohe fixtures, designer tiles, and waterproofing. 10-15 day completion.",
       image: "https://everyspaces.com/service-bathroom.jpg",
       url: "https://everyspaces.com/services/bathroom-design",
       priceRange: "80000-300000",
@@ -124,14 +124,14 @@ const ServiceBathroom = () => {
       <main className="pb-24">
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(kitchenImage)} alt="Elegant Bathroom Design Bangalore" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(kitchenImage)} alt="Elegant Bathroom Design Hyderabad" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Elegant Bathroom Design
-                <span className="block text-secondary mt-2">in Bangalore</span>
+                <span className="block text-secondary mt-2">in Hyderabad</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Transform your bathroom into a spa-like sanctuary with EverySpaces
@@ -215,3 +215,4 @@ const ServiceBathroom = () => {
 };
 
 export default ServiceBathroom;
+

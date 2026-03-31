@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { imgSrc } from "@/lib/utils";
 import { useState } from "react";
@@ -106,7 +106,7 @@ const Portfolio = () => {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": "EverySpaces Interior Design Portfolio",
-        "description": "Browse 100+ completed interior projects by EverySpaces in Bangalore",
+        "description": "Browse 100+ completed interior projects by EverySpaces in Hyderabad",
         "url": "https://everyspaces.com/portfolio"
       }]} />
       <Header />
@@ -214,3 +214,4 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+

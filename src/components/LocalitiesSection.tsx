@@ -22,110 +22,89 @@ import gallery16 from "@/assets/gallery-16.jpg";
 import gallery17 from "@/assets/gallery-17.jpg";
 
 const localities = [{
-  name: "Indiranagar",
-  projects: "45+ Projects",
+  name: "Gachibowli",
+  keyword: "Interior Designers in Gachibowli",
   image: indiranagarImage,
-  slug: "indiranagar"
 }, {
-  name: "Whitefield",
-  projects: "38+ Projects",
+  name: "Hitech City",
+  keyword: "Interior Designers in Hitech City",
   image: whitefieldImage,
-  slug: "whitefield"
 }, {
-  name: "HSR Layout",
-  projects: "52+ Projects",
+  name: "Kondapur",
+  keyword: "Modular Kitchen in Kondapur",
   image: hsrImage,
-  slug: "hsr-layout"
 }, {
-  name: "Koramangala",
-  projects: "41+ Projects",
+  name: "Madhapur",
+  keyword: "Home Interiors in Madhapur",
   image: koramangalaImage,
-  slug: "koramangala"
 }, {
-  name: "JP Nagar",
-  projects: "35+ Projects",
+  name: "Kukatpally",
+  keyword: "2BHK Interiors in Kukatpally",
   image: gallery1,
-  slug: "jp-nagar"
 }, {
-  name: "Jayanagar",
-  projects: "28+ Projects",
+  name: "Miyapur",
+  keyword: "Budget Interiors in Miyapur",
   image: gallery2,
-  slug: "jayanagar"
 }, {
-  name: "Marathahalli",
-  projects: "33+ Projects",
+  name: "Nallagandla",
+  keyword: "Premium Interiors in Nallagandla",
   image: gallery3,
-  slug: "marathahalli"
 }, {
-  name: "Electronic City",
-  projects: "26+ Projects",
+  name: "Manikonda",
+  keyword: "Wardrobe Design in Manikonda",
   image: gallery4,
-  slug: "electronic-city"
 }, {
-  name: "Sarjapur Road",
-  projects: "42+ Projects",
+  name: "Narsingi",
+  keyword: "Villa Interiors in Narsingi",
   image: gallery5,
-  slug: "sarjapur-road"
 }, {
-  name: "Bellandur",
-  projects: "31+ Projects",
+  name: "Jubilee Hills",
+  keyword: "Luxury Interiors in Jubilee Hills",
   image: gallery6,
-  slug: "bellandur"
 }, {
-  name: "BTM Layout",
-  projects: "29+ Projects",
+  name: "Banjara Hills",
+  keyword: "Luxury Home Interiors in Banjara Hills",
   image: gallery7,
-  slug: "btm-layout"
 }, {
-  name: "Hebbal",
-  projects: "24+ Projects",
+  name: "Begumpet",
+  keyword: "Apartment Interiors in Begumpet",
   image: gallery8,
-  slug: "hebbal"
 }, {
-  name: "Yelahanka",
-  projects: "22+ Projects",
+  name: "Secunderabad",
+  keyword: "Interior Designers in Secunderabad",
   image: gallery9,
-  slug: "yelahanka"
 }, {
-  name: "Banashankari",
-  projects: "27+ Projects",
+  name: "Ameerpet",
+  keyword: "Affordable Interiors in Ameerpet",
   image: gallery10,
-  slug: "banashankari"
 }, {
-  name: "Malleshwaram",
-  projects: "19+ Projects",
+  name: "Uppal",
+  keyword: "Complete Home Interiors in Uppal",
   image: gallery11,
-  slug: "malleshwaram"
 }, {
-  name: "Rajajinagar",
-  projects: "21+ Projects",
+  name: "LB Nagar",
+  keyword: "3BHK Interiors in LB Nagar",
   image: gallery12,
-  slug: "rajajinagar"
 }, {
-  name: "Basavanagudi",
-  projects: "18+ Projects",
+  name: "Financial District",
+  keyword: "Interior Designers in Financial District",
   image: gallery13,
-  slug: "basavanagudi"
 }, {
-  name: "Sadashivanagar",
-  projects: "15+ Projects",
+  name: "Tellapur",
+  keyword: "New Apartment Interiors in Tellapur",
   image: gallery14,
-  slug: "sadashivanagar"
 }, {
-  name: "RT Nagar",
-  projects: "17+ Projects",
+  name: "Kokapet",
+  keyword: "Luxury Apartment Interiors in Kokapet",
   image: gallery15,
-  slug: "rt-nagar"
 }, {
-  name: "Vijayanagar",
-  projects: "20+ Projects",
+  name: "Bachupally",
+  keyword: "Turnkey Interiors in Bachupally",
   image: gallery16,
-  slug: "vijayanagar"
 }, {
-  name: "HBR Layout",
-  projects: "30+ Projects",
+  name: "Chandanagar",
+  keyword: "Modular Interiors in Chandanagar",
   image: gallery17,
-  slug: "hbr-layout"
 }];
 const LocalitiesSection = () => {
   return <section id="localities" className="py-16 md:py-24 bg-background">
@@ -138,7 +117,7 @@ const LocalitiesSection = () => {
             Top Localities
           </h2>
           <p className="text-muted-foreground font-body max-w-md mx-auto">
-            Serving Bengaluru's finest neighborhoods with premium interiors
+            Serving Hyderabad's finest neighborhoods with premium interiors
           </p>
         </div>
 
@@ -151,7 +130,7 @@ const LocalitiesSection = () => {
             {localities.map((locality, index) => (
               <a
                 key={index}
-                href={`/bangalore/${locality.slug}`}
+                href={`/hyderabad?area=${encodeURIComponent(locality.name)}`}
                 className="flex-shrink-0 flex flex-col items-center group cursor-pointer"
               >
                 {/* Circular Image */}
@@ -170,7 +149,7 @@ const LocalitiesSection = () => {
                 <h3 className="mt-3 font-display text-primary text-sm group-hover:text-secondary transition-colors duration-300">
                   {locality.name}
                 </h3>
-                <p className="text-xs text-muted-foreground font-body">{locality.projects}</p>
+                <p className="text-xs text-muted-foreground font-body">{locality.keyword}</p>
               </a>
             ))}
           </div>

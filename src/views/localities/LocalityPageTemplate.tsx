@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import type { StaticImageData } from "next/image";
 import { imgSrc } from "@/lib/utils";
@@ -80,14 +80,14 @@ const LocalityPageTemplate = ({
 
   // Default SEO values if not provided
   const defaultSEO: LocalitySEO = {
-    metaTitle: `Best Interior Designers in ${localityName} | Home Interiors ${localityName} Bangalore`,
+    metaTitle: `Best Interior Designers in ${localityName} | Home Interiors ${localityName} Hyderabad`,
     metaDescription: `${description} ${projectCount} completed. Modular kitchens, wardrobes & full home interiors with 10-year warranty. Free consultation!`,
     keywords: [
       `interior designers ${localityName}`,
       `home interiors ${localityName}`,
       `modular kitchen ${localityName}`,
       `wardrobe design ${localityName}`,
-      `${localityName} interior design bangalore`,
+      `${localityName} interior design hyderabad`,
       `best interior designers in ${localityName}`,
       `home renovation ${localityName}`,
       `interior decorators ${localityName}`
@@ -97,10 +97,10 @@ const LocalityPageTemplate = ({
     faqs: [
       {
         question: `What is the cost of interior design in ${localityName}?`,
-        answer: `Interior design cost in ${localityName} ranges from ₹1,500 to ₹3,500 per sq ft depending on materials and scope. At EverySpaces, we offer customized packages starting ₹8 lakhs for 2BHK. We have completed ${projectCount} in ${localityName} with 10-year warranty.`
+        answer: `Interior design cost in ${localityName} ranges from Rs 1,500 to Rs 3,500 per sq ft depending on materials and scope. At EverySpaces, we offer customized packages starting Rs 8 lakhs for 2BHK. We have completed ${projectCount} in ${localityName} with 10-year warranty.`
       },
       {
-        question: `Who are the best interior designers in ${localityName}, Bangalore?`,
+        question: `Who are the best interior designers in ${localityName}, Hyderabad?`,
         answer: `EverySpaces is rated among the best interior designers in ${localityName} with 4.8/5 rating, ${projectCount} completed, and 10-year warranty. We specialize in modular kitchens, wardrobes, and complete home interiors with premium materials.`
       },
       {
@@ -122,35 +122,35 @@ const LocalityPageTemplate = ({
   const localitySchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": `https://everyspaces.com/bangalore/${slug}#localbusiness`,
+    "@id": `https://everyspaces.com/hyderabad/${slug}#localbusiness`,
     "name": `EverySpaces Interior Designers ${localityName}`,
     "image": heroUrl,
-    "url": `https://everyspaces.com/bangalore/${slug}`,
+    "url": `https://everyspaces.com/hyderabad/${slug}`,
     "telephone": "+91-9886579923",
     "email": "everyspaces.com@gmail.com",
     "description": seoData.metaDescription,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": localityName,
-      "addressRegion": "Bangalore, Karnataka",
+      "addressRegion": "Hyderabad, Telangana",
       "addressCountry": "IN"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "12.9716",
-      "longitude": "77.5946"
+      "latitude": "17.3850",
+      "longitude": "78.4867"
     },
     "areaServed": [
       {
         "@type": "Place",
-        "name": `${localityName}, Bangalore, Karnataka, India`
+        "name": `${localityName}, Hyderabad, Telangana, India`
       },
       ...seoData.nearbyAreas.map(area => ({
         "@type": "Place",
-        "name": `${area}, Bangalore, Karnataka, India`
+        "name": `${area}, Hyderabad, Telangana, India`
       }))
     ],
-    "priceRange": "₹₹₹",
+    "priceRange": "Rs Rs Rs ",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -165,7 +165,7 @@ const LocalityPageTemplate = ({
         "itemOffered": {
           "@type": "Service",
           "name": `${specialty} in ${localityName}`,
-          "description": `Professional ${specialty.toLowerCase()} services in ${localityName}, Bangalore by EverySpaces`
+          "description": `Professional ${specialty.toLowerCase()} services in ${localityName}, Hyderabad by EverySpaces`
         }
       }))
     },
@@ -206,7 +206,7 @@ const LocalityPageTemplate = ({
   const serviceSchema = createServiceSchema(
     `Interior Design Services in ${localityName}`,
     seoData.metaDescription,
-    `https://everyspaces.com/bangalore/${slug}`,
+    `https://everyspaces.com/hyderabad/${slug}`,
     heroUrl,
     "150000-2500000",
     {
@@ -219,26 +219,26 @@ const LocalityPageTemplate = ({
   // Breadcrumb schema
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: "Home", url: "https://everyspaces.com" },
-    { name: "Bangalore", url: "https://everyspaces.com/bangalore" },
-    { name: localityName, url: `https://everyspaces.com/bangalore/${slug}` }
-  ], `bangalore/${slug}`);
+    { name: "Hyderabad", url: "https://everyspaces.com/hyderabad" },
+    { name: localityName, url: `https://everyspaces.com/hyderabad/${slug}` }
+  ], `hyderabad/${slug}`);
 
   // FAQ schema with locality-specific FAQs
-  const faqSchema = createFAQSchema(seoData.faqs, `bangalore/${slug}`);
+  const faqSchema = createFAQSchema(seoData.faqs, `hyderabad/${slug}`);
 
   // WebPage schema with speakable for voice search
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `https://everyspaces.com/bangalore/${slug}#webpage`,
-    "url": `https://everyspaces.com/bangalore/${slug}`,
+    "@id": `https://everyspaces.com/hyderabad/${slug}#webpage`,
+    "url": `https://everyspaces.com/hyderabad/${slug}`,
     "name": seoData.metaTitle,
     "description": seoData.metaDescription,
     "isPartOf": {
       "@id": "https://everyspaces.com/#website"
     },
     "about": {
-      "@id": `https://everyspaces.com/bangalore/${slug}#localbusiness`
+      "@id": `https://everyspaces.com/hyderabad/${slug}#localbusiness`
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
@@ -254,7 +254,7 @@ const LocalityPageTemplate = ({
       ]
     },
     "breadcrumb": {
-      "@id": `https://everyspaces.com/bangalore/${slug}#breadcrumb`
+      "@id": `https://everyspaces.com/hyderabad/${slug}#breadcrumb`
     }
   };
 
@@ -262,18 +262,18 @@ const LocalityPageTemplate = ({
   const placeSchema = {
     "@context": "https://schema.org",
     "@type": "Place",
-    "@id": `https://everyspaces.com/bangalore/${slug}#place`,
-    "name": `${localityName}, Bangalore`,
-    "description": `Interior design services available in ${localityName}, Bangalore by EverySpaces`,
+    "@id": `https://everyspaces.com/hyderabad/${slug}#place`,
+    "name": `${localityName}, Hyderabad`,
+    "description": `Interior design services available in ${localityName}, Hyderabad by EverySpaces`,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": localityName,
-      "addressRegion": "Bangalore, Karnataka",
+      "addressRegion": "Hyderabad, Telangana",
       "addressCountry": "IN"
     },
     "containedInPlace": {
       "@type": "City",
-      "name": "Bangalore"
+      "name": "Hyderabad"
     }
   };
 
@@ -317,3 +317,4 @@ const LocalityPageTemplate = ({
 };
 
 export default LocalityPageTemplate;
+

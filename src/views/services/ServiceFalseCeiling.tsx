@@ -45,8 +45,8 @@ const ceilingFeatures = [
 // AEO-optimized FAQs
 const falseCeilingFAQs = [
   {
-    question: "What is the cost of false ceiling in Bangalore?",
-    answer: "False ceiling in Bangalore costs ₹65-150 per sq ft depending on material and design. At EverySpaces, basic POP ceilings start from ₹65/sq ft, gypsum from ₹85/sq ft, and designer ceilings with cove lighting from ₹120/sq ft."
+    question: "What is the cost of false ceiling in Hyderabad?",
+    answer: "False ceiling in Hyderabad costs ₹65-150 per sq ft depending on material and design. At EverySpaces, basic POP ceilings start from ₹65/sq ft, gypsum from ₹85/sq ft, and designer ceilings with cove lighting from ₹120/sq ft."
   },
   {
     question: "Which is better - POP or gypsum false ceiling?",
@@ -85,13 +85,13 @@ const ServiceFalseCeiling = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "False Ceiling Design Bangalore",
-      "Artistic false ceiling designs in Bangalore. POP, gypsum, wooden ceilings with cove lighting, multi-level designs, and AC integration.",
+      "False Ceiling Design Hyderabad",
+      "Artistic false ceiling designs in Hyderabad. POP, gypsum, wooden ceilings with cove lighting, multi-level designs, and AC integration.",
       "https://everyspaces.com/services/false-ceiling",
       "https://everyspaces.com/service-false-ceiling.jpg",
       "50000-200000",
       {
-        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["POP Ceiling", "Gypsum Ceiling", "Cove Lighting", "Multi-Level Design", "AC Integration"]
       }
     ),
@@ -103,7 +103,7 @@ const ServiceFalseCeiling = () => {
     createFAQSchema(falseCeilingFAQs, 'services/false-ceiling'),
     createProductSchema({
       name: "False Ceiling Design",
-      description: "Designer false ceilings in Bangalore with POP, gypsum, cove lighting, and AC integration. 3-7 day installation.",
+      description: "Designer false ceilings in Hyderabad with POP, gypsum, cove lighting, and AC integration. 3-7 day installation.",
       image: "https://everyspaces.com/service-false-ceiling.jpg",
       url: "https://everyspaces.com/services/false-ceiling",
       priceRange: "50000-200000",
@@ -120,14 +120,14 @@ const ServiceFalseCeiling = () => {
       <main className="pb-24">
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(livingImage)} alt="False Ceiling Design Bangalore" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(livingImage)} alt="False Ceiling Design Hyderabad" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 False Ceiling Design
-                <span className="block text-secondary mt-2">in Bangalore</span>
+                <span className="block text-secondary mt-2">in Hyderabad</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Artistic ceiling designs with ambient lighting by EverySpaces
@@ -211,3 +211,4 @@ const ServiceFalseCeiling = () => {
 };
 
 export default ServiceFalseCeiling;
+

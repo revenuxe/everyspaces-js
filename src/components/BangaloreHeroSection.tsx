@@ -21,8 +21,8 @@ const BangaloreHeroSection = () => {
 
     try {
       const { error } = await (supabase.from("leads") as any).insert({
-        form_name: "Bangalore Landing Page Form",
-        source_page: "/bangalore",
+        form_name: "Hyderabad Landing Page Form",
+        source_page: "/hyderabad",
         data: {
           name: formData.name,
           mobile: formData.mobile,
@@ -51,7 +51,7 @@ const BangaloreHeroSection = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={imgSrc(heroImage)}
-          alt="Best interior designers in Bangalore"
+          alt="Best interior designers in Hyderabad"
           decoding="async"
           fetchPriority="high"
           className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
@@ -64,10 +64,10 @@ const BangaloreHeroSection = () => {
         <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
           <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 md:mb-4 animate-fade-up tracking-[-0.03em] md:leading-[1.2]">
             Interior Designers
-            <span className="block text-secondary tracking-[-0.02em] md:mt-2">in Bangalore</span>
+            <span className="block text-secondary tracking-[-0.02em] md:mt-2">in Hyderabad</span>
           </h1>
           <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-            Transform your home with Bangalore's #1 rated interior design company. 
+            Transform your home with Hyderabad's #1 rated interior design company. 
             <span className="block mt-1">10-Year Warranty • 45-Day Delivery • EMI Available</span>
           </p>
         </div>
@@ -125,7 +125,7 @@ const BangaloreHeroSection = () => {
             </form>
 
             <p className="text-center text-xs text-muted-foreground mt-4 font-body">
-              🔒 No spam. We respect your privacy.
+              No spam. We respect your privacy.
             </p>
           </div>
         </div>
@@ -135,3 +135,4 @@ const BangaloreHeroSection = () => {
 };
 
 export default BangaloreHeroSection;
+

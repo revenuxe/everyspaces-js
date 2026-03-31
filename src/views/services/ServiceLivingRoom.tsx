@@ -44,8 +44,8 @@ const livingFeatures = [
 // AEO-optimized FAQs
 const livingRoomFAQs = [
   {
-    question: "What is the cost of living room interior design in Bangalore?",
-    answer: "Living room interior design in Bangalore costs ₹1-2.5 lakh depending on size and finishes. At EverySpaces, packages include TV unit, false ceiling, feature wall, and lighting. Basic packages start from ₹80,000."
+    question: "What is the cost of living room interior design in Hyderabad?",
+    answer: "Living room interior design in Hyderabad costs ₹1-2.5 lakh depending on size and finishes. At EverySpaces, packages include TV unit, false ceiling, feature wall, and lighting. Basic packages start from ₹80,000."
   },
   {
     question: "What is included in living room interior design?",
@@ -56,8 +56,8 @@ const livingRoomFAQs = [
     answer: "EverySpaces uses light colors, mirrors, minimal furniture, wall-mounted TV units, and smart lighting to make small living rooms appear larger. Multi-functional furniture and vertical storage also help maximize space."
   },
   {
-    question: "What TV unit designs are trending in Bangalore?",
-    answer: "Popular TV unit designs in Bangalore include floating wall-mounted units, floor-to-ceiling entertainment walls, minimalist designs with hidden storage, and units with integrated LED backlighting. EverySpaces offers all these styles."
+    question: "What TV unit designs are trending in Hyderabad?",
+    answer: "Popular TV unit designs in Hyderabad include floating wall-mounted units, floor-to-ceiling entertainment walls, minimalist designs with hidden storage, and units with integrated LED backlighting. EverySpaces offers all these styles."
   }
 ];
 
@@ -88,13 +88,13 @@ const ServiceLivingRoom = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Living Room Interior Design Bangalore",
-      "Expert living room designers in Bangalore offering TV units, false ceilings, feature walls, and smart lighting solutions.",
+      "Living Room Interior Design Hyderabad",
+      "Expert living room designers in Hyderabad offering TV units, false ceilings, feature walls, and smart lighting solutions.",
       "https://everyspaces.com/services/living-room",
       "https://everyspaces.com/service-living-room.jpg",
       "80000-300000",
       {
-        areaServed: ["Bangalore", "Koramangala", "Indiranagar", "HSR Layout", "Whitefield"],
+        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["TV Unit Design", "False Ceiling", "Feature Wall", "Ambient Lighting", "Wall Paneling"]
       }
     ),
@@ -106,7 +106,7 @@ const ServiceLivingRoom = () => {
     createFAQSchema(livingRoomFAQs, 'services/living-room'),
     createProductSchema({
       name: "Living Room Interior Design",
-      description: "Complete living room design in Bangalore including TV unit, false ceiling, feature wall, and lighting. 10-year warranty included.",
+      description: "Complete living room design in Hyderabad including TV unit, false ceiling, feature wall, and lighting. 10-year warranty included.",
       image: "https://everyspaces.com/service-living-room.jpg",
       url: "https://everyspaces.com/services/living-room",
       priceRange: "80000-300000",
@@ -123,14 +123,14 @@ const ServiceLivingRoom = () => {
       <main className="pb-24">
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(livingImage)} alt="Smart Living Room Design Bangalore" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(livingImage)} alt="Smart Living Room Design Hyderabad" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Smart Living Room Design
-                <span className="block text-secondary mt-2">in Bangalore</span>
+                <span className="block text-secondary mt-2">in Hyderabad</span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Create the heart of your home with EverySpaces's expert designers
@@ -214,3 +214,4 @@ const ServiceLivingRoom = () => {
 };
 
 export default ServiceLivingRoom;
+

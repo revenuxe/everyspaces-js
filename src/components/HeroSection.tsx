@@ -48,7 +48,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={imgSrc(heroImage)}
-          alt="Luxury interior design in Bangalore"
+          alt="Luxury interior design in Hyderabad"
           decoding="async"
           fetchPriority="high"
           className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform" />
@@ -64,7 +64,7 @@ const HeroSection = () => {
             <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-4 md:mb-6 animate-fade-up tracking-[-0.03em] md:leading-[1.15]">
               Interior Designers in
               <span className="block tracking-[-0.02em] mt-2 text-primary-foreground">
-                Bengaluru
+                Hyderabad
               </span>
             </h1>
             <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-lg animate-fade-up delay-200">
@@ -73,8 +73,8 @@ const HeroSection = () => {
                 Interior Designers
               </a>{" "}
               in{" "}
-              <a href="/bangalore" className="underline hover:text-secondary transition-colors">
-                Bangalore
+              <a href="/hyderabad" className="underline hover:text-secondary transition-colors">
+                Hyderabad
               </a>
             </p>
 
@@ -138,7 +138,7 @@ const HeroSection = () => {
               </form>
 
               <p className="text-center text-[11px] md:text-sm text-muted-foreground mt-2 md:mt-4 font-body">
-                🔒 No spam. We respect your privacy.
+                No spam. We respect your privacy.
               </p>
             </div>
           </div>

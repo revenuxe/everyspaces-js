@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -46,7 +46,7 @@ const Privacy = () => {
                 <h2 className="font-display text-2xl text-primary">1. Who we are</h2>
                 <p className="text-foreground font-body">
                   EverySpaces Interior Design ("EverySpaces", "we", "our", "us") operates
-                  everyspaces.com and provides interior design services in Bengaluru.
+                  everyspaces.com and provides interior design services in Hyderabad.
                 </p>
               </section>
 
@@ -166,3 +166,4 @@ const Privacy = () => {
 };
 
 export default Privacy;
+
