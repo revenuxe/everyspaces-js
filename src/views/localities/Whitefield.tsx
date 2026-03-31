@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import heroImage from "@/assets/locality-whitefield.jpg";
@@ -93,7 +93,7 @@ const Whitefield = () => {
   return (
     <LocalityPageTemplate
       localityName="Madhapur"
-      slug="whitefield"
+      slug="madhapur"
       projectCount="38+ Projects"
       heroImage={heroImage}
       galleryImages={[gallery9, gallery10, gallery11, gallery12, gallery13, gallery14, gallery15, gallery16]}

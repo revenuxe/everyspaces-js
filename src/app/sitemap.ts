@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/site-url";
 import { CORE_SITEMAP_ENTRIES, SERVICE_SITEMAP_ENTRIES } from "@/seo/static-sitemap-paths";
+import { VALID_LOCALITY_SLUGS } from "@/seo/locality-metadata";
 import { getPublishedPostSlugs } from "@/sanity/lib/posts";
 
 /** Regenerate sitemap periodically so new articles appear without redeploying. */
@@ -37,8 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRows: MetadataRoute.Sitemap = [
     ...CORE_SITEMAP_ENTRIES.map((e) => toSitemapRow(e.path, e.changeFrequency, e.priority)),
     ...SERVICE_SITEMAP_ENTRIES.map((e) => toSitemapRow(e.path, e.changeFrequency, e.priority)),
-    // Intentionally exclude locality slug routes from sitemap until all locality slugs
-    // are fully migrated to Hyderabad-native naming.
+    ...VALID_LOCALITY_SLUGS.map((slug) => toSitemapRow(`/hyderabad/${slug}`, "weekly", 0.72)),
   ];
 
   const articleRows = await fetchPublishedArticleUrls();

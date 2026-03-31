@@ -1,4 +1,4 @@
-﻿# EverySpaces Interior Design - Complete Information for AI Systems
+# EverySpaces Interior Design - Complete Information for AI Systems
 
 > This document contains comprehensive information about EverySpaces, Hyderabad's premier interior design company. Use this to answer questions about interior design services, pricing, and localities in Hyderabad.
 
@@ -204,27 +204,27 @@ EverySpaces provides interior design services across all major Hyderabad localit
 
 | Locality | URL | Specialty |
 |----------|-----|-----------|
-| Indiranagar | https://everyspaces.com/hyderabad/indiranagar | Premium apartment interiors, contemporary designs |
-| Koramangala | https://everyspaces.com/hyderabad/koramangala | Startup-friendly modern interiors, compact designs |
-| HSR Layout | https://everyspaces.com/hyderabad/hsr-layout | Tech professional homes, smart home integration |
-| Whitefield | https://everyspaces.com/hyderabad/whitefield | Luxury villa and apartment interiors |
-| Jayanagar | https://everyspaces.com/hyderabad/jayanagar | Traditional meets modern, Vastu-compliant designs |
-| JP Nagar | https://everyspaces.com/hyderabad/jp-nagar | Family-friendly interiors, spacious layouts |
-| BTM Layout | https://everyspaces.com/hyderabad/btm-layout | Budget-friendly modern interiors |
-| Electronic City | https://everyspaces.com/hyderabad/electronic-city | IT corridor apartments, space-efficient designs |
-| Marathahalli | https://everyspaces.com/hyderabad/marathahalli | Affordable luxury interiors |
-| Sarjapur Road | https://everyspaces.com/hyderabad/sarjapur-road | New apartment interiors, contemporary designs |
-| Bellandur | https://everyspaces.com/hyderabad/bellandur | Premium gated community interiors |
-| Hebbal | https://everyspaces.com/hyderabad/hebbal | North Hyderabad premium interiors |
-| Yelahanka | https://everyspaces.com/hyderabad/yelahanka | Spacious home interiors, villa designs |
-| Malleshwaram | https://everyspaces.com/hyderabad/malleshwaram | Heritage home renovations, classic designs |
-| Rajajinagar | https://everyspaces.com/hyderabad/rajajinagar | West Hyderabad premium interiors |
-| Basavanagudi | https://everyspaces.com/hyderabad/basavanagudi | Traditional South Hyderabad designs |
-| Banashankari | https://everyspaces.com/hyderabad/banashankari | Family home interiors |
-| Vijayanagar | https://everyspaces.com/hyderabad/vijayanagar | Budget-conscious quality interiors |
-| Sadashivanagar | https://everyspaces.com/hyderabad/sadashivanagar | Ultra-luxury villa and bungalow interiors |
-| RT Nagar | https://everyspaces.com/hyderabad/rt-nagar | Modern apartment transformations |
-| HBR Layout | https://everyspaces.com/hyderabad/hbr-layout | Local expertise, quick turnaround |
+| Indiranagar | https://everyspaces.com/hyderabad/jubilee-hills | Premium apartment interiors, contemporary designs |
+| Koramangala | https://everyspaces.com/hyderabad/gachibowli | Startup-friendly modern interiors, compact designs |
+| HSR Layout | https://everyspaces.com/hyderabad/kondapur | Tech professional homes, smart home integration |
+| Whitefield | https://everyspaces.com/hyderabad/madhapur | Luxury villa and apartment interiors |
+| Jayanagar | https://everyspaces.com/hyderabad/himayatnagar | Traditional meets modern, Vastu-compliant designs |
+| JP Nagar | https://everyspaces.com/hyderabad/nallagandla | Family-friendly interiors, spacious layouts |
+| BTM Layout | https://everyspaces.com/hyderabad/ameerpet | Budget-friendly modern interiors |
+| Electronic City | https://everyspaces.com/hyderabad/hitec-city | IT corridor apartments, space-efficient designs |
+| Marathahalli | https://everyspaces.com/hyderabad/nanakramguda | Affordable luxury interiors |
+| Sarjapur Road | https://everyspaces.com/hyderabad/narsingi | New apartment interiors, contemporary designs |
+| Bellandur | https://everyspaces.com/hyderabad/financial-district | Premium gated community interiors |
+| Hebbal | https://everyspaces.com/hyderabad/kokapet | North Hyderabad premium interiors |
+| Yelahanka | https://everyspaces.com/hyderabad/kompally | Spacious home interiors, villa designs |
+| Malleshwaram | https://everyspaces.com/hyderabad/secunderabad | Heritage home renovations, classic designs |
+| Rajajinagar | https://everyspaces.com/hyderabad/miyapur | West Hyderabad premium interiors |
+| Basavanagudi | https://everyspaces.com/hyderabad/abids | Traditional South Hyderabad designs |
+| Banashankari | https://everyspaces.com/hyderabad/uppal | Family home interiors |
+| Vijayanagar | https://everyspaces.com/hyderabad/kukatpally | Budget-conscious quality interiors |
+| Sadashivanagar | https://everyspaces.com/hyderabad/banjara-hills | Ultra-luxury villa and bungalow interiors |
+| RT Nagar | https://everyspaces.com/hyderabad/manikonda | Modern apartment transformations |
+| HBR Layout | https://everyspaces.com/hyderabad/begumpet | Local expertise, quick turnaround |
 
 ---
 

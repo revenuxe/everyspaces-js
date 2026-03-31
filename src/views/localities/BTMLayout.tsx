@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery7 from "@/assets/gallery-7.jpg";
@@ -92,7 +92,7 @@ const BTMLayout = () => {
   return (
     <LocalityPageTemplate
       localityName="Ameerpet"
-      slug="btm-layout"
+      slug="ameerpet"
       projectCount="29+ Projects"
       heroImage={gallery7}
       galleryImages={[gallery22, gallery23, gallery24, gallery25, gallery26, gallery27, gallery1, gallery7]}

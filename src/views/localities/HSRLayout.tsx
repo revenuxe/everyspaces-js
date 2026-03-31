@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import heroImage from "@/assets/locality-hsr.jpg";
@@ -93,7 +93,7 @@ const HSRLayout = () => {
   return (
     <LocalityPageTemplate
       localityName="Kondapur"
-      slug="hsr-layout"
+      slug="kondapur"
       projectCount="52+ Projects"
       heroImage={heroImage}
       galleryImages={[gallery17, gallery18, gallery19, gallery20, gallery21, gallery22, gallery23, gallery24]}

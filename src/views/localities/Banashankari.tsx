@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery10 from "@/assets/gallery-10.jpg";
@@ -92,7 +92,7 @@ const Banashankari = () => {
   return (
     <LocalityPageTemplate
       localityName="Uppal"
-      slug="banashankari"
+      slug="uppal"
       projectCount="27+ Projects"
       heroImage={gallery10}
       galleryImages={[gallery18, gallery19, gallery20, gallery21, gallery22, gallery23, gallery24, gallery10]}

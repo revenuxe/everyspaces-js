@@ -14,7 +14,7 @@ type LocalitySeo = {
 };
 
 const LOCALITY_SEO: Record<string, LocalitySeo> = {
-  indiranagar: {
+  "jubilee-hills": {
     metaTitle: "Best Interior Designers in Jubilee Hills | Premium Home Interiors Hyderabad",
     metaDescription:
       "Top-rated interior designers in Jubilee Hills, Hyderabad. 45+ luxury projects completed. Bespoke modular kitchens, designer wardrobes & contemporary living spaces. 10-year warranty. Free consultation!",
@@ -29,7 +29,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogDescription:
       "Transform your Jubilee Hills home with EverySpaces. 45+ premium projects, 10-year warranty. Free design consultation!",
   },
-  whitefield: {
+  madhapur: {
     metaTitle: "Best Interior Designers in Madhapur | Premium Home Interiors Hyderabad",
     metaDescription:
       "Leading interior designers in Madhapur, Hyderabad. 38+ projects in premium gated communities and apartments. Luxury modular kitchens, wardrobes & villa interiors. 10-year warranty!",
@@ -37,7 +37,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Madhapur | EverySpaces",
     ogDescription: "Premium interiors in Madhapur. Free consultation!",
   },
-  "hsr-layout": {
+  kondapur: {
     metaTitle: "Best Interior Designers in Kondapur | Premium Home Interiors Hyderabad",
     metaDescription:
       "Top interior designers in Kondapur, Hyderabad. 52+ projects completed across premium communities. Premium modular kitchens, smart wardrobes & modern living spaces. 10-year warranty. Free consultation!",
@@ -45,7 +45,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Kondapur | EverySpaces",
     ogDescription: "Trusted Kondapur interiors. Free consultation!",
   },
-  koramangala: {
+  gachibowli: {
     metaTitle: "Best Interior Designers in Gachibowli | Luxury Home Interiors Hyderabad",
     metaDescription:
       "Premium interior designers in Gachibowli, Hyderabad. 41+ luxury projects across premium communities. Designer modular kitchens, walk-in wardrobes & elegant living spaces. 10-year warranty. Free consultation!",
@@ -53,7 +53,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Gachibowli | EverySpaces",
     ogDescription: "Luxury Gachibowli homes by EverySpaces. Free consultation!",
   },
-  "jp-nagar": {
+  nallagandla: {
     metaTitle: "Interior Designers in Nallagandla | Trusted Home Interiors Hyderabad",
     metaDescription:
       "Trusted interior designers in Nallagandla, Hyderabad. 35+ projects across all phases. Affordable modular kitchens, wardrobes & complete home interiors. 10-year warranty. Free consultation!",
@@ -61,7 +61,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Nallagandla | EverySpaces",
     ogDescription: "Complete home interiors in Nallagandla. Free consultation!",
   },
-  jayanagar: {
+  himayatnagar: {
     metaTitle: "Interior Designers in Himayatnagar | Classic & Modern Home Interiors Hyderabad",
     metaDescription:
       "Professional interior designers in Himayatnagar, Hyderabad. 28+ projects with classic & contemporary designs. Traditional pooja rooms, modular kitchens & elegant wardrobes. 10-year warranty!",
@@ -69,7 +69,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Himayatnagar | EverySpaces",
     ogDescription: "Himayatnagar interiors with EverySpaces. Free consultation!",
   },
-  marathahalli: {
+  nanakramguda: {
     metaTitle: "Interior Designers in Nanakramguda | Budget-Friendly Home Interiors Hyderabad",
     metaDescription:
       "Budget-friendly interior designers in Nanakramguda, Hyderabad. 33+ projects near ORR. Modern modular kitchens, compact wardrobes & smart storage solutions. Starting ₹7 lakhs. 10-year warranty!",
@@ -77,7 +77,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Nanakramguda | EverySpaces",
     ogDescription: "Smart interiors in Nanakramguda. Free consultation!",
   },
-  "electronic-city": {
+  "hitec-city": {
     metaTitle: "Interior Designers in HITEC City | Smart Home Interiors Hyderabad",
     metaDescription:
       "Expert interior designers in HITEC City, Hyderabad. 26+ projects in Phase 1 & 2. Smart home integration, modern modular kitchens & tech-savvy living spaces. 10-year warranty!",
@@ -85,7 +85,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in HITEC City | EverySpaces",
     ogDescription: "Tech-forward interiors in HITEC City. Free consultation!",
   },
-  "sarjapur-road": {
+  narsingi: {
     metaTitle: "Interior Designers in Narsingi | New Apartment Interiors Hyderabad",
     metaDescription:
       "Professional interior designers in Narsingi, Hyderabad. 42+ projects in new apartments. Modern modular kitchens, stylish wardrobes & contemporary living spaces. 10-year warranty!",
@@ -93,7 +93,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Narsingi | EverySpaces",
     ogDescription: "New home interiors on Narsingi. Free consultation!",
   },
-  bellandur: {
+  "financial-district": {
     metaTitle: "Interior Designers in Financial District | Premium Apartment Interiors Hyderabad",
     metaDescription:
       "Premium interior designers in Financial District, Hyderabad. 31+ projects in luxury apartments. Modern modular kitchens, designer wardrobes & upscale living spaces. 10-year warranty!",
@@ -101,7 +101,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Financial District | EverySpaces",
     ogDescription: "Premium Financial District apartments. Free consultation!",
   },
-  "btm-layout": {
+  ameerpet: {
     metaTitle: "Interior Designers in Ameerpet | Affordable Home Interiors Hyderabad",
     metaDescription:
       "Trusted interior designers in Ameerpet, Hyderabad. 29+ projects in 1st & 2nd Stage. Budget-friendly modular kitchens, wardrobes & complete home makeovers. Starting ₹6.5 lakhs!",
@@ -109,7 +109,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Ameerpet | EverySpaces",
     ogDescription: "Affordable interiors in Ameerpet. Free consultation!",
   },
-  hebbal: {
+  kokapet: {
     metaTitle: "Interior Designers in Kokapet | Villa & Apartment Interiors Hyderabad",
     metaDescription:
       "Expert interior designers in Kokapet, Hyderabad. 24+ projects including premium villas. North Hyderabad specialists with luxury villa interiors & modern apartments. 10-year warranty!",
@@ -117,7 +117,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Kokapet | EverySpaces",
     ogDescription: "Villa & apartment interiors in Kokapet. Free consultation!",
   },
-  yelahanka: {
+  kompally: {
     metaTitle: "Interior Designers in Kompally | Spacious Home Interiors Hyderabad",
     metaDescription:
       "Professional interior designers in Kompally, Hyderabad. 22+ projects in independent houses & villas. Spacious home designs with modern amenities. 10-year warranty. Free consultation!",
@@ -125,7 +125,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Kompally | EverySpaces",
     ogDescription: "Spacious Kompally homes. Free consultation!",
   },
-  banashankari: {
+  uppal: {
     metaTitle: "Interior Designers in Uppal | Traditional & Modern Home Interiors Hyderabad",
     metaDescription:
       "Experienced interior designers in Uppal, Hyderabad. 27+ projects across all stages. Traditional pooja rooms, modern modular kitchens & family-friendly designs. 10-year warranty!",
@@ -133,7 +133,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Uppal | EverySpaces",
     ogDescription: "Family interiors in Uppal. Free consultation!",
   },
-  malleshwaram: {
+  secunderabad: {
     metaTitle: "Interior Designers in Secunderabad | Heritage & Classic Home Interiors Hyderabad",
     metaDescription:
       "Heritage-conscious interior designers in Secunderabad, Hyderabad. 19+ projects blending classic elegance with modern functionality. Traditional kitchens, wooden interiors & timeless designs!",
@@ -141,7 +141,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Secunderabad | EverySpaces",
     ogDescription: "Classic Secunderabad interiors. Free consultation!",
   },
-  rajajinagar: {
+  miyapur: {
     metaTitle: "Interior Designers in Miyapur | Elegant Home Interiors Hyderabad",
     metaDescription:
       "Experienced interior designers in Miyapur, Hyderabad. 21+ projects across all blocks. Elegant modular kitchens, spacious wardrobes & sophisticated living spaces. 10-year warranty!",
@@ -149,7 +149,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Miyapur | EverySpaces",
     ogDescription: "Elegant Miyapur homes. Free consultation!",
   },
-  basavanagudi: {
+  abids: {
     metaTitle: "Interior Designers in Abids | Heritage Home Interiors Hyderabad",
     metaDescription:
       "Heritage-specialist interior designers in Abids, Hyderabad. 18+ projects preserving old-world charm. Traditional craftsmanship, wooden interiors & culturally-rich designs. 10-year warranty!",
@@ -157,7 +157,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Abids | EverySpaces",
     ogDescription: "Heritage interiors in Abids. Free consultation!",
   },
-  sadashivanagar: {
+  "banjara-hills": {
     metaTitle: "Interior Designers in Banjara Hills | Luxury Bungalow Interiors Hyderabad",
     metaDescription:
       "Luxury interior designers in Banjara Hills, Hyderabad. 15+ premium bungalow projects. Grand living spaces, imported finishes & exclusive designs for elite homes. Free consultation!",
@@ -165,7 +165,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Banjara Hills | EverySpaces",
     ogDescription: "Luxury Banjara Hills bungalows. Free consultation!",
   },
-  "rt-nagar": {
+  manikonda: {
     metaTitle: "Interior Designers in Manikonda | Affordable Quality Home Interiors Hyderabad",
     metaDescription:
       "Affordable interior designers in Manikonda, Hyderabad. 17+ projects with quality materials. Budget-friendly modular kitchens, wardrobes & complete home solutions. Starting ₹6 lakhs!",
@@ -173,7 +173,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Manikonda | EverySpaces",
     ogDescription: "Quality interiors in Manikonda. Free consultation!",
   },
-  vijayanagar: {
+  kukatpally: {
     metaTitle: "Interior Designers in Kukatpally | Complete Home Transformation Hyderabad",
     metaDescription:
       "Trusted interior designers in Kukatpally, Hyderabad. 20+ complete home transformations. Modern modular kitchens, smart storage & family-friendly designs. 10-year warranty!",
@@ -181,7 +181,7 @@ const LOCALITY_SEO: Record<string, LocalitySeo> = {
     ogTitle: "Interior Designers in Kukatpally | EverySpaces",
     ogDescription: "Complete transformations in Kukatpally. Free consultation!",
   },
-  "hbr-layout": {
+  begumpet: {
     metaTitle: "Interior Designers in Begumpet | Local Experts Home Interiors Hyderabad",
     metaDescription:
       "Local expert interior designers in Begumpet, Hyderabad. 30+ projects in our home locality. Modern modular kitchens, wardrobes & complete home interiors. 10-year warranty. Visit our studio!",
@@ -196,10 +196,10 @@ function staticSrc(img: string | StaticImageData): string {
 }
 
 const HERO_BY_SLUG: Record<string, string | StaticImageData> = {
-  indiranagar: indiranagarHero,
-  whitefield: whitefieldHero,
-  "hsr-layout": hsrHero,
-  koramangala: koramangalaHero,
+  "jubilee-hills": indiranagarHero,
+  madhapur: whitefieldHero,
+  kondapur: hsrHero,
+  gachibowli: koramangalaHero,
 };
 
 export const VALID_LOCALITY_SLUGS = Object.keys(LOCALITY_SEO);

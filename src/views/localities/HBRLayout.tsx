@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import LocalityPageTemplate from "./LocalityPageTemplate";
 import gallery17 from "@/assets/gallery-17.jpg";
@@ -92,7 +92,7 @@ const HBRLayout = () => {
   return (
     <LocalityPageTemplate
       localityName="Begumpet"
-      slug="hbr-layout"
+      slug="begumpet"
       projectCount="30+ Projects"
       heroImage={gallery17}
       galleryImages={[gallery18, gallery19, gallery20, gallery21, gallery22, gallery23, gallery24, gallery17]}
