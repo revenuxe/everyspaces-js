@@ -1,8 +1,7 @@
-import "dotenv/config";
 import { defineCliConfig } from "sanity/cli";
 
 function readEnv(name: string): string {
-  const raw = process.env[name] || "";
+  const raw = process.env?.[name] || "";
   return raw.replace(/^"(.*)"$/, "$1").trim();
 }
 

@@ -1,10 +1,9 @@
-import "dotenv/config";
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { schemaTypes } from "./src/sanity/schemaTypes";
 
 function readEnv(name: string): string {
-  const envFromProcess = process.env[name];
+  const envFromProcess = process.env?.[name];
   const envFromImportMeta = (import.meta as any)?.env?.[name] as string | undefined;
   const raw = envFromProcess ?? envFromImportMeta ?? "";
   return raw.replace(/^"(.*)"$/, "$1").trim();
