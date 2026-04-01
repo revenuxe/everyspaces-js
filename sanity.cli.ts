@@ -1,6 +1,7 @@
 import { defineCliConfig } from "sanity/cli";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
+import sanityProject from "./sanity.project.json";
 
 function readEnvFileValue(name: string): string {
   try {
@@ -22,12 +23,19 @@ function readEnv(name: string): string {
   return raw.replace(/^"(.*)"$/, "$1").trim();
 }
 
-const projectId = readEnv("SANITY_STUDIO_PROJECT_ID") || readEnv("NEXT_PUBLIC_SANITY_PROJECT_ID");
-const dataset = readEnv("SANITY_STUDIO_DATASET") || readEnv("NEXT_PUBLIC_SANITY_DATASET") || "production";
+const projectId =
+  readEnv("SANITY_STUDIO_PROJECT_ID") ||
+  readEnv("NEXT_PUBLIC_SANITY_PROJECT_ID") ||
+  sanityProject.projectId;
+const dataset =
+  readEnv("SANITY_STUDIO_DATASET") ||
+  readEnv("NEXT_PUBLIC_SANITY_DATASET") ||
+  sanityProject.dataset ||
+  "production";
 
 if (!projectId) {
   throw new Error(
-    "Missing Sanity project ID. Set SANITY_STUDIO_PROJECT_ID (or NEXT_PUBLIC_SANITY_PROJECT_ID) in .env.",
+    "Missing Sanity project ID. Set SANITY_STUDIO_PROJECT_ID in .env or projectId in sanity.project.json.",
   );
 }
 
