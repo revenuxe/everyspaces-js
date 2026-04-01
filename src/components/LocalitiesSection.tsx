@@ -21,6 +21,42 @@ import gallery15 from "@/assets/gallery-15.jpg";
 import gallery16 from "@/assets/gallery-16.jpg";
 import gallery17 from "@/assets/gallery-17.jpg";
 
+function toHyderabadLocalityHref(name: string): string {
+  const normalized = name.toLowerCase().replace(/\s+/g, " ").trim();
+  const slug =
+    normalized === "hitech city"
+      ? "hitec-city"
+      : normalized === "financial district"
+        ? "financial-district"
+        : normalized.replace(/\s+/g, "-");
+
+  const allowed = new Set([
+    "jubilee-hills",
+    "gachibowli",
+    "kondapur",
+    "madhapur",
+    "himayatnagar",
+    "nallagandla",
+    "ameerpet",
+    "hitec-city",
+    "nanakramguda",
+    "narsingi",
+    "financial-district",
+    "kokapet",
+    "kompally",
+    "secunderabad",
+    "miyapur",
+    "abids",
+    "uppal",
+    "kukatpally",
+    "banjara-hills",
+    "manikonda",
+    "begumpet",
+  ]);
+
+  return allowed.has(slug) ? `/hyderabad/${slug}` : `/hyderabad?area=${encodeURIComponent(name)}`;
+}
+
 const localities = [{
   name: "Gachibowli",
   keyword: "Interior Designers in Gachibowli",
@@ -130,7 +166,7 @@ const LocalitiesSection = () => {
             {localities.map((locality, index) => (
               <a
                 key={index}
-                href={`/hyderabad?area=${encodeURIComponent(locality.name)}`}
+                href={toHyderabadLocalityHref(locality.name)}
                 className="flex-shrink-0 flex flex-col items-center group cursor-pointer"
               >
                 {/* Circular Image */}

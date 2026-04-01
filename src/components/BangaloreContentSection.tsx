@@ -53,6 +53,42 @@ const whyBangalore = [
   },
 ];
 
+function toHyderabadLocalityHref(area: string): string {
+  const normalized = area.toLowerCase().replace(/\s+/g, " ").trim();
+  const slug =
+    normalized === "hitech city"
+      ? "hitec-city"
+      : normalized === "financial district"
+        ? "financial-district"
+        : normalized.replace(/\s+/g, "-");
+
+  const allowed = new Set([
+    "jubilee-hills",
+    "gachibowli",
+    "kondapur",
+    "madhapur",
+    "himayatnagar",
+    "nallagandla",
+    "ameerpet",
+    "hitec-city",
+    "nanakramguda",
+    "narsingi",
+    "financial-district",
+    "kokapet",
+    "kompally",
+    "secunderabad",
+    "miyapur",
+    "abids",
+    "uppal",
+    "kukatpally",
+    "banjara-hills",
+    "manikonda",
+    "begumpet",
+  ]);
+
+  return allowed.has(slug) ? `/hyderabad/${slug}` : `/hyderabad?area=${encodeURIComponent(area)}`;
+}
+
 const BangaloreContentSection = () => {
   return (
     <section className="py-16 md:py-24 bg-background">
@@ -125,7 +161,7 @@ const BangaloreContentSection = () => {
                   {zone.areas.map((area) => (
                     <a
                       key={area}
-                      href={`/hyderabad?area=${encodeURIComponent(area)}`}
+                      href={toHyderabadLocalityHref(area)}
                       className="text-xs bg-muted px-3 py-1.5 rounded-full text-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors font-body"
                     >
                       {area}

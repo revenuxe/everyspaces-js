@@ -11,6 +11,51 @@ function unauthorizedResponse() {
 }
 
 export function middleware(request: NextRequest) {
+  // SEO canonicalization: redirect /hyderabad?area=XYZ → /hyderabad/<slug> when we have a dedicated page.
+  if (request.nextUrl.pathname === "/hyderabad") {
+    const area = (request.nextUrl.searchParams.get("area") ?? "").trim();
+    if (area) {
+      const normalized = area.toLowerCase().replace(/\s+/g, " ").trim();
+      const slug =
+        normalized === "hitech city"
+          ? "hitec-city"
+          : normalized === "financial district"
+            ? "financial-district"
+            : normalized.replace(/\s+/g, "-");
+
+      const allowed = new Set([
+        "jubilee-hills",
+        "gachibowli",
+        "kondapur",
+        "madhapur",
+        "himayatnagar",
+        "nallagandla",
+        "ameerpet",
+        "hitec-city",
+        "nanakramguda",
+        "narsingi",
+        "financial-district",
+        "kokapet",
+        "kompally",
+        "secunderabad",
+        "miyapur",
+        "abids",
+        "uppal",
+        "kukatpally",
+        "banjara-hills",
+        "manikonda",
+        "begumpet",
+      ]);
+
+      if (allowed.has(slug)) {
+        const url = request.nextUrl.clone();
+        url.pathname = `/hyderabad/${slug}`;
+        url.search = "";
+        return NextResponse.redirect(url, 301);
+      }
+    }
+  }
+
   if (!request.nextUrl.pathname.startsWith("/studio")) {
     return NextResponse.next();
   }
@@ -45,5 +90,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/studio/:path*"],
+  matcher: ["/studio/:path*", "/hyderabad"],
 };
