@@ -91,7 +91,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/70 font-body">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-secondary flex-shrink-0" />
-                <span>HBR Layout, Hyderabad 560045</span>
+                <span>Begumpet, Hyderabad 500016</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-secondary flex-shrink-0" />
@@ -108,27 +108,27 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg mb-4">Hyderabad Localities</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70 font-body">
-              <li><a href="/hyderabad/jubilee-hills" className="hover:text-secondary transition-colors">Indiranagar</a></li>
-              <li><a href="/hyderabad/gachibowli" className="hover:text-secondary transition-colors">Koramangala</a></li>
-              <li><a href="/hyderabad/kondapur" className="hover:text-secondary transition-colors">HSR Layout</a></li>
-              <li><a href="/hyderabad/madhapur" className="hover:text-secondary transition-colors">Whitefield</a></li>
-              <li><a href="/hyderabad/himayatnagar" className="hover:text-secondary transition-colors">Jayanagar</a></li>
-              <li><a href="/hyderabad/nallagandla" className="hover:text-secondary transition-colors">JP Nagar</a></li>
-              <li><a href="/hyderabad/ameerpet" className="hover:text-secondary transition-colors">BTM Layout</a></li>
-              <li><a href="/hyderabad/hitec-city" className="hover:text-secondary transition-colors">Electronic City</a></li>
-              <li><a href="/hyderabad/nanakramguda" className="hover:text-secondary transition-colors">Marathahalli</a></li>
-              <li><a href="/hyderabad/narsingi" className="hover:text-secondary transition-colors">Sarjapur Road</a></li>
-              <li><a href="/hyderabad/financial-district" className="hover:text-secondary transition-colors">Bellandur</a></li>
-              <li><a href="/hyderabad/kokapet" className="hover:text-secondary transition-colors">Hebbal</a></li>
-              <li><a href="/hyderabad/kompally" className="hover:text-secondary transition-colors">Yelahanka</a></li>
-              <li><a href="/hyderabad/secunderabad" className="hover:text-secondary transition-colors">Malleshwaram</a></li>
-              <li><a href="/hyderabad/miyapur" className="hover:text-secondary transition-colors">Rajajinagar</a></li>
-              <li><a href="/hyderabad/abids" className="hover:text-secondary transition-colors">Basavanagudi</a></li>
-              <li><a href="/hyderabad/uppal" className="hover:text-secondary transition-colors">Banashankari</a></li>
-              <li><a href="/hyderabad/kukatpally" className="hover:text-secondary transition-colors">Vijayanagar</a></li>
-              <li><a href="/hyderabad/banjara-hills" className="hover:text-secondary transition-colors">Sadashivanagar</a></li>
-              <li><a href="/hyderabad/manikonda" className="hover:text-secondary transition-colors">RT Nagar</a></li>
-              <li><a href="/hyderabad/begumpet" className="hover:text-secondary transition-colors">HBR Layout</a></li>
+              <li><a href="/hyderabad/jubilee-hills" className="hover:text-secondary transition-colors">Jubilee Hills</a></li>
+              <li><a href="/hyderabad/gachibowli" className="hover:text-secondary transition-colors">Gachibowli</a></li>
+              <li><a href="/hyderabad/kondapur" className="hover:text-secondary transition-colors">Kondapur</a></li>
+              <li><a href="/hyderabad/madhapur" className="hover:text-secondary transition-colors">Madhapur</a></li>
+              <li><a href="/hyderabad/himayatnagar" className="hover:text-secondary transition-colors">Himayatnagar</a></li>
+              <li><a href="/hyderabad/nallagandla" className="hover:text-secondary transition-colors">Nallagandla</a></li>
+              <li><a href="/hyderabad/ameerpet" className="hover:text-secondary transition-colors">Ameerpet</a></li>
+              <li><a href="/hyderabad/hitec-city" className="hover:text-secondary transition-colors">HITEC City</a></li>
+              <li><a href="/hyderabad/nanakramguda" className="hover:text-secondary transition-colors">Nanakramguda</a></li>
+              <li><a href="/hyderabad/narsingi" className="hover:text-secondary transition-colors">Narsingi</a></li>
+              <li><a href="/hyderabad/financial-district" className="hover:text-secondary transition-colors">Financial District</a></li>
+              <li><a href="/hyderabad/kokapet" className="hover:text-secondary transition-colors">Kokapet</a></li>
+              <li><a href="/hyderabad/kompally" className="hover:text-secondary transition-colors">Kompally</a></li>
+              <li><a href="/hyderabad/secunderabad" className="hover:text-secondary transition-colors">Secunderabad</a></li>
+              <li><a href="/hyderabad/miyapur" className="hover:text-secondary transition-colors">Miyapur</a></li>
+              <li><a href="/hyderabad/abids" className="hover:text-secondary transition-colors">Abids</a></li>
+              <li><a href="/hyderabad/uppal" className="hover:text-secondary transition-colors">Uppal</a></li>
+              <li><a href="/hyderabad/kukatpally" className="hover:text-secondary transition-colors">Kukatpally</a></li>
+              <li><a href="/hyderabad/banjara-hills" className="hover:text-secondary transition-colors">Banjara Hills</a></li>
+              <li><a href="/hyderabad/manikonda" className="hover:text-secondary transition-colors">Manikonda</a></li>
+              <li><a href="/hyderabad/begumpet" className="hover:text-secondary transition-colors">Begumpet</a></li>
             </ul>
           </div>
         </div>

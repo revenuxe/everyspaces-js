@@ -1,4 +1,4 @@
-﻿import { MapPin, Award, Clock, Shield, Star, Home } from "lucide-react";
+import { MapPin, Award, Clock, Shield, Star, Home } from "lucide-react";
 
 const stats = [
   { icon: Home, value: "500+", label: "Homes Designed in Hyderabad" },
@@ -10,22 +10,22 @@ const stats = [
 const neighborhoods = [
   {
     name: "South Hyderabad",
-    areas: ["Koramangala", "Jayanagar", "JP Nagar", "Banashankari", "BTM Layout", "Basavanagudi"],
+    areas: ["Jubilee Hills", "Banjara Hills", "Narsingi", "Kokapet", "Financial District", "Gachibowli"],
     description: "Premium apartments and independent houses with a blend of traditional and contemporary styles.",
   },
   {
     name: "East Hyderabad",
-    areas: ["Whitefield", "Marathahalli", "Bellandur", "Sarjapur Road"],
+    areas: ["Madhapur", "Kondapur", "HITEC City", "Nanakramguda"],
     description: "IT corridor homes demanding modern, space-efficient interior solutions for tech professionals.",
   },
   {
     name: "North Hyderabad",
-    areas: ["Hebbal", "Yelahanka", "HBR Layout", "RT Nagar", "Sadashivanagar"],
+    areas: ["Kompally", "Secunderabad", "Begumpet", "Manikonda", "Miyapur"],
     description: "Rapidly growing residential hubs with new-age apartments and villa communities.",
   },
   {
     name: "Central & West Hyderabad",
-    areas: ["Indiranagar", "Malleshwaram", "Rajajinagar", "Vijayanagar"],
+    areas: ["Himayatnagar", "Ameerpet", "Abids", "Kukatpally", "Uppal"],
     description: "Heritage neighborhoods with character homes requiring thoughtful renovation and modern upgrades.",
   },
 ];
@@ -34,7 +34,7 @@ const whyBangalore = [
   {
     icon: MapPin,
     title: "Local Material Sourcing",
-    description: "We source from Hyderabad's trusted suppliers — Century Ply from Peenya, Hettich hardware from authorized dealers, and Hyderabad-made granite and tiles for cost savings.",
+    description: "We source from Hyderabad's trusted suppliers — Century and Greenply boards, premium Hettich/Hafele hardware, and local granite/tile partners for cost and quality control.",
   },
   {
     icon: Award,
@@ -44,7 +44,7 @@ const whyBangalore = [
   {
     icon: Clock,
     title: "BBMP & Society Approvals",
-    description: "We handle all apartment society permissions, BBMP guidelines, and building management coordination so you don't have to worry about compliance.",
+    description: "We handle all apartment society permissions, GHMC guidelines, and building management coordination so you don't have to worry about compliance.",
   },
   {
     icon: Shield,
@@ -81,7 +81,7 @@ const BangaloreContentSection = () => {
               Why Hyderabad Homeowners Trust EverySpaces
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto font-body">
-              We understand Hyderabad's unique housing landscape — from compact IT corridor apartments to spacious Sadashivanagar villas
+              We understand Hyderabad's unique housing landscape — from compact IT corridor apartments to spacious Jubilee Hills and Kokapet villas
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -110,7 +110,7 @@ const BangaloreContentSection = () => {
               Interior Design Across All of Hyderabad
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto font-body">
-              From Whitefield to Rajajinagar, we've designed homes in every corner of Hyderabad
+              From Gachibowli to Uppal, we've designed homes in every corner of Hyderabad
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -125,7 +125,7 @@ const BangaloreContentSection = () => {
                   {zone.areas.map((area) => (
                     <a
                       key={area}
-                      href={`/hyderabad/${area.toLowerCase().replace(/\s+/g, "-")}`}
+                      href={`/hyderabad?area=${encodeURIComponent(area)}`}
                       className="text-xs bg-muted px-3 py-1.5 rounded-full text-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors font-body"
                     >
                       {area}

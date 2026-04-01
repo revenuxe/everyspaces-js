@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import {
   Accordion,
   AccordionContent,
@@ -15,17 +15,17 @@ const bangaloreFaqs = [
   {
     question: "Which areas in Hyderabad have the highest demand for interior design?",
     answer:
-      "Whitefield, Sarjapur Road, and Electronic City lead in demand due to massive IT-driven residential development. In established areas, Koramangala, Indiranagar, and HSR Layout see high renovation demand. North Hyderabad areas like Hebbal and Yelahanka are emerging hotspots with new apartment complexes. EverySpaces has completed 500+ projects across all these localities.",
+      "Gachibowli, Kondapur, and HITEC City lead in demand due to massive IT-driven residential development. In established premium zones, Jubilee Hills, Banjara Hills, and Financial District see high renovation demand. North Hyderabad areas like Kompally and Secunderabad are also emerging hotspots with new apartment communities.",
   },
   {
     question: "How do I choose the right interior designer in Hyderabad?",
     answer:
-      "Look for: (1) Portfolio with Hyderabad-specific projects similar to your home type, (2) In-house manufacturing — not just design outsourcing, (3) Clear warranty terms in writing (EverySpaces offers 10-year hardware warranty), (4) BBMP and society approval handling, (5) Transparent pricing with no hidden costs, (6) Real Google reviews from Hyderabad homeowners. Always visit their factory or showroom before finalizing.",
+      "Look for: (1) Portfolio with Hyderabad-specific projects similar to your home type, (2) In-house manufacturing — not just design outsourcing, (3) Clear warranty terms in writing (EverySpaces offers 10-year hardware warranty), (4) GHMC and society approval handling, (5) Transparent pricing with no hidden costs, (6) Real Google reviews from Hyderabad homeowners. Always visit their factory or showroom before finalizing.",
   },
   {
     question: "What modular kitchen layout works best for Hyderabad apartments?",
     answer:
-      "Most Hyderabad apartments have compact kitchens (50-80 sq ft), making L-shaped and parallel layouts the most practical. L-shaped kitchens maximize corner space and work well in 2BHK/3BHK apartments across Whitefield and Sarjapur Road. Parallel kitchens suit narrow galley-style kitchens common in older Koramangala and Indiranagar buildings. For larger villa kitchens in Sadashivanagar or Hebbal, U-shaped or island layouts are ideal.",
+      "Most Hyderabad apartments have compact kitchens (50-80 sq ft), making L-shaped and parallel layouts the most practical. L-shaped kitchens maximize corner space and work well in 2BHK/3BHK apartments across Kondapur and Nallagandla. Parallel kitchens suit narrow galley-style kitchens common in older Begumpet and Himayatnagar buildings. For larger villa kitchens in Jubilee Hills or Kokapet, U-shaped or island layouts are ideal.",
   },
   {
     question: "What materials are best suited for Hyderabad's climate?",

@@ -277,7 +277,7 @@ const Contact = () => {
                       <div>
                         <p className="font-semibold text-primary">Office Address</p>
                         <p className="text-muted-foreground font-body">
-                          HBR Layout, Hyderabad 560045<br />
+                          Begumpet, Hyderabad 500016<br />
                           Karnataka, India
                         </p>
                       </div>
@@ -318,14 +318,14 @@ const Contact = () => {
                 {/* Google Map */}
                 <div className="rounded-3xl overflow-hidden shadow-soft border border-border/50">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0847073368395!2d77.61235!3d13.0297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17b8f3c40c8d%3A0x9f5c1e4f9d1e4f5c!2sHBR%20Layout%2C%20Hyderabad%2C%20Telangana%20560045!5e0!3m2!1sen!2sin!4v1703123456789!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4503043029614!2d78.462777!3d17.444793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91c4fd7d1f0f%3A0x35be14ca13b6f8e9!2sBegumpet%2C%20Hyderabad%2C%20Telangana%20500016!5e0!3m2!1sen!2sin!4v1703123456789!5m2!1sen!2sin"
                     width="100%"
                     height="300"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="EverySpaces Office Location - HBR Layout, Hyderabad"
+                    title="EverySpaces Office Location - Begumpet, Hyderabad"
                   ></iframe>
                 </div>
               </div>

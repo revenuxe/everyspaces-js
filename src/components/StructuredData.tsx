@@ -41,10 +41,10 @@ export const organizationSchema = {
   "slogan": "End to End Interior Solutions",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "HBR Layout",
+    "streetAddress": "Begumpet",
     "addressLocality": "Hyderabad",
-    "addressRegion": "Karnataka",
-    "postalCode": "560045",
+    "addressRegion": "Telangana",
+    "postalCode": "500016",
     "addressCountry": "IN"
   },
   "contactPoint": [
@@ -124,10 +124,10 @@ export const localBusinessSchema = {
   "description": "Best interior designers in Hyderabad specializing in modular kitchens, wardrobes, and complete home interiors. 500+ projects completed with 10-year warranty.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "HBR Layout",
+    "streetAddress": "Begumpet",
     "addressLocality": "Hyderabad",
-    "addressRegion": "Karnataka",
-    "postalCode": "560045",
+    "addressRegion": "Telangana",
+    "postalCode": "500016",
     "addressCountry": "IN"
   },
   "geo": {
@@ -152,7 +152,7 @@ export const localBusinessSchema = {
       "name": "Hyderabad"
     }
   ],
-  "hasMap": "https://maps.google.com/?q=EverySpaces+HBR+Layout+Hyderabad",
+  "hasMap": "https://maps.google.com/?q=EverySpaces+Begumpet+Hyderabad",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
@@ -166,21 +166,21 @@ export const localBusinessSchema = {
       "@type": "Review",
       "author": { "@type": "Person", "name": "Priya Sharma" },
       "datePublished": "2025-11-15",
-      "reviewBody": "EverySpaces transformed our 3BHK in Whitefield beautifully. The modular kitchen quality is outstanding and the team was very professional. Completed on time with great attention to detail.",
+      "reviewBody": "EverySpaces transformed our 3BHK in Gachibowli beautifully. The modular kitchen quality is outstanding and the team was very professional. Completed on time with great attention to detail.",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
     },
     {
       "@type": "Review",
       "author": { "@type": "Person", "name": "Rahul Menon" },
       "datePublished": "2025-10-22",
-      "reviewBody": "Got our full home interiors done by EverySpaces for our apartment in Sarjapur Road. Excellent design sense, premium materials, and the 10-year warranty gives great peace of mind.",
+      "reviewBody": "Got our full home interiors done by EverySpaces for our apartment in Kondapur. Excellent design sense, premium materials, and the 10-year warranty gives great peace of mind.",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
     },
     {
       "@type": "Review",
       "author": { "@type": "Person", "name": "Anitha Reddy" },
       "datePublished": "2025-09-10",
-      "reviewBody": "We chose EverySpaces for our villa interior in Hebbal. The wardrobe designs and false ceiling work exceeded our expectations. Highly recommend for premium interiors in Hyderabad.",
+      "reviewBody": "We chose EverySpaces for our villa interior in Kokapet. The wardrobe designs and false ceiling work exceeded our expectations. Highly recommend for premium interiors in Hyderabad.",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
     }
   ]
@@ -535,10 +535,10 @@ export const professionalServiceSchema = {
   "priceRange": "₹₹₹",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "HBR Layout",
+    "streetAddress": "Begumpet",
     "addressLocality": "Hyderabad",
-    "addressRegion": "Karnataka",
-    "postalCode": "560045",
+    "addressRegion": "Telangana",
+    "postalCode": "500016",
     "addressCountry": "IN"
   },
   "geo": {
