@@ -14,7 +14,8 @@ const dataset = readEnv("SANITY_STUDIO_DATASET") || readEnv("NEXT_PUBLIC_SANITY_
 
 if (!projectId) {
   throw new Error(
-    "Missing Sanity project ID. Set SANITY_STUDIO_PROJECT_ID (or NEXT_PUBLIC_SANITY_PROJECT_ID) in .env.",
+    "Missing Sanity project ID. Set SANITY_STUDIO_PROJECT_ID in .env (recommended for Studio). " +
+      "If you only have NEXT_PUBLIC_SANITY_PROJECT_ID, ensure it is exposed to Sanity Studio's Vite env.",
   );
 }
 
@@ -25,6 +26,11 @@ export default defineConfig({
   dataset,
   basePath: "/studio",
   plugins: [deskTool()],
+  // Sanity Studio runs on Vite in the browser; allow NEXT_PUBLIC_* as a fallback source.
+  // Prefer SANITY_STUDIO_* in production/studio environments.
+  vite: {
+    envPrefix: ["SANITY_STUDIO_", "NEXT_PUBLIC_"],
+  },
   schema: {
     types: schemaTypes,
   },
