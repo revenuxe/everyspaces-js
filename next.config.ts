@@ -393,6 +393,21 @@ const nextConfig: NextConfig = {
         destination: "/services/full-home-design",
         permanent: true,
       },
+      {
+        source: "/blog",
+        destination: "/articles",
+        permanent: true,
+      },
+      {
+        source: "/projects",
+        destination: "/portfolio",
+        permanent: true,
+      },
+      {
+        source: "/about",
+        destination: "/about-us",
+        permanent: true,
+      },
     ];
   },
 };

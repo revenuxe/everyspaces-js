@@ -11,6 +11,15 @@ function unauthorizedResponse() {
 }
 
 export function middleware(request: NextRequest) {
+  // Canonical host redirect: old domain -> current domain.
+  const host = request.nextUrl.hostname.toLowerCase();
+  if (host === "zikhra.com" || host === "www.zikhra.com") {
+    const url = request.nextUrl.clone();
+    url.hostname = "everyspaces.com";
+    url.protocol = "https:";
+    return NextResponse.redirect(url, 301);
+  }
+
   // SEO canonicalization: redirect /hyderabad?area=XYZ → /hyderabad/<slug> when we have a dedicated page.
   if (request.nextUrl.pathname === "/hyderabad") {
     const area = (request.nextUrl.searchParams.get("area") ?? "").trim();
@@ -90,5 +99,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/studio/:path*", "/hyderabad"],
+  matcher: ["/:path*"],
 };
