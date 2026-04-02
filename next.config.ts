@@ -224,6 +224,175 @@ const nextConfig: NextConfig = {
         destination: "/hyderabad/:path*",
         permanent: true,
       },
+      // Legacy location URL structure -> canonical Hyderabad locality pages
+      {
+        source: "/area/banjara-hills",
+        destination: "/hyderabad/banjara-hills",
+        permanent: true,
+      },
+      {
+        source: "/area/financial-district",
+        destination: "/hyderabad/financial-district",
+        permanent: true,
+      },
+      {
+        source: "/area/gachibowli",
+        destination: "/hyderabad/gachibowli",
+        permanent: true,
+      },
+      {
+        source: "/area/hitec-city",
+        destination: "/hyderabad/hitec-city",
+        permanent: true,
+      },
+      {
+        source: "/area/jubilee-hills",
+        destination: "/hyderabad/jubilee-hills",
+        permanent: true,
+      },
+      {
+        source: "/area/kokapet",
+        destination: "/hyderabad/kokapet",
+        permanent: true,
+      },
+      {
+        source: "/area/kondapur",
+        destination: "/hyderabad/kondapur",
+        permanent: true,
+      },
+      {
+        source: "/area/madhapur",
+        destination: "/hyderabad/madhapur",
+        permanent: true,
+      },
+      {
+        source: "/area/narsingi",
+        destination: "/hyderabad/narsingi",
+        permanent: true,
+      },
+      {
+        source: "/area/tellapur",
+        destination: "/hyderabad/nallagandla",
+        permanent: true,
+      },
+
+      // Legacy portfolio category URLs -> canonical portfolio hub
+      {
+        source: "/portfolio/bathroom",
+        destination: "/portfolio",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/bedroom",
+        destination: "/portfolio",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/kitchen",
+        destination: "/portfolio",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/living-room",
+        destination: "/portfolio",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/study-room",
+        destination: "/portfolio",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/wardrobe",
+        destination: "/portfolio",
+        permanent: true,
+      },
+
+      // Legacy project-type URLs -> canonical service intent pages
+      {
+        source: "/project-type/2bhk",
+        destination: "/services/2bhk-interiors",
+        permanent: true,
+      },
+      {
+        source: "/project-type/3bhk",
+        destination: "/services/3bhk-interiors",
+        permanent: true,
+      },
+      {
+        source: "/project-type/4bhk",
+        destination: "/services/full-home-design",
+        permanent: true,
+      },
+      {
+        source: "/project-type/penthouse",
+        destination: "/services/villa-interiors",
+        permanent: true,
+      },
+
+      // Legacy project detail URLs -> canonical portfolio hub
+      {
+        source: "/projects/2bhk-apartment",
+        destination: "/portfolio",
+        permanent: true,
+      },
+      {
+        source: "/projects/3bhk-penthouse",
+        destination: "/portfolio",
+        permanent: true,
+      },
+      {
+        source: "/projects/living-room-makeover",
+        destination: "/portfolio",
+        permanent: true,
+      },
+      {
+        source: "/projects/luxury-villa",
+        destination: "/portfolio",
+        permanent: true,
+      },
+      {
+        source: "/projects/master-bedroom",
+        destination: "/portfolio",
+        permanent: true,
+      },
+      {
+        source: "/projects/modular-kitchen-project",
+        destination: "/portfolio",
+        permanent: true,
+      },
+
+      // Legacy service slugs -> canonical service pages
+      {
+        source: "/services/bathroom",
+        destination: "/services/bathroom-design",
+        permanent: true,
+      },
+      {
+        source: "/services/bedroom",
+        destination: "/services/bedroom-design",
+        permanent: true,
+      },
+      {
+        source: "/services/full-home",
+        destination: "/services/full-home-design",
+        permanent: true,
+      },
+      {
+        source: "/services/wardrobes",
+        destination: "/services/wardrobe-design",
+        permanent: true,
+      },
+      {
+        source: "/services/commercial",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/services/renovation",
+        destination: "/services/full-home-design",
+        permanent: true,
+      },
     ];
   },
 };
