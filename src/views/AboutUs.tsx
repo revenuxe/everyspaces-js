@@ -118,6 +118,22 @@ const AboutUs = () => {
               </div>
             </div>
 
+            <div className="mt-8 md:mt-10 rounded-2xl border border-border/60 bg-muted/20 px-5 py-4 md:px-6 md:py-5">
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Digital experience</p>
+              <p className="text-foreground/90 font-body text-sm md:text-base mt-2">
+                This website is designed and built by{" "}
+                <a
+                  href="https://revenuxe.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-secondary hover:underline"
+                >
+                  Revenuxe
+                </a>
+                — product and engineering for modern brands.
+              </p>
+            </div>
+
             <div className="mt-10 md:mt-12 glass-card rounded-3xl p-5 md:p-8 shadow-elevated">
               <h2 className="font-display text-2xl text-primary">Ready to plan your space?</h2>
               <p className="text-foreground/90 font-body mt-2 max-w-2xl">
