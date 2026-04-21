@@ -118,28 +118,28 @@ const localities = [{
   keyword: "Complete Home Interiors in Uppal",
   image: gallery11,
 }, {
-  name: "LB Nagar",
-  keyword: "3BHK Interiors in LB Nagar",
-  image: gallery12,
-}, {
   name: "Financial District",
   keyword: "Interior Designers in Financial District",
-  image: gallery13,
-}, {
-  name: "Tellapur",
-  keyword: "New Apartment Interiors in Tellapur",
-  image: gallery14,
+  image: gallery12,
 }, {
   name: "Kokapet",
   keyword: "Luxury Apartment Interiors in Kokapet",
+  image: gallery13,
+}, {
+  name: "Nanakramguda",
+  keyword: "New Apartment Interiors in Nanakramguda",
+  image: gallery14,
+}, {
+  name: "Abids",
+  keyword: "Turnkey Interiors in Abids",
   image: gallery15,
 }, {
-  name: "Bachupally",
-  keyword: "Turnkey Interiors in Bachupally",
+  name: "Himayatnagar",
+  keyword: "Heritage Home Interiors in Himayatnagar",
   image: gallery16,
 }, {
-  name: "Chandanagar",
-  keyword: "Modular Interiors in Chandanagar",
+  name: "Kompally",
+  keyword: "Modular Interiors in Kompally",
   image: gallery17,
 }];
 const LocalitiesSection = () => {
@@ -150,10 +150,10 @@ const LocalitiesSection = () => {
             Our Reach
           </span>
           <h2 className="font-display text-3xl md:text-4xl text-primary mb-2">
-            Top Localities
+            Hyderabad Top Localities
           </h2>
           <p className="text-muted-foreground font-body max-w-md mx-auto">
-            Serving Hyderabad's finest neighborhoods with premium interiors
+            Explore location-specific interior services across Hyderabad neighborhoods
           </p>
         </div>
 

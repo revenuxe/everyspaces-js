@@ -7,6 +7,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import ScrollToTop from "@/components/ScrollToTop";
 import QuotationPopup from "@/components/QuotationPopup";
 import FloatingOrzaButton from "@/components/FloatingOrzaButton";
+import RouteFlowMarker from "@/components/RouteFlowMarker";
 import { useState } from "react";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
@@ -15,6 +16,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <RouteFlowMarker />
         <ScrollToTop />
         <QuotationPopup />
         <FloatingOrzaButton />

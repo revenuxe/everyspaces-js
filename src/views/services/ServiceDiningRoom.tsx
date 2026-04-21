@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
@@ -45,8 +45,8 @@ const diningFeatures = [
 // AEO-optimized FAQs
 const diningRoomFAQs = [
   {
-    question: "What is the cost of dining room design in Hyderabad?",
-    answer: "Dining room design in Hyderabad costs ₹50,000 to ₹2 lakh depending on size and fixtures. At EverySpaces, basic setups start from ₹50,000, with crockery units from ₹80,000, and luxury dining with chandelier from ₹1.5 lakh."
+    question: "What is the cost of dining room design ?",
+    answer: "Dining room design  costs â‚¹50,000 to â‚¹2 lakh depending on size and fixtures. At EverySpaces, basic setups start from â‚¹50,000, with crockery units from â‚¹80,000, and luxury dining with chandelier from â‚¹1.5 lakh."
   },
   {
     question: "What size dining table do I need?",
@@ -58,7 +58,7 @@ const diningRoomFAQs = [
   },
   {
     question: "Can you design a dining area in living room?",
-    answer: "Yes, EverySpaces specializes in open-plan living-dining designs. We use rugs, lighting, and furniture placement to define zones while maintaining visual flow. Starting from ₹50,000 for dining area."
+    answer: "Yes, EverySpaces specializes in open-plan living-dining designs. We use rugs, lighting, and furniture placement to define zones while maintaining visual flow. Starting from â‚¹50,000 for dining area."
   }
 ];
 
@@ -89,13 +89,13 @@ const ServiceDiningRoom = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Dining Room Design Hyderabad",
-      "Elegant dining room designs in Hyderabad. Custom dining tables, crockery units, bar cabinets, and statement chandeliers for family gatherings.",
+      "Dining Room Design",
+      "Elegant dining room designs . Custom dining tables, crockery units, bar cabinets, and statement chandeliers for family gatherings.",
       "https://everyspaces.com/services/dining-room",
       "https://everyspaces.com/service-dining-room.jpg",
       "50000-200000",
       {
-        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Dining Table", "Crockery Unit", "Chandelier", "Bar Cabinet", "Feature Wall"]
       }
     ),
@@ -107,7 +107,7 @@ const ServiceDiningRoom = () => {
     createFAQSchema(diningRoomFAQs, 'services/dining-room'),
     createProductSchema({
       name: "Dining Room Interior Design",
-      description: "Elegant dining room designs in Hyderabad with custom tables, crockery units, chandeliers, and bar cabinets.",
+      description: "Elegant dining room designs  with custom tables, crockery units, chandeliers, and bar cabinets.",
       image: "https://everyspaces.com/service-dining-room.jpg",
       url: "https://everyspaces.com/services/dining-room",
       priceRange: "50000-200000",
@@ -122,16 +122,16 @@ const ServiceDiningRoom = () => {
       <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Dining Room" }]} />
       
       <main className="pb-24">
-        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
+        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(kitchenImage)} alt="Dining Room Design Hyderabad" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(kitchenImage)} alt="Dining Room Design" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Dining Room Design
-                <span className="block text-secondary mt-2">in Hyderabad</span>
+                <span className="block text-secondary mt-2"></span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Create memorable dining experiences with EverySpaces's elegant designs
@@ -215,4 +215,5 @@ const ServiceDiningRoom = () => {
 };
 
 export default ServiceDiningRoom;
+
 

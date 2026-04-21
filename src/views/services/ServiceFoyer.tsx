@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
@@ -45,8 +45,8 @@ const foyerFeatures = [
 // AEO-optimized FAQs
 const foyerFAQs = [
   {
-    question: "What is the cost of foyer design in Hyderabad?",
-    answer: "Foyer design in Hyderabad costs ₹30,000 to ₹1.5 lakh depending on size and design. At EverySpaces, basic foyer setups start from ₹30,000, feature walls from ₹50,000, and grand entrances with chandelier from ₹1 lakh."
+    question: "What is the cost of foyer design ?",
+    answer: "Foyer design  costs â‚¹30,000 to â‚¹1.5 lakh depending on size and design. At EverySpaces, basic foyer setups start from â‚¹30,000, feature walls from â‚¹50,000, and grand entrances with chandelier from â‚¹1 lakh."
   },
   {
     question: "What should be included in a foyer design?",
@@ -54,7 +54,7 @@ const foyerFAQs = [
   },
   {
     question: "How to design a small apartment entrance?",
-    answer: "For small entrances, EverySpaces uses wall-mounted shoe cabinets, slim consoles, mirrors to create depth, and vertical storage. We maximize function without cluttering the space. Starting from ₹30,000."
+    answer: "For small entrances, EverySpaces uses wall-mounted shoe cabinets, slim consoles, mirrors to create depth, and vertical storage. We maximize function without cluttering the space. Starting from â‚¹30,000."
   },
   {
     question: "Can you design a Vastu-compliant entrance?",
@@ -85,13 +85,13 @@ const ServiceFoyer = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Foyer & Entrance Design Hyderabad",
-      "Make stunning first impressions with EverySpaces's foyer designs. Shoe cabinets, console tables, feature walls, and statement lighting in Hyderabad.",
+      "Foyer & Entrance Design",
+      "Make stunning first impressions with EverySpaces's foyer designs. Shoe cabinets, console tables, feature walls, and statement lighting .",
       "https://everyspaces.com/services/foyer-entrance",
       "https://everyspaces.com/service-foyer.jpg",
       "30000-150000",
       {
-        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Shoe Cabinet", "Console Table", "Feature Wall", "Statement Lighting", "Mirror"]
       }
     ),
@@ -103,7 +103,7 @@ const ServiceFoyer = () => {
     createFAQSchema(foyerFAQs, 'services/foyer-entrance'),
     createProductSchema({
       name: "Foyer & Entrance Interior",
-      description: "Entrance and foyer design in Hyderabad with shoe cabinets, consoles, feature walls, and chandeliers.",
+      description: "Entrance and foyer design  with shoe cabinets, consoles, feature walls, and chandeliers.",
       image: "https://everyspaces.com/service-foyer.jpg",
       url: "https://everyspaces.com/services/foyer-entrance",
       priceRange: "30000-150000",
@@ -118,16 +118,16 @@ const ServiceFoyer = () => {
       <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Foyer & Entrance" }]} />
       
       <main className="pb-24">
-        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
+        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(villaImage)} alt="Foyer Design Hyderabad" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(villaImage)} alt="Foyer Design" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Foyer & Entrance Design
-                <span className="block text-secondary mt-2">in Hyderabad</span>
+                <span className="block text-secondary mt-2"></span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Make stunning first impressions with EverySpaces's entryway designs
@@ -211,4 +211,5 @@ const ServiceFoyer = () => {
 };
 
 export default ServiceFoyer;
+
 

@@ -1,7 +1,7 @@
 import { MapPin, Award, Clock, Shield, Star, Home } from "lucide-react";
 
 const stats = [
-  { icon: Home, value: "500+", label: "Homes Designed in Hyderabad" },
+  { icon: Home, value: "500+", label: "Homes Designed in Bangalore" },
   { icon: Star, value: "4.8/5", label: "Average Customer Rating" },
   { icon: Clock, value: "45 Days", label: "Average Project Delivery" },
   { icon: Shield, value: "10 Years", label: "Warranty on Hardware" },
@@ -9,24 +9,24 @@ const stats = [
 
 const neighborhoods = [
   {
-    name: "South Hyderabad",
-    areas: ["Jubilee Hills", "Banjara Hills", "Narsingi", "Kokapet", "Financial District", "Gachibowli"],
-    description: "Premium apartments and independent houses with a blend of traditional and contemporary styles.",
+    name: "East Bangalore",
+    areas: ["Whitefield", "Marathahalli", "Bellandur", "Sarjapur Road"],
+    description: "High-growth residential belts with modern apartments and premium gated communities.",
   },
   {
-    name: "East Hyderabad",
-    areas: ["Madhapur", "Kondapur", "HITEC City", "Nanakramguda"],
-    description: "IT corridor homes demanding modern, space-efficient interior solutions for tech professionals.",
+    name: "South Bangalore",
+    areas: ["Koramangala", "HSR Layout", "JP Nagar", "Jayanagar", "Electronic City", "BTM Layout"],
+    description: "Vibrant neighborhoods with compact and mid-sized homes that need smart, elegant interiors.",
   },
   {
-    name: "North Hyderabad",
-    areas: ["Kompally", "Secunderabad", "Begumpet", "Manikonda", "Miyapur"],
-    description: "Rapidly growing residential hubs with new-age apartments and villa communities.",
+    name: "North Bangalore",
+    areas: ["Hebbal", "Yelahanka", "RT Nagar", "HBR Layout", "Sadashivanagar"],
+    description: "Fast-developing districts where families prefer turnkey interiors with long-term durability.",
   },
   {
-    name: "Central & West Hyderabad",
-    areas: ["Himayatnagar", "Ameerpet", "Abids", "Kukatpally", "Uppal"],
-    description: "Heritage neighborhoods with character homes requiring thoughtful renovation and modern upgrades.",
+    name: "Central & West Bangalore",
+    areas: ["Malleshwaram", "Rajajinagar", "Basavanagudi", "Banashankari", "Vijayanagar"],
+    description: "Established areas mixing classic homes and apartments that benefit from thoughtful modernization.",
   },
 ];
 
@@ -34,59 +34,27 @@ const whyBangalore = [
   {
     icon: MapPin,
     title: "Local Material Sourcing",
-    description: "We source from Hyderabad's trusted suppliers — Century and Greenply boards, premium Hettich/Hafele hardware, and local granite/tile partners for cost and quality control.",
+    description: "We source from Bangalore's trusted suppliers — Century and Greenply boards, premium Hettich/Hafele hardware, and local granite/tile partners for cost and quality control.",
   },
   {
     icon: Award,
-    title: "Hyderabad Climate Design",
-    description: "Our designs account for Hyderabad's moderate climate — optimal ventilation, moisture-resistant materials for monsoons, and natural light maximization year-round.",
+    title: "Bangalore Climate Design",
+    description: "Our designs account for Bangalore's weather profile with humidity-aware materials, good ventilation, and natural light planning.",
   },
   {
     icon: Clock,
     title: "BBMP & Society Approvals",
-    description: "We handle all apartment society permissions, GHMC guidelines, and building management coordination so you don't have to worry about compliance.",
+    description: "We handle apartment society permissions, BBMP-aligned documentation, and building management coordination.",
   },
   {
     icon: Shield,
-    title: "In-House Factory in Hyderabad",
-    description: "Our manufacturing unit in Hyderabad ensures faster delivery, quality control, and cost efficiency compared to outsourced production.",
+    title: "In-House Factory Operations",
+    description: "Our controlled production workflow ensures faster delivery, tighter quality checks, and predictable timelines.",
   },
 ];
 
-function toHyderabadLocalityHref(area: string): string {
-  const normalized = area.toLowerCase().replace(/\s+/g, " ").trim();
-  const slug =
-    normalized === "hitech city"
-      ? "hitec-city"
-      : normalized === "financial district"
-        ? "financial-district"
-        : normalized.replace(/\s+/g, "-");
-
-  const allowed = new Set([
-    "jubilee-hills",
-    "gachibowli",
-    "kondapur",
-    "madhapur",
-    "himayatnagar",
-    "nallagandla",
-    "ameerpet",
-    "hitec-city",
-    "nanakramguda",
-    "narsingi",
-    "financial-district",
-    "kokapet",
-    "kompally",
-    "secunderabad",
-    "miyapur",
-    "abids",
-    "uppal",
-    "kukatpally",
-    "banjara-hills",
-    "manikonda",
-    "begumpet",
-  ]);
-
-  return allowed.has(slug) ? `/hyderabad/${slug}` : `/hyderabad?area=${encodeURIComponent(area)}`;
+function toBangaloreLocalityHref(area: string): string {
+  return `/bangalore/${area.toLowerCase().replace(/\s+/g, "-")}`;
 }
 
 const BangaloreContentSection = () => {
@@ -107,17 +75,17 @@ const BangaloreContentSection = () => {
           ))}
         </div>
 
-        {/* Why EverySpaces in Hyderabad */}
+        {/* Why EverySpaces in Bangalore */}
         <div className="mb-16">
           <div className="text-center mb-10">
             <span className="text-secondary font-semibold text-sm tracking-wider uppercase mb-2 block">
               Why Choose Us
             </span>
             <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
-              Why Hyderabad Homeowners Trust EverySpaces
+              Why Bangalore Homeowners Trust EverySpaces
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto font-body">
-              We understand Hyderabad's unique housing landscape — from compact IT corridor apartments to spacious Jubilee Hills and Kokapet villas
+              We understand Bangalore's housing landscape — from compact tech-corridor apartments to premium villa communities.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -143,10 +111,10 @@ const BangaloreContentSection = () => {
               Our Coverage
             </span>
             <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
-              Interior Design Across All of Hyderabad
+              Interior Design Across Bangalore
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto font-body">
-              From Gachibowli to Uppal, we've designed homes in every corner of Hyderabad
+              From Whitefield to Banashankari, we've designed homes in every corner of Bangalore
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -161,7 +129,7 @@ const BangaloreContentSection = () => {
                   {zone.areas.map((area) => (
                     <a
                       key={area}
-                      href={toHyderabadLocalityHref(area)}
+                      href={toBangaloreLocalityHref(area)}
                       className="text-xs bg-muted px-3 py-1.5 rounded-full text-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors font-body"
                     >
                       {area}

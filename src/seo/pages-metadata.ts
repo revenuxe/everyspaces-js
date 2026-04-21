@@ -9,29 +9,34 @@ const ogDefaults = {
 export const PAGE_METADATA: Record<string, Metadata> = {
   "/": {
     title:
-      "EverySpaces | Best Interior Designers in Hyderabad | Modular Kitchen & Home Interiors",
+      "EverySpaces | Best Interior Designers in Hyderabad & Bangalore | Modular Kitchen & Home Interiors",
     description:
-      "EverySpaces is Hyderabad's top interior design company. Modular kitchens, wardrobes & full home interiors with 10-year warranty. 500+ projects completed. Free consultation!",
+      "EverySpaces is a top interior design company in Hyderabad and Bangalore. Modular kitchens, wardrobes & full home interiors with 10-year warranty. 500+ projects completed. Free consultation!",
     keywords: [
       "best interior designers hyderabad",
+      "best interior designers bangalore",
       "modular kitchen hyderabad",
+      "modular kitchen bangalore",
       "wardrobe design hyderabad",
+      "wardrobe design bangalore",
       "home interior design hyderabad",
+      "home interior design bangalore",
       "interior design cost hyderabad",
+      "interior design cost bangalore",
     ],
     alternates: { canonical: "/" },
     openGraph: {
       ...ogDefaults,
-      title: "Best Interior Designers in Hyderabad | Modular Kitchen & Home Interiors - EverySpaces",
+      title: "Best Interior Designers in Hyderabad & Bangalore | Modular Kitchen & Home Interiors - EverySpaces",
       description:
-        "EverySpaces is Hyderabad's top interior design company with 500+ projects and 10-year warranty. Modular kitchens from ₹2.5L, 2BHK interiors from ₹8L. Free consultation!",
+        "EverySpaces serves Hyderabad and Bangalore with 500+ projects and 10-year warranty. Modular kitchens from ₹2.5L, 2BHK interiors from ₹8L. Free consultation!",
       url: "/",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Best Interior Designers in Hyderabad - EverySpaces",
+      title: "Best Interior Designers in Hyderabad & Bangalore - EverySpaces",
       description:
-        "500+ projects, 10-year warranty. Modular kitchens, wardrobes & complete home interiors. Free consultation!",
+        "500+ projects, 10-year warranty. Modular kitchens, wardrobes & complete home interiors in Hyderabad and Bangalore.",
     },
     robots: { index: true, follow: true },
   },
@@ -41,6 +46,13 @@ export const PAGE_METADATA: Record<string, Metadata> = {
       "Premium interior designers serving all major Hyderabad localities. Modular kitchens, wardrobes & end-to-end home interiors. 10-year warranty. Book a free consultation.",
     alternates: { canonical: "/hyderabad" },
     openGraph: { ...ogDefaults, title: "Interior Designers in Hyderabad | EverySpaces", url: "/hyderabad" },
+  },
+  "/bangalore": {
+    title: "Interior Designers in Bangalore | Top-Rated Home Interiors | EverySpaces",
+    description:
+      "Premium interior designers serving all major Bangalore localities. Modular kitchens, wardrobes & end-to-end home interiors. 10-year warranty. Book a free consultation.",
+    alternates: { canonical: "/bangalore" },
+    openGraph: { ...ogDefaults, title: "Interior Designers in Bangalore | EverySpaces", url: "/bangalore" },
   },
   "/portfolio": {
     title: "Our Portfolio | Completed Interior Design Projects | EverySpaces Hyderabad",
@@ -55,6 +67,13 @@ export const PAGE_METADATA: Record<string, Metadata> = {
       "Explore 20+ interior design services in Hyderabad — kitchens, wardrobes, 2BHK/3BHK, villas, and room-wise design with transparent pricing.",
     alternates: { canonical: "/services" },
     openGraph: { ...ogDefaults, title: "Interior Design Services | EverySpaces", url: "/services" },
+  },
+  "/bangalore/services": {
+    title: "All Interior Design Services in Bangalore | 20+ Categories | EverySpaces",
+    description:
+      "Explore 20+ interior design services in Bangalore — kitchens, wardrobes, 2BHK/3BHK, villas, and room-wise design with transparent pricing.",
+    alternates: { canonical: "/bangalore/services" },
+    openGraph: { ...ogDefaults, title: "Interior Design Services in Bangalore | EverySpaces", url: "/bangalore/services" },
   },
   "/contact": {
     title: "Contact Us | Free Interior Design Consultation Hyderabad | EverySpaces",

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
@@ -29,7 +29,7 @@ import bedroomImage from "@/assets/service-bedroom.jpg";
 const balconyStyles = [
   { title: "Garden Retreat", description: "Lush plants and vertical gardens", image: bhk2Image },
   { title: "Cozy Reading Nook", description: "Comfortable seating with book storage", image: livingImage },
-  { title: "Coffee Corner", description: "Café-style bistro setup", image: bedroomImage },
+  { title: "Coffee Corner", description: "CafÃ©-style bistro setup", image: bedroomImage },
   { title: "Yoga & Meditation", description: "Serene space for mindfulness", image: bhk2Image },
   { title: "Urban Jungle", description: "Maximum greenery in compact space", image: livingImage },
   { title: "Entertainment Deck", description: "Bar setup with lounge seating", image: bedroomImage },
@@ -45,19 +45,19 @@ const balconyFeatures = [
 // AEO-optimized FAQs
 const balconyFAQs = [
   {
-    question: "What is the cost of balcony design in Hyderabad?",
-    answer: "Balcony design in Hyderabad costs ₹20,000 to ₹1 lakh depending on size and features. At EverySpaces, basic balcony makeovers start from ₹20,000, vertical gardens from ₹35,000, and complete terrace transformations from ₹60,000."
+    question: "What is the cost of balcony design ?",
+    answer: "Balcony design  costs â‚¹20,000 to â‚¹1 lakh depending on size and features. At EverySpaces, basic balcony makeovers start from â‚¹20,000, vertical gardens from â‚¹35,000, and complete terrace transformations from â‚¹60,000."
   },
   {
-    question: "How to design a small balcony in Hyderabad apartments?",
-    answer: "For small balconies, EverySpaces uses vertical gardens, foldable furniture, wall-mounted planters, and compact seating. We maximize space with multi-level planters and hanging elements. Starting from ₹20,000."
+    question: "How to design a small balcony  apartments?",
+    answer: "For small balconies, EverySpaces uses vertical gardens, foldable furniture, wall-mounted planters, and compact seating. We maximize space with multi-level planters and hanging elements. Starting from â‚¹20,000."
   },
   {
     question: "Can you install a vertical garden on my balcony?",
-    answer: "Yes, EverySpaces designs and installs vertical gardens for balconies in Hyderabad. Options include modular planters, living walls, and hydroponic systems. We also provide plant selection and maintenance guidance."
+    answer: "Yes, EverySpaces designs and installs vertical gardens for balconies . Options include modular planters, living walls, and hydroponic systems. We also provide plant selection and maintenance guidance."
   },
   {
-    question: "What furniture works best for Hyderabad balconies?",
+    question: "What furniture works best for balconies?",
     answer: "Weather-resistant furniture like powder-coated metal, treated wood, and outdoor-grade wicker works best. EverySpaces recommends foldable furniture for small balconies and fixed seating for larger terraces."
   }
 ];
@@ -85,13 +85,13 @@ const ServiceBalcony = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Balcony Design Hyderabad",
-      "Transform your balcony into a beautiful outdoor space. Vertical gardens, outdoor seating, terrace design, and weather-proof furniture in Hyderabad.",
+      "Balcony Design",
+      "Transform your balcony into a beautiful outdoor space. Vertical gardens, outdoor seating, terrace design, and weather-proof furniture .",
       "https://everyspaces.com/services/balcony-design",
       "https://everyspaces.com/service-balcony.jpg",
       "20000-100000",
       {
-        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Vertical Garden", "Outdoor Seating", "Pergola", "Planter Boxes", "Weather-Proof Furniture"]
       }
     ),
@@ -103,7 +103,7 @@ const ServiceBalcony = () => {
     createFAQSchema(balconyFAQs, 'services/balcony-design'),
     createProductSchema({
       name: "Balcony & Terrace Design",
-      description: "Balcony transformation services in Hyderabad including vertical gardens, outdoor furniture, and terrace makeovers.",
+      description: "Balcony transformation services  including vertical gardens, outdoor furniture, and terrace makeovers.",
       image: "https://everyspaces.com/service-balcony.jpg",
       url: "https://everyspaces.com/services/balcony-design",
       priceRange: "20000-100000",
@@ -118,16 +118,16 @@ const ServiceBalcony = () => {
       <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Balcony Design" }]} />
       
       <main className="pb-24">
-        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
+        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(bhk2Image)} alt="Balcony Design Hyderabad" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(bhk2Image)} alt="Balcony Design" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Balcony & Terrace Design
-                <span className="block text-secondary mt-2">in Hyderabad</span>
+                <span className="block text-secondary mt-2"></span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Transform outdoor spaces into relaxing retreats with EverySpaces
@@ -211,4 +211,5 @@ const ServiceBalcony = () => {
 };
 
 export default ServiceBalcony;
+
 

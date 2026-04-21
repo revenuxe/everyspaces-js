@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronRight, Home } from "lucide-react";
 
 interface BreadcrumbItem {
@@ -11,6 +14,16 @@ interface BreadcrumbProps {
 }
 
 const Breadcrumb = ({ items }: BreadcrumbProps) => {
+  const pathname = usePathname() ?? "";
+  const isBengaluru = pathname.startsWith("/bangalore");
+
+  const normalizedItems = items.map((item) => {
+    if (!item.href) return item;
+    if (!isBengaluru) return item;
+    if (item.href.startsWith("/services")) return { ...item, href: `/bangalore${item.href}` };
+    return item;
+  });
+
   return (
     <nav 
       aria-label="Breadcrumb" 
@@ -27,7 +40,7 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
             <span className="sr-only md:not-sr-only">Home</span>
           </Link>
         </li>
-        {items.map((item, index) => (
+        {normalizedItems.map((item, index) => (
           <li key={index} className="flex items-center">
             <ChevronRight className="w-4 h-4 text-muted-foreground/50 mx-1" aria-hidden="true" />
             {item.href ? (

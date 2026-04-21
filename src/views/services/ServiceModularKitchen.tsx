@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { imgSrc } from "@/lib/utils";
 import { useRouter } from "next/navigation";
@@ -121,16 +121,16 @@ const ServiceModularKitchen = () => {
   // AEO-optimized FAQs specific to modular kitchens
   const modularKitchenFAQs = [
     {
-      question: "What is the cost of modular kitchen in Hyderabad?",
-      answer: "Modular kitchen cost in Hyderabad ranges from â‚¹1.5 lakh to â‚¹8 lakh depending on size, materials, and finishes. At EverySpaces, L-shaped kitchens start from â‚¹2.5 lakh, U-shaped from â‚¹3.5 lakh, and island kitchens from â‚¹5 lakh. All prices include Hettich/Hafele hardware with 10-year warranty."
+      question: "What is the cost of modular kitchen ?",
+      answer: "Modular kitchen cost  ranges from Ã¢â€šÂ¹1.5 lakh to Ã¢â€šÂ¹8 lakh depending on size, materials, and finishes. At EverySpaces, L-shaped kitchens start from Ã¢â€šÂ¹2.5 lakh, U-shaped from Ã¢â€šÂ¹3.5 lakh, and island kitchens from Ã¢â€šÂ¹5 lakh. All prices include Hettich/Hafele hardware with 10-year warranty."
     },
     {
       question: "How long does modular kitchen installation take?",
       answer: "Modular kitchen installation at EverySpaces takes 15-20 working days from design approval. This includes manufacturing at our in-house facility and professional installation. Complex island kitchens may take 25-30 days."
     },
     {
-      question: "Which is the best modular kitchen brand in Hyderabad?",
-      answer: "EverySpaces is rated among the best modular kitchen brands in Hyderabad with 500+ installations, 4.8/5 rating, and 10-year warranty. We use premium materials like BWR plywood, acrylic/lacquer finishes, and Hettich/Hafele hardware for durability."
+      question: "Which is the best modular kitchen brand ?",
+      answer: "EverySpaces is rated among the best modular kitchen brands  with 500+ installations, 4.8/5 rating, and 10-year warranty. We use premium materials like BWR plywood, acrylic/lacquer finishes, and Hettich/Hafele hardware for durability."
     },
     {
       question: "What materials are used in EverySpaces modular kitchens?",
@@ -141,14 +141,14 @@ const ServiceModularKitchen = () => {
   // AEO schemas for this page
   const aeoSchemas = [
     createServiceSchema(
-      "Modular Kitchen Design Hyderabad",
-      "Best modular kitchen designers in Hyderabad offering L-shaped, U-shaped, parallel, and island kitchens with Hettich hardware, 10-year warranty, and 45-day delivery.",
+      "Modular Kitchen Design",
+      "Best modular kitchen designers  offering L-shaped, U-shaped, parallel, and island kitchens with Hettich hardware, 10-year warranty, and 45-day delivery.",
       "https://everyspaces.com/services/modular-kitchen",
       "https://everyspaces.com/service-modular-kitchen.jpg",
       "150000-800000",
       {
         timeRequired: "P20D",
-        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["L-Shaped Kitchen", "U-Shaped Kitchen", "Island Kitchen", "Parallel Kitchen", "Soft-close hardware", "10-year warranty"]
       }
     ),
@@ -160,15 +160,15 @@ const ServiceModularKitchen = () => {
     createFAQSchema(modularKitchenFAQs, 'services/modular-kitchen'),
     createProductSchema({
       name: "Modular Kitchen Design",
-      description: "Premium modular kitchen design and installation in Hyderabad with L-shaped, U-shaped, and island layouts. Includes Hettich/Hafele hardware, granite countertops, and 10-year warranty.",
+      description: "Premium modular kitchen design and installation  with L-shaped, U-shaped, and island layouts. Includes Hettich/Hafele hardware, granite countertops, and 10-year warranty.",
       image: "https://everyspaces.com/service-modular-kitchen.jpg",
       url: "https://everyspaces.com/services/modular-kitchen",
       priceRange: "150000-800000",
       category: "Home Improvement > Kitchen"
     }),
     createQASchema(
-      "What is the best modular kitchen design for small kitchen in Hyderabad?",
-      "For small kitchens in Hyderabad, L-shaped or straight modular kitchen designs work best. EverySpaces specializes in space-saving solutions with corner units, tall units, and pull-out storage. Starting from â‚¹2.5 lakh with 10-year warranty.",
+      "What is the best modular kitchen design for small kitchen ?",
+      "For small kitchens , L-shaped or straight modular kitchen designs work best. EverySpaces specializes in space-saving solutions with corner units, tall units, and pull-out storage. Starting from Ã¢â€šÂ¹2.5 lakh with 10-year warranty.",
       "https://everyspaces.com/services/modular-kitchen"
     )
   ];
@@ -181,11 +181,11 @@ const ServiceModularKitchen = () => {
       
       <main className="pb-24">
         {/* Hero Section */}
-        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
+        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
           <div className="absolute inset-0 z-0">
             <img
               src={imgSrc(kitchenImage)}
-              alt="Modular Kitchen Design Hyderabad"
+              alt="Modular Kitchen Design"
               decoding="async"
               fetchPriority="high"
               className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
@@ -197,10 +197,10 @@ const ServiceModularKitchen = () => {
             <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 md:mb-4 animate-fade-up tracking-[-0.03em] md:leading-[1.2]">
                 Modular Kitchen Design
-                <span className="block text-secondary tracking-[-0.02em] md:mt-2">in Hyderabad</span>
+                <span className="block text-secondary tracking-[-0.02em] md:mt-2"></span>
               </h1>
               <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Smart, stylish kitchens designed for the modern Hyderabad home
+                Smart, stylish kitchens designed for the modern home
               </p>
             </div>
 
@@ -310,7 +310,7 @@ const ServiceModularKitchen = () => {
           <div className="container px-4">
             <div className="text-center mb-10">
               <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">Our Kitchen Projects</h2>
-              <p className="text-muted-foreground font-body">Beautiful kitchens delivered across Hyderabad</p>
+              <p className="text-muted-foreground font-body">Beautiful kitchens delivered across</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {kitchenTypes.map((img, index) => (
@@ -351,4 +351,5 @@ const ServiceModularKitchen = () => {
 };
 
 export default ServiceModularKitchen;
+
 

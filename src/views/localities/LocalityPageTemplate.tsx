@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import type { StaticImageData } from "next/image";
+import { usePathname } from "next/navigation";
 import { imgSrc } from "@/lib/utils";
 import Header from "@/components/Header";
 import LocalityBreadcrumb from "@/components/LocalityBreadcrumb";
@@ -14,6 +15,7 @@ import LocalityGallerySection from "@/components/LocalityGallerySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import LocalitiesSection from "@/components/LocalitiesSection";
+import BangaloreLocalitiesSection from "@/components/BangaloreLocalitiesSection";
 import RelatedLocalities from "@/components/RelatedLocalities";
 import RelatedServices from "@/components/RelatedServices";
 import Footer from "@/components/Footer";
@@ -75,19 +77,25 @@ const LocalityPageTemplate = ({
   description,
   seo
 }: LocalityPageProps) => {
+  const pathname = usePathname() ?? "";
+  const isBangalore = pathname.startsWith("/bangalore");
+  const cityName = isBangalore ? "Bangalore" : "Hyderabad";
+  const cityPath = isBangalore ? "bangalore" : "hyderabad";
+  const cityRegion = isBangalore ? "Bangalore, Karnataka" : "Hyderabad, Telangana";
+  const cityGeo = isBangalore ? { lat: "12.9716", lng: "77.5946" } : { lat: "17.3850", lng: "78.4867" };
   const heroUrl = imgSrc(heroImage);
   const galleryUrls = galleryImages.map(imgSrc);
 
   // Default SEO values if not provided
   const defaultSEO: LocalitySEO = {
-    metaTitle: `Best Interior Designers in ${localityName} | Home Interiors ${localityName} Hyderabad`,
+    metaTitle: `Best Interior Designers in ${localityName} | Home Interiors ${localityName} ${cityName}`,
     metaDescription: `${description} ${projectCount} completed. Modular kitchens, wardrobes & full home interiors with 10-year warranty. Free consultation!`,
     keywords: [
       `interior designers ${localityName}`,
       `home interiors ${localityName}`,
       `modular kitchen ${localityName}`,
       `wardrobe design ${localityName}`,
-      `${localityName} interior design hyderabad`,
+      `${localityName} interior design ${cityName.toLowerCase()}`,
       `best interior designers in ${localityName}`,
       `home renovation ${localityName}`,
       `interior decorators ${localityName}`
@@ -100,7 +108,7 @@ const LocalityPageTemplate = ({
         answer: `Interior design cost in ${localityName} ranges from Rs 1,500 to Rs 3,500 per sq ft depending on materials and scope. At EverySpaces, we offer customized packages starting Rs 8 lakhs for 2BHK. We have completed ${projectCount} in ${localityName} with 10-year warranty.`
       },
       {
-        question: `Who are the best interior designers in ${localityName}, Hyderabad?`,
+        question: `Who are the best interior designers in ${localityName}, ${cityName}?`,
         answer: `EverySpaces is rated among the best interior designers in ${localityName} with 4.8/5 rating, ${projectCount} completed, and 10-year warranty. We specialize in modular kitchens, wardrobes, and complete home interiors with premium materials.`
       },
       {
@@ -122,32 +130,32 @@ const LocalityPageTemplate = ({
   const localitySchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": `https://everyspaces.com/hyderabad/${slug}#localbusiness`,
+    "@id": `https://everyspaces.com/${cityPath}/${slug}#localbusiness`,
     "name": `EverySpaces Interior Designers ${localityName}`,
     "image": heroUrl,
-    "url": `https://everyspaces.com/hyderabad/${slug}`,
+    "url": `https://everyspaces.com/${cityPath}/${slug}`,
     "telephone": "+91-9886579923",
     "email": "everyspaces.com@gmail.com",
     "description": seoData.metaDescription,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": localityName,
-      "addressRegion": "Hyderabad, Telangana",
+      "addressRegion": cityRegion,
       "addressCountry": "IN"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "17.3850",
-      "longitude": "78.4867"
+      "latitude": cityGeo.lat,
+      "longitude": cityGeo.lng
     },
     "areaServed": [
       {
         "@type": "Place",
-        "name": `${localityName}, Hyderabad, Telangana, India`
+        "name": `${localityName}, ${cityRegion}, India`
       },
       ...seoData.nearbyAreas.map(area => ({
         "@type": "Place",
-        "name": `${area}, Hyderabad, Telangana, India`
+        "name": `${area}, ${cityRegion}, India`
       }))
     ],
     "priceRange": "Rs Rs Rs ",
@@ -165,7 +173,7 @@ const LocalityPageTemplate = ({
         "itemOffered": {
           "@type": "Service",
           "name": `${specialty} in ${localityName}`,
-          "description": `Professional ${specialty.toLowerCase()} services in ${localityName}, Hyderabad by EverySpaces`
+          "description": `Professional ${specialty.toLowerCase()} services in ${localityName}, ${cityName} by EverySpaces`
         }
       }))
     },
@@ -206,7 +214,7 @@ const LocalityPageTemplate = ({
   const serviceSchema = createServiceSchema(
     `Interior Design Services in ${localityName}`,
     seoData.metaDescription,
-    `https://everyspaces.com/hyderabad/${slug}`,
+    `https://everyspaces.com/${cityPath}/${slug}`,
     heroUrl,
     "150000-2500000",
     {
@@ -219,26 +227,26 @@ const LocalityPageTemplate = ({
   // Breadcrumb schema
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: "Home", url: "https://everyspaces.com" },
-    { name: "Hyderabad", url: "https://everyspaces.com/hyderabad" },
-    { name: localityName, url: `https://everyspaces.com/hyderabad/${slug}` }
-  ], `hyderabad/${slug}`);
+    { name: cityName, url: `https://everyspaces.com/${cityPath}` },
+    { name: localityName, url: `https://everyspaces.com/${cityPath}/${slug}` }
+  ], `${cityPath}/${slug}`);
 
   // FAQ schema with locality-specific FAQs
-  const faqSchema = createFAQSchema(seoData.faqs, `hyderabad/${slug}`);
+  const faqSchema = createFAQSchema(seoData.faqs, `${cityPath}/${slug}`);
 
   // WebPage schema with speakable for voice search
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `https://everyspaces.com/hyderabad/${slug}#webpage`,
-    "url": `https://everyspaces.com/hyderabad/${slug}`,
+    "@id": `https://everyspaces.com/${cityPath}/${slug}#webpage`,
+    "url": `https://everyspaces.com/${cityPath}/${slug}`,
     "name": seoData.metaTitle,
     "description": seoData.metaDescription,
     "isPartOf": {
       "@id": "https://everyspaces.com/#website"
     },
     "about": {
-      "@id": `https://everyspaces.com/hyderabad/${slug}#localbusiness`
+      "@id": `https://everyspaces.com/${cityPath}/${slug}#localbusiness`
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
@@ -254,7 +262,7 @@ const LocalityPageTemplate = ({
       ]
     },
     "breadcrumb": {
-      "@id": `https://everyspaces.com/hyderabad/${slug}#breadcrumb`
+      "@id": `https://everyspaces.com/${cityPath}/${slug}#breadcrumb`
     }
   };
 
@@ -262,18 +270,18 @@ const LocalityPageTemplate = ({
   const placeSchema = {
     "@context": "https://schema.org",
     "@type": "Place",
-    "@id": `https://everyspaces.com/hyderabad/${slug}#place`,
-    "name": `${localityName}, Hyderabad`,
-    "description": `Interior design services available in ${localityName}, Hyderabad by EverySpaces`,
+    "@id": `https://everyspaces.com/${cityPath}/${slug}#place`,
+    "name": `${localityName}, ${cityName}`,
+    "description": `Interior design services available in ${localityName}, ${cityName} by EverySpaces`,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": localityName,
-      "addressRegion": "Hyderabad, Telangana",
+      "addressRegion": cityRegion,
       "addressCountry": "IN"
     },
     "containedInPlace": {
       "@type": "City",
-      "name": "Hyderabad"
+      "name": cityName
     }
   };
 
@@ -281,7 +289,7 @@ const LocalityPageTemplate = ({
     <div className="min-h-screen bg-background">
       <StructuredData data={[localitySchema, serviceSchema, breadcrumbSchema, faqSchema, webPageSchema, placeSchema]} />
       <Header />
-      <LocalityBreadcrumb localityName={localityName} />
+      <LocalityBreadcrumb localityName={localityName} cityName={cityName} cityPath={`/${cityPath}`} />
       
       <main>
         <LocalityHeroSection
@@ -307,7 +315,7 @@ const LocalityPageTemplate = ({
         <RelatedLocalities currentSlug={slug} />
         <TestimonialsSection />
         <FAQSection />
-        <LocalitiesSection />
+        {isBangalore ? <BangaloreLocalitiesSection /> : <LocalitiesSection />}
       </main>
       
       <Footer />

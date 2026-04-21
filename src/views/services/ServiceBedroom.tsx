@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { imgSrc } from "@/lib/utils";
 import { useRouter } from "next/navigation";
@@ -44,8 +44,8 @@ const bedroomFeatures = [
 // AEO-optimized FAQs
 const bedroomFAQs = [
   {
-    question: "What is the cost of bedroom interior design in Hyderabad?",
-    answer: "Bedroom interior design in Hyderabad costs ₹1.5-3 lakh for a master bedroom including wardrobe, bed design, and false ceiling. At EverySpaces, bedroom packages start from ₹1.2 lakh with premium finishes and 10-year warranty."
+    question: "What is the cost of bedroom interior design ?",
+    answer: "Bedroom interior design  costs â‚¹1.5-3 lakh for a master bedroom including wardrobe, bed design, and false ceiling. At EverySpaces, bedroom packages start from â‚¹1.2 lakh with premium finishes and 10-year warranty."
   },
   {
     question: "What is included in bedroom interior design?",
@@ -88,13 +88,13 @@ const ServiceBedroom = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Bedroom Interior Design Hyderabad",
-      "Expert bedroom designers in Hyderabad offering master bedroom, kids room, and guest room interiors with custom wardrobes and ambient lighting.",
+      "Bedroom Interior Design",
+      "Expert bedroom designers  offering master bedroom, kids room, and guest room interiors with custom wardrobes and ambient lighting.",
       "https://everyspaces.com/services/bedroom-design",
       "https://everyspaces.com/service-bedroom.jpg",
       "120000-400000",
       {
-        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Master Bedroom", "Kids Room", "Guest Room", "Custom Wardrobe", "False Ceiling", "Ambient Lighting"]
       }
     ),
@@ -106,7 +106,7 @@ const ServiceBedroom = () => {
     createFAQSchema(bedroomFAQs, 'services/bedroom-design'),
     createProductSchema({
       name: "Bedroom Interior Design",
-      description: "Complete bedroom interior design in Hyderabad including bed design, wardrobe, false ceiling, and ambient lighting. 10-year warranty included.",
+      description: "Complete bedroom interior design  including bed design, wardrobe, false ceiling, and ambient lighting. 10-year warranty included.",
       image: "https://everyspaces.com/service-bedroom.jpg",
       url: "https://everyspaces.com/services/bedroom-design",
       priceRange: "120000-400000",
@@ -121,16 +121,16 @@ const ServiceBedroom = () => {
       <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Bedroom Design" }]} />
       
       <main className="pb-24">
-        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
+        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(bedroomImage)} alt="Luxury Bedroom Design Hyderabad" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(bedroomImage)} alt="Luxury Bedroom Design" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Luxury Bedroom Design
-                <span className="block text-secondary mt-2">in Hyderabad</span>
+                <span className="block text-secondary mt-2"></span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Create your perfect sanctuary with EverySpaces's expert bedroom designers
@@ -214,4 +214,5 @@ const ServiceBedroom = () => {
 };
 
 export default ServiceBedroom;
+
 

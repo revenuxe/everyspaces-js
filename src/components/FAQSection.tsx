@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Accordion,
   AccordionContent,
@@ -6,7 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqs = [
+const hyderabadFaqs = [
   {
     question: "How much does interior design cost in Hyderabad?",
     answer:
@@ -59,7 +62,41 @@ const faqs = [
   },
 ];
 
+const bangaloreFaqs = [
+  {
+    question: "How much does interior design cost in Bangalore?",
+    answer:
+      "Interior design costs in Bangalore usually range from ₹1,500 to ₹3,500 per square foot based on scope, materials, and finish quality. EverySpaces offers customized packages starting from ₹8 lakhs for 2BHK homes.",
+  },
+  {
+    question: "How long does a full home interior project take in Bangalore?",
+    answer:
+      "Typical timelines are 45-90 days depending on home size and complexity. Modular kitchen projects usually take 15-20 days, while full 3BHK interiors can take 60-75 days.",
+  },
+  {
+    question: "Do you provide modular kitchen designs in Bangalore?",
+    answer:
+      "Yes. We design L-shaped, U-shaped, parallel, and island modular kitchens for Bangalore apartments and villas, with durable materials and 10-year warranty on hardware.",
+  },
+  {
+    question: "Which Bangalore areas do you serve for interior design?",
+    answer:
+      "We serve major Bangalore localities including Whitefield, Indiranagar, Koramangala, HSR Layout, Sarjapur Road, Electronic City, Bellandur, Hebbal, and Jayanagar.",
+  },
+  {
+    question: "Do you offer 3D design before execution?",
+    answer:
+      "Yes. We provide 3D design visualizations and walkthroughs before execution so you can review and finalize layouts, finishes, and design details.",
+  },
+];
+
 const FAQSection = () => {
+  const pathname = usePathname() ?? "";
+  const isBangalore = pathname.startsWith("/bangalore");
+  const isHyderabad = pathname.startsWith("/hyderabad");
+  const city = isBangalore ? "Bangalore" : isHyderabad ? "Hyderabad" : "Hyderabad and Bangalore";
+  const faqs = isBangalore ? bangaloreFaqs : hyderabadFaqs;
+
   // FAQ schema is handled by the parent page's StructuredData component to avoid duplicates
   return (
     <section id="faq" className="py-16 md:py-24 bg-background">
@@ -72,7 +109,7 @@ const FAQSection = () => {
             Everything You Need to Know
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto font-body">
-            Find answers to common questions about interior design services, pricing, and process in Hyderabad
+            Find answers to common questions about interior design services, pricing, and process in {city}
           </p>
         </div>
 

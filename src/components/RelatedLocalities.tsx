@@ -1,7 +1,9 @@
-import { ArrowRight, MapPin } from "lucide-react";
+"use client";
 
-// All localities data
-const allLocalities = [
+import { ArrowRight, MapPin } from "lucide-react";
+import { usePathname } from "next/navigation";
+
+const hyderabadLocalities = [
   { slug: "jubilee-hills", name: "Jubilee Hills" },
   { slug: "gachibowli", name: "Gachibowli" },
   { slug: "kondapur", name: "Kondapur" },
@@ -25,11 +27,56 @@ const allLocalities = [
   { slug: "begumpet", name: "Begumpet" },
 ];
 
+const bengaluruLocalities = [
+  { slug: "indiranagar", name: "Indiranagar" },
+  { slug: "whitefield", name: "Whitefield" },
+  { slug: "hsr-layout", name: "HSR Layout" },
+  { slug: "koramangala", name: "Koramangala" },
+  { slug: "jp-nagar", name: "JP Nagar" },
+  { slug: "jayanagar", name: "Jayanagar" },
+  { slug: "marathahalli", name: "Marathahalli" },
+  { slug: "electronic-city", name: "Electronic City" },
+  { slug: "sarjapur-road", name: "Sarjapur Road" },
+  { slug: "bellandur", name: "Bellandur" },
+  { slug: "btm-layout", name: "BTM Layout" },
+  { slug: "hebbal", name: "Hebbal" },
+  { slug: "yelahanka", name: "Yelahanka" },
+  { slug: "banashankari", name: "Banashankari" },
+  { slug: "malleshwaram", name: "Malleshwaram" },
+  { slug: "rajajinagar", name: "Rajajinagar" },
+  { slug: "basavanagudi", name: "Basavanagudi" },
+  { slug: "sadashivanagar", name: "Sadashivanagar" },
+  { slug: "rt-nagar", name: "RT Nagar" },
+  { slug: "vijayanagar", name: "Vijayanagar" },
+  { slug: "hbr-layout", name: "HBR Layout" },
+];
+
 interface RelatedLocalitiesProps {
   currentSlug: string;
 }
 
+type LocalityLink = {
+  slug: string;
+  name: string;
+  city?: "hyderabad" | "bangalore";
+};
+
 const RelatedLocalities = ({ currentSlug }: RelatedLocalitiesProps) => {
+  const pathname = usePathname() ?? "";
+  const isBangalore = pathname.startsWith("/bangalore");
+  const isHyderabad = pathname.startsWith("/hyderabad");
+
+  const citySlug = isBangalore ? "bangalore" : "hyderabad";
+  const cityLabel = isBangalore ? "Bangalore" : isHyderabad ? "Hyderabad" : "Hyderabad and Bangalore";
+  const allLocalities: LocalityLink[] = isBangalore
+    ? bengaluruLocalities
+    : isHyderabad
+      ? hyderabadLocalities
+      : [
+          ...hyderabadLocalities.slice(0, 5).map((loc) => ({ ...loc, city: "hyderabad" as const })),
+          ...bengaluruLocalities.slice(0, 5).map((loc) => ({ ...loc, city: "bangalore" as const })),
+        ];
+
   // Get nearby localities, excluding current
   const relatedLocalities = allLocalities
     .filter((loc) => loc.slug !== currentSlug)
@@ -43,7 +90,7 @@ const RelatedLocalities = ({ currentSlug }: RelatedLocalitiesProps) => {
             We Also Serve Nearby Areas
           </h2>
           <p className="text-muted-foreground font-body">
-            Explore our interior design services in other Hyderabad localities
+            Explore our interior design services in other {cityLabel} localities
           </p>
         </div>
 
@@ -51,7 +98,7 @@ const RelatedLocalities = ({ currentSlug }: RelatedLocalitiesProps) => {
           {relatedLocalities.map((locality) => (
             <a
               key={locality.slug}
-              href={`https://everyspaces.com/hyderabad/${locality.slug}`}
+              href={isBangalore || isHyderabad ? `/${citySlug}/${locality.slug}` : `/${locality.city}/${locality.slug}`}
               className="group flex items-center gap-3 p-4 bg-card rounded-2xl border border-border/50 hover:border-secondary/50 hover:shadow-soft transition-all"
             >
               <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
@@ -70,10 +117,10 @@ const RelatedLocalities = ({ currentSlug }: RelatedLocalitiesProps) => {
 
         <div className="text-center mt-8">
           <a
-            href="https://everyspaces.com/hyderabad"
+            href={isBangalore || isHyderabad ? `/${citySlug}` : "/#localities"}
             className="inline-flex items-center gap-2 text-secondary font-medium hover:underline"
           >
-            View All Hyderabad Localities <ArrowRight className="w-4 h-4" />
+            View All {isBangalore || isHyderabad ? cityLabel : "Hyderabad & Bangalore"} Localities <ArrowRight className="w-4 h-4" />
           </a>
         </div>
       </div>

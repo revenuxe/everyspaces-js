@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
@@ -45,11 +45,11 @@ const kidsRoomFeatures = [
 // AEO-optimized FAQs
 const kidsRoomFAQs = [
   {
-    question: "What is the cost of kids room design in Hyderabad?",
-    answer: "Kids room design in Hyderabad costs ₹1-2.5 lakh including wardrobe, bed, study table, and decor. At EverySpaces, basic packages start from ₹80,000, themed rooms from ₹1.2 lakh, and luxury designs from ₹2 lakh."
+    question: "What is the cost of kids room design ?",
+    answer: "Kids room design  costs â‚¹1-2.5 lakh including wardrobe, bed, study table, and decor. At EverySpaces, basic packages start from â‚¹80,000, themed rooms from â‚¹1.2 lakh, and luxury designs from â‚¹2 lakh."
   },
   {
-    question: "What themes are popular for kids rooms in Hyderabad?",
+    question: "What themes are popular for kids rooms ?",
     answer: "Popular kids room themes include space exploration, jungle safari, princess castle, superhero, sports, underwater world, and Montessori-inspired designs. EverySpaces customizes themes based on your child's interests."
   },
   {
@@ -89,13 +89,13 @@ const ServiceKidsRoom = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Kids Room Design Hyderabad",
-      "Fun, safe, and creative kids room designs in Hyderabad. Theme rooms, bunk beds, study areas, and playful storage with child-safe materials.",
+      "Kids Room Design",
+      "Fun, safe, and creative kids room designs . Theme rooms, bunk beds, study areas, and playful storage with child-safe materials.",
       "https://everyspaces.com/services/kids-room",
       "https://everyspaces.com/service-kids-room.jpg",
       "80000-250000",
       {
-        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Theme Room", "Bunk Bed", "Study Table", "Play Area", "Child-Safe Materials"]
       }
     ),
@@ -107,7 +107,7 @@ const ServiceKidsRoom = () => {
     createFAQSchema(kidsRoomFAQs, 'services/kids-room'),
     createProductSchema({
       name: "Kids Room Interior Design",
-      description: "Safe and creative kids room designs in Hyderabad with themed interiors, bunk beds, and study areas. Non-toxic materials.",
+      description: "Safe and creative kids room designs  with themed interiors, bunk beds, and study areas. Non-toxic materials.",
       image: "https://everyspaces.com/service-kids-room.jpg",
       url: "https://everyspaces.com/services/kids-room",
       priceRange: "80000-250000",
@@ -122,16 +122,16 @@ const ServiceKidsRoom = () => {
       <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Kids Room" }]} />
       
       <main className="pb-24">
-        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
+        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(livingImage)} alt="Kids Room Design Hyderabad" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(livingImage)} alt="Kids Room Design" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Kids Room Design
-                <span className="block text-secondary mt-2">in Hyderabad</span>
+                <span className="block text-secondary mt-2"></span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Create magical, safe spaces for your little ones with EverySpaces
@@ -215,4 +215,5 @@ const ServiceKidsRoom = () => {
 };
 
 export default ServiceKidsRoom;
+
 

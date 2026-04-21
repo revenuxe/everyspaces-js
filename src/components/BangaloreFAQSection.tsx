@@ -8,44 +8,44 @@ import {
 
 const bangaloreFaqs = [
   {
-    question: "What is the average cost of a 2BHK interior design in Hyderabad in 2025?",
+    question: "What is the average cost of a 2BHK interior design in Bangalore in 2026?",
     answer:
-      "In 2025, a complete 2BHK interior design in Hyderabad costs between ₹6 lakhs to ₹15 lakhs depending on materials, finishes, and scope. Economy packages with laminate finishes start at ₹6-8 lakhs, mid-range with acrylic and premium laminates cost ₹8-12 lakhs, and luxury with lacquer glass and Italian finishes go up to ₹15 lakhs+. At EverySpaces, our most popular 2BHK package starts at ₹8 lakhs including modular kitchen, 2 wardrobes, TV unit, and false ceiling.",
+      "In 2026, a complete 2BHK interior design in Bangalore usually ranges from ₹6 lakhs to ₹15 lakhs depending on materials, finishes, and scope. At EverySpaces, popular 2BHK packages start around ₹8 lakhs including modular kitchen, wardrobes, TV unit, and false ceiling.",
   },
   {
-    question: "Which areas in Hyderabad have the highest demand for interior design?",
+    question: "Which areas in Bangalore have the highest demand for interior design?",
     answer:
-      "Gachibowli, Kondapur, and HITEC City lead in demand due to massive IT-driven residential development. In established premium zones, Jubilee Hills, Banjara Hills, and Financial District see high renovation demand. North Hyderabad areas like Kompally and Secunderabad are also emerging hotspots with new apartment communities.",
+      "Whitefield, Sarjapur Road, Bellandur, and Electronic City show high demand because of IT-driven residential growth. Koramangala, HSR Layout, and Indiranagar continue to see strong premium renovation demand.",
   },
   {
-    question: "How do I choose the right interior designer in Hyderabad?",
+    question: "How do I choose the right interior designer in Bangalore?",
     answer:
-      "Look for: (1) Portfolio with Hyderabad-specific projects similar to your home type, (2) In-house manufacturing — not just design outsourcing, (3) Clear warranty terms in writing (EverySpaces offers 10-year hardware warranty), (4) GHMC and society approval handling, (5) Transparent pricing with no hidden costs, (6) Real Google reviews from Hyderabad homeowners. Always visit their factory or showroom before finalizing.",
+      "Look for: (1) Portfolio with Bangalore projects similar to your home type, (2) In-house manufacturing capability, (3) Clear warranty terms in writing, (4) BBMP and society approval handling, (5) Transparent pricing with no hidden costs, and (6) authentic customer reviews.",
   },
   {
-    question: "What modular kitchen layout works best for Hyderabad apartments?",
+    question: "What modular kitchen layout works best for Bangalore apartments?",
     answer:
-      "Most Hyderabad apartments have compact kitchens (50-80 sq ft), making L-shaped and parallel layouts the most practical. L-shaped kitchens maximize corner space and work well in 2BHK/3BHK apartments across Kondapur and Nallagandla. Parallel kitchens suit narrow galley-style kitchens common in older Begumpet and Himayatnagar buildings. For larger villa kitchens in Jubilee Hills or Kokapet, U-shaped or island layouts are ideal.",
+      "Most Bangalore apartments have compact kitchens (50-90 sq ft), making L-shaped and parallel layouts very practical. For larger villas and premium homes, U-shaped or island layouts work best.",
   },
   {
-    question: "What materials are best suited for Hyderabad's climate?",
+    question: "What materials are best suited for Bangalore's climate?",
     answer:
-      "Hyderabad's moderate climate with monsoon humidity requires: BWR (Boiling Water Resistant) grade plywood for all cabinetry, marine plywood for kitchen base units, moisture-resistant MDF for decorative panels, and powder-coated or stainless steel hardware. Avoid particle board in kitchen areas. For countertops, granite from Hyderabad's local quarries offers the best value, while quartz is premium. EverySpaces exclusively uses BWR plywood with Hettich/Hafele hardware.",
+      "Bangalore's weather with seasonal humidity calls for BWR plywood cabinetry, marine plywood for kitchen base units, moisture-resistant MDF for decorative panels, and powder-coated or stainless hardware.",
   },
   {
     question: "Can EverySpaces handle interior design for apartments in gated communities?",
     answer:
-      "Yes, we regularly work in Hyderabad's top gated communities including Prestige, Brigade, Sobha, Salarpuria, and Puravankara properties. We handle society permissions, freight elevator booking, material entry passes, and noise restriction compliance. Our project managers coordinate with building management throughout the project so you don't face any hassle.",
+      "Yes, we regularly work in Bangalore's top gated communities across Whitefield, Sarjapur, Bellandur, and North Bangalore. We handle society permissions, freight elevator booking, and building compliance.",
   },
   {
-    question: "Do you offer EMI or financing options for interior design in Hyderabad?",
+    question: "Do you offer EMI or financing options for interior design in Bangalore?",
     answer:
-      "Yes! We offer flexible payment options: 50-40-10 milestone-based payments (50% advance, 40% on installation start, 10% on completion), and EMI options through our banking partners with 0% interest for up to 12 months. This makes premium interior design accessible for young professionals and new homeowners in Hyderabad.",
+      "Yes. We offer milestone-based payments and EMI options through partner banks to make premium interiors more accessible for Bangalore homeowners.",
   },
   {
-    question: "How long does a full home interior project take in Hyderabad?",
+    question: "How long does a full home interior project take in Bangalore?",
     answer:
-      "Timeline varies by scope: Modular kitchen only takes 15-20 working days, a 2BHK full home interior takes 45-55 days, and a 3BHK or villa takes 60-90 days. Hyderabad-specific factors like society working hour restrictions (typically 9 AM-6 PM), freight elevator availability, and monsoon season can affect timelines. We provide a detailed project schedule upfront and assign a dedicated project manager for daily updates.",
+      "Timeline varies by scope: modular kitchen takes 15-20 working days, 2BHK full home takes 45-55 days, and 3BHK/villa projects take 60-90 days. Society permissions and elevator slots can impact schedules.",
   },
 ];
 
@@ -55,13 +55,13 @@ const BangaloreFAQSection = () => {
       <div className="container px-4">
         <div className="text-center mb-12">
           <span className="text-secondary font-semibold text-sm tracking-wider uppercase mb-2 block">
-            Hyderabad Interior Design FAQs
+            Bangalore Interior Design FAQs
           </span>
           <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
-            Common Questions About Interior Design in Hyderabad
+            Common Questions About Interior Design in Bangalore
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto font-body">
-            Specific answers for Hyderabad homeowners — costs, timelines, materials, and locality-wise insights
+            Specific answers for Bangalore homeowners — costs, timelines, materials, and locality-wise insights
           </p>
         </div>
 
@@ -86,7 +86,7 @@ const BangaloreFAQSection = () => {
 
         <div className="mt-12 text-center">
           <p className="text-muted-foreground mb-4 font-body">
-            Ready to start your Hyderabad home interior project?
+            Ready to start your Bangalore home interior project?
           </p>
           <Link
             href="/contact"

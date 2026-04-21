@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
@@ -45,8 +45,8 @@ const poojaFeatures = [
 // AEO-optimized FAQs
 const poojaRoomFAQs = [
   {
-    question: "What is the cost of pooja room design in Hyderabad?",
-    answer: "Pooja room design in Hyderabad costs ₹30,000 to ₹2 lakh depending on size and materials. At EverySpaces, wall-mounted units start from ₹30,000, standalone mandirs from ₹60,000, and walk-in pooja rooms from ₹1.5 lakh."
+    question: "What is the cost of pooja room design ?",
+    answer: "Pooja room design  costs â‚¹30,000 to â‚¹2 lakh depending on size and materials. At EverySpaces, wall-mounted units start from â‚¹30,000, standalone mandirs from â‚¹60,000, and walk-in pooja rooms from â‚¹1.5 lakh."
   },
   {
     question: "Which direction is best for pooja room as per Vastu?",
@@ -58,7 +58,7 @@ const poojaRoomFAQs = [
   },
   {
     question: "Can you design a pooja unit for small apartments?",
-    answer: "Yes, EverySpaces specializes in compact pooja solutions. Wall-mounted units, corner mandirs, and foldable pooja cabinets are perfect for small apartments. Starting from ₹30,000 with full Vastu compliance."
+    answer: "Yes, EverySpaces specializes in compact pooja solutions. Wall-mounted units, corner mandirs, and foldable pooja cabinets are perfect for small apartments. Starting from â‚¹30,000 with full Vastu compliance."
   }
 ];
 
@@ -85,13 +85,13 @@ const ServicePoojaRoom = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Pooja Room Design Hyderabad",
-      "Traditional and modern pooja room designs in Hyderabad. Wooden mandirs, wall-mounted units, and walk-in pooja rooms with Vastu compliance.",
+      "Pooja Room Design",
+      "Traditional and modern pooja room designs . Wooden mandirs, wall-mounted units, and walk-in pooja rooms with Vastu compliance.",
       "https://everyspaces.com/services/pooja-room",
       "https://everyspaces.com/service-pooja-room.jpg",
       "30000-200000",
       {
-        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Wooden Mandir", "Wall-Mounted Unit", "Vastu Compliant", "Traditional Carving", "Marble Finish"]
       }
     ),
@@ -103,7 +103,7 @@ const ServicePoojaRoom = () => {
     createFAQSchema(poojaRoomFAQs, 'services/pooja-room'),
     createProductSchema({
       name: "Pooja Room Interior Design",
-      description: "Traditional and modern pooja room designs in Hyderabad. Teak wood mandirs, brass accents, and Vastu-compliant layouts.",
+      description: "Traditional and modern pooja room designs . Teak wood mandirs, brass accents, and Vastu-compliant layouts.",
       image: "https://everyspaces.com/service-pooja-room.jpg",
       url: "https://everyspaces.com/services/pooja-room",
       priceRange: "30000-200000",
@@ -118,16 +118,16 @@ const ServicePoojaRoom = () => {
       <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Pooja Room" }]} />
       
       <main className="pb-24">
-        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
+        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(poojaImage)} alt="Pooja Room Design Hyderabad" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(poojaImage)} alt="Pooja Room Design" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Pooja Room Design
-                <span className="block text-secondary mt-2">in Hyderabad</span>
+                <span className="block text-secondary mt-2"></span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Create sacred spaces with traditional craftsmanship by EverySpaces
@@ -211,4 +211,5 @@ const ServicePoojaRoom = () => {
 };
 
 export default ServicePoojaRoom;
+
 

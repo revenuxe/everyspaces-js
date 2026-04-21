@@ -34,12 +34,16 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
+  const isBangalore = pathname?.startsWith("/bangalore");
+  const servicesHref = isBangalore ? "/bangalore/services" : "/services";
+  const locationsHref = isBangalore ? "/bangalore#localities" : "/#localities";
+
   const navLinks = [
     { href: "/", label: "Home", isRoute: true },
-    { href: "/services", label: "Services", isRoute: true },
+    { href: servicesHref, label: "Services", isRoute: true },
     { href: "/portfolio", label: "Portfolio", isRoute: true },
     { href: "/orza-ai", label: "Orza AI", isRoute: true },
-    { href: "/#localities", label: "Locations" },
+    { href: locationsHref, label: "Locations" },
     { href: "/contact", label: "Contact", isRoute: true },
   ];
 

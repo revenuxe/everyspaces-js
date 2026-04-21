@@ -2,9 +2,11 @@
 
 interface LocalityBreadcrumbProps {
   localityName: string;
+  cityName: string;
+  cityPath: string;
 }
 
-const LocalityBreadcrumb = ({ localityName }: LocalityBreadcrumbProps) => {
+const LocalityBreadcrumb = ({ localityName, cityName, cityPath }: LocalityBreadcrumbProps) => {
   return (
     <nav aria-label="Breadcrumb" className="bg-muted/50 border-b border-border">
       <div className="container px-4 py-3">
@@ -23,10 +25,10 @@ const LocalityBreadcrumb = ({ localityName }: LocalityBreadcrumbProps) => {
           </li>
           <li>
             <a 
-              href="/hyderabad" 
+              href={cityPath}
               className="text-muted-foreground hover:text-secondary transition-colors"
             >
-              Hyderabad
+              {cityName}
             </a>
           </li>
           <li>

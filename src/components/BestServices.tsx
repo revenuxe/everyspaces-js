@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import bhk2Image from "@/assets/service-2bhk.jpg";
 import villaImage from "@/assets/service-villa.jpg";
@@ -45,6 +46,9 @@ const bestServices = [
 ];
 
 const BestServices = () => {
+  const pathname = usePathname() ?? "";
+  const isBangalore = pathname.startsWith("/bangalore");
+  const serviceBasePath = isBangalore ? "/bangalore/services" : "/services";
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [parallaxOffsets, setParallaxOffsets] = useState<number[]>(
@@ -180,7 +184,7 @@ const BestServices = () => {
           return (
             <a
               key={service.id}
-              href={service.link}
+              href={`${serviceBasePath}/${service.link.split("/").pop()}`}
               onClick={(e) => {
                 if (isDragging) {
                   e.preventDefault();

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
@@ -45,12 +45,12 @@ const guestRoomFeatures = [
 // AEO-optimized FAQs
 const guestRoomFAQs = [
   {
-    question: "What is the cost of guest room design in Hyderabad?",
-    answer: "Guest room design in Hyderabad costs ₹60,000 to ₹1.5 lakh including bed, wardrobe, and basic decor. At EverySpaces, basic setups start from ₹60,000, comfortable suites from ₹90,000, and luxury guest rooms from ₹1.2 lakh."
+    question: "What is the cost of guest room design ?",
+    answer: "Guest room design  costs â‚¹60,000 to â‚¹1.5 lakh including bed, wardrobe, and basic decor. At EverySpaces, basic setups start from â‚¹60,000, comfortable suites from â‚¹90,000, and luxury guest rooms from â‚¹1.2 lakh."
   },
   {
     question: "How to design a multi-purpose guest room?",
-    answer: "EverySpaces designs multi-purpose rooms with sofa-cum-beds, murphy beds, or folding beds combined with study tables and storage. This maximizes utility when guests aren't staying. Starting from ₹70,000."
+    answer: "EverySpaces designs multi-purpose rooms with sofa-cum-beds, murphy beds, or folding beds combined with study tables and storage. This maximizes utility when guests aren't staying. Starting from â‚¹70,000."
   },
   {
     question: "What furniture is essential for a guest room?",
@@ -85,13 +85,13 @@ const ServiceGuestRoom = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Guest Room Design Hyderabad",
-      "Comfortable guest room designs in Hyderabad. Hotel-like guest suites, multi-purpose rooms, and sofa-cum-bed designs for visitors.",
+      "Guest Room Design",
+      "Comfortable guest room designs . Hotel-like guest suites, multi-purpose rooms, and sofa-cum-bed designs for visitors.",
       "https://everyspaces.com/services/guest-room",
       "https://everyspaces.com/service-guest-room.jpg",
       "60000-150000",
       {
-        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Guest Bed", "Compact Wardrobe", "Sofa-Cum-Bed", "Multi-Purpose Room", "Cozy Ambiance"]
       }
     ),
@@ -103,7 +103,7 @@ const ServiceGuestRoom = () => {
     createFAQSchema(guestRoomFAQs, 'services/guest-room'),
     createProductSchema({
       name: "Guest Room Interior Design",
-      description: "Welcoming guest room designs in Hyderabad with comfortable beds, compact wardrobes, and thoughtful amenities.",
+      description: "Welcoming guest room designs  with comfortable beds, compact wardrobes, and thoughtful amenities.",
       image: "https://everyspaces.com/service-guest-room.jpg",
       url: "https://everyspaces.com/services/guest-room",
       priceRange: "60000-150000",
@@ -118,16 +118,16 @@ const ServiceGuestRoom = () => {
       <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Guest Room" }]} />
       
       <main className="pb-24">
-        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
+        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(wardrobeImage)} alt="Guest Room Design Hyderabad" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(wardrobeImage)} alt="Guest Room Design" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Guest Room Design
-                <span className="block text-secondary mt-2">in Hyderabad</span>
+                <span className="block text-secondary mt-2"></span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Create welcoming spaces for your visitors with EverySpaces
@@ -211,4 +211,5 @@ const ServiceGuestRoom = () => {
 };
 
 export default ServiceGuestRoom;
+
 

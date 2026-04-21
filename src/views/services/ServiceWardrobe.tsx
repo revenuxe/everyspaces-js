@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { imgSrc } from "@/lib/utils";
 import { useRouter } from "next/navigation";
@@ -44,8 +44,8 @@ const wardrobeFeatures = [
 // AEO-optimized FAQs
 const wardrobeFAQs = [
   {
-    question: "What is the cost of wardrobe design in Hyderabad?",
-    answer: "Wardrobe design cost in Hyderabad ranges from ₹1,200 to ₹2,500 per sq ft. At EverySpaces, sliding wardrobes start from ₹80,000, hinged wardrobes from ₹70,000, and walk-in closets from ₹2 lakh. All include Hettich/Hafele hardware with 10-year warranty."
+    question: "What is the cost of wardrobe design ?",
+    answer: "Wardrobe design cost  ranges from â‚¹1,200 to â‚¹2,500 per sq ft. At EverySpaces, sliding wardrobes start from â‚¹80,000, hinged wardrobes from â‚¹70,000, and walk-in closets from â‚¹2 lakh. All include Hettich/Hafele hardware with 10-year warranty."
   },
   {
     question: "Which wardrobe type is best for small bedrooms?",
@@ -88,13 +88,13 @@ const ServiceWardrobe = () => {
   // AEO schemas
   const aeoSchemas = [
     createServiceSchema(
-      "Wardrobe Design Hyderabad",
-      "Custom wardrobe designers in Hyderabad offering sliding wardrobes, walk-in closets, and loft storage with Hettich hardware and 10-year warranty.",
+      "Wardrobe Design",
+      "Custom wardrobe designers  offering sliding wardrobes, walk-in closets, and loft storage with Hettich hardware and 10-year warranty.",
       "https://everyspaces.com/services/wardrobe-design",
       "https://everyspaces.com/service-wardrobe.jpg",
       "70000-500000",
       {
-        areaServed: ["Hyderabad", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
         features: ["Sliding Wardrobe", "Hinged Wardrobe", "Walk-in Closet", "Loft Storage", "Soft-close hardware"]
       }
     ),
@@ -106,7 +106,7 @@ const ServiceWardrobe = () => {
     createFAQSchema(wardrobeFAQs, 'services/wardrobe-design'),
     createProductSchema({
       name: "Custom Wardrobe Design",
-      description: "Premium wardrobe design and installation in Hyderabad with sliding, hinged, and walk-in options. Includes Hettich/Hafele hardware and 10-year warranty.",
+      description: "Premium wardrobe design and installation  with sliding, hinged, and walk-in options. Includes Hettich/Hafele hardware and 10-year warranty.",
       image: "https://everyspaces.com/service-wardrobe.jpg",
       url: "https://everyspaces.com/services/wardrobe-design",
       priceRange: "70000-500000",
@@ -121,16 +121,16 @@ const ServiceWardrobe = () => {
       <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Wardrobe Design" }]} />
       
       <main className="pb-24">
-        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
+        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
           <div className="absolute inset-0 z-0">
-            <img src={imgSrc(wardrobeImage)} alt="Wardrobe Design Hyderabad" className="w-full h-full object-cover scale-105" />
+            <img src={imgSrc(wardrobeImage)} alt="Wardrobe Design" className="w-full h-full object-cover scale-105" />
             <div className="absolute inset-0 hero-overlay" />
           </div>
           <div className="relative z-10 container px-4">
             <div className="max-w-4xl mx-auto text-center mb-6">
               <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
                 Custom Wardrobe Design
-                <span className="block text-secondary mt-2">in Hyderabad</span>
+                <span className="block text-secondary mt-2"></span>
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
                 Maximize storage with EverySpaces's smart wardrobe solutions
@@ -214,4 +214,5 @@ const ServiceWardrobe = () => {
 };
 
 export default ServiceWardrobe;
+
 

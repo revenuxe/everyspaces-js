@@ -1,26 +1,18 @@
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import heroImage from "@/assets/hero-interior.jpg";
+import { imgSrc } from "@/lib/utils";
 
-interface LocalityHeroSectionProps {
-  localityName: string;
-  projectCount: string;
-  heroImage: string;
-}
-
-const LocalityHeroSection = ({ localityName, projectCount, heroImage }: LocalityHeroSectionProps) => {
+const HyderabadHeroSection = () => {
   const router = useRouter();
-  const pathname = usePathname() ?? "";
-  const isBangalore = pathname.startsWith("/bangalore");
-  const cityName = isBangalore ? "Bangalore" : "Hyderabad";
-  const cityPath = isBangalore ? "bangalore" : "hyderabad";
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
-    projectType: ""
+    projectType: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -28,14 +20,13 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
     setIsSubmitting(true);
     try {
       const { error } = await (supabase.from("leads") as any).insert({
-        form_name: "Locality Hero Form",
-        source_page: `/${cityPath}/${localityName.toLowerCase().replace(/\s+/g, '-')}`,
+        form_name: "Hyderabad City Contact Form",
+        source_page: "/hyderabad",
         data: {
           name: formData.name,
           mobile: formData.mobile,
           projectType: formData.projectType,
-          locality: localityName
-        }
+        },
       });
       if (error) throw error;
       router.push("/thank-you");
@@ -44,7 +35,7 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
       toast({
         title: "Error",
         description: "Failed to submit form. Please try again.",
-        variant: "destructive"
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
@@ -53,11 +44,10 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
 
   return (
     <section className="relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
-      {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroImage}
-          alt={`Interior design in ${localityName}, ${cityName}`}
+          src={imgSrc(heroImage)}
+          alt="Luxury interior design in Hyderabad"
           decoding="async"
           fetchPriority="high"
           className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
@@ -65,39 +55,21 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
         <div className="absolute inset-0 hero-overlay" />
       </div>
 
-      {/* Content - Split Layout */}
       <div className="relative z-10 container px-4">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="text-center md:text-left">
             <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-4 md:mb-6 animate-fade-up tracking-[-0.03em] md:leading-[1.15]">
-              Interior Designers in
-              <span className="block text-secondary tracking-[-0.02em] mt-2">
-                {localityName}, {cityName}
-              </span>
+              Interior Designer in Hyderabad
             </h1>
             <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-lg animate-fade-up delay-200">
-              Premium interior design solutions for homes in {localityName}. Transform your space with {cityName}'s trusted designers.
+              End to end interior solutions with Hyderabad-focused expertise for apartments, villas, and full home interiors.
             </p>
-            <div className="flex flex-wrap gap-4 mt-6 md:mt-8 justify-center md:justify-start animate-fade-up delay-300">
-              <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="font-bold text-sm text-secondary-foreground">{projectCount}</span>
-                <span className="text-xs font-body text-muted">Delivered</span>
-              </div>
-              <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="font-bold text-sm text-primary-foreground">10 Yr</span>
-                <span className="text-xs font-body text-muted">Warranty</span>
-              </div>
-              <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="font-bold text-sm text-primary-foreground">45 Day</span>
-                <span className="text-xs font-body text-muted">Delivery</span>
-              </div>
-            </div>
           </div>
 
           <div className="max-w-xs md:max-w-lg mx-auto md:ml-auto md:mr-0 w-full animate-fade-up delay-300">
             <div className="glass-card rounded-2xl md:rounded-3xl p-4 md:p-10 shadow-elevated">
               <h2 className="font-display text-base md:text-2xl text-foreground text-center mb-2.5 md:mb-6 tracking-[-0.02em]">
-                Get Your Free Consultation
+                Get Free Design Consultation
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-2 md:space-y-5">
@@ -116,12 +88,11 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
                   onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                   required
                   pattern="[0-9]{10}"
-                  title="Please enter a 10-digit phone number"
                   className="w-full px-3 md:px-5 py-2.5 md:py-4 bg-background/60 border border-border rounded-xl md:rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm md:text-base"
                 />
                 <input
                   type="text"
-                  placeholder="Project Type (e.g., 2BHK, Villa)"
+                  placeholder="Project Type (e.g., 2BHK)"
                   value={formData.projectType}
                   onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                   required
@@ -132,13 +103,9 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
                   disabled={isSubmitting}
                   className="w-full btn-terracotta py-2.5 md:py-4 rounded-xl md:rounded-2xl text-secondary-foreground font-semibold font-body text-sm md:text-lg shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? "Submitting..." : "Get Free Quote"}
+                  {isSubmitting ? "Submitting..." : "Get My Free Design"}
                 </button>
               </form>
-
-              <p className="text-center text-[11px] md:text-sm text-muted-foreground mt-2 md:mt-4 font-body">
-                No spam. We respect your privacy.
-              </p>
             </div>
           </div>
         </div>
@@ -147,5 +114,4 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
   );
 };
 
-export default LocalityHeroSection;
-
+export default HyderabadHeroSection;

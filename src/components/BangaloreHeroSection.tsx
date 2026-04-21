@@ -17,8 +17,8 @@ function BangaloreHeroSectionInner() {
   });
 
   const area = (searchParams?.get("area") ?? "").trim();
-  const locationLabel = area ? `${area}, Hyderabad` : "Hyderabad";
-  const sourcePage = area ? `/hyderabad?area=${encodeURIComponent(area)}` : "/hyderabad";
+  const locationLabel = area ? `${area}, Bangalore` : "Bangalore";
+  const sourcePage = area ? `/bangalore?area=${encodeURIComponent(area)}` : "/bangalore";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ function BangaloreHeroSectionInner() {
 
     try {
       const { error } = await (supabase.from("leads") as any).insert({
-        form_name: "Hyderabad Landing Page Form",
+        form_name: "Bangalore Landing Page Form",
         source_page: sourcePage,
         data: {
           name: formData.name,
@@ -52,7 +52,7 @@ function BangaloreHeroSectionInner() {
   };
 
   return (
-    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
+    <section className="relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -65,39 +65,47 @@ function BangaloreHeroSectionInner() {
         <div className="absolute inset-0 hero-overlay" />
       </div>
 
-      {/* Content */}
       <div className="relative z-10 container px-4">
-        <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
-          <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 md:mb-4 animate-fade-up tracking-[-0.03em] md:leading-[1.2]">
-            Interior Designers
-            <span className="block text-secondary tracking-[-0.02em] md:mt-2">in {locationLabel}</span>
-          </h1>
-          <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-            Transform your home with Hyderabad's #1 rated interior design company.
-            <span className="block mt-1">10-Year Warranty • 45-Day Delivery • EMI Available</span>
-          </p>
-        </div>
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="text-center md:text-left">
+            <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-4 md:mb-6 animate-fade-up tracking-[-0.03em] md:leading-[1.15]">
+              Interior Designer in
+              <span className="block tracking-[-0.02em] mt-2 text-secondary">{locationLabel}</span>
+            </h1>
+            <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-lg animate-fade-up delay-200">
+              End to end interior solutions for apartments, villas, and full home interiors in Bangalore.
+            </p>
+            <div className="flex flex-wrap gap-4 mt-6 md:mt-8 justify-center md:justify-start animate-fade-up delay-300">
+              <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <span className="font-bold text-sm text-secondary-foreground">500+</span>
+                <span className="text-xs font-body text-muted">Projects</span>
+              </div>
+              <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <span className="font-bold text-sm text-primary-foreground">10 Yr</span>
+                <span className="text-xs font-body text-muted">Warranty</span>
+              </div>
+              <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <span className="font-bold text-sm text-primary-foreground">45 Day</span>
+                <span className="text-xs font-body text-muted">Delivery</span>
+              </div>
+            </div>
+          </div>
 
-        {/* Floating Lead Card */}
-        <div className="max-w-sm mx-auto animate-fade-up delay-300">
-          <div className="glass-card rounded-3xl p-5 md:p-6 shadow-elevated">
-            <h2 className="font-display text-lg md:text-xl text-foreground text-center mb-4 tracking-[-0.02em]">
-              Get Free Quote in 24 Hours
-            </h2>
+          <div className="max-w-xs md:max-w-lg mx-auto md:ml-auto md:mr-0 w-full animate-fade-up delay-300">
+            <div className="glass-card rounded-2xl md:rounded-3xl p-4 md:p-10 shadow-elevated">
+              <h2 className="font-display text-base md:text-2xl text-foreground text-center mb-2.5 md:mb-6 tracking-[-0.02em]">
+                Get Free Design Consultation
+              </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <div className="relative">
+              <form onSubmit={handleSubmit} className="space-y-2 md:space-y-5">
                 <input
                   type="text"
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                  className="w-full px-3 md:px-5 py-2.5 md:py-4 bg-background/60 border border-border rounded-xl md:rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm md:text-base"
                 />
-              </div>
-
-              <div className="relative">
                 <input
                   type="tel"
                   placeholder="Mobile Number"
@@ -106,33 +114,29 @@ function BangaloreHeroSectionInner() {
                   required
                   pattern="[0-9]{10}"
                   title="Please enter a 10-digit phone number"
-                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                  className="w-full px-3 md:px-5 py-2.5 md:py-4 bg-background/60 border border-border rounded-xl md:rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm md:text-base"
                 />
-              </div>
-
-              <div className="relative">
                 <input
                   type="text"
                   placeholder="Project Type (e.g., 2BHK, Villa)"
                   value={formData.projectType}
                   onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                   required
-                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                  className="w-full px-3 md:px-5 py-2.5 md:py-4 bg-background/60 border border-border rounded-xl md:rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm md:text-base"
                 />
-              </div>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full btn-terracotta py-2.5 md:py-4 rounded-xl md:rounded-2xl text-secondary-foreground font-semibold font-body text-sm md:text-lg shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? "Submitting..." : "Get My Free Design"}
+                </button>
+              </form>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold font-body text-base shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? "Submitting..." : "Get My Free Quote"}
-              </button>
-            </form>
-
-            <p className="text-center text-xs text-muted-foreground mt-4 font-body">
-              No spam. We respect your privacy.
-            </p>
+              <p className="text-center text-[11px] md:text-sm text-muted-foreground mt-2 md:mt-4 font-body">
+                No spam. We respect your privacy.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -158,8 +162,8 @@ function BangaloreHeroSectionInnerFallback() {
     projectType: "",
   });
 
-  const locationLabel = "Hyderabad";
-  const sourcePage = "/hyderabad";
+  const locationLabel = "Bangalore";
+  const sourcePage = "/bangalore";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -167,7 +171,7 @@ function BangaloreHeroSectionInnerFallback() {
 
     try {
       const { error } = await (supabase.from("leads") as any).insert({
-        form_name: "Hyderabad Landing Page Form",
+        form_name: "Bangalore Landing Page Form",
         source_page: sourcePage,
         data: {
           name: formData.name,
@@ -193,7 +197,7 @@ function BangaloreHeroSectionInnerFallback() {
   };
 
   return (
-    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-20 pt-24">
+    <section className="relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
       <div className="absolute inset-0 z-0">
         <img
           src={imgSrc(heroImage)}
@@ -206,36 +210,32 @@ function BangaloreHeroSectionInnerFallback() {
       </div>
 
       <div className="relative z-10 container px-4">
-        <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
-          <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 md:mb-4 animate-fade-up tracking-[-0.03em] md:leading-[1.2]">
-            Interior Designers
-            <span className="block text-secondary tracking-[-0.02em] md:mt-2">in {locationLabel}</span>
-          </h1>
-          <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-            Transform your home with Hyderabad's #1 rated interior design company.
-            <span className="block mt-1">10-Year Warranty • 45-Day Delivery • EMI Available</span>
-          </p>
-        </div>
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="text-center md:text-left">
+            <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-4 md:mb-6 animate-fade-up tracking-[-0.03em] md:leading-[1.15]">
+              Interior Designer in
+              <span className="block tracking-[-0.02em] mt-2 text-secondary">{locationLabel}</span>
+            </h1>
+            <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-lg animate-fade-up delay-200">
+              End to end interior solutions for apartments, villas, and full home interiors in Bangalore.
+            </p>
+          </div>
 
-        <div className="max-w-sm mx-auto animate-fade-up delay-300">
-          <div className="glass-card rounded-3xl p-5 md:p-6 shadow-elevated">
-            <h2 className="font-display text-lg md:text-xl text-foreground text-center mb-4 tracking-[-0.02em]">
-              Get Free Quote in 24 Hours
-            </h2>
+          <div className="max-w-xs md:max-w-lg mx-auto md:ml-auto md:mr-0 w-full animate-fade-up delay-300">
+            <div className="glass-card rounded-2xl md:rounded-3xl p-4 md:p-10 shadow-elevated">
+              <h2 className="font-display text-base md:text-2xl text-foreground text-center mb-2.5 md:mb-6 tracking-[-0.02em]">
+                Get Free Design Consultation
+              </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <div className="relative">
+              <form onSubmit={handleSubmit} className="space-y-2 md:space-y-5">
                 <input
                   type="text"
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                  className="w-full px-3 md:px-5 py-2.5 md:py-4 bg-background/60 border border-border rounded-xl md:rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm md:text-base"
                 />
-              </div>
-
-              <div className="relative">
                 <input
                   type="tel"
                   placeholder="Mobile Number"
@@ -244,31 +244,25 @@ function BangaloreHeroSectionInnerFallback() {
                   required
                   pattern="[0-9]{10}"
                   title="Please enter a 10-digit phone number"
-                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                  className="w-full px-3 md:px-5 py-2.5 md:py-4 bg-background/60 border border-border rounded-xl md:rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm md:text-base"
                 />
-              </div>
-
-              <div className="relative">
                 <input
                   type="text"
                   placeholder="Project Type (e.g., 2BHK, Villa)"
                   value={formData.projectType}
                   onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                   required
-                  className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                  className="w-full px-3 md:px-5 py-2.5 md:py-4 bg-background/60 border border-border rounded-xl md:rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm md:text-base"
                 />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold font-body text-base shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? "Submitting..." : "Get My Free Quote"}
-              </button>
-            </form>
-
-            <p className="text-center text-xs text-muted-foreground mt-4 font-body">No spam. We respect your privacy.</p>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full btn-terracotta py-2.5 md:py-4 rounded-xl md:rounded-2xl text-secondary-foreground font-semibold font-body text-sm md:text-lg shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? "Submitting..." : "Get My Free Design"}
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,7 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 // Service images
 import kitchenImage from "@/assets/service-modular-kitchen.jpg";
@@ -39,6 +42,10 @@ interface RelatedServicesProps {
 }
 
 const RelatedServices = ({ currentSlug }: RelatedServicesProps) => {
+  const pathname = usePathname() ?? "";
+  const isBengaluru = pathname.startsWith("/bangalore");
+  const servicesBasePath = isBengaluru ? "/bangalore/services" : "/services";
+
   // Get 4 related services, excluding the current one
   const relatedServices = allServices
     .filter((service) => service.slug !== currentSlug)
@@ -60,7 +67,7 @@ const RelatedServices = ({ currentSlug }: RelatedServicesProps) => {
           {relatedServices.map((service) => (
             <a
               key={service.slug}
-              href={`/services/${service.slug}`}
+              href={`${servicesBasePath}/${service.slug}`}
               className="group relative overflow-hidden rounded-2xl aspect-[3/4]"
             >
               <img
@@ -85,7 +92,7 @@ const RelatedServices = ({ currentSlug }: RelatedServicesProps) => {
 
         <div className="text-center mt-8">
           <a
-            href="https://everyspaces.com/services"
+            href={servicesBasePath}
             className="inline-flex items-center gap-2 text-secondary font-medium hover:underline"
           >
             View All Services <ArrowRight className="w-4 h-4" />

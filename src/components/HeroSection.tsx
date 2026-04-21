@@ -48,7 +48,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={imgSrc(heroImage)}
-          alt="Luxury interior design in Hyderabad"
+          alt="Luxury interior design in Hyderabad and Bangalore"
           decoding="async"
           fetchPriority="high"
           className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform" />
@@ -62,19 +62,20 @@ const HeroSection = () => {
           {/* Left Side - Heading */}
           <div className="text-center md:text-left">
             <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-4 md:mb-6 animate-fade-up tracking-[-0.03em] md:leading-[1.15]">
-              Interior Designers in
-              <span className="block tracking-[-0.02em] mt-2 text-primary-foreground">
-                Hyderabad
-              </span>
+              Best Interior Designer
             </h1>
             <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-lg animate-fade-up delay-200">
-              End to End Interior Solutions, Best{" "}
+              End to end interior solutions with location-specific expertise from the best{" "}
               <a href="/services" className="underline hover:text-secondary transition-colors">
                 Interior Designers
               </a>{" "}
-              in{" "}
+              across{" "}
               <a href="/hyderabad" className="underline hover:text-secondary transition-colors">
                 Hyderabad
+              </a>{" "}
+              and{" "}
+              <a href="/bangalore" className="underline hover:text-secondary transition-colors">
+                Bangalore
               </a>
             </p>
 

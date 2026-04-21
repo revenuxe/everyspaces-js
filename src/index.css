@@ -688,3 +688,43 @@
 .article-content-mobile [data-warning] {
   @apply my-6 p-4 bg-amber-50 dark:bg-amber-950/30 border-l-[3px] border-amber-500 rounded-r-lg text-foreground/80;
 }
+
+/* Service hero layout parity with homepage */
+.service-hero .container {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .service-hero .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .service-hero .container > div:first-child {
+    margin: 0;
+    text-align: left;
+  }
+
+  .service-hero .container > div:first-child p {
+    margin-left: 0;
+  }
+
+  .service-hero .container > div:last-child {
+    margin-left: auto;
+    margin-right: 0;
+    width: 100%;
+    max-width: 34rem;
+  }
+}
+
+/* Global service pages must stay location-neutral */
+body[data-route-flow="global-services"] .service-hero h1 span {
+  display: none;
+}
+
+/* Bangalore service pages must show location in H1 */
+body[data-route-flow="bangalore-services"] .service-hero h1 span:empty::before {
+  content: "in Bangalore";
+}

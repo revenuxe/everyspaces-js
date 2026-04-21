@@ -7,14 +7,14 @@ const ExploreBangaloreCTA = () => {
     <section className="py-12 md:py-16 bg-muted/30">
       <div className="container px-4">
         <a
-          href="/hyderabad"
+          href="/bangalore"
           className="group flex flex-col md:flex-row items-center gap-6 md:gap-10 bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-glow transition-all duration-500 border border-border/50"
         >
           {/* Image */}
           <div className="w-full md:w-1/2 h-48 md:h-64 overflow-hidden">
             <img
               src={imgSrc(iLoveBangaloreImage)}
-              alt="I Love Hyderabad"
+              alt="Explore Bangalore interior design"
               loading="lazy"
               decoding="async"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -25,7 +25,7 @@ const ExploreBangaloreCTA = () => {
           <div className="flex-1 p-6 md:p-8 flex items-center justify-between gap-4">
             <div>
               <h3 className="font-display text-2xl md:text-3xl text-primary mb-2">
-                Explore Hyderabad
+                Explore Bangalore
               </h3>
               <p className="text-muted-foreground font-body text-sm md:text-base">
                 Discover our stunning interior projects across the city
