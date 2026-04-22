@@ -11,7 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://everyspaces.com"),
+  metadataBase: new URL("https://www.everyspaces.com"),
   title: {
     default: "EverySpaces | Best Interior Designers in Hyderabad",
     template: "%s | EverySpaces",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://everyspaces.com/",
+    url: "https://www.everyspaces.com/",
     siteName: "EverySpaces Interior Design",
     title: "EverySpaces Interior Design | Best Interior Designers in Hyderabad",
     description:
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
       "Premium modular kitchens, bedrooms, and home interiors in Hyderabad. Free consultation.",
     images: ["/og-image.jpg"],
   },
-  alternates: { canonical: "https://everyspaces.com/" },
+  alternates: { canonical: "https://www.everyspaces.com/" },
   icons: { icon: "/favicon.ico", apple: "/favicon.ico" },
   appleWebApp: { capable: true, statusBarStyle: "black-translucent" },
   formatDetection: { telephone: true },

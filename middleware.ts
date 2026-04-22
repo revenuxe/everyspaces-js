@@ -11,11 +11,11 @@ function unauthorizedResponse() {
 }
 
 export function middleware(request: NextRequest) {
-  // Canonical host redirect: old domain -> current domain.
+  // Canonical host redirects: old domain + apex -> canonical www host.
   const host = request.nextUrl.hostname.toLowerCase();
-  if (host === "zikhra.com" || host === "www.zikhra.com") {
+  if (host === "zikhra.com" || host === "www.zikhra.com" || host === "everyspaces.com") {
     const url = request.nextUrl.clone();
-    url.hostname = "everyspaces.com";
+    url.hostname = "www.everyspaces.com";
     url.protocol = "https:";
     return NextResponse.redirect(url, 301);
   }

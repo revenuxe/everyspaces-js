@@ -1,9 +1,9 @@
 /**
  * Canonical site origin for absolute URLs (sitemap, OG fallbacks, etc.).
- * Set NEXT_PUBLIC_SITE_URL in production (e.g. https://everyspaces.com).
+ * Use a single host consistently to avoid canonical->redirect chains.
  */
 export function getSiteUrl(): string {
-  return "https://everyspaces.com";
+  return "https://www.everyspaces.com";
 }
 
 export function absoluteUrl(path: string): string {
