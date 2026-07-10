@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import type { StaticImageData } from "next/image";
 import { usePathname } from "next/navigation";
@@ -22,7 +22,6 @@ import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import { 
   StructuredData, 
-  localBusinessSchema,
   createServiceSchema,
   createFAQSchema,
   createBreadcrumbSchema
@@ -126,28 +125,17 @@ const LocalityPageTemplate = ({
 
   const seoData = seo || defaultSEO;
   
-  // Enhanced Local Business Schema with location-specific data
+  // A locality is a service area, not a separate physical storefront. Marking it
+  // as a LocalBusiness would make Google's required address data misleading.
   const localitySchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `https://everyspaces.com/${cityPath}/${slug}#localbusiness`,
-    "name": `EverySpaces Interior Designers ${localityName}`,
+    "@type": "Service",
+    "@id": `https://www.everyspaces.com/${cityPath}/${slug}#service-area`,
+    "name": `Interior Design Services in ${localityName}`,
     "image": heroUrl,
-    "url": `https://everyspaces.com/${cityPath}/${slug}`,
-    "telephone": "+91-9886579923",
-    "email": "everyspaces.com@gmail.com",
+    "url": `https://www.everyspaces.com/${cityPath}/${slug}`,
     "description": seoData.metaDescription,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": localityName,
-      "addressRegion": cityRegion,
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": cityGeo.lat,
-      "longitude": cityGeo.lng
-    },
+    "provider": { "@id": "https://www.everyspaces.com/#organization" },
     "areaServed": [
       {
         "@type": "Place",
@@ -158,13 +146,6 @@ const LocalityPageTemplate = ({
         "name": `${area}, ${cityRegion}, India`
       }))
     ],
-    "priceRange": "Rs Rs Rs ",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "10:00",
-      "closes": "19:00"
-    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `Interior Design Services in ${localityName}`,
@@ -176,45 +157,14 @@ const LocalityPageTemplate = ({
           "description": `Professional ${specialty.toLowerCase()} services in ${localityName}, ${cityName} by EverySpaces`
         }
       }))
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": "520",
-      "reviewCount": "485"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "author": { "@type": "Person", "name": "Priya Sharma" },
-        "datePublished": "2025-11-15",
-        "reviewBody": `EverySpaces transformed our home in ${localityName} beautifully. The modular kitchen quality is outstanding and the team was very professional.`,
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-      },
-      {
-        "@type": "Review",
-        "author": { "@type": "Person", "name": "Rahul Menon" },
-        "datePublished": "2025-10-22",
-        "reviewBody": `Got our full home interiors done by EverySpaces in ${localityName}. Excellent design sense, premium materials, and the 10-year warranty gives great peace of mind.`,
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-      },
-      {
-        "@type": "Review",
-        "author": { "@type": "Person", "name": "Anitha Reddy" },
-        "datePublished": "2025-09-10",
-        "reviewBody": `We chose EverySpaces for our interior work in ${localityName}. The wardrobe designs and false ceiling work exceeded our expectations. Highly recommend!`,
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-      }
-    ]
+    }
   };
 
   // Service schema for the locality
   const serviceSchema = createServiceSchema(
     `Interior Design Services in ${localityName}`,
     seoData.metaDescription,
-    `https://everyspaces.com/${cityPath}/${slug}`,
+    `https://www.everyspaces.com/${cityPath}/${slug}`,
     heroUrl,
     "150000-2500000",
     {
@@ -226,9 +176,9 @@ const LocalityPageTemplate = ({
 
   // Breadcrumb schema
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: "Home", url: "https://everyspaces.com" },
-    { name: cityName, url: `https://everyspaces.com/${cityPath}` },
-    { name: localityName, url: `https://everyspaces.com/${cityPath}/${slug}` }
+    { name: "Home", url: "https://www.everyspaces.com" },
+    { name: cityName, url: `https://www.everyspaces.com/${cityPath}` },
+    { name: localityName, url: `https://www.everyspaces.com/${cityPath}/${slug}` }
   ], `${cityPath}/${slug}`);
 
   // FAQ schema with locality-specific FAQs
@@ -238,15 +188,15 @@ const LocalityPageTemplate = ({
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `https://everyspaces.com/${cityPath}/${slug}#webpage`,
-    "url": `https://everyspaces.com/${cityPath}/${slug}`,
+    "@id": `https://www.everyspaces.com/${cityPath}/${slug}#webpage`,
+    "url": `https://www.everyspaces.com/${cityPath}/${slug}`,
     "name": seoData.metaTitle,
     "description": seoData.metaDescription,
     "isPartOf": {
-      "@id": "https://everyspaces.com/#website"
+      "@id": "https://www.everyspaces.com/#website"
     },
     "about": {
-      "@id": `https://everyspaces.com/${cityPath}/${slug}#localbusiness`
+      "@id": `https://www.everyspaces.com/${cityPath}/${slug}#service-area`
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
@@ -262,7 +212,7 @@ const LocalityPageTemplate = ({
       ]
     },
     "breadcrumb": {
-      "@id": `https://everyspaces.com/${cityPath}/${slug}#breadcrumb`
+      "@id": `https://www.everyspaces.com/${cityPath}/${slug}#breadcrumb`
     }
   };
 
@@ -270,7 +220,7 @@ const LocalityPageTemplate = ({
   const placeSchema = {
     "@context": "https://schema.org",
     "@type": "Place",
-    "@id": `https://everyspaces.com/${cityPath}/${slug}#place`,
+    "@id": `https://www.everyspaces.com/${cityPath}/${slug}#place`,
     "name": `${localityName}, ${cityName}`,
     "description": `Interior design services available in ${localityName}, ${cityName} by EverySpaces`,
     "address": {

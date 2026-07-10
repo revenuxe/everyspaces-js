@@ -21,13 +21,13 @@ export const StructuredData = ({ data }: StructuredDataProps) => {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://everyspaces.com/#organization",
+  "@id": "https://www.everyspaces.com/#organization",
   "name": "EverySpaces",
   "legalName": "EverySpaces Interior Design",
-  "url": "https://everyspaces.com",
+  "url": "https://www.everyspaces.com",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://everyspaces.com/favicon.ico",
+    "url": "https://www.everyspaces.com/favicon.ico",
     "width": 64,
     "height": 64
   },
@@ -111,14 +111,16 @@ export const organizationSchema = {
   }
 };
 
-// Local Business schema (enhanced for AEO) - reviews removed as Google doesn't support self-published reviews for rich results
+// Local Business markup is used only for EverySpaces' actual Hyderabad location.
+// Do not add ratings/reviews here: they are self-published and aren't eligible for
+// Google's local-business rich result.
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://everyspaces.com/#localbusiness",
+  "@id": "https://www.everyspaces.com/#localbusiness",
   "name": "EverySpaces Interior Design",
-  "image": "https://everyspaces.com/favicon.ico",
-  "url": "https://everyspaces.com",
+  "image": "https://www.everyspaces.com/favicon.ico",
+  "url": "https://www.everyspaces.com",
   "telephone": "+91-9886579923",
   "email": "everyspaces.com@gmail.com",
   "description": "Best interior designers in Hyderabad specializing in modular kitchens, wardrobes, and complete home interiors. 500+ projects completed with 10-year warranty.",
@@ -132,8 +134,8 @@ export const localBusinessSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "13.0297",
-    "longitude": "77.61235"
+    "latitude": "17.3850",
+    "longitude": "78.4867"
   },
   "openingHoursSpecification": [
     {
@@ -152,55 +154,24 @@ export const localBusinessSchema = {
       "name": "Hyderabad"
     }
   ],
-  "hasMap": "https://maps.google.com/?q=EverySpaces+Begumpet+Hyderabad",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "bestRating": "5",
-    "worstRating": "1",
-    "ratingCount": "520",
-    "reviewCount": "485"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Priya Sharma" },
-      "datePublished": "2025-11-15",
-      "reviewBody": "EverySpaces transformed our 3BHK in Gachibowli beautifully. The modular kitchen quality is outstanding and the team was very professional. Completed on time with great attention to detail.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Rahul Menon" },
-      "datePublished": "2025-10-22",
-      "reviewBody": "Got our full home interiors done by EverySpaces for our apartment in Kondapur. Excellent design sense, premium materials, and the 10-year warranty gives great peace of mind.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Anitha Reddy" },
-      "datePublished": "2025-09-10",
-      "reviewBody": "We chose EverySpaces for our villa interior in Kokapet. The wardrobe designs and false ceiling work exceeded our expectations. Highly recommend for premium interiors in Hyderabad.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    }
-  ]
+  "hasMap": "https://maps.google.com/?q=EverySpaces+Begumpet+Hyderabad"
 };
 
 // Website schema (enhanced for AEO with Speakable)
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://everyspaces.com/#website",
+  "@id": "https://www.everyspaces.com/#website",
   "name": "EverySpaces - Best Interior Designers in Hyderabad",
   "alternateName": "EverySpaces Interior Design",
-  "url": "https://everyspaces.com",
+  "url": "https://www.everyspaces.com",
   "description": "EverySpaces offers premium interior design services in Hyderabad including modular kitchens, wardrobes, and full home interiors with 10-year warranty.",
   "publisher": {
-    "@id": "https://everyspaces.com/#organization"
+    "@id": "https://www.everyspaces.com/#organization"
   },
   "potentialAction": {
     "@type": "ReadAction",
-    "target": "https://everyspaces.com"
+    "target": "https://www.everyspaces.com"
   },
   "inLanguage": "en-IN"
 };
@@ -225,7 +196,7 @@ export const howToInteriorDesignSchema = {
   "@type": "HowTo",
   "name": "How to Get Interior Design Done in Hyderabad with EverySpaces",
   "description": "Complete guide to getting your home interior designed by EverySpaces, the best interior designers in Hyderabad. From consultation to installation in 45-90 days.",
-  "image": "https://everyspaces.com/how-it-works.jpg",
+  "image": "https://www.everyspaces.com/how-it-works.jpg",
   "totalTime": "P60D",
   "estimatedCost": {
     "@type": "MonetaryAmount",
@@ -254,37 +225,37 @@ export const howToInteriorDesignSchema = {
       "position": 1,
       "name": "Book Free Consultation",
       "text": "Contact EverySpaces at +91-9886579923 or fill the online form. Our design expert will schedule a free site visit at your convenience.",
-      "url": "https://everyspaces.com/contact",
-      "image": "https://everyspaces.com/step-consultation.jpg"
+      "url": "https://www.everyspaces.com/contact",
+      "image": "https://www.everyspaces.com/step-consultation.jpg"
     },
     {
       "@type": "HowToStep",
       "position": 2,
       "name": "Design Proposal",
       "text": "Receive detailed 3D designs, material options, and transparent cost estimate within 5 working days. Review and request modifications.",
-      "url": "https://everyspaces.com/services",
-      "image": "https://everyspaces.com/step-design.jpg"
+      "url": "https://www.everyspaces.com/services",
+      "image": "https://www.everyspaces.com/step-design.jpg"
     },
     {
       "@type": "HowToStep",
       "position": 3,
       "name": "Approval & Production",
       "text": "Approve final designs and make initial payment. Manufacturing begins at our in-house facility with quality materials.",
-      "image": "https://everyspaces.com/step-production.jpg"
+      "image": "https://www.everyspaces.com/step-production.jpg"
     },
     {
       "@type": "HowToStep",
       "position": 4,
       "name": "Installation",
       "text": "Professional installation team executes the project with dedicated project manager. Modular kitchen takes 15-20 days, full home 45-90 days.",
-      "image": "https://everyspaces.com/step-installation.jpg"
+      "image": "https://www.everyspaces.com/step-installation.jpg"
     },
     {
       "@type": "HowToStep",
       "position": 5,
       "name": "Handover with Warranty",
       "text": "Final walkthrough, documentation handover, and 10-year warranty activation. After-sales support for any issues.",
-      "image": "https://everyspaces.com/step-handover.jpg"
+      "image": "https://www.everyspaces.com/step-handover.jpg"
     }
   ]
 };
@@ -310,7 +281,7 @@ export const createServiceSchema = (
   "url": url,
   "image": image !== undefined ? imgSrc(image) : undefined,
   "provider": {
-    "@id": "https://everyspaces.com/#organization"
+    "@id": "https://www.everyspaces.com/#organization"
   },
   "areaServed": additionalInfo?.areaServed?.map(area => ({
     "@type": "Place",
@@ -320,7 +291,7 @@ export const createServiceSchema = (
     "name": "Hyderabad"
   },
   "serviceType": "Interior Design",
-  "termsOfService": "https://everyspaces.com/terms",
+  "termsOfService": "https://www.everyspaces.com/terms",
   "offers": priceRange ? {
     "@type": "Offer",
     "priceSpecification": {
@@ -365,10 +336,10 @@ export const createArticleSchema = (article: {
   "author": {
     "@type": "Person",
     "name": article.author || "EverySpaces Design Team",
-    "url": "https://everyspaces.com/about"
+    "url": "https://www.everyspaces.com/about"
   },
   "publisher": {
-    "@id": "https://everyspaces.com/#organization"
+    "@id": "https://www.everyspaces.com/#organization"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -387,7 +358,7 @@ export const createArticleSchema = (article: {
 export const createBreadcrumbSchema = (items: { name: string; url: string }[], pageId?: string) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "@id": pageId ? `https://everyspaces.com/${pageId}#breadcrumb` : undefined,
+  "@id": pageId ? `https://www.everyspaces.com/${pageId}#breadcrumb` : undefined,
   "itemListElement": items.map((item, index) => ({
     "@type": "ListItem",
     "position": index + 1,
@@ -402,7 +373,7 @@ export const createBreadcrumbSchema = (items: { name: string; url: string }[], p
 export const createFAQSchema = (faqs: { question: string; answer: string }[], pageId: string) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": `https://everyspaces.com/${pageId}#faq`,
+  "@id": `https://www.everyspaces.com/${pageId}#faq`,
   "mainEntity": faqs.map((faq, index) => ({
     "@type": "Question",
     "name": faq.question,
@@ -417,7 +388,7 @@ export const createFAQSchema = (faqs: { question: string; answer: string }[], pa
 export const createImageGallerySchema = (images: { url: string | StaticImageData; name: string; description?: string }[]) => ({
   "@context": "https://schema.org",
   "@type": "ImageGallery",
-  "@id": "https://everyspaces.com/portfolio#gallery",
+  "@id": "https://www.everyspaces.com/portfolio#gallery",
   "name": "EverySpaces Interior Design Portfolio - Completed Projects in Hyderabad",
   "description": "View 500+ completed interior design projects by EverySpaces in Hyderabad including modular kitchens, bedrooms, living rooms, and full home interiors.",
   "image": images.map((img) => ({
@@ -427,12 +398,13 @@ export const createImageGallerySchema = (images: { url: string | StaticImageData
     "description": img.description || `${img.name} by EverySpaces Interior Design Hyderabad`
   })),
   "creator": {
-    "@id": "https://everyspaces.com/#organization"
+    "@id": "https://www.everyspaces.com/#organization"
   }
 });
 
-// Product schema for specific offerings (AEO for e-commerce style queries)
-// Note: aggregateRating removed as Google doesn't support self-published reviews for rich results
+// Interior-design offerings are services, not retail products. Retaining the
+// legacy export name avoids touching every page while preventing invalid Product
+// rich-result items across the service pages.
 export const createProductSchema = (product: {
   name: string;
   description: string;
@@ -442,58 +414,26 @@ export const createProductSchema = (product: {
   category: string;
 }) => ({
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
+  "@id": `${product.url}#service-offer`,
   "name": product.name,
   "description": product.description,
   "image": imgSrc(product.image),
   "url": product.url,
-  "category": product.category,
-  "brand": {
-    "@id": "https://everyspaces.com/#organization"
+  "serviceType": product.category,
+  "provider": {
+    "@id": "https://www.everyspaces.com/#organization"
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "520",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "author": { "@type": "Person", "name": "Priya Sharma" },
-      "datePublished": "2025-01-15",
-      "reviewBody": "EverySpaces delivered exceptional quality for our home interiors. The attention to detail and use of premium materials exceeded our expectations."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "author": { "@type": "Person", "name": "Rahul Menon" },
-      "datePublished": "2025-02-10",
-      "reviewBody": "Professional team, on-time delivery, and beautiful designs. Highly recommend EverySpaces for anyone looking for quality interior solutions in Hyderabad."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": { "@type": "Rating", "ratingValue": "4", "bestRating": "5" },
-      "author": { "@type": "Person", "name": "Anitha Reddy" },
-      "datePublished": "2025-03-05",
-      "reviewBody": "Great design team and excellent craftsmanship. Our modular kitchen and wardrobes look stunning. Very happy with the final result."
-    }
-  ],
   "offers": {
-    "@type": "AggregateOffer",
+    "@type": "Offer",
     "priceCurrency": "INR",
-    "lowPrice": product.priceRange.split("-")[0],
-    "highPrice": product.priceRange.split("-")[1] || product.priceRange.split("-")[0],
-    "offerCount": "1",
+    "price": product.priceRange.split("-")[0],
     "availability": "https://schema.org/InStock",
-    "seller": {
-      "@id": "https://everyspaces.com/#organization"
+    "offeredBy": {
+      "@id": "https://www.everyspaces.com/#organization"
     }
   }
 });
-
 // Q&A schema for individual questions (AEO critical for conversational AI)
 export const createQASchema = (question: string, answer: string, url: string) => ({
   "@context": "https://schema.org",
@@ -506,7 +446,7 @@ export const createQASchema = (question: string, answer: string, url: string) =>
     "dateCreated": new Date().toISOString(),
     "author": {
       "@type": "Organization",
-      "@id": "https://everyspaces.com/#organization"
+      "@id": "https://www.everyspaces.com/#organization"
     },
     "acceptedAnswer": {
       "@type": "Answer",
@@ -517,7 +457,7 @@ export const createQASchema = (question: string, answer: string, url: string) =>
       "author": {
         "@type": "Organization",
         "name": "EverySpaces",
-        "@id": "https://everyspaces.com/#organization"
+        "@id": "https://www.everyspaces.com/#organization"
       }
     }
   }
@@ -527,10 +467,10 @@ export const createQASchema = (question: string, answer: string, url: string) =>
 export const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://everyspaces.com/#professionalservice",
+  "@id": "https://www.everyspaces.com/#professionalservice",
   "name": "EverySpaces Interior Design Services",
   "description": "Professional interior design services in Hyderabad including modular kitchen design, wardrobe design, living room design, bedroom interiors, and complete home renovations.",
-  "url": "https://everyspaces.com/services",
+  "url": "https://www.everyspaces.com/services",
   "telephone": "+91-9886579923",
   "priceRange": "₹₹₹",
   "address": {
@@ -543,8 +483,8 @@ export const professionalServiceSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "13.0297",
-    "longitude": "77.61235"
+    "latitude": "17.3850",
+    "longitude": "78.4867"
   },
   "areaServed": {
     "@type": "City",
@@ -606,19 +546,19 @@ export const professionalServiceSchema = {
 export const homePageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": "https://everyspaces.com/#webpage",
-  "url": "https://everyspaces.com",
+  "@id": "https://www.everyspaces.com/#webpage",
+  "url": "https://www.everyspaces.com",
   "name": "Best Interior Designers in Hyderabad | Modular Kitchen & Home Interiors - EverySpaces",
   "description": "EverySpaces is Hyderabad's top interior design company offering modular kitchens, wardrobes, and complete home interiors. 500+ projects, 10-year warranty, free consultation.",
   "isPartOf": {
-    "@id": "https://everyspaces.com/#website"
+    "@id": "https://www.everyspaces.com/#website"
   },
   "about": {
-    "@id": "https://everyspaces.com/#organization"
+    "@id": "https://www.everyspaces.com/#organization"
   },
   "primaryImageOfPage": {
     "@type": "ImageObject",
-    "url": "https://everyspaces.com/hero-interior.jpg"
+    "url": "https://www.everyspaces.com/hero-interior.jpg"
   },
   "breadcrumb": {
     "@type": "BreadcrumbList",
@@ -627,7 +567,7 @@ export const homePageSchema = {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://everyspaces.com"
+        "item": "https://www.everyspaces.com"
       }
     ]
   },
@@ -642,7 +582,7 @@ export const homePageSchema = {
     ]
   },
   "mainEntity": {
-    "@id": "https://everyspaces.com/#localbusiness"
+    "@id": "https://www.everyspaces.com/#localbusiness"
   }
 };
 
@@ -665,13 +605,13 @@ export const createActionSchema = (actionType: string, target: string, descripti
 export const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "@id": "https://everyspaces.com/contact#contactpage",
+  "@id": "https://www.everyspaces.com/contact#contactpage",
   "name": "Contact EverySpaces - Best Interior Designers in Hyderabad",
   "description": "Contact EverySpaces for free interior design consultation in Hyderabad. Call +91-9886579923 or fill our form for modular kitchen, wardrobe, and home interior quotes.",
-  "url": "https://everyspaces.com/contact",
+  "url": "https://www.everyspaces.com/contact",
   "mainEntity": {
     "@type": "Organization",
-    "@id": "https://everyspaces.com/#organization"
+    "@id": "https://www.everyspaces.com/#organization"
   },
   "speakable": {
     "@type": "SpeakableSpecification",
@@ -740,51 +680,51 @@ export const createItemListSchema = (items: { name: string; url: string; descrip
 
 // All services list for AI discoverability
 export const allServicesItemList = createItemListSchema([
-  { name: "Modular Kitchen Design Hyderabad", url: "https://everyspaces.com/services/modular-kitchen", description: "Custom modular kitchens from ₹2.5 Lakhs with 10-year warranty" },
-  { name: "Bedroom Interior Design Hyderabad", url: "https://everyspaces.com/services/bedroom-design", description: "Complete bedroom makeovers from ₹1.5 Lakhs" },
-  { name: "Living Room Design Hyderabad", url: "https://everyspaces.com/services/living-room", description: "Living room transformations from ₹2 Lakhs" },
-  { name: "Wardrobe Design Hyderabad", url: "https://everyspaces.com/services/wardrobe-design", description: "Custom wardrobes from ₹1.2 Lakhs" },
-  { name: "2 BHK Interior Design Hyderabad", url: "https://everyspaces.com/services/2bhk-interiors", description: "Complete 2BHK interiors from ₹8 Lakhs" },
-  { name: "3 BHK Interior Design Hyderabad", url: "https://everyspaces.com/services/3bhk-interiors", description: "Complete 3BHK interiors from ₹12 Lakhs" },
-  { name: "Villa Interior Design Hyderabad", url: "https://everyspaces.com/services/villa-interiors", description: "Luxury villa interiors from ₹25 Lakhs" },
-  { name: "Full Home Design Hyderabad", url: "https://everyspaces.com/services/full-home-design", description: "End-to-end home interior solutions" },
-  { name: "TV Unit Design Hyderabad", url: "https://everyspaces.com/services/tv-unit", description: "Custom TV units from ₹40,000" },
-  { name: "Pooja Room Design Hyderabad", url: "https://everyspaces.com/services/pooja-room", description: "Traditional & modern pooja rooms from ₹50,000" },
-  { name: "False Ceiling Design Hyderabad", url: "https://everyspaces.com/services/false-ceiling", description: "Designer false ceilings from ₹80,000" },
-  { name: "Home Office Design Hyderabad", url: "https://everyspaces.com/services/home-office", description: "Productive home offices from ₹1 Lakh" },
-  { name: "Kids Room Design Hyderabad", url: "https://everyspaces.com/services/kids-room", description: "Child-friendly room designs from ₹1.5 Lakhs" },
-  { name: "Dining Room Design Hyderabad", url: "https://everyspaces.com/services/dining-room", description: "Dining room interiors from ₹1 Lakh" },
-  { name: "Bathroom Design Hyderabad", url: "https://everyspaces.com/services/bathroom-design", description: "Bathroom renovations from ₹1.5 Lakhs" },
-  { name: "Foyer & Entrance Design Hyderabad", url: "https://everyspaces.com/services/foyer-entrance", description: "Impressive entrance designs from ₹50,000" },
-  { name: "Crockery Unit Design Hyderabad", url: "https://everyspaces.com/services/crockery-unit", description: "Custom crockery units from ₹60,000" },
-  { name: "Study Room Design Hyderabad", url: "https://everyspaces.com/services/study-room", description: "Study room setups from ₹1 Lakh" },
-  { name: "Guest Room Design Hyderabad", url: "https://everyspaces.com/services/guest-room", description: "Guest room makeovers from ₹1.5 Lakhs" },
-  { name: "Balcony Design Hyderabad", url: "https://everyspaces.com/services/balcony-design", description: "Balcony transformations from ₹50,000" },
+  { name: "Modular Kitchen Design Hyderabad", url: "https://www.everyspaces.com/services/modular-kitchen", description: "Custom modular kitchens from ₹2.5 Lakhs with 10-year warranty" },
+  { name: "Bedroom Interior Design Hyderabad", url: "https://www.everyspaces.com/services/bedroom-design", description: "Complete bedroom makeovers from ₹1.5 Lakhs" },
+  { name: "Living Room Design Hyderabad", url: "https://www.everyspaces.com/services/living-room", description: "Living room transformations from ₹2 Lakhs" },
+  { name: "Wardrobe Design Hyderabad", url: "https://www.everyspaces.com/services/wardrobe-design", description: "Custom wardrobes from ₹1.2 Lakhs" },
+  { name: "2 BHK Interior Design Hyderabad", url: "https://www.everyspaces.com/services/2bhk-interiors", description: "Complete 2BHK interiors from ₹8 Lakhs" },
+  { name: "3 BHK Interior Design Hyderabad", url: "https://www.everyspaces.com/services/3bhk-interiors", description: "Complete 3BHK interiors from ₹12 Lakhs" },
+  { name: "Villa Interior Design Hyderabad", url: "https://www.everyspaces.com/services/villa-interiors", description: "Luxury villa interiors from ₹25 Lakhs" },
+  { name: "Full Home Design Hyderabad", url: "https://www.everyspaces.com/services/full-home-design", description: "End-to-end home interior solutions" },
+  { name: "TV Unit Design Hyderabad", url: "https://www.everyspaces.com/services/tv-unit", description: "Custom TV units from ₹40,000" },
+  { name: "Pooja Room Design Hyderabad", url: "https://www.everyspaces.com/services/pooja-room", description: "Traditional & modern pooja rooms from ₹50,000" },
+  { name: "False Ceiling Design Hyderabad", url: "https://www.everyspaces.com/services/false-ceiling", description: "Designer false ceilings from ₹80,000" },
+  { name: "Home Office Design Hyderabad", url: "https://www.everyspaces.com/services/home-office", description: "Productive home offices from ₹1 Lakh" },
+  { name: "Kids Room Design Hyderabad", url: "https://www.everyspaces.com/services/kids-room", description: "Child-friendly room designs from ₹1.5 Lakhs" },
+  { name: "Dining Room Design Hyderabad", url: "https://www.everyspaces.com/services/dining-room", description: "Dining room interiors from ₹1 Lakh" },
+  { name: "Bathroom Design Hyderabad", url: "https://www.everyspaces.com/services/bathroom-design", description: "Bathroom renovations from ₹1.5 Lakhs" },
+  { name: "Foyer & Entrance Design Hyderabad", url: "https://www.everyspaces.com/services/foyer-entrance", description: "Impressive entrance designs from ₹50,000" },
+  { name: "Crockery Unit Design Hyderabad", url: "https://www.everyspaces.com/services/crockery-unit", description: "Custom crockery units from ₹60,000" },
+  { name: "Study Room Design Hyderabad", url: "https://www.everyspaces.com/services/study-room", description: "Study room setups from ₹1 Lakh" },
+  { name: "Guest Room Design Hyderabad", url: "https://www.everyspaces.com/services/guest-room", description: "Guest room makeovers from ₹1.5 Lakhs" },
+  { name: "Balcony Design Hyderabad", url: "https://www.everyspaces.com/services/balcony-design", description: "Balcony transformations from ₹50,000" },
 ], "EverySpaces Interior Design Services in Hyderabad");
 
 // All localities list for AI discoverability
 export const allLocalitiesItemList = createItemListSchema([
-  { name: "Interior Designers in Jubilee Hills", url: "https://everyspaces.com/hyderabad/jubilee-hills" },
-  { name: "Interior Designers in Gachibowli", url: "https://everyspaces.com/hyderabad/gachibowli" },
-  { name: "Interior Designers in Kondapur", url: "https://everyspaces.com/hyderabad/kondapur" },
-  { name: "Interior Designers in Madhapur", url: "https://everyspaces.com/hyderabad/madhapur" },
-  { name: "Interior Designers in Himayatnagar", url: "https://everyspaces.com/hyderabad/himayatnagar" },
-  { name: "Interior Designers in Nallagandla", url: "https://everyspaces.com/hyderabad/nallagandla" },
-  { name: "Interior Designers in Ameerpet", url: "https://everyspaces.com/hyderabad/ameerpet" },
-  { name: "Interior Designers in HITEC City", url: "https://everyspaces.com/hyderabad/hitec-city" },
-  { name: "Interior Designers in Nanakramguda", url: "https://everyspaces.com/hyderabad/nanakramguda" },
-  { name: "Interior Designers in Narsingi", url: "https://everyspaces.com/hyderabad/narsingi" },
-  { name: "Interior Designers in Financial District", url: "https://everyspaces.com/hyderabad/financial-district" },
-  { name: "Interior Designers in Kokapet", url: "https://everyspaces.com/hyderabad/kokapet" },
-  { name: "Interior Designers in Kompally", url: "https://everyspaces.com/hyderabad/kompally" },
-  { name: "Interior Designers in Secunderabad", url: "https://everyspaces.com/hyderabad/secunderabad" },
-  { name: "Interior Designers in Miyapur", url: "https://everyspaces.com/hyderabad/miyapur" },
-  { name: "Interior Designers in Abids", url: "https://everyspaces.com/hyderabad/abids" },
-  { name: "Interior Designers in Uppal", url: "https://everyspaces.com/hyderabad/uppal" },
-  { name: "Interior Designers in Kukatpally", url: "https://everyspaces.com/hyderabad/kukatpally" },
-  { name: "Interior Designers in Banjara Hills", url: "https://everyspaces.com/hyderabad/banjara-hills" },
-  { name: "Interior Designers in Manikonda", url: "https://everyspaces.com/hyderabad/manikonda" },
-  { name: "Interior Designers in Begumpet", url: "https://everyspaces.com/hyderabad/begumpet" },
+  { name: "Interior Designers in Jubilee Hills", url: "https://www.everyspaces.com/hyderabad/jubilee-hills" },
+  { name: "Interior Designers in Gachibowli", url: "https://www.everyspaces.com/hyderabad/gachibowli" },
+  { name: "Interior Designers in Kondapur", url: "https://www.everyspaces.com/hyderabad/kondapur" },
+  { name: "Interior Designers in Madhapur", url: "https://www.everyspaces.com/hyderabad/madhapur" },
+  { name: "Interior Designers in Himayatnagar", url: "https://www.everyspaces.com/hyderabad/himayatnagar" },
+  { name: "Interior Designers in Nallagandla", url: "https://www.everyspaces.com/hyderabad/nallagandla" },
+  { name: "Interior Designers in Ameerpet", url: "https://www.everyspaces.com/hyderabad/ameerpet" },
+  { name: "Interior Designers in HITEC City", url: "https://www.everyspaces.com/hyderabad/hitec-city" },
+  { name: "Interior Designers in Nanakramguda", url: "https://www.everyspaces.com/hyderabad/nanakramguda" },
+  { name: "Interior Designers in Narsingi", url: "https://www.everyspaces.com/hyderabad/narsingi" },
+  { name: "Interior Designers in Financial District", url: "https://www.everyspaces.com/hyderabad/financial-district" },
+  { name: "Interior Designers in Kokapet", url: "https://www.everyspaces.com/hyderabad/kokapet" },
+  { name: "Interior Designers in Kompally", url: "https://www.everyspaces.com/hyderabad/kompally" },
+  { name: "Interior Designers in Secunderabad", url: "https://www.everyspaces.com/hyderabad/secunderabad" },
+  { name: "Interior Designers in Miyapur", url: "https://www.everyspaces.com/hyderabad/miyapur" },
+  { name: "Interior Designers in Abids", url: "https://www.everyspaces.com/hyderabad/abids" },
+  { name: "Interior Designers in Uppal", url: "https://www.everyspaces.com/hyderabad/uppal" },
+  { name: "Interior Designers in Kukatpally", url: "https://www.everyspaces.com/hyderabad/kukatpally" },
+  { name: "Interior Designers in Banjara Hills", url: "https://www.everyspaces.com/hyderabad/banjara-hills" },
+  { name: "Interior Designers in Manikonda", url: "https://www.everyspaces.com/hyderabad/manikonda" },
+  { name: "Interior Designers in Begumpet", url: "https://www.everyspaces.com/hyderabad/begumpet" },
 ], "Hyderabad Localities Served by EverySpaces");
 
 export default StructuredData;

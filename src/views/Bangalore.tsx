@@ -13,7 +13,7 @@ import BangaloreFAQSection from "@/components/BangaloreFAQSection";
 import BangaloreLocalitiesSection from "@/components/BangaloreLocalitiesSection";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
-import { StructuredData, localBusinessSchema, createFAQSchema } from "@/components/StructuredData";
+import { StructuredData, createFAQSchema } from "@/components/StructuredData";
 
 const bangaloreFaqsForSchema = [
   { question: "What is the average cost of a 2BHK interior design in Bangalore?", answer: "A complete 2BHK interior design in Bangalore typically costs between ₹6 lakhs to ₹15 lakhs depending on materials, finishes, and scope. At EverySpaces, popular 2BHK packages start around ₹8 lakhs." },
@@ -26,11 +26,15 @@ const bangaloreFaqsForSchema = [
   { question: "How long does a full home interior project take in Bangalore?", answer: "Modular kitchen 15-20 days, 2BHK full interior 45-55 days, 3BHK/villa 60-90 days with dedicated project management." },
 ];
 
-const bangaloreLocalBusinessSchema = {
-  ...localBusinessSchema,
-  "@type": "InteriorDesignBusiness",
-  "name": "EverySpaces Interior Design - Bangalore",
-  "url": "https://everyspaces.com/bangalore",
+const bangaloreServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.everyspaces.com/bangalore#service",
+  "name": "EverySpaces Interior Design Services in Bangalore",
+  "url": "https://www.everyspaces.com/bangalore",
+  "description": "Interior design services in Bangalore, including modular kitchens, wardrobes, and complete home interiors.",
+  "provider": { "@id": "https://www.everyspaces.com/#organization" },
+  "serviceType": "Interior Design",
   "areaServed": [
     { "@type": "City", "name": "Bangalore" },
     { "@type": "Place", "name": "Whitefield" },
@@ -47,7 +51,7 @@ const bangaloreLocalBusinessSchema = {
 const Bangalore = () => {
   return (
     <div className="min-h-screen bg-background">
-      <StructuredData data={[bangaloreLocalBusinessSchema, createFAQSchema(bangaloreFaqsForSchema, 'bangalore')]} />
+      <StructuredData data={[bangaloreServiceSchema, createFAQSchema(bangaloreFaqsForSchema, 'bangalore')]} />
       <Header />
       <main>
         <BangaloreHeroSection />
