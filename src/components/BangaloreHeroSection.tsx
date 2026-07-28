@@ -73,13 +73,9 @@ function BangaloreHeroSectionInner() {
               <span className="block tracking-[-0.02em] mt-2 text-secondary">{locationLabel}</span>
             </h1>
             <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-lg animate-fade-up delay-200">
-              End to end interior solutions for apartments, villas, and full home interiors in Bangalore.
+              End-to-end interior solutions in Bangalore.
             </p>
-            <div className="flex flex-wrap gap-4 mt-6 md:mt-8 justify-center md:justify-start animate-fade-up delay-300">
-              <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="font-bold text-sm text-secondary-foreground">500+</span>
-                <span className="text-xs font-body text-muted">Projects</span>
-              </div>
+            <div className="flex flex-nowrap gap-4 mt-6 md:mt-8 justify-center md:justify-start animate-fade-up delay-300">
               <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
                 <span className="font-bold text-sm text-primary-foreground">10 Yr</span>
                 <span className="text-xs font-body text-muted">Warranty</span>
@@ -217,7 +213,7 @@ function BangaloreHeroSectionInnerFallback() {
               <span className="block tracking-[-0.02em] mt-2 text-secondary">{locationLabel}</span>
             </h1>
             <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-lg animate-fade-up delay-200">
-              End to end interior solutions for apartments, villas, and full home interiors in Bangalore.
+              End-to-end interior solutions in Bangalore.
             </p>
           </div>
 

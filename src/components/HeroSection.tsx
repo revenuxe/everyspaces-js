@@ -65,11 +65,11 @@ const HeroSection = () => {
               Best Interior Designer
             </h1>
             <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-lg animate-fade-up delay-200">
-              End to end interior solutions with location-specific expertise from the best{" "}
+              Expert{" "}
               <a href="/services" className="underline hover:text-secondary transition-colors">
                 Interior Designers
               </a>{" "}
-              across{" "}
+              in{" "}
               <a href="/hyderabad" className="underline hover:text-secondary transition-colors">
                 Hyderabad
               </a>{" "}
@@ -80,11 +80,7 @@ const HeroSection = () => {
             </p>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap gap-4 mt-6 md:mt-8 justify-center md:justify-start animate-fade-up delay-300">
-              <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="font-bold text-sm text-secondary-foreground">100+</span>
-                <span className="text-xs font-body text-muted">Projects</span>
-              </div>
+            <div className="flex flex-nowrap gap-4 mt-6 md:mt-8 justify-center md:justify-start animate-fade-up delay-300">
               <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
                 <span className="font-bold text-sm text-primary-foreground">10 Yr</span>
                 <span className="text-xs font-body text-muted">Warranty</span>

@@ -76,13 +76,9 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
               </span>
             </h1>
             <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-lg animate-fade-up delay-200">
-              Premium interior design solutions for homes in {localityName}. Transform your space with {cityName}'s trusted designers.
+              Premium interior solutions for homes in {localityName}.
             </p>
-            <div className="flex flex-wrap gap-4 mt-6 md:mt-8 justify-center md:justify-start animate-fade-up delay-300">
-              <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="font-bold text-sm text-secondary-foreground">{projectCount}</span>
-                <span className="text-xs font-body text-muted">Delivered</span>
-              </div>
+            <div className="flex flex-nowrap gap-4 mt-6 md:mt-8 justify-center md:justify-start animate-fade-up delay-300">
               <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
                 <span className="font-bold text-sm text-primary-foreground">10 Yr</span>
                 <span className="text-xs font-body text-muted">Warranty</span>
