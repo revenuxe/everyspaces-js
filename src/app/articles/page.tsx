@@ -6,6 +6,7 @@ import { StructuredData, createBreadcrumbSchema } from "@/components/StructuredD
 import { getPublishedPosts } from "@/sanity/lib/posts";
 import { urlForImage } from "@/sanity/lib/image";
 import { HYDERABAD_KEYWORD_CLUSTERS } from "@/seo/blog-keyword-clusters";
+import { absoluteUrl } from "@/lib/site-url";
 
 export const revalidate = 900;
 
@@ -29,7 +30,7 @@ const blogSchema = {
   name: "EverySpaces Interior Design Blog",
   description:
     "Expert interior design tips, renovation guides, and home decor ideas for Hyderabad homeowners.",
-  url: "https://everyspaces.com/articles",
+  url: absoluteUrl("/articles"),
 };
 
 export default async function ArticlesPage({
@@ -61,8 +62,8 @@ export default async function ArticlesPage({
         data={[
           blogSchema,
           createBreadcrumbSchema([
-            { name: "Home", url: "https://everyspaces.com" },
-            { name: "Articles", url: "https://everyspaces.com/articles" },
+            { name: "Home", url: absoluteUrl("/") },
+            { name: "Articles", url: absoluteUrl("/articles") },
           ]),
         ]}
       />

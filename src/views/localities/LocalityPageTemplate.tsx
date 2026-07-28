@@ -264,7 +264,7 @@ const LocalityPageTemplate = ({
         <RelatedServices currentSlug="modular-kitchen" />
         <RelatedLocalities currentSlug={slug} />
         <TestimonialsSection />
-        <FAQSection />
+        <FAQSection faqs={seoData.faqs} cityOverride={localityName} />
         {isBangalore ? <BangaloreLocalitiesSection /> : <LocalitiesSection />}
       </main>
       

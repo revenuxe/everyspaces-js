@@ -1,5 +1,6 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import Image from "next/image";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
@@ -55,12 +56,13 @@ const LocalityHeroSection = ({ localityName, projectCount, heroImage }: Locality
     <section className="relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src={heroImage}
           alt={`Interior design in ${localityName}, ${cityName}`}
-          decoding="async"
-          fetchPriority="high"
-          className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
         />
         <div className="absolute inset-0 hero-overlay" />
       </div>

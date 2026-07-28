@@ -90,12 +90,17 @@ const bangaloreFaqs = [
   },
 ];
 
-const FAQSection = () => {
+interface FAQSectionProps {
+  faqs?: { question: string; answer: string }[];
+  cityOverride?: string;
+}
+
+const FAQSection = ({ faqs: faqsOverride, cityOverride }: FAQSectionProps = {}) => {
   const pathname = usePathname() ?? "";
   const isBangalore = pathname.startsWith("/bangalore");
   const isHyderabad = pathname.startsWith("/hyderabad");
-  const city = isBangalore ? "Bangalore" : isHyderabad ? "Hyderabad" : "Hyderabad and Bangalore";
-  const faqs = isBangalore ? bangaloreFaqs : hyderabadFaqs;
+  const city = cityOverride ?? (isBangalore ? "Bangalore" : isHyderabad ? "Hyderabad" : "Hyderabad and Bangalore");
+  const faqs = faqsOverride ?? (isBangalore ? bangaloreFaqs : hyderabadFaqs);
 
   // FAQ schema is handled by the parent page's StructuredData component to avoid duplicates
   return (

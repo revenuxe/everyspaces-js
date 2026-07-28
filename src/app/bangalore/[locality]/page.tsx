@@ -88,10 +88,39 @@ export async function generateMetadata({
   if (!isValidBangaloreLocalitySlug(locality)) return {};
 
   const localityName = toTitle(locality);
+  const title = `Interior Designers in ${localityName}, Bangalore | EverySpaces`;
+  const description = `Premium interior design services in ${localityName}, Bangalore. Modular kitchens, wardrobes, and complete home interiors by EverySpaces.`;
+  const ogImage = BANGALORE_LOCALITY_MAP[locality]?.hero || "/og-image.jpg";
+
   return {
-    title: `Interior Designers in ${localityName}, Bangalore | EverySpaces`,
-    description: `Premium interior design services in ${localityName}, Bangalore. Modular kitchens, wardrobes, and complete home interiors by EverySpaces.`,
+    title,
+    description,
+    keywords: [
+      `interior designers ${localityName}`,
+      `home interiors ${localityName} bangalore`,
+      `modular kitchen ${localityName}`,
+    ],
     alternates: { canonical: `/bangalore/${locality}` },
+    openGraph: {
+      title: `Interior Designers in ${localityName} | EverySpaces`,
+      description,
+      url: `/bangalore/${locality}`,
+      type: "website",
+      locale: "en_IN",
+      siteName: "EverySpaces",
+      images: [{ url: ogImage }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Interior Designers in ${localityName} | EverySpaces`,
+      description,
+      images: [ogImage],
+    },
+    robots: { index: true, follow: true },
+    other: {
+      "geo.region": "IN-KA",
+      "geo.placename": "Bangalore",
+    },
   };
 }
 

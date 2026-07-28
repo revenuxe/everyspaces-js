@@ -1,9 +1,9 @@
 import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import heroImage from "@/assets/hero-interior.jpg";
-import { imgSrc } from "@/lib/utils";
 
 function BangaloreHeroSectionInner() {
   const router = useRouter();
@@ -55,12 +55,13 @@ function BangaloreHeroSectionInner() {
     <section className="relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={imgSrc(heroImage)}
+        <Image
+          src={heroImage}
           alt={`Best interior designers in ${locationLabel}`}
-          decoding="async"
-          fetchPriority="high"
-          className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
         />
         <div className="absolute inset-0 hero-overlay" />
       </div>
@@ -195,12 +196,13 @@ function BangaloreHeroSectionInnerFallback() {
   return (
     <section className="relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
       <div className="absolute inset-0 z-0">
-        <img
-          src={imgSrc(heroImage)}
+        <Image
+          src={heroImage}
           alt={`Best interior designers in ${locationLabel}`}
-          decoding="async"
-          fetchPriority="high"
-          className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
         />
         <div className="absolute inset-0 hero-overlay" />
       </div>

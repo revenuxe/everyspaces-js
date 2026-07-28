@@ -9,6 +9,7 @@ import { StructuredData, createArticleSchema, createBreadcrumbSchema, createFAQS
 import { getPostBySlug, getPublishedPostSlugs, getRelatedPosts } from "@/sanity/lib/posts";
 import { urlForImage } from "@/sanity/lib/image";
 import { HYDERABAD_KEYWORD_CLUSTERS } from "@/seo/blog-keyword-clusters";
+import { absoluteUrl } from "@/lib/site-url";
 
 export const revalidate = 900;
 
@@ -84,7 +85,7 @@ export default async function ArticlePage({
   const articleSchema = createArticleSchema({
     title: post.title,
     description,
-    url: `https://everyspaces.com/articles/${post.slug}`,
+    url: absoluteUrl(`/articles/${post.slug}`),
     image: featuredImageUrl || undefined,
     datePublished: post.publishedAt || post._createdAt,
     dateModified: post._updatedAt,
@@ -93,9 +94,9 @@ export default async function ArticlePage({
   });
 
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: "Home", url: "https://everyspaces.com" },
-    { name: "Articles", url: "https://everyspaces.com/articles" },
-    { name: post.title, url: `https://everyspaces.com/articles/${post.slug}` },
+    { name: "Home", url: absoluteUrl("/") },
+    { name: "Articles", url: absoluteUrl("/articles") },
+    { name: post.title, url: absoluteUrl(`/articles/${post.slug}`) },
   ]);
 
   const faqSchema = post.seo?.faqBlocks?.length
