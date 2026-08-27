@@ -225,16 +225,12 @@ const ServicesCarousel = () => {
             aria-label={`Go to ${service.title}`}
             aria-selected={index === activeIndex}
             role="tab"
-            className={`min-w-[24px] min-h-[24px] flex items-center justify-center rounded-full transition-all duration-300 ${
-              index === activeIndex
-                ? "bg-secondary"
-                : "bg-primary/30 hover:bg-primary/50"
-            }`}
+            className="flex h-6 items-center justify-center px-1.5"
           >
             <span className={`rounded-full transition-all duration-300 ${
               index === activeIndex
-                ? "w-4 h-1.5 bg-secondary-foreground"
-                : "w-1.5 h-1.5 bg-primary-foreground/70"
+                ? "h-[3px] w-8 bg-primary"
+                : "h-px w-5 bg-primary/20 hover:bg-primary/40"
             }`} />
           </button>
         ))}

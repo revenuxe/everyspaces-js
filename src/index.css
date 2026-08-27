@@ -6,9 +6,9 @@
 
 @layer base {
   :root {
-    /* Brand Colors - Deep Teal & Vibrant Orange */
-    --background: 30 10% 98%; /* #F9F9F9 off-white */
-    --foreground: 197 74% 18%; /* Deep Teal */
+    /* Quiet, warm premium palette */
+    --background: 60 5% 97%; /* #f8f8f7 */
+    --foreground: 197 74% 18%; /* EverySpaces deep blue */
 
     --card: 0 0% 100%;
     --card-foreground: 197 74% 18%;
@@ -16,41 +16,39 @@
     --popover: 0 0% 100%;
     --popover-foreground: 197 74% 18%;
 
-    /* Deep Teal Primary */
     --primary: 197 74% 18%; /* #0d3b4f */
     --primary-foreground: 0 0% 100%;
 
-    /* Dark Orange Accent */
-    --secondary: 22 85% 42%; /* #c75415 - darker orange */
+    --secondary: 39 32% 49%; /* restrained muted gold */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 30 10% 94%;
-    --muted-foreground: 197 20% 45%;
+    --muted: 40 8% 92%;
+    --muted-foreground: 0 0% 43%;
 
-    --accent: 22 85% 42%;
+    --accent: 39 32% 49%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 15% 90%;
-    --input: 30 15% 90%;
-    --ring: 22 85% 42%;
+    --border: 0 0% 9% / 0.10;
+    --input: 0 0% 9% / 0.10;
+    --ring: 39 32% 49%;
 
     --radius: 1.5rem;
 
     /* Custom EverySpaces tokens */
     --teal: 197 74% 18%;
-    --orange: 22 85% 42%;
-    --orange-light: 22 85% 52%;
-    --cream: 30 10% 98%;
+    --orange: 39 32% 49%;
+    --orange-light: 39 35% 58%;
+    --cream: 60 5% 97%;
     --glass: 0 0% 100%;
     --glass-opacity: 0.7;
     
     /* Shadows */
-    --shadow-soft: 0 4px 24px -4px hsl(197 74% 18% / 0.1);
-    --shadow-elevated: 0 12px 40px -8px hsl(197 74% 18% / 0.15);
-    --shadow-glow: 0 0 40px hsl(22 82% 50% / 0.3);
+    --shadow-soft: 0 6px 28px -10px hsl(0 0% 0% / 0.12);
+    --shadow-elevated: 0 16px 48px -14px hsl(0 0% 0% / 0.16);
+    --shadow-glow: 0 0 40px hsl(39 32% 49% / 0.2);
     
     /* Gradients */
     --gradient-hero: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
@@ -124,26 +122,61 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     letter-spacing: 0em;
     line-height: 1.6;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.04em;
     line-height: 1.2;
   }
   
   h1 {
-    font-weight: 700;
+    font-weight: 400;
   }
   
   h2 {
-    font-weight: 700;
+    font-weight: 400;
   }
+
+  .premium-home { font-family: Arial, Helvetica, sans-serif; }
+  .premium-home h1, .premium-home h2, .premium-home h3 { font-family: Arial, Helvetica, sans-serif; }
+}
+
+@layer components {
+  .premium-eyebrow { @apply text-[11px] font-medium uppercase tracking-[.18em] text-black/45; }
+  .premium-title { @apply mt-3 text-4xl font-light leading-[1.04] tracking-[-.055em] md:text-6xl; }
+  .premium-card { @apply rounded-[26px] border border-black/[.08] bg-white p-4 shadow-[0_10px_35px_rgba(0,0,0,.035)] transition duration-500 hover:-translate-y-1; }
+  .premium-input { @apply w-full rounded-xl border border-black/[.09] bg-[#f6f6f4] px-4 py-3.5 text-sm outline-none placeholder:text-black/40 focus:border-black/35; }
+  .hero-display, h1 { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-weight: 300; letter-spacing: -0.07em; }
+
+  /* Homepage: one quiet card language across the pre-existing content modules. */
+  .minimal-home > section { @apply py-14 md:py-20; }
+  .minimal-home > section:nth-child(even) { background: #eeece8; }
+  .minimal-home .rounded-3xl,
+  .minimal-home .rounded-2xl { border: 1px solid rgb(13 59 79 / 10%); box-shadow: 0 12px 35px -22px rgb(13 59 79 / 32%); }
+  .minimal-home .shadow-soft,
+  .minimal-home .shadow-lg,
+  .minimal-home .shadow-md { box-shadow: 0 12px 35px -22px rgb(13 59 79 / 32%); }
+  .minimal-home h2 { font-size: clamp(2rem, 4vw, 3.35rem); font-weight: 400; letter-spacing: -0.055em; line-height: 1.02; }
+  .minimal-home h3 { font-weight: 400; letter-spacing: -0.035em; }
+  .minimal-home [class*="bg-secondary/20"] { background-color: rgb(185 147 90 / 16%); color: #0d3b4f; }
+  .minimal-home [class*="bg-card"] { background-color: #fff; }
+
+  /* Shared page treatment: every route uses the same quiet, editorial hierarchy. */
+  main > section:first-child:not(.service-hero) h1,
+  main > div > .container > div:first-child h1 { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-weight: 300; letter-spacing: -0.065em; line-height: .98; }
+  .service-hero h1,
+  .service-hero h1 span,
+  section[class*="min-h-[100dvh]"] h1 { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-weight: 300; letter-spacing: -0.065em; line-height: .98; }
+  main .glass-card,
+  main [class*="bg-card"][class*="rounded"] { border-color: rgb(13 59 79 / 10%); box-shadow: 0 14px 38px -24px rgb(13 59 79 / 28%); }
+  main [class*="rounded-3xl"] { border-radius: 22px; }
+  main [class*="rounded-2xl"] { border-radius: 16px; }
 }
 
 @layer components {
@@ -230,24 +263,24 @@
   
   .hover-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px -8px hsl(197 74% 18% / 0.15);
+    box-shadow: 0 16px 38px -16px hsl(0 0% 0% / 0.18);
   }
 }
 
 @layer utilities {
   .font-sans {
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   .font-display {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.04em;
     line-height: 1.2;
   }
   
   .font-body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     letter-spacing: 0em;
     line-height: 1.6;
@@ -694,6 +727,97 @@
   display: grid;
   gap: 2rem;
   align-items: center;
+}
+
+/* Bangalore locality pages share the homepage's editorial blue image hero. */
+.locality-hero {
+  min-height: 0 !important;
+  padding: 0 !important;
+  background: #0d3b4f;
+}
+.locality-hero .hero-overlay { background: linear-gradient(90deg, #0d3b4f 0%, rgba(13,59,79,.92) 42%, rgba(13,59,79,.28) 78%, rgba(13,59,79,.12) 100%); }
+.locality-hero .container { max-width: 80rem; }
+.locality-hero .container { min-height: 0 !important; padding-top: 2.5rem !important; padding-bottom: 3rem !important; }
+.locality-hero .container > div:first-child { text-align: left !important; margin: 0 !important; }
+@media (max-width: 767px) { .locality-hero .container { padding-top: 2rem !important; padding-bottom: 2.5rem !important; } }
+
+/* Shared service-page hero: replaces the old dark image/form treatment. */
+.service-hero {
+  min-height: 620px !important;
+  padding-top: 7rem !important;
+  padding-bottom: 3rem !important;
+  background: #0d3b4f;
+}
+
+.service-hero .hero-overlay {
+  background: linear-gradient(90deg, #0d3b4f 0%, rgba(13, 59, 79, .94) 38%, rgba(13, 59, 79, .34) 72%, rgba(13, 59, 79, .15) 100%);
+}
+
+.service-hero .container {
+  position: relative;
+  z-index: 1;
+  max-width: 80rem;
+}
+
+.service-hero .container > div:first-child {
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+.service-hero h1 {
+  max-width: 43rem;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif !important;
+  font-size: clamp(2.8rem, 5.4vw, 5.1rem) !important;
+  font-weight: 300 !important;
+  letter-spacing: -.075em !important;
+  line-height: .94 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.service-hero h1 span { display: none !important; }
+
+.service-hero h1::after {
+  content: "in Bangalore";
+  display: block;
+  margin-top: .08em;
+  color: inherit;
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: inherit;
+}
+
+.service-hero .container > div:first-child > p {
+  max-width: 34rem;
+  margin-left: 0 !important;
+  color: rgb(255 255 255 / 72%) !important;
+  text-align: left !important;
+}
+
+.service-hero .glass-card {
+  background: rgb(255 255 255 / 94%) !important;
+  border: 1px solid rgb(255 255 255 / 42%) !important;
+  box-shadow: 0 20px 55px -28px rgb(0 0 0 / 55%) !important;
+  backdrop-filter: blur(18px);
+}
+
+.service-hero .glass-card h2 { font-weight: 400 !important; }
+
+/* The service decision starts with the work; enquiries belong in the page CTA. */
+.service-hero form,
+.service-hero .glass-card { display: none !important; }
+
+.service-hero .container:has(.glass-card) { grid-template-columns: minmax(0, 1fr) !important; }
+
+/* Locality and city image heroes use the same no-form policy. */
+section:has(> div .hero-overlay) .glass-card { display: none !important; }
+section:has(> div .hero-overlay) .container:has(.glass-card) { grid-template-columns: minmax(0, 1fr) !important; }
+
+@media (max-width: 767px) {
+  .service-hero { min-height: 0 !important; padding-top: 6.5rem !important; padding-bottom: 2.5rem !important; }
+  .service-hero .container { gap: 1.75rem !important; }
+  .service-hero h1 { font-size: clamp(2.55rem, 11.5vw, 3.55rem) !important; }
+  .service-hero .container > div:last-child { margin: 0 !important; max-width: none !important; }
+  .service-hero .glass-card { border-radius: 20px !important; padding: 1.25rem !important; }
 }
 
 @media (min-width: 768px) {

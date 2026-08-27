@@ -37,6 +37,7 @@ import {
   createFAQSchema
 } from "@/components/StructuredData";
 import Breadcrumb from "@/components/Breadcrumb";
+import PageHero from "@/components/PageHero";
 
 // AEO-optimized contact FAQs
 const contactFAQs = [
@@ -132,17 +133,7 @@ const Contact = () => {
       <Breadcrumb items={[{ label: "Contact" }]} />
       
       <main className="pt-4">
-        {/* Hero Section */}
-        <section className="bg-primary py-16 md:py-24">
-          <div className="container px-4 text-center">
-            <h1 className="font-display text-3xl md:text-5xl text-primary-foreground mb-4">
-              Let's Design Your Dream Home
-            </h1>
-            <p className="text-primary-foreground/80 max-w-2xl mx-auto font-body text-lg">
-              Get in touch with Hyderabad's trusted interior designers. Free consultation, transparent pricing, and premium quality guaranteed.
-            </p>
-          </div>
-        </section>
+        <PageHero title="Let’s design your dream home." description="A calm first conversation is all it takes to begin. Tell us about the space you have in mind." eyebrow="Contact the studio" />
 
         {/* Contact Section */}
         <section className="py-16 md:py-24">

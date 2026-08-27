@@ -11,7 +11,6 @@ type Entry = {
 /** Marketing / hub pages (excludes admin, thank-you — see robots.txt). */
 export const CORE_SITEMAP_ENTRIES: Entry[] = [
   { path: "/", changeFrequency: "weekly", priority: 1 },
-  { path: "/hyderabad", changeFrequency: "weekly", priority: 0.95 },
   { path: "/bangalore", changeFrequency: "weekly", priority: 0.95 },
   { path: "/services", changeFrequency: "weekly", priority: 0.95 },
   { path: "/bangalore/services", changeFrequency: "weekly", priority: 0.95 },

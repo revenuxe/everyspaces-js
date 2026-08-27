@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import bhk2Image from "@/assets/service-2bhk.jpg";
 import villaImage from "@/assets/service-villa.jpg";
 import kitchenImage from "@/assets/service-modular-kitchen.jpg";
@@ -51,9 +51,6 @@ const BestServices = () => {
   const serviceBasePath = isBangalore ? "/bangalore/services" : "/services";
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [parallaxOffsets, setParallaxOffsets] = useState<number[]>(
-    new Array(bestServices.length).fill(0)
-  );
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
@@ -81,16 +78,6 @@ const BestServices = () => {
         return prev === next ? prev : next;
       });
 
-      const offsets = bestServices.map((_, index) => {
-        const gap = 32;
-        const totalItemWidth = itemWidth + gap;
-        const itemCenter = index * totalItemWidth + itemWidth / 2;
-        const containerCenter = scrollPos + containerWidth / 2;
-        const distance = (itemCenter - containerCenter) / itemWidth;
-        return distance * -20;
-      });
-
-      setParallaxOffsets(offsets);
     };
 
     const onScroll = () => {
@@ -156,13 +143,10 @@ const BestServices = () => {
 
   return (
     <section className="py-12 md:py-16 bg-background">
-      <div className="container px-4 mb-6">
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary text-center tracking-[-0.025em]">
-          Best Services
-        </h2>
-        <p className="text-center text-muted-foreground mt-2 max-w-md mx-auto font-body">
-          Tailored solutions for every home
-        </p>
+      <div className="container px-4 mb-7 md:mb-9">
+        <p className="text-[10px] uppercase tracking-[.2em] text-secondary mb-3">Selected projects</p>
+        <h2 className="font-display text-3xl md:text-5xl text-primary tracking-[-0.045em]">Spaces with a point of view.</h2>
+        <p className="text-muted-foreground mt-3 max-w-md font-body">Made for real lives, then refined down to the smallest detail.</p>
       </div>
 
       {/* Carousel Container */}
@@ -172,7 +156,7 @@ const BestServices = () => {
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-5 md:gap-8 px-4 md:px-8 py-4 cursor-grab select-none"
+        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-5 md:gap-6 px-4 md:px-8 py-3 cursor-grab select-none"
         style={{ 
           scrollPaddingLeft: '1rem',
           scrollBehavior: isDragging ? 'auto' : 'smooth',
@@ -195,41 +179,18 @@ const BestServices = () => {
                 isActive ? "scale-100" : "md:scale-100 scale-[0.92]"
               }`}
             >
-              <div className="relative overflow-hidden rounded-3xl bg-card shadow-elevated h-[320px] md:h-[400px] group">
-                {/* Parallax Image */}
-                <div className="absolute inset-0 overflow-hidden">
+              <div className="overflow-hidden rounded-[22px] border border-primary/10 bg-card shadow-soft group">
+                <div className="relative h-[190px] overflow-hidden md:h-[240px]">
                   <img
                     src={imgSrc(service.image)}
                     alt={service.title}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 will-change-transform"
-                    style={{
-                      transform: `translateX(${parallaxOffsets[index]}px) scale(1.15)`,
-                    }}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     draggable={false}
                   />
-                  <div className="absolute inset-0 bg-foreground/60 mix-blend-multiply" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent" />
                 </div>
-
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 pr-28 md:pr-32 pb-16 md:pb-20">
-                  <h3 className="font-display text-xl md:text-2xl text-primary-foreground mb-1 line-clamp-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-primary-foreground/85 text-sm font-body line-clamp-2">
-                    {service.description}
-                  </p>
-
-                  <span className="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-secondary/90 hover:bg-secondary rounded-2xl text-secondary-foreground text-sm font-medium transition-colors">
-                    Explore
-                  </span>
-                </div>
-
-                {/* Arrow Icon */}
-                <div className="absolute bottom-5 md:bottom-6 right-4 md:right-6 z-10 w-12 h-12 md:w-14 md:h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-secondary-foreground" />
+                <div className="relative min-h-[150px] p-5 md:p-6"><h3 className="font-serif text-[22px] text-primary md:text-2xl">{service.title}</h3><p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground"><MapPin className="h-4 w-4" />Bangalore</p><p className="mt-3 text-sm leading-6 text-primary/75 line-clamp-2">{service.description}</p><ArrowUpRight className="absolute right-5 top-6 h-4 w-4 text-primary transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
                 </div>
               </div>
             </a>
@@ -238,15 +199,15 @@ const BestServices = () => {
       </div>
 
       {/* Pagination Dots */}
-      <div className="flex justify-center gap-1.5 mt-4">
+      <div className="flex justify-center gap-0.5 mt-5">
         {bestServices.map((_, index) => (
           <button
             key={index}
             onClick={() => scrollToIndex(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
+            className={`h-6 flex items-center rounded-full px-1.5 transition-all duration-300 ${
               index === activeIndex
-                ? "w-6 bg-secondary"
-                : "w-2 bg-primary/20 hover:bg-primary/40"
+                ? "h-[3px] w-8 bg-primary"
+                : "h-px w-4 bg-primary/20 hover:bg-primary/40"
             }`}
           />
         ))}

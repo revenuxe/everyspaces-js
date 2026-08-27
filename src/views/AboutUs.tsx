@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import { StructuredData, createBreadcrumbSchema } from "@/components/StructuredData";
+import PageHero from "@/components/PageHero";
 
 const AboutUs = () => {
   const aeoSchemas = [
@@ -32,26 +33,7 @@ const AboutUs = () => {
       <Header />
 
       <main className="pt-20">
-        <header className="bg-primary py-12 md:py-16">
-          <div className="container px-4">
-            <p className="text-primary-foreground/80 font-body text-sm">Company</p>
-            <h1 className="font-display text-3xl md:text-5xl text-primary-foreground mt-2">
-              About Us
-            </h1>
-            <p className="text-primary-foreground/80 font-body mt-3 max-w-2xl">
-              Started in 2025, EverySpaces brings interior design and execution together with a modern software management workflow from{" "}
-              <a
-                href="https://intorza.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-secondary transition-colors"
-              >
-                Intorza
-              </a>
-              .
-            </p>
-          </div>
-        </header>
+        <PageHero title="A more considered way to create home." description="EverySpaces brings design, execution, and clear communication together in one modern studio experience." eyebrow="About EverySpaces" />
 
         <section className="py-12 md:py-16">
           <div className="container px-4">

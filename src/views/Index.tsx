@@ -1,5 +1,6 @@
 "use client";
 
+import BottomNav from "@/components/BottomNav";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ActionGrid from "@/components/ActionGrid";
@@ -13,7 +14,6 @@ import ExploreBangaloreCTA from "@/components/ExploreBangaloreCTA";
 import LocalitiesSection from "@/components/LocalitiesSection";
 import BangaloreLocalitiesSection from "@/components/BangaloreLocalitiesSection";
 import Footer from "@/components/Footer";
-import BottomNav from "@/components/BottomNav";
 import { 
   StructuredData, 
   organizationSchema, 
@@ -44,14 +44,14 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div>
       <StructuredData data={aeoSchemas} />
       <Header />
-      <main>
+      <main className="minimal-home">
         <HeroSection />
-        <ActionGrid />
         <BestServices />
         <ServicesCarousel />
+        <ActionGrid />
         <HowItWorksSection />
         <GallerySection />
         <TestimonialsSection />

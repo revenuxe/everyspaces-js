@@ -6,6 +6,7 @@ import { X, ZoomIn } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
+import PageHero from "@/components/PageHero";
 import { StructuredData, createBreadcrumbSchema } from "@/components/StructuredData";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
@@ -113,19 +114,10 @@ const Portfolio = () => {
       <Breadcrumb items={[{ label: "Portfolio" }]} />
       
       <main className="pt-4 md:pt-8 pb-12 md:pb-20">
+        <PageHero title="Design Gallery" description="A collection of homes shaped around light, material, and the people who live in them." eyebrow="Selected work · EverySpaces" />
         <div className="container px-2 md:px-4">
           {/* Header */}
-          <div className="text-center mb-6 md:mb-8 px-2">
-            <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-sm font-medium rounded-full mb-4">
-              Our Portfolio
-            </span>
-            <h1 className="font-display text-2xl md:text-4xl lg:text-5xl text-primary tracking-[-0.025em]">
-              Design Gallery
-            </h1>
-            <p className="text-muted-foreground mt-2 max-w-xl mx-auto font-body text-sm md:text-base">
-              Explore our stunning collection of completed interior projects
-            </p>
-          </div>
+          <div className="mb-6 md:mb-8" />
 
           {/* Category Filters */}
           <div className="flex flex-wrap justify-center gap-2 mb-6 md:mb-8 px-2">

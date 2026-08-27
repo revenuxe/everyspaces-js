@@ -247,9 +247,9 @@ const LocalityPageTemplate = ({
           projectCount={projectCount}
           heroImage={heroUrl}
         />
-        <ActionGrid />
         <BestServices />
         <ServicesCarousel />
+        <ActionGrid />
         <HowItWorksSection />
         <LocalityContentSection
           localityName={localityName}

@@ -1,149 +1,20 @@
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+"use client";
+
 import Image from "next/image";
-import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/hooks/use-toast";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import heroImage from "@/assets/hero-interior.jpg";
 
-const HeroSection = () => {
-  const router = useRouter();
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    mobile: "",
-    projectType: ""
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const { error } = await (supabase.from("leads") as any).insert({
-        form_name: "Hero Contact Form",
-        source_page: "/",
-        data: {
-          name: formData.name,
-          mobile: formData.mobile,
-          projectType: formData.projectType
-        }
-      });
-      if (error) throw error;
-      router.push("/thank-you");
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      toast({
-        title: "Error",
-        description: "Failed to submit form. Please try again.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  return (
-    <section className="relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={heroImage}
-          alt="Luxury interior design in Hyderabad and Bangalore"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform" />
-
-        <div className="absolute inset-0 hero-overlay" />
-      </div>
-
-      {/* Content - Split Layout */}
-      <div className="relative z-10 container px-4">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Left Side - Heading */}
-          <div className="text-center md:text-left">
-            <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-4 md:mb-6 animate-fade-up tracking-[-0.03em] md:leading-[1.15]">
-              Best Interior Designer
-            </h1>
-            <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-lg animate-fade-up delay-200">
-              Expert{" "}
-              <a href="/services" className="underline hover:text-secondary transition-colors">
-                Interior Designers
-              </a>{" "}
-              in{" "}
-              <a href="/hyderabad" className="underline hover:text-secondary transition-colors">
-                Hyderabad
-              </a>{" "}
-              and{" "}
-              <a href="/bangalore" className="underline hover:text-secondary transition-colors">
-                Bangalore
-              </a>
-            </p>
-
-            {/* Trust badges */}
-            <div className="flex flex-nowrap gap-4 mt-6 md:mt-8 justify-center md:justify-start animate-fade-up delay-300">
-              <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="font-bold text-sm text-primary-foreground">10 Yr</span>
-                <span className="text-xs font-body text-muted">Warranty</span>
-              </div>
-              <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <span className="font-bold text-sm text-primary-foreground">45 Day</span>
-                <span className="text-xs font-body text-muted">Delivery</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side - Form */}
-          <div className="max-w-xs md:max-w-lg mx-auto md:ml-auto md:mr-0 w-full animate-fade-up delay-300">
-            <div className="glass-card rounded-2xl md:rounded-3xl p-4 md:p-10 shadow-elevated">
-              <h2 className="font-display text-base md:text-2xl text-foreground text-center mb-2.5 md:mb-6 tracking-[-0.02em]">
-                Get Free Design Consultation
-              </h2>
-
-              <form onSubmit={handleSubmit} className="space-y-2 md:space-y-5">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                  className="w-full px-3 md:px-5 py-2.5 md:py-4 bg-background/60 border border-border rounded-xl md:rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm md:text-base" />
-                
-                <input
-                  type="tel"
-                  placeholder="Mobile Number"
-                  value={formData.mobile}
-                  onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                  required
-                  pattern="[0-9]{10}"
-                  title="Please enter a 10-digit phone number"
-                  className="w-full px-3 md:px-5 py-2.5 md:py-4 bg-background/60 border border-border rounded-xl md:rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm md:text-base" />
-                
-                <input
-                  type="text"
-                  placeholder="Project Type (e.g., 2BHK)"
-                  value={formData.projectType}
-                  onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                  required
-                  className="w-full px-3 md:px-5 py-2.5 md:py-4 bg-background/60 border border-border rounded-xl md:rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm md:text-base" />
-                
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full btn-terracotta py-2.5 md:py-4 rounded-xl md:rounded-2xl text-secondary-foreground font-semibold font-body text-sm md:text-lg shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
-                  {isSubmitting ? "Submitting..." : "Get My Free Design"}
-                </button>
-              </form>
-
-              <p className="text-center text-[11px] md:text-sm text-muted-foreground mt-2 md:mt-4 font-body">
-                No spam. We respect your privacy.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>);
-
-};
+const HeroSection = () => (
+  <section className="relative overflow-hidden bg-[#0d3b4f] pt-[76px] text-white">
+    <div className="absolute inset-y-0 right-0 w-full md:w-[58%]"><Image src={heroImage} alt="Contemporary home interior by EverySpaces" fill priority sizes="(max-width: 768px) 100vw, 58vw" className="object-cover" /><div className="absolute inset-0 bg-gradient-to-r from-[#0d3b4f] via-[#0d3b4f]/30 to-transparent" /><div className="absolute inset-0 bg-[#0d3b4f]/20" /></div>
+    <div className="absolute -left-32 top-16 h-72 w-72 rounded-full bg-[#b9935a]/15 blur-[110px]" />
+    <div className="relative mx-auto grid min-h-[555px] max-w-7xl items-center px-5 py-14 md:min-h-[590px] md:grid-cols-[1.08fr_.92fr] md:px-10"><div className="max-w-2xl">
+      <h1 className="hero-display text-[3.35rem] leading-[.94] sm:text-7xl md:text-[5.55rem]">Best Interior<br />Designer in<br />Bangalore</h1>
+      <p className="mt-7 max-w-lg text-base leading-8 text-white/70 md:text-lg">Thoughtful home interiors, transparent pricing, and an end-to-end process shaped around the way you live.</p>
+      <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4"><Link href="/contact" className="group inline-flex items-center gap-3 rounded-xl bg-white px-6 py-4 text-sm font-medium text-[#0d3b4f] transition-all duration-300 hover:-translate-y-0.5">Start your project <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></Link><Link href="/portfolio" className="group inline-flex items-center gap-3 text-sm font-medium text-white">Explore our work <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></div>
+    </div><div className="hidden justify-self-end self-end pb-4 md:block"><div className="w-56 rounded-2xl border border-white/20 bg-[#0d3b4f]/75 p-5 backdrop-blur-md"><p className="text-[10px] uppercase tracking-[.18em] text-[#d5b77c]">Our promise</p><p className="mt-3 text-lg font-light leading-snug">Transparency at every turn. Detail in every finish.</p><div className="mt-5 border-t border-white/15 pt-3 text-xs text-white/60">10 year warranty · End-to-end execution</div></div></div></div>
+  </section>
+);
 
 export default HeroSection;

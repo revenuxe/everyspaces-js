@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import PageHero from "@/components/PageHero";
 import RelatedLocalities from "@/components/RelatedLocalities";
 import { 
   StructuredData, 
@@ -103,21 +104,8 @@ const Services = () => {
       <StructuredData data={aeoSchemas} />
       <Header />
       
-      <main className="pt-20 pb-24">
-        {/* Hero Section */}
-        <section className="py-12 md:py-16 bg-muted/30">
-          <div className="container px-4 text-center">
-            <span className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
-              Our Expertise
-            </span>
-            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary mb-4 tracking-[-0.025em]">
-              Interior Design Services
-            </h1>
-            <p className="text-muted-foreground font-body max-w-xl mx-auto">
-              Transform every corner of your home with our expert craftsmanship and innovative designs
-            </p>
-          </div>
-        </section>
+      <main className="pb-24">
+        <PageHero title="Interior Design Services" description="Thoughtful spaces, beautifully resolved—from one room to a complete home." eyebrow="Services · EverySpaces Bangalore" />
 
         {/* Services Grid */}
         <section className="py-12 md:py-16">

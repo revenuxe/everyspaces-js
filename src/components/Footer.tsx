@@ -26,7 +26,7 @@ const Footer = () => {
               />
             </a>
             <p className="text-primary-foreground/70 text-sm max-w-sm mb-6 font-body">
-              For the way you work. Transforming Hyderabad and Bangalore homes with contemporary design excellence.
+              Thoughtful, contemporary homes for the way you live in Bangalore.
               Every space tells your story.
             </p>
             <div className="flex gap-4">
@@ -87,9 +87,7 @@ const Footer = () => {
               <li><a href="/about-us" className="hover:text-secondary transition-colors">About Us</a></li>
               <li><a href="/portfolio" className="hover:text-secondary transition-colors">Portfolio</a></li>
               <li><a href="/price-calculator" className="hover:text-secondary transition-colors">Price Calculator</a></li>
-              <li><a href="/hyderabad" className="hover:text-secondary transition-colors">Interior Designer in Hyderabad</a></li>
               <li><a href="/bangalore" className="hover:text-secondary transition-colors">Interior Designer in Bangalore</a></li>
-              <li><a href="/services" className="hover:text-secondary transition-colors">Hyderabad Services</a></li>
               <li><a href="/bangalore/services" className="hover:text-secondary transition-colors">Bangalore Services</a></li>
               <li><a href="/articles" className="hover:text-secondary transition-colors">Articles</a></li>
               <li><a href="/contact" className="hover:text-secondary transition-colors">Contact Us</a></li>
@@ -102,7 +100,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/70 font-body">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-secondary flex-shrink-0" />
-                <span>Begumpet, Hyderabad 500016</span>
+                <span>Bangalore, Karnataka</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-secondary flex-shrink-0" />
@@ -112,34 +110,6 @@ const Footer = () => {
                 <Mail className="w-4 h-4 text-secondary flex-shrink-0" />
                 <a href="mailto:everyspaces.com@gmail.com" className="hover:text-secondary transition-colors">everyspaces.com@gmail.com</a>
               </li>
-            </ul>
-          </div>
-
-          {/* All Localities */}
-          <div>
-            <h4 className="font-display text-lg mb-4">Hyderabad Localities</h4>
-            <ul className="space-y-2 text-sm text-primary-foreground/70 font-body">
-              <li><a href="/hyderabad/jubilee-hills" className="hover:text-secondary transition-colors">Jubilee Hills</a></li>
-              <li><a href="/hyderabad/gachibowli" className="hover:text-secondary transition-colors">Gachibowli</a></li>
-              <li><a href="/hyderabad/kondapur" className="hover:text-secondary transition-colors">Kondapur</a></li>
-              <li><a href="/hyderabad/madhapur" className="hover:text-secondary transition-colors">Madhapur</a></li>
-              <li><a href="/hyderabad/himayatnagar" className="hover:text-secondary transition-colors">Himayatnagar</a></li>
-              <li><a href="/hyderabad/nallagandla" className="hover:text-secondary transition-colors">Nallagandla</a></li>
-              <li><a href="/hyderabad/ameerpet" className="hover:text-secondary transition-colors">Ameerpet</a></li>
-              <li><a href="/hyderabad/hitec-city" className="hover:text-secondary transition-colors">HITEC City</a></li>
-              <li><a href="/hyderabad/nanakramguda" className="hover:text-secondary transition-colors">Nanakramguda</a></li>
-              <li><a href="/hyderabad/narsingi" className="hover:text-secondary transition-colors">Narsingi</a></li>
-              <li><a href="/hyderabad/financial-district" className="hover:text-secondary transition-colors">Financial District</a></li>
-              <li><a href="/hyderabad/kokapet" className="hover:text-secondary transition-colors">Kokapet</a></li>
-              <li><a href="/hyderabad/kompally" className="hover:text-secondary transition-colors">Kompally</a></li>
-              <li><a href="/hyderabad/secunderabad" className="hover:text-secondary transition-colors">Secunderabad</a></li>
-              <li><a href="/hyderabad/miyapur" className="hover:text-secondary transition-colors">Miyapur</a></li>
-              <li><a href="/hyderabad/abids" className="hover:text-secondary transition-colors">Abids</a></li>
-              <li><a href="/hyderabad/uppal" className="hover:text-secondary transition-colors">Uppal</a></li>
-              <li><a href="/hyderabad/kukatpally" className="hover:text-secondary transition-colors">Kukatpally</a></li>
-              <li><a href="/hyderabad/banjara-hills" className="hover:text-secondary transition-colors">Banjara Hills</a></li>
-              <li><a href="/hyderabad/manikonda" className="hover:text-secondary transition-colors">Manikonda</a></li>
-              <li><a href="/hyderabad/begumpet" className="hover:text-secondary transition-colors">Begumpet</a></li>
             </ul>
           </div>
 

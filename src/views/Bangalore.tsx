@@ -55,9 +55,9 @@ const Bangalore = () => {
       <Header />
       <main>
         <BangaloreHeroSection />
-        <ActionGrid />
         <BestServices />
         <ServicesCarousel />
+        <ActionGrid />
         <BangaloreContentSection />
         <HowItWorksSection />
         <GallerySection />
