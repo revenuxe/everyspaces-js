@@ -6,13 +6,20 @@ import { usePathname, useRouter } from "next/navigation";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
+function getProjectType(pathname: string) {
+  const segments = pathname.split("/").filter(Boolean);
+  const lastSegment = segments.at(-1) || "Home Interior";
+  return lastSegment.replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
 export default function SiteQuoteForm() {
   const pathname = usePathname() ?? "";
   const router = useRouter();
   const { toast } = useToast();
   const [target, setTarget] = useState<HTMLElement | null>(null);
   const [submitting, setSubmitting] = useState(false);
-  const [data, setData] = useState({ name: "", mobile: "", email: "", projectType: "" });
+  const projectType = getProjectType(pathname);
+  const [data, setData] = useState({ name: "", mobile: "", email: "", projectType });
   const excluded = pathname === "/" || pathname.startsWith("/admin") || pathname.startsWith("/studio") || pathname === "/thank-you";
 
   useEffect(() => {
@@ -26,8 +33,12 @@ export default function SiteQuoteForm() {
     return () => { host.remove(); setTarget(null); };
   }, [pathname, excluded]);
 
+  useEffect(() => {
+    setData((current) => ({ ...current, projectType }));
+  }, [projectType]);
+
   if (excluded || !target) return null;
-  const service = (pathname.split("/").filter(Boolean).at(-1) || "home").replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+  const service = projectType;
   const update = (field: keyof typeof data, value: string) => setData((current) => ({ ...current, [field]: value }));
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); setSubmitting(true);
