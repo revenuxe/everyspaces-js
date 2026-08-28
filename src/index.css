@@ -774,7 +774,7 @@
   padding: 0 !important;
   background: #0d3b4f;
 }
-.locality-hero .hero-overlay { background: linear-gradient(90deg, #0d3b4f 0%, rgba(13,59,79,.92) 42%, rgba(13,59,79,.28) 78%, rgba(13,59,79,.12) 100%); }
+.locality-hero .hero-overlay { background: linear-gradient(90deg, rgba(13,59,79,.81) 0%, rgba(13,59,79,.66) 55%, rgba(13,59,79,.40) 100%); }
 .locality-hero .container { max-width: 80rem; }
 .locality-hero .container {
   min-height: 650px !important;
@@ -793,7 +793,8 @@
 }
 
 .service-hero .hero-overlay {
-  background: linear-gradient(90deg, #0d3b4f 0%, rgba(13, 59, 79, .94) 38%, rgba(13, 59, 79, .34) 72%, rgba(13, 59, 79, .15) 100%);
+  /* Matches the homepage treatment: readable copy with the project image still present. */
+  background: linear-gradient(90deg, rgba(13, 59, 79, .81) 0%, rgba(13, 59, 79, .66) 55%, rgba(13, 59, 79, .40) 100%);
 }
 
 .service-hero .container {
