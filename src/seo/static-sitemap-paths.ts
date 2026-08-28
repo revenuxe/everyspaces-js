@@ -49,6 +49,12 @@ export const SERVICE_SITEMAP_ENTRIES: Entry[] = [
   { path: "/services/3bhk-interiors", changeFrequency: "weekly", priority: 0.9 },
   { path: "/services/villa-interiors", changeFrequency: "weekly", priority: 0.85 },
   { path: "/services/full-home-design", changeFrequency: "weekly", priority: 0.85 },
+  { path: "/services/modular-kitchen/l-shaped-kitchen", changeFrequency: "monthly", priority: 0.78 },
+  { path: "/services/modular-kitchen/u-shaped-kitchen", changeFrequency: "monthly", priority: 0.78 },
+  { path: "/services/modular-kitchen/parallel-kitchen", changeFrequency: "monthly", priority: 0.78 },
+  { path: "/services/modular-kitchen/island-kitchen", changeFrequency: "monthly", priority: 0.78 },
+  { path: "/services/modular-kitchen/straight-kitchen", changeFrequency: "monthly", priority: 0.75 },
+  { path: "/services/modular-kitchen/g-shaped-kitchen", changeFrequency: "monthly", priority: 0.75 },
 ];
 
 export const BANGALORE_SERVICE_SITEMAP_ENTRIES: Entry[] = SERVICE_SITEMAP_ENTRIES.map((entry) => ({

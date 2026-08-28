@@ -1,0 +1,11 @@
+export const kitchenLayouts = {
+  "l-shaped-kitchen": { title: "L-Shaped Kitchen Design", description: "A practical corner layout that creates an efficient work triangle, generous storage, and an easy flow for everyday cooking.", idealFor: "compact apartments and open-plan homes", features: ["Efficient work triangle", "Corner storage solutions", "Flexible dining integration", "Custom cabinet finishes"] },
+  "u-shaped-kitchen": { title: "U-Shaped Kitchen Design", description: "A high-storage kitchen layout with work surfaces on three sides, planned for serious cooking and effortless organisation.", idealFor: "medium to large kitchens", features: ["Maximum counter space", "Dedicated prep, cook and wash zones", "Tall pantry options", "Integrated appliance planning"] },
+  "parallel-kitchen": { title: "Parallel Kitchen Design", description: "A smart dual-counter kitchen layout that keeps cooking, cleaning and storage neatly organised in narrower rooms.", idealFor: "compact and galley-style kitchens", features: ["Two efficient work runs", "Clear circulation space", "Separate wet and dry zones", "High-capacity base storage"] },
+  "island-kitchen": { title: "Island Kitchen Design", description: "A social, open kitchen centred around a multifunctional island for prep, storage, serving and gathering.", idealFor: "large open-plan homes", features: ["Central prep and serving island", "Seating or breakfast counter", "Integrated storage", "Statement lighting and finishes"] },
+  "straight-kitchen": { title: "Straight Kitchen Design", description: "A streamlined single-wall kitchen that makes compact homes feel composed, functional and uncluttered.", idealFor: "studios and narrow spaces", features: ["Space-saving single-wall plan", "Integrated appliances", "Tall-unit storage", "Clean, minimal visual line"] },
+  "g-shaped-kitchen": { title: "G-Shaped Kitchen Design", description: "An extended U-shaped layout with an additional peninsula, giving busy kitchens more worktop and storage space.", idealFor: "spacious family kitchens", features: ["Extra prep and serving space", "Generous storage capacity", "Defined kitchen zone", "Optional breakfast seating"] },
+} as const;
+
+export type KitchenLayoutSlug = keyof typeof kitchenLayouts;
+export const getKitchenLayout = (slug: string) => kitchenLayouts[slug as KitchenLayoutSlug];
