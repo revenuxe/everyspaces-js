@@ -776,7 +776,11 @@
 }
 .locality-hero .hero-overlay { background: linear-gradient(90deg, #0d3b4f 0%, rgba(13,59,79,.92) 42%, rgba(13,59,79,.28) 78%, rgba(13,59,79,.12) 100%); }
 .locality-hero .container { max-width: 80rem; }
-.locality-hero .container { min-height: 0 !important; padding-top: 2.5rem !important; padding-bottom: 3rem !important; }
+.locality-hero .container {
+  min-height: 650px !important;
+  padding-top: 8.5rem !important;
+  padding-bottom: 5.5rem !important;
+}
 .locality-hero .container > div:first-child { text-align: left !important; margin: 0 !important; }
 @media (max-width: 767px) { .locality-hero .container { padding-top: 8.5rem !important; padding-bottom: 2.5rem !important; } }
 
