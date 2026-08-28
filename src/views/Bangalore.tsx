@@ -1,7 +1,7 @@
 "use client";
 
 import Header from "@/components/Header";
-import BangaloreHeroSection from "@/components/BangaloreHeroSection";
+import HeroSection from "@/components/HeroSection";
 import ActionGrid from "@/components/ActionGrid";
 import BestServices from "@/components/BestServices";
 import ServicesCarousel from "@/components/ServicesCarousel";
@@ -54,7 +54,12 @@ const Bangalore = () => {
       <StructuredData data={[bangaloreServiceSchema, createFAQSchema(bangaloreFaqsForSchema, 'bangalore')]} />
       <Header />
       <main>
-        <BangaloreHeroSection />
+        <HeroSection
+          sourcePage="/bangalore"
+          formName="Bangalore Landing Page Form"
+          headingPrefix="Interior Designer"
+          description="End-to-end interior solutions in Bangalore."
+        />
         <BestServices />
         <ServicesCarousel />
         <ActionGrid />
