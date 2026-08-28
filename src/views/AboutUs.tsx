@@ -32,7 +32,7 @@ const AboutUs = () => {
       <StructuredData data={aeoSchemas} />
       <Header />
 
-      <main className="pt-20">
+      <main>
         <PageHero title="A more considered way to create home." description="EverySpaces brings design, execution, and clear communication together in one modern studio experience." eyebrow="About EverySpaces" />
 
         <section className="py-12 md:py-16">

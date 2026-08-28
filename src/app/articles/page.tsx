@@ -5,20 +5,20 @@ import { Calendar, Clock, ArrowRight, BookOpen } from "lucide-react";
 import { StructuredData, createBreadcrumbSchema } from "@/components/StructuredData";
 import { getPublishedPosts } from "@/sanity/lib/posts";
 import { urlForImage } from "@/sanity/lib/image";
-import { HYDERABAD_KEYWORD_CLUSTERS } from "@/seo/blog-keyword-clusters";
+import { BANGALORE_KEYWORD_CLUSTERS } from "@/seo/blog-keyword-clusters";
 import { absoluteUrl } from "@/lib/site-url";
 
 export const revalidate = 900;
 
 export const metadata: Metadata = {
-  title: "Interior Design Tips & Ideas Blog | Home Decor Trends | EverySpaces Hyderabad",
+  title: "Interior Design Tips & Ideas Blog | Home Decor Trends | EverySpaces Bangalore",
   description:
-    "Actionable Hyderabad interior design guides, renovation planning tips, modular kitchen inspiration, and premium home transformation ideas.",
+    "Actionable Bangalore interior design guides, renovation planning tips, modular kitchen inspiration, and premium home transformation ideas.",
   alternates: { canonical: "/articles" },
   openGraph: {
-    title: "Hyderabad Interior Design Blog | EverySpaces",
+    title: "Bangalore Interior Design Blog | EverySpaces",
     description:
-      "Expert interior design insights and high-intent home decor guides for Hyderabad homeowners.",
+      "Expert interior design insights and high-intent home decor guides for Bangalore homeowners.",
     url: "/articles",
     type: "website",
   },
@@ -29,7 +29,7 @@ const blogSchema = {
   "@type": "Blog",
   name: "EverySpaces Interior Design Blog",
   description:
-    "Expert interior design tips, renovation guides, and home decor ideas for Hyderabad homeowners.",
+    "Expert interior design tips, renovation guides, and home decor ideas for Bangalore homeowners.",
   url: absoluteUrl("/articles"),
 };
 
@@ -76,10 +76,10 @@ export default async function ArticlesPage({
                 Interior Design Blog
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-                Hyderabad Design <span className="text-secondary">Insights</span>
+                Bangalore Design <span className="text-secondary">Insights</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8">
-                High-intent guides and expert advice for premium home interiors in Hyderabad.
+                High-intent guides and expert advice for premium home interiors in Bangalore.
               </p>
               <form className="relative max-w-xl mx-auto" method="GET" action="/articles">
                 <input
@@ -138,12 +138,12 @@ export default async function ArticlesPage({
         <section className="py-8">
           <div className="container">
             <div className="rounded-2xl border bg-card p-6">
-              <h2 className="text-2xl font-semibold text-primary mb-2">High-Intent Hyderabad Topics</h2>
+              <h2 className="text-2xl font-semibold text-primary mb-2">High-Intent Bangalore Topics</h2>
               <p className="text-muted-foreground mb-4">
                 Explore transaction-ready topics mapped to services and locality intent pages.
               </p>
               <div className="grid md:grid-cols-3 gap-4">
-                {HYDERABAD_KEYWORD_CLUSTERS.map((cluster) => (
+                {BANGALORE_KEYWORD_CLUSTERS.map((cluster) => (
                   <Link key={cluster.slug} href={cluster.targetUrl} className="rounded-xl border p-4 hover:border-secondary transition-colors">
                     <p className="text-xs uppercase tracking-wide text-secondary mb-1">{cluster.intent}</p>
                     <h3 className="font-semibold mb-2">{cluster.title}</h3>

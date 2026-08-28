@@ -7,11 +7,14 @@ interface StructuredDataProps {
 
 export const StructuredData = ({ data }: StructuredDataProps) => {
   const jsonLd = Array.isArray(data) ? data : [data];
+  // Do not let retired Hyderabad copy leak into search-facing JSON-LD.
+  const normalizeForBangalore = (item: object) =>
+    JSON.parse(JSON.stringify(item).replace(/hyderabad/gi, "bangalore"));
 
   return (
     <>
       {jsonLd.map((item, index) => (
-        <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }} />
+        <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(normalizeForBangalore(item)) }} />
       ))}
     </>
   );
@@ -27,32 +30,18 @@ export const organizationSchema = {
   "url": "https://www.everyspaces.com",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://www.everyspaces.com/favicon.ico",
-    "width": 64,
-    "height": 64
+    "url": "https://www.everyspaces.com/everyspaces-logo.webp",
+    "width": 1480,
+    "height": 229
   },
-  "description": "EverySpaces is the best interior design company in Hyderabad offering modular kitchens, wardrobes, and full home interiors with 10-year warranty. We have completed 500+ projects across Hyderabad.",
-  "foundingDate": "2014",
-  "numberOfEmployees": {
-    "@type": "QuantitativeValue",
-    "minValue": 50,
-    "maxValue": 100
-  },
+  "description": "EverySpaces provides full home interiors, modular kitchens, wardrobes and room design services across Bangalore.",
   "slogan": "End to End Interior Solutions",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Begumpet",
-    "addressLocality": "Hyderabad",
-    "addressRegion": "Telangana",
-    "postalCode": "500016",
-    "addressCountry": "IN"
-  },
   "contactPoint": [
     {
       "@type": "ContactPoint",
       "telephone": "+91-9886579923",
       "contactType": "customer service",
-      "areaServed": "Hyderabad",
+      "areaServed": "Bangalore",
       "availableLanguage": ["English", "Hindi", "Kannada"]
     },
     {

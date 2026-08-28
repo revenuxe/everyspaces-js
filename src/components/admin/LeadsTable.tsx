@@ -23,11 +23,11 @@ interface Lead {
 }
 
 const statusColors: Record<LeadStatus, string> = {
-  new: "bg-blue-500/10 text-blue-500 border-blue-500/20",
-  follow_up: "bg-yellow-500/10 text-yellow-500 border-yellow-500/20",
-  site_visit: "bg-purple-500/10 text-purple-500 border-purple-500/20",
-  quotation: "bg-orange-500/10 text-orange-500 border-orange-500/20",
-  converted: "bg-green-500/10 text-green-500 border-green-500/20",
+  new: "bg-primary/10 text-primary border-primary/20",
+  follow_up: "bg-secondary/10 text-secondary border-secondary/20",
+  site_visit: "bg-primary/10 text-primary border-primary/20",
+  quotation: "bg-secondary/10 text-secondary border-secondary/20",
+  converted: "bg-primary/10 text-primary border-primary/20",
   rejected: "bg-red-500/10 text-red-500 border-red-500/20",
 };
 
@@ -110,6 +110,10 @@ export function LeadsTable() {
     return (data.phone || data.Phone || data.mobile || data.Mobile || "-") as string;
   };
 
+  const getEnquiryService = (lead: Lead): string => {
+    return String(lead.data.service || lead.data.projectType || lead.form_name || "General enquiry");
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
@@ -142,6 +146,7 @@ export function LeadsTable() {
               <TableHead className="text-muted-foreground">Name</TableHead>
               <TableHead className="text-muted-foreground">Phone</TableHead>
               <TableHead className="text-muted-foreground">Form</TableHead>
+              <TableHead className="text-muted-foreground">Service</TableHead>
               <TableHead className="text-muted-foreground">Source</TableHead>
               <TableHead className="text-muted-foreground">Date</TableHead>
               <TableHead className="text-muted-foreground">Status</TableHead>
@@ -151,7 +156,7 @@ export function LeadsTable() {
           <TableBody>
             {leads.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={7} className="text-center py-12 text-muted-foreground">
+                <TableCell colSpan={8} className="text-center py-12 text-muted-foreground">
                   No leads found
                 </TableCell>
               </TableRow>
@@ -167,6 +172,7 @@ export function LeadsTable() {
                       {lead.form_name}
                     </Badge>
                   </TableCell>
+                  <TableCell className="text-sm font-medium text-foreground">{getEnquiryService(lead)}</TableCell>
                   <TableCell className="text-muted-foreground text-sm">
                     {lead.source_page || "-"}
                   </TableCell>

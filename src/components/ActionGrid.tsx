@@ -41,7 +41,7 @@ const ActionGrid = () => {
         {/* Mobile: Horizontal scroll with proper snap | Desktop: Grid */}
         <div
           ref={scrollRef}
-          className="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 md:pb-0"
+          className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 md:pb-0"
           style={{
             scrollPaddingLeft: "1rem",
             scrollPaddingRight: "1rem",

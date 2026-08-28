@@ -32,7 +32,7 @@ const ExploreBangaloreCTA = () => {
               </p>
             </div>
 
-            {/* Orange Arrow Button */}
+            {/* Coral brand arrow button */}
             <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-secondary flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary/90 transition-all duration-300 shadow-md">
               <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-secondary-foreground group-hover:translate-x-0.5 transition-transform duration-300" />
             </div>

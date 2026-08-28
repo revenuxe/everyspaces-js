@@ -8,35 +8,32 @@ const ogDefaults = {
 
 export const PAGE_METADATA: Record<string, Metadata> = {
   "/": {
-    title:
-      "EverySpaces | Best Interior Designers in Hyderabad & Bangalore | Modular Kitchen & Home Interiors",
+    title: "Interior Designers in Bangalore | Home Interiors & Modular Kitchens | EverySpaces",
     description:
-      "EverySpaces is a top interior design company in Hyderabad and Bangalore. Modular kitchens, wardrobes & full home interiors with 10-year warranty. 500+ projects completed. Free consultation!",
+      "Bangalore interior designers for full home interiors, 2BHK and 3BHK designs, modular kitchens and wardrobes. Get a free design consultation from EverySpaces.",
     keywords: [
-      "best interior designers hyderabad",
-      "best interior designers bangalore",
-      "modular kitchen hyderabad",
+      "interior designers in bangalore",
+      "home interiors bangalore",
       "modular kitchen bangalore",
-      "wardrobe design hyderabad",
+      "2bhk interior design bangalore",
+      "3bhk interior design bangalore",
       "wardrobe design bangalore",
-      "home interior design hyderabad",
-      "home interior design bangalore",
-      "interior design cost hyderabad",
+      "full home interiors bangalore",
       "interior design cost bangalore",
     ],
     alternates: { canonical: "/" },
     openGraph: {
       ...ogDefaults,
-      title: "Best Interior Designers in Hyderabad & Bangalore | Modular Kitchen & Home Interiors - EverySpaces",
+      title: "Interior Designers in Bangalore | Home Interiors & Modular Kitchens | EverySpaces",
       description:
-        "EverySpaces serves Hyderabad and Bangalore with 500+ projects and 10-year warranty. Modular kitchens from ₹2.5L, 2BHK interiors from ₹8L. Free consultation!",
+        "Full home interiors, 2BHK and 3BHK designs, modular kitchens and wardrobes across Bangalore. Book a free consultation.",
       url: "/",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Best Interior Designers in Hyderabad & Bangalore - EverySpaces",
+      title: "Interior Designers in Bangalore | EverySpaces",
       description:
-        "500+ projects, 10-year warranty. Modular kitchens, wardrobes & complete home interiors in Hyderabad and Bangalore.",
+        "Full home interiors, modular kitchens, wardrobes and 2BHK/3BHK design services in Bangalore.",
     },
     robots: { index: true, follow: true },
   },
@@ -255,4 +252,20 @@ export const PAGE_METADATA: Record<string, Metadata> = {
     alternates: { canonical: "/services/balcony-design" },
   },
 };
+
+// The marketing site is Bangalore-only. This protects legacy, route-specific
+// metadata from publishing the retired city name while preserving each page's
+// unique intent, title, description, canonical, and Open Graph fields.
+function replaceRetiredCity(value: unknown): unknown {
+  if (typeof value === "string") return value.replace(/Hyderabad/gi, "Bangalore");
+  if (Array.isArray(value)) return value.map(replaceRetiredCity);
+  if (value && typeof value === "object") {
+    for (const [key, nested] of Object.entries(value as Record<string, unknown>)) {
+      (value as Record<string, unknown>)[key] = replaceRetiredCity(nested);
+    }
+  }
+  return value;
+}
+
+replaceRetiredCity(PAGE_METADATA);
 

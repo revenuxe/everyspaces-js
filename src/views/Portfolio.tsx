@@ -113,7 +113,7 @@ const Portfolio = () => {
       <Header />
       <Breadcrumb items={[{ label: "Portfolio" }]} />
       
-      <main className="pt-4 md:pt-8 pb-12 md:pb-20">
+      <main className="pt-0 pb-12 md:pb-20">
         <PageHero title="Design Gallery" description="A collection of homes shaped around light, material, and the people who live in them." eyebrow="Selected work · EverySpaces" />
         <div className="container px-2 md:px-4">
           {/* Header */}

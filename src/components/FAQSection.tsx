@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import {
   Accordion,
   AccordionContent,
@@ -96,11 +95,8 @@ interface FAQSectionProps {
 }
 
 const FAQSection = ({ faqs: faqsOverride, cityOverride }: FAQSectionProps = {}) => {
-  const pathname = usePathname() ?? "";
-  const isBangalore = pathname.startsWith("/bangalore");
-  const isHyderabad = pathname.startsWith("/hyderabad");
-  const city = cityOverride ?? (isBangalore ? "Bangalore" : isHyderabad ? "Hyderabad" : "Hyderabad and Bangalore");
-  const faqs = faqsOverride ?? (isBangalore ? bangaloreFaqs : hyderabadFaqs);
+  const city = cityOverride ?? "Bangalore";
+  const faqs = faqsOverride ?? bangaloreFaqs;
 
   // FAQ schema is handled by the parent page's StructuredData component to avoid duplicates
   return (

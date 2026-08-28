@@ -93,13 +93,13 @@ const ArticlesManager = () => {
     switch (status) {
       case "published":
         return (
-          <Badge className="bg-green-500/10 text-green-600 border-green-500/20">
+          <Badge className="bg-primary/10 text-primary border-primary/20">
             Published
           </Badge>
         );
       case "draft":
         return (
-          <Badge className="bg-yellow-500/10 text-yellow-600 border-yellow-500/20">
+          <Badge className="bg-secondary/10 text-secondary border-secondary/20">
             Draft
           </Badge>
         );

@@ -14,7 +14,6 @@ import LocalityContentSection from "@/components/LocalityContentSection";
 import LocalityGallerySection from "@/components/LocalityGallerySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
-import LocalitiesSection from "@/components/LocalitiesSection";
 import BangaloreLocalitiesSection from "@/components/BangaloreLocalitiesSection";
 import RelatedLocalities from "@/components/RelatedLocalities";
 import RelatedServices from "@/components/RelatedServices";
@@ -77,11 +76,10 @@ const LocalityPageTemplate = ({
   seo
 }: LocalityPageProps) => {
   const pathname = usePathname() ?? "";
-  const isBangalore = pathname.startsWith("/bangalore");
-  const cityName = isBangalore ? "Bangalore" : "Hyderabad";
-  const cityPath = isBangalore ? "bangalore" : "hyderabad";
-  const cityRegion = isBangalore ? "Bangalore, Karnataka" : "Hyderabad, Telangana";
-  const cityGeo = isBangalore ? { lat: "12.9716", lng: "77.5946" } : { lat: "17.3850", lng: "78.4867" };
+  const cityName = "Bangalore";
+  const cityPath = "bangalore";
+  const cityRegion = "Bangalore, Karnataka";
+  const cityGeo = { lat: "12.9716", lng: "77.5946" };
   const heroUrl = imgSrc(heroImage);
   const galleryUrls = galleryImages.map(imgSrc);
 
@@ -123,7 +121,9 @@ const LocalityPageTemplate = ({
     specialties: ['Modular Kitchen', 'Wardrobe Design', 'Living Room', 'Bedroom Interior']
   };
 
-  const seoData = seo || defaultSEO;
+  // Locality modules from the previous Hyderabad rollout may still pass legacy
+  // copy. Use the Bangalore-safe defaults until each locality gets bespoke copy.
+  const seoData = defaultSEO;
   
   // A locality is a service area, not a separate physical storefront. Marking it
   // as a LocalBusiness would make Google's required address data misleading.
@@ -265,7 +265,7 @@ const LocalityPageTemplate = ({
         <RelatedLocalities currentSlug={slug} />
         <TestimonialsSection />
         <FAQSection faqs={seoData.faqs} cityOverride={localityName} />
-        {isBangalore ? <BangaloreLocalitiesSection /> : <LocalitiesSection />}
+        <BangaloreLocalitiesSection />
       </main>
       
       <Footer />

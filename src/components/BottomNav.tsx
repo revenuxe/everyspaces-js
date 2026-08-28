@@ -37,7 +37,7 @@ const BottomNav = () => {
                     className="relative -mt-8 flex items-center justify-center"
                     aria-label="Contact us on WhatsApp"
                   >
-                    <div className="w-16 h-16 rounded-full bg-primary border-4 border-primary-foreground/15 flex items-center justify-center shadow-lg">
+                    <div className="w-16 h-16 rounded-full bg-secondary border-4 border-primary-foreground/15 flex items-center justify-center shadow-lg">
                       {/* WhatsApp Icon */}
                       <svg
                         viewBox="0 0 24 24"

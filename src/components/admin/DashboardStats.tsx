@@ -51,9 +51,9 @@ export function DashboardStats() {
   const statCards = [
     { title: "Total Leads", value: stats.total, icon: Users, color: "text-primary", bgColor: "bg-primary/10" },
     { title: "New", value: stats.new, icon: FileText, color: "text-blue-500", bgColor: "bg-blue-500/10" },
-    { title: "Follow Up", value: stats.followUp, icon: Clock, color: "text-yellow-500", bgColor: "bg-yellow-500/10" },
+    { title: "Follow Up", value: stats.followUp, icon: Clock, color: "text-secondary", bgColor: "bg-secondary/10" },
     { title: "Site Visit", value: stats.siteVisit, icon: TrendingUp, color: "text-purple-500", bgColor: "bg-purple-500/10" },
-    { title: "Quotation", value: stats.quotation, icon: FileText, color: "text-orange-500", bgColor: "bg-orange-500/10" },
+    { title: "Quotation", value: stats.quotation, icon: FileText, color: "text-secondary", bgColor: "bg-secondary/10" },
     { title: "Converted", value: stats.converted, icon: UserCheck, color: "text-green-500", bgColor: "bg-green-500/10" },
     { title: "Rejected", value: stats.rejected, icon: UserX, color: "text-red-500", bgColor: "bg-red-500/10" },
   ];

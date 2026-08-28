@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
+      // Retire the old city architecture without leaving crawlers or users on dead URLs.
+      {
+        source: "/hyderabad/:path*",
+        destination: "/bangalore",
+        permanent: true,
+      },
       {
         source: "/hyderabad/indiranagar",
         destination: "/hyderabad/jubilee-hills",

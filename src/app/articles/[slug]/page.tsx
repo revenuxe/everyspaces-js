@@ -8,7 +8,7 @@ import { Calendar, Clock, ArrowLeft, ArrowRight, User, BookOpen } from "lucide-r
 import { StructuredData, createArticleSchema, createBreadcrumbSchema, createFAQSchema } from "@/components/StructuredData";
 import { getPostBySlug, getPublishedPostSlugs, getRelatedPosts } from "@/sanity/lib/posts";
 import { urlForImage } from "@/sanity/lib/image";
-import { HYDERABAD_KEYWORD_CLUSTERS } from "@/seo/blog-keyword-clusters";
+import { BANGALORE_KEYWORD_CLUSTERS } from "@/seo/blog-keyword-clusters";
 import { absoluteUrl } from "@/lib/site-url";
 
 export const revalidate = 900;
@@ -150,7 +150,7 @@ export default async function ArticlePage({
           )}
 
           <section className="mt-10 p-6 rounded-2xl bg-muted/30 border">
-            <h2 className="text-xl font-semibold mb-2">Need help with your Hyderabad home interior?</h2>
+            <h2 className="text-xl font-semibold mb-2">Need help with your Bangalore home interior?</h2>
             <p className="text-muted-foreground mb-4">
               Get a free design consultation for modular kitchen, wardrobes, and full-home interiors.
             </p>
@@ -165,9 +165,9 @@ export default async function ArticlePage({
           </section>
 
           <section className="mt-8">
-            <h2 className="text-xl font-semibold mb-3">Explore Related Hyderabad Intent Pages</h2>
+            <h2 className="text-xl font-semibold mb-3">Explore Related Bangalore Pages</h2>
             <div className="grid sm:grid-cols-2 gap-3">
-              {HYDERABAD_KEYWORD_CLUSTERS.map((cluster) => (
+              {BANGALORE_KEYWORD_CLUSTERS.map((cluster) => (
                 <Link key={cluster.slug} href={cluster.targetUrl} className="rounded-xl border p-4 hover:border-secondary transition-colors">
                   <p className="text-xs text-secondary uppercase tracking-wide">{cluster.intent}</p>
                   <p className="font-medium mt-1">{cluster.title}</p>

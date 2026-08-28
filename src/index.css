@@ -6,8 +6,8 @@
 
 @layer base {
   :root {
-    /* Quiet, warm premium palette */
-    --background: 60 5% 97%; /* #f8f8f7 */
+    /* Brand palette: EverySpaces navy and the coral from the "Z" mark. */
+    --background: 60 23% 95%; /* #F5F5EF */
     --foreground: 197 74% 18%; /* EverySpaces deep blue */
 
     --card: 0 0% 100%;
@@ -19,13 +19,13 @@
     --primary: 197 74% 18%; /* #0d3b4f */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 39 32% 49%; /* restrained muted gold */
+    --secondary: 14.7 61.9% 53.9%; /* #D16542 coral */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 40 8% 92%;
+    --muted: 60 23% 95%;
     --muted-foreground: 0 0% 43%;
 
-    --accent: 39 32% 49%;
+    --accent: 14.7 61.9% 53.9%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -33,62 +33,62 @@
 
     --border: 0 0% 9% / 0.10;
     --input: 0 0% 9% / 0.10;
-    --ring: 39 32% 49%;
+    --ring: 14.7 61.9% 53.9%;
 
     --radius: 1.5rem;
 
     /* Custom EverySpaces tokens */
     --teal: 197 74% 18%;
-    --orange: 39 32% 49%;
-    --orange-light: 39 35% 58%;
-    --cream: 60 5% 97%;
+    --orange: 14.7 61.9% 53.9%; /* legacy name; maps to brand coral */
+    --orange-light: 14.7 61.9% 64%;
+    --cream: 60 23% 95%;
     --glass: 0 0% 100%;
     --glass-opacity: 0.7;
     
     /* Shadows */
     --shadow-soft: 0 6px 28px -10px hsl(0 0% 0% / 0.12);
     --shadow-elevated: 0 16px 48px -14px hsl(0 0% 0% / 0.16);
-    --shadow-glow: 0 0 40px hsl(39 32% 49% / 0.2);
+    --shadow-glow: 0 0 40px hsl(14.7 61.9% 53.9% / 0.2);
     
     /* Gradients */
     --gradient-hero: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
     --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
-    --gradient-orange: linear-gradient(135deg, hsl(22 82% 50%) 0%, hsl(22 82% 60%) 100%);
+    --gradient-orange: #D16542;
     
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-    --sidebar-background: 30 10% 98%;
+    --sidebar-background: 60 23% 95%;
     --sidebar-foreground: 197 74% 18%;
     --sidebar-primary: 197 74% 18%;
-    --sidebar-primary-foreground: 30 10% 98%;
-    --sidebar-accent: 22 82% 50%;
+    --sidebar-primary-foreground: 60 23% 95%;
+    --sidebar-accent: 14.7 61.9% 53.9%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 30 15% 90%;
-    --sidebar-ring: 22 82% 50%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 14.7 61.9% 53.9%;
   }
 
   .dark {
     --background: 197 74% 8%;
-    --foreground: 30 10% 95%;
+    --foreground: 210 33% 95%;
 
     --card: 197 74% 12%;
-    --card-foreground: 30 10% 95%;
+    --card-foreground: 210 33% 95%;
 
     --popover: 197 74% 12%;
-    --popover-foreground: 30 10% 95%;
+    --popover-foreground: 210 33% 95%;
 
-    --primary: 30 10% 95%;
+    --primary: 210 33% 95%;
     --primary-foreground: 197 74% 18%;
 
-    --secondary: 22 82% 50%;
+    --secondary: 14.7 61.9% 53.9%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 197 30% 18%;
-    --muted-foreground: 30 10% 70%;
+    --muted-foreground: 210 20% 70%;
 
-    --accent: 22 82% 50%;
+    --accent: 14.7 61.9% 53.9%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 50%;
@@ -100,13 +100,13 @@
     
     --glass-opacity: 0.15;
     --sidebar-background: 197 74% 8%;
-    --sidebar-foreground: 30 10% 95%;
-    --sidebar-primary: 30 10% 95%;
+    --sidebar-foreground: 210 33% 95%;
+    --sidebar-primary: 210 33% 95%;
     --sidebar-primary-foreground: 197 74% 18%;
-    --sidebar-accent: 22 82% 50%;
+    --sidebar-accent: 14.7 61.9% 53.9%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 197 30% 20%;
-    --sidebar-ring: 22 82% 50%;
+    --sidebar-ring: 14.7 61.9% 53.9%;
   }
 }
 
@@ -156,7 +156,7 @@
 
   /* Homepage: one quiet card language across the pre-existing content modules. */
   .minimal-home > section { @apply py-14 md:py-20; }
-  .minimal-home > section:nth-child(even) { background: #eeece8; }
+  .minimal-home > section:nth-child(even) { background: #F5F5EF; }
   .minimal-home .rounded-3xl,
   .minimal-home .rounded-2xl { border: 1px solid rgb(13 59 79 / 10%); box-shadow: 0 12px 35px -22px rgb(13 59 79 / 32%); }
   .minimal-home .shadow-soft,
@@ -164,7 +164,7 @@
   .minimal-home .shadow-md { box-shadow: 0 12px 35px -22px rgb(13 59 79 / 32%); }
   .minimal-home h2 { font-size: clamp(2rem, 4vw, 3.35rem); font-weight: 400; letter-spacing: -0.055em; line-height: 1.02; }
   .minimal-home h3 { font-weight: 400; letter-spacing: -0.035em; }
-  .minimal-home [class*="bg-secondary/20"] { background-color: rgb(185 147 90 / 16%); color: #0d3b4f; }
+  .minimal-home [class*="bg-secondary/20"] { background-color: rgb(209 101 66 / 16%); color: #0d3b4f; }
   .minimal-home [class*="bg-card"] { background-color: #fff; }
 
   /* Shared page treatment: every route uses the same quiet, editorial hierarchy. */
@@ -194,15 +194,16 @@
     background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
   }
   
-  /* Orange Gradient Button */
+  /* Coral brand button (legacy class name retained for existing components). */
   .btn-orange {
-    background: linear-gradient(135deg, hsl(22 82% 50%) 0%, hsl(22 82% 60%) 100%);
-    box-shadow: 0 4px 20px -4px hsl(22 82% 50% / 0.5);
+    background: #D16542;
+    box-shadow: 0 4px 20px -4px hsl(14.7 61.9% 53.9% / 0.5);
     @apply transition-all duration-300;
   }
   
   .btn-orange:hover {
-    box-shadow: 0 8px 30px -4px hsl(22 82% 50% / 0.6);
+    background: #B95638;
+    box-shadow: 0 8px 30px -4px hsl(14.7 61.9% 53.9% / 0.6);
     transform: translateY(-2px);
   }
   
@@ -212,12 +213,13 @@
 
   /* Legacy alias */
   .btn-terracotta {
-    background: linear-gradient(135deg, hsl(22 85% 42%) 0%, hsl(22 85% 52%) 100%);
-    box-shadow: 0 4px 20px -4px hsl(22 85% 42% / 0.5);
+    background: #D16542;
+    box-shadow: 0 4px 20px -4px hsl(14.7 61.9% 53.9% / 0.5);
   }
   
   .btn-terracotta:hover {
-    box-shadow: 0 8px 30px -4px hsl(22 85% 42% / 0.6);
+    background: #B95638;
+    box-shadow: 0 8px 30px -4px hsl(14.7 61.9% 53.9% / 0.6);
     transform: translateY(-2px);
   }
   
@@ -332,10 +334,10 @@
 
 @keyframes pulse-soft {
   0%, 100% {
-    box-shadow: 0 0 0 0 hsl(22 82% 50% / 0.4);
+    box-shadow: 0 0 0 0 hsl(14.7 61.9% 53.9% / 0.4);
   }
   50% {
-    box-shadow: 0 0 0 12px hsl(22 82% 50% / 0);
+    box-shadow: 0 0 0 12px hsl(14.7 61.9% 53.9% / 0);
   }
 }
 
@@ -719,7 +721,7 @@
 .article-content [data-warning],
 .article-content-mobile .warning-box,
 .article-content-mobile [data-warning] {
-  @apply my-6 p-4 bg-amber-50 dark:bg-amber-950/30 border-l-[3px] border-amber-500 rounded-r-lg text-foreground/80;
+  @apply my-6 p-4 bg-secondary/10 dark:bg-secondary/20 border-l-[3px] border-secondary rounded-r-lg text-foreground/80;
 }
 
 /* Service hero layout parity with homepage */
@@ -727,6 +729,35 @@
   display: grid;
   gap: 2rem;
   align-items: center;
+}
+
+/* When the universal quote form is mounted in a service hero, reserve its right side
+   for the form and hide the older, service-specific lead card. */
+.service-hero:has([data-quote-form="after-hero"]) {
+  flex-wrap: wrap;
+}
+.service-hero [data-quote-form="after-hero"] form {
+  display: grid !important;
+}
+@media (min-width: 768px) {
+  main > section:first-child:has([data-quote-form="after-hero"]) {
+    min-height: 540px;
+  }
+  .page-hero:has([data-quote-form="after-hero"]) .container {
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+  .service-hero:has([data-quote-form="after-hero"]) .container > div:first-child {
+    max-width: 48%;
+    margin-left: 0;
+    text-align: left;
+  }
+  .service-hero:has([data-quote-form="after-hero"]) .container > div:nth-child(2) {
+    display: none;
+  }
 }
 
 /* Bangalore locality pages share the homepage's editorial blue image hero. */

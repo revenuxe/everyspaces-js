@@ -7,41 +7,41 @@ export type KeywordCluster = {
   targetUrl: string;
 };
 
-export const HYDERABAD_KEYWORD_CLUSTERS: KeywordCluster[] = [
+export const BANGALORE_KEYWORD_CLUSTERS: KeywordCluster[] = [
   {
     slug: "interior-design-cost",
-    title: "Hyderabad interior design cost guides",
+    title: "Bangalore interior design cost guides",
     intent: "transactional",
-    targetKeyword: "interior design cost in hyderabad",
+    targetKeyword: "interior design cost in bangalore",
     supportingKeywords: [
-      "2bhk interior cost hyderabad",
-      "3bhk interior cost hyderabad",
-      "modular kitchen cost hyderabad",
+      "2bhk interior cost bangalore",
+      "3bhk interior cost bangalore",
+      "modular kitchen cost bangalore",
     ],
     targetUrl: "/services/full-home-design",
   },
   {
     slug: "modular-kitchen",
-    title: "Modular kitchen design in Hyderabad",
+    title: "Modular kitchen design in Bangalore",
     intent: "transactional",
-    targetKeyword: "modular kitchen hyderabad",
+    targetKeyword: "modular kitchen bangalore",
     supportingKeywords: [
-      "u shaped kitchen hyderabad",
-      "parallel kitchen hyderabad",
-      "kitchen interior designers hyderabad",
+      "u shaped kitchen bangalore",
+      "parallel kitchen bangalore",
+      "kitchen interior designers bangalore",
     ],
     targetUrl: "/services/modular-kitchen",
   },
   {
     slug: "locality-interiors",
-    title: "Hyderabad locality interior experts",
+    title: "Bangalore locality interior experts",
     intent: "comparison",
-    targetKeyword: "best interior designers in hyderabad localities",
+    targetKeyword: "best interior designers in bangalore localities",
     supportingKeywords: [
-      "interior designers near me hyderabad",
-      "home interiors in hitech city",
-      "gachibowli interior designers",
+      "interior designers near me bangalore",
+      "home interiors in whitefield",
+      "indiranagar interior designers",
     ],
-    targetUrl: "/hyderabad",
+    targetUrl: "/bangalore",
   },
 ];

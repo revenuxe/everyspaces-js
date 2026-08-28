@@ -13,6 +13,7 @@ function BangaloreHeroSectionInner() {
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
+    email: "",
     projectType: "",
   });
 
@@ -31,6 +32,7 @@ function BangaloreHeroSectionInner() {
         data: {
           name: formData.name,
           mobile: formData.mobile,
+          email: formData.email,
           projectType: formData.projectType,
           area,
         },
@@ -88,13 +90,14 @@ function BangaloreHeroSectionInner() {
             </div>
           </div>
 
-          <div className="max-w-xs md:max-w-lg mx-auto md:ml-auto md:mr-0 w-full animate-fade-up delay-300">
-            <div className="glass-card rounded-2xl md:rounded-3xl p-4 md:p-10 shadow-elevated">
-              <h2 className="font-display text-base md:text-2xl text-foreground text-center mb-2.5 md:mb-6 tracking-[-0.02em]">
-                Get Free Design Consultation
+          <div className="max-w-xs md:max-w-xl mx-auto md:ml-auto md:mr-0 w-full animate-fade-up delay-300">
+            <div className="glass-card rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-elevated">
+              <h2 className="font-display text-xl md:text-2xl text-foreground text-center mb-2 tracking-[-0.02em]">
+                Get Your Free Quote
               </h2>
+              <p className="text-center text-sm text-muted-foreground mb-5">Tell us about your space and we’ll call you back.</p>
 
-              <form onSubmit={handleSubmit} className="space-y-2 md:space-y-5">
+              <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <input
                   type="text"
                   placeholder="Your Name"
@@ -104,6 +107,14 @@ function BangaloreHeroSectionInner() {
                   className="w-full px-3 md:px-5 py-2.5 md:py-4 bg-background/60 border border-border rounded-xl md:rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm md:text-base"
                 />
                 <input
+                  type="email"
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  required
+                  className="w-full px-3 md:px-4 py-3 bg-background/60 border border-border rounded-xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm"
+                />
+                <input
                   type="tel"
                   placeholder="Mobile Number"
                   value={formData.mobile}
@@ -111,7 +122,7 @@ function BangaloreHeroSectionInner() {
                   required
                   pattern="[0-9]{10}"
                   title="Please enter a 10-digit phone number"
-                  className="w-full px-3 md:px-5 py-2.5 md:py-4 bg-background/60 border border-border rounded-xl md:rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm md:text-base"
+                  className="w-full px-3 md:px-4 py-3 bg-background/60 border border-border rounded-xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm"
                 />
                 <input
                   type="text"
@@ -119,14 +130,14 @@ function BangaloreHeroSectionInner() {
                   value={formData.projectType}
                   onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                   required
-                  className="w-full px-3 md:px-5 py-2.5 md:py-4 bg-background/60 border border-border rounded-xl md:rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm md:text-base"
+                  className="w-full px-3 md:px-4 py-3 bg-background/60 border border-border rounded-xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm"
                 />
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full btn-terracotta py-2.5 md:py-4 rounded-xl md:rounded-2xl text-secondary-foreground font-semibold font-body text-sm md:text-lg shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full sm:col-span-2 btn-terracotta py-3.5 rounded-xl text-secondary-foreground font-semibold font-body text-base shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? "Submitting..." : "Get My Free Design"}
+                  {isSubmitting ? "Submitting..." : "Get a Quote"}
                 </button>
               </form>
 

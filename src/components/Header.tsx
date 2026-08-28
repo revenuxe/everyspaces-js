@@ -49,7 +49,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-smooth bg-primary ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#F5F5EF] text-primary transition-all duration-500 ease-smooth ${
         isScrolled ? "py-2 shadow-lg" : "py-3"
       }`}
     >
@@ -67,7 +67,7 @@ const Header = () => {
         
         {/* Desktop Navigation - Pill shape like screenshot */}
         <nav className="hidden md:flex items-center">
-          <div className="flex items-center gap-1 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-2 py-1.5 border border-primary-foreground/15">
+          <div className="flex items-center gap-1 rounded-full border border-primary/15 bg-primary/5 px-2 py-1.5 backdrop-blur-sm">
             {navLinks.map((link) => (
               link.isRoute ? (
                 <Link 
@@ -75,8 +75,8 @@ const Header = () => {
                   href={link.href} 
                   className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
                     pathname === link.href
-                      ? "bg-primary-foreground/15 text-primary-foreground"
-                      : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                      ? "bg-primary/15 text-primary"
+                      : "text-primary/75 hover:bg-primary/10 hover:text-primary"
                   }`}
                 >
                   {link.label}
@@ -85,7 +85,7 @@ const Header = () => {
                 <a 
                   key={link.href}
                   href={link.href} 
-                  className="px-4 py-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10 rounded-full transition-all duration-300"
+                  className="rounded-full px-4 py-2 text-sm font-medium text-primary/75 transition-all duration-300 hover:bg-primary/10 hover:text-primary"
                 >
                   {link.label}
                 </a>
@@ -95,7 +95,7 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          {/* Orange circle button with arrow - matching screenshot */}
+          {/* Coral brand circle button */}
           <Link 
             href="/contact" 
             className="hidden md:flex w-11 h-11 rounded-full bg-secondary items-center justify-center hover:bg-secondary/90 transition-all duration-300 shadow-lg shadow-secondary/30 hover:scale-105"
@@ -106,15 +106,15 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-primary-foreground/10"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? (
-              <X className="w-5 h-5 text-primary-foreground" aria-hidden="true" />
+              <X className="h-5 w-5 text-primary" aria-hidden="true" />
             ) : (
-              <Menu className="w-5 h-5 text-primary-foreground" aria-hidden="true" />
+              <Menu className="h-5 w-5 text-primary" aria-hidden="true" />
             )}
           </button>
         </div>
@@ -122,7 +122,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-primary shadow-lg border-t border-primary-foreground/10">
+        <div className="absolute left-0 right-0 top-full border-t border-primary/10 bg-[#F5F5EF] shadow-lg md:hidden">
           <nav className="container py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               link.isRoute ? (
@@ -131,8 +131,8 @@ const Header = () => {
                   href={link.href} 
                   className={`px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
                     pathname === link.href
-                      ? "bg-primary-foreground/15 text-primary-foreground"
-                      : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                      ? "bg-primary/15 text-primary"
+                      : "text-primary/75 hover:bg-primary/10 hover:text-primary"
                   }`}
                 >
                   {link.label}
@@ -141,7 +141,7 @@ const Header = () => {
                 <a 
                   key={link.href}
                   href={link.href} 
-                  className="px-4 py-3 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10 rounded-lg transition-colors"
+                  className="rounded-lg px-4 py-3 text-sm font-medium text-primary/75 transition-colors hover:bg-primary/10 hover:text-primary"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}

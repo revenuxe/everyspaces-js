@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     "geo.placename": "Bangalore",
     "geo.position": "13.0297;77.6125",
     ICBM: "13.0297, 77.6125",
-    "theme-color": "#0d3b4f",
+    "theme-color": "#F5F5EF",
   },
 };
 

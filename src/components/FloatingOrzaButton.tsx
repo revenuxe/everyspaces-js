@@ -15,7 +15,7 @@ interface Message {
 const QUICK_PROMPTS = [
   "What's the cost for a modular kitchen?",
   "How long does a 2BHK interior take?",
-  "Do you serve my area in Hyderabad?",
+  "Do you serve my area in Bangalore?",
   "What styles are trending in 2025?",
 ];
 

@@ -11,13 +11,11 @@ import GallerySection from "@/components/GallerySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import ExploreBangaloreCTA from "@/components/ExploreBangaloreCTA";
-import LocalitiesSection from "@/components/LocalitiesSection";
 import BangaloreLocalitiesSection from "@/components/BangaloreLocalitiesSection";
 import Footer from "@/components/Footer";
 import { 
   StructuredData, 
   organizationSchema, 
-  localBusinessSchema, 
   websiteSchema,
   homePageSchema,
   howToInteriorDesignSchema,
@@ -25,7 +23,6 @@ import {
   commonFAQs,
   createFAQSchema,
   allServicesItemList,
-  allLocalitiesItemList
 } from "@/components/StructuredData";
 
 const Index = () => {
@@ -33,14 +30,12 @@ const Index = () => {
   // Only include FAQPage on home page to avoid duplicates across site
   const aeoSchemas = [
     organizationSchema,
-    localBusinessSchema,
     websiteSchema,
     homePageSchema,
     howToInteriorDesignSchema,
     professionalServiceSchema,
     createFAQSchema(commonFAQs, 'home'),
-    allServicesItemList,
-    allLocalitiesItemList
+    allServicesItemList
   ];
 
   return (
@@ -57,7 +52,6 @@ const Index = () => {
         <TestimonialsSection />
         <FAQSection />
         <ExploreBangaloreCTA />
-        <LocalitiesSection />
         <BangaloreLocalitiesSection />
       </main>
       <Footer />
