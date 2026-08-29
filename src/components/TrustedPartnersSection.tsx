@@ -13,6 +13,12 @@ const logoClassName = (partner: (typeof partners)[number]) =>
     `trusted-partners__logo-image--${partner.name.toLowerCase().replace(/[^a-z]+/g, "-")}`,
   ].filter(Boolean).join(" ");
 
+const logoItemClassName = (partner: (typeof partners)[number]) =>
+  [
+    "trusted-partners__logo",
+    `trusted-partners__logo--${partner.name.toLowerCase().replace(/[^a-z]+/g, "-")}`,
+  ].join(" ");
+
 export default function TrustedPartnersSection() {
   return (
     <section className="trusted-partners" aria-labelledby="trusted-partners-heading">
@@ -22,12 +28,12 @@ export default function TrustedPartnersSection() {
       <div className="trusted-partners__marquee">
         <div className="trusted-partners__track">
           {partners.map((partner) => (
-            <div className="trusted-partners__logo trusted-partners__logo--desktop" key={partner.name}>
+            <div className={`${logoItemClassName(partner)} trusted-partners__logo--desktop`} key={partner.name}>
               <img className={logoClassName(partner)} src={partner.src} alt={partner.name} />
             </div>
           ))}
           {[...partners, ...partners].map((partner, index) => (
-            <div className="trusted-partners__logo" key={`${partner.name}-${index}`}>
+            <div className={logoItemClassName(partner)} key={`${partner.name}-${index}`}>
               <img className={logoClassName(partner)} src={partner.src} alt={partner.name} />
             </div>
           ))}

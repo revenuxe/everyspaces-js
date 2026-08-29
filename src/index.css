@@ -139,6 +139,12 @@
     width: min(96%, 8.1rem);
     max-height: 3.25rem;
   }
+
+  /* Keep the visually compact Blum and Elica lockups closer together. */
+  .trusted-partners__logo--blum {
+    flex-basis: clamp(7.75rem, 8.5vw, 9.5rem);
+    margin-right: clamp(0.75rem, 1.25vw, 1.25rem);
+  }
 }
 
 /* EverySpaces - Premium Design System */
