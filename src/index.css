@@ -116,9 +116,9 @@
 
   .trusted-partners__logo {
     display: grid;
-    flex-basis: clamp(7.5rem, 8vw, 8.5rem);
-    height: 5.5rem;
-    margin-right: clamp(1rem, 1.5vw, 1.5rem);
+    flex-basis: clamp(10rem, 11vw, 13rem);
+    height: 6.25rem;
+    margin-right: clamp(2rem, 3vw, 3.5rem);
   }
 
   .trusted-partners__logo--desktop {
@@ -126,7 +126,7 @@
   }
 
   .trusted-partners__logo img {
-    width: min(100%, 8.5rem);
+    width: min(100%, 9.5rem);
     max-height: 3.5rem;
   }
 
