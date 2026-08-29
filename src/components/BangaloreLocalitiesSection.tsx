@@ -39,7 +39,7 @@ const localities = [
 
 const BangaloreLocalitiesSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-muted/30">
+    <section id="localities" className="scroll-mt-24 py-16 md:py-24 bg-muted/30">
       <div className="container px-4">
         <div className="text-center mb-10">
           <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary font-semibold rounded-full text-sm mb-4">
