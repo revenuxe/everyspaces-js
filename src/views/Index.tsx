@@ -3,6 +3,7 @@
 import BottomNav from "@/components/BottomNav";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import TrustedPartnersSection from "@/components/TrustedPartnersSection";
 import ActionGrid from "@/components/ActionGrid";
 import BestServices from "@/components/BestServices";
 import ServicesCarousel from "@/components/ServicesCarousel";
@@ -44,6 +45,7 @@ const Index = () => {
       <Header />
       <main className="minimal-home">
         <HeroSection />
+        <TrustedPartnersSection />
         <BestServices />
         <ServicesCarousel />
         <ActionGrid />

@@ -2,6 +2,144 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Homepage trusted-partner marquee */
+.trusted-partners {
+  overflow: hidden;
+  padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(3rem, 6vw, 5rem);
+  background: #f8f8f6;
+}
+
+.trusted-partners__inner {
+  width: min(100% - 3rem, 76rem);
+  margin: 0 auto;
+}
+
+.trusted-partners h2 {
+  margin: 0 0 clamp(2.25rem, 5vw, 4rem);
+  color: #0d3b4f;
+  font-size: clamp(2rem, 4.25vw, 3.75rem);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.trusted-partners__marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.trusted-partners__track {
+  display: flex;
+  width: max-content;
+  animation: trusted-partners-scroll 52s linear infinite;
+}
+
+.trusted-partners__logo {
+  display: grid;
+  flex: 0 0 clamp(11rem, 18vw, 15.5rem);
+  height: clamp(4.5rem, 8vw, 6.5rem);
+  place-items: center;
+  margin-right: clamp(2.75rem, 6vw, 6rem);
+}
+
+.trusted-partners__logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 3.3rem;
+  object-fit: contain;
+}
+
+.trusted-partners__logo img.trusted-partners__logo-image--compact {
+  max-width: 78%;
+  max-height: 2.7rem;
+}
+
+.trusted-partners__logo img.trusted-partners__logo-image--hettich {
+  max-width: 96%;
+  max-height: 3.25rem;
+  transform: translateY(-0.35rem);
+}
+
+.trusted-partners__logo img.trusted-partners__logo-image--elica {
+  transform: translateY(-0.18rem);
+}
+
+.trusted-partners__logo img.trusted-partners__logo-image--faber,
+.trusted-partners__logo img.trusted-partners__logo-image--rehau {
+  transform: translateY(0.12rem);
+}
+
+.trusted-partners__logo--desktop {
+  display: none;
+}
+
+.trusted-partners__track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes trusted-partners-scroll {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trusted-partners__track { animation: none; }
+}
+
+@media (min-width: 1024px) {
+  .trusted-partners {
+    display: grid;
+    grid-template-columns: minmax(16rem, 0.9fr) minmax(0, 2.1fr);
+    align-items: center;
+    column-gap: clamp(2.5rem, 5vw, 6rem);
+    padding-inline: max(3rem, calc((100% - 100rem) / 2));
+    padding-top: 4rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .trusted-partners__inner,
+  .trusted-partners__marquee {
+    width: 100%;
+    margin: 0;
+  }
+
+  .trusted-partners h2 {
+    margin: 0;
+    font-size: clamp(2.6rem, 3.6vw, 4.5rem);
+  }
+
+  .trusted-partners__track {
+    display: flex;
+    width: max-content;
+    animation: trusted-partners-scroll 52s linear infinite;
+  }
+
+  .trusted-partners__logo {
+    display: grid;
+    flex-basis: clamp(7.5rem, 8vw, 8.5rem);
+    height: 5.5rem;
+    margin-right: clamp(1rem, 1.5vw, 1.5rem);
+  }
+
+  .trusted-partners__logo--desktop {
+    display: none;
+  }
+
+  .trusted-partners__logo img {
+    width: min(100%, 8.5rem);
+    max-height: 3.5rem;
+  }
+
+  .trusted-partners__logo img.trusted-partners__logo-image--compact {
+    width: min(6.6rem, 100%);
+    max-height: 2.7rem;
+  }
+
+  .trusted-partners__logo img.trusted-partners__logo-image--hettich {
+    width: min(96%, 8.1rem);
+    max-height: 3.25rem;
+  }
+}
+
 /* EverySpaces - Premium Design System */
 
 @layer base {
@@ -131,7 +269,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.01em;
     line-height: 1.2;
   }
   
@@ -149,10 +287,10 @@
 
 @layer components {
   .premium-eyebrow { @apply text-[11px] font-medium uppercase tracking-[.18em] text-black/45; }
-  .premium-title { @apply mt-3 text-4xl font-light leading-[1.04] tracking-[-.055em] md:text-6xl; }
+  .premium-title { @apply mt-3 text-4xl font-light leading-[1.04] tracking-[-.02em] md:text-6xl; }
   .premium-card { @apply rounded-[26px] border border-black/[.08] bg-white p-4 shadow-[0_10px_35px_rgba(0,0,0,.035)] transition duration-500 hover:-translate-y-1; }
   .premium-input { @apply w-full rounded-xl border border-black/[.09] bg-[#f6f6f4] px-4 py-3.5 text-sm outline-none placeholder:text-black/40 focus:border-black/35; }
-  .hero-display, h1 { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-weight: 300; letter-spacing: -0.07em; }
+  .hero-display, h1 { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-weight: 300; letter-spacing: -0.02em; }
 
   /* Homepage: one quiet card language across the pre-existing content modules. */
   .minimal-home > section { @apply py-14 md:py-20; }
@@ -162,17 +300,17 @@
   .minimal-home .shadow-soft,
   .minimal-home .shadow-lg,
   .minimal-home .shadow-md { box-shadow: 0 12px 35px -22px rgb(13 59 79 / 32%); }
-  .minimal-home h2 { font-size: clamp(2rem, 4vw, 3.35rem); font-weight: 400; letter-spacing: -0.055em; line-height: 1.02; }
-  .minimal-home h3 { font-weight: 400; letter-spacing: -0.035em; }
+  .minimal-home h2 { font-size: clamp(2rem, 4vw, 3.35rem); font-weight: 400; letter-spacing: -0.02em; line-height: 1.02; }
+  .minimal-home h3 { font-weight: 400; letter-spacing: -0.01em; }
   .minimal-home [class*="bg-secondary/20"] { background-color: rgb(209 101 66 / 16%); color: #0d3b4f; }
   .minimal-home [class*="bg-card"] { background-color: #fff; }
 
   /* Shared page treatment: every route uses the same quiet, editorial hierarchy. */
   main > section:first-child:not(.service-hero) h1,
-  main > div > .container > div:first-child h1 { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-weight: 300; letter-spacing: -0.065em; line-height: .98; }
+  main > div > .container > div:first-child h1 { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-weight: 300; letter-spacing: -0.02em; line-height: .98; }
   .service-hero h1,
   .service-hero h1 span,
-  section[class*="min-h-[100dvh]"] h1 { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-weight: 300; letter-spacing: -0.065em; line-height: .98; }
+  section[class*="min-h-[100dvh]"] h1 { font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-weight: 300; letter-spacing: -0.02em; line-height: .98; }
   main .glass-card,
   main [class*="bg-card"][class*="rounded"] { border-color: rgb(13 59 79 / 10%); box-shadow: 0 14px 38px -24px rgb(13 59 79 / 28%); }
   main [class*="rounded-3xl"] { border-radius: 22px; }
@@ -813,7 +951,7 @@
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif !important;
   font-size: clamp(2.8rem, 5.4vw, 5.1rem) !important;
   font-weight: 300 !important;
-  letter-spacing: -.075em !important;
+  letter-spacing: -0.02em !important;
   line-height: .94 !important;
   margin-bottom: 1.5rem !important;
 }
