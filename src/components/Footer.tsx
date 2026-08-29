@@ -1,6 +1,6 @@
 "use client";
 
-import { Instagram, Linkedin, X } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import everyspacesLogo from "@/assets/everyspaces-logo.webp";
 import { imgSrc } from "@/lib/utils";
 import SiteQuoteForm from "@/components/SiteQuoteForm";
@@ -23,9 +23,9 @@ export default function Footer() {
             </a>
             <p className="mt-7 max-w-sm text-sm leading-7 text-primary/75">Full home interiors, 2BHK and 3BHK designs, modular kitchens, wardrobes, and more.</p>
             <div className="mt-6 flex gap-4">
-              <a href="https://www.instagram.com/everyspaces" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-primary hover:text-secondary"><Instagram className="h-5 w-5" /></a>
+              <a href="https://www.instagram.com/every.spaces/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-primary hover:text-secondary"><Instagram className="h-5 w-5" /></a>
+              <a href="https://www.facebook.com/people/EverySpaces/61593743559425/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-primary hover:text-secondary"><Facebook className="h-5 w-5" /></a>
               <a href="https://www.linkedin.com/company/everyspaces/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-primary hover:text-secondary"><Linkedin className="h-5 w-5" /></a>
-              <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X" className="text-primary hover:text-secondary"><X className="h-5 w-5" /></a>
             </div>
           </div>
           {footerGroups.map((group) => <div key={group.title}>
