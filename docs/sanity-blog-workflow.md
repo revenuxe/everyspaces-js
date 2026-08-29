@@ -6,7 +6,7 @@
 
 ## 2) Create content entities
 - Create `Author` documents first.
-- Create `Category` documents for core Hyderabad clusters (for example: modular kitchens, cost guides, locality interiors).
+- Create `Category` documents for core Bangalore clusters (for example: modular kitchens, cost guides, locality interiors).
 
 ## 3) Create a Post
 - Fill title and slug.
@@ -27,13 +27,13 @@
 
 ## 5) Internal linking checklist
 - Add at least 2 links to relevant services.
-- Add at least 1 link to a Hyderabad locality page.
+- Add at least 1 link to a Bangalore locality page.
 - Add at least 2 links to related blog posts (same cluster).
 - Keep anchors descriptive (avoid generic "click here").
 
 ## 6) Pre-publish quality gates
 - H1 includes primary keyword.
-- Intro includes intent + Hyderabad context.
+- Intro includes intent + Bangalore context.
 - At least 2 H2 sections and 1 comparison/decision section.
 - CTA block included with `/contact` or `/services`.
 - Schema and metadata render correctly on preview URL.

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { imgSrc } from "@/lib/utils";
 import { useRouter } from "next/navigation";
@@ -149,7 +149,7 @@ const ServiceModularKitchen = () => {
       "150000-800000",
       {
         timeRequired: "P20D",
-        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
         features: ["L-Shaped Kitchen", "U-Shaped Kitchen", "Island Kitchen", "Parallel Kitchen", "Soft-close hardware", "10-year warranty"]
       }
     ),

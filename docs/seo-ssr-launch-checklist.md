@@ -17,7 +17,7 @@
 
 ## Internal linking checks
 - [ ] Each article links to `/contact` and `/services`.
-- [ ] Each article includes keyword-cluster links to Hyderabad intent pages.
+- [ ] Each article includes keyword-cluster links to Bangalore intent pages.
 - [ ] Related articles render and link correctly.
 
 ## CMS checks

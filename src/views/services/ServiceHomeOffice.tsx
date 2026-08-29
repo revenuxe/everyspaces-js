@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
@@ -95,7 +95,7 @@ const ServiceHomeOffice = () => {
       "https://everyspaces.com/service-home-office.jpg",
       "30000-200000",
       {
-        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
         features: ["Ergonomic Desk", "Task Lighting", "Cable Management", "Standing Desk", "Bookshelves"]
       }
     ),

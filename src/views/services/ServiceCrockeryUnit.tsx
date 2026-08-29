@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
@@ -91,7 +91,7 @@ const ServiceCrockeryUnit = () => {
       "https://everyspaces.com/service-crockery-unit.jpg",
       "40000-150000",
       {
-        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
         features: ["Glass Display", "LED Lighting", "Bar Cabinet", "Mirror Backing", "Partition Unit"]
       }
     ),

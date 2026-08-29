@@ -72,7 +72,7 @@ async function getOrCreateCategory(title) {
 }
 
 function buildPostDoc(row, authorRef, categoryRef) {
-  const focusKeyword = row.keywords?.[0] || `${row.title} hyderabad`;
+  const focusKeyword = row.keywords?.[0] || `${row.title} Bangalore`;
   const secondaryKeywords = (row.keywords || []).slice(1, 7);
   const canonical = `https://everyspaces.com/articles/${row.slug}`;
 

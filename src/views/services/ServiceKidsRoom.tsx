@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
@@ -95,7 +95,7 @@ const ServiceKidsRoom = () => {
       "https://everyspaces.com/service-kids-room.jpg",
       "80000-250000",
       {
-        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
         features: ["Theme Room", "Bunk Bed", "Study Table", "Play Area", "Child-Safe Materials"]
       }
     ),

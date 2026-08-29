@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { imgSrc } from "@/lib/utils";
 import { useRouter } from "next/navigation";
@@ -94,7 +94,7 @@ const ServiceWardrobe = () => {
       "https://everyspaces.com/service-wardrobe.jpg",
       "70000-500000",
       {
-        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
         features: ["Sliding Wardrobe", "Hinged Wardrobe", "Walk-in Closet", "Loft Storage", "Soft-close hardware"]
       }
     ),

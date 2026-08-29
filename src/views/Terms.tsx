@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -47,7 +47,7 @@ const Terms = () => {
                 <p className="text-foreground font-body">
                   EverySpaces Interior Design ("EverySpaces", "we", "our", "us") provides
                   interior design consultation, planning, and execution services in
-                  Hyderabad and surrounding areas.
+                  Bangalore and surrounding areas.
                 </p>
               </section>
 
@@ -196,7 +196,7 @@ const Terms = () => {
               <section className="mt-8 space-y-4">
                 <h2 className="font-display text-2xl text-primary">13. Governing law</h2>
                 <p className="text-foreground font-body">
-                  These Terms are governed by the laws of India. Courts in Hyderabad,
+                  These Terms are governed by the laws of India. Courts in Bangalore,
                   Karnataka shall have jurisdiction, unless otherwise agreed.
                 </p>
               </section>

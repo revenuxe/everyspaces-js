@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
@@ -91,7 +91,7 @@ const ServiceBalcony = () => {
       "https://everyspaces.com/service-balcony.jpg",
       "20000-100000",
       {
-        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
         features: ["Vertical Garden", "Outdoor Seating", "Pergola", "Planter Boxes", "Weather-Proof Furniture"]
       }
     ),

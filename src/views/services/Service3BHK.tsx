@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
@@ -150,7 +150,7 @@ const Service3BHK = () => {
       "https://everyspaces.com/service-3bhk.jpg",
       "800000-2000000",
       {
-        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
         features: ["Modular Kitchen", "Walk-in Closet", "Home Theatre", "False Ceiling", "Premium Finishes"]
       }
     ),

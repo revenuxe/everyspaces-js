@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
@@ -91,7 +91,7 @@ const ServiceStudyRoom = () => {
       "https://everyspaces.com/service-study-room.jpg",
       "15000-100000",
       {
-        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
         features: ["Study Table", "Bookshelf", "Task Lighting", "Cable Management", "Ergonomic Design"]
       }
     ),

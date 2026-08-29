@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { imgSrc } from "@/lib/utils";
 import { useRouter } from "next/navigation";
@@ -94,7 +94,7 @@ const ServiceLivingRoom = () => {
       "https://everyspaces.com/service-living-room.jpg",
       "80000-300000",
       {
-        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
         features: ["TV Unit Design", "False Ceiling", "Feature Wall", "Ambient Lighting", "Wall Paneling"]
       }
     ),

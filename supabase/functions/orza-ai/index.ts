@@ -16,7 +16,7 @@ const BASE_QUESTIONS = [
   {
     key: "location",
     message: "Which city are you in? 📍",
-    options: ["Bangalore", "Mysore", "Hyderabad", "Chennai", "Mumbai", "Other"],
+    options: ["Bangalore", "Mysore", "Chennai", "Mumbai", "Other"],
     inputPlaceholder: "Or type your city...",
   },
   {

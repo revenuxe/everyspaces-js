@@ -163,9 +163,9 @@ export const generateReportPDF = (rec: Recommendation, userName: string, locatio
     addText(rec.estimatedTimeline.note, 8, "italic", [100, 100, 100]);
   }
 
-  // Hyderabad Specific
+  // Bangalore Specific
   if (rec.bangaloreSpecific) {
-    addSectionHeader("Hyderabad Context");
+    addSectionHeader("Bangalore Context");
     addText(rec.bangaloreSpecific, 9, "normal", [80, 80, 80]);
   }
 

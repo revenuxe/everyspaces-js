@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
@@ -91,7 +91,7 @@ const ServiceTVUnit = () => {
       "https://everyspaces.com/service-tv-unit.jpg",
       "25000-150000",
       {
-        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
         features: ["Floating TV Unit", "Backlit Panel", "Stone Accent Wall", "Cable Management", "LED Lighting"]
       }
     ),

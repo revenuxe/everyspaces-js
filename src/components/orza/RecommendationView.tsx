@@ -355,12 +355,12 @@ const RecommendationView = ({ recommendation: rec, onReset, onDownload, onGetSup
         </AnimatedCard>
       )}
 
-      {/* Hyderabad Specific */}
+      {/* Bangalore Specific */}
       {rec.bangaloreSpecific && (
         <AnimatedCard delay={0.54} className="mx-4 mb-4 rounded-xl bg-primary/5 border border-primary/20 p-4">
           <div className="flex items-center gap-2 mb-1.5">
             <MapPin className="w-4 h-4 text-primary" />
-            <h3 className="text-xs font-bold text-primary uppercase tracking-wider">Hyderabad Context</h3>
+            <h3 className="text-xs font-bold text-primary uppercase tracking-wider">Bangalore Context</h3>
           </div>
           <p className="text-[11px] text-foreground/70 leading-relaxed">{rec.bangaloreSpecific}</p>
         </AnimatedCard>

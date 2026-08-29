@@ -121,7 +121,7 @@ const LocalityPageTemplate = ({
     specialties: ['Modular Kitchen', 'Wardrobe Design', 'Living Room', 'Bedroom Interior']
   };
 
-  // Locality modules from the previous Hyderabad rollout may still pass legacy
+  // Locality modules from the previous Bangalore rollout may still pass legacy
   // copy. Use the Bangalore-safe defaults until each locality gets bespoke copy.
   const seoData = defaultSEO;
   

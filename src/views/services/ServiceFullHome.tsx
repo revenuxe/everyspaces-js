@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
@@ -150,7 +150,7 @@ const ServiceFullHome = () => {
       "https://everyspaces.com/service-full-home.jpg",
       "600000-2500000",
       {
-        areaServed: ["", "Gachibowli", "Jubilee Hills", "Madhapur", "Kondapur", "Banjara Hills", "HITEC City", "Kokapet"],
+        areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
         features: ["Modular Kitchen", "All Wardrobes", "TV Unit", "False Ceiling", "Painting", "Electrical Work"]
       }
     ),

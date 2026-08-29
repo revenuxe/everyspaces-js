@@ -14,7 +14,6 @@ const RouteFlowMarker = () => {
     if (pathname.startsWith("/bangalore/services")) flow = "bangalore-services";
     else if (pathname.startsWith("/services")) flow = "global-services";
     else if (pathname.startsWith("/bangalore")) flow = "bangalore";
-    else if (pathname.startsWith("/hyderabad")) flow = "hyderabad";
 
     body.setAttribute("data-route-flow", flow);
     return () => {
