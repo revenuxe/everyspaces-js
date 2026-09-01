@@ -23,7 +23,7 @@ export default function TrustedPartnersSection() {
   return (
     <section className="trusted-partners" aria-labelledby="trusted-partners-heading">
       <div className="trusted-partners__inner">
-        <h2 id="trusted-partners-heading">Trusted partners</h2>
+        <h2 id="trusted-partners-heading">Brands We Trust</h2>
       </div>
       <div className="trusted-partners__marquee">
         <div className="trusted-partners__track">
