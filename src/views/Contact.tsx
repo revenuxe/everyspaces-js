@@ -133,7 +133,7 @@ const Contact = () => {
       <Breadcrumb items={[{ label: "Contact" }]} />
       
       <main>
-        <PageHero title="Let’s design your dream home." description="A calm first conversation is all it takes to begin. Tell us about the space you have in mind." eyebrow="Contact the studio" />
+        <PageHero title="Contact Us" description="" minimal />
 
         {/* Contact Section */}
         <section className="py-16 md:py-24">

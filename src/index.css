@@ -4,6 +4,7 @@
 
 /* Homepage trusted-partner marquee */
 .trusted-partners {
+  position: relative;
   overflow: hidden;
   padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(3rem, 6vw, 5rem);
   background: #f8f8f6;
@@ -23,9 +24,87 @@
   line-height: 1;
 }
 
+.trusted-partners__eyebrow {
+  margin: 0 0 0.85rem;
+  color: #d16542;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
 .trusted-partners__marquee {
   width: 100%;
   overflow: hidden;
+}
+
+.trusted-partners__separator {
+  position: absolute;
+  right: max(1rem, calc((100% - 87.5rem) / 2 + 1rem));
+  bottom: 0;
+  left: max(1rem, calc((100% - 87.5rem) / 2 + 1rem));
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.trusted-partners__separator::before,
+.trusted-partners__separator::after {
+  height: 1px;
+  flex: 1;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgb(13 59 79 / 34%));
+}
+
+.trusted-partners__separator::after {
+  transform: scaleX(-1);
+}
+
+.trusted-partners__separator span {
+  width: 0.55rem;
+  height: 0.55rem;
+  transform: rotate(45deg);
+  border: 1px solid rgb(209 101 66 / 90%);
+  background: #f8f8f6;
+  box-shadow: 0 0 0 4px #f8f8f6;
+}
+
+/* Shared two-action hero CTA sizing. */
+.hero-cta-row {
+  display: flex;
+  width: 100%;
+  max-width: 31rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-cta-primary,
+.hero-cta-secondary {
+  min-height: 3.6rem;
+  border-radius: 14px;
+}
+
+.hero-cta-primary {
+  flex: 1 1 auto;
+  justify-content: space-between;
+  padding-inline: 0.875rem;
+}
+
+.hero-cta-secondary {
+  width: 8.5rem;
+  flex: 0 0 8.5rem;
+  justify-content: center;
+  padding-inline: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .hero-cta-row { width: auto; }
+  .hero-cta-primary { flex: 0 0 auto; padding-inline: 1.5rem; }
+  .hero-cta-primary,
+  .hero-cta-secondary { min-height: 4rem; }
+  .hero-cta-secondary { width: 10rem; flex-basis: 10rem; padding-inline: 1rem; }
 }
 
 .trusted-partners__track {
@@ -85,7 +164,45 @@
   .trusted-partners__track { animation: none; }
 }
 
+@media (max-width: 767px) {
+  .minimal-home > .trusted-partners {
+    padding: 2rem 0 0.75rem;
+  }
+
+  .trusted-partners h2 {
+    margin-bottom: 1.25rem;
+    font-size: 2rem;
+  }
+
+  .trusted-partners__eyebrow {
+    margin-bottom: 0.7rem;
+  }
+
+  .trusted-partners__logo {
+    flex-basis: 9.25rem;
+    height: 3.25rem;
+    margin-right: 2.25rem;
+  }
+
+  .trusted-partners__logo img {
+    max-height: 2.15rem;
+  }
+
+  .minimal-home > .trusted-partners + section {
+    padding-top: 3rem;
+  }
+}
+
 @media (min-width: 1024px) {
+  .minimal-home > .trusted-partners {
+    padding-top: 2.5rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .minimal-home > .trusted-partners + section {
+    padding-top: 2.5rem;
+  }
+
   .trusted-partners {
     display: grid;
     grid-template-columns: minmax(25rem, 0.9fr) minmax(0, 2.1fr);
@@ -104,7 +221,7 @@
 
   .trusted-partners h2 {
     margin: 0;
-    font-size: clamp(2.6rem, 3.6vw, 4.5rem);
+    font-size: clamp(2rem, 4vw, 3.35rem);
     white-space: nowrap;
   }
 
@@ -927,7 +1044,12 @@
   padding-bottom: 5.5rem !important;
 }
 .locality-hero .container > div:first-child { text-align: left !important; margin: 0 !important; }
-@media (max-width: 767px) { .locality-hero .container { padding-top: 8.5rem !important; padding-bottom: 2.5rem !important; } }
+@media (max-width: 767px) {
+  .locality-hero .container {
+    padding-top: 6rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+}
 
 /* Shared service-page hero: replaces the old dark image/form treatment. */
 .service-hero {
@@ -939,7 +1061,7 @@
 
 .service-hero .hero-overlay {
   /* Matches the homepage treatment: readable copy with the project image still present. */
-  background: linear-gradient(90deg, rgba(13, 59, 79, .81) 0%, rgba(13, 59, 79, .66) 55%, rgba(13, 59, 79, .40) 100%);
+  background: linear-gradient(90deg, rgba(7, 31, 43, .90) 0%, rgba(7, 31, 43, .80) 55%, rgba(7, 31, 43, .62) 100%);
 }
 
 .service-hero .container {
@@ -1002,7 +1124,7 @@ section:has(> div .hero-overlay) .glass-card { display: none !important; }
 section:has(> div .hero-overlay) .container:has(.glass-card) { grid-template-columns: minmax(0, 1fr) !important; }
 
 @media (max-width: 767px) {
-  .service-hero { min-height: 0 !important; padding-top: 8.5rem !important; padding-bottom: 2.5rem !important; }
+  .service-hero { min-height: 0 !important; padding-top: 6rem !important; padding-bottom: 2.5rem !important; }
   .service-hero .container { gap: 1.75rem !important; }
   .service-hero h1 { font-size: clamp(2.55rem, 11.5vw, 3.55rem) !important; }
   .service-hero .container > div:last-child { margin: 0 !important; max-width: none !important; }

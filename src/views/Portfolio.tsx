@@ -5,6 +5,7 @@ import { useState } from "react";
 import { X, ZoomIn } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BottomNav from "@/components/BottomNav";
 import Breadcrumb from "@/components/Breadcrumb";
 import PageHero from "@/components/PageHero";
 import { StructuredData, createBreadcrumbSchema } from "@/components/StructuredData";
@@ -114,7 +115,7 @@ const Portfolio = () => {
       <Breadcrumb items={[{ label: "Portfolio" }]} />
       
       <main className="pt-0 pb-12 md:pb-20">
-        <PageHero title="Design Gallery" description="A collection of homes shaped around light, material, and the people who live in them." eyebrow="Selected work · EverySpaces" />
+        <PageHero image={gallery1} imageAlt="Selected EverySpaces interior project" title="Design Gallery" description="A collection of homes shaped around light, material, and the people who live in them." eyebrow="Selected work · EverySpaces" />
         <div className="container px-2 md:px-4">
           {/* Header */}
           <div className="mb-6 md:mb-8" />
@@ -174,6 +175,7 @@ const Portfolio = () => {
       </main>
 
       <Footer />
+      <BottomNav />
 
       {/* Lightbox Modal */}
       {selectedImage && (

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, PhoneCall } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import heroImage from "@/assets/hero-interior.jpg";
@@ -57,30 +57,30 @@ export default function HeroSection({
     <section className="relative overflow-hidden bg-[#0d3b4f] pt-[92px] text-white md:pt-[76px]">
       <div className="absolute inset-0">
         <Image src={heroImage} alt="Contemporary home interior by EverySpaces" fill priority sizes="100vw" className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d3b4f]/75 via-[#0d3b4f]/55 to-[#0d3b4f]/20" />
-        <div className="absolute inset-0 bg-[#0d3b4f]/25" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(7,31,43,.85) 0%, rgba(7,31,43,.70) 55%, rgba(7,31,43,.48) 100%)" }} />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(7,31,43,.32)" }} />
       </div>
       <div className="absolute -left-32 top-16 h-72 w-72 rounded-full bg-secondary/20 blur-[110px]" />
 
       <div className="relative mx-auto grid min-h-[555px] max-w-7xl items-center px-5 py-14 md:min-h-[590px] md:grid-cols-[1.2fr_.8fr] md:px-10">
         <div className="max-w-3xl">
-          <h1 className="hero-display max-w-[900px] text-[3.2rem] leading-[.98] sm:text-6xl md:text-[3.15rem] lg:text-[3.45rem]">
+          <h1 className="hero-display max-w-[680px] text-[2.9rem] leading-[1.02] sm:text-[3.35rem] md:text-[3rem] lg:text-[3.15rem]">
             <span className="block md:whitespace-nowrap">{headingPrefix}</span>
             <span className="block md:whitespace-nowrap">in {locationLabel}</span>
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-7 text-white/75 md:text-lg">{description}</p>
-          <div className="mt-8 flex flex-nowrap items-center gap-4">
-            <Link href="/contact" className="group inline-flex shrink-0 items-center gap-3 whitespace-nowrap rounded-[14px] bg-secondary px-5 py-4 text-sm font-semibold text-secondary-foreground shadow-[0_10px_22px_-12px_rgb(209_101_66_/_72%)] transition-all duration-300 hover:-translate-y-1 md:px-6">
-              Start your project <ArrowUpRight className="h-4 w-4" />
+          <p className="mt-6 max-w-xl text-base leading-7 text-white/90 md:text-lg">{description}</p>
+          <div className="hero-cta-row mt-8">
+            <Link href="/contact" data-open-consultation className="hero-cta-primary group inline-flex items-center gap-3 whitespace-nowrap bg-secondary py-4 text-sm font-semibold text-secondary-foreground shadow-[0_10px_22px_-12px_rgb(209_101_66_/_72%)] transition-all duration-300 hover:-translate-y-1">
+              Book a Free Consultation <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <Link href="/portfolio" className="group inline-flex shrink-0 items-center gap-3 whitespace-nowrap text-sm font-semibold text-white">
-              Explore our work <ArrowRight className="h-4 w-4" />
-            </Link>
+            <a href="tel:+919886579923" className="hero-cta-secondary group inline-flex items-center gap-2 whitespace-nowrap border border-white/20 bg-black/35 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-black/50">
+              <PhoneCall className="h-4 w-4" /> Call Now
+            </a>
           </div>
         </div>
 
         <div className="hidden w-[25rem] justify-self-end rounded-3xl border border-white/20 bg-white/95 p-6 text-foreground shadow-elevated backdrop-blur-md md:block">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-secondary">Start your project</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-secondary">Start your project</p>
           <h2 className="!mt-2 !text-2xl font-semibold leading-tight text-primary md:!text-3xl">Get a quote for your home</h2>
           <p className="mb-5 mt-3 text-sm leading-6 text-muted-foreground">Tell us about your space and we&apos;ll call you back.</p>
           <form onSubmit={submit} className="grid grid-cols-2 gap-3">

@@ -13,7 +13,7 @@ const HowItWorksSection = () => (
   <section id="how-it-works" className="bg-[#eeece8] py-16 md:py-24">
     <div className="container px-4">
       <div className="grid gap-5 border-b border-primary/15 pb-8 md:grid-cols-[1fr_1fr] md:items-end md:pb-10">
-        <div><p className="text-[10px] uppercase tracking-[.2em] text-secondary">The EverySpaces process</p><h2 className="mt-3 font-display text-4xl text-primary md:text-6xl">Designed with<br />a clear process.</h2></div>
+        <div><p className="text-[10px] font-semibold uppercase tracking-[.2em] text-secondary">The EverySpaces process</p><h2 className="mt-3 font-display text-4xl text-primary md:text-6xl">Designed with<br />a clear process.</h2></div>
         <p className="max-w-md text-sm leading-7 text-muted-foreground md:justify-self-end md:text-base">A well-made home should feel effortless. We keep every step visible, calm, and personally guided.</p>
       </div>
 

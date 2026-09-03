@@ -35,7 +35,7 @@ const ActionGrid = () => {
   return (
     <section className="py-10 md:py-14 bg-background">
       <div className="container px-4">
-        <p className="text-[10px] uppercase tracking-[.2em] text-secondary mb-3">Start here</p>
+        <p className="text-[10px] font-semibold uppercase tracking-[.2em] text-secondary mb-3">Start here</p>
         <h3 className="font-display text-3xl md:text-4xl text-primary mb-7 tracking-[-0.045em]">Plan your home.</h3>
 
         {/* Mobile: Horizontal scroll with proper snap | Desktop: Grid */}

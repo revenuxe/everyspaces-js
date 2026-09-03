@@ -1,12 +1,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Home, Wrench, MessageSquare, Images } from "lucide-react";
-import { useState } from "react";
-import QuotationPopup from "./QuotationPopup";
 
 const BottomNav = () => {
   const pathname = usePathname();
-  const [isContactOpen, setIsContactOpen] = useState(false);
 
   const handleWhatsAppClick = () => {
     const message = "Hi! I'm interested in interior design services from EverySpaces. Please share more details.";
@@ -19,7 +16,7 @@ const BottomNav = () => {
     { icon: Wrench, label: "Service", href: "/services" },
     { icon: null, label: "WhatsApp", action: handleWhatsAppClick },
     { icon: Images, label: "Projects", href: "/portfolio" },
-    { icon: MessageSquare, label: "Contact", action: () => setIsContactOpen(true) },
+    { icon: MessageSquare, label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -85,12 +82,6 @@ const BottomNav = () => {
           </div>
         </div>
       </nav>
-
-      {/* Reuse the same QuotationPopup design */}
-      <QuotationPopup 
-        externalOpen={isContactOpen} 
-        onExternalOpenChange={setIsContactOpen} 
-      />
     </>
   );
 };

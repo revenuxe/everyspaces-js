@@ -105,7 +105,7 @@ const Services = () => {
       <Header />
       
       <main className="pb-24">
-        <PageHero title="Interior Design Services" description="Thoughtful spaces, beautifully resolved—from one room to a complete home." eyebrow="Services · EverySpaces Bangalore" />
+        <PageHero image={livingImage} imageAlt="EverySpaces living room interior design" title="Interior Design Services" description="Thoughtful spaces, beautifully resolved—from one room to a complete home." eyebrow="Services · EverySpaces Bangalore" />
 
         {/* Services Grid */}
         <section className="py-12 md:py-16">

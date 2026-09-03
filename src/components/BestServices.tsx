@@ -142,9 +142,9 @@ const BestServices = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 bg-background">
+    <section className="py-8 md:py-16 bg-background">
       <div className="container px-4 mb-7 md:mb-9">
-        <p className="text-[10px] uppercase tracking-[.2em] text-secondary mb-3">Selected projects</p>
+        <p className="text-[10px] font-semibold uppercase tracking-[.2em] text-secondary mb-3">Selected projects</p>
         <h2 className="font-display text-3xl md:text-5xl text-primary tracking-[-0.045em]">Spaces with a point of view.</h2>
         <p className="text-muted-foreground mt-3 max-w-md font-body">Made for real lives, then refined down to the smallest detail.</p>
       </div>
