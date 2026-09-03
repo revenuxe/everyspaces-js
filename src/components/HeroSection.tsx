@@ -54,15 +54,15 @@ export default function HeroSection({
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#0d3b4f] pt-[92px] text-white md:pt-[76px]">
+    <section className="relative overflow-hidden bg-[#0d3b4f] pt-[84px] text-white md:pt-[76px]">
       <div className="absolute inset-0">
-        <Image src={heroImage} alt="Contemporary home interior by EverySpaces" fill priority sizes="100vw" className="object-cover" />
+        <Image src={heroImage} alt="Contemporary home interior by EverySpaces" fill priority sizes="100vw" className="origin-top scale-[1.16] object-cover object-top md:scale-100 md:object-center" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(7,31,43,.85) 0%, rgba(7,31,43,.70) 55%, rgba(7,31,43,.48) 100%)" }} />
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(7,31,43,.32)" }} />
       </div>
       <div className="absolute -left-32 top-16 h-72 w-72 rounded-full bg-secondary/20 blur-[110px]" />
 
-      <div className="relative mx-auto grid min-h-[500px] max-w-7xl items-center px-5 py-12 md:min-h-[590px] md:grid-cols-[1.2fr_.8fr] md:px-10">
+      <div className="relative mx-auto grid min-h-[400px] max-w-7xl translate-y-8 items-center px-5 py-8 md:min-h-[590px] md:translate-y-0 md:grid-cols-[1.2fr_.8fr] md:px-10 md:py-12">
         <div className="max-w-3xl">
           <h1 className="hero-display max-w-[680px] text-[2.9rem] leading-[1.02] sm:text-[3.35rem] md:text-[3rem] lg:text-[3.15rem]">
             <span className="block md:whitespace-nowrap">{headingPrefix}</span>

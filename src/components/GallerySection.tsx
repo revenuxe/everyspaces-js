@@ -12,14 +12,14 @@ import gallery8 from "@/assets/gallery-8.jpg";
 import { imgSrc } from "@/lib/utils";
 
 const galleryImages = [
-  { id: 1, src: gallery1, title: "Modern Kitchen", category: "Kitchen" },
-  { id: 2, src: gallery2, title: "Premium Kitchen", category: "Kitchen" },
-  { id: 3, src: gallery3, title: "Minimalist Kitchen", category: "Kitchen" },
-  { id: 4, src: gallery4, title: "Spacious Kitchen", category: "Kitchen" },
-  { id: 5, src: gallery5, title: "Luxury Kitchen", category: "Kitchen" },
-  { id: 6, src: gallery6, title: "TV Unit Design", category: "Living" },
-  { id: 7, src: gallery7, title: "Grand Living Space", category: "Living" },
-  { id: 8, src: gallery8, title: "Storage Cabinet", category: "Storage" },
+  { id: 1, src: gallery1, title: "Emerald L-Shaped Kitchen", category: "Kitchen" },
+  { id: 2, src: gallery2, title: "Ribbed Glass Galley Kitchen", category: "Kitchen" },
+  { id: 3, src: gallery3, title: "Sage Contemporary Kitchen", category: "Kitchen" },
+  { id: 4, src: gallery4, title: "Graphite U-Shaped Kitchen", category: "Kitchen" },
+  { id: 5, src: gallery5, title: "Warm Grey Gourmet Kitchen", category: "Kitchen" },
+  { id: 6, src: gallery6, title: "Blue Marble Media Wall", category: "Living" },
+  { id: 7, src: gallery7, title: "Blue Marble Living Room", category: "Living" },
+  { id: 8, src: gallery8, title: "Illuminated Foyer Console", category: "Storage" },
 ];
 
 const GallerySection = () => {
@@ -27,7 +27,7 @@ const GallerySection = () => {
 
   const GalleryItem = ({ image, className = "" }: { image: typeof galleryImages[0], className?: string }) => (
     <div 
-      className={`relative group cursor-pointer overflow-hidden rounded-md md:rounded-lg ${className}`}
+      className={`relative group aspect-[4/3] cursor-pointer overflow-hidden rounded-xl bg-muted shadow-sm ${className}`}
       onClick={() => setSelectedImage(image)}
     >
       <img 
@@ -37,10 +37,10 @@ const GallerySection = () => {
         decoding="async"
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md md:rounded-lg" />
-      <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-        <span className="text-[10px] md:text-xs text-secondary font-medium">{image.category}</span>
-        <h3 className="text-xs md:text-sm font-display text-primary-foreground truncate">{image.title}</h3>
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-secondary-foreground/80">{image.category}</span>
+        <h3 className="mt-1 text-sm font-medium leading-tight text-primary-foreground md:text-base">{image.title}</h3>
       </div>
       <div className="absolute top-1.5 right-1.5 md:top-2 md:right-2 w-5 h-5 md:w-7 md:h-7 bg-secondary/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <ZoomIn className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 text-secondary-foreground" />
@@ -50,7 +50,7 @@ const GallerySection = () => {
 
   return (
     <section id="gallery" className="py-12 md:py-20 bg-background">
-      <div className="container px-2 md:px-4">
+      <div className="container px-4">
         {/* Header */}
         <div className="text-center mb-6 md:mb-8 px-2">
           <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary font-semibold text-sm rounded-full mb-4">
@@ -64,16 +64,9 @@ const GallerySection = () => {
           </p>
         </div>
 
-        {/* Masonry Grid - 8 images only */}
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-1 md:gap-1.5 auto-rows-[80px] md:auto-rows-[120px] lg:auto-rows-[140px]">
-          <GalleryItem image={galleryImages[0]} className="col-span-2 row-span-2" />
-          <GalleryItem image={galleryImages[1]} />
-          <GalleryItem image={galleryImages[2]} className="row-span-2" />
-          <GalleryItem image={galleryImages[3]} />
-          <GalleryItem image={galleryImages[4]} />
-          <GalleryItem image={galleryImages[5]} />
-          <GalleryItem image={galleryImages[6]} />
-          <GalleryItem image={galleryImages[7]} />
+        {/* Featured project cards */}
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+          {galleryImages.map((image) => <GalleryItem key={image.id} image={image} />)}
         </div>
 
         {/* CTA Button */}
