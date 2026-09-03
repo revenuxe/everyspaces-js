@@ -62,7 +62,7 @@ export default function HeroSection({
       </div>
       <div className="absolute -left-32 top-16 h-72 w-72 rounded-full bg-secondary/20 blur-[110px]" />
 
-      <div className="relative mx-auto grid min-h-[555px] max-w-7xl items-center px-5 py-14 md:min-h-[590px] md:grid-cols-[1.2fr_.8fr] md:px-10">
+      <div className="relative mx-auto grid min-h-[500px] max-w-7xl items-center px-5 py-12 md:min-h-[590px] md:grid-cols-[1.2fr_.8fr] md:px-10">
         <div className="max-w-3xl">
           <h1 className="hero-display max-w-[680px] text-[2.9rem] leading-[1.02] sm:text-[3.35rem] md:text-[3rem] lg:text-[3.15rem]">
             <span className="block md:whitespace-nowrap">{headingPrefix}</span>
