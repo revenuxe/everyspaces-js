@@ -500,6 +500,10 @@ const OrzaAI = () => {
           <ImagePlus className="w-3.5 h-3.5" />
           <span>Upload photo of your space</span>
         </button>
+        <nav aria-label="Orza AI related pages" className="mt-2 flex justify-center gap-4 text-xs">
+          <a href="/services" className="text-secondary hover:underline">Browse services</a>
+          <a href="/contact" className="text-secondary hover:underline">Talk to a designer</a>
+        </nav>
       </div>
     </div>
   );

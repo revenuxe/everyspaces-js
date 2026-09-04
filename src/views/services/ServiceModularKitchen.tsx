@@ -1,7 +1,7 @@
 "use client";
 
 import { imgSrc } from "@/lib/utils";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -82,6 +82,10 @@ const kitchenFeatures = [
 
 const ServiceModularKitchen = () => {
   const router = useRouter();
+  const pathname = usePathname() ?? "";
+  const kitchenLayoutsBasePath = pathname.startsWith("/bangalore/")
+    ? "/bangalore/services/modular-kitchen"
+    : "/services/modular-kitchen";
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -270,7 +274,7 @@ const ServiceModularKitchen = () => {
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-              {kitchenTypes.map((item) => <ServiceDetailCard key={item.title} {...item} href={`/services/modular-kitchen/${item.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`} />)}
+              {kitchenTypes.map((item) => <ServiceDetailCard key={item.title} {...item} href={`${kitchenLayoutsBasePath}/${item.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`} />)}
             </div>
           </div>
         </section>

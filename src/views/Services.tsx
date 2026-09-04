@@ -47,14 +47,14 @@ const services = [
   { id: 20, title: "Balcony Design", description: "Transform outdoor spaces into relaxing retreats.", image: bhk2Image, link: "/services/balcony-design" },
 ];
 
-const servicesListSchema = {
+const servicesListSchema = (serviceLinks: typeof services) => ({
   "@context": "https://schema.org",
   "@type": "ItemList",
   "@id": "https://everyspaces.com/services#itemlist",
   "name": "Interior Design Services by EverySpaces Bangalore",
   "description": "Comprehensive list of 20+ interior design services offered by EverySpaces in Bangalore including modular kitchens, wardrobes, living rooms, bedrooms, and complete home interiors.",
-  "numberOfItems": services.length,
-  "itemListElement": services.map((service, index) => ({
+  "numberOfItems": serviceLinks.length,
+  "itemListElement": serviceLinks.map((service, index) => ({
     "@type": "ListItem",
     "position": index + 1,
     "item": {
@@ -73,7 +73,7 @@ const servicesListSchema = {
       }
     }
   }))
-};
+});
 
 // AEO-optimized FAQs for services page
 const servicesFAQs = [
@@ -87,14 +87,26 @@ const servicesFAQs = [
   }
 ];
 
-const Services = () => {
+type ServicesProps = {
+  /** Render links within the Bangalore route family when used by its service hub. */
+  bangaloreScoped?: boolean;
+};
+
+const Services = ({ bangaloreScoped = false }: ServicesProps) => {
+  const linkedServices = services.map((service) => ({
+    ...service,
+    link: bangaloreScoped ? `/bangalore${service.link}` : service.link,
+  }));
+  const servicesHubUrl = bangaloreScoped
+    ? "https://www.everyspaces.com/bangalore/services"
+    : "https://www.everyspaces.com/services";
   // Combine all AEO schemas
   const aeoSchemas = [
-    servicesListSchema,
+    servicesListSchema(linkedServices),
     professionalServiceSchema,
     createBreadcrumbSchema([
       { name: "Home", url: "https://everyspaces.com" },
-      { name: "Services", url: "https://everyspaces.com/services" }
+      { name: "Services", url: servicesHubUrl }
     ]),
     createFAQSchema(servicesFAQs, 'services')
   ];
@@ -111,7 +123,7 @@ const Services = () => {
         <section className="py-12 md:py-16">
           <div className="container px-4">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-              {services.map((service) => (
+              {linkedServices.map((service) => (
                 <a
                   key={service.id}
                   href={service.link}

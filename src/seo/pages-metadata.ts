@@ -37,13 +37,6 @@ export const PAGE_METADATA: Record<string, Metadata> = {
     },
     robots: { index: true, follow: true },
   },
-  "/Bangalore": {
-    title: "Interior Designers in Bangalore | Top-Rated Home Interiors | EverySpaces",
-    description:
-      "Premium interior designers serving all major Bangalore localities. Modular kitchens, wardrobes & end-to-end home interiors. 10-year warranty. Book a free consultation.",
-    alternates: { canonical: "/Bangalore" },
-    openGraph: { ...ogDefaults, title: "Interior Designers in Bangalore | EverySpaces", url: "/Bangalore" },
-  },
   "/bangalore": {
     title: "Interior Designers in Bangalore | Top-Rated Home Interiors | EverySpaces",
     description:
