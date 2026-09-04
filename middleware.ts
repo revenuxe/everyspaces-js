@@ -20,6 +20,19 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
+  // `redirects()` rules are case-insensitive in Next.js, so a rule for
+  // `/Bangalore` would also redirect the canonical `/bangalore` path to
+  // itself. Middleware preserves the request pathname's case and lets us
+  // normalize only the legacy uppercase URLs.
+  if (
+    request.nextUrl.pathname === "/Bangalore" ||
+    request.nextUrl.pathname.startsWith("/Bangalore/")
+  ) {
+    const url = request.nextUrl.clone();
+    url.pathname = request.nextUrl.pathname.replace(/^\/Bangalore(?=\/|$)/, "/bangalore");
+    return NextResponse.redirect(url, 308);
+  }
+
   if (!request.nextUrl.pathname.startsWith("/studio")) {
     return NextResponse.next();
   }

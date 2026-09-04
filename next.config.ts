@@ -4,19 +4,6 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
-      // Earlier metadata used an uppercase city path. Preserve its equity and
-      // ensure it can never become a canonical target or a 404 again.
-      {
-        source: "/Bangalore",
-        destination: "/bangalore",
-        permanent: true,
-      },
-      {
-        source: "/Bangalore/:path*",
-        destination: "/bangalore/:path*",
-        permanent: true,
-      },
-
       // Retire the old city architecture without leaving crawlers or users on dead URLs.
       {
         source: "/hyderabad/:path*",

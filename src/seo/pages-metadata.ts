@@ -250,7 +250,7 @@ export const PAGE_METADATA: Record<string, Metadata> = {
 // metadata from publishing the retired city name while preserving each page's
 // unique intent, title, description, canonical, and Open Graph fields.
 function replaceRetiredCity(value: unknown): unknown {
-  if (typeof value === "string") return value.replace(/Bangalore/gi, "Bangalore");
+  if (typeof value === "string") return value.replace(/Hyderabad/gi, "Bangalore");
   if (Array.isArray(value)) return value.map(replaceRetiredCity);
   if (value && typeof value === "object") {
     for (const [key, nested] of Object.entries(value as Record<string, unknown>)) {
