@@ -32,7 +32,7 @@ export default function InteriorComparisonPage() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#071f2b]/95 to-[#071f2b]/75" />
       <div className="journal-container grid items-center gap-10 lg:grid-cols-[1.35fr_1fr]">
         <div><Link href="/articles" className="mb-8 inline-flex min-h-11 items-center text-sm text-white/85">← Back to Blog</Link><p className="text-xs font-semibold uppercase tracking-[.15em] text-white/85">Interior design guide · Bangalore</p>
-          <h1 className="comparison-hero-title hero-display mt-5 text-[2.25rem] leading-[1.12] sm:text-5xl xl:text-[3.45rem]">HomeLane vs DesignCafe vs Truww vs Livspace:<span className="mt-4 block text-white/90">Which Is Best for Your Bangalore Home?</span></h1>
+          <h1 className="comparison-hero-title hero-display mt-5 text-[2.25rem] leading-[1.12] sm:text-5xl xl:text-[3.45rem]">HomeLane vs DesignCafe vs Truww vs Livspace: Which Is Best for Your Bangalore Home?</h1>
           <p className="mt-6 max-w-xl text-base leading-8 text-white/85">A simple, side-by-side look at five interior design options — from pricing and materials to customisation, timelines and project support — so you can choose with confidence.</p>
           <p className="mt-6 text-xs leading-6 text-white/75">Updated September 2026 · Approx. 18 min read · Bangalore</p>
           <div className="comparison-hero-actions mt-7"><a href="#compare" className="journal-button">Compare All 5 ↓</a><ConsultationLink><span className="sm:hidden">Free Consultation</span><span className="hidden sm:inline">Get a Free Consultation</span></ConsultationLink></div><p className="mt-4 text-xs leading-6 text-white/80">No pressure. Just discuss your home, budget and ideas with a designer.</p>

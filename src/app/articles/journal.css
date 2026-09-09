@@ -35,7 +35,6 @@
   .comparison-hero { padding-block: 24px 36px; }
   .comparison-hero a[href="/articles"] { margin-bottom: 16px; }
   .comparison-hero-title { font-size: clamp(28px, 7.2vw, 36px); line-height: 1.15; text-wrap: balance; }
-  .comparison-hero-title > span { margin-top: 12px; font-size: .85em; line-height: 1.25; }
   .comparison-hero-title + p { margin-top: 18px; font-size: 14px; line-height: 1.8; }
   .comparison-hero-actions { display: grid; grid-template-columns: 1fr 1.15fr; gap: 8px; margin-top: 20px; }
   .comparison-hero-actions .journal-button { min-width: 0; min-height: 48px; padding: 12px 8px; gap: 5px; font-size: 12px; white-space: nowrap; }
