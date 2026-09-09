@@ -83,9 +83,7 @@ const kitchenFeatures = [
 const ServiceModularKitchen = () => {
   const router = useRouter();
   const pathname = usePathname() ?? "";
-  const kitchenLayoutsBasePath = pathname.startsWith("/bangalore/")
-    ? "/bangalore/services/modular-kitchen"
-    : "/services/modular-kitchen";
+  const kitchenLayoutsBasePath = "/services/modular-kitchen";
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({

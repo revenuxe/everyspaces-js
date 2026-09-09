@@ -18,7 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${item.title} in Bangalore | EverySpaces`,
     description: `${item.description} Talk to EverySpaces for a tailored modular kitchen consultation in Bangalore.`,
-    alternates: { canonical: `/bangalore/services/modular-kitchen/${layout}` },
+    // Both routes render the same layout; consolidate indexing on the service URL.
+    alternates: { canonical: `/services/modular-kitchen/${layout}` },
   };
 }
 
