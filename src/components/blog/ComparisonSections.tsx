@@ -18,12 +18,12 @@ export function ClaimSource({ claim }: { claim: Claim }) {
   return <a className="journal-source" href={claim.source} target="_blank" rel="noopener noreferrer" title={`Checked ${claim.checkedAt}`}>Official source <ArrowUpRight size={12} aria-hidden="true" /></a>;
 }
 
-export function ComparisonLeadForm({ final = false }: { final?: boolean }) {
+export function ComparisonLeadForm({ final = false, sourcePage = comparison.path, formPrefix = "Interior Comparison" }: { final?: boolean; sourcePage?: string; formPrefix?: string }) {
   return <div className="rounded-3xl border border-primary/10 bg-white p-6 text-primary shadow-elevated sm:p-8">
     <p className="journal-eyebrow">Start your project</p>
     <h2 className="!mt-3 !text-2xl font-semibold">Get a quote for your home</h2>
     <p className="mb-6 mt-3 text-sm leading-6 text-muted-foreground">Tell us a little about your space. We’ll help you understand what may work for your home and budget.</p>
-    <QuoteForm sourcePage={comparison.path} formName={`Interior Comparison ${final ? "Final" : "Hero"} Quote Form`} submitLabel={final ? "Book My Free Consultation" : "Get My Free Consultation"} />
+    <QuoteForm sourcePage={sourcePage} formName={`${formPrefix} ${final ? "Final" : "Hero"} Quote Form`} submitLabel={final ? "Book My Free Consultation" : "Get My Free Consultation"} />
     <p className="mt-4 text-center text-xs text-muted-foreground">No pressure. No obligation.</p>
   </div>;
 }
