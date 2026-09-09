@@ -1,236 +1,51 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { format } from "date-fns";
-import { Calendar, Clock, ArrowRight, BookOpen } from "lucide-react";
+import heroImage from "@/assets/hero-interior.jpg";
+import { ArrowUpRight, BookOpen } from "lucide-react";
 import { StructuredData, createBreadcrumbSchema } from "@/components/StructuredData";
 import { getPublishedPosts } from "@/sanity/lib/posts";
 import { urlForImage } from "@/sanity/lib/image";
-import { BANGALORE_KEYWORD_CLUSTERS } from "@/seo/blog-keyword-clusters";
 import { absoluteUrl } from "@/lib/site-url";
+import { comparison } from "@/content/interior-comparison";
+import "./journal.css";
 
 export const revalidate = 900;
-
 export const metadata: Metadata = {
-  title: "Interior Design Tips & Ideas Blog | Home Decor Trends | EverySpaces Bangalore",
-  description:
-    "Actionable Bangalore interior design guides, renovation planning tips, modular kitchen inspiration, and premium home transformation ideas.",
+  title: "Interior Design Blog & Bangalore Home Guides",
+  description: "Thoughtful advice for your Bangalore home. Explore interior company comparisons, design ideas and practical renovation guides from EverySpaces.",
   alternates: { canonical: "/articles" },
-  openGraph: {
-    title: "Bangalore Interior Design Blog | EverySpaces",
-    description:
-      "Expert interior design insights and high-intent home decor guides for Bangalore homeowners.",
-    url: "/articles",
-    type: "website",
-  },
+  openGraph: { title: "The EverySpaces Journal", description: "Design ideas and practical advice for your Bangalore home.", url: "/articles", type: "website", images: [{ url: absoluteUrl(heroImage.src) }] },
 };
 
-const blogSchema = {
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  name: "EverySpaces Interior Design Blog",
-  description:
-    "Expert interior design tips, renovation guides, and home decor ideas for Bangalore homeowners.",
-  url: absoluteUrl("/articles"),
-};
-
-export default async function ArticlesPage({
-  searchParams,
-}: {
-  searchParams?: Promise<{ q?: string; category?: string }>;
-}) {
+export default async function ArticlesPage({ searchParams }: { searchParams?: Promise<{ q?: string; category?: string }> }) {
   const params = (await searchParams) || {};
   const q = (params.q || "").trim().toLowerCase();
-  const categoryFilter = (params.category || "").trim().toLowerCase();
-
-  const posts = await getPublishedPosts();
-  const categories = Array.from(
-    new Set(posts.map((post) => post.category?.title).filter(Boolean) as string[]),
-  );
-
-  const filtered = posts.filter((post) => {
-    const title = post.title?.toLowerCase() || "";
-    const excerpt = post.excerpt?.toLowerCase() || "";
-    const category = post.category?.title?.toLowerCase() || "";
-    const qMatch = !q || title.includes(q) || excerpt.includes(q);
-    const catMatch = !categoryFilter || category === categoryFilter;
-    return qMatch && catMatch;
-  });
-
-  return (
-    <>
-      <StructuredData
-        data={[
-          blogSchema,
-          createBreadcrumbSchema([
-            { name: "Home", url: absoluteUrl("/") },
-            { name: "Articles", url: absoluteUrl("/articles") },
-          ]),
-        ]}
-      />
-      <main className="pt-4 pb-16">
-        <section className="relative py-16 md:py-24 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/10">
-          <div className="container">
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="mb-4 inline-flex items-center gap-1 rounded-full border px-3 py-1 text-sm text-secondary">
-                <BookOpen className="w-3 h-3" />
-                Interior Design Blog
-              </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-                Bangalore Design <span className="text-secondary">Insights</span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8">
-                High-intent guides and expert advice for premium home interiors in Bangalore.
-              </p>
-              <form className="relative max-w-xl mx-auto" method="GET" action="/articles">
-                <input
-                  name="q"
-                  defaultValue={params.q || ""}
-                  type="text"
-                  placeholder="Search articles..."
-                  className="w-full border pr-28 py-6 text-lg rounded-full border-border/50 bg-card shadow-soft px-4"
-                />
-                <button
-                  type="submit"
-                  className="absolute right-2 top-2 bottom-2 px-5 rounded-full bg-secondary text-secondary-foreground text-sm font-semibold"
-                >
-                  Search
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
-
-        {categories.length > 0 && (
-          <section className="py-8 border-b border-border/50">
-            <div className="container">
-              <div className="flex flex-wrap items-center justify-center gap-3">
-                <Link
-                  href="/articles"
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                    !categoryFilter
-                      ? "bg-secondary text-secondary-foreground"
-                      : "bg-muted text-muted-foreground hover:bg-muted/80"
-                  }`}
-                >
-                  All Articles
-                </Link>
-                {categories.map((category) => {
-                  const active = category.toLowerCase() === categoryFilter;
-                  return (
-                    <Link
-                      key={category}
-                      href={`/articles?category=${encodeURIComponent(category)}`}
-                      className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                        active
-                          ? "bg-secondary text-secondary-foreground"
-                          : "bg-muted text-muted-foreground hover:bg-muted/80"
-                      }`}
-                    >
-                      {category}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
-        )}
-
-        <section className="py-8">
-          <div className="container">
-            <div className="rounded-2xl border bg-card p-6">
-              <h2 className="text-2xl font-semibold text-primary mb-2">High-Intent Bangalore Topics</h2>
-              <p className="text-muted-foreground mb-4">
-                Explore transaction-ready topics mapped to services and locality intent pages.
-              </p>
-              <div className="grid md:grid-cols-3 gap-4">
-                {BANGALORE_KEYWORD_CLUSTERS.map((cluster) => (
-                  <Link key={cluster.slug} href={cluster.targetUrl} className="rounded-xl border p-4 hover:border-secondary transition-colors">
-                    <p className="text-xs uppercase tracking-wide text-secondary mb-1">{cluster.intent}</p>
-                    <h3 className="font-semibold mb-2">{cluster.title}</h3>
-                    <p className="text-sm text-muted-foreground">{cluster.targetKeyword}</p>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-12 md:py-16">
-          <div className="container">
-            {filtered.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filtered.map((post, index) => {
-                  const imageUrl = post.featuredImage ? urlForImage(post.featuredImage).width(1200).url() : null;
-                  const publishedDate = post.publishedAt || post._createdAt;
-                  return (
-                    <Link
-                      key={post._id}
-                      href={`/articles/${post.slug}`}
-                      className={`group bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${
-                        index === 0 ? "md:col-span-2 lg:col-span-2" : ""
-                      }`}
-                    >
-                      <div className={`relative overflow-hidden ${index === 0 ? "h-64 md:h-80" : "h-48"}`}>
-                        {imageUrl ? (
-                          <img
-                            src={imageUrl}
-                            alt={post.featuredImage?.alt || post.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                          />
-                        ) : (
-                          <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                            <BookOpen className="w-16 h-16 text-primary/30" />
-                          </div>
-                        )}
-                        {post.category?.title && (
-                          <span className="absolute top-4 left-4 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
-                            {post.category.title}
-                          </span>
-                        )}
-                      </div>
-                      <div className="p-6">
-                        <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-                          {publishedDate && (
-                            <span className="flex items-center gap-1">
-                              <Calendar className="w-4 h-4" />
-                              {format(new Date(publishedDate), "MMM d, yyyy")}
-                            </span>
-                          )}
-                          {post.readingTime ? (
-                            <span className="flex items-center gap-1">
-                              <Clock className="w-4 h-4" />
-                              {post.readingTime} min read
-                            </span>
-                          ) : null}
-                        </div>
-                        <h2
-                          className={`font-bold text-primary group-hover:text-secondary transition-colors mb-3 ${
-                            index === 0 ? "text-2xl md:text-3xl" : "text-xl"
-                          }`}
-                        >
-                          {post.title}
-                        </h2>
-                        {post.excerpt ? <p className="text-muted-foreground line-clamp-2 mb-4">{post.excerpt}</p> : null}
-                        <span className="inline-flex items-center gap-2 text-secondary font-medium group-hover:gap-3 transition-all">
-                          Read More <ArrowRight className="w-4 h-4" />
-                        </span>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-            ) : (
-              <div className="text-center py-16">
-                <BookOpen className="w-16 h-16 mx-auto text-muted-foreground/50 mb-4" />
-                <h3 className="text-xl font-semibold text-primary mb-2">No articles found</h3>
-                <p className="text-muted-foreground">
-                  Try adjusting your search terms or publish more articles in Sanity Studio.
-                </p>
-              </div>
-            )}
-          </div>
-        </section>
-      </main>
-    </>
-  );
+  const category = (params.category || "").trim().toLowerCase();
+  const posts = (await getPublishedPosts()).filter(post => post.slug !== comparison.slug);
+  const categories = Array.from(new Set(["Planning guides", ...posts.map(post => post.category?.title).filter((value): value is string => Boolean(value))]));
+  const featured = (!q || `${comparison.title} ${comparison.description}`.toLowerCase().includes(q)) && (!category || category === "planning guides");
+  const filtered = posts.filter(post => (!q || `${post.title} ${post.excerpt || ""}`.toLowerCase().includes(q)) && (!category || post.category?.title?.toLowerCase() === category));
+  return <main className="journal">
+    <StructuredData data={[{ "@context": "https://schema.org", "@type": "Blog", name: "EverySpaces Journal", url: absoluteUrl("/articles") }, createBreadcrumbSchema([{ name: "Home", url: absoluteUrl("/") }, { name: "Blog", url: absoluteUrl("/articles") }])]} />
+    <section data-quote-form="disabled" className="journal-container py-14 md:py-20">
+      <p className="journal-eyebrow">The EverySpaces Journal</p>
+      <div className="mt-5 grid items-end gap-7 md:grid-cols-[1.4fr_1fr]"><h1 className="hero-display text-5xl leading-[1.08] md:text-7xl">A little clarity.<br /><span className="font-serif italic">A home that’s yours.</span></h1><p className="max-w-md text-base leading-8 text-muted-foreground">Thoughtful ideas, honest comparisons and practical advice for the decisions that make a home. Written for life in Bangalore.</p></div>
+    </section>
+    <section className="journal-container pb-16" aria-label="Browse the blog">
+      <div className="mb-9 flex flex-col justify-between gap-5 border-y border-primary/15 py-5 lg:flex-row lg:items-center">
+        <div className="flex flex-wrap gap-2"><Link href={q ? `/articles?q=${encodeURIComponent(q)}` : "/articles"} className={`rounded-full border px-4 py-3 text-sm ${!category ? "bg-primary text-white" : ""}`}>All stories</Link>{categories.map(label => <Link key={label} href={`/articles?category=${encodeURIComponent(label)}${q ? `&q=${encodeURIComponent(q)}` : ""}`} className={`rounded-full border px-4 py-3 text-sm ${category === label.toLowerCase() ? "bg-primary text-white" : ""}`}>{label}</Link>)}</div>
+        <form action="/articles" method="GET" className="flex gap-2"><label htmlFor="journal-search" className="sr-only">Search blog articles</label><input id="journal-search" name="q" defaultValue={params.q || ""} placeholder="Find an idea..." className="premium-input" />{category && <input type="hidden" name="category" value={category} />}<button type="submit" className="journal-button">Search</button></form>
+      </div>
+      {featured && <Link href={comparison.path} className="group mb-10 grid overflow-hidden rounded-[2rem] border border-primary/10 bg-white lg:grid-cols-[1.2fr_1fr]">
+        <div className="relative min-h-64 lg:min-h-[440px]"><Image src={heroImage} alt="Warm contemporary living room with neutral furniture" fill priority sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" /></div>
+        <div className="flex flex-col justify-center p-7 md:p-11"><p className="journal-eyebrow">Featured guide · Bangalore</p><h2 className="my-5 font-serif text-3xl leading-tight md:text-4xl">HomeLane vs DesignCafe vs Truww vs Livspace</h2><p className="text-base leading-7 text-muted-foreground">Five interior design options. The questions that matter. A considered guide to choosing the right team for your home.</p><p className="mt-5 text-xs text-muted-foreground">Updated September 2026 · 18 min read</p><span className="mt-7 inline-flex items-center gap-3 text-sm font-semibold">Read the comparison <ArrowUpRight size={18} /></span></div>
+      </Link>}
+      {!!filtered.length && <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{filtered.map(post => {
+        const image = post.featuredImage ? urlForImage(post.featuredImage).width(800).url() : null;
+        return <Link key={post._id} href={`/articles/${post.slug}`} className="overflow-hidden rounded-3xl border border-primary/10 bg-white"><div className="aspect-[4/3] bg-primary/5">{image ? <img src={image} alt={post.featuredImage?.alt || post.title} width={800} height={600} loading="lazy" className="h-full w-full object-cover" /> : <div className="flex h-full items-center justify-center"><BookOpen className="text-primary/30" size={48} /></div>}</div><div className="p-7"><p className="journal-eyebrow">{post.category?.title || "Design notes"}</p><h2 className="my-4 font-serif text-2xl">{post.title}</h2><p className="line-clamp-3 text-sm leading-7 text-muted-foreground">{post.excerpt}</p><span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold">Read story <ArrowUpRight size={16} /></span></div></Link>;
+      })}</div>}
+      {!featured && !filtered.length && <div className="journal-card py-14 text-center"><h2 className="font-serif text-3xl">No stories found</h2><p className="my-5 text-muted-foreground">Try another search or browse all our stories.</p><Link href="/articles" className="journal-button">View all stories</Link></div>}
+    </section>
+  </main>;
 }

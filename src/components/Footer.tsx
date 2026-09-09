@@ -9,7 +9,7 @@ import ServiceHeroCtas from "@/components/ServiceHeroCtas";
 const footerGroups = [
   { title: "Studio", links: [["About", "/about-us"], ["Our work", "/portfolio"], ["Bangalore locations", "/bangalore"], ["Contact", "/contact"]] },
   { title: "Services", links: [["Modular kitchens", "/services/modular-kitchen"], ["Home interiors", "/services/full-home-design"], ["Wardrobe design", "/services/wardrobe-design"], ["All services", "/services"]] },
-  { title: "Resources", links: [["Price calculator", "/price-calculator"], ["Design journal", "/articles"], ["Orza AI", "/orza-ai"], ["Start a project", "/contact"]] },
+  { title: "Resources", links: [["Price calculator", "/price-calculator"], ["Blog", "/articles"], ["Orza AI", "/orza-ai"], ["Start a project", "/contact"]] },
 ];
 
 export default function Footer() {

@@ -17,6 +17,7 @@ export const CORE_SITEMAP_ENTRIES: Entry[] = [
   { path: "/portfolio", changeFrequency: "weekly", priority: 0.85 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.9 },
   { path: "/price-calculator", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/articles/homelane-vs-designcafe-vs-truww-vs-livspace", changeFrequency: "monthly", priority: 0.8 },
   { path: "/articles", changeFrequency: "daily", priority: 0.8 },
   { path: "/orza-ai", changeFrequency: "weekly", priority: 0.9 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.4 },
