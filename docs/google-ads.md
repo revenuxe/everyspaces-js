@@ -9,8 +9,13 @@ Clicks indicate contact intent, not completed calls or sent messages.
 
 ## Activate Google Ads conversions
 
-The account tag alone does not configure event-based conversion actions. Obtain
-each action's event snippet in Google Ads, then copy the label after
+The "Submit lead form" action is configured with the built-in destination
+`AW-18430311742/IVfzCN38u-4cEL76oNRE`. No environment setup is needed for
+lead conversions. A nonblank `NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL` overrides this
+default; an unset or blank value uses the supplied label.
+
+For separate contact click actions, obtain each action's event snippet in Google
+Ads, then copy the label after
 `AW-18430311742/` into the corresponding deployment environment variable:
 
 - `NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL`: successful form submission (primary lead).
@@ -18,8 +23,8 @@ each action's event snippet in Google Ads, then copy the label after
 - `NEXT_PUBLIC_GOOGLE_ADS_WHATSAPP_LABEL`: WhatsApp click.
 - `NEXT_PUBLIC_GOOGLE_ADS_EMAIL_LABEL`: email click.
 
-Rebuild/redeploy after setting labels. Blank labels intentionally send no
-`conversion` event. Do not configure an additional thank-you URL conversion for
+Rebuild/redeploy after setting labels. Blank contact click labels intentionally
+send no `conversion` event. Do not configure an additional thank-you URL conversion for
 the same lead, which would double count. Consider contact clicks secondary
 actions so bidding focuses on saved leads. No lead field values (names, phone
 numbers, emails, messages, or report contents) are passed to these tracking calls.

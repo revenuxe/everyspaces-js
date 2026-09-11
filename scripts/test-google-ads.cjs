@@ -14,12 +14,23 @@ function setup(env = {}, pathname = '/') {
   return { window, track: context.exports.trackAdsAction };
 }
 
-test('queues early events without inventing an Ads conversion label', () => {
+test('queues a successful lead conversion with the supplied label before the tag loads', () => {
   const { window, track } = setup();
   track('lead', 'Contact Page Form');
-  assert.equal(window.dataLayer.length, 1);
+  assert.equal(window.dataLayer.length, 2);
   assert.equal(window.dataLayer[0][1], 'generate_lead');
   assert.equal(window.dataLayer[0][2].form_name, 'Contact Page Form');
+  assert.equal(window.dataLayer[1][1], 'conversion');
+  assert.equal(window.dataLayer[1][2].send_to, 'AW-18430311742/IVfzCN38u-4cEL76oNRE');
+});
+
+test('blank lead overrides retain the default and contact clicks do not count as leads', () => {
+  const { window, track } = setup({ NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL: '  ' });
+  track('lead');
+  for (const action of ['phone', 'whatsapp', 'email']) track(action);
+  const conversions = window.dataLayer.filter(args => args[1] === 'conversion');
+  assert.equal(conversions.length, 1);
+  assert.equal(conversions[0][2].send_to, 'AW-18430311742/IVfzCN38u-4cEL76oNRE');
 });
 
 test('routes each conversion to its own configured action', () => {

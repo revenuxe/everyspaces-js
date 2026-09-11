@@ -2,7 +2,7 @@ export const GOOGLE_ADS_ID = "AW-18430311742";
 
 type Action = "lead" | "phone" | "whatsapp" | "email";
 const labels: Record<Action, string | undefined> = {
-  lead: process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL,
+  lead: process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL?.trim() || "IVfzCN38u-4cEL76oNRE",
   phone: process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_LABEL,
   whatsapp: process.env.NEXT_PUBLIC_GOOGLE_ADS_WHATSAPP_LABEL,
   email: process.env.NEXT_PUBLIC_GOOGLE_ADS_EMAIL_LABEL,
