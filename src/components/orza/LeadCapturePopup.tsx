@@ -1,3 +1,4 @@
+import { trackAdsAction } from "@/lib/google-ads";
 import { useState } from "react";
 import { X, Phone, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -66,6 +67,7 @@ const LeadCapturePopup = ({ isOpen, onClose, userName, location, recommendation,
       });
 
       if (leadError) throw leadError;
+      trackAdsAction("lead", "orza_ai_report");
 
       // Auto download for user
       doc.save(`EverySpaces-Design-Report-${name}.pdf`);

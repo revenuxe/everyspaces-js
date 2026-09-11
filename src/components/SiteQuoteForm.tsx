@@ -1,5 +1,6 @@
 "use client";
 
+import { trackAdsAction } from "@/lib/google-ads";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { usePathname, useRouter } from "next/navigation";
@@ -45,6 +46,7 @@ export default function SiteQuoteForm() {
     try {
       const { error } = await (supabase.from("leads") as any).insert({ form_name: `${service} Quote Form`, source_page: pathname, data: { ...data, service, enquiry_page: pathname } });
       if (error) throw error;
+      trackAdsAction("lead", `${service} Quote Form`);
       router.push("/thank-you");
     } catch (error) {
       console.error("Quote form error:", error);

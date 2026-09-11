@@ -1,5 +1,6 @@
 "use client";
 
+import { trackAdsAction } from "@/lib/google-ads";
 import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
@@ -67,6 +68,7 @@ const QuotationPopup = ({ externalOpen, onExternalOpenChange }: QuotationPopupPr
         data: formData,
       });
       if (error) throw error;
+      trackAdsAction("lead", externalOpen !== undefined ? "Mobile Contact Popup" : "Design Consultation Popup");
 
       setIsOpen(false);
       setFormData({ name: "", phone: "", locality: "", projectType: "", projectDetails: "" });

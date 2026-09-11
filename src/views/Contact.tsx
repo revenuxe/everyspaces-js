@@ -1,5 +1,6 @@
 "use client";
 
+import { trackAdsAction } from "@/lib/google-ads";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
@@ -104,6 +105,7 @@ const Contact = () => {
       });
 
       if (error) throw error;
+      trackAdsAction("lead", "Contact Page Form");
 
       toast({
         title: "Thank you for contacting us!",
@@ -123,6 +125,7 @@ const Contact = () => {
 
   const handleWhatsAppClick = () => {
     const message = "Hi! I'm interested in interior design services from EverySpaces. Please share more details.";
+    trackAdsAction("whatsapp");
     window.open(`https://wa.me/919886579923?text=${encodeURIComponent(message)}`, "_blank");
   };
 

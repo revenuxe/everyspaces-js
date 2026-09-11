@@ -1,5 +1,6 @@
 "use client";
 
+import { trackAdsAction } from "@/lib/google-ads";
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -128,6 +129,7 @@ const Service2BHK = () => {
       });
 
       if (error) throw error;
+      trackAdsAction("lead", "2BHK Interior Page Form");
 
       router.push("/thank-you");
     } catch (error) {

@@ -1,4 +1,5 @@
 "use client";
+import { trackAdsAction } from "@/lib/google-ads";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/integrations/supabase/client";
@@ -25,6 +26,7 @@ export default function QuoteForm({ sourcePage, formName, submitLabel = "Get a Q
         data: formData,
       });
       if (error) throw error;
+      trackAdsAction("lead", formName);
       window.dispatchEvent(new CustomEvent("everyspaces:lead-submitted", { detail: { formName, sourcePage } }));
       router.push("/thank-you");
     } catch (error) {

@@ -1,3 +1,4 @@
+import { trackAdsAction } from "@/lib/google-ads";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Home, Wrench, MessageSquare, Images } from "lucide-react";
@@ -8,6 +9,7 @@ const BottomNav = () => {
   const handleWhatsAppClick = () => {
     const message = "Hi! I'm interested in interior design services from EverySpaces. Please share more details.";
     const whatsappUrl = `https://wa.me/919886579923?text=${encodeURIComponent(message)}`;
+    trackAdsAction("whatsapp");
     window.open(whatsappUrl, "_blank");
   };
 

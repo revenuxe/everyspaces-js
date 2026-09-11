@@ -1,5 +1,6 @@
 "use client";
 
+import { trackAdsAction } from "@/lib/google-ads";
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -205,6 +206,7 @@ const PriceCalculator = () => {
                       </Button>
                       <Button variant="outline" className="flex-1 border-secondary/30 text-secondary hover:bg-secondary/10 rounded-xl py-6" onClick={() => {
                     const message = `Hi! I'm interested in ${selectedProperty?.toUpperCase()} ${selectedPackage} package interior design. Estimated budget: ${formatPrice(priceData.ourPrice)}`;
+                    trackAdsAction("whatsapp");
                     window.open(`https://wa.me/919886579923?text=${encodeURIComponent(message)}`, "_blank");
                   }}>
                         WhatsApp Us

@@ -1,5 +1,6 @@
 "use client";
 
+import { trackAdsAction } from "@/lib/google-ads";
 import { imgSrc } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -77,6 +78,7 @@ const ServiceLivingRoom = () => {
         data: formData,
       });
       if (error) throw error;
+      trackAdsAction("lead", "Living Room Design Page Form");
       router.push("/thank-you");
     } catch (error) {
       toast({ title: "Error", description: "Failed to submit. Please try again.", variant: "destructive" });

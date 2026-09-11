@@ -1,5 +1,6 @@
 "use client";
 
+import { trackAdsAction } from "@/lib/google-ads";
 import { imgSrc } from "@/lib/utils";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
@@ -108,6 +109,7 @@ const ServiceModularKitchen = () => {
       });
 
       if (error) throw error;
+      trackAdsAction("lead", "Modular Kitchen Page Form");
       router.push("/thank-you");
     } catch (error) {
       console.error("Error submitting form:", error);
