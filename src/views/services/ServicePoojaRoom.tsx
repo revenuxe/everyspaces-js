@@ -1,13 +1,10 @@
 "use client";
 
-import { trackAdsAction } from "@/lib/google-ads";
+import ServiceHero from "@/components/ServiceHero";
+
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { ArrowRight, Sparkles, Flame, Shield, Heart } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
@@ -64,25 +61,7 @@ const poojaRoomFAQs = [
 ];
 
 const ServicePoojaRoom = () => {
-  const router = useRouter();
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({ name: "", mobile: "", projectType: "Pooja Room" });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const { error } = await supabase.from("leads").insert({ form_name: "Pooja Room Design Page Form", source_page: "/services/pooja-room", data: formData });
-      if (error) throw error;
-      trackAdsAction("lead", "Pooja Room Design Page Form");
-      router.push("/thank-you");
-    } catch (error) {
-      toast({ title: "Error", description: "Failed to submit. Please try again.", variant: "destructive" });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   // AEO schemas
   const aeoSchemas = [
@@ -90,7 +69,7 @@ const ServicePoojaRoom = () => {
       "Pooja Room Design",
       "Traditional and modern pooja room designs . Wooden mandirs, wall-mounted units, and walk-in pooja rooms with Vastu compliance.",
       "https://everyspaces.com/services/pooja-room",
-      "https://everyspaces.com/service-pooja-room.jpg",
+      poojaImage,
       "30000-200000",
       {
         areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
@@ -106,7 +85,7 @@ const ServicePoojaRoom = () => {
     createProductSchema({
       name: "Pooja Room Interior Design",
       description: "Traditional and modern pooja room designs . Teak wood mandirs, brass accents, and Vastu-compliant layouts.",
-      image: "https://everyspaces.com/service-pooja-room.jpg",
+      image: poojaImage,
       url: "https://everyspaces.com/services/pooja-room",
       priceRange: "30000-200000",
       category: "Home Improvement > Pooja Room"
@@ -120,36 +99,7 @@ const ServicePoojaRoom = () => {
       <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Pooja Room" }]} />
       
       <main className="pb-24">
-        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
-          <div className="absolute inset-0 z-0">
-            <img src={imgSrc(poojaImage)} alt="Pooja Room Design" className="w-full h-full object-cover scale-105" />
-            <div className="absolute inset-0 hero-overlay" />
-          </div>
-          <div className="relative z-10 container px-4">
-            <div className="max-w-4xl mx-auto text-center mb-6">
-              <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
-                Pooja Room Design
-                <span className="block text-secondary mt-2"></span>
-              </h1>
-              <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Create sacred spaces with traditional craftsmanship by EverySpaces
-              </p>
-            </div>
-            <div className="max-w-sm mx-auto animate-fade-up delay-300">
-              <div className="glass-card rounded-3xl p-5 shadow-elevated">
-                <h2 className="font-display text-lg text-foreground text-center mb-4">Get Free Pooja Room Quote</h2>
-                <form onSubmit={handleSubmit} className="space-y-3">
-                  <input type="text" placeholder="Your Name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <input type="tel" placeholder="Mobile Number" value={formData.mobile} onChange={(e) => setFormData({ ...formData, mobile: e.target.value })} required pattern="[0-9]{10}" className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <input type="text" placeholder="Project Type (e.g., Pooja Room, Wall Mounted)" value={formData.projectType} onChange={(e) => setFormData({ ...formData, projectType: e.target.value })} required className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <button type="submit" disabled={isSubmitting} className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold">
-                    {isSubmitting ? "Submitting..." : "Get Free Quote"}
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ServiceHero title={"Pooja Room Design"} description={"Create sacred spaces with traditional craftsmanship by EverySpaces"} image={poojaImage} formName={"Pooja Room Design Page Form"} />
 
         <section className="py-12 md:py-16">
           <div className="container px-4">
@@ -193,7 +143,7 @@ const ServicePoojaRoom = () => {
         <RelatedServices currentSlug="pooja-room" />
         <RelatedLocalities currentSlug="basavanagudi" />
 
-        <FAQSection />
+        <FAQSection faqs={poojaRoomFAQs} />
 
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">

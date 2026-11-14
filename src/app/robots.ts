@@ -23,12 +23,13 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/studio/", "/thank-you", "/api/"],
+        // Internal HTML pages must remain crawlable for their noindex to be read.
+        disallow: ["/api/"],
       },
       ...AI_AND_SOCIAL_CRAWLERS.map((userAgent) => ({
         userAgent,
         allow: "/",
-        disallow: ["/studio/", "/thank-you"],
+        disallow: ["/api/"],
       })),
     ],
     sitemap: absoluteUrl("/sitemap.xml"),

@@ -1,5 +1,6 @@
 "use client";
 
+import HeroQuoteCard from "@/components/HeroQuoteCard";
 import { trackAdsAction } from "@/lib/google-ads";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
@@ -54,5 +55,10 @@ export default function SiteQuoteForm() {
     } finally { setSubmitting(false); }
   };
 
-  return createPortal(<section className="relative z-20 hidden w-full flex-none bg-transparent md:absolute md:right-[7%] md:top-1/2 md:block md:w-[27rem] md:-translate-y-1/2 md:p-0"><div className="mx-auto max-w-5xl rounded-3xl bg-white p-6 shadow-elevated"><div className="mb-5 text-center"><p className="text-xs font-semibold uppercase tracking-[.18em] text-secondary">Start your project</p><h2 className="!mt-2 !text-2xl font-semibold text-primary">Get a quote for your home</h2><p className="mt-2 text-sm text-muted-foreground">Tell us about your space and we’ll call you back.</p></div><form onSubmit={submit} className="grid grid-cols-2 gap-3"><input required value={data.name} onChange={(event) => update("name", event.target.value)} placeholder="Your name" className="premium-input" /><input required type="tel" pattern="[0-9]{10}" value={data.mobile} onChange={(event) => update("mobile", event.target.value)} placeholder="Mobile number" className="premium-input" /><input required type="email" value={data.email} onChange={(event) => update("email", event.target.value)} placeholder="Email address" className="premium-input" /><input required value={data.projectType} onChange={(event) => update("projectType", event.target.value)} placeholder="Project type" className="premium-input" /><button type="submit" disabled={submitting} className="btn-terracotta col-span-2 w-full rounded-xl py-3.5 font-semibold text-secondary-foreground disabled:opacity-50">{submitting ? "Submitting..." : "Get a Quote"}</button></form><p className="mt-4 text-center text-xs text-muted-foreground">No spam — we’ll only contact you about your project.</p></div></section>, target);
+  return createPortal(
+    <section className="hero-quote-fallback">
+      <HeroQuoteCard sourcePage={pathname} formName={service + " Quote Form"}>
+        <form onSubmit={submit} className="grid grid-cols-2 gap-3"><input required value={data.name} onChange={(event) => update("name", event.target.value)} placeholder="Your name" className="premium-input" /><input required type="tel" pattern="[0-9]{10}" value={data.mobile} onChange={(event) => update("mobile", event.target.value)} placeholder="Mobile number" className="premium-input" /><input required type="email" value={data.email} onChange={(event) => update("email", event.target.value)} placeholder="Email address" className="premium-input" /><input required value={data.projectType} onChange={(event) => update("projectType", event.target.value)} placeholder="Project type" className="premium-input" /><button type="submit" disabled={submitting} className="btn-terracotta col-span-2 w-full rounded-xl py-3.5 font-semibold text-secondary-foreground disabled:opacity-50">{submitting ? "Submitting..." : "Get a Quote"}</button></form>
+      </HeroQuoteCard>
+    </section>, target);
 }

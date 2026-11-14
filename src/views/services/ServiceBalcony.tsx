@@ -1,13 +1,10 @@
 "use client";
 
-import { trackAdsAction } from "@/lib/google-ads";
+import ServiceHero from "@/components/ServiceHero";
+
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { ArrowRight, TreePine, Armchair, Sun, Flower } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
@@ -64,25 +61,7 @@ const balconyFAQs = [
 ];
 
 const ServiceBalcony = () => {
-  const router = useRouter();
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({ name: "", mobile: "", projectType: "Balcony Design" });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const { error } = await supabase.from("leads").insert({ form_name: "Balcony Design Page Form", source_page: "/services/balcony-design", data: formData });
-      if (error) throw error;
-      trackAdsAction("lead", "Balcony Design Page Form");
-      router.push("/thank-you");
-    } catch (error) {
-      toast({ title: "Error", description: "Failed to submit. Please try again.", variant: "destructive" });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   // AEO schemas
   const aeoSchemas = [
@@ -90,7 +69,7 @@ const ServiceBalcony = () => {
       "Balcony Design",
       "Transform your balcony into a beautiful outdoor space. Vertical gardens, outdoor seating, terrace design, and weather-proof furniture .",
       "https://everyspaces.com/services/balcony-design",
-      "https://everyspaces.com/service-balcony.jpg",
+      bhk2Image,
       "20000-100000",
       {
         areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
@@ -106,7 +85,7 @@ const ServiceBalcony = () => {
     createProductSchema({
       name: "Balcony & Terrace Design",
       description: "Balcony transformation services  including vertical gardens, outdoor furniture, and terrace makeovers.",
-      image: "https://everyspaces.com/service-balcony.jpg",
+      image: bhk2Image,
       url: "https://everyspaces.com/services/balcony-design",
       priceRange: "20000-100000",
       category: "Home Improvement > Outdoor Living"
@@ -120,36 +99,7 @@ const ServiceBalcony = () => {
       <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Balcony Design" }]} />
       
       <main className="pb-24">
-        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
-          <div className="absolute inset-0 z-0">
-            <img src={imgSrc(bhk2Image)} alt="Balcony Design" className="w-full h-full object-cover scale-105" />
-            <div className="absolute inset-0 hero-overlay" />
-          </div>
-          <div className="relative z-10 container px-4">
-            <div className="max-w-4xl mx-auto text-center mb-6">
-              <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
-                Balcony & Terrace Design
-                <span className="block text-secondary mt-2"></span>
-              </h1>
-              <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Transform outdoor spaces into relaxing retreats with EverySpaces
-              </p>
-            </div>
-            <div className="max-w-sm mx-auto animate-fade-up delay-300">
-              <div className="glass-card rounded-3xl p-5 shadow-elevated">
-                <h2 className="font-display text-lg text-foreground text-center mb-4">Get Free Balcony Quote</h2>
-                <form onSubmit={handleSubmit} className="space-y-3">
-                  <input type="text" placeholder="Your Name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <input type="tel" placeholder="Mobile Number" value={formData.mobile} onChange={(e) => setFormData({ ...formData, mobile: e.target.value })} required pattern="[0-9]{10}" className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <input type="text" placeholder="Project Type (e.g., Balcony, Terrace Garden)" value={formData.projectType} onChange={(e) => setFormData({ ...formData, projectType: e.target.value })} required className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <button type="submit" disabled={isSubmitting} className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold">
-                    {isSubmitting ? "Submitting..." : "Get Free Quote"}
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ServiceHero title={"Balcony & Terrace Design"} description={"Transform outdoor spaces into relaxing retreats with EverySpaces"} image={bhk2Image} formName={"Balcony Design Page Form"} />
 
         <section className="py-12 md:py-16">
           <div className="container px-4">
@@ -193,7 +143,7 @@ const ServiceBalcony = () => {
         <RelatedServices currentSlug="balcony-design" />
         <RelatedLocalities currentSlug="indiranagar" />
 
-        <FAQSection />
+        <FAQSection faqs={balconyFAQs} />
 
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">

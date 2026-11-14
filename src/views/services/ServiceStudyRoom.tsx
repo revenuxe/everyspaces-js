@@ -1,13 +1,10 @@
 "use client";
 
-import { trackAdsAction } from "@/lib/google-ads";
+import ServiceHero from "@/components/ServiceHero";
+
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { ArrowRight, BookOpen, Lightbulb, Layers, Monitor } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
@@ -64,25 +61,7 @@ const studyRoomFAQs = [
 ];
 
 const ServiceStudyRoom = () => {
-  const router = useRouter();
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({ name: "", mobile: "", projectType: "Study Room" });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const { error } = await supabase.from("leads").insert({ form_name: "Study Room Design Page Form", source_page: "/services/study-room", data: formData });
-      if (error) throw error;
-      trackAdsAction("lead", "Study Room Design Page Form");
-      router.push("/thank-you");
-    } catch (error) {
-      toast({ title: "Error", description: "Failed to submit. Please try again.", variant: "destructive" });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   // AEO schemas
   const aeoSchemas = [
@@ -90,7 +69,7 @@ const ServiceStudyRoom = () => {
       "Study Room Design",
       "Ergonomic study room and study table designs . Kids study stations, bookshelves, and focused learning spaces with proper lighting.",
       "https://everyspaces.com/services/study-room",
-      "https://everyspaces.com/service-study-room.jpg",
+      bedroomImage,
       "15000-100000",
       {
         areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
@@ -106,7 +85,7 @@ const ServiceStudyRoom = () => {
     createProductSchema({
       name: "Study Room & Table Design",
       description: "Ergonomic study room designs  with study tables, bookshelves, and proper lighting for focused learning.",
-      image: "https://everyspaces.com/service-study-room.jpg",
+      image: bedroomImage,
       url: "https://everyspaces.com/services/study-room",
       priceRange: "15000-100000",
       category: "Home Improvement > Study Room"
@@ -120,36 +99,7 @@ const ServiceStudyRoom = () => {
       <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Study Room" }]} />
       
       <main className="pb-24">
-        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
-          <div className="absolute inset-0 z-0">
-            <img src={imgSrc(bedroomImage)} alt="Study Room Design" className="w-full h-full object-cover scale-105" />
-            <div className="absolute inset-0 hero-overlay" />
-          </div>
-          <div className="relative z-10 container px-4">
-            <div className="max-w-4xl mx-auto text-center mb-6">
-              <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
-                Study Room Design
-                <span className="block text-secondary mt-2"></span>
-              </h1>
-              <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Focused learning environments designed by EverySpaces experts
-              </p>
-            </div>
-            <div className="max-w-sm mx-auto animate-fade-up delay-300">
-              <div className="glass-card rounded-3xl p-5 shadow-elevated">
-                <h2 className="font-display text-lg text-foreground text-center mb-4">Get Free Study Room Quote</h2>
-                <form onSubmit={handleSubmit} className="space-y-3">
-                  <input type="text" placeholder="Your Name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <input type="tel" placeholder="Mobile Number" value={formData.mobile} onChange={(e) => setFormData({ ...formData, mobile: e.target.value })} required pattern="[0-9]{10}" className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <input type="text" placeholder="Project Type (e.g., Study Room, Library)" value={formData.projectType} onChange={(e) => setFormData({ ...formData, projectType: e.target.value })} required className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <button type="submit" disabled={isSubmitting} className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold">
-                    {isSubmitting ? "Submitting..." : "Get Free Quote"}
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ServiceHero title={"Study Room Design"} description={"Focused learning environments designed by EverySpaces experts"} image={bedroomImage} formName={"Study Room Design Page Form"} />
 
         <section className="py-12 md:py-16">
           <div className="container px-4">
@@ -193,7 +143,7 @@ const ServiceStudyRoom = () => {
         <RelatedServices currentSlug="study-room" />
         <RelatedLocalities currentSlug="rajajinagar" />
 
-        <FAQSection />
+        <FAQSection faqs={studyRoomFAQs} />
 
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">

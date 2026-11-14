@@ -73,6 +73,14 @@ export const POST_SLUGS_QUERY = groq`
   *[_type == "post" && published == true && defined(slug.current)][].slug.current
 `;
 
+export const POST_SITEMAP_QUERY = groq`
+  *[_type == "post" && published == true && defined(slug.current) && seo.noindex != true] {
+    "slug": slug.current,
+    "lastModified": _updatedAt,
+    "canonicalUrl": seo.canonicalUrl
+  }
+`;
+
 export const RELATED_POSTS_QUERY = groq`
   *[
     _type == "post" &&

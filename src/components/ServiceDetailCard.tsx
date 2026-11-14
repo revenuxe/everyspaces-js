@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import ServiceCard from "@/components/ServiceCard";
 import { imgSrc } from "@/lib/utils";
 
 const serviceLinks: Record<string, string> = {
@@ -39,17 +38,14 @@ export default function ServiceDetailCard({ title, description, image, href: exp
   const href = explicitHref ?? serviceLinks[title] ?? "/services";
 
   return (
-    <Link href={href} className="group relative block h-[190px] overflow-hidden rounded-[10px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary sm:h-[220px] lg:h-[250px]">
-      <img src={imgSrc(image)} alt={title} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-105" />
-      <div aria-hidden="true" className="absolute inset-0" style={{ background: "linear-gradient(to top, #003B29 0%, rgba(0,59,41,.92) 16%, rgba(0,59,41,.55) 38%, rgba(0,59,41,0) 72%)" }} />
-      <div className="absolute bottom-0 left-0 right-0 p-4 pr-11 md:p-5 md:pr-12">
-        <h3 className="font-display text-base font-medium leading-snug text-white md:text-xl">{title}</h3>
-        <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-white/85 md:text-sm">{description}</p>
-      </div>
-      <span className="absolute bottom-5 right-4 text-white transition-transform duration-300 motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5 md:right-5" aria-hidden="true">
-        <ArrowUpRight className="h-5 w-5" />
-      </span>
-      <span className="sr-only">Explore {title}</span>
-    </Link>
+    <div className="service-detail-card-slot">
+      <ServiceCard
+        title={title}
+        description={description}
+        image={image}
+        href={href}
+        sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+      />
+    </div>
   );
 }

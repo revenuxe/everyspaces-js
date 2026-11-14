@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/seo/create-page-metadata";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import KitchenLayoutPage from "@/components/KitchenLayoutPage";
@@ -15,12 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!item) return { robots: { index: false, follow: false } };
 
-  return {
-    title: `${item.title} in Bangalore | EverySpaces`,
-    description: `${item.description} Talk to EverySpaces for a tailored modular kitchen consultation in Bangalore.`,
-    // Both routes render the same layout; consolidate indexing on the service URL.
-    alternates: { canonical: `/services/modular-kitchen/${layout}` },
-  };
+  return createPageMetadata(`${item.title} in Bangalore | EverySpaces`, `${item.description} Talk to EverySpaces for a tailored modular kitchen consultation in Bangalore.`, `/services/modular-kitchen/${layout}`);
 }
 
 export default async function BangaloreKitchenLayoutPage({ params }: Props) {

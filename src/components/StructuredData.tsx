@@ -1,8 +1,22 @@
 import type { StaticImageData } from "next/image";
 import { imgSrc } from "@/lib/utils";
+import { absoluteUrl } from "@/lib/site-url";
 
 interface StructuredDataProps {
   data: object | object[];
+}
+
+function schemaImageUrl(image: string | StaticImageData) {
+  const src = imgSrc(image);
+  return src.startsWith("/") ? absoluteUrl(src) : src;
+}
+
+function priceSpecification(range: string) {
+  const values = range.split("-").map((value) => Number(value.trim()));
+  if (values.some((value) => !Number.isFinite(value) || value <= 0)) return {};
+  return values.length === 2
+    ? { minPrice: Math.min(...values), maxPrice: Math.max(...values) }
+    : { price: values[0] };
 }
 
 export const StructuredData = ({ data }: StructuredDataProps) => {
@@ -11,7 +25,9 @@ export const StructuredData = ({ data }: StructuredDataProps) => {
   return (
     <>
       {jsonLd.map((item, index) => (
-        <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }} />
+        <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(item, (_key, value) =>
+          typeof value === "string" ? value.replace(/^https?:\/\/(?:www\.)?everyspaces\.com(?=\/|$)/, "https://www.everyspaces.com") : value
+        ).replace(/</g, "\\u003c") }} />
       ))}
     </>
   );
@@ -265,7 +281,7 @@ export const createServiceSchema = (
   "name": name,
   "description": description,
   "url": url,
-  "image": image !== undefined ? imgSrc(image) : undefined,
+  "image": image !== undefined ? schemaImageUrl(image) : undefined,
   "provider": {
     "@id": "https://www.everyspaces.com/#organization"
   },
@@ -283,7 +299,7 @@ export const createServiceSchema = (
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "INR",
-      "price": priceRange
+      ...priceSpecification(priceRange)
     }
   } : undefined,
   "hasOfferCatalog": additionalInfo?.features ? {
@@ -316,13 +332,13 @@ export const createArticleSchema = (article: {
   "headline": article.title,
   "description": article.description,
   "url": article.url,
-  "image": article.image !== undefined ? imgSrc(article.image) : undefined,
+  "image": article.image !== undefined ? schemaImageUrl(article.image) : undefined,
   "datePublished": article.datePublished,
   "dateModified": article.dateModified || article.datePublished,
   "author": {
     "@type": "Person",
     "name": article.author || "EverySpaces Design Team",
-    "url": "https://www.everyspaces.com/about"
+    "url": "https://www.everyspaces.com/about-us"
   },
   "publisher": {
     "@id": "https://www.everyspaces.com/#organization"
@@ -404,7 +420,7 @@ export const createProductSchema = (product: {
   "@id": `${product.url}#service-offer`,
   "name": product.name,
   "description": product.description,
-  "image": imgSrc(product.image),
+  "image": schemaImageUrl(product.image),
   "url": product.url,
   "serviceType": product.category,
   "provider": {
@@ -413,8 +429,7 @@ export const createProductSchema = (product: {
   "offers": {
     "@type": "Offer",
     "priceCurrency": "INR",
-    "price": product.priceRange.split("-")[0],
-    "availability": "https://schema.org/InStock",
+    "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "INR", ...priceSpecification(product.priceRange) },
     "offeredBy": {
       "@id": "https://www.everyspaces.com/#organization"
     }

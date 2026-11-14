@@ -1,3 +1,7 @@
+"use client";
+
+import HeroSection from "@/components/HeroSection";
+import { usePathname } from "next/navigation";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import Image, { type StaticImageData } from "next/image";
 import { PhoneCall } from "lucide-react";
@@ -29,6 +33,8 @@ export default function PageHero({
   secondaryHref = "/portfolio",
   minimal = false,
 }: PageHeroProps) {
+  const pathname = usePathname() ?? "/";
+  if (!minimal) return <HeroSection headingPrefix={title} locationLabel="" description={description} image={image} imageAlt={imageAlt} primaryLabel={primaryLabel} primaryHref={primaryHref} sourcePage={pathname} formName={`${title} Quote Form`} />;
   const heroHeight = minimal ? "min-h-[260px] md:min-h-[320px]" : "md:min-h-[500px]";
   const contentLayout = minimal
     ? "min-h-[260px] items-center px-5 py-20 md:min-h-[320px] md:px-8"
@@ -41,7 +47,7 @@ export default function PageHero({
       <div className={`container relative z-20 flex ${contentLayout}`}>
         <div className="max-w-2xl">
           <h1 className="hero-display max-w-[650px] text-[2.8rem] leading-[.98] text-primary-foreground sm:text-5xl md:text-[3.6rem]">{title}</h1>
-          {!minimal && <><p className="mt-6 max-w-xl text-base leading-7 text-primary-foreground/90 md:text-lg">{description}</p><div className="hero-cta-row mt-8"><a href={primaryHref} target="_blank" rel="noopener noreferrer" className="hero-cta-primary group inline-flex items-center gap-3 bg-secondary py-4 text-sm font-semibold text-secondary-foreground shadow-[0_10px_22px_-12px_rgb(194_74_8_/_72%)] transition-all hover:-translate-y-0.5"><WhatsAppIcon />{primaryLabel}</a><a href="tel:+919886579923" className="hero-cta-secondary group inline-flex items-center gap-2 whitespace-nowrap border border-white/20 bg-black/35 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-black/50"><PhoneCall className="h-4 w-4" /> Call Now</a></div></>}
+          {!minimal && <><p className="mt-6 max-w-xl text-base leading-7 text-primary-foreground/90 md:text-lg">{description}</p><div className="hero-cta-row mt-8"><a href={primaryHref} target="_blank" rel="noopener noreferrer" className="hero-cta-primary group inline-flex items-center gap-3 bg-secondary py-4 text-sm font-semibold text-secondary-foreground shadow-[0_10px_22px_-12px_rgb(1_55_32_/_32%)] transition-all hover:-translate-y-0.5"><WhatsAppIcon />{primaryLabel}</a><a href="tel:+919886579923" className="hero-cta-secondary group inline-flex items-center gap-2 whitespace-nowrap border border-white/20 bg-black/35 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-black/50"><PhoneCall className="h-4 w-4" /> Call Now</a></div></>}
         </div>
       </div>
     </section>

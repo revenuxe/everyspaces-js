@@ -1,13 +1,10 @@
 "use client";
 
-import { trackAdsAction } from "@/lib/google-ads";
+import ServiceHero from "@/components/ServiceHero";
+
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
@@ -104,44 +101,7 @@ const villaFAQs = [
 ];
 
 const ServiceVilla = () => {
-  const router = useRouter();
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    mobile: "",
-    projectType: "Villa",
-  });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const { error } = await supabase.from("leads").insert({
-        form_name: "Villa Interior Page Form",
-        source_page: "/services/villa-interiors",
-        data: {
-          name: formData.name,
-          mobile: formData.mobile,
-          projectType: formData.projectType,
-        },
-      });
-
-      if (error) throw error;
-      trackAdsAction("lead", "Villa Interior Page Form");
-      router.push("/thank-you");
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      toast({
-        title: "Error",
-        description: "Failed to submit form. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   // AEO schemas
   const aeoSchemas = [
@@ -149,7 +109,7 @@ const ServiceVilla = () => {
       "Villa Interior Design",
       "Luxury villa and bungalow interior design  with bespoke designs, imported finishes, home theatre, and smart home integration.",
       "https://everyspaces.com/services/villa-interiors",
-      "https://everyspaces.com/service-villa.jpg",
+      villaImage,
       "2500000-7500000",
       {
         areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
@@ -165,7 +125,7 @@ const ServiceVilla = () => {
     createProductSchema({
       name: "Luxury Villa Interior Design",
       description: "Complete villa interior design  with bespoke designs, imported finishes, and smart home integration. 90-120 day delivery.",
-      image: "https://everyspaces.com/service-villa.jpg",
+      image: villaImage,
       url: "https://everyspaces.com/services/villa-interiors",
       priceRange: "2500000-7500000",
       category: "Home Improvement > Luxury Villa Interior"
@@ -180,77 +140,7 @@ const ServiceVilla = () => {
       
       <main className="pb-24">
         {/* Hero Section */}
-        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
-          <div className="absolute inset-0 z-0">
-            <img
-              src={imgSrc(villaImage)}
-              alt="Villa Interior Design"
-              decoding="async"
-              fetchPriority="high"
-              className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
-            />
-            <div className="absolute inset-0 hero-overlay" />
-          </div>
-
-          <div className="relative z-10 container px-4">
-            <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
-              <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 md:mb-4 animate-fade-up tracking-[-0.03em] md:leading-[1.2]">
-                Villa Interior Design
-                <span className="block text-secondary tracking-[-0.02em] md:mt-2"></span>
-              </h1>
-              <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Luxury living spaces crafted for the most discerning homeowners
-              </p>
-            </div>
-
-            {/* Floating Lead Card */}
-            <div className="max-w-sm mx-auto animate-fade-up delay-300">
-              <div className="glass-card rounded-3xl p-5 md:p-6 shadow-elevated">
-                <h2 className="font-display text-lg md:text-xl text-foreground text-center mb-4 tracking-[-0.02em]">
-                  Get Free Villa Consultation
-                </h2>
-
-                <form onSubmit={handleSubmit} className="space-y-3">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                    className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm"
-                  />
-                  <input
-                    type="tel"
-                    placeholder="Mobile Number"
-                    value={formData.mobile}
-                    onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                    required
-                    pattern="[0-9]{10}"
-                    className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Project Type (e.g., Villa, Duplex, Bungalow)"
-                    value={formData.projectType}
-                    onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    required
-                    className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm"
-                  />
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold font-body text-base shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50"
-                  >
-                    {isSubmitting ? "Submitting..." : "Get Free Design Quote"}
-                  </button>
-                </form>
-                <p className="text-center text-xs text-muted-foreground mt-4 font-body">
-                  No spam. We respect your privacy.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ServiceHero title={"Villa Interior Design"} description={"Luxury living spaces crafted for the most discerning homeowners"} image={villaImage} formName={"Villa Interior Page Form"} />
 
         {/* Design Elements */}
         <section className="py-12 md:py-16">
@@ -319,7 +209,7 @@ const ServiceVilla = () => {
         <RelatedServices currentSlug="villa-interiors" />
         <RelatedLocalities currentSlug="sadashivanagar" />
 
-        <FAQSection />
+        <FAQSection faqs={villaFAQs} />
 
         {/* CTA */}
         <section className="py-12 md:py-16 bg-muted/30">

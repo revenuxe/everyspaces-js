@@ -5,7 +5,7 @@ import {
   SERVICE_SITEMAP_ENTRIES,
 } from "@/seo/static-sitemap-paths";
 import { BANGALORE_LOCALITY_SLUGS } from "@/seo/bangalore-locality-slugs";
-import { getPublishedPostSlugs } from "@/sanity/lib/posts";
+import { getSitemapPosts } from "@/sanity/lib/posts";
 
 /** Regenerate sitemap periodically so new articles appear without redeploying. */
 export const revalidate = 3600;
@@ -29,10 +29,13 @@ function toSitemapRow(
 
 async function fetchPublishedArticleUrls(): Promise<MetadataRoute.Sitemap> {
   try {
-    const slugs = await getPublishedPostSlugs();
-    if (!slugs.length) return [];
-    return slugs.map((slug) => toSitemapRow(`/articles/${slug}`, "weekly", 0.78));
-  } catch {
+    const posts = await getSitemapPosts();
+    return posts.filter((post) => {
+      const ownUrl = absoluteUrl(`/articles/${post.slug}`);
+      return !post.canonicalUrl || new URL(post.canonicalUrl, absoluteUrl("/")).href === ownUrl;
+    }).map((post) => toSitemapRow(`/articles/${post.slug}`, "weekly", 0.78, new Date(post.lastModified)));
+  } catch (error) {
+    console.error("Unable to load article sitemap entries", error);
     return [];
   }
 }
@@ -46,6 +49,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const articleRows = await fetchPublishedArticleUrls();
 
-  return [...staticRows, ...articleRows];
+  return [...new Map([...staticRows, ...articleRows].map((row) => [row.url, row])).values()];
 }
 

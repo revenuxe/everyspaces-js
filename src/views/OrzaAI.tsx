@@ -276,20 +276,9 @@ const OrzaAI = () => {
           "applicationCategory": "DesignApplication",
           "operatingSystem": "Web",
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
-          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "520", "bestRating": "5" },
           "creator": { "@type": "Organization", "name": "EverySpaces Interior Design", "url": "https://everyspaces.com" },
           "browserRequirements": "Requires JavaScript. Works on all modern browsers.",
           "featureList": "AI-Powered Recommendations, Budget Planning, Material Suggestions, Color Palette, Timeline Estimation, Mood Board Generation"
-        },
-        {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "@id": "https://everyspaces.com/orza-ai#faq",
-          "mainEntity": [
-            { "@type": "Question", "name": "Is Orza AI free to use?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Orza AI is 100% free. Get personalized interior design recommendations without any cost." }},
-            { "@type": "Question", "name": "How does Orza AI work?", "acceptedAnswer": { "@type": "Answer", "text": "Answer a few quick questions about your space, budget, and style preferences. Orza AI generates a complete design recommendation with colors, materials, furniture, and budget breakdown in under 2 minutes." }},
-            { "@type": "Question", "name": "What spaces can Orza AI design?", "acceptedAnswer": { "@type": "Answer", "text": "Orza AI covers modular kitchens, bedrooms, living rooms, wardrobes, TV units, pooja rooms, kids rooms, study rooms, bathrooms, balconies, and full home interiors." }}
-          ]
         },
         {
           "@context": "https://schema.org",
@@ -327,6 +316,7 @@ const OrzaAI = () => {
         )}
       </div>
 
+      <h1 className="shrink-0 px-4 pt-3 text-base font-semibold text-primary">Your interior design advisor</h1>
       {/* Messages area */}
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 pt-4 pb-4 space-y-3">
         <AnimatePresence initial={false}>

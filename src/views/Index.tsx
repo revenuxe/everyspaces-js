@@ -36,7 +36,7 @@ const Index = () => {
       <Header />
       <main className="minimal-home">
         <HeroSection />
-        <HomePageSections />
+        <HomePageSections faqs={commonFAQs} />
       </main>
       <Footer />
       <BottomNav />

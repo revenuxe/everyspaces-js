@@ -149,6 +149,17 @@ export default async function ArticlePage({
             <p className="text-muted-foreground">Content is being updated for this article.</p>
           )}
 
+          {post.seo?.faqBlocks?.length ? (
+            <section className="mt-10" aria-labelledby="article-faq-heading">
+              <h2 id="article-faq-heading" className="mb-5 text-2xl font-semibold text-primary">Frequently asked questions</h2>
+              <dl className="space-y-5">
+                {post.seo.faqBlocks.map((faq, index) => <div key={index}>
+                  <dt className="font-semibold text-primary">{faq.question}</dt>
+                  <dd className="mt-2 leading-7 text-muted-foreground">{faq.answer}</dd>
+                </div>)}
+              </dl>
+            </section>
+          ) : null}
           <section className="mt-10 p-6 rounded-2xl bg-muted/30 border">
             <h2 className="text-xl font-semibold mb-2">Need help with your Bangalore home interior?</h2>
             <p className="text-muted-foreground mb-4">

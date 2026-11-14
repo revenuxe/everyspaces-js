@@ -1,5 +1,7 @@
 "use client";
 
+import FAQSection from "@/components/FAQSection";
+
 import { imgSrc } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
@@ -173,6 +175,7 @@ const Services = () => {
             </a>
           </div>
         </section>
+        <FAQSection faqs={servicesFAQs} />
       </main>
 
       <Footer />

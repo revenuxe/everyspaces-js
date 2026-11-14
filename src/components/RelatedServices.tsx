@@ -1,5 +1,7 @@
 "use client";
 
+import ServiceCard from "@/components/ServiceCard";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -12,29 +14,29 @@ import tvUnitImage from "@/assets/service-tv-unit.jpg";
 import poojaImage from "@/assets/service-pooja-room.jpg";
 import villaImage from "@/assets/service-villa.jpg";
 import bhk2Image from "@/assets/service-2bhk.jpg";
-import { imgSrc } from "@/lib/utils";
+
 
 const allServices = [
-  { slug: "modular-kitchen", title: "Modular Kitchen", image: kitchenImage },
-  { slug: "bedroom-design", title: "Bedroom Design", image: bedroomImage },
-  { slug: "living-room", title: "Living Room", image: livingImage },
-  { slug: "wardrobe-design", title: "Wardrobe Design", image: wardrobeImage },
-  { slug: "2bhk-interiors", title: "2 BHK Interiors", image: bhk2Image },
-  { slug: "3bhk-interiors", title: "3 BHK Interiors", image: villaImage },
-  { slug: "villa-interiors", title: "Villa Interiors", image: villaImage },
-  { slug: "full-home-design", title: "Full Home Design", image: bhk2Image },
-  { slug: "tv-unit", title: "TV Unit", image: tvUnitImage },
-  { slug: "pooja-room", title: "Pooja Room", image: poojaImage },
-  { slug: "home-office", title: "Home Office", image: bedroomImage },
-  { slug: "kids-room", title: "Kids Room", image: wardrobeImage },
-  { slug: "dining-room", title: "Dining Room", image: livingImage },
-  { slug: "bathroom-design", title: "Bathroom Design", image: kitchenImage },
-  { slug: "foyer-entrance", title: "Foyer & Entrance", image: villaImage },
-  { slug: "false-ceiling", title: "False Ceiling", image: livingImage },
-  { slug: "crockery-unit", title: "Crockery Unit", image: kitchenImage },
-  { slug: "study-room", title: "Study Room", image: bedroomImage },
-  { slug: "guest-room", title: "Guest Room", image: wardrobeImage },
-  { slug: "balcony-design", title: "Balcony Design", image: bhk2Image },
+  { slug: "modular-kitchen", title: "Modular Kitchen", image: kitchenImage, description: "Smart layouts, thoughtful storage, and room to create." },
+  { slug: "bedroom-design", title: "Bedroom Design", image: bedroomImage, description: "Restful spaces designed around your daily rituals." },
+  { slug: "living-room", title: "Living Room", image: livingImage, description: "Comfortable gathering spaces with a personal touch." },
+  { slug: "wardrobe-design", title: "Wardrobe Design", image: wardrobeImage, description: "Beautifully organized storage, tailored to your space." },
+  { slug: "2bhk-interiors", title: "2 BHK Interiors", image: bhk2Image, description: "Thoughtful interiors that make every corner count." },
+  { slug: "3bhk-interiors", title: "3 BHK Interiors", image: villaImage, description: "Room to live beautifully, with a cohesive design." },
+  { slug: "villa-interiors", title: "Villa Interiors", image: villaImage, description: "Distinctive interiors for generous, individual homes." },
+  { slug: "full-home-design", title: "Full Home Design", image: bhk2Image, description: "A complete design story, from entrance to bedroom." },
+  { slug: "tv-unit", title: "TV Unit", image: tvUnitImage, description: "Clean lines and clever storage for entertainment." },
+  { slug: "pooja-room", title: "Pooja Room", image: poojaImage, description: "A peaceful space for your everyday rituals." },
+  { slug: "home-office", title: "Home Office", image: bedroomImage, description: "A focused workspace that feels at home." },
+  { slug: "kids-room", title: "Kids Room", image: wardrobeImage, description: "Playful spaces with room to learn and grow." },
+  { slug: "dining-room", title: "Dining Room", image: livingImage, description: "Welcoming settings for shared meals and moments." },
+  { slug: "bathroom-design", title: "Bathroom Design", image: kitchenImage, description: "Calm finishes and practical everyday comfort." },
+  { slug: "foyer-entrance", title: "Foyer & Entrance", image: villaImage, description: "A thoughtful welcome, with storage built in." },
+  { slug: "false-ceiling", title: "False Ceiling", image: livingImage, description: "Layered details and lighting to frame your rooms." },
+  { slug: "crockery-unit", title: "Crockery Unit", image: kitchenImage, description: "Elegant storage for the pieces you love." },
+  { slug: "study-room", title: "Study Room", image: bedroomImage, description: "Comfortable, organized spaces for focused learning." },
+  { slug: "guest-room", title: "Guest Room", image: wardrobeImage, description: "A warm welcome for everyone who stays." },
+  { slug: "balcony-design", title: "Balcony Design", image: bhk2Image, description: "Fresh ideas for your own outdoor retreat." },
 ];
 
 interface RelatedServicesProps {
@@ -52,51 +54,22 @@ const RelatedServices = ({ currentSlug }: RelatedServicesProps) => {
     .slice(0, 4);
 
   return (
-    <section className="py-12 md:py-16">
-      <div className="container px-4">
-        <div className="text-center mb-8">
-          <h2 className="font-display text-2xl md:text-3xl text-primary mb-2">
-            Explore More Services
-          </h2>
-          <p className="text-muted-foreground font-body">
-            Complete your home with our other interior design services
-          </p>
+    <section className="related-services" aria-labelledby="related-services-heading">
+      <div className="related-services__inner">
+        <div className="related-services__header">
+          <div>
+            <p className="related-services__eyebrow">Thoughtfully designed, room by room</p>
+            <h2 id="related-services-heading">More spaces. More possibilities.</h2>
+            <p className="related-services__intro">Bring the rest of your home together with interiors made for the way you live.</p>
+          </div>
+          <Link href={servicesBasePath} className="related-services__all">
+            View all services <ArrowRight aria-hidden="true" className="h-4 w-4" />
+          </Link>
         </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="related-services__grid">
           {relatedServices.map((service) => (
-            <a
-              key={service.slug}
-              href={`${servicesBasePath}/${service.slug}`}
-              className="group relative overflow-hidden rounded-2xl aspect-[3/4]"
-            >
-              <img
-                src={imgSrc(service.image)}
-                alt={service.title}
-                loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-foreground/60 mix-blend-multiply" />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 pr-14 flex items-end justify-between">
-                <h3 className="font-display text-sm md:text-base text-primary-foreground leading-tight">
-                  {service.title}
-                </h3>
-              </div>
-              <div className="absolute bottom-4 right-4 w-9 h-9 bg-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                <ArrowRight className="w-4 h-4 text-secondary-foreground" />
-              </div>
-            </a>
+            <ServiceCard key={service.slug} href={servicesBasePath + "/" + service.slug} title={service.title} description={service.description} image={service.image} sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw" />
           ))}
-        </div>
-
-        <div className="text-center mt-8">
-          <a
-            href={servicesBasePath}
-            className="inline-flex items-center gap-2 text-secondary font-medium hover:underline"
-          >
-            View All Services <ArrowRight className="w-4 h-4" />
-          </a>
         </div>
       </div>
     </section>

@@ -5,9 +5,16 @@ import {
   ALL_PUBLISHED_POSTS_QUERY,
   POST_BY_SLUG_QUERY,
   POST_SLUGS_QUERY,
+  POST_SITEMAP_QUERY,
   RELATED_POSTS_QUERY,
 } from "@/sanity/lib/queries";
 import type { SanityPost } from "@/sanity/lib/types";
+
+export const getSitemapPosts = cache(async (): Promise<{ slug: string; lastModified: string; canonicalUrl?: string }[]> => {
+  if (!hasSanityConfig()) return [];
+  const data = await sanityFetch<{ slug: string; lastModified: string; canonicalUrl?: string }[]>(POST_SITEMAP_QUERY);
+  return Array.isArray(data) ? data : [];
+});
 
 export const getPublishedPosts = cache(async (): Promise<SanityPost[]> => {
   if (!hasSanityConfig()) return [];

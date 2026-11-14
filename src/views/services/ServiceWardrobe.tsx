@@ -1,12 +1,9 @@
 "use client";
 
-import { trackAdsAction } from "@/lib/google-ads";
+import ServiceHero from "@/components/ServiceHero";
+
 import { imgSrc } from "@/lib/utils";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { ArrowRight, Shirt, DoorOpen, Layers, Sparkles } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
@@ -63,29 +60,7 @@ const wardrobeFAQs = [
 ];
 
 const ServiceWardrobe = () => {
-  const router = useRouter();
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({ name: "", mobile: "", projectType: "Sliding Wardrobe" });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const { error } = await supabase.from("leads").insert({
-        form_name: "Wardrobe Design Page Form",
-        source_page: "/services/wardrobe-design",
-        data: formData,
-      });
-      if (error) throw error;
-      trackAdsAction("lead", "Wardrobe Design Page Form");
-      router.push("/thank-you");
-    } catch (error) {
-      toast({ title: "Error", description: "Failed to submit. Please try again.", variant: "destructive" });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   // AEO schemas
   const aeoSchemas = [
@@ -93,7 +68,7 @@ const ServiceWardrobe = () => {
       "Wardrobe Design",
       "Custom wardrobe designers  offering sliding wardrobes, walk-in closets, and loft storage with Hettich hardware and 10-year warranty.",
       "https://everyspaces.com/services/wardrobe-design",
-      "https://everyspaces.com/service-wardrobe.jpg",
+      wardrobeImage,
       "70000-500000",
       {
         areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
@@ -109,7 +84,7 @@ const ServiceWardrobe = () => {
     createProductSchema({
       name: "Custom Wardrobe Design",
       description: "Premium wardrobe design and installation  with sliding, hinged, and walk-in options. Includes Hettich/Hafele hardware and 10-year warranty.",
-      image: "https://everyspaces.com/service-wardrobe.jpg",
+      image: wardrobeImage,
       url: "https://everyspaces.com/services/wardrobe-design",
       priceRange: "70000-500000",
       category: "Home Improvement > Bedroom Furniture"
@@ -123,36 +98,7 @@ const ServiceWardrobe = () => {
       <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Wardrobe Design" }]} />
       
       <main className="pb-24">
-        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
-          <div className="absolute inset-0 z-0">
-            <img src={imgSrc(wardrobeImage)} alt="Wardrobe Design" className="w-full h-full object-cover scale-105" />
-            <div className="absolute inset-0 hero-overlay" />
-          </div>
-          <div className="relative z-10 container px-4">
-            <div className="max-w-4xl mx-auto text-center mb-6">
-              <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
-                Custom Wardrobe Design
-                <span className="block text-secondary mt-2"></span>
-              </h1>
-              <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Maximize storage with EverySpaces's smart wardrobe solutions
-              </p>
-            </div>
-            <div className="max-w-sm mx-auto animate-fade-up delay-300">
-              <div className="glass-card rounded-3xl p-5 shadow-elevated">
-                <h2 className="font-display text-lg text-foreground text-center mb-4">Get Free Wardrobe Quote</h2>
-                <form onSubmit={handleSubmit} className="space-y-3">
-                  <input type="text" placeholder="Your Name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <input type="tel" placeholder="Mobile Number" value={formData.mobile} onChange={(e) => setFormData({ ...formData, mobile: e.target.value })} required pattern="[0-9]{10}" className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <input type="text" placeholder="Project Type (e.g., Sliding, Walk-in Closet)" value={formData.projectType} onChange={(e) => setFormData({ ...formData, projectType: e.target.value })} required className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <button type="submit" disabled={isSubmitting} className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold">
-                    {isSubmitting ? "Submitting..." : "Get Free Quote"}
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ServiceHero title={"Custom Wardrobe Design"} description={"Maximize storage with EverySpaces's smart wardrobe solutions"} image={wardrobeImage} formName={"Wardrobe Design Page Form"} />
 
         <section className="py-12 md:py-16">
           <div className="container px-4">
@@ -196,7 +142,7 @@ const ServiceWardrobe = () => {
         <RelatedServices currentSlug="wardrobe-design" />
         <RelatedLocalities currentSlug="indiranagar" />
 
-        <FAQSection />
+        <FAQSection faqs={wardrobeFAQs} />
 
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">

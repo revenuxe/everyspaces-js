@@ -1,3 +1,4 @@
+import { PAGE_METADATA } from "@/seo/pages-metadata";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ALL_SERVICE_SLUGS, SERVICE_COMPONENTS } from "@/views/services/serviceRouteMap";
@@ -19,17 +20,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { service } = await params;
   if (!SERVICE_COMPONENTS[service]) return {};
 
-  const serviceName = titleFromSlug(service);
-  const canonical = `/services/${service}`;
-  return {
-    title: `${serviceName} Interior Design in Bangalore | EverySpaces`,
-    description: `${serviceName} interior design services in Bangalore by EverySpaces. Custom design, transparent pricing, and end-to-end execution.`,
-    alternates: { canonical },
-    openGraph: {
-      title: `${serviceName} Interior Design in Bangalore | EverySpaces`,
-      url: canonical,
-    },
-  };
+  return PAGE_METADATA[`/services/${service}`] ?? {};
 }
 
 export default async function BangaloreServicePage({ params }: { params: Params }) {

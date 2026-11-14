@@ -1,5 +1,7 @@
 "use client";
 
+import FAQSection from "@/components/FAQSection";
+
 import { trackAdsAction } from "@/lib/google-ads";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -326,6 +328,7 @@ const Contact = () => {
             </div>
           </div>
         </section>
+        <FAQSection faqs={contactFAQs} />
       </main>
 
       <Footer />

@@ -1,12 +1,10 @@
 "use client";
 
-import { trackAdsAction } from "@/lib/google-ads";
+import ServiceHero from "@/components/ServiceHero";
+
 import { imgSrc } from "@/lib/utils";
-import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
@@ -20,8 +18,7 @@ import {
   createServiceSchema, 
   createBreadcrumbSchema,
   createFAQSchema,
-  createProductSchema,
-  createQASchema
+  createProductSchema
 } from "@/components/StructuredData";
 
 import kitchenImage from "@/assets/service-modular-kitchen.jpg";
@@ -82,46 +79,9 @@ const kitchenFeatures = [
 ];
 
 const ServiceModularKitchen = () => {
-  const router = useRouter();
   const pathname = usePathname() ?? "";
   const kitchenLayoutsBasePath = "/services/modular-kitchen";
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    mobile: "",
-    projectType: "Modular Kitchen",
-  });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const { error } = await supabase.from("leads").insert({
-        form_name: "Modular Kitchen Page Form",
-        source_page: "/services/modular-kitchen",
-        data: {
-          name: formData.name,
-          mobile: formData.mobile,
-          projectType: formData.projectType,
-        },
-      });
-
-      if (error) throw error;
-      trackAdsAction("lead", "Modular Kitchen Page Form");
-      router.push("/thank-you");
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      toast({
-        title: "Error",
-        description: "Failed to submit form. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   // AEO-optimized FAQs specific to modular kitchens
   const modularKitchenFAQs = [
@@ -149,7 +109,7 @@ const ServiceModularKitchen = () => {
       "Modular Kitchen Design",
       "Best modular kitchen designers  offering L-shaped, U-shaped, parallel, and island kitchens with Hettich hardware, 10-year warranty, and 45-day delivery.",
       "https://everyspaces.com/services/modular-kitchen",
-      "https://everyspaces.com/service-modular-kitchen.jpg",
+      kitchenImage,
       "150000-800000",
       {
         timeRequired: "P20D",
@@ -166,16 +126,11 @@ const ServiceModularKitchen = () => {
     createProductSchema({
       name: "Modular Kitchen Design",
       description: "Premium modular kitchen design and installation  with L-shaped, U-shaped, and island layouts. Includes Hettich/Hafele hardware, granite countertops, and 10-year warranty.",
-      image: "https://everyspaces.com/service-modular-kitchen.jpg",
+      image: kitchenImage,
       url: "https://everyspaces.com/services/modular-kitchen",
       priceRange: "150000-800000",
       category: "Home Improvement > Kitchen"
-    }),
-    createQASchema(
-      "What is the best modular kitchen design for small kitchen ?",
-      "For small kitchens , L-shaped or straight modular kitchen designs work best. EverySpaces specializes in space-saving solutions with corner units, tall units, and pull-out storage. Starting from ₹2.5 lakh with 10-year warranty.",
-      "https://everyspaces.com/services/modular-kitchen"
-    )
+    })
   ];
 
   return (
@@ -186,77 +141,7 @@ const ServiceModularKitchen = () => {
       
       <main className="pb-24">
         {/* Hero Section */}
-        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
-          <div className="absolute inset-0 z-0">
-            <img
-              src={imgSrc(kitchenImage)}
-              alt="Modular Kitchen Design"
-              decoding="async"
-              fetchPriority="high"
-              className="w-full h-full object-cover scale-105 animate-[pulse_20s_ease-in-out_infinite] will-change-transform"
-            />
-            <div className="absolute inset-0 hero-overlay" />
-          </div>
-
-          <div className="relative z-10 container px-4">
-            <div className="max-w-4xl mx-auto text-center mb-6 md:mb-8">
-              <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 md:mb-4 animate-fade-up tracking-[-0.03em] md:leading-[1.2]">
-                Modular Kitchen Design
-                <span className="block text-secondary tracking-[-0.02em] md:mt-2"></span>
-              </h1>
-              <p className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Smart, stylish kitchens designed for the modern home
-              </p>
-            </div>
-
-            {/* Floating Lead Card */}
-            <div className="max-w-sm mx-auto animate-fade-up delay-300">
-              <div className="glass-card rounded-3xl p-5 md:p-6 shadow-elevated">
-                <h2 className="font-display text-lg md:text-xl text-foreground text-center mb-4 tracking-[-0.02em]">
-                  Get Free Kitchen Design Quote
-                </h2>
-
-                <form onSubmit={handleSubmit} className="space-y-3">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                    className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm"
-                  />
-                  <input
-                    type="tel"
-                    placeholder="Mobile Number"
-                    value={formData.mobile}
-                    onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                    required
-                    pattern="[0-9]{10}"
-                    className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Kitchen Type (e.g., L-Shaped, U-Shaped, Island)"
-                    value={formData.projectType}
-                    onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    required
-                    className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground focus:outline-none focus:border-secondary focus:bg-background transition-all duration-300 font-body text-sm"
-                  />
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold font-body text-base shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50"
-                  >
-                    {isSubmitting ? "Submitting..." : "Get Free Kitchen Quote"}
-                  </button>
-                </form>
-                <p className="text-center text-xs text-muted-foreground mt-4 font-body">
-                  No spam. We respect your privacy.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ServiceHero title={"Modular Kitchen Design"} description={"Smart, stylish kitchens designed for the modern home"} image={kitchenImage} formName={"Modular Kitchen Page Form"} />
 
         {/* Kitchen Types */}
         <section className="py-12 md:py-16">
@@ -325,7 +210,7 @@ const ServiceModularKitchen = () => {
         <RelatedServices currentSlug="modular-kitchen" />
         <RelatedLocalities currentSlug="koramangala" />
 
-        <FAQSection />
+        <FAQSection faqs={modularKitchenFAQs} />
 
         {/* CTA */}
         <section className="py-12 md:py-16 bg-muted/30">

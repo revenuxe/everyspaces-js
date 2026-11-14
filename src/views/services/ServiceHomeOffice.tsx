@@ -1,13 +1,10 @@
 "use client";
 
-import { trackAdsAction } from "@/lib/google-ads";
+import ServiceHero from "@/components/ServiceHero";
+
 import { imgSrc } from "@/lib/utils";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { ArrowRight, Monitor, Lightbulb, BookOpen, Wifi } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
@@ -64,29 +61,7 @@ const homeOfficeFAQs = [
 ];
 
 const ServiceHomeOffice = () => {
-  const router = useRouter();
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({ name: "", mobile: "", projectType: "Home Office" });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const { error } = await supabase.from("leads").insert({
-        form_name: "Home Office Design Page Form",
-        source_page: "/services/home-office",
-        data: formData,
-      });
-      if (error) throw error;
-      trackAdsAction("lead", "Home Office Design Page Form");
-      router.push("/thank-you");
-    } catch (error) {
-      toast({ title: "Error", description: "Failed to submit. Please try again.", variant: "destructive" });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   // AEO schemas
   const aeoSchemas = [
@@ -94,7 +69,7 @@ const ServiceHomeOffice = () => {
       "Home Office Design",
       "Productivity-focused home office designs . Ergonomic workstations, study rooms, and WFH setups with proper lighting and storage.",
       "https://everyspaces.com/services/home-office",
-      "https://everyspaces.com/service-home-office.jpg",
+      bedroomImage,
       "30000-200000",
       {
         areaServed: ["Bangalore", "Whitefield", "Indiranagar", "Koramangala", "HSR Layout", "Sarjapur Road", "Bellandur", "Electronic City"],
@@ -110,7 +85,7 @@ const ServiceHomeOffice = () => {
     createProductSchema({
       name: "Home Office Interior Design",
       description: "Professional home office designs  with ergonomic furniture, task lighting, and tech integration for productive WFH.",
-      image: "https://everyspaces.com/service-home-office.jpg",
+      image: bedroomImage,
       url: "https://everyspaces.com/services/home-office",
       priceRange: "30000-200000",
       category: "Home Improvement > Home Office"
@@ -124,36 +99,7 @@ const ServiceHomeOffice = () => {
       <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Home Office" }]} />
       
       <main className="pb-24">
-        <section className="service-hero relative min-h-[100dvh] flex items-start overflow-hidden pt-20 pb-24 md:items-center md:py-20 md:pt-24">
-          <div className="absolute inset-0 z-0">
-            <img src={imgSrc(bedroomImage)} alt="Home Office Design" className="w-full h-full object-cover scale-105" />
-            <div className="absolute inset-0 hero-overlay" />
-          </div>
-          <div className="relative z-10 container px-4">
-            <div className="max-w-4xl mx-auto text-center mb-6">
-              <h1 className="font-display text-3xl md:text-5xl lg:text-6xl text-primary-foreground mb-3 animate-fade-up">
-                Home Office Design
-                <span className="block text-secondary mt-2"></span>
-              </h1>
-              <p className="text-base md:text-lg text-primary-foreground/80 max-w-xl mx-auto animate-fade-up delay-200">
-                Create your perfect productivity space with EverySpaces
-              </p>
-            </div>
-            <div className="max-w-sm mx-auto animate-fade-up delay-300">
-              <div className="glass-card rounded-3xl p-5 shadow-elevated">
-                <h2 className="font-display text-lg text-foreground text-center mb-4">Get Free Home Office Quote</h2>
-                <form onSubmit={handleSubmit} className="space-y-3">
-                  <input type="text" placeholder="Your Name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <input type="tel" placeholder="Mobile Number" value={formData.mobile} onChange={(e) => setFormData({ ...formData, mobile: e.target.value })} required pattern="[0-9]{10}" className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <input type="text" placeholder="Project Type (e.g., Home Office, Study Corner)" value={formData.projectType} onChange={(e) => setFormData({ ...formData, projectType: e.target.value })} required className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-sm focus:border-secondary transition-all" />
-                  <button type="submit" disabled={isSubmitting} className="w-full btn-terracotta py-4 rounded-2xl text-secondary-foreground font-semibold">
-                    {isSubmitting ? "Submitting..." : "Get Free Quote"}
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ServiceHero title={"Home Office Design"} description={"Create your perfect productivity space with EverySpaces"} image={bedroomImage} formName={"Home Office Design Page Form"} />
 
         <section className="py-12 md:py-16">
           <div className="container px-4">
@@ -197,7 +143,7 @@ const ServiceHomeOffice = () => {
         <RelatedServices currentSlug="home-office" />
         <RelatedLocalities currentSlug="marathahalli" />
 
-        <FAQSection />
+        <FAQSection faqs={homeOfficeFAQs} />
 
         <section className="py-12 md:py-16 bg-muted/30">
           <div className="container px-4 text-center">

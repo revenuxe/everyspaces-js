@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start --port 8080",
     "typecheck": "tsc --noEmit",
+    "seo:check": "node scripts/check-seo.mjs",
     "lint": "eslint .",
     "sanity": "sanity",
     "migrate:blog:sanity": "node scripts/migrate-supabase-to-sanity.mjs"

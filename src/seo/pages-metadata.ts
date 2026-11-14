@@ -262,3 +262,26 @@ function replaceRetiredCity(value: unknown): unknown {
 
 replaceRetiredCity(PAGE_METADATA);
 
+// Next.js replaces nested metadata objects instead of merging their fields.
+// Give each route its own complete sharing metadata rather than inheriting home.
+for (const [path, metadata] of Object.entries(PAGE_METADATA)) {
+  const title = typeof metadata.title === "string" ? metadata.title : "EverySpaces Interior Design";
+  const alternate = metadata.alternates?.canonical;
+  const canonical = typeof alternate === "string" || alternate instanceof URL ? alternate : path;
+  metadata.openGraph = {
+    ...ogDefaults,
+    title,
+    description: metadata.description ?? undefined,
+    url: canonical,
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "EverySpaces interior design" }],
+    ...metadata.openGraph,
+  };
+  metadata.twitter = {
+    card: "summary_large_image",
+    title,
+    description: metadata.description ?? undefined,
+    images: ["/og-image.jpg"],
+    ...metadata.twitter,
+  };
+}
+
