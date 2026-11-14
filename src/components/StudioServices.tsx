@@ -34,16 +34,16 @@ export default function StudioServices({ locationLabel }: { locationLabel?: stri
           <div><h2 className="studio-heading text-primary">{locationLabel ? `Interiors for your ${locationLabel} home.` : "Interiors for every home."}</h2><p className="mt-3 max-w-xl text-sm leading-6 text-muted-foreground md:text-base">Explore complete home design, tailored to your space and the way you live.</p></div>
           <Link href="/services" className="studio-text-link">All services <ArrowUpRight className="h-4 w-4" /></Link>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {homeTypes.map((home) => <ServiceCard key={home.href} href={home.href} title={home.name} description={home.description} image={home.image} sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" />)}
+        <div className="home-types-grid grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+          {homeTypes.map((home) => <ServiceCard key={home.href} href={home.href} title={home.name} description={home.description} image={home.image} actionLabel="Explore" sizes="(min-width: 1024px) 25vw, 50vw" />)}
         </div>
       </div>
     </section>
     <section id="room-services" className="bg-background">
       <div className="container px-5 md:px-8">
         <div className="mb-6"><h2 className="studio-heading text-primary">Find your space.</h2><p className="mt-3 text-sm leading-6 text-muted-foreground md:text-base">Discover design ideas and services, room by room.</p></div>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-          {rooms.map((room) => <ServiceCard key={room.href} href={room.href} title={room.name} description={room.description} image={room.image} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />)}
+        <div className="room-services-grid grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 lg:gap-6">
+          {rooms.map((room) => <ServiceCard key={room.href} href={room.href} title={room.name} description={room.description} image={room.image} sizes="(min-width: 1024px) 33vw, 50vw" />)}
         </div>
         <Link href="/services" className="studio-text-link mt-6">View all room services <ArrowUpRight className="h-4 w-4" /></Link>
       </div>

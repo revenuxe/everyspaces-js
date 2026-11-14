@@ -84,6 +84,20 @@
   .related-service-card, .related-service-card__image img, .related-service-card__arrow, .related-services__all { transition: none; }
 }
 
+.mobile-service-arrow { display: none; }
+@media (max-width: 639px) {
+  .home-types-grid, .room-services-grid, .related-services__grid, .grid:has(> .service-detail-card-slot) { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 32rem; margin-inline: auto; gap: 0.875rem; }
+  .service-detail-card-slot { grid-column: auto; }
+  .related-service-card { border: 1px solid rgb(1 55 32 / 10%); border-radius: 14px; box-shadow: 0 5px 16px -10px rgb(1 55 32 / 25%); }
+  .related-service-card__image { aspect-ratio: 5 / 4; }
+  .related-service-card__content { justify-content: center; min-height: 60px; padding: 0.625rem 0.5rem; }
+  .related-service-card__content h3 { font-size: clamp(0.8125rem, 3.25vw, 1rem); font-weight: 600; line-height: 1.4; letter-spacing: -0.025em; }
+  .related-service-card__content h3[data-single-line="true"] { white-space: nowrap; }
+  .related-service-card__content p, .related-service-card__action { display: none; }
+  .mobile-service-arrow { position: absolute; right: 0.5rem; bottom: 0.5rem; display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid rgb(255 255 255 / 35%); border-radius: 50%; background: #FAF8F2; color: #013720; }
+  .mobile-service-arrow svg { width: 16px; height: 16px; }
+}
+
 /* Homepage trusted-partner marquee */
 .trusted-partners {
   position: relative;

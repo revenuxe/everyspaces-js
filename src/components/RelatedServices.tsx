@@ -68,7 +68,7 @@ const RelatedServices = ({ currentSlug }: RelatedServicesProps) => {
         </div>
         <div className="related-services__grid">
           {relatedServices.map((service) => (
-            <ServiceCard key={service.slug} href={servicesBasePath + "/" + service.slug} title={service.title} description={service.description} image={service.image} sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw" />
+            <ServiceCard key={service.slug} href={servicesBasePath + "/" + service.slug} title={service.title} description={service.description} image={service.image} sizes="(max-width: 1023px) 50vw, 25vw" />
           ))}
         </div>
       </div>
