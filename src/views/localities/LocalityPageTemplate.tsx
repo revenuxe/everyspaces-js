@@ -1,20 +1,13 @@
 "use client";
 
-import type { StaticImageData } from "next/image";
-import { usePathname } from "next/navigation";
+import homeHeroImage from "@/assets/hero-interior.jpg";
+import { getLocalityContent, getLocalityFAQs, LOCALITY_CONTENT } from "@/content/locality-content";
 import { imgSrc } from "@/lib/utils";
+import HeroSection from "@/components/HeroSection";
+import HomePageSections from "@/components/HomePageSections";
 import Header from "@/components/Header";
 import LocalityBreadcrumb from "@/components/LocalityBreadcrumb";
-import LocalityHeroSection from "@/components/LocalityHeroSection";
-import ActionGrid from "@/components/ActionGrid";
-import BestServices from "@/components/BestServices";
-import ServicesCarousel from "@/components/ServicesCarousel";
-import HowItWorksSection from "@/components/HowItWorksSection";
 import LocalityContentSection from "@/components/LocalityContentSection";
-import LocalityGallerySection from "@/components/LocalityGallerySection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import FAQSection from "@/components/FAQSection";
-import BangaloreLocalitiesSection from "@/components/BangaloreLocalitiesSection";
 import RelatedLocalities from "@/components/RelatedLocalities";
 import RelatedServices from "@/components/RelatedServices";
 import Footer from "@/components/Footer";
@@ -26,105 +19,23 @@ import {
   createBreadcrumbSchema
 } from "@/components/StructuredData";
 
-interface LocalityFAQ {
-  question: string;
-  answer: string;
-}
+interface LocalityPageProps { slug: string; }
 
-interface LocalityLandmark {
-  name: string;
-  description: string;
-  type: "landmark" | "lifestyle" | "residential" | "nature";
-}
-
-interface DesignTip {
-  title: string;
-  description: string;
-}
-
-interface LocalitySEO {
-  metaTitle: string;
-  metaDescription: string;
-  keywords: string[];
-  ogTitle: string;
-  ogDescription: string;
-  faqs: LocalityFAQ[];
-  nearbyAreas: string[];
-  specialties: string[];
-  landmarks?: LocalityLandmark[];
-  designTips?: DesignTip[];
-  lifestyleDescription?: string;
-}
-
-interface LocalityPageProps {
-  localityName: string;
-  slug: string;
-  projectCount: string;
-  heroImage: string | StaticImageData;
-  galleryImages: (string | StaticImageData)[];
-  description: string;
-  seo?: LocalitySEO;
-}
-
-const LocalityPageTemplate = ({
-  localityName,
-  slug,
-  projectCount,
-  heroImage,
-  galleryImages,
-  description,
-  seo
-}: LocalityPageProps) => {
-  const pathname = usePathname() ?? "";
+const LocalityPageTemplate = ({ slug }: LocalityPageProps) => {
+  const content = getLocalityContent(slug);
+  if (!content) throw new Error(`Missing locality content: ${slug}`);
+  const localityName = content.name;
   const cityName = "Bangalore";
   const cityPath = "bangalore";
-  const cityRegion = "Bangalore, Karnataka";
-  const cityGeo = { lat: "12.9716", lng: "77.5946" };
-  const heroUrl = imgSrc(heroImage);
-  const galleryUrls = galleryImages.map(imgSrc);
-
-  // Default SEO values if not provided
-  const defaultSEO: LocalitySEO = {
-    metaTitle: `Best Interior Designers in ${localityName} | Home Interiors ${localityName} ${cityName}`,
-    metaDescription: `${description} ${projectCount} completed. Modular kitchens, wardrobes & full home interiors with 10-year warranty. Free consultation!`,
-    keywords: [
-      `interior designers ${localityName}`,
-      `home interiors ${localityName}`,
-      `modular kitchen ${localityName}`,
-      `wardrobe design ${localityName}`,
-      `${localityName} interior design ${cityName.toLowerCase()}`,
-      `best interior designers in ${localityName}`,
-      `home renovation ${localityName}`,
-      `interior decorators ${localityName}`
-    ],
-    ogTitle: `Interior Designers in ${localityName} | EverySpaces`,
-    ogDescription: `${description} Free consultation!`,
-    faqs: [
-      {
-        question: `What is the cost of interior design in ${localityName}?`,
-        answer: `Interior design cost in ${localityName} ranges from Rs 1,500 to Rs 3,500 per sq ft depending on materials and scope. At EverySpaces, we offer customized packages starting Rs 8 lakhs for 2BHK. We have completed ${projectCount} in ${localityName} with 10-year warranty.`
-      },
-      {
-        question: `Who are the best interior designers in ${localityName}, ${cityName}?`,
-        answer: `EverySpaces is rated among the best interior designers in ${localityName} with 4.8/5 rating, ${projectCount} completed, and 10-year warranty. We specialize in modular kitchens, wardrobes, and complete home interiors with premium materials.`
-      },
-      {
-        question: `How long does home interior work take in ${localityName}?`,
-        answer: `Complete home interior in ${localityName} takes 45-90 days depending on scope. Modular kitchen takes 15-20 days, wardrobes 10-15 days. Our dedicated project manager ensures timely delivery for all ${localityName} projects.`
-      },
-      {
-        question: `Do you offer free consultation in ${localityName}?`,
-        answer: `Yes! EverySpaces offers free site visit and consultation in ${localityName}. Our design expert will visit your home, understand requirements, and provide detailed 3D designs with transparent cost estimate within 5 days.`
-      }
-    ],
-    nearbyAreas: [],
-    specialties: ['Modular Kitchen', 'Wardrobe Design', 'Living Room', 'Bedroom Interior']
+  const cityRegion = "Karnataka";
+  const heroUrl = imgSrc(homeHeroImage);
+  const seoData = {
+    metaTitle: `Interior Designers in ${localityName}, Bangalore | EverySpaces`,
+    metaDescription: content.metaDescription,
+    nearbyAreas: content.nearbySlugs.map((nearby) => LOCALITY_CONTENT[nearby].name),
+    specialties: ["Full Home Interiors", "2 BHK Interiors", "3 BHK Interiors", "Modular Kitchens", "Wardrobe Design"],
+    faqs: getLocalityFAQs(content),
   };
-
-  // Locality modules from the previous Bangalore rollout may still pass legacy
-  // copy. Use the Bangalore-safe defaults until each locality gets bespoke copy.
-  const seoData = defaultSEO;
-  
   // A locality is a service area, not a separate physical storefront. Marking it
   // as a LocalBusiness would make Google's required address data misleading.
   const localitySchema = {
@@ -166,9 +77,8 @@ const LocalityPageTemplate = ({
     seoData.metaDescription,
     `https://www.everyspaces.com/${cityPath}/${slug}`,
     heroUrl,
-    "150000-2500000",
+    undefined,
     {
-      timeRequired: "P60D",
       areaServed: [localityName, ...seoData.nearbyAreas],
       features: seoData.specialties
     }
@@ -184,7 +94,7 @@ const LocalityPageTemplate = ({
   // FAQ schema with locality-specific FAQs
   const faqSchema = createFAQSchema(seoData.faqs, `${cityPath}/${slug}`);
 
-  // WebPage schema with speakable for voice search
+  // WebPage metadata matches the visible locality copy.
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -201,15 +111,6 @@ const LocalityPageTemplate = ({
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": heroUrl
-    },
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": [
-        "#locality-hero-headline",
-        ".locality-description",
-        ".faq-question",
-        ".faq-answer"
-      ]
     },
     "breadcrumb": {
       "@id": `https://www.everyspaces.com/${cityPath}/${slug}#breadcrumb`
@@ -239,33 +140,22 @@ const LocalityPageTemplate = ({
     <div className="min-h-screen bg-background">
       <StructuredData data={[localitySchema, serviceSchema, breadcrumbSchema, faqSchema, webPageSchema, placeSchema]} />
       <Header />
-      <LocalityBreadcrumb localityName={localityName} cityName={cityName} cityPath={`/${cityPath}`} />
       
-      <main>
-        <LocalityHeroSection
-          localityName={localityName}
-          projectCount={projectCount}
-          heroImage={heroUrl}
+      <main className="minimal-home">
+        <HeroSection
+          locationLabel={`${localityName}, ${cityName}`}
+          sourcePage={`/${cityPath}/${slug}`}
+          formName={`${localityName} Landing Page Form`}
+          headingPrefix="Interior Designers"
+          description={content.heroDescription}
         />
-        <BestServices />
-        <ServicesCarousel />
-        <ActionGrid />
-        <HowItWorksSection />
-        <LocalityContentSection
-          localityName={localityName}
-          landmarks={seoData.landmarks}
-          designTips={seoData.designTips}
-          lifestyleDescription={seoData.lifestyleDescription}
-        />
-        <LocalityGallerySection
-          localityName={localityName}
-          images={galleryUrls}
-        />
-        <RelatedServices currentSlug="modular-kitchen" />
-        <RelatedLocalities currentSlug={slug} />
-        <TestimonialsSection />
-        <FAQSection faqs={seoData.faqs} cityOverride={localityName} />
-        <BangaloreLocalitiesSection />
+        <HomePageSections faqs={seoData.faqs} locationLabel={localityName} localContent={
+          <LocalityContentSection localityName={localityName} heading={content.heading} lifestyleDescription={content.introduction} designTips={content.designTips} />
+        }>
+          <LocalityBreadcrumb localityName={localityName} cityName={cityName} cityPath={`/${cityPath}`} />
+          <RelatedServices currentSlug="modular-kitchen" />
+          <RelatedLocalities currentSlug={slug} nearbySlugs={content.nearbySlugs} />
+        </HomePageSections>
       </main>
       
       <Footer />

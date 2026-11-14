@@ -16,12 +16,12 @@ export default function Footer() {
   return <>
     <SiteQuoteForm />
     <ServiceHeroCtas />
-    <footer className="bg-[#F5F5EF] px-4 py-10 pb-24 text-primary md:py-16 md:pb-16">
-      <div className="mx-auto max-w-7xl rounded-[2rem] border border-primary/10 bg-white px-6 py-10 shadow-[0_24px_60px_-42px_rgb(13_59_79_/_35%)] md:px-11 md:py-12">
+    <footer className="bg-[#FAF8F2] px-4 py-10 text-primary md:py-16">
+      <div className="mx-auto max-w-7xl rounded-[2rem] border border-primary/10 bg-white px-6 py-10 shadow-[0_24px_60px_-42px_rgb(0_59_41_/_35%)] md:px-11 md:py-12">
         <div className="grid gap-10 md:grid-cols-[1.55fr_repeat(3,1fr)]">
           <div>
             <a href="/" aria-label="EverySpaces home" className="inline-flex">
-              <img src={imgSrc(everyspacesLogo)} alt="EverySpaces" width={296} height={46} className="h-10 w-auto" />
+              <img src={imgSrc(everyspacesLogo)} alt="EverySpaces Interior Design" width={1075} height={478} loading="lazy" className="h-auto w-[220px] max-w-full object-contain" />
             </a>
             <p className="mt-7 max-w-sm text-sm leading-7 text-primary/75">Full home interiors, 2BHK and 3BHK designs, modular kitchens, wardrobes, and more.</p>
             <div className="mt-6 flex gap-4">

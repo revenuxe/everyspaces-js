@@ -43,7 +43,16 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   alternates: { canonical: "https://www.everyspaces.com/" },
-  icons: { icon: "/favicon.ico", apple: "/favicon.ico" },
+  icons: {
+    icon: [
+      { url: "/favicon.ico?v=8f9521438e28", type: "image/x-icon" },
+      { url: "/favicon-16x16.png?v=8f9521438e28", type: "image/png", sizes: "16x16" },
+      { url: "/favicon-32x32.png?v=8f9521438e28", type: "image/png", sizes: "32x32" },
+    ],
+    shortcut: "/favicon.ico?v=8f9521438e28",
+    apple: { url: "/apple-touch-icon.png?v=8f9521438e28", sizes: "180x180", type: "image/png" },
+  },
+  manifest: "/site.webmanifest?v=8f9521438e28",
   appleWebApp: { capable: true, statusBarStyle: "black-translucent" },
   formatDetection: { telephone: true },
   category: "interior design",
@@ -52,7 +61,7 @@ export const metadata: Metadata = {
     "geo.placename": "Bangalore",
     "geo.position": "13.0297;77.6125",
     ICBM: "13.0297, 77.6125",
-    "theme-color": "#F5F5EF",
+    "theme-color": "#FAF8F2",
   },
 };
 

@@ -78,8 +78,10 @@ const Portfolio = () => {
     : galleryImages.filter(img => img.category === activeFilter);
 
   const GalleryItem = ({ image, className = "" }: { image: typeof galleryImages[0], className?: string }) => (
-    <div 
-      className={`relative group aspect-[4/3] cursor-pointer overflow-hidden rounded-xl bg-muted shadow-sm ${className}`}
+    <button
+      type="button"
+      aria-label={`View ${image.title}`}
+      className={`relative group aspect-[4/3] w-full text-left cursor-pointer overflow-hidden rounded-[10px] bg-muted ${className}`}
       onClick={() => setSelectedImage(image)}
     >
       <img 
@@ -88,15 +90,15 @@ const Portfolio = () => {
         loading="lazy"
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
+      <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 p-5">
         <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-secondary-foreground/80">{image.category}</span>
-        <h3 className="mt-1 text-sm font-medium leading-tight text-primary-foreground md:text-base">{image.title}</h3>
+        <h3 className="mt-1.5 text-lg font-medium leading-snug text-primary-foreground">{image.title}</h3>
       </div>
       <div className="absolute top-1.5 right-1.5 md:top-2 md:right-2 w-5 h-5 md:w-7 md:h-7 bg-secondary/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <ZoomIn className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 text-secondary-foreground" />
       </div>
-    </div>
+    </button>
   );
 
   return (
@@ -116,19 +118,20 @@ const Portfolio = () => {
       
       <main className="pt-0 pb-12 md:pb-20">
         <PageHero image={gallery1} imageAlt="Selected EverySpaces interior project" title="Design Gallery" description="A collection of homes shaped around light, material, and the people who live in them." eyebrow="Selected work · EverySpaces" />
-        <div className="container px-2 md:px-4">
+        <div className="container px-5 md:px-8">
           {/* Header */}
           <div className="mb-6 md:mb-8" />
 
           {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-2 mb-6 md:mb-8 px-2">
+          <div className="flex overflow-x-auto gap-2 border-b border-primary/15 py-6 mb-6 md:mb-8">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveFilter(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                aria-pressed={activeFilter === category}
+                className={`shrink-0 px-5 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   activeFilter === category
-                    ? "bg-secondary text-secondary-foreground shadow-md"
+                    ? "bg-primary text-primary-foreground"
                     : "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground"
                 }`}
               >
@@ -138,7 +141,7 @@ const Portfolio = () => {
           </div>
 
           {/* Project grid */}
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-5 min-[560px]:grid-cols-2 lg:grid-cols-3 md:gap-6">
             {filteredImages.map((image) => <GalleryItem key={image.id} image={image} />)}
           </div>
         </div>
@@ -154,6 +157,7 @@ const Portfolio = () => {
           onClick={() => setSelectedImage(null)}
         >
           <button 
+            aria-label="Close project preview"
             className="absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 md:w-12 md:h-12 bg-secondary/20 hover:bg-secondary/40 rounded-full flex items-center justify-center transition-colors z-10"
             onClick={() => setSelectedImage(null)}
           >

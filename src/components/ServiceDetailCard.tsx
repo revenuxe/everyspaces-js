@@ -7,6 +7,9 @@ const serviceLinks: Record<string, string> = {
   "Living Room": "/services/living-room",
   "Master Bedroom Suite": "/services/bedroom-design",
   "Bedroom Interiors": "/services/bedroom-design",
+  "All Bedrooms": "/services/bedroom-design",
+  "Living & Dining": "/services/living-room",
+  "Wardrobes & Storage": "/services/wardrobe-design",
   "Modular Kitchen": "/services/modular-kitchen",
   "Kids & Guest Rooms": "/services/kids-room",
   "Kids Room": "/services/kids-room",
@@ -36,16 +39,15 @@ export default function ServiceDetailCard({ title, description, image, href: exp
   const href = explicitHref ?? serviceLinks[title] ?? "/services";
 
   return (
-    <Link href={href} className="group relative block aspect-[4/3] overflow-hidden rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary">
-      <img src={imgSrc(image)} alt={title} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-      <div className="absolute inset-0 bg-foreground/70 mix-blend-multiply" />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/75 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 p-4 pr-14">
-        <h3 className="font-display text-base text-primary-foreground md:text-lg">{title}</h3>
-        <p className="mt-1 line-clamp-2 text-xs text-primary-foreground/90 md:text-sm">{description}</p>
+    <Link href={href} className="group relative block h-[190px] overflow-hidden rounded-[10px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary sm:h-[220px] lg:h-[250px]">
+      <img src={imgSrc(image)} alt={title} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-105" />
+      <div aria-hidden="true" className="absolute inset-0" style={{ background: "linear-gradient(to top, #003B29 0%, rgba(0,59,41,.92) 16%, rgba(0,59,41,.55) 38%, rgba(0,59,41,0) 72%)" }} />
+      <div className="absolute bottom-0 left-0 right-0 p-4 pr-11 md:p-5 md:pr-12">
+        <h3 className="font-display text-base font-medium leading-snug text-white md:text-xl">{title}</h3>
+        <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-white/85 md:text-sm">{description}</p>
       </div>
-      <span className="absolute bottom-4 right-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-secondary-foreground shadow-lg transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" aria-hidden="true">
-        <ArrowUpRight className="h-4 w-4" />
+      <span className="absolute bottom-5 right-4 text-white transition-transform duration-300 motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5 md:right-5" aria-hidden="true">
+        <ArrowUpRight className="h-5 w-5" />
       </span>
       <span className="sr-only">Explore {title}</span>
     </Link>

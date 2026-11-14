@@ -47,7 +47,7 @@ export function AdminSidebar({ activeView, setActiveView }: AdminSidebarProps) {
     >
       <div className="p-4 border-b border-border">
         <div className="flex items-center gap-3">
-          <img src={imgSrc(everyspacesLogo)} alt="EverySpaces" className="h-8 w-auto" />
+          <img src={imgSrc(everyspacesLogo)} alt="EverySpaces Interior Design" width={1075} height={478} className={collapsed ? "h-auto w-6 shrink-0 object-contain" : "h-auto w-32 shrink-0 rounded bg-white p-1 object-contain"} />
           {!collapsed && (
             <span className="font-semibold text-foreground">Admin</span>
           )}

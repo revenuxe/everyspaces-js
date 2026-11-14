@@ -26,7 +26,7 @@ export default function SiteQuoteForm() {
   useEffect(() => {
     if (excluded) return;
     const hero = document.querySelector("main > section");
-    if (!hero || hero.classList.contains("service-hero") || hero.getAttribute("data-quote-form") === "disabled") return;
+    if (!hero || hero.classList.contains("service-hero") || ["disabled", "inline"].includes(hero.getAttribute("data-quote-form") ?? "") || hero.querySelector("form")) return;
     const host = document.createElement("div");
     host.dataset.quoteForm = "after-hero";
     hero.appendChild(host);

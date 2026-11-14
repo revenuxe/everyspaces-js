@@ -1,18 +1,9 @@
 "use client";
 
 import BottomNav from "@/components/BottomNav";
+import HomePageSections from "@/components/HomePageSections";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import TrustedPartnersSection from "@/components/TrustedPartnersSection";
-import ActionGrid from "@/components/ActionGrid";
-import BestServices from "@/components/BestServices";
-import ServicesCarousel from "@/components/ServicesCarousel";
-import HowItWorksSection from "@/components/HowItWorksSection";
-import GallerySection from "@/components/GallerySection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import FAQSection from "@/components/FAQSection";
-import ExploreBangaloreCTA from "@/components/ExploreBangaloreCTA";
-import BangaloreLocalitiesSection from "@/components/BangaloreLocalitiesSection";
 import Footer from "@/components/Footer";
 import { 
   StructuredData, 
@@ -45,16 +36,7 @@ const Index = () => {
       <Header />
       <main className="minimal-home">
         <HeroSection />
-        <TrustedPartnersSection />
-        <BestServices />
-        <ServicesCarousel />
-        <ActionGrid />
-        <HowItWorksSection />
-        <GallerySection />
-        <TestimonialsSection />
-        <FAQSection />
-        <ExploreBangaloreCTA />
-        <BangaloreLocalitiesSection />
+        <HomePageSections />
       </main>
       <Footer />
       <BottomNav />

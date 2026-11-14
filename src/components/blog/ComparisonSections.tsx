@@ -78,7 +78,7 @@ export function CompanyReviewSection({ company }: { company: Company }) {
       <h3>What to understand before choosing</h3><p>{company.understand}</p>
       <h3>Who it may suit</h3><p>{company.suited} Treat this as our editorial interpretation of the offering, then use the consultation to see whether the proposed team understands your priorities.</p>
       <h3>Questions to ask during consultation</h3><p>{company.ask} Request a sample quotation and an example of a completed project with a similar scope. Ask how decisions are recorded so later revisions do not depend on someone remembering a conversation.</p>
-    </div><aside className="journal-card self-start !bg-[#eeece8]"><p className="journal-eyebrow">Our take · EverySpaces editorial opinion</p><p className="mt-5 font-serif text-2xl leading-relaxed">{company.take}</p></aside></div>
+    </div><aside className="journal-card self-start !bg-[#F0EDE3]"><p className="journal-eyebrow">Our take · EverySpaces editorial opinion</p><p className="mt-5 font-serif text-2xl leading-relaxed">{company.take}</p></aside></div>
   </Section>;
 }
 

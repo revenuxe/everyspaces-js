@@ -1,4 +1,5 @@
-import { Star, Quote } from "lucide-react";
+import { useRef, useState } from "react";
+import { ArrowLeft, ArrowRight, Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -46,6 +47,16 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const goToReview = (index: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const first = track.children[0] as HTMLElement;
+    const target = track.children[index] as HTMLElement;
+    if (!target) return;
+    track.scrollTo({ left: target.offsetLeft - first.offsetLeft, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+  };
   return (
     <section id="testimonials" className="py-16 md:py-24 bg-muted/30">
       <div className="container px-4">
@@ -61,11 +72,16 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="reviews-carousel" ref={trackRef} aria-label="Client reviews" onScroll={() => {
+          const track = trackRef.current;
+          if (!track) return;
+          const step = (track.children[1] as HTMLElement).offsetLeft - (track.children[0] as HTMLElement).offsetLeft;
+          if (step > 0) setActiveIndex(Math.min(testimonials.length - 1, Math.max(0, Math.round(track.scrollLeft / step))));
+        }} className="scrollbar-hide relative flex snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain md:grid md:grid-cols-2 md:gap-6 md:overflow-visible lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-card rounded-2xl p-6 shadow-soft hover:shadow-lg transition-all duration-300 border border-border/50"
+              className="flex w-full shrink-0 snap-start flex-col border-t border-primary/20 bg-transparent py-6 md:w-auto"
             >
               <Quote className="w-8 h-8 text-secondary/30 mb-4" />
               
@@ -95,6 +111,13 @@ const TestimonialsSection = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-2 flex items-center justify-between md:hidden">
+          <span aria-live="polite" aria-atomic="true" className="text-xs tabular-nums tracking-[.12em] text-primary/65">{String(activeIndex + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}</span>
+          <div className="flex gap-2">
+            <button type="button" aria-label="Previous review" aria-controls="reviews-carousel" disabled={activeIndex === 0} onClick={() => goToReview(activeIndex - 1)} className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 text-primary transition-colors hover:bg-primary hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-primary"><ArrowLeft className="h-4 w-4" /></button>
+            <button type="button" aria-label="Next review" aria-controls="reviews-carousel" disabled={activeIndex === testimonials.length - 1} onClick={() => goToReview(activeIndex + 1)} className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 text-primary transition-colors hover:bg-primary hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-primary"><ArrowRight className="h-4 w-4" /></button>
+          </div>
         </div>
 
       </div>

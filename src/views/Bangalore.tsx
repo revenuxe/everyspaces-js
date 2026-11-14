@@ -1,16 +1,9 @@
 "use client";
 
+import HomePageSections from "@/components/HomePageSections";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import ActionGrid from "@/components/ActionGrid";
-import BestServices from "@/components/BestServices";
-import ServicesCarousel from "@/components/ServicesCarousel";
 import BangaloreContentSection from "@/components/BangaloreContentSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
-import GallerySection from "@/components/GallerySection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import BangaloreFAQSection from "@/components/BangaloreFAQSection";
-import BangaloreLocalitiesSection from "@/components/BangaloreLocalitiesSection";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import { StructuredData, createFAQSchema } from "@/components/StructuredData";
@@ -53,22 +46,11 @@ const Bangalore = () => {
     <div className="min-h-screen bg-background">
       <StructuredData data={[bangaloreServiceSchema, createFAQSchema(bangaloreFaqsForSchema, 'bangalore')]} />
       <Header />
-      <main>
-        <HeroSection
-          sourcePage="/bangalore"
-          formName="Bangalore Landing Page Form"
-          headingPrefix="Interior Designer"
-          description="End-to-end interior solutions in Bangalore."
-        />
-        <BestServices />
-        <ServicesCarousel />
-        <ActionGrid />
-        <BangaloreContentSection />
-        <HowItWorksSection />
-        <GallerySection />
-        <TestimonialsSection />
-        <BangaloreFAQSection />
-        <BangaloreLocalitiesSection />
+      <main className="minimal-home">
+        <HeroSection sourcePage="/bangalore" formName="Bangalore Landing Page Form" />
+        <HomePageSections faqs={bangaloreFaqsForSchema} locationLabel="Bangalore">
+          <BangaloreContentSection />
+        </HomePageSections>
       </main>
       <Footer />
       <BottomNav />

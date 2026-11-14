@@ -36,47 +36,47 @@ const Header = () => {
 
   const isBangalore = pathname?.startsWith("/bangalore");
   const servicesHref = isBangalore ? "/bangalore/services" : "/services";
-  const locationsHref = isBangalore ? "/bangalore#localities" : "/#localities";
 
   const navLinks = [
     { href: "/", label: "Home", isRoute: true },
     { href: servicesHref, label: "Services", isRoute: true },
-    { href: "/portfolio", label: "Portfolio", isRoute: true },
-    { href: "/orza-ai", label: "Orza AI", isRoute: true },
-    { href: locationsHref, label: "Locations" },
-    { href: "/contact", label: "Contact", isRoute: true },
+    { href: "/portfolio", label: "Projects", isRoute: true },
+    { href: "/about-us", label: "Our Studio", isRoute: true },
+    { href: "/articles", label: "Insights", isRoute: true },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-[#F5F5EF] text-primary transition-all duration-500 ease-smooth ${
-        isScrolled ? "py-2 shadow-lg" : "py-3"
+      className={`site-header fixed top-0 left-0 right-0 z-50 border-b border-primary/10 bg-[#FAF8F2]/95 text-primary backdrop-blur-md transition-shadow duration-300 ${
+        isScrolled ? "pt-1 pb-2 shadow-sm" : "pt-1 pb-2"
       }`}
     >
       <div className="container flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2">
+        <a href="/" aria-label="EverySpaces home" className="flex shrink-0 items-center">
           <img
             src={imgSrc(everyspacesLogo)}
-            alt="EverySpaces - For the Way You Work"
-            width={197}
-            height={40}
-            className="h-8 md:h-10 w-auto object-contain"
+            alt="EverySpaces Interior Design"
+            width={1075}
+            height={478}
+            fetchPriority="high"
+            className="h-16 w-auto object-contain md:h-[72px]"
           />
         </a>
         
         {/* Desktop Navigation - Pill shape like screenshot */}
         <nav className="hidden md:flex items-center">
-          <div className="flex items-center gap-1 rounded-full border border-primary/15 bg-primary/5 px-2 py-1.5 backdrop-blur-sm">
+          <div className="flex items-center gap-1">
             {navLinks.map((link) => (
               link.isRoute ? (
                 <Link 
                   key={link.href}
                   href={link.href} 
+                  aria-current={pathname === link.href ? "page" : undefined}
                   className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
                     pathname === link.href
-                      ? "bg-primary/15 text-primary"
-                      : "text-primary/75 hover:bg-primary/10 hover:text-primary"
+                      ? "text-secondary"
+                      : "text-primary/75 hover:text-secondary"
                   }`}
                 >
                   {link.label}
@@ -95,13 +95,14 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          {/* Coral brand circle button */}
+          {/* Orange brand circle button */}
           <Link 
             href="/contact" 
-            className="hidden md:flex w-11 h-11 rounded-full bg-secondary items-center justify-center hover:bg-secondary/90 transition-all duration-300 shadow-lg shadow-secondary/30 hover:scale-105"
+            data-open-consultation
+            className="hidden xl:flex gap-3 rounded-lg bg-secondary px-5 py-3 items-center justify-center text-sm text-white hover:bg-secondary-hover transition-colors"
             aria-label="Get Quote"
           >
-            <ArrowUpRight className="w-5 h-5 text-secondary-foreground" />
+            Let’s talk <ArrowUpRight className="w-4 h-4 text-secondary-foreground" />
           </Link>
 
           {/* Mobile Menu Button */}
@@ -122,7 +123,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute left-0 right-0 top-full border-t border-primary/10 bg-[#F5F5EF] shadow-lg md:hidden">
+        <div className="absolute left-0 right-0 top-full border-t border-primary/10 bg-[#FAF8F2] shadow-lg md:hidden">
           <nav className="container py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               link.isRoute ? (

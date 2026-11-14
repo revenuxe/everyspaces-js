@@ -29,7 +29,7 @@ export default function InteriorComparisonPage() {
     ]} />
     <section data-quote-form="disabled" className="comparison-hero relative isolate overflow-hidden bg-primary py-14 text-white md:py-20">
       <Image src={heroImage} alt="Contemporary EverySpaces living room with warm natural finishes" fill priority sizes="100vw" className="-z-20 object-cover" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#071f2b]/95 to-[#071f2b]/75" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#00271B]/95 to-[#00271B]/75" />
       <div className="journal-container grid items-center gap-10 lg:grid-cols-[1.35fr_1fr]">
         <div><Link href="/articles" className="mb-8 inline-flex min-h-11 items-center text-sm text-white/85">← Back to Blog</Link><p className="text-xs font-semibold uppercase tracking-[.15em] text-white/85">Interior design guide · Bangalore</p>
           <h1 className="comparison-hero-title hero-display mt-5 text-[2.25rem] leading-[1.12] sm:text-5xl xl:text-[3.45rem]">HomeLane vs DesignCafe vs Truww vs Livspace: Which Is Best for Your Bangalore Home?</h1>

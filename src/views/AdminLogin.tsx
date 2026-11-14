@@ -113,8 +113,8 @@ const AdminLogin = () => {
 
       <Card className="w-full max-w-md relative z-10 border-border/50 shadow-2xl backdrop-blur-sm bg-card/95">
         <CardHeader className="text-center space-y-4 pb-8">
-          <div className="mx-auto w-32 h-auto">
-            <img src={imgSrc(everyspacesLogo)} alt="EverySpaces" className="w-full h-auto" />
+          <div className="mx-auto w-48 h-auto rounded-lg bg-white p-2">
+            <img src={imgSrc(everyspacesLogo)} alt="EverySpaces Interior Design" width={1075} height={478} className="w-full h-auto object-contain" />
           </div>
           <div>
             <CardTitle className="text-2xl font-bold text-foreground">Admin Portal</CardTitle>

@@ -28,8 +28,8 @@ export const organizationSchema = {
   "logo": {
     "@type": "ImageObject",
     "url": "https://www.everyspaces.com/everyspaces-logo.webp",
-    "width": 1480,
-    "height": 229
+    "width": 1075,
+    "height": 478
   },
   "description": "EverySpaces provides full home interiors, modular kitchens, wardrobes and room design services across Bangalore.",
   "slogan": "End to End Interior Solutions",

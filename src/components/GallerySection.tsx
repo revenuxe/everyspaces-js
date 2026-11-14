@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { useState } from "react";
-import { X, ZoomIn } from "lucide-react";
+import { useRef, useState } from "react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, X, ZoomIn } from "lucide-react";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
@@ -22,60 +22,86 @@ const galleryImages = [
   { id: 8, src: gallery8, title: "Illuminated Foyer Console", category: "Storage" },
 ];
 
-const GallerySection = () => {
-  const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
-
-  const GalleryItem = ({ image, className = "" }: { image: typeof galleryImages[0], className?: string }) => (
-    <div 
-      className={`relative group aspect-[4/3] cursor-pointer overflow-hidden rounded-xl bg-muted shadow-sm ${className}`}
-      onClick={() => setSelectedImage(image)}
+const GalleryItem = ({ image, onSelect }: { image: typeof galleryImages[0], onSelect: (image: typeof galleryImages[0]) => void }) => (
+    <button
+      type="button"
+      aria-label={`View ${image.title}`}
+      className="gallery-project group block w-full shrink-0 snap-start text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+      onClick={() => onSelect(image)}
     >
-      <img 
+      <span className="relative block aspect-[4/3] overflow-hidden rounded-[10px] bg-muted md:aspect-[5/4]">
+      <img
         src={imgSrc(image.src)} 
         alt={image.title}
         loading="lazy"
         decoding="async"
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        className="w-full h-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-        <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-secondary-foreground/80">{image.category}</span>
-        <h3 className="mt-1 text-sm font-medium leading-tight text-primary-foreground md:text-base">{image.title}</h3>
-      </div>
-      <div className="absolute top-1.5 right-1.5 md:top-2 md:right-2 w-5 h-5 md:w-7 md:h-7 bg-secondary/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <ZoomIn className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 text-secondary-foreground" />
-      </div>
-    </div>
+      <span className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" />
+      <span className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-primary shadow-sm transition-opacity md:opacity-0 md:group-hover:opacity-100 md:group-focus-visible:opacity-100">
+        <ZoomIn className="h-4 w-4" />
+      </span>
+      <span className="absolute inset-x-0 bottom-0 block p-5">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/75">{image.category}</span>
+        <span className="mt-1.5 block max-w-[24ch] text-lg font-medium leading-snug text-white">{image.title}</span>
+      </span>
+      </span>
+    </button>
   );
 
+const GallerySection = ({ locationLabel }: { locationLabel?: string } = {}) => {
+  const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const goToSlide = (index: number) => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+    const first = carousel.children[0] as HTMLElement;
+    const target = carousel.children[index] as HTMLElement;
+    if (!target) return;
+    carousel.scrollTo({ left: target.offsetLeft - first.offsetLeft, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+  };
+
   return (
-    <section id="gallery" className="py-12 md:py-20 bg-background">
-      <div className="container px-4">
+    <section id="gallery" className="py-14 md:py-24 bg-background">
+      <div className="container px-5 md:px-8">
         {/* Header */}
-        <div className="text-center mb-6 md:mb-8 px-2">
-          <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary font-semibold text-sm rounded-full mb-4">
-            Our Portfolio
+        <div className="mb-8 max-w-2xl md:mb-10">
+          <span className="mb-4 block text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary">
+            Selected interiors
           </span>
           <h2 className="font-display text-2xl md:text-4xl lg:text-5xl text-primary tracking-[-0.025em]">
-            Design Gallery
+            {locationLabel ? `Design ideas for ${locationLabel}` : "Design Gallery"}
           </h2>
-          <p className="text-muted-foreground mt-2 max-w-xl mx-auto font-body text-sm md:text-base">
-            Explore our stunning collection of completed interior projects
+          <p className="text-muted-foreground mt-4 max-w-md font-body text-sm leading-6 md:text-base md:leading-7">
+            {locationLabel ? "Explore layout, storage, and finish ideas to discuss for your home. These images illustrate design options across our collection." : "Thoughtful spaces, considered details. Explore a selection of our interior designs."}
           </p>
         </div>
 
         {/* Featured project cards */}
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-          {galleryImages.map((image) => <GalleryItem key={image.id} image={image} />)}
+        <div id="gallery-carousel" ref={carouselRef} aria-label="Interior design projects" onScroll={() => {
+          const carousel = carouselRef.current;
+          if (!carousel || carousel.children.length < 2) return;
+          const step = (carousel.children[1] as HTMLElement).offsetLeft - (carousel.children[0] as HTMLElement).offsetLeft;
+          if (step > 0) setActiveIndex(Math.min(galleryImages.length - 1, Math.max(0, Math.round(carousel.scrollLeft / step))));
+        }} className="scrollbar-hide relative flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain md:grid md:grid-cols-2 md:gap-6 md:overflow-visible lg:grid-cols-4">
+          {galleryImages.map((image) => <GalleryItem key={image.id} image={image} onSelect={setSelectedImage} />)}
+        </div>
+        <div className="mt-4 flex items-center justify-between md:hidden">
+          <span aria-live="polite" aria-atomic="true" className="text-xs tabular-nums tracking-[.12em] text-primary/65">{String(activeIndex + 1).padStart(2, "0")} / {String(galleryImages.length).padStart(2, "0")}</span>
+          <div className="flex gap-2">
+            <button type="button" aria-label="Previous project" aria-controls="gallery-carousel" disabled={activeIndex === 0} onClick={() => goToSlide(activeIndex - 1)} className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 text-primary transition-colors hover:bg-primary hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-primary"><ArrowLeft className="h-4 w-4" /></button>
+            <button type="button" aria-label="Next project" aria-controls="gallery-carousel" disabled={activeIndex === galleryImages.length - 1} onClick={() => goToSlide(activeIndex + 1)} className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 text-primary transition-colors hover:bg-primary hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-primary"><ArrowRight className="h-4 w-4" /></button>
+          </div>
         </div>
 
         {/* CTA Button */}
         <div className="text-center mt-8 md:mt-10">
           <Link 
             href="/portfolio"
-            className="inline-flex items-center gap-2 px-6 md:px-8 py-3 bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full font-medium text-sm md:text-base transition-all duration-300 hover:shadow-lg hover:shadow-secondary/25"
+            className="inline-flex items-center gap-3 border-b border-primary/30 pb-2 text-primary hover:text-secondary hover:border-secondary font-medium text-sm transition-colors"
           >
-            View All Projects
+            View All Projects <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </div>
       </div>
@@ -87,6 +113,8 @@ const GallerySection = () => {
           onClick={() => setSelectedImage(null)}
         >
           <button 
+            type="button"
+            aria-label="Close project preview"
             className="absolute top-3 right-3 md:top-4 md:right-4 w-10 h-10 md:w-12 md:h-12 bg-secondary/20 hover:bg-secondary/40 rounded-full flex items-center justify-center transition-colors z-10"
             onClick={() => setSelectedImage(null)}
           >

@@ -25,6 +25,7 @@ export default {
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
+          hover: "hsl(var(--secondary-hover))",
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
@@ -61,11 +62,12 @@ export default {
         teal: "hsl(var(--teal))",
         orange: "hsl(var(--orange))",
         cream: "hsl(var(--cream))",
+        gold: "hsl(var(--gold))",
       },
       fontFamily: {
-        sans: ['Poppins', 'system-ui', 'sans-serif'],
-        display: ['Poppins', 'system-ui', 'sans-serif'],
-        body: ['Poppins', 'system-ui', 'sans-serif'],
+        sans: ['"Helvetica Neue"', 'Arial', 'sans-serif'],
+        display: ['"Helvetica Neue"', 'Arial', 'sans-serif'],
+        body: ['"Helvetica Neue"', 'Arial', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -110,8 +112,8 @@ export default {
           "50%": { transform: "translateY(-10px)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 0 0 hsl(14.7 61.9% 53.9% / 0.4)" },
-          "50%": { boxShadow: "0 0 0 12px hsl(14.7 61.9% 53.9% / 0)" },
+          "0%, 100%": { boxShadow: "0 0 0 0 hsl(var(--secondary) / 0.4)" },
+          "50%": { boxShadow: "0 0 0 12px hsl(var(--secondary) / 0)" },
         },
       },
       animation: {

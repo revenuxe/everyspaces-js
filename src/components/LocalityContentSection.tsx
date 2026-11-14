@@ -13,6 +13,7 @@ interface DesignTip {
 
 interface LocalityContentSectionProps {
   localityName: string;
+  heading?: string;
   landmarks?: LocalityLandmark[];
   designTips?: DesignTip[];
   lifestyleDescription?: string;
@@ -27,6 +28,7 @@ const iconMap = {
 
 const LocalityContentSection = ({
   localityName,
+  heading,
   landmarks = [],
   designTips = [],
   lifestyleDescription,
@@ -40,17 +42,15 @@ const LocalityContentSection = ({
       <div className="container px-4">
         {/* Lifestyle Description */}
         {lifestyleDescription && (
-          <div className="max-w-4xl mx-auto mb-12 text-center">
-            <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary font-semibold rounded-full text-sm mb-4">
-              About {localityName}
-            </span>
-            <p className="text-muted-foreground font-body text-lg leading-relaxed locality-description">
+          <div className="max-w-4xl mb-7">
+            <h2 className="studio-heading mb-5 text-primary">{heading ?? `Planning your ${localityName} home`}</h2>
+            <p className="text-muted-foreground font-body text-base leading-7 locality-description">
               {lifestyleDescription}
             </p>
           </div>
         )}
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className={landmarks.length ? "grid md:grid-cols-2 gap-8 lg:gap-12" : "w-full"}>
           {/* Local Landmarks */}
           {landmarks.length > 0 && (
             <div>
@@ -97,7 +97,7 @@ const LocalityContentSection = ({
                   Design Tips for {localityName} Homes
                 </h2>
               </div>
-              <div className="space-y-4">
+              <div className="grid gap-4 lg:grid-cols-3">
                 {designTips.map((tip, index) => (
                   <div
                     key={index}

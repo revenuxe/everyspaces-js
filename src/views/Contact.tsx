@@ -154,7 +154,7 @@ const Contact = () => {
                       type="text"
                       placeholder="Your Name"
                       {...form.register("name")}
-                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(21.3_92.1%_39.6%/0.1)] transition-all duration-300 font-body text-sm"
                     />
                     {form.formState.errors.name && (
                       <p className="text-xs text-destructive mt-1">{form.formState.errors.name.message}</p>
@@ -166,7 +166,7 @@ const Contact = () => {
                       type="tel"
                       placeholder="Mobile Number"
                       {...form.register("phone")}
-                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(21.3_92.1%_39.6%/0.1)] transition-all duration-300 font-body text-sm"
                     />
                     {form.formState.errors.phone && (
                       <p className="text-xs text-destructive mt-1">{form.formState.errors.phone.message}</p>
@@ -178,7 +178,7 @@ const Contact = () => {
                       type="email"
                       placeholder="Email Address"
                       {...form.register("email")}
-                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(21.3_92.1%_39.6%/0.1)] transition-all duration-300 font-body text-sm"
                     />
                     {form.formState.errors.email && (
                       <p className="text-xs text-destructive mt-1">{form.formState.errors.email.message}</p>
@@ -190,7 +190,7 @@ const Contact = () => {
                       type="text"
                       placeholder="Project Type (e.g., 2BHK, Villa)"
                       {...form.register("propertyType")}
-                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(21.3_92.1%_39.6%/0.1)] transition-all duration-300 font-body text-sm"
                     />
                     {form.formState.errors.propertyType && (
                       <p className="text-xs text-destructive mt-1">{form.formState.errors.propertyType.message}</p>
@@ -202,7 +202,7 @@ const Contact = () => {
                       type="text"
                       placeholder="Budget Range (e.g., 10-15 Lakhs)"
                       {...form.register("budget")}
-                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm"
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(21.3_92.1%_39.6%/0.1)] transition-all duration-300 font-body text-sm"
                     />
                     {form.formState.errors.budget && (
                       <p className="text-xs text-destructive mt-1">{form.formState.errors.budget.message}</p>
@@ -214,7 +214,7 @@ const Contact = () => {
                       placeholder="Tell us about your project..."
                       {...form.register("message")}
                       rows={3}
-                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(16_55%_48%/0.1)] transition-all duration-300 font-body text-sm resize-none"
+                      className="w-full px-4 py-3.5 bg-background/60 border-2 border-border rounded-2xl text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-secondary focus:bg-background focus:shadow-[0_0_0_4px_hsl(21.3_92.1%_39.6%/0.1)] transition-all duration-300 font-body text-sm resize-none"
                     />
                     {form.formState.errors.message && (
                       <p className="text-xs text-destructive mt-1">{form.formState.errors.message.message}</p>
