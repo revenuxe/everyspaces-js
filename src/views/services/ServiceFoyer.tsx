@@ -47,7 +47,7 @@ const foyerFeatures = [
 const foyerFAQs = [
   {
     question: "What is the cost of foyer design ?",
-    answer: "Foyer design  costs â‚¹30,000 to â‚¹1.5 lakh depending on size and design. At EverySpaces, basic foyer setups start from â‚¹30,000, feature walls from â‚¹50,000, and grand entrances with chandelier from â‚¹1 lakh."
+    answer: "Foyer design  costs ₹30,000 to ₹1.5 lakh depending on size and design. At EverySpaces, basic foyer setups start from ₹30,000, feature walls from ₹50,000, and grand entrances with chandelier from ₹1 lakh."
   },
   {
     question: "What should be included in a foyer design?",
@@ -55,7 +55,7 @@ const foyerFAQs = [
   },
   {
     question: "How to design a small apartment entrance?",
-    answer: "For small entrances, EverySpaces uses wall-mounted shoe cabinets, slim consoles, mirrors to create depth, and vertical storage. We maximize function without cluttering the space. Starting from â‚¹30,000."
+    answer: "For small entrances, EverySpaces uses wall-mounted shoe cabinets, slim consoles, mirrors to create depth, and vertical storage. We maximize function without cluttering the space. Starting from ₹30,000."
   },
   {
     question: "Can you design a Vastu-compliant entrance?",

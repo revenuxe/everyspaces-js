@@ -91,7 +91,7 @@ const fullHomeFAQs = [
   },
   {
     question: "What is the cost of full home interior ?",
-    answer: "Full home interior  costs Ã¢â€šÂ¹1,800-3,500 per sq ft. At EverySpaces, 2BHK starts from Ã¢â€šÂ¹6 lakh, 3BHK from Ã¢â€šÂ¹10 lakh, and villas from Ã¢â€šÂ¹25 lakh. Complete packages offer 15-20% savings compared to individual services."
+    answer: "Full home interior  costs ₹1,800-3,500 per sq ft. At EverySpaces, 2BHK starts from ₹6 lakh, 3BHK from ₹10 lakh, and villas from ₹25 lakh. Complete packages offer 15-20% savings compared to individual services."
   },
   {
     question: "Why choose full home interior package over individual services?",

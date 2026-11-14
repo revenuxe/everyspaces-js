@@ -47,7 +47,7 @@ const diningFeatures = [
 const diningRoomFAQs = [
   {
     question: "What is the cost of dining room design ?",
-    answer: "Dining room design  costs â‚¹50,000 to â‚¹2 lakh depending on size and fixtures. At EverySpaces, basic setups start from â‚¹50,000, with crockery units from â‚¹80,000, and luxury dining with chandelier from â‚¹1.5 lakh."
+    answer: "Dining room design  costs ₹50,000 to ₹2 lakh depending on size and fixtures. At EverySpaces, basic setups start from ₹50,000, with crockery units from ₹80,000, and luxury dining with chandelier from ₹1.5 lakh."
   },
   {
     question: "What size dining table do I need?",
@@ -59,7 +59,7 @@ const diningRoomFAQs = [
   },
   {
     question: "Can you design a dining area in living room?",
-    answer: "Yes, EverySpaces specializes in open-plan living-dining designs. We use rugs, lighting, and furniture placement to define zones while maintaining visual flow. Starting from â‚¹50,000 for dining area."
+    answer: "Yes, EverySpaces specializes in open-plan living-dining designs. We use rugs, lighting, and furniture placement to define zones while maintaining visual flow. Starting from ₹50,000 for dining area."
   }
 ];
 

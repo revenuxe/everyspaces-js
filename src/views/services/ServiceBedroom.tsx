@@ -46,7 +46,7 @@ const bedroomFeatures = [
 const bedroomFAQs = [
   {
     question: "What is the cost of bedroom interior design ?",
-    answer: "Bedroom interior design  costs â‚¹1.5-3 lakh for a master bedroom including wardrobe, bed design, and false ceiling. At EverySpaces, bedroom packages start from â‚¹1.2 lakh with premium finishes and 10-year warranty."
+    answer: "Bedroom interior design  costs ₹1.5-3 lakh for a master bedroom including wardrobe, bed design, and false ceiling. At EverySpaces, bedroom packages start from ₹1.2 lakh with premium finishes and 10-year warranty."
   },
   {
     question: "What is included in bedroom interior design?",

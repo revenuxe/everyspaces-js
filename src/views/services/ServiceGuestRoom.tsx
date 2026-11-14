@@ -47,11 +47,11 @@ const guestRoomFeatures = [
 const guestRoomFAQs = [
   {
     question: "What is the cost of guest room design ?",
-    answer: "Guest room design  costs â‚¹60,000 to â‚¹1.5 lakh including bed, wardrobe, and basic decor. At EverySpaces, basic setups start from â‚¹60,000, comfortable suites from â‚¹90,000, and luxury guest rooms from â‚¹1.2 lakh."
+    answer: "Guest room design  costs ₹60,000 to ₹1.5 lakh including bed, wardrobe, and basic decor. At EverySpaces, basic setups start from ₹60,000, comfortable suites from ₹90,000, and luxury guest rooms from ₹1.2 lakh."
   },
   {
     question: "How to design a multi-purpose guest room?",
-    answer: "EverySpaces designs multi-purpose rooms with sofa-cum-beds, murphy beds, or folding beds combined with study tables and storage. This maximizes utility when guests aren't staying. Starting from â‚¹70,000."
+    answer: "EverySpaces designs multi-purpose rooms with sofa-cum-beds, murphy beds, or folding beds combined with study tables and storage. This maximizes utility when guests aren't staying. Starting from ₹70,000."
   },
   {
     question: "What furniture is essential for a guest room?",

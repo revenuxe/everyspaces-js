@@ -47,7 +47,7 @@ const bathroomFeatures = [
 const bathroomFAQs = [
   {
     question: "What is the cost of bathroom renovation ?",
-    answer: "Bathroom renovation  costs â‚¹1-3 lakh for complete makeover. At EverySpaces, basic renovations start from â‚¹80,000, premium from â‚¹1.5 lakh with Kohler/Grohe fixtures, and luxury spa bathrooms from â‚¹2.5 lakh."
+    answer: "Bathroom renovation  costs ₹1-3 lakh for complete makeover. At EverySpaces, basic renovations start from ₹80,000, premium from ₹1.5 lakh with Kohler/Grohe fixtures, and luxury spa bathrooms from ₹2.5 lakh."
   },
   {
     question: "How long does bathroom renovation take?",

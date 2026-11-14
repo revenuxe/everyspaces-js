@@ -87,7 +87,7 @@ const whyChooseUs = [
 const bhk3FAQs = [
   {
     question: "What is the cost of 3 BHK interior design ?",
-    answer: "3 BHK interior design  costs Ã¢â€šÂ¹8-20 lakh for complete interiors. At EverySpaces, basic packages start from Ã¢â€šÂ¹8 lakh, premium from Ã¢â€šÂ¹12 lakh with false ceiling, and luxury from Ã¢â€šÂ¹18 lakh with home theatre and walk-in closets."
+    answer: "3 BHK interior design  costs ₹8-20 lakh for complete interiors. At EverySpaces, basic packages start from ₹8 lakh, premium from ₹12 lakh with false ceiling, and luxury from ₹18 lakh with home theatre and walk-in closets."
   },
   {
     question: "What is included in 3 BHK interior package?",
@@ -147,7 +147,7 @@ const Service3BHK = () => {
   const aeoSchemas = [
     createServiceSchema(
       "3 BHK Interior Design",
-      "Premium 3 BHK interior design packages  starting Ã¢â€šÂ¹8 lakh. Includes modular kitchen, wardrobes, TV unit, home theatre, and walk-in closets with 10-year warranty.",
+      "Premium 3 BHK interior design packages  starting ₹8 lakh. Includes modular kitchen, wardrobes, TV unit, home theatre, and walk-in closets with 10-year warranty.",
       "https://everyspaces.com/services/3bhk-interiors",
       "https://everyspaces.com/service-3bhk.jpg",
       "800000-2000000",

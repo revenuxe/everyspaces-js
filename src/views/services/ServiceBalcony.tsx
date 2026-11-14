@@ -47,11 +47,11 @@ const balconyFeatures = [
 const balconyFAQs = [
   {
     question: "What is the cost of balcony design ?",
-    answer: "Balcony design  costs â‚¹20,000 to â‚¹1 lakh depending on size and features. At EverySpaces, basic balcony makeovers start from â‚¹20,000, vertical gardens from â‚¹35,000, and complete terrace transformations from â‚¹60,000."
+    answer: "Balcony design  costs ₹20,000 to ₹1 lakh depending on size and features. At EverySpaces, basic balcony makeovers start from ₹20,000, vertical gardens from ₹35,000, and complete terrace transformations from ₹60,000."
   },
   {
     question: "How to design a small balcony  apartments?",
-    answer: "For small balconies, EverySpaces uses vertical gardens, foldable furniture, wall-mounted planters, and compact seating. We maximize space with multi-level planters and hanging elements. Starting from â‚¹20,000."
+    answer: "For small balconies, EverySpaces uses vertical gardens, foldable furniture, wall-mounted planters, and compact seating. We maximize space with multi-level planters and hanging elements. Starting from ₹20,000."
   },
   {
     question: "Can you install a vertical garden on my balcony?",

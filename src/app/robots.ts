@@ -23,12 +23,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin/", "/studio/", "/thank-you", "/api/"],
+        disallow: ["/studio/", "/thank-you", "/api/"],
       },
       ...AI_AND_SOCIAL_CRAWLERS.map((userAgent) => ({
         userAgent,
         allow: "/",
-        disallow: ["/admin/", "/studio/", "/thank-you"],
+        disallow: ["/studio/", "/thank-you"],
       })),
     ],
     sitemap: absoluteUrl("/sitemap.xml"),

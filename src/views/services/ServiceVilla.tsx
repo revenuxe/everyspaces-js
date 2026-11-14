@@ -87,7 +87,7 @@ const whyChooseUs = [
 const villaFAQs = [
   {
     question: "What is the cost of villa interior design ?",
-    answer: "Villa interior design  costs Ã¢â€šÂ¹25-75 lakh depending on size and luxury level. At EverySpaces, basic villa packages start from Ã¢â€šÂ¹25 lakh for 3000 sq ft, premium from Ã¢â€šÂ¹40 lakh, and luxury bespoke designs from Ã¢â€šÂ¹60 lakh."
+    answer: "Villa interior design  costs ₹25-75 lakh depending on size and luxury level. At EverySpaces, basic villa packages start from ₹25 lakh for 3000 sq ft, premium from ₹40 lakh, and luxury bespoke designs from ₹60 lakh."
   },
   {
     question: "How long does villa interior design take?",

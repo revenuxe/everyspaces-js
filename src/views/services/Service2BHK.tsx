@@ -87,7 +87,7 @@ const whyChooseUs = [
 const bhk2FAQs = [
   {
     question: "What is the cost of 2 BHK interior design ?",
-    answer: "2 BHK interior design  costs Ã¢â€šÂ¹4-12 lakh for complete interiors. At EverySpaces, basic packages start from Ã¢â€šÂ¹4 lakh (kitchen + wardrobes), standard from Ã¢â€šÂ¹6 lakh (adds living room), and premium from Ã¢â€šÂ¹8 lakh (full home with false ceiling)."
+    answer: "2 BHK interior design  costs ₹4-12 lakh for complete interiors. At EverySpaces, basic packages start from ₹4 lakh (kitchen + wardrobes), standard from ₹6 lakh (adds living room), and premium from ₹8 lakh (full home with false ceiling)."
   },
   {
     question: "What is included in 2 BHK interior package?",
@@ -148,7 +148,7 @@ const Service2BHK = () => {
   const aeoSchemas = [
     createServiceSchema(
       "2 BHK Interior Design",
-      "Complete 2 BHK interior design packages  starting Ã¢â€šÂ¹4 lakh. Includes modular kitchen, wardrobes, TV unit, and living room with 10-year warranty.",
+      "Complete 2 BHK interior design packages  starting ₹4 lakh. Includes modular kitchen, wardrobes, TV unit, and living room with 10-year warranty.",
       "https://everyspaces.com/services/2bhk-interiors",
       "https://everyspaces.com/service-2bhk.jpg",
       "400000-1200000",

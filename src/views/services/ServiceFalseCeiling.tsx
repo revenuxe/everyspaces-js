@@ -47,7 +47,7 @@ const ceilingFeatures = [
 const falseCeilingFAQs = [
   {
     question: "What is the cost of false ceiling ?",
-    answer: "False ceiling  costs â‚¹65-150 per sq ft depending on material and design. At EverySpaces, basic POP ceilings start from â‚¹65/sq ft, gypsum from â‚¹85/sq ft, and designer ceilings with cove lighting from â‚¹120/sq ft."
+    answer: "False ceiling  costs ₹65-150 per sq ft depending on material and design. At EverySpaces, basic POP ceilings start from ₹65/sq ft, gypsum from ₹85/sq ft, and designer ceilings with cove lighting from ₹120/sq ft."
   },
   {
     question: "Which is better - POP or gypsum false ceiling?",

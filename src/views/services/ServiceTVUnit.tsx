@@ -47,7 +47,7 @@ const tvUnitFeatures = [
 const tvUnitFAQs = [
   {
     question: "What is the cost of TV unit design ?",
-    answer: "TV unit design  costs â‚¹25,000 to â‚¹1.5 lakh depending on size and design. At EverySpaces, floating units start from â‚¹25,000, wall-mounted panels from â‚¹40,000, and floor-to-ceiling entertainment walls from â‚¹80,000."
+    answer: "TV unit design  costs ₹25,000 to ₹1.5 lakh depending on size and design. At EverySpaces, floating units start from ₹25,000, wall-mounted panels from ₹40,000, and floor-to-ceiling entertainment walls from ₹80,000."
   },
   {
     question: "Which TV unit design is trending ?",
@@ -59,7 +59,7 @@ const tvUnitFAQs = [
   },
   {
     question: "Can you design a TV unit with a feature wall?",
-    answer: "Yes, EverySpaces specializes in TV units with feature walls including stone cladding, wooden panels, PU finish, textured wallpaper, and backlit panels. Prices start from â‚¹60,000 for TV unit with feature wall."
+    answer: "Yes, EverySpaces specializes in TV units with feature walls including stone cladding, wooden panels, PU finish, textured wallpaper, and backlit panels. Prices start from ₹60,000 for TV unit with feature wall."
   }
 ];
 

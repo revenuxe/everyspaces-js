@@ -46,7 +46,7 @@ const livingFeatures = [
 const livingRoomFAQs = [
   {
     question: "What is the cost of living room interior design ?",
-    answer: "Living room interior design  costs â‚¹1-2.5 lakh depending on size and finishes. At EverySpaces, packages include TV unit, false ceiling, feature wall, and lighting. Basic packages start from â‚¹80,000."
+    answer: "Living room interior design  costs ₹1-2.5 lakh depending on size and finishes. At EverySpaces, packages include TV unit, false ceiling, feature wall, and lighting. Basic packages start from ₹80,000."
   },
   {
     question: "What is included in living room interior design?",

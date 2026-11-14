@@ -47,7 +47,7 @@ const kidsRoomFeatures = [
 const kidsRoomFAQs = [
   {
     question: "What is the cost of kids room design ?",
-    answer: "Kids room design  costs â‚¹1-2.5 lakh including wardrobe, bed, study table, and decor. At EverySpaces, basic packages start from â‚¹80,000, themed rooms from â‚¹1.2 lakh, and luxury designs from â‚¹2 lakh."
+    answer: "Kids room design  costs ₹1-2.5 lakh including wardrobe, bed, study table, and decor. At EverySpaces, basic packages start from ₹80,000, themed rooms from ₹1.2 lakh, and luxury designs from ₹2 lakh."
   },
   {
     question: "What themes are popular for kids rooms ?",

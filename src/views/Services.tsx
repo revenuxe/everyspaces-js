@@ -87,26 +87,14 @@ const servicesFAQs = [
   }
 ];
 
-type ServicesProps = {
-  /** Render links within the Bangalore route family when used by its service hub. */
-  bangaloreScoped?: boolean;
-};
-
-const Services = ({ bangaloreScoped = false }: ServicesProps) => {
-  const linkedServices = services.map((service) => ({
-    ...service,
-    link: bangaloreScoped ? `/bangalore${service.link}` : service.link,
-  }));
-  const servicesHubUrl = bangaloreScoped
-    ? "https://www.everyspaces.com/bangalore/services"
-    : "https://www.everyspaces.com/services";
+const Services = () => {
   // Combine all AEO schemas
   const aeoSchemas = [
-    servicesListSchema(linkedServices),
+    servicesListSchema(services),
     professionalServiceSchema,
     createBreadcrumbSchema([
       { name: "Home", url: "https://everyspaces.com" },
-      { name: "Services", url: servicesHubUrl }
+      { name: "Services", url: "https://www.everyspaces.com/services" }
     ]),
     createFAQSchema(servicesFAQs, 'services')
   ];
@@ -123,7 +111,7 @@ const Services = ({ bangaloreScoped = false }: ServicesProps) => {
         <section className="py-12 md:py-16">
           <div className="container px-4">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-              {linkedServices.map((service) => (
+              {services.map((service) => (
                 <a
                   key={service.id}
                   href={service.link}

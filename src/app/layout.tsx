@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.everyspaces.com"),
   title: {
     default: "EverySpaces | Best Interior Designers in Bangalore",
-    template: "%s | EverySpaces",
+    template: "%s",
   },
   description:
     "End to end interior solutions in Bangalore. Modular kitchens, wardrobes & home interiors with a 10-year warranty.",

@@ -47,7 +47,7 @@ const studyFeatures = [
 const studyRoomFAQs = [
   {
     question: "What is the cost of study table design ?",
-    answer: "Study table design  costs â‚¹15,000 to â‚¹60,000 depending on size and features. At EverySpaces, basic study tables start from â‚¹15,000, L-shaped units from â‚¹25,000, and complete study room setups from â‚¹50,000."
+    answer: "Study table design  costs ₹15,000 to ₹60,000 depending on size and features. At EverySpaces, basic study tables start from ₹15,000, L-shaped units from ₹25,000, and complete study room setups from ₹50,000."
   },
   {
     question: "What is the ideal study table height?",
@@ -55,7 +55,7 @@ const studyRoomFAQs = [
   },
   {
     question: "How to design a study corner in bedroom?",
-    answer: "For bedroom study corners, EverySpaces uses wall-mounted desks, floating shelves, and integrated lighting. We ensure proper ventilation, natural light access, and minimal distractions. Starting from â‚¹15,000."
+    answer: "For bedroom study corners, EverySpaces uses wall-mounted desks, floating shelves, and integrated lighting. We ensure proper ventilation, natural light access, and minimal distractions. Starting from ₹15,000."
   },
   {
     question: "What lighting is best for study room?",

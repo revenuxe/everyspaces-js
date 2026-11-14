@@ -127,7 +127,7 @@ const ServiceModularKitchen = () => {
   const modularKitchenFAQs = [
     {
       question: "What is the cost of modular kitchen ?",
-      answer: "Modular kitchen cost  ranges from Ã¢â€šÂ¹1.5 lakh to Ã¢â€šÂ¹8 lakh depending on size, materials, and finishes. At EverySpaces, L-shaped kitchens start from Ã¢â€šÂ¹2.5 lakh, U-shaped from Ã¢â€šÂ¹3.5 lakh, and island kitchens from Ã¢â€šÂ¹5 lakh. All prices include Hettich/Hafele hardware with 10-year warranty."
+      answer: "Modular kitchen cost  ranges from ₹1.5 lakh to ₹8 lakh depending on size, materials, and finishes. At EverySpaces, L-shaped kitchens start from ₹2.5 lakh, U-shaped from ₹3.5 lakh, and island kitchens from ₹5 lakh. All prices include Hettich/Hafele hardware with 10-year warranty."
     },
     {
       question: "How long does modular kitchen installation take?",
@@ -173,7 +173,7 @@ const ServiceModularKitchen = () => {
     }),
     createQASchema(
       "What is the best modular kitchen design for small kitchen ?",
-      "For small kitchens , L-shaped or straight modular kitchen designs work best. EverySpaces specializes in space-saving solutions with corner units, tall units, and pull-out storage. Starting from Ã¢â€šÂ¹2.5 lakh with 10-year warranty.",
+      "For small kitchens , L-shaped or straight modular kitchen designs work best. EverySpaces specializes in space-saving solutions with corner units, tall units, and pull-out storage. Starting from ₹2.5 lakh with 10-year warranty.",
       "https://everyspaces.com/services/modular-kitchen"
     )
   ];

@@ -31,7 +31,7 @@ export default function PageHero({
   const heroHeight = minimal ? "min-h-[260px] md:min-h-[320px]" : "md:min-h-[620px]";
   const contentLayout = minimal
     ? "min-h-[260px] items-center px-5 py-20 md:min-h-[320px] md:px-8"
-    : "items-start px-5 pb-12 pt-20 md:min-h-[620px] md:items-center md:px-8 md:py-24";
+    : "items-start px-5 pb-12 pt-28 md:min-h-[620px] md:items-center md:px-8 md:py-24";
 
   return (
     <section data-quote-form={minimal ? "disabled" : "enabled"} className={`page-hero relative isolate overflow-hidden bg-primary text-primary-foreground ${heroHeight}`}>

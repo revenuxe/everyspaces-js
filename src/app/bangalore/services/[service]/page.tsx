@@ -20,11 +20,14 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   if (!SERVICE_COMPONENTS[service]) return {};
 
   const serviceName = titleFromSlug(service);
+  const canonical = `/services/${service}`;
   return {
     title: `${serviceName} Interior Design in Bangalore | EverySpaces`,
     description: `${serviceName} interior design services in Bangalore by EverySpaces. Custom design, transparent pricing, and end-to-end execution.`,
-    alternates: {
-      canonical: `/bangalore/services/${service}`,
+    alternates: { canonical },
+    openGraph: {
+      title: `${serviceName} Interior Design in Bangalore | EverySpaces`,
+      url: canonical,
     },
   };
 }

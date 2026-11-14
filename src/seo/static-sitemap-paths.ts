@@ -13,7 +13,6 @@ export const CORE_SITEMAP_ENTRIES: Entry[] = [
   { path: "/", changeFrequency: "weekly", priority: 1 },
   { path: "/bangalore", changeFrequency: "weekly", priority: 0.95 },
   { path: "/services", changeFrequency: "weekly", priority: 0.95 },
-  { path: "/bangalore/services", changeFrequency: "weekly", priority: 0.95 },
   { path: "/portfolio", changeFrequency: "weekly", priority: 0.85 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.9 },
   { path: "/price-calculator", changeFrequency: "monthly", priority: 0.85 },
@@ -58,13 +57,4 @@ export const SERVICE_SITEMAP_ENTRIES: Entry[] = [
   { path: "/services/modular-kitchen/straight-kitchen", changeFrequency: "monthly", priority: 0.75 },
   { path: "/services/modular-kitchen/g-shaped-kitchen", changeFrequency: "monthly", priority: 0.75 },
 ];
-
-// Kitchen layout aliases share content with the canonical /services URLs.
-export const BANGALORE_SERVICE_SITEMAP_ENTRIES: Entry[] = SERVICE_SITEMAP_ENTRIES
-  .filter((entry) => !entry.path.startsWith("/services/modular-kitchen/"))
-  .map((entry) => ({
-  ...entry,
-  path: `/bangalore${entry.path}`,
-  priority: Math.max(0.6, entry.priority - 0.05),
-}));
 

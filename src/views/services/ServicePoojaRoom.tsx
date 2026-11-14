@@ -47,7 +47,7 @@ const poojaFeatures = [
 const poojaRoomFAQs = [
   {
     question: "What is the cost of pooja room design ?",
-    answer: "Pooja room design  costs â‚¹30,000 to â‚¹2 lakh depending on size and materials. At EverySpaces, wall-mounted units start from â‚¹30,000, standalone mandirs from â‚¹60,000, and walk-in pooja rooms from â‚¹1.5 lakh."
+    answer: "Pooja room design  costs ₹30,000 to ₹2 lakh depending on size and materials. At EverySpaces, wall-mounted units start from ₹30,000, standalone mandirs from ₹60,000, and walk-in pooja rooms from ₹1.5 lakh."
   },
   {
     question: "Which direction is best for pooja room as per Vastu?",
@@ -59,7 +59,7 @@ const poojaRoomFAQs = [
   },
   {
     question: "Can you design a pooja unit for small apartments?",
-    answer: "Yes, EverySpaces specializes in compact pooja solutions. Wall-mounted units, corner mandirs, and foldable pooja cabinets are perfect for small apartments. Starting from â‚¹30,000 with full Vastu compliance."
+    answer: "Yes, EverySpaces specializes in compact pooja solutions. Wall-mounted units, corner mandirs, and foldable pooja cabinets are perfect for small apartments. Starting from ₹30,000 with full Vastu compliance."
   }
 ];
 

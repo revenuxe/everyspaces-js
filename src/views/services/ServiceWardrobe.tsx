@@ -46,7 +46,7 @@ const wardrobeFeatures = [
 const wardrobeFAQs = [
   {
     question: "What is the cost of wardrobe design ?",
-    answer: "Wardrobe design cost  ranges from â‚¹1,200 to â‚¹2,500 per sq ft. At EverySpaces, sliding wardrobes start from â‚¹80,000, hinged wardrobes from â‚¹70,000, and walk-in closets from â‚¹2 lakh. All include Hettich/Hafele hardware with 10-year warranty."
+    answer: "Wardrobe design cost  ranges from ₹1,200 to ₹2,500 per sq ft. At EverySpaces, sliding wardrobes start from ₹80,000, hinged wardrobes from ₹70,000, and walk-in closets from ₹2 lakh. All include Hettich/Hafele hardware with 10-year warranty."
   },
   {
     question: "Which wardrobe type is best for small bedrooms?",

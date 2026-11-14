@@ -62,8 +62,8 @@ export const PAGE_METADATA: Record<string, Metadata> = {
     title: "All Interior Design Services in Bangalore | 20+ Categories | EverySpaces",
     description:
       "Explore 20+ interior design services in Bangalore — kitchens, wardrobes, 2BHK/3BHK, villas, and room-wise design with transparent pricing.",
-    alternates: { canonical: "/bangalore/services" },
-    openGraph: { ...ogDefaults, title: "Interior Design Services in Bangalore | EverySpaces", url: "/bangalore/services" },
+    alternates: { canonical: "/services" },
+    openGraph: { ...ogDefaults, title: "Interior Design Services in Bangalore | EverySpaces", url: "/services" },
   },
   "/contact": {
     title: "Contact Us | Free Interior Design Consultation Bangalore | EverySpaces",

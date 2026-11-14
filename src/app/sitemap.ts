@@ -3,7 +3,6 @@ import { absoluteUrl } from "@/lib/site-url";
 import {
   CORE_SITEMAP_ENTRIES,
   SERVICE_SITEMAP_ENTRIES,
-  BANGALORE_SERVICE_SITEMAP_ENTRIES,
 } from "@/seo/static-sitemap-paths";
 import { BANGALORE_LOCALITY_SLUGS } from "@/seo/bangalore-locality-slugs";
 import { getPublishedPostSlugs } from "@/sanity/lib/posts";
@@ -42,9 +41,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRows: MetadataRoute.Sitemap = [
     ...CORE_SITEMAP_ENTRIES.map((e) => toSitemapRow(e.path, e.changeFrequency, e.priority)),
     ...SERVICE_SITEMAP_ENTRIES.map((e) => toSitemapRow(e.path, e.changeFrequency, e.priority)),
-    ...BANGALORE_SERVICE_SITEMAP_ENTRIES.map((e) =>
-      toSitemapRow(e.path, e.changeFrequency, e.priority),
-    ),
     ...BANGALORE_LOCALITY_SLUGS.map((slug) => toSitemapRow(`/bangalore/${slug}`, "weekly", 0.72)),
   ];
 

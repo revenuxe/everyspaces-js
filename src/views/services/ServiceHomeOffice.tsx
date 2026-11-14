@@ -47,7 +47,7 @@ const officeFeatures = [
 const homeOfficeFAQs = [
   {
     question: "What is the cost of home office design ?",
-    answer: "Home office design  costs â‚¹30,000 to â‚¹2 lakh depending on size and features. At EverySpaces, compact workstations start from â‚¹30,000, dedicated rooms from â‚¹80,000, and executive studios from â‚¹1.5 lakh."
+    answer: "Home office design  costs ₹30,000 to ₹2 lakh depending on size and features. At EverySpaces, compact workstations start from ₹30,000, dedicated rooms from ₹80,000, and executive studios from ₹1.5 lakh."
   },
   {
     question: "How to set up a productive work from home space?",

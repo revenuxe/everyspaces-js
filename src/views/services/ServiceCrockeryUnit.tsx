@@ -47,7 +47,7 @@ const crockeryFeatures = [
 const crockeryUnitFAQs = [
   {
     question: "What is the cost of crockery unit ?",
-    answer: "Crockery unit  costs â‚¹40,000 to â‚¹1.5 lakh depending on size and design. At EverySpaces, wall-mounted units start from â‚¹40,000, floor units from â‚¹60,000, and bar+crockery combos from â‚¹1 lakh."
+    answer: "Crockery unit  costs ₹40,000 to ₹1.5 lakh depending on size and design. At EverySpaces, wall-mounted units start from ₹40,000, floor units from ₹60,000, and bar+crockery combos from ₹1 lakh."
   },
   {
     question: "What is the ideal size for a crockery unit?",
