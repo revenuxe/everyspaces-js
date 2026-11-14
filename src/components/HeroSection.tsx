@@ -4,6 +4,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import QuoteForm from "@/components/QuoteForm";
 import Image from "next/image";
 import Link from "next/link";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 import { ArrowUpRight, PhoneCall } from "lucide-react";
 
@@ -41,9 +42,9 @@ export default function HeroSection({
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-white/90 md:text-lg">{description}</p>
           <div className="hero-cta-row mt-8">
-            <Link href="/contact" data-open-consultation className="hero-cta-primary group inline-flex items-center gap-3 bg-secondary py-4 text-sm font-semibold text-secondary-foreground shadow-[0_10px_22px_-12px_rgb(194_74_8_/_72%)] transition-all duration-300 hover:-translate-y-1">
+            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="hero-cta-primary group inline-flex items-center gap-3 bg-secondary py-4 text-sm font-semibold text-secondary-foreground shadow-[0_10px_22px_-12px_rgb(194_74_8_/_72%)] transition-all duration-300 hover:-translate-y-1">
               <WhatsAppIcon /> Book a Free Consultation
-            </Link>
+            </a>
             <a href="tel:+919886579923" className="hero-cta-secondary group inline-flex items-center gap-2 whitespace-nowrap border border-white/20 bg-black/35 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-black/50">
               <PhoneCall className="h-4 w-4" /> Call Now
             </a>

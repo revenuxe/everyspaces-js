@@ -1,6 +1,6 @@
 "use client";
 
-import { PhoneCall } from "lucide-react";
+import { CalendarDays } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const MAIN_PAGE_PREFIXES = [
@@ -23,5 +23,5 @@ export default function FloatingCallButton() {
 
   if (!isMainPage) return null;
 
-  return <a href="tel:+919886579923" aria-label="Call EverySpaces now" className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-3 text-sm font-semibold text-secondary-foreground shadow-lg shadow-secondary/30 transition-transform hover:scale-105 md:bottom-7 md:right-7"><PhoneCall className="h-4 w-4" /> <span>Call Now</span></a>;
+  return <a href="/contact" data-open-consultation aria-label="Book now" className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-3 text-sm font-semibold text-secondary-foreground shadow-lg shadow-secondary/30 transition-transform hover:scale-105 md:bottom-7 md:right-7"><CalendarDays className="h-4 w-4" /> <span>Book Now</span></a>;
 }

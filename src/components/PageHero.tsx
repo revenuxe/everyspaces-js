@@ -1,8 +1,8 @@
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import Image, { type StaticImageData } from "next/image";
-import Link from "next/link";
 import { PhoneCall } from "lucide-react";
 import heroImage from "@/assets/hero-interior.jpg";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 type PageHeroProps = {
   title: string;
@@ -24,7 +24,7 @@ export default function PageHero({
   image = heroImage,
   imageAlt = "EverySpaces interior design",
   primaryLabel = "Book a Free Consultation",
-  primaryHref = "/contact",
+  primaryHref = getWhatsAppUrl(),
   secondaryLabel = "Our Work",
   secondaryHref = "/portfolio",
   minimal = false,
@@ -41,7 +41,7 @@ export default function PageHero({
       <div className={`container relative z-20 flex ${contentLayout}`}>
         <div className="max-w-2xl">
           <h1 className="hero-display max-w-[650px] text-[2.8rem] leading-[.98] text-primary-foreground sm:text-5xl md:text-[3.6rem]">{title}</h1>
-          {!minimal && <><p className="mt-6 max-w-xl text-base leading-7 text-primary-foreground/90 md:text-lg">{description}</p><div className="hero-cta-row mt-8"><Link href={primaryHref} data-open-consultation className="hero-cta-primary group inline-flex items-center gap-3 bg-secondary py-4 text-sm font-semibold text-secondary-foreground shadow-[0_10px_22px_-12px_rgb(194_74_8_/_72%)] transition-all hover:-translate-y-0.5"><WhatsAppIcon />{primaryLabel}</Link><a href="tel:+919886579923" className="hero-cta-secondary group inline-flex items-center gap-2 whitespace-nowrap border border-white/20 bg-black/35 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-black/50"><PhoneCall className="h-4 w-4" /> Call Now</a></div></>}
+          {!minimal && <><p className="mt-6 max-w-xl text-base leading-7 text-primary-foreground/90 md:text-lg">{description}</p><div className="hero-cta-row mt-8"><a href={primaryHref} target="_blank" rel="noopener noreferrer" className="hero-cta-primary group inline-flex items-center gap-3 bg-secondary py-4 text-sm font-semibold text-secondary-foreground shadow-[0_10px_22px_-12px_rgb(194_74_8_/_72%)] transition-all hover:-translate-y-0.5"><WhatsAppIcon />{primaryLabel}</a><a href="tel:+919886579923" className="hero-cta-secondary group inline-flex items-center gap-2 whitespace-nowrap border border-white/20 bg-black/35 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-black/50"><PhoneCall className="h-4 w-4" /> Call Now</a></div></>}
         </div>
       </div>
     </section>

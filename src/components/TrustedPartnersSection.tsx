@@ -39,7 +39,6 @@ export default function TrustedPartnersSection() {
           ))}
         </div>
       </div>
-      <div className="trusted-partners__separator" aria-hidden="true"><span /></div>
     </section>
   );
 }
