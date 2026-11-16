@@ -15,6 +15,8 @@ function walk(dir) {
 walk(root);
 const decode = (text) => text.replace(/&amp;/g, "&").replace(/&#x27;|&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 let checked = 0;
+const canonicalPages = new Map();
+const uniqueMetadata = { title: new Map(), description: new Map() };
 for (const file of files) {
   const route = relative(root, file).split(sep).join("/").replace(/\.html$/, "");
   const html = readFileSync(file, "utf8");
@@ -29,8 +31,24 @@ for (const file of files) {
   assert.match(html, /name="description" content="[^"]+"/, `${route}: description`);
   const canonical = html.match(/rel="canonical" href="([^"]+)"/)?.[1];
   assert.ok(canonical && new URL(canonical).origin === "https://www.everyspaces.com", `${route}: canonical origin`);
+  const routePath = route === "index" ? "/" : `/${route}`;
+  assert.equal(new URL(canonical).pathname, routePath, `${route}: public page must be self-canonical; redirect duplicate routes`);
+  assert.ok(!canonicalPages.has(canonical), `${route}: canonical already served by ${canonicalPages.get(canonical)}`);
+  canonicalPages.set(canonical, route);
+  const metadataValues = {
+    title: decode(html.match(/<title>([^<]+)<\/title>/)?.[1] ?? ""),
+    description: decode(html.match(/name="description" content="([^"]+)"/)?.[1] ?? ""),
+  };
+  for (const [key, value] of Object.entries(metadataValues)) {
+    const normalized = value.trim().toLowerCase().replace(/\s+/g, " ");
+    assert.ok(!uniqueMetadata[key].has(normalized), `${route}: duplicate ${key} with ${uniqueMetadata[key].get(normalized)}`);
+    uniqueMetadata[key].set(normalized, route);
+  }
+  assert.ok(!/href="\/bangalore\/services(?:\/|"|\?)/.test(html), `${route}: links must use canonical /services URLs`);
   assert.match(html, /property="og:image" content="[^"]+"/, `${route}: social image`);
   assert.match(html, /property="og:title" content="[^"]+"/, `${route}: social title`);
+  assert.match(html, /property="og:description" content="[^"]+"/, `${route}: social description`);
+  assert.match(html, /name="twitter:description" content="[^"]+"/, `${route}: Twitter description`);
   const visibleHtml = decode(html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, ""));
   const schemas = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map((match) => JSON.parse(match[1]));
   const faqs = schemas.filter((schema) => schema["@type"] === "FAQPage");
@@ -56,8 +74,11 @@ for (const url of urls) {
   const path = new URL(url).pathname;
   assert.equal(new URL(url).origin, "https://www.everyspaces.com", "sitemap canonical origin");
   assert.ok(!/^\/(?:admin|studio|thank-you|api)(?:\/|$)/.test(path), "sitemap excludes internal pages");
+  assert.ok(!path.startsWith("/bangalore/services"), "sitemap excludes redirected service aliases");
   if (path !== "/articles" && !path.startsWith("/articles/")) {
     assert.ok(existsSync(join(root, path === "/" ? "index.html" : `${path.slice(1)}.html`)), `sitemap route exists: ${path}`);
   }
 }
+const routesManifest = JSON.parse(readFileSync(".next/routes-manifest.json", "utf8"));
+assert.ok(routesManifest.redirects.some((rule) => rule.source === "/bangalore/services/:path*" && rule.destination === "/services/:path*" && rule.statusCode === 308), "duplicate service tree must permanently redirect to canonical URLs");
 console.log(`SEO checks passed for ${checked} generated pages, internal noindex pages, and robots.txt.`);

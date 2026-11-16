@@ -38,11 +38,11 @@ export const PAGE_METADATA: Record<string, Metadata> = {
     robots: { index: true, follow: true },
   },
   "/bangalore": {
-    title: "Interior Designers in Bangalore | Top-Rated Home Interiors | EverySpaces",
+    title: "Bangalore Home Interiors | Areas We Serve | EverySpaces",
     description:
-      "Premium interior designers serving all major Bangalore localities. Modular kitchens, wardrobes & end-to-end home interiors. 10-year warranty. Book a free consultation.",
+      "Explore interior design services across Bangalore neighbourhoods. Find local planning guides, compare home interior options and book an EverySpaces consultation.",
     alternates: { canonical: "/bangalore" },
-    openGraph: { ...ogDefaults, title: "Interior Designers in Bangalore | EverySpaces", url: "/bangalore" },
+    openGraph: { ...ogDefaults, title: "Bangalore Home Interiors | Areas We Serve | EverySpaces", url: "/bangalore" },
   },
   "/portfolio": {
     title: "Our Portfolio | Completed Interior Design Projects | EverySpaces Bangalore",
@@ -57,13 +57,6 @@ export const PAGE_METADATA: Record<string, Metadata> = {
       "Explore 20+ interior design services in Bangalore — kitchens, wardrobes, 2BHK/3BHK, villas, and room-wise design with transparent pricing.",
     alternates: { canonical: "/services" },
     openGraph: { ...ogDefaults, title: "Interior Design Services | EverySpaces", url: "/services" },
-  },
-  "/bangalore/services": {
-    title: "All Interior Design Services in Bangalore | 20+ Categories | EverySpaces",
-    description:
-      "Explore 20+ interior design services in Bangalore — kitchens, wardrobes, 2BHK/3BHK, villas, and room-wise design with transparent pricing.",
-    alternates: { canonical: "/services" },
-    openGraph: { ...ogDefaults, title: "Interior Design Services in Bangalore | EverySpaces", url: "/services" },
   },
   "/contact": {
     title: "Contact Us | Free Interior Design Consultation Bangalore | EverySpaces",
@@ -125,13 +118,13 @@ export const PAGE_METADATA: Record<string, Metadata> = {
     openGraph: { ...ogDefaults, title: "Price Calculator | EverySpaces", url: "/price-calculator" },
   },
   "/services/2bhk-interiors": {
-    title: "2 BHK Interior Design Bangalore | Affordable Packages from ₹4L | EverySpaces",
+    title: "2 BHK Interior Design in Bangalore | EverySpaces",
     description:
       "Complete 2 BHK interior packages in Bangalore — modular kitchen, wardrobes, TV unit, and living spaces with warranty-backed execution.",
     alternates: { canonical: "/services/2bhk-interiors" },
   },
   "/services/3bhk-interiors": {
-    title: "3 BHK Interior Design Bangalore | Premium Packages from ₹8L | EverySpaces",
+    title: "3 BHK Interior Design in Bangalore | EverySpaces",
     description:
       "Premium 3 BHK interior design with modular kitchens, wardrobes, and full home coordination in Bangalore.",
     alternates: { canonical: "/services/3bhk-interiors" },
@@ -169,7 +162,7 @@ export const PAGE_METADATA: Record<string, Metadata> = {
   "/services/wardrobe-design": {
     title: "Wardrobe Design Bangalore | Sliding & Walk-in Closets | EverySpaces",
     description:
-      "Sliding and hinged wardrobes with loft storage, internal accessories, and premium finishes.",
+      "Custom wardrobe design in Bangalore. Compare sliding, hinged and walk-in layouts, explore finishes and smart storage, and request a tailored EverySpaces quote.",
     alternates: { canonical: "/services/wardrobe-design" },
   },
   "/services/home-office": {

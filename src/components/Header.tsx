@@ -34,8 +34,7 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
-  const isBangalore = pathname?.startsWith("/bangalore");
-  const servicesHref = isBangalore ? "/bangalore/services" : "/services";
+  const servicesHref = "/services";
 
   const navLinks = [
     { href: "/", label: "Home", isRoute: true },

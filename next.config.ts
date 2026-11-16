@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
+      // One public URL for each service; the city-prefixed tree was identical.
+      {
+        source: "/bangalore/services/:path*",
+        destination: "/services/:path*",
+        permanent: true,
+      },
       // Retire the old city architecture without leaving crawlers or users on dead URLs.
       {
         source: "/hyderabad/:path*",

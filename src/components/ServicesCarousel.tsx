@@ -1,5 +1,4 @@
 ﻿import { useRef, useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import kitchenImage from "@/assets/service-kitchen.jpg";
 import bedroomImage from "@/assets/service-bedroom.jpg";
@@ -18,9 +17,7 @@ const services = [
 ];
 
 const ServicesCarousel = () => {
-  const pathname = usePathname() ?? "";
-  const isBangalore = pathname.startsWith("/bangalore");
-  const serviceBasePath = isBangalore ? "/bangalore/services" : "/services";
+  const serviceBasePath = "/services";
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [parallaxOffsets, setParallaxOffsets] = useState<number[]>(

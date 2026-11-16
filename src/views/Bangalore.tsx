@@ -47,7 +47,7 @@ const Bangalore = () => {
       <StructuredData data={[bangaloreServiceSchema, createFAQSchema(bangaloreFaqsForSchema, 'bangalore')]} />
       <Header />
       <main className="minimal-home">
-        <HeroSection sourcePage="/bangalore" formName="Bangalore Landing Page Form" />
+        <HeroSection sourcePage="/bangalore" formName="Bangalore Landing Page Form" headingPrefix="Home interiors across Bangalore" locationLabel="" description="Explore the areas we serve, find a neighbourhood design guide and plan your home interiors with EverySpaces. From compact apartments to villas, start with your location and the rooms you want to transform." />
         <HomePageSections faqs={bangaloreFaqsForSchema} locationLabel="Bangalore">
           <BangaloreContentSection />
         </HomePageSections>

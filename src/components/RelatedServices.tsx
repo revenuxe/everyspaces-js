@@ -3,7 +3,6 @@
 import ServiceCard from "@/components/ServiceCard";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { usePathname } from "next/navigation";
 
 // Service images
 import kitchenImage from "@/assets/service-modular-kitchen.jpg";
@@ -44,14 +43,20 @@ interface RelatedServicesProps {
 }
 
 const RelatedServices = ({ currentSlug }: RelatedServicesProps) => {
-  const pathname = usePathname() ?? "";
-  const isBengaluru = pathname.startsWith("/bangalore");
-  const servicesBasePath = isBengaluru ? "/bangalore/services" : "/services";
+  const servicesBasePath = "/services";
 
-  // Get 4 related services, excluding the current one
-  const relatedServices = allServices
-    .filter((service) => service.slug !== currentSlug)
-    .slice(0, 4);
+  // Connect pages by the customer's project, rather than always promoting
+  // the first four services regardless of the page being read.
+  const groups = [
+    ["modular-kitchen", "dining-room", "crockery-unit", "pooja-room", "full-home-design"],
+    ["wardrobe-design", "bedroom-design", "kids-room", "guest-room", "study-room", "home-office"],
+    ["living-room", "tv-unit", "false-ceiling", "foyer-entrance", "balcony-design"],
+    ["2bhk-interiors", "3bhk-interiors", "villa-interiors", "full-home-design", "bathroom-design"],
+  ];
+  const preferred = groups.find((group) => group.includes(currentSlug)) ?? [];
+  const slugs = [...new Set([...preferred, ...allServices.map((service) => service.slug)])]
+    .filter((slug) => slug !== currentSlug).slice(0, 4);
+  const relatedServices = slugs.flatMap((slug) => allServices.filter((service) => service.slug === slug));
 
   return (
     <section className="related-services" aria-labelledby="related-services-heading">
