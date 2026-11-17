@@ -1,6 +1,9 @@
 # Google Ads tracking
 
 The public website loads Google tag `AW-18430311742` once through the root layout.
+The async `gtag/js` loader and inline initialization are included in the initial
+HTML `<head>`, without waiting for React hydration. Initialization and conversion
+events are excluded on `/admin` and `/studio` routes.
 All 25 lead-saving form components emit `generate_lead` only after Supabase confirms
 the insert succeeded. Viewing or refreshing `/thank-you` does not emit a lead.
 Phone, email, and WhatsApp links emit separate click events; WhatsApp buttons in

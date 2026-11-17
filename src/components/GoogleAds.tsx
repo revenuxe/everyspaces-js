@@ -1,9 +1,8 @@
 "use client";
 
-import Script from "next/script";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { GOOGLE_ADS_ID, trackAdsAction } from "@/lib/google-ads";
+import { trackAdsAction } from "@/lib/google-ads";
 
 export default function GoogleAds() {
   const pathname = usePathname();
@@ -24,14 +23,5 @@ export default function GoogleAds() {
     return () => document.removeEventListener("click", onClick, true);
   }, [excluded]);
 
-  if (excluded) return null;
-  return <>
-    <Script id="google-ads-init" strategy="afterInteractive">{`
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = window.gtag || function(){dataLayer.push(arguments);};
-      gtag('js', new Date());
-      gtag('config', '${GOOGLE_ADS_ID}');
-    `}</Script>
-    <Script id="google-ads-loader" src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`} strategy="afterInteractive" />
-  </>;
+  return null;
 }

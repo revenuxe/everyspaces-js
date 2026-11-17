@@ -1,6 +1,7 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Providers from "./providers";
 import GoogleAds from "@/components/GoogleAds";
+import { GOOGLE_ADS_ID } from "@/lib/google-ads";
 import "../index.css";
 
 export const metadata: Metadata = {
@@ -68,6 +69,20 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          id="google-ads-init"
+          dangerouslySetInnerHTML={{ __html: `
+            if (!/^\\/(admin|studio)(\\/|$)/.test(window.location.pathname)) {
+              window.dataLayer = window.dataLayer || [];
+              window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+              gtag('js', new Date());
+              gtag('config', '${GOOGLE_ADS_ID}');
+            }
+          ` }}
+        />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`} />
+      </head>
       <body className="antialiased">
         <GoogleAds />
         <Providers>{children}</Providers>
